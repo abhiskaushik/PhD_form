@@ -1,0 +1,87 @@
+*,body{
+	margin: 0px;
+	padding: 0px;
+}
+@font-face{
+	font-family: "font";
+	src:url('font.otf');
+}
+body{
+	font-family: "font";
+	padding-left: 10px;
+}
+.space-small{
+	height: 20px;
+}
+.space-medium{
+	height: 40px;
+}
+.space-large{
+	height: 80px;
+}
+.space-vsmall{
+	height: 10px;
+}
+.divider{
+	height: 2px;
+	background: black;
+	margin-top: 2px;
+}
+.small{
+	font-size: 0.6em;
+}
+.large{
+	font-size: 1.5em;
+}
+.none{
+	text-decoration: none;
+	color: black;
+	padding: 0px 3px 0 3px;
+}
+.full-width{
+	width: 60%;
+}
+.myTable{
+
+}
+.date span{
+	font-size: 0.9em;
+}
+.date input{
+	width: 10%;
+}
+span{
+	font-size: 1.2em;
+	padding-bottom: 4px;
+
+}
+.nope{
+	padding: 0px;
+	margin: 0px;
+}
+.col-md-4{
+	padding: 10px 0 0 0;
+}
+.col-2{
+	width: 50%;
+}
+.col-3{
+	width: 33.34%;
+}
+.padding{
+	padding:20px 30px 20px 30px;
+}
+.category span{
+		padding: 0px 10px 0px 10px;
+	}
+@media screen and (max-width: 480px) {
+	.full-width{
+		width: 90%;
+	}
+	.date span input{
+		width: 20%;
+	}
+	.category span{
+		padding: 1px;
+	}
+}
