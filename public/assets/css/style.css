@@ -33,6 +33,12 @@ body{
 .large{
 	font-size: 1.5em;
 }
+.right{
+	float: right;
+}
+.left{
+	float:left;
+}
 .none{
 	text-decoration: none;
 	color: black;
