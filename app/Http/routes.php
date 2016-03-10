@@ -21,4 +21,9 @@ Route::get('/upload', function () {
 
 Route::get('/parsedoc', 'Doc2TextController@doc2text');
 
+Route::get('admin', function()
+    {
+        return View::make('admin');
+    });
+
 

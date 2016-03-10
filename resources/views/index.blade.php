@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +26,10 @@
 			<div class="form">
 				<div class="space-small"></div>
 					<div class="text-center visible-xs"><span>Registration Number:</span><input type="text" /></div>
-					<div class="hidden-xs"><span>Registration Number:</span><input type="text" /></div>
+					<div class="hidden-xs"><span>Registration Number:</span><input type="text" />
+					<input class="right" type="text" /><span class="right">Date:</span>
+					</div>
+					<div class="hidden-xs"></div>
 					
 				</div>
 			</div>
