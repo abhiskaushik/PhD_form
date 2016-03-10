@@ -8,6 +8,7 @@
 	<title>Ph.d Registration Form</title>
 	<link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
 	<link rel="stylesheet" href="{{URL::asset('assets/css/bootstrap.min.css')}}">
+	<!-- <link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> -->
 	
 	<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/bootstrap.min.js')}}"></script>

@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/upload', function () {
+	return view('upload');
+});
+
+Route::get('/parsedoc', 'Doc2TextController@doc2text');
+
 Route::get('admin', function()
     {
         return View::make('admin');
