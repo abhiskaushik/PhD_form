@@ -1,18 +1,7 @@
 .card{
 	height: 250px;
 }
-.center{
-	margin:0 auto;
-}
-.space-small{
-	height: 20px;
-}
-.space-medium{
-	height: 40px;
-}
-.space-large{
-	height:80px;
-}
+
 @media screen and (max-width: 480px) {
 	.card{
 

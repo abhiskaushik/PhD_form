@@ -31,7 +31,7 @@
 	     <div class="span7 offset1">
 	        @if(Session::has('success'))
 	          <div class="alert-box success">
-	          <h2>{!! Session::get('success') !!}</h2>
+	          <h4>{!! Session::get('success') !!}</h4>
 	          </div>
 	        @endif
 	        <div class="col m1 offset-m1">
