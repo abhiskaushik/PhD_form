@@ -42,7 +42,7 @@
 	          	<div class="file-field input-field">
 	          		<div class="btn teal darken-1 btn waves-effect waves-light">
 	          			<span>File</span>
-	          			{!! Form::file('image' , array('class'=>'')) !!}			
+	          			{!! Form::file('doc' , array('class'=>'')) !!}			
 	          		</div>
 	          		<div class="file-path-wrapper">
         				<input class="file-path validate" type="text">
@@ -50,7 +50,7 @@
 	          	</div>
 	          
 
-		  <p class="errors">{!!$errors->first('image')!!}</p>
+		  <p class="errors">{!!$errors->first('doc')!!}</p>
 		@if(Session::has('error'))
 		<p class="errors">{!! Session::get('error') !!}</p>
 		@endif
