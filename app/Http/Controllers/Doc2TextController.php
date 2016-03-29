@@ -14,8 +14,7 @@ class Doc2TextController extends Controller
 {
 	public function doc2text()
 	{
-	    $docObj = Doc2text::construct("hell.doc");
-	    
+	    $docObj = Doc2text::construct("hell.doc");	    
 		return JSONResponse::response($docObj);
 	}
 }
