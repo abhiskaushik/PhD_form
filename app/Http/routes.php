@@ -15,13 +15,10 @@ Route::get('/', function () {
     return view('index');
 });
 
-// Route::get('/upload', function () {
-// 	return view('upload');
-// });
-
-Route::get('/upload', function() {
-  return View::make('upload');
+Route::get('/upload', function () {
+	return view('upload');
 });
+
 Route::post('upload', 'testController@upload');
 
 Route::get('/parsedoc', 'Doc2TextController@doc2text');
@@ -30,11 +27,11 @@ Route::get('admin', 'AdminController@adminView');
 
 Route::get('success', function()
     {
-        return View::make('success');
+        return view('success');
     });
 Route::get('error', function()
     {
-        return View::make('error');
+        return view('error');
     });
 
 
