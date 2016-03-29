@@ -28,33 +28,7 @@
   <div class="container">
   	<div class="space-medium"> </div>
   	<div class="row">
-  		<div class="col l4 s6 ">
-	  		<div class="card">
-			    <div class=" waves-effect waves-block waves-light">
-			      
-			    </div>
-			    <div class="card-content">
-			      <span class="card-title activator grey-text text-darken-4">Candidate's Card<i class="material-icons right">more_vert</i></span>
-			      <p>Some text...</p>
-			    </div>
-			    <div class="card-reveal">
-			      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-			      <p>Basic details of Candidate goes here..</p>
-			      
-			      <div class="space-small"></div>
-			     	 <div class="fixed-action-btn horizontal" style="bottom: 45px;right: 24px;">
-					    <a class="btn-floating btn-large red">
-					    	  <i class="large material-icons">mode_edit</i>
-					    </a>
-					    <ul>
-					      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-					      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-					      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-					    </ul>
-  					</div>
-			    </div>
-	  		</div>
-  		</div>
+  	@for($i = 0; $i < sizeof($data); $i++)
 
   		<div class="col l4 s6 ">
 	  		<div class="card">
@@ -63,7 +37,7 @@
 			    </div>
 			    <div class="card-content">
 			      <span class="card-title activator grey-text text-darken-4">Candidate's Card<i class="material-icons right">more_vert</i></span>
-			      <p>Some text...</p>
+			      <p>Name:</p>
 			    </div>
 			    <div class="card-reveal">
 			      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
@@ -83,34 +57,8 @@
 			    </div>
 	  		</div>
   		</div>
-
-  		<div class="col l4 s6 ">
-	  		<div class="card">
-			    <div class=" waves-effect waves-block waves-light">
-			      
-			    </div>
-			    <div class="card-content">
-			      <span class="card-title activator grey-text text-darken-4">Candidate's Card<i class="material-icons right">more_vert</i></span>
-			      <p>Some text...</p>
-			    </div>
-			    <div class="card-reveal">
-			      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-			      <p>Basic details of Candidate goes here..</p>
-			      
-			      <div class="space-small"></div>
-			     	 <div class="fixed-action-btn horizontal" style="bottom: 45px;right: 24px;">
-					    <a class="btn-floating btn-large red">
-					    	  <i class="large material-icons">mode_edit</i>
-					    </a>
-					    <ul>
-					      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-					      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-					      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-					    </ul>
-  					</div>
-			    </div>
-	  		</div>
-  		</div>
+@endfor
+  		
 
   	</div>
   </div>

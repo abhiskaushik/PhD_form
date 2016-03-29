@@ -31,4 +31,9 @@ Route::get('admin', function()
         return View::make('admin');
     });
 
+Route::get('success', function()
+    {
+        return View::make('success');
+    });
+
 

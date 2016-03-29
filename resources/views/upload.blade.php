@@ -49,11 +49,11 @@
       				</div>
 	          	</div>
 	          
-
+<!-- 
 		  <p class="errors">{!!$errors->first('doc')!!}</p>
 		@if(Session::has('error'))
 		<p class="errors">{!! Session::get('error') !!}</p>
-		@endif
+		@endif -->
 	        </div>
 	        </div>
 	        <div id="success"> </div>

@@ -64,21 +64,21 @@ class Doc2text {
 	}
 	
 	public static function convertToText($filename) {
-		$path = storage_path();
-		$file = $path.'/'.$filename;
-		if(($file) && !file_exists($file)) {
-			return "File Not exists";
-		}
+		// $path = storage_path();
+		// $file = $path.'/'.$filename;
+		// if(($file) && !file_exists($file)) {
+		// 	return "File Not exists";
+		// }
 		
-		$fileArray = pathinfo($file);
+		$fileArray = pathinfo($filename);
 		$file_ext  = $fileArray['extension'];
 		if($file_ext == "doc" || $file_ext == "docx")
 		{
 			if($file_ext == "doc") {
-				return self::readDoc($file);
+				return self::readDoc($filename);
 			} 
 			else {
-				return self::readDocx($file);
+				return self::readDocx($filename);
 			}
 		} else {
 			return "Invalid File Type";
