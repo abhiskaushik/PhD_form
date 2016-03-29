@@ -37,7 +37,8 @@
 			    </div>
 			    <div class="card-content">
 			      <span class="card-title activator grey-text text-darken-4">Candidate's Card<i class="material-icons right">more_vert</i></span>
-			      <p>Name:</p>
+			      <p>Name:{!! $data[$i]->Name !!}</p>
+			      <p>Class:{!! $data[$i]->Class !!}</p>
 			    </div>
 			    <div class="card-reveal">
 			      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>

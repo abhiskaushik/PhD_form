@@ -74,7 +74,7 @@
 	        </div>
 	        </div>
 	        <div id="success"> </div>
-	      {!! Form::submit('Submit', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light')) !!}
+	      {!! Form::submit('Submit', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
 	      {!! Form::close() !!}
 	      </div>
 	      </div>

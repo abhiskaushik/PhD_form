@@ -10,3 +10,8 @@
 .space-large{
 	height:80px;
 }
+.header{
+	background-image: url('../images/header.png');
+	
+	min-height: 20vh;
+}

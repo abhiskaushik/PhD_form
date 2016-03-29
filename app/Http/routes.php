@@ -19,13 +19,13 @@ Route::get('/upload', function () {
 	return view('upload');
 });
 
-Route::post('upload', 'testController@upload');
-
-Route::get('/parsedoc', 'Doc2TextController@doc2text');
+Route::post('upload', 'FileUploadController@upload');
 
 Route::get('admin', 'AdminController@adminView'); 
 
-Route::get('success', function()
+// Route::get('/phd', 'ValidationController@validate'); 
+
+Route::get('/success', function()
     {
         return view('success');
     });
@@ -33,5 +33,20 @@ Route::get('error', function()
     {
         return view('error');
     });
-
+Route::get('login', function()
+    {
+        return view('login');
+    });
+Route::get('/home', function()
+    {
+        return view('home');
+    });
+Route::get('/phd', function()
+    {
+        return view('phd');
+    });
+Route::get('/msc', function()
+    {
+        return view('msc');
+    });
 

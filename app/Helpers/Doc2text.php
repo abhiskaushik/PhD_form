@@ -12,7 +12,10 @@ class Doc2text {
 	public static function readDoc($filename)	{
 		$fileHandle = fopen($filename, "r");
 		$line = @fread($fileHandle, filesize($filename)); 
-		$pattern = '/[:!]/';
+		echo $line;
+
+		
+		$pattern = '/[:,]/';
 		$fields = preg_split($pattern, $line);
 		$fieldIds = array();
 		$fieldValues = array();
