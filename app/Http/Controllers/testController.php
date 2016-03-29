@@ -27,8 +27,7 @@ public function upload() {
     // checking file is valid.
     if (Input::file('doc')->isValid()) {
       $destinationPath = 'uploads'; // upload path
-      $name=Input::get('full_name');            
-      echo $name;
+      
       $extension = Input::file('doc')->getClientOriginalExtension(); // getting doc extension
     
       if($extension == 'doc' || $extension=='docx'){
@@ -43,9 +42,9 @@ public function upload() {
         $details=json_decode(file_get_contents('details.json'));
         array_push($details, json_decode($temp));
         file_put_contents('details.json', json_encode($details));
-        dd(json_decode(file_get_contents('details.json')));
+        // dd(json_decode(file_get_contents('details.json')));
          $data=json_decode(file_get_contents('details.json'));
-        // return View::make('admin')->with('data', $data);
+        return View::make('success')->with('data', $data);
 
       // return Redirect::to('admin');
       }

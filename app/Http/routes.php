@@ -26,14 +26,15 @@ Route::post('upload', 'testController@upload');
 
 Route::get('/parsedoc', 'Doc2TextController@doc2text');
 
-Route::get('admin', function()
-    {
-        return View::make('admin');
-    });
+Route::get('admin', 'AdminController@adminView'); 
 
 Route::get('success', function()
     {
         return View::make('success');
+    });
+Route::get('error', function()
+    {
+        return View::make('error');
     });
 
 
