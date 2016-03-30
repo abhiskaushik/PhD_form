@@ -25,55 +25,31 @@
     </div>
   </nav>
 
+<div class="space-large"></div>
   <div class="container">
-  	<div class="space-medium"> </div>
   	<div class="row">
-  	@for($i = 0; $i < 2; $i++)
+    @for($i = 0; $i < 1; $i++)
+      <div class="col l8 offset-l2 s8 offset-s2 ">
+        <div class="card">
+          <div class=" waves-effect waves-block waves-light">  
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Candidate's Card</span>
+            <div class="row">
+            	<div class="col l6 s6">
+            		<p>Registration Number:{!! $details['reg_number'] !!}</p>
+            	</div>
+            	<div class="col l6 s6">
+            		<p>Date of Submission:{!! $details['date'] !!}</p>
+            	</div>
+            </div>
 
-  		<div class="col l4 s6 ">
-	  		<div class="card">
-			    <div class=" waves-effect waves-block waves-light">
-			      
-			    </div>
-			    <div class="card-content">
-			      <span class="card-title activator grey-text text-darken-4">Candidate's Card<i class="material-icons right">more_vert</i></span>
-			      <p>Name:</p>
-			     <a class="modal-trigger waves-effect waves-light btn" href="#modal1">Modal</a>
-
- 	    </div>
-			    <div class="card-reveal">
-			      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-			      <p>Basic details of Candidate goes here..</p>
-			      
-			      <div class="space-small"></div>
-			     	 <div class="fixed-action-btn horizontal" style="bottom: 45px;right: 24px;">
-					    <a class="btn-floating btn-large red">
-					    	  <i class="large material-icons">mode_edit</i>
-					    </a>
-					    <ul>
-					      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-					      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-					      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-					    </ul>
-  					</div>
-			    </div>
-	  		</div>
-  		</div>
-
-  		 <!-- Modal Structure -->
-  <div id="modal1" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-    </div>
-  </div>
-		
-@endfor
-  		
-
+          </div>
+          
+          </div>
+        </div>
+      </div>
+      @endfor
   	</div>
   </div>
 

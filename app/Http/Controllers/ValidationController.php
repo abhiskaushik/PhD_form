@@ -7,14 +7,13 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Input;
-
+use Validator; 
+use View;
 class ValidationController extends Controller
 {
     public function validated()
     {
     	$reg_number = Input::get('reg_number');
-    	echo $reg_number;
-    	die();
     	$date = Input::get('date');
     	$dd_no = Input::get('dd_no');
     	$date_of_submission = Input::get('date_of_sub');
@@ -40,9 +39,11 @@ class ValidationController extends Controller
     	$ug_name_of_inst = Input::get('ug_name_of_inst');
     	$ug_name_of_uni = Input::get('ug_name_of_uni');
     	$ug_yop = Input::get('ug_yop');
-    	$pg_deg = Input::get('ug_deg');
-    	$pg_branch = Input::get('ug_branch');
-    	$pg_percentage = Input::get('ug_percentage');
+
+    	$pg_deg = Input::get('pg_deg');
+    	$pg_branch = Input::get('pg_branch');
+    	$pg_percentage = Input::get('pg_percentage');
+
     	$pg_gpa = Input::get('pg_gpa');
     	$pg_class = Input::get('pg_class');
     	$pg_name_of_inst = Input::get('pg_name_of_inst');
@@ -56,6 +57,54 @@ class ValidationController extends Controller
     	$employer_details_1 = Input::get('employer_details_1');
     	$employer_details_2 = Input::get('employer_details_2');
     	$employer_details_3 = Input::get('employer_details_3');
-    	return View('success');
+
+    	$rules = array(
+	        'reg_number' => 'required',                        
+	        'date' => 'required',     
+	        'dd_no' => 'required',
+	        'date_of_sub' => 'required',
+	        'amount' => 'required',
+	        'drawn_at' => 'required',
+	        'appl_categ' => 'required',
+	        'department' => 'required',
+	        'area_of_research' => 'required',
+	        'name' => 'required',
+	        'father_name' => 'required',
+	        'dob' => 'required',
+	        'category' => 'required',
+	        'sex_marital_status' => 'required',
+	        'ph' => 'required',
+	        'nationality' => 'required',
+	        'addr_for_commn' => 'required',
+	        'ug_deg' => 'required',
+	        'ug_branch' => 'required',
+	        'ug_gpa' => 'required',
+	        'ug_class' => 'required',
+	        'ug_name_of_inst' => 'required',
+	        'ug_name_of_uni' => 'required',
+	        'ug_yop' => 'required',
+            'pg_deg' => 'required',
+            'pg_branch' => 'required',
+            'pg_gpa' => 'required',
+            'pg_class' => 'required',
+            'pg_name_of_inst' => 'required',
+            'pg_name_of_uni' => 'required',
+            'pg_yop' => 'required',
+            'score' => 'required',
+            'rank' => 'required',
+            'title_of_project' => 'required',
+            'details_of_pub' => 'required',
+            'awards' => 'required',
+            'employer_details_1' => 'required'               
+    	);
+
+    	$validator = Validator::make(Input::all(), $rules);
+
+    	if($validator->fails())
+    	{
+    		$message = 'Please fill in all the details';
+			return View::make('error')->with('message', $message);
+    	}
+    	return View::make('success');
     }
 }

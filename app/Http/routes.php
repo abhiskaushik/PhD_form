@@ -23,16 +23,18 @@ Route::post('upload', 'FileUploadController@upload');
 
 Route::get('admin', 'AdminController@adminView'); 
 
+
 Route::get('/success', 'ValidationController@validated'); 
 
-Route::get('/success', function()
-    {
-        return view('success');
-    });
-Route::get('error', function()
-    {
-        return view('error');
-    });
+
+// Route::get('/success', function()
+//     {
+//         return view('success');
+//     });
+// Route::get('error', function()
+//     {
+//         return view('error');
+//     });
 Route::get('login', function()
     {
         return view('login');

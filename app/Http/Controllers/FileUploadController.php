@@ -46,8 +46,8 @@ class FileUploadController extends Controller
 				    $temp = JSONResponse::response($docObj);
 				    	
 						
-						$temp = str_replace("\ufeff",'',$temp); 
-						$temp = str_replace('\n','', $temp);
+					$temp = str_replace("\ufeff",'',$temp); 
+					$temp = str_replace('\n','', $temp);
 						
 						
 				    $details = json_decode(file_get_contents('details.json'));
