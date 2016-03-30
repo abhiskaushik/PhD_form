@@ -15,15 +15,15 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/upload', function () {
-	return view('upload');
-});
+// Route::get('/upload', function () {
+// 	return view('upload');
+// });
 
-Route::post('upload', 'FileUploadController@upload');
+// Route::post('upload', 'FileUploadController@upload');
 
-Route::get('admin', 'AdminController@adminView'); 
+Route::post('admin', 'AdminController@adminView'); 
 
-Route::get('/success', 'ValidationController@validate'); 
+Route::post('/success', 'ValidationController@validated'); 
 
 // Route::get('/success', function()
 //     {
@@ -33,10 +33,12 @@ Route::get('error', function()
     {
         return view('error');
     });
-Route::get('login', function()
+Route::get('/adminlogin', function()
     {
         return view('login');
     });
+// Route::post('/redirect', 'AdminController@adminView');
+
 Route::get('/home', function()
     {
         return view('home');
