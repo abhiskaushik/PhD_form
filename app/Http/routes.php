@@ -23,12 +23,12 @@ Route::post('upload', 'FileUploadController@upload');
 
 Route::get('admin', 'AdminController@adminView'); 
 
-// Route::get('/phd', 'ValidationController@validate'); 
+Route::get('/success', 'ValidationController@validate'); 
 
-Route::get('/success', function()
-    {
-        return view('success');
-    });
+// Route::get('/success', function()
+//     {
+//         return view('success');
+//     });
 Route::get('error', function()
     {
         return view('error');
