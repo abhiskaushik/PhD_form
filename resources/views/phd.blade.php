@@ -24,7 +24,7 @@
 
 		<div class="row">
 
-		{!! Form::open(array('url'=>'success','method'=>'GET', 'files'=>true )) !!}
+		{!! Form::open(array('url'=>'success','method'=>'POST', 'files'=>true )) !!}
 
 			
 		<div class="row">
@@ -66,8 +66,8 @@
 		    <div class="col s12">
 		      <div class="row">
 		        <div class="input-field col l4 s6">
-		      		<input name="group1" type="radio" id="ac1" /><label for="ac1" >Full Time</label>
-		      		<input name="group1" type="radio" id="ac2" /><label for="ac2" >Part Time</label>
+		      		<input name="appl_categ" type="radio" id="ac1" /><label for="ac1" >Full Time</label>
+		      		<input name="appl_categ" type="radio" id="ac2" /><label for="ac2" >Part Time</label>
 		        </div>
 		        
 		      </div>      
