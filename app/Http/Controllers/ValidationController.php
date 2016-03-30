@@ -152,7 +152,7 @@ class ValidationController extends Controller
                 'employer_details_2' =>Input::get('employer_details_2'),
                 'employer_details_3' => Input::get('employer_details_3')
             );
-            echo $details['date_of_sub'];
+            
             $data = json_decode(file_get_contents('details.json'));
             // dd($data);
             array_push($data, $details);

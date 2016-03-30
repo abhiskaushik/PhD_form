@@ -1,4 +1,4 @@
-*,body{
+*{
 	margin: 0px;
 	padding: 0px;
 }
@@ -9,6 +9,8 @@
 body{
 	font-family: "font";
 	padding-left: 10px;
+	margin: 0px;
+	padding: 0px;
 }
 .space-small{
 	height: 20px;
@@ -22,16 +24,12 @@ body{
 .space-vsmall{
 	height: 10px;
 }
-.divider{
-	height: 2px;
-	background: black;
-	margin-top: 2px;
-}
+
 .small{
 	font-size: 0.6em;
 }
 .large{
-	font-size: 1.5em;
+	font-size: 1.3em;
 }
 .right{
 	float: right;
@@ -39,6 +37,65 @@ body{
 .left{
 	float:left;
 }
+.margin-none{
+	margin:0px;
+}
+.divider{
+	height: 2px;
+	background: black;
+	margin-top: 2px;
+}
+header{
+	height: 30vh;
+	padding: 0px;
+	margin: 0px;
+	background-image: url('../images/header.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #004d40;
+}
+.right{
+	float: right;
+}
+.turn{
+	display: flex;
+	margin-top:0;
+	margin: 0 auto;
+	padding: auto;
+	text-decoration: none;
+}
+.left{
+	float: left;
+}
+.change{
+	background: teak;
+	text-align: center;
+	font-size: 1.2em;
+}
+.anchor{
+	font-size: 1.2em;
+	padding: 10px 0;
+}
+.dynamic{
+	position: relative;
+	margin: 0px;
+
+}
+.container-fluid{
+	width: 100%;
+
+}
+.nav-wrapper,.dark{
+	background-color:rgb(0,38,31) !important;
+	
+}
+.hide-on-med-and-down li{
+	width: 25%;
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+}
+
 .none{
 	text-decoration: none;
 	color: black;
@@ -77,6 +134,7 @@ span{
 .padding{
 	padding:20px 30px 20px 30px;
 }
+
 .category span{
 		padding: 0px 10px 0px 10px;
 	}
@@ -89,5 +147,8 @@ span{
 	}
 	.category span{
 		padding: 1px;
+	}
+	header{
+		background-image: url('../images/header-mobile.png');
 	}
 }

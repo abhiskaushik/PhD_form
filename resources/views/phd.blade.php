@@ -9,15 +9,41 @@
 	<link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
 	<link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
 	<!-- <link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> -->
-	
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 	<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
-	<script src="{{URL::asset('assets/js/bootstrap.min.js')}}"></script>
+	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 	
 </head>
 <body>
+
+	<header>	
+	</header>
+	
+	<nav>
+    <div class="nav-wrapper ">
+      
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="hide-on-med-and-down">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/phd">Phd Admission's</a></li>
+        <li><a href="/msc">M.Sc Admission's</a></li>
+        <li><a href="/adminlogin">Admin</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+       <li><a href="/home">Home</a></li>
+        <li><a href="/phd">Phd Admission's</a></li>
+        <li><a href="/msc">M.Sc Admission's</a></li>
+        <li><a href="/adminlogin">Admin</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="space-medium"></div>
+
 	<div class="container">
 		<div class="row text-center">
-			<h2>APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME (2015 – 2016)</h2>
+			<h3>APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME (2015 – 2016)</h3>
 			<div class="space-medium"></div>
 			<div class="divider"></div><div class="divider"></div>
 		</div>
@@ -34,6 +60,7 @@
 		          <input placeholder="Registration Number" id="reg_number" type="text" class="validate" name="reg_number">
 		        </div>
 		        <div class="input-field col l4 s6 offset-l4">
+		        <p>Date</p>	
 		          <input id="last_name" type="date" class="validate" name="date">
 		        </div>
 		      </div>      
@@ -41,13 +68,14 @@
   		</div>
 
   		<div class="row">
-  			<label>Demand Draft Details:</label>
+  			<p>Demand Draft Details:</p>
 		    <div class="col s12">
 		      <div class="row">
 		        <div class="input-field col l4 s6">
 		          <input placeholder="Enter D.D Number" id="reg_number" type="text" class="validate" name="dd_no">
 		        </div>
 		        <div class="input-field col l4 s6 offset-l4">
+
 		          <input id="last_name" type="date" class="validate" name="date_of_sub">
 		        </div>
 		      </div>      
@@ -62,7 +90,7 @@
 		    </div>
 
 		    <div class="row">
-  			<label>Application Category</label>
+  			<p>Application Category</p>
 		    <div class="col s12">
 		      <div class="row">
 		        <div class="input-field col l4 s6">
@@ -73,9 +101,9 @@
 		      </div>      
 		    </div>
   		</div>
-
+	</div>
   		<div class="row">
-  			<label>Applicant Details</label>
+  			<p>Applicant Details</p>
 		    <div class="col s12">
 
 		      <div class="row">
@@ -165,6 +193,8 @@
     				<label>Class</label>
 		      	</div>
 		      </div> 
+		      </div>
+		      </div>
 
 		      <div class="row">
 		      	<div class="input-field col l12 s12">
@@ -211,7 +241,8 @@
     				<label>Class</label>
 		      	</div>
 		      </div> 
-
+		      </div>
+		      </div>
 		      <div class="row">
 		      	<div class="input-field col l12 s12">
 		      		<input placeholder="College Name" id="reg_number" type="text" class="validate" name="pg_name_of_inst">
@@ -266,17 +297,18 @@
 		      </div>
 
 		      <div class="row">
-		      	<div class="col l10 s10 offset-l1 offset-s1">
+		      	<div class="col l12 s12 ">
 		      		<p>I do hereby declare that the information furnished in this application are true and correct to the best of my knowledge. If, any of the particulars furnished above is found to be incorrect at the time of admission, the admission may be cancelled.</p>
 		      	</div>
 		      </div>
-
+		      <div class="space-medium"></div>
 		      <div class="row">
 
 		      	<div class="col s6 l5">
 		      		<p>Date of Submission</p>
 		      		<input id="reg_number" type="date" class="validate">
 		      	</div>
+		      	<div class="space-medium"></div>
 		      	<div class="col s6 l5 offset-l1">
 		      		<p>Upload Signature</p>
 		      		<div class="file-field input-field">
@@ -295,15 +327,51 @@
 		      	<p><b>Note:</b> The part time external Ph.D. applicant should attach the duly filled in Form-1 & Form-2, and Part-Time on campus applicant should attach the duly filled in Form-3. Otherwise, the application will be summarily rejected.</p>
 		      </div>
 
-  			</div>
-  		</div>
+  		
 
 
   		<div class="center">
 	 {!! Form::submit('Submit', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
 	 </div>
 	      {!! Form::close() !!}
+	      </div>
+	      </div>
 	<!-- form starts here -->
-	
+<div class="space-large"></div>
+<footer class="page-footer teal darken-4">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">National Institute of Technology</p>
+                <p class="grey-text text-lighten-4">Tiruchirappalli - 620015</p>
+                <p class="grey-text text-lighten-4">Tamil Nadu, INDIA</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">QuickLinks</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://www.nitt.edu">Institute Website</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/academics/departments/">Departments</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/admissions/">Admissions</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/contact">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright dark">
+            <div class="container center">
+            
+            <a class="grey-text text-lighten-4" href="#!">Made with * by Delta Force</a>
+            </div>
+          </div>
+        </footer>
+            
+
+	<script type="text/javascript">
+	$(document ).ready(function(){
+		$(".button-collapse").sideNav();
+	})
+	</script>
+
 </body>
 </html>

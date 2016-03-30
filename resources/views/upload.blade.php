@@ -12,20 +12,29 @@
 </head>
 <body>
 	
-	<nav class="teal darken-4">
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Upload</a>
+	<header>	
+	</header>
+	
+	<nav>
+    <div class="nav-wrapper ">
+      
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#" class="waves-effect">Homepage</a></li>
-        <li><a href="#" class="waves-effect">Login</a></li>
+      <ul class="hide-on-med-and-down">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/phd">Phd Admission's</a></li>
+        <li><a href="/msc">M.Sc Admission's</a></li>
+        <li><a href="/adminlogin">Admin</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="#">Homepage</a></li>
-        <li><a href="#">Selected Candidates</a></li>
+       <li><a href="/home">Home</a></li>
+        <li><a href="/phd">Phd Admission's</a></li>
+        <li><a href="/msc">M.Sc Admission's</a></li>
+        <li><a href="/adminlogin">Admin</a></li>
       </ul>
     </div>
   </nav>
+
+  <div class="space-medium"></div>
 
   	<div class="container">
   	<div class="space-medium"></div>
