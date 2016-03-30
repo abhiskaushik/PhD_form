@@ -23,7 +23,7 @@
 		</div>
 
 		<div class="row">
-		{!! Form::open(array('url'=>'success' , 'action'=>'ValidationController@validate','method'=>'GET', 'files'=>true )) !!}
+		{!! Form::open(array('url'=>'success' ,'method'=>'GET', 'files'=>true )) !!}
 			
 		<div class="row">
 		    <div class="col s12">

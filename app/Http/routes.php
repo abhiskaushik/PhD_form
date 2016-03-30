@@ -23,7 +23,7 @@ Route::post('upload', 'FileUploadController@upload');
 
 Route::get('admin', 'AdminController@adminView'); 
 
-// Route::get('/phd', 'ValidationController@validate'); 
+Route::get('/success', 'ValidationController@validated'); 
 
 Route::get('/success', function()
     {

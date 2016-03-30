@@ -10,7 +10,7 @@ use Input;
 
 class ValidationController extends Controller
 {
-    public function validate()
+    public function validated()
     {
     	$reg_number = Input::get('reg_number');
     	echo $reg_number;
@@ -34,7 +34,7 @@ class ValidationController extends Controller
     	$permanent_addr = Input::get('permanent_addr');
     	$ug_deg = Input::get('ug_deg');
     	$ug_branch = Input::get('ug_branch');
-    	$ug_percentage = Input::get('ug_percentage')
+    	$ug_percentage = Input::get('ug_percentage');
     	$ug_gpa = Input::get('ug_gpa');
     	$ug_class = Input::get('ug_class');
     	$ug_name_of_inst = Input::get('ug_name_of_inst');
@@ -42,12 +42,12 @@ class ValidationController extends Controller
     	$ug_yop = Input::get('ug_yop');
     	$pg_deg = Input::get('ug_deg');
     	$pg_branch = Input::get('ug_branch');
-    	$pg_percentage = Input::get('ug_percentage')
-    	$pg_gpa = Input::get('ug_gpa');
-    	$pg_class = Input::get('ug_class');
-    	$pg_name_of_inst = Input::get('ug_name_of_inst');
-    	$pg_name_of_uni = Input::get('ug_name_of_uni');
-    	$pg_yop = Input::get('ug_yop');
+    	$pg_percentage = Input::get('ug_percentage');
+    	$pg_gpa = Input::get('pg_gpa');
+    	$pg_class = Input::get('pg_class');
+    	$pg_name_of_inst = Input::get('pg_name_of_inst');
+    	$pg_name_of_uni = Input::get('pg_name_of_uni');
+    	$pg_yop = Input::get('pg_yop');
     	$score = Input::get('score');
     	$rank = Input::get('rank');
     	$title_of_project = Input::get('title_of_project');
