@@ -35,7 +35,7 @@ class AdminController extends Controller
         	if($username == 'blah' && $password == 'blah')
         	{
         		$data = json_decode(file_get_contents('details.json'));
-        		echo $data[0]->date_of_sub;
+
 	    		return View::make('admin')->with('data', $data);
         	}
         	else
@@ -44,5 +44,12 @@ class AdminController extends Controller
 				return View::make('error')->with('message', $message);
         	}
         }
+	}
+
+	public function deleted(Request $request)
+	{	
+		echo $request->input('reg_number');
+		$data = json_decode(file_get_contents('details.json'));
+		
 	}
 }
