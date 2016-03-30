@@ -6,7 +6,8 @@
 	<link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
 	<link rel="stylesheet" href="{{URL::asset('assets/css/admin.css')}}">
 	<link rel="stylesheet" href="{{URL::asset('assets/css/common.css')}}">
-	<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
+	<script src="{{URL::asset('assets/js/ajaxcall.js')}}"></script>
+  <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 </head>
 <body>
@@ -107,7 +108,7 @@
           <p><b>Employer Details 3:</b> {!! $data[$i]->employer_details_3 !!}</p>
         </div>
       <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        <a href="#!" id="ajax" class="btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
       </div>
       </div>
 
