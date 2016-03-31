@@ -56,6 +56,7 @@
 		<div class="row">
 		    <div class="col s12">
 		      <div class="row">
+		      <div class="col l8">
 		        <div class="input-field col l4 s6 ">
 		          <input placeholder="Registration Number" id="reg_number" type="text" class="validate" name="reg_number">
 		        </div>
@@ -63,7 +64,20 @@
 		        <p>Date</p>	
 		          <input id="last_name" type="date" class="validate" name="date">
 		        </div>
-		      </div>      
+		      </div>  
+		      <div class="col l4">
+		      	<div class="file-field input-field">
+				      <a class="btn">
+				        <span>File</span>
+				        <input type="file">
+				      </a>
+				      <div class="file-path-wrapper">
+				        <input class="file-path validate" type="text">
+				      </div>
+				      <span>Upload Image Here</span>
+    			</div>
+		      </div>
+		      </div>    
 		    </div>
   		</div>
 

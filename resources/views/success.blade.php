@@ -94,6 +94,7 @@
         <p><b>Nationality:</b> {!! $details['nationality'] !!}</p>
         <p><b>Address for Communication:</b> {!! $details['addr_for_commn'] !!}</p>
         <p><b>Permanent Address:</b> {!! $details['permanent_addr'] !!}</p>
+
         <p><b>Undergraduate Degree:</b> {!! $details['ug_deg'] !!}</p>
         <p><b>Undergraduate Branch:</b> {!! $details['ug_branch'] !!}</p>
         <p><b>Undergraduate G.P.A:</b> {!! $details['ug_gpa'] !!}</p>
@@ -116,8 +117,6 @@
         <p><b>Employer Details 1:</b> {!! $details['employer_details_1'] !!}</p>
         <p><b>Employer Details 2:</b> {!! $details['employer_details_2'] !!}</p>
         <p><b>Employer Details 3:</b> {!! $details['employer_details_3'] !!}</p>
-
-
       </div>
       <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
