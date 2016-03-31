@@ -10,7 +10,7 @@ use Input;
 use Validator; 
 use View;
 use App\DD;
-use App\Candidate;
+use App\Candidates;
 use App\Ug;
 use App\Pg;
 use App\Other;
@@ -120,7 +120,7 @@ class ValidationController extends Controller
                 'amount' => Input::get('amount'),
                 'drawn_at' => Input::get('drawn_at'),
                 'appl_categ' => Input::get('appl_categ'),//dont know how to add $name attribute here
-                'image_path' => Input::get('image_path');
+                'image_path' => Input::get('image_path'),
                 'department' => Input::get('department'),
                 'area_of_research' => Input::get('area_of_research'),
                 'name' => Input::get('name'),
@@ -159,7 +159,7 @@ class ValidationController extends Controller
                 'employer_details_3' => Input::get('employer_details_3')
             );
 
-            $candidate = new Candidate();
+            $candidate = new Candidates();
 
             $candidate->applicationCategory = Input::get('appl_categ');
             $candidate->registrationNumber = Input::get('reg_number');
