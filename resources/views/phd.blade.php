@@ -10,15 +10,13 @@
 	<link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
 	<!-- <link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> -->
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 	<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 	
 </head>
 <body>
 
-	<header>	
-	</header>
+	<header></header>
 	
 	<nav>
     <div class="nav-wrapper ">
@@ -56,23 +54,20 @@
 		<div class="row">
 		    <div class="col s12">
 		      <div class="row">
-		      <div class="col l8">
-		        <div class="input-field col l4 s6 ">
+		      <div class="col l8 s12">
+		        
 		          <input placeholder="Registration Number" id="reg_number" type="text" class="validate" name="reg_number">
-		        </div>
-		        <div class="input-field col l4 s6 offset-l4">
-		        <p>Date</p>	
-		          <input id="last_name" type="date" class="validate" name="date">
-		        </div>
+		        
+		        
 		      </div>  
-		      <div class="col l4">
+		      <div class="col l4 s12">
 		      	<div class="file-field input-field">
 				      <a class="btn">
 				        <span>File</span>
 				        <input type="file">
 				      </a>
 				      <div class="file-path-wrapper">
-				        <input class="file-path validate" type="text">
+				        <input class="file-path validate" type="text" name="image_path">
 				      </div>
 				      <span>Upload Image Here</span>
     			</div>
@@ -149,6 +144,21 @@
 		      		<input name="group1" type="radio" id="ac2" /><label for="ac2" >OBC</label>
 		      		<input name="group1" type="radio" id="ac3" /><label for="ac3" >SC</label>
 		      		<input name="group1" type="radio" id="ac4" /><label for="ac4" >ST</label>
+		        </div>
+		      </div> 
+
+		      <div class="row">
+		        <div class="input-field col l5">
+		      		<span>Sex</span><br>
+		         	<input name="group1" type="radio" id="ac1" /><label for="ac1" >Male</label>
+		      		<input name="group1" type="radio" id="ac2" /><label for="ac2" >Female</label>
+		      		
+		        </div>
+
+		         <div class="input-field col l5 offset-l2">
+		         <span>Marital Status</span><br>
+		         	<input name="group1" type="radio" id="ac1" /><label for="ac1" >Married</label>
+		      		<input name="group1" type="radio" id="ac2" /><label for="ac2" >Not Married</label>
 		        </div>
 		      </div> 
 
@@ -320,7 +330,7 @@
 
 		      	<div class="col s6 l5">
 		      		<p>Date of Submission</p>
-		      		<input id="reg_number" type="date" class="validate">
+		      		<input id="reg_number" type="date" name="date" class="validate">
 		      	</div>
 		      	<div class="space-medium"></div>
 		      	<div class="col s6 l5 offset-l1">

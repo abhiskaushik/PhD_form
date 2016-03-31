@@ -116,13 +116,15 @@ class ValidationController extends Controller
                 'amount' => Input::get('amount'),
                 'drawn_at' => Input::get('drawn_at'),
                 'appl_categ' => Input::get('appl_categ'),//dont know how to add $name attribute here
+                'image_path' => Input::get('image_path');
                 'department' => Input::get('department'),
                 'area_of_research' => Input::get('area_of_research'),
                 'name' => Input::get('name'),
                 'father_name' => Input::get('father_name'),
                 'dob' => Input::get('dob'),
                 'category' => Input::get('category'),//dont know how to add $name attribute here
-                'sex_marital_status' => Input::get('sex_marital_status'),//dont know how to add $name attribute here
+                'sex' => Input::get('sex'),//dont know how to add $name attribute here
+                'maritalStatus' => Input::get('marital_status'),
                 'ph' => Input::get('ph'),//dont know how to add $name attribute here
                 'nationality' => Input::get('nationality'),
                 'addr_for_commn' => Input::get('addr_for_commn'),
