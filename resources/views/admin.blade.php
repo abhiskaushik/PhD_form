@@ -121,6 +121,7 @@
         </div>
       <div class="modal-footer">
         <a href="#!" id="ajax" class="btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
+        <a href="#!" class="btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
       </div>
       </div>
 
