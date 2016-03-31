@@ -29,6 +29,7 @@ class CreateCandidatePersonalDetailsTable extends Migration
             $table->string('nationality', 20);
             $table->string('addrforcomm', 150);
             $table->string('permanentaddr', 150);
+            $table->boolean('deleted', 6)->default(false);
             $table->primary('registrationNumber');
             $table->unique('registrationNumber');
             $table->timestamps();
