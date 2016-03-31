@@ -14,7 +14,7 @@ class CreateDdDetailsTable extends Migration
     {
         Schema::create('dddetails', function (Blueprint $table) {
             $table->integer('registrationNumber');
-            $table->bigInteger('dd');            
+            $table->bigInteger('ddno');            
             $table->string('date', 10);
             $table->integer('amount');
             $table->string('drawnAt', 10);
