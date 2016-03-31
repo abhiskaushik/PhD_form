@@ -15,6 +15,8 @@ class CreateCandidatePersonalDetailsTable extends Migration
         Schema::create('candidates', function (Blueprint $table) {
             $table->string('applicationCategory', 20);
             $table->integer('registrationNumber');
+            $table->string('dateOfReg', 15);
+            $table->string('imagePath', 50);
             $table->string('dept', 50);
             $table->string('areaOfResearch', 50);
             $table->string('name', 50);

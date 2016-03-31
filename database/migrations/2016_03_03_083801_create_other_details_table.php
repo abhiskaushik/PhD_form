@@ -15,10 +15,13 @@ class CreateOtherDetailsTable extends Migration
         Schema::create('otherdetails', function (Blueprint $table) {
             $table->integer('registrationNumber');
             $table->string('score', 5);
+            $table->string('rank', 6);
             $table->string('pgproject', 50);
             $table->string('publications', 50);
             $table->string('awards', 100);
-            $table->string('proexp', 150); 
+            $table->string('proexp1', 150);
+            $table->string('proexp2', 150);
+            $table->string('proexp3', 150); 
             $table->string('subdate', 10);           
             $table->timestamps();
         });
