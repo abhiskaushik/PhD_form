@@ -164,7 +164,7 @@ class ValidationController extends Controller
             $candidate->applicationCategory = Input::get('appl_categ');
             $candidate->registrationNumber = Input::get('reg_number');
             $candidate->dateOfReg = Input::get('date');
-            $candidate->imaePath = Input::get('image_path');
+            $candidate->imagePath = Input::get('image_path');
             $candidate->dept = Input::get('department');
             $candidate->areaOfResearch = Input::get('area_of_research');
             $candidate->name = Input::get('name');
@@ -204,7 +204,7 @@ class ValidationController extends Controller
             $pgDetails->universityName= Input::get('pg_name_of_uni');
             $pgDetails->yop = Input::get('pg_yop');
             
-            $ugDetails->save();
+            $pgDetails->save();
 
             $dd = new DD();
 
@@ -222,7 +222,7 @@ class ValidationController extends Controller
             $others->score = Input::get('score');
             $others->rank = Input::get('rank');
             $others->pgproject = Input::get('title_of_project');
-            $others->publcations = Input::get('details_of_pub');
+            $others->publications = Input::get('details_of_pub');
             $others->awards = Input::get('awards');
             $others->proexp1 = Input::get('employer_details_1');
             $others->proexp2 = Input::get('employer_details_2');

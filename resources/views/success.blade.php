@@ -89,7 +89,8 @@
         <p><b>Father's Name:</b> {!! $details['father_name'] !!}</p>
         <p><b>Date of Birth:</b> {!! $details['dob'] !!}</p>
         <p><b>Category:</b> {!! $details['category'] !!}</p>
-        <p><b>Sex & Marital Status:</b> {!! $details['sex_marital_status'] !!}</p>
+        <p><b>Sex:</b> {!! $details['sex'] !!}</p>
+        <p><b>Marital Status: {!! $details['marital_status'] !!}</b></p>
         <p><b>Physically Handicapped:</b> {!! $details['ph'] !!}</p>
         <p><b>Nationality:</b> {!! $details['nationality'] !!}</p>
         <p><b>Address for Communication:</b> {!! $details['addr_for_commn'] !!}</p>

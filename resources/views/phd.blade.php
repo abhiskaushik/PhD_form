@@ -207,12 +207,12 @@
 		      		<input placeholder="C.G.P.A" id="reg_number" type="number" class="validate" name="ug_gpa">
 		      	</div>
 		      	<div class="input-field col l4">
-		      		<select>
+		      		<select name="ug_class">
 				      <option value="" disabled selected>Choose your option</option>
-				      <option value="1">Honours</option>
-				      <option value="2">Distinction</option>
-				      <option value="3">First</option>
-				      <option value="4">Second</option>
+				      <option  value="Honours">Honours</option>
+				      <option  value="Distinction">Distinction</option>
+				      <option  value="First">First</option>
+				      <option  value="Second">Second</option>
 				    </select>
     				<label>Class</label>
 		      	</div>
@@ -255,12 +255,12 @@
 		      		<input placeholder="C.G.P.A" id="reg_number" type="number" class="validate" name="pg_gpa">
 		      	</div>
 		      	<div class="input-field col l4">
-		      		<select>
+		      		<select name = 'pg_class'>
 				      <option value="" disabled selected>Choose your option</option>
-				      <option value="1">Honours</option>
-				      <option value="2">Distinction</option>
-				      <option value="3">First</option>
-				      <option value="4">Second</option>
+				      <option  value="Honours">Honours</option>
+				      <option  value="Distinction">Distinction</option>
+				      <option  value="First">First</option>
+				      <option  value="Second">Second</option>
 				    </select>
     				<label>Class</label>
 		      	</div>
@@ -394,6 +394,7 @@
 	<script type="text/javascript">
 	$(document ).ready(function(){
 		$(".button-collapse").sideNav();
+		$('select').material_select();
 	})
 	</script>
 

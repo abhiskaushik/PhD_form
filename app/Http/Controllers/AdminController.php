@@ -8,6 +8,11 @@ use Validator;
 use Input;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\DD;
+use App\Candidates;
+use App\Ug;
+use App\Pg;
+use App\Other;
 
 class AdminController extends Controller
 {
@@ -23,7 +28,6 @@ class AdminController extends Controller
 
 		if($validator->fails())
     	{
-    		// echo Input::get('user');
     		$message = 'Please fill in all the details';
 			return View::make('error')->with('message', $message);
     	}
@@ -34,8 +38,9 @@ class AdminController extends Controller
 
         	if($username == 'blah' && $password == 'blah')
         	{
-        		$data = json_decode(file_get_contents('details.json'));
-
+        		// $data = json_decode(file_get_contents('details.json'));
+        		$candidates = Candidates::all();
+        		dd($candidates);
 	    		return View::make('admin')->with('data', $data);
         	}
         	else
