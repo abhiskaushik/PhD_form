@@ -39,8 +39,17 @@ class AdminController extends Controller
         	if($username == 'blah' && $password == 'blah')
         	{
         		// $data = json_decode(file_get_contents('details.json'));
-        		$candidates = Candidates::all();
-        		dd($candidates);
+        		$candidates = Candidates::all()->toArray();
+        		$ugDetails = Ug::all()->toArray();
+        		$pgDetails = Pg::all()->toArray();
+        		$ddDetails = DD::all()->toArray();
+        		$otherDetails = Other::all()->toArray();
+        		$data = array('candidates' => $candidates,
+        						'ug' => $ugDetails,
+        						'pg' => $pgDetails,
+        						'dd' => $ddDetails,
+        						'others' => $otherDetails
+        						);
 	    		return View::make('admin')->with('data', $data);
         	}
         	else
@@ -53,8 +62,26 @@ class AdminController extends Controller
 
 	public function deleted(Request $request)
 	{	
-		echo $request->input('reg_number');
-		$data = json_decode(file_get_contents('details.json'));
+		// return "Hello World";
+		$reg_number = $request->input('regNo');
+		// echo $reg_number;
+		// dd($reg_number);
+		Candidates::where('registrationNumber', $reg_number)
+					->update(['deleted' => true]);
+		$candidates = Candidates::all()->toArray();
+        $ugDetails = Ug::all()->toArray();
+        $pgDetails = Pg::all()->toArray();
+        $ddDetails = DD::all()->toArray();
+        $otherDetails = Other::all()->toArray();
+        $data = array('candidates' => $candidates,
+        				'ug' => $ugDetails,
+        				'pg' => $pgDetails,
+        				'dd' => $ddDetails,
+        				'others' => $otherDetails
+        				);
+	    return View::make('admin')->with('data', $data);
+		// echo $request->input('reg_number');
+		// $data = json_decode(file_get_contents('details.json'));
 		
 	}
 }

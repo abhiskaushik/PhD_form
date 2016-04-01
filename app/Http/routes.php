@@ -24,9 +24,9 @@ Route::get('/', function () {
 Route::post('admin', 'AdminController@adminView'); 
 
 
-Route::post('/success', 'ValidationController@validated');
+Route::post('success', 'ValidationController@validated');
 
-Route::post('/delete', 'AdminController@deleted' );
+Route::post('delete', 'AdminController@deleted' );
 
 
 // Route::get('/success', function()
