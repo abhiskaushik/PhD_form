@@ -288,7 +288,7 @@
 		      	</div>
 
 		      	<div class="input-field col l12 s12">
-		      		<input placeholder="University Name" id="reg_number" type="text" class="validate" name="pg_nae_of_uni">
+		      		<input placeholder="University Name" id="reg_number" type="text" class="validate" name="pg_name_of_uni">
 		      	</div>
 
 		      	<div class="input-field col l4 s4">
