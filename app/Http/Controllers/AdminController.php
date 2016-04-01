@@ -111,9 +111,11 @@ class AdminController extends Controller
         				'dd' => $ddDetails,
         				'others' => $otherDetails
         				);
-       
+        $pdf = PDF::loadView('print', $data);
+        return response($pdf->output())
+        				->header('Content-Type', 'application/pdf');
         // dd($data);
-	    return View::make('print')->with('data', $data);
+	    // return View::make('print')->with('data', $data);
 	    // echo "heel";
 	    // return ($reg_number);
 	}
