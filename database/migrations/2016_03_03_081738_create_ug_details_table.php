@@ -13,7 +13,7 @@ class CreateUgDetailsTable extends Migration
     public function up()
     {
         Schema::create('ugdetails', function (Blueprint $table) {
-            $table->integer('registrationNumber');
+            $table->integer('registrationNumber')->unsigned();
             $table->string('degreeName', 50);
             $table->string('branch', 50);
             $table->float('percenatge');

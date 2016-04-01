@@ -23,11 +23,16 @@ Route::get('/', function () {
 
 Route::post('admin', 'AdminController@adminView'); 
 
-
 Route::post('success', 'ValidationController@validated');
 
 Route::post('delete', 'AdminController@deleted' );
 
+Route::get('print/{regNo}', 'AdminController@printer' );
+
+// Route::get('print', function()
+//     {
+//         return view('print');
+//     });
 
 // Route::get('/success', function()
 //     {

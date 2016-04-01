@@ -38,7 +38,7 @@
   <div class="space-medium"></div>
   <div class="container">
   	<div class="row">
-      <h5></h5>
+      <h5>{!! $message !!}</h5>
         <a class="btn btn-waves" href="/home">Click here to go back</a>
   	</div>
   </div>

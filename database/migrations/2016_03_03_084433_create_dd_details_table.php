@@ -13,7 +13,7 @@ class CreateDdDetailsTable extends Migration
     public function up()
     {
         Schema::create('dddetails', function (Blueprint $table) {
-            $table->integer('registrationNumber');
+            $table->integer('registrationNumber')->unsigned();
             $table->bigInteger('ddno');            
             $table->string('date', 10);
             $table->integer('amount');

@@ -79,9 +79,41 @@ class AdminController extends Controller
         				'dd' => $ddDetails,
         				'others' => $otherDetails
         				);
-	    return View::make('admin')->with('data', $data);
+	    // return View::make('admin')->with('data', $data);
+	    return json_encode($reg_number);
 		// echo $request->input('reg_number');
 		// $data = json_decode(file_get_contents('details.json'));
 		
 	}
+	public function printer($reg_number)
+	{
+	
+		$candidates = Candidates::where('registrationNumber', $reg_number)
+								->first();
+		// dd($candidates['registrationNumber']);
+		if(!$candidates)
+		{
+			$message = 'Invalid registration number';
+			return View::make('error')->with('message', $message);
+		}								
+        $ugDetails = Ug::where('registrationNumber', $reg_number)
+								->first();
+        $pgDetails = Pg::where('registrationNumber', $reg_number)
+								->first();
+        $ddDetails = DD::where('registrationNumber', $reg_number)
+								->first();
+        $otherDetails = Other::where('registrationNumber', $reg_number)
+								->first();
+        $data = array('candidates' => $candidates,
+        				'ug' => $ugDetails,
+        				'pg' => $pgDetails,
+        				'dd' => $ddDetails,
+        				'others' => $otherDetails
+        				);
+        // dd($data);
+	    return View::make('print')->with('data', $data);
+	    // echo "heel";
+	    // return ($reg_number);
+	}
+	
 }

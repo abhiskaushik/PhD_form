@@ -14,7 +14,7 @@ class CreateCandidatePersonalDetailsTable extends Migration
     {
         Schema::create('candidates', function (Blueprint $table) {
             $table->string('applicationCategory', 20);
-            $table->integer('registrationNumber');
+            $table->increments('registrationNumber');
             $table->string('dateOfReg', 15);
             $table->string('imagePath', 50);
             $table->string('dept', 50);
@@ -30,8 +30,6 @@ class CreateCandidatePersonalDetailsTable extends Migration
             $table->string('addrforcomm', 150);
             $table->string('permanentaddr', 150);
             $table->boolean('deleted', 6)->default(false);
-            $table->primary('registrationNumber');
-            $table->unique('registrationNumber');
             $table->timestamps();
         });
     }

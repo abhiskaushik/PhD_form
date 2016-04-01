@@ -51,16 +51,44 @@
 		{!! Form::open(array('url'=>'success','method'=>'POST', 'files'=>true )) !!}
 
 			
-		<div class="row">
+		
+  		<div class="row">
+  			<p>Demand Draft Details:</p>
 		    <div class="col s12">
 		      <div class="row">
-		      <div class="col l8 s12">
+		        <div class="input-field col l4 s6">
+		          <input required placeholder="Enter D.D Number" id="reg_number" type="text" class="validate" name="dd_no">
+		        </div>
+		        <div class="input-field col l4 s6 offset-l4">
+
+		          <input required id="last_name" type="date" class="validate" name="date_of_sub">
+		        </div>
+		      </div>      
+		      <div class="row">
+		        <div class="input-field col l4 s6">
+		          <input required placeholder="Enter Amount" id="reg_number" type="text" class="validate" name="amount" >
+		        </div>
+		        <div class="input-field col l4 s6 offset-l4">
+		          <input required placeholder="Drawn At" id="reg_number" type="text" class="validate" name="drawn_at">
+		        </div>
+		      </div>      
+		    </div>
+
+		    <div class="row">
+  			<p>Application Category</p>
+		    <div class="col s8">
+		      <div class="row">
+		        <div class="input-field col l4 s6">
+		      		<select required name="appl_categ">
+				      <option value="" disabled selected>Choose your option</option>
+				      <option value="Part Time">Part Time</option>
+				      <option value="Full Time">Full Time</option>
+				    </select>
+		        </div>
 		        
-		          <input placeholder="Registration Number" id="reg_number" type="text" class="validate" name="reg_number">
-		        
-		        
-		      </div>  
-		      <div class="col l4 s12">
+		      </div>      
+		    </div>
+		    <div class="col l4 s12">
 		      	<div class="file-field input-field">
 				      <a class="btn">
 				        <span>File</span>
@@ -72,46 +100,6 @@
 				      <span>Upload Image Here</span>
     			</div>
 		      </div>
-		      </div>    
-		    </div>
-  		</div>
-
-  		<div class="row">
-  			<p>Demand Draft Details:</p>
-		    <div class="col s12">
-		      <div class="row">
-		        <div class="input-field col l4 s6">
-		          <input placeholder="Enter D.D Number" id="reg_number" type="text" class="validate" name="dd_no">
-		        </div>
-		        <div class="input-field col l4 s6 offset-l4">
-
-		          <input id="last_name" type="date" class="validate" name="date_of_sub">
-		        </div>
-		      </div>      
-		      <div class="row">
-		        <div class="input-field col l4 s6">
-		          <input placeholder="Enter Amount" id="reg_number" type="text" class="validate" name="amount">
-		        </div>
-		        <div class="input-field col l4 s6 offset-l4">
-		          <input placeholder="Drawn At" id="reg_number" type="text" class="validate" name="drawn_at">
-		        </div>
-		      </div>      
-		    </div>
-
-		    <div class="row">
-  			<p>Application Category</p>
-		    <div class="col s12">
-		      <div class="row">
-		        <div class="input-field col l4 s6">
-		      		<select name="appl_categ">
-				      <option value="" disabled selected>Choose your option</option>
-				      <option value="Part Time">Part Time</option>
-				      <option value="Full Time">Full Time</option>
-				    </select>
-		        </div>
-		        
-		      </div>      
-		    </div>
   		</div>
 	</div>
   		<div class="row">
@@ -120,30 +108,30 @@
 
 		      <div class="row">
 		        <div class="input-field col l5 s6">
-		      		<input placeholder="Department" id="reg_number" type="text" class="validate" name="department">
+		      		<input required placeholder="Department" id="reg_number" type="text" class="validate" name="department">
 		        </div>
 		         <div class="input-field col l5 offset-l2 s6">
-		          <input placeholder="Area of Research" id="reg_number" type="text" class="validate" name="area_of_research">
+		          <input required placeholder="Area of Research" id="reg_number" type="text" class="validate" name="area_of_research">
 		        </div>
 		      </div>      
 
 		      <div class="row">
 		        <div class="input-field col l5 s6">
-		      		<input placeholder="Name of Candidate" id="reg_number" type="text" class="validate" name="name">
+		      		<input required placeholder="Name of Candidate" id="reg_number" type="text" class="validate" name="name">
 		        </div>
 		         <div class="input-field col l5 offset-l2 s6">
-		          <input placeholder="Father's/Guardian Name" id="reg_number" type="text" class="validate" name="father_name">
+		          <input required placeholder="Father's/Guardian Name" id="reg_number" type="text" class="validate" name="father_name">
 		        </div>
 		      </div>
 
 		      <div class="row">
 		        <div class="input-field col l5">
-		      		<input id="reg_number" type="date" class="validate" name="dob">
+		      		<input required id="reg_number" type="date" class="validate" name="dob">
 		        </div>
 
 		         <div class="input-field col l5 offset-l2">
 		         <span>Category</span><br>
-		         	<select name="category">
+		         	<select required name="category">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="OBC">OBC</option>
 				      <option value="OC">OC</option>
@@ -156,20 +144,20 @@
 		      <div class="row">
 		        <div class="input-field col l5">
 		      		<span>Sex</span><br>
-		         	<select name="sex">
+		         	<select required name="sex">
 				      <option value="" disabled selected>Choose your option</option>
-				      <option value="yes">Male</option>
-				      <option value="no">Female</option>
+				      <option value="male">Male</option>
+				      <option value="female">Female</option>
 				    </select>
 		      		
 		        </div>
 
 		         <div class="input-field col l5 offset-l2">
 		         <span>Marital Status</span><br>
-		         	<select name="marital_status">
+		         	<select required name="marital_status">
 				      <option value="" disabled selected>Choose your option</option>
-				      <option value="yes">Married</option>
-				      <option value="no">Not Married</option>
+				      <option value="married">Married</option>
+				      <option value="not married">Not Married</option>
 				    </select>
 		        </div>
 		      </div> 
@@ -177,24 +165,24 @@
 		      <div class="row">
 		        <div class="input-field col l5">
 		      		  <span>Physically Challenged(P.H)</span><br>
-		         	<select name="ph">
+		         	<select required name="ph">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="yes">Yes</option>
 				      <option value="no">No</option>
 				    </select>
 		        </div>
 		         <div class="input-field col l5 offset-l2">
-		          <input placeholder="Nationality" id="reg_number" type="text" class="validate" name="nationality">
+		          <input required placeholder="Nationality" id="reg_number" type="text" class="validate" name="nationality">
 		        </div>
 		      </div>           
 
 		       <div class="row">
 		        <div class="input-field col l5">      		  
-					<textarea id="textarea1" class="materialize-textarea" name="addr_for_commn"></textarea>
+					<textarea required id="textarea1" class="materialize-textarea" name="addr_for_commn"></textarea>
 		            <label for="textarea1">Address for Communication</label><br>
 		        </div>
 		         <div class="input-field col l5 offset-l2">
-		         <textarea id="textarea1" class="materialize-textarea" name="permanent_addr"></textarea>
+		         <textarea required id="textarea1" class="materialize-textarea" name="permanent_addr"></textarea>
 		            <label for="textarea1">Permanent Address</label><br>
 		        </div>
 		      </div> 
@@ -207,22 +195,22 @@
   			<p>Undergraduate</p>
   				 <div class="row">
 		        <div class="input-field col l5">
-		      		<input placeholder="Name of Degree" id="reg_number" type="text" class="validate" name="ug_deg">
+		      		<input required placeholder="Name of Degree" id="reg_number" type="text" class="validate" name="ug_deg">
 		        </div>
 		         <div class="input-field col l5 offset-l2">
-		         	<input placeholder="Branch/Specialization" id="reg_number" type="text" class="validate" name="ug_branch">
+		         	<input required placeholder="Branch/Specialization" id="reg_number" type="text" class="validate" name="ug_branch">
 		        </div>
 		      </div>
 
 		      <div class="row">
 		      	<div class="input-field col l4">
-		      		<input placeholder="Percentage" id="reg_number" type="number" class="validate" name="ug_percentage">
+		      		<input required placeholder="Percentage" id="reg_number" type="number" class="validate" name="ug_percentage">
 		      	</div>
 		      	<div class="input-field col l4">
-		      		<input placeholder="C.G.P.A" id="reg_number" type="number" class="validate" name="ug_gpa">
+		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate" name="ug_gpa">
 		      	</div>
 		      	<div class="input-field col l4">
-		      		<select name="ug_class">
+		      		<select required name="ug_class">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option  value="Honours">Honours</option>
 				      <option  value="Distinction">Distinction</option>
@@ -237,16 +225,16 @@
 
 		      <div class="row">
 		      	<div class="input-field col l12 s12">
-		      		<input placeholder="College Name" id="reg_number" type="text" class="validate" name="ug_name_of_inst">
+		      		<input required placeholder="College Name" id="reg_number" type="text" class="validate" name="ug_name_of_inst">
 		      	</div>
 
 		      	<div class="input-field col l12 s12">
-		      		<input placeholder="University Name" id="reg_number" type="text" class="validate" name="ug_name_of_uni">
+		      		<input required placeholder="University Name" id="reg_number" type="text" class="validate" name="ug_name_of_uni">
 		      	</div>
 
 		      	<div class="input-field col l4 s4">
 		      		<span>Year of Passing</span>
-		      		<input id="reg_number" type="number" class="validate" name="ug_yop">
+		      		<input required id="reg_number" type="number" class="validate" name="ug_yop">
 		      	</div>
 		      </div>
 
@@ -255,22 +243,22 @@
   			<p>Postgraduate</p>
   				 <div class="row">
 		        <div class="input-field col l5">
-		      		<input placeholder="Name of Degree" id="reg_number" type="text" class="validate" name="pg_deg">
+		      		<input required placeholder="Name of Degree" id="reg_number" type="text" class="validate" name="pg_deg">
 		        </div>
 		         <div class="input-field col l5 offset-l2">
-		         	<input placeholder="Branch/Specialization" id="reg_number" type="text" class="validate" name="pg_branch">
+		         	<input required placeholder="Branch/Specialization" id="reg_number" type="text" class="validate" name="pg_branch">
 		        </div>
 		      </div>
 
 		      <div class="row">
 		      	<div class="input-field col l4">
-		      		<input placeholder="Percentage" id="reg_number" type="number" class="validate" name="pg_percentage">
+		      		<input required placeholder="Percentage" id="reg_number" type="number" class="validate" name="pg_percentage">
 		      	</div>
 		      	<div class="input-field col l4">
-		      		<input placeholder="C.G.P.A" id="reg_number" type="number" class="validate" name="pg_gpa">
+		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate" name="pg_gpa">
 		      	</div>
 		      	<div class="input-field col l4">
-		      		<select name = 'pg_class'>
+		      		<select required name = 'pg_class'>
 				      <option value="" disabled selected>Choose your option</option>
 				      <option  value="Honours">Honours</option>
 				      <option  value="Distinction">Distinction</option>
@@ -284,37 +272,37 @@
 		      </div>
 		      <div class="row">
 		      	<div class="input-field col l12 s12">
-		      		<input placeholder="College Name" id="reg_number" type="text" class="validate" name="pg_name_of_inst">
+		      		<input required placeholder="College Name" id="reg_number" type="text" class="validate" name="pg_name_of_inst">
 		      	</div>
 
 		      	<div class="input-field col l12 s12">
-		      		<input placeholder="University Name" id="reg_number" type="text" class="validate" name="pg_name_of_uni">
+		      		<input required placeholder="University Name" id="reg_number" type="text" class="validate" name="pg_name_of_uni">
 		      	</div>
 
 		      	<div class="input-field col l4 s4">
 		      		<span>Year of Passing</span>
-		      		<input id="reg_number" type="number" class="validate" name="pg_yop"> 
+		      		<input required id="reg_number" type="number" class="validate" name="pg_yop"> 
 		      	</div>
 		      </div>
 
 		      <div class="row">
 		      	<p>*Write as 'RA'if results awaiting</p>
 		      	<div class="col l6 s6">
-		      		<input placeholder="Enter GATE/NET/SLET/CSIR/CAT/UGC Score" id="reg_number" type="number" class="validate" name="score">
+		      		<input required placeholder="Enter GATE/NET/SLET/CSIR/CAT/UGC Score" id="reg_number" type="number" class="validate" name="score">
 		      	</div>
 		      	<div class="col l6 s6">
-		      		<input placeholder="Enter GATE/NET/SLET/CSIR/CAT/UGC Rank" id="reg_number" type="Number" class="validate" name="rank">
+		      		<input required placeholder="Enter GATE/NET/SLET/CSIR/CAT/UGC Rank" id="reg_number" type="Number" class="validate" name="rank">
 		      	</div>
 		      	<div class="col l12 s12">
-		      		<input placeholder="Title of P.G Project" id="reg_number" type="text" class="validate" name="title_of_project">
+		      		<input required placeholder="Title of P.G Project" id="reg_number" type="text" class="validate" name="title_of_project">
 		      	</div>
 		      	<div class="col l12 s12">
 		      		<p for="textarea1">Details of publication in refereed journals/ Proceedings of Conferences</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub"></textarea>
+		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub"></textarea>
 		      	</div>
 		      	<div class="col l12 s12">
 		      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards"></textarea>
+		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards"></textarea>
 		      	</div>
 		      </div>
 
@@ -323,15 +311,15 @@
 		      	*(In case of more than one employer fill the details,else fill N.A.)</p>
 		      	<div class="col s12 l12">
 		      		<p for="textarea1">Name & Address of Employer 1</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_1"></textarea>
+		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_1"></textarea>
 		      	</div>
 		      	<div class="col s12 l12">
 		      		<p for="textarea1">Name & Address of Employer 2</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2"></textarea>
+		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2"></textarea>
 		      	</div>
 		      	<div class="col s12 l12">
 		      		<p for="textarea1">Name & Address of Employer 3</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3"></textarea>
+		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3"></textarea>
 		      	</div>
 		      </div>
 
@@ -345,7 +333,7 @@
 
 		      	<div class="col s6 l5">
 		      		<p>Date of Submission</p>
-		      		<input id="reg_number" type="date" name="date" class="validate">
+		      		<input required id="reg_number" type="date" name="date" class="validate">
 		      	</div>
 		      	<div class="space-medium"></div>
 		      	<div class="col s6 l5 offset-l1">

@@ -13,7 +13,7 @@ class CreateOtherDetailsTable extends Migration
     public function up()
     {
         Schema::create('otherdetails', function (Blueprint $table) {
-            $table->integer('registrationNumber');
+            $table->integer('registrationNumber')->unsigned();
             $table->string('score', 5);
             $table->string('rank', 6);
             $table->string('pgproject', 50);

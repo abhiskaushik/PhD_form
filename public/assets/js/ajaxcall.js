@@ -19,7 +19,14 @@ $(document).ready(function(){
 	        type: "POST",
 	        url: baseurl + url,
 	        data: data,
-	        dataType: "json"
+	        dataType: "json",
+	        success: function(data){
+	        	console.log("helo");
+	        	$('.'+regNo).hide('slow');
+	        },
+	        error: function(jqXHR,testStatus,errorThrown){
+	        	console.log(errorThrown);
+	        }
 		});
 	}); 
  });

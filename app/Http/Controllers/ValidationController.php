@@ -113,7 +113,6 @@ class ValidationController extends Controller
         else
         {
             $details = array(
-                'reg_number' => Input::get('reg_number'),
                 'date' => Input::get('date'),
                 'dd_no' => Input::get('dd_no'),
                 'date_of_sub' => Input::get('date_of_sub'),
@@ -162,7 +161,6 @@ class ValidationController extends Controller
             $candidate = new Candidates();
 
             $candidate->applicationCategory = Input::get('appl_categ');
-            $candidate->registrationNumber = Input::get('reg_number');
             $candidate->dateOfReg = Input::get('date');
             $candidate->imagePath = Input::get('image_path');
             $candidate->dept = Input::get('department');
@@ -180,9 +178,11 @@ class ValidationController extends Controller
 
             $candidate->save();
 
+            $reg_number = $candidate->registrationNumber;
+
             $ugDetails = new Ug();
 
-            $ugDetails->registrationNumber = Input::get('reg_number');
+            $ugDetails->registrationNumber = $reg_number;
             $ugDetails->degreeName = Input::get('ug_deg');
             $ugDetails->branch = Input::get('ug_branch');
             $ugDetails->percenatge = Input::get('ug_percentage');
@@ -195,7 +195,7 @@ class ValidationController extends Controller
 
             $pgDetails = new Pg();
             
-            $pgDetails->registrationNumber = Input::get('reg_number');
+            $pgDetails->registrationNumber = $reg_number;
             $pgDetails->degreeName = Input::get('pg_deg');
             $pgDetails->branch = Input::get('pg_branch');
             $pgDetails->percenatge = Input::get('pg_percentage');
@@ -208,7 +208,7 @@ class ValidationController extends Controller
 
             $dd = new DD();
 
-            $dd->registrationNumber = Input::get('reg_number');
+            $dd->registrationNumber = $reg_number;
             $dd->ddno = Input::get('dd_no');
             $dd->date = Input::get('date_of_sub');
             $dd->amount = Input::get('amount');
@@ -218,7 +218,7 @@ class ValidationController extends Controller
 
             $others = new Other();
 
-            $others->registrationNumber = Input::get('reg_number');
+            $others->registrationNumber = $reg_number;
             $others->score = Input::get('score');
             $others->rank = Input::get('rank');
             $others->pgproject = Input::get('title_of_project');
@@ -230,10 +230,8 @@ class ValidationController extends Controller
             $others->subdate = Input::get('date');
 
             $others->save();
-            // $data = json_decode(file_get_contents('details.json'));
-            // dd($data);
-            // array_push($data, $details);
-            // file_put_contents('details.json', json_encode($data));
+
+            $details['reg_number'] = $reg_number;
             return View::make('success')->with('details', $details);
         }
     }
