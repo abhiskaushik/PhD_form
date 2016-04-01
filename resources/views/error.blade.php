@@ -39,7 +39,7 @@
   <div class="container">
   	<div class="row">
       <h5></h5>
-        <a class="btn btn-waves" href="../upload">Click here to go back</a>
+        <a class="btn btn-waves" href="/home">Click here to go back</a>
   	</div>
   </div>
   

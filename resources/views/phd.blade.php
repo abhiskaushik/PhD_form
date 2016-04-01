@@ -103,8 +103,11 @@
 		    <div class="col s12">
 		      <div class="row">
 		        <div class="input-field col l4 s6">
-		      		<input name="appl_categ" type="radio" id="ac1" /><label for="ac1" >Full Time</label>
-		      		<input name="appl_categ" type="radio" id="ac2" /><label for="ac2" >Part Time</label>
+		      		<select name="appl_categ">
+				      <option value="" disabled selected>Choose your option</option>
+				      <option value="Part Time">Part Time</option>
+				      <option value="Full Time">Full Time</option>
+				    </select>
 		        </div>
 		        
 		      </div>      
@@ -140,33 +143,45 @@
 
 		         <div class="input-field col l5 offset-l2">
 		         <span>Category</span><br>
-		         	<input name="category" type="radio" id="ac4" /><label for="ac4" >OC</label>
-		      		<input name="category" type="radio" id="ac5" /><label for="ac5" >OBC</label>
-		      		<input name="category" type="radio" id="ac6" /><label for="ac6" >SC</label>
-		      		<input name="category" type="radio" id="ac7" /><label for="ac7" >ST</label>
+		         	<select name="category">
+				      <option value="" disabled selected>Choose your option</option>
+				      <option value="OBC">OBC</option>
+				      <option value="OC">OC</option>
+				      <option value="SC">SC</option>
+				      <option value="ST">ST</option>
+				    </select>
 		        </div>
 		      </div> 
 
 		      <div class="row">
 		        <div class="input-field col l5">
 		      		<span>Sex</span><br>
-		         	<input name="sex" type="radio" id="ac8" /><label for="ac8" >Male</label>
-		      		<input name="sex" type="radio" id="ac9" /><label for="ac9" >Female</label>
+		         	<select name="sex">
+				      <option value="" disabled selected>Choose your option</option>
+				      <option value="yes">Male</option>
+				      <option value="no">Female</option>
+				    </select>
 		      		
 		        </div>
 
 		         <div class="input-field col l5 offset-l2">
 		         <span>Marital Status</span><br>
-		         	<input name="marital_status" type="radio" id="ac10" /><label for="ac10" >Married</label>
-		      		<input name="marital_status" type="radio" id="ac11" /><label for="ac11" >Not Married</label>
+		         	<select name="marital_status">
+				      <option value="" disabled selected>Choose your option</option>
+				      <option value="yes">Married</option>
+				      <option value="no">Not Married</option>
+				    </select>
 		        </div>
 		      </div> 
 
 		      <div class="row">
 		        <div class="input-field col l5">
 		      		  <span>Physically Challenged(P.H)</span><br>
-		         	<input name="ph" type="radio" id="ac12" /><label for="ac12" >Yes</label>
-		      		<input name="ph" type="radio" id="ac13" /><label for="ac13" >No</label>
+		         	<select name="ph">
+				      <option value="" disabled selected>Choose your option</option>
+				      <option value="yes">Yes</option>
+				      <option value="no">No</option>
+				    </select>
 		        </div>
 		         <div class="input-field col l5 offset-l2">
 		          <input placeholder="Nationality" id="reg_number" type="text" class="validate" name="nationality">
