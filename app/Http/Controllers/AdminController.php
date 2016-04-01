@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use View;
 use Validator;
 use Input;
+use PDF;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\DD;
@@ -110,6 +111,7 @@ class AdminController extends Controller
         				'dd' => $ddDetails,
         				'others' => $otherDetails
         				);
+       
         // dd($data);
 	    return View::make('print')->with('data', $data);
 	    // echo "heel";
