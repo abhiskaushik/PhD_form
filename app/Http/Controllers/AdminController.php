@@ -14,51 +14,64 @@ use App\Candidates;
 use App\Ug;
 use App\Pg;
 use App\Other;
+use paginate;
+use Session;
 
 class AdminController extends Controller
 {
-	public function adminView()
-	{
-		// echo 'hey';
-		$rules = array(
-			'username' => 'required',
-			'password' => 'required'
-		);
+    public function login(Request $request)
+    {
+        $rules = array(
+            'username' => 'required',
+            'password' => 'required'
+        );
 
-		$validator = Validator::make(Input::all(), $rules);
+        $validator = Validator::make(Input::all(), $rules);
 
-		if($validator->fails())
-    	{
-    		$message = 'Please fill in all the details';
-			return View::make('error')->with('message', $message);
-    	}
+        if($validator->fails())
+        {
+            $message = 'Please fill in all the details';
+            return View::make('error')->with('message', $message);
+        }
         else
         {
-        	$username = Input::get('username');
-        	$password = Input::get('password');
+            $username = Input::get('username');
+            $password = Input::get('password');
 
-        	if($username == 'blah' && $password == 'blah')
-        	{
-        		// $data = json_decode(file_get_contents('details.json'));
-        		$candidates = Candidates::all()->toArray();
-        		$ugDetails = Ug::all()->toArray();
-        		$pgDetails = Pg::all()->toArray();
-        		$ddDetails = DD::all()->toArray();
-        		$otherDetails = Other::all()->toArray();
-        		$data = array('candidates' => $candidates,
-        						'ug' => $ugDetails,
-        						'pg' => $pgDetails,
-        						'dd' => $ddDetails,
-        						'others' => $otherDetails
-        						);
-	    		return View::make('admin')->with('data', $data);
-        	}
-        	else
-        	{
-        		$message = 'Username or Password is incorrect';
-				return View::make('error')->with('message', $message);
-        	}
+            if($username == 'blah' && $password == 'blah')
+            {
+                Session::put('userName', $username);
+                // $data = json_decode(file_get_contents('details.json'));
+                return redirect('admin/home');
+            }
+            else
+            {
+                $message = 'Username or Password is incorrect';
+                return View::make('error')->with('message', $message);
+            }
         }
+    }
+
+	public function adminView($phdormsc)
+	{
+        $candidates = Candidates::where('deleted', false)
+                                    ->where('phdormsc', $phdormsc)
+                                    ->paginate(2);
+        $candidates_id= $candidates->lists('registrationNumber');
+        // dd($candidates_id);
+                $ugDetails = Ug::whereIn('registrationNumber', $candidates_id)->get();
+                $pgDetails = Pg::whereIn('registrationNumber', $candidates_id)->get();
+                $ddDetails = DD::whereIn('registrationNumber', $candidates_id)->get(); 
+                $otherDetails = Other::whereIn('registrationNumber', $candidates_id)->get();
+                // dd($candidates[0]->registrationNumber);
+                $data = array('candidates' => $candidates,
+                                'ug' => $ugDetails,
+                                'pg' => $pgDetails,
+                                'dd' => $ddDetails,
+                                'others' => $otherDetails
+                                );
+                // json_encode($data);
+                return View::make('admin/'.$phdormsc)->with('data', $data);
 	}
 
 	public function deleted(Request $request)

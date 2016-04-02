@@ -19,47 +19,47 @@ use App\Other;
 
 class ValidationController extends Controller
 {
-    public function validated()
+    public function validated(Request $request)
     {
     	$rules = array(
-	        // 'reg_number' => 'required',                        
-	        // 'date' => 'required',     
-	        // 'dd_no' => 'required',
-	        // 'date_of_sub' => 'required',
-	        // 'amount' => 'required',
-	        // 'drawn_at' => 'required',
-	        // 'appl_categ' => 'required',
-	        // 'department' => 'required',
-	        // 'area_of_research' => 'required',
-	        // 'name' => 'required',
-	        // 'father_name' => 'required',
-	        // 'dob' => 'required',
-	        // 'category' => 'required',
-	        // 'sex' => 'required',
-            // 'marital_status' => 'required',
-	        // 'ph' => 'required',
-	        // 'nationality' => 'required',
-	        // 'addr_for_commn' => 'required',
-	        // 'ug_deg' => 'required',
-	        // 'ug_branch' => 'required',
-	        // 'ug_gpa' => 'required',
-	        // 'ug_class' => 'required',
-	        // 'ug_name_of_inst' => 'required',
-	        // 'ug_name_of_uni' => 'required',
-	        // 'ug_yop' => 'required',
-         //    'pg_deg' => 'required',
-         //    'pg_branch' => 'required',
-         //    'pg_gpa' => 'required',
-         //    'pg_class' => 'required',
-         //    'pg_name_of_inst' => 'required',
-         //    'pg_name_of_uni' => 'required',
-         //    'pg_yop' => 'required',
-         //    'score' => 'required',
-         //    'rank' => 'required',
-         //    'title_of_project' => 'required',
-         //    'details_of_pub' => 'required',
-         //    'awards' => 'required',
-         //    'employer_details_1' => 'required'               
+            'phdormsc' => 'required',                        
+	        'date' => 'required',     
+	        'dd_no' => 'required',
+	        'date_of_sub' => 'required',
+	        'amount' => 'required',
+	        'drawn_at' => 'required',
+	        'appl_categ' => 'required',
+	        'department' => 'required',
+	        'area_of_research' => 'required',
+	        'name' => 'required',
+	        'father_name' => 'required',
+	        'dob' => 'required',
+	        'category' => 'required|in:OBC,OC,SC,ST',
+	        'sex' => 'required|in:male,female',
+            'marital_status' => 'required',
+	        'ph' => 'required|in:yes,no',
+	        'nationality' => 'required',
+	        'addr_for_commn' => 'required|max:200',
+	        'ug_deg' => 'required',
+	        'ug_branch' => 'required',
+	        'ug_gpa' => 'required',
+	        'ug_class' => 'required|in:Honours,Distinction,First,Second',
+	        'ug_name_of_inst' => 'required',
+	        'ug_name_of_uni' => 'required',
+	        'ug_yop' => 'required',
+            'pg_deg' => 'required',
+            'pg_branch' => 'required',
+            'pg_gpa' => 'required',
+            'pg_class' => 'required|in:Honours,Distinction,First,Second',
+            'pg_name_of_inst' => 'required',
+            'pg_name_of_uni' => 'required',
+            'pg_yop' => 'required',
+            'score' => 'required',
+            'rank' => 'required',
+            'title_of_project' => 'required',
+            'details_of_pub' => 'required|max:30',
+            'awards' => 'required',
+            'employer_details_1' => 'required'               
     	);
         
     	$validator = Validator::make(Input::all(), $rules);
@@ -67,7 +67,8 @@ class ValidationController extends Controller
         if($validator->fails())
     	{
     		$message = 'Please fill in all the details';
-			return View::make('error')->with('message', $message);
+            // dd($request->all());
+			return View::make('error')->with('message', $validator->errors());
     	}
         else
         {
@@ -75,9 +76,9 @@ class ValidationController extends Controller
         	$bool = Candidates::where('name' , Input::get('name'))
         						->where('addrforcomm' , Input::get('addr_for_commn'))
         						->first();
-        	dd($bool);
         	if($bool == NULL){
             $details = array(
+                'phdormsc' => Input::get('phdormsc'),
                 'date' => Input::get('date'),
                 'dd_no' => Input::get('dd_no'),
                 'date_of_sub' => Input::get('date_of_sub'),
@@ -124,6 +125,7 @@ class ValidationController extends Controller
 
             $candidate = new Candidates();
 
+            $candidate->phdormsc = Input::get('phdormsc');
             $candidate->applicationCategory = Input::get('appl_categ');
             $candidate->dateOfReg = Input::get('date');
             $candidate->dept = Input::get('department');

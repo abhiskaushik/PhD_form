@@ -30,9 +30,9 @@
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/phd">Phd Admission's</a></li>
-        <li><a href="/msc">M.Sc Admission's</a></li>
-        <li><a href="/adminlogin">Admin</a></li>
+        <li><a href="/form">Phd Admission's</a></li>
+        <li><a href="/form">M.Sc Admission's</a></li>
+        <li><a href="/admin/login">Admin</a></li>
       </ul>
     </div>
   </nav>

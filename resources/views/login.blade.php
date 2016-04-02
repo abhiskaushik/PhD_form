@@ -40,15 +40,15 @@
   <div class="space-medium"></div>
   <div class="container">
   	<div class="row">
-      {!! Form::open(array('url'=>'admin','method'=>'POST')) !!}
+      {!! Form::open(array( 'action' => 'AdminController@login', method'=>'POST')) !!}
         <div class="secure flow-text center">Login</div>
 
         <div class="input-field col s8 offset-s2">
-          <input $placeholder="Enter Username" id="username" name="username" type="text" class="validate">
+          <input placeholder="Enter Username" id="username" name="username" type="text" class="validate">
           <label for="first_name">Username</label>
         </div>
         <div class="input-field col s8 offset-s2">
-          <input $placeholder="Enter Password" $id="password" name="password" type="password" class="validate">
+          <input placeholder="Enter Password" id="password" name="password" type="password" class="validate">
           <label for="first_name">Password</label>
 
         </div>

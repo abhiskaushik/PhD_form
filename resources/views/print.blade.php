@@ -52,11 +52,13 @@
           <p><b>Registration Number:</b> {!! $candidates['registrationNumber'] !!}</p>
           <p><b>Date of Registration:</b> {!! $candidates['dateOfReg'] !!}
           </p>
+          <h5>D.D. Details:</h5>
           <p><b>D.D Number:</b> {!! $dd['ddno'] !!}</p>
           <p><b>Date of Submission of D.D:</b>{!! $dd['date'] !!} </p>
           <p><b>Amount(D.D):</b> {!! $dd['amount'] !!}</p>
           <p><b>Drawn At(D.D):</b> {!! $dd['drawnAt'] !!}</p>
           <p><b>Application Category:</b> {!! $candidates['applicationCategory'] !!}</p>
+          <h5>General Details:</h5>
           <p><b>Department:</b> {!! $candidates['dept'] !!}</p>
           <p><b>Area of Research:</b> {!! $candidates['areaOfResearch'] !!}</p>
           <p><b>Name of Candidate:</b> {!! $candidates['name'] !!}</p>
@@ -69,6 +71,7 @@
           <p><b>Nationality:</b> {!! $candidates['nationality'] !!}</p>
           <p><b>Address for Communication:</b> {!! $candidates['addrforcomm'] !!}</p>
           <p><b>Permanent Address:</b> {!! $candidates['permanentaddr'] !!}</p>
+          <h5>Undergraduate Details:</h5>
           <p><b>Undergraduate Degree:</b> {!! $ug['degreeName'] !!}</p>
           <p><b>Undergraduate Branch:</b> {!! $ug['branch'] !!}</p>
           <p><b>Undergraduate G.P.A:</b> {!! $ug['percenatge'] !!}</p>
@@ -76,7 +79,7 @@
           <p><b>Undergraduate Name of Institution:</b> {!! $ug['institutionName'] !!}</p>
           <p><b>Undergraduate Name of University:</b> {!! $ug['universityName'] !!}</p>
           <p><b>Undergraduate Year of Passing:</b> {!! $ug['yop'] !!}</p>
-
+          <h5>Post-Graduate Details:</h5>
           <p><b>Post-graduate Degree:</b> {!! $pg['degreeName'] !!}</p>
           <p><b>Post-graduate Branch:</b> {!! $pg['branch'] !!}</p>
           <p><b>Post-graduate G.P.A:</b> {!! $pg['percenatge'] !!}</p>
@@ -84,7 +87,7 @@
           <p><b>Post-graduate Name of Institution:</b> {!! $pg['institutionName'] !!}</p>
           <p><b>Post-graduate Name of University:</b> {!! $pg['universityName'] !!}</p>
           <p><b>Post-graduate Year of Passing:</b> {!! $pg['yop'] !!}</p>
-
+          <h5>Other Details:</h5>
           <p><b>Score:</b> {!! $others['score'] !!}</p>
           <p><b>Rank:</b> {!! $others['rank'] !!}</p>
           <p><b>Title of Project:</b> {!! $others['pgt'] !!}</p>

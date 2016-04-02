@@ -67,6 +67,11 @@ header{
 .left{
 	float: left;
 }
+.light{
+	font-size: 18px;
+	color: rgba(20,20,20,0.7);
+}
+
 .change{
 	background: teak;
 	text-align: center;
@@ -149,6 +154,7 @@ span{
 		padding: 1px;
 	}
 	header{
-		background-image: url('../images/header-mobile.png');
+		background-image: url('../images/logo-white.png');
+		background-size: contain;
 	}
 }
