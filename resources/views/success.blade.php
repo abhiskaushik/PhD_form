@@ -12,6 +12,7 @@
 
   <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
   <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
+  <script src="{{URL::asset('assets/js/print.js')}}"></script>
 </head>
 <body>
 	<header> 
@@ -120,7 +121,7 @@
         <p><b>Employer Details 3:</b> {!! $details['employer_details_3'] !!}</p>
       </div>
       <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        <a href="#!"  data-reg={!! $details['reg_number']!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
       </div>
       </div>
 

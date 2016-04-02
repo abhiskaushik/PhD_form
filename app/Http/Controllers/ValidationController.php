@@ -142,7 +142,6 @@ class ValidationController extends Controller
                 'ug_yop' => Input::get('ug_yop'),
                 'pg_deg' => Input::get('pg_deg'),
                 'pg_branch' => Input::get('pg_branch'),
-                'pg_percentage' => Input::get('pg_percentage'),
                 'pg_gpa' => Input::get('pg_gpa'),
                 'pg_class' => Input::get('pg_class'),
                 'pg_name_of_inst' => Input::get('pg_name_of_inst'),
@@ -185,7 +184,8 @@ class ValidationController extends Controller
             $ugDetails->registrationNumber = $reg_number;
             $ugDetails->degreeName = Input::get('ug_deg');
             $ugDetails->branch = Input::get('ug_branch');
-            $ugDetails->percenatge = Input::get('ug_percentage');
+            $ugDetails->percenatge = Input::get('ug_gpa');
+            // replace this field by gpa
             $ugDetails->class = Input::get('ug_class');
             $ugDetails->institutionName = Input::get('ug_name_of_inst');
             $ugDetails->universityName= Input::get('ug_name_of_uni');
@@ -198,7 +198,7 @@ class ValidationController extends Controller
             $pgDetails->registrationNumber = $reg_number;
             $pgDetails->degreeName = Input::get('pg_deg');
             $pgDetails->branch = Input::get('pg_branch');
-            $pgDetails->percenatge = Input::get('pg_percentage');
+            $pgDetails->percenatge = Input::get('pg_gpa');
             $pgDetails->class = Input::get('pg_class');
             $pgDetails->institutionName = Input::get('pg_name_of_inst');
             $pgDetails->universityName= Input::get('pg_name_of_uni');

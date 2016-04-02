@@ -57,16 +57,16 @@
 		    <div class="col s12">
 		      <div class="row">
 		        <div class="input-field col l4 s6">
-		          <input required placeholder="Enter D.D Number" id="reg_number" type="text" class="validate" name="dd_no">
+		          <input required placeholder="Enter D.D Number" id="reg_number" type="number" class="validate" name="dd_no">
 		        </div>
 		        <div class="input-field col l4 s6 offset-l4">
 
-		          <input required id="last_name" type="date" class="validate" name="date_of_sub">
+		          <input required id="last_name" type="date" class="validate" name="date_of_sub" max="2016-06-31" min="2016-06-31">
 		        </div>
 		      </div>      
 		      <div class="row">
 		        <div class="input-field col l4 s6">
-		          <input required placeholder="Enter Amount" id="reg_number" type="text" class="validate" name="amount" >
+		          <input required placeholder="Enter Amount" id="reg_number" type="number" class="validate" name="amount" >
 		        </div>
 		        <div class="input-field col l4 s6 offset-l4">
 		          <input required placeholder="Drawn At" id="reg_number" type="text" class="validate" name="drawn_at">
@@ -117,16 +117,16 @@
 
 		      <div class="row">
 		        <div class="input-field col l5 s6">
-		      		<input required placeholder="Name of Candidate" id="reg_number" type="text" class="validate" name="name">
+		      		<input required placeholder="Name of Candidate" id="reg_number" type="text" class="validate" name="name" maxlength="32">
 		        </div>
 		         <div class="input-field col l5 offset-l2 s6">
-		          <input required placeholder="Father's/Guardian Name" id="reg_number" type="text" class="validate" name="father_name">
+		          <input required placeholder="Father's/Guardian Name" id="reg_number" type="text" class="validate" name="father_name" maxlength="32">
 		        </div>
 		      </div>
 
 		      <div class="row">
 		        <div class="input-field col l5">
-		      		<input required id="reg_number" type="date" class="validate" name="dob">
+		      		<input required id="reg_number" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31">
 		        </div>
 
 		         <div class="input-field col l5 offset-l2">
@@ -172,7 +172,7 @@
 				    </select>
 		        </div>
 		         <div class="input-field col l5 offset-l2">
-		          <input required placeholder="Nationality" id="reg_number" type="text" class="validate" name="nationality">
+		          <input required placeholder="Nationality" id="reg_number" type="text" class="validate" name="nationality" maxlength="32">
 		        </div>
 		      </div>           
 
@@ -203,13 +203,11 @@
 		      </div>
 
 		      <div class="row">
-		      	<div class="input-field col l4">
-		      		<input required placeholder="Percentage" id="reg_number" type="number" class="validate" name="ug_percentage">
+		      	
+		      	<div class="input-field col l6">
+		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate" name="ug_gpa" min="4" max="10">
 		      	</div>
-		      	<div class="input-field col l4">
-		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate" name="ug_gpa">
-		      	</div>
-		      	<div class="input-field col l4">
+		      	<div class="input-field col l6">
 		      		<select required name="ug_class">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option  value="Honours">Honours</option>
@@ -234,7 +232,7 @@
 
 		      	<div class="input-field col l4 s4">
 		      		<span>Year of Passing</span>
-		      		<input required id="reg_number" type="number" class="validate" name="ug_yop">
+		      		<input required id="reg_number" type="number" class="validate" name="ug_yop" min="2000" max="2018">
 		      	</div>
 		      </div>
 
@@ -251,13 +249,11 @@
 		      </div>
 
 		      <div class="row">
-		      	<div class="input-field col l4">
-		      		<input required placeholder="Percentage" id="reg_number" type="number" class="validate" name="pg_percentage">
+		      	
+		      	<div class="input-field col l6">
+		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate" name="pg_gpa" min="4" max="10">
 		      	</div>
-		      	<div class="input-field col l4">
-		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate" name="pg_gpa">
-		      	</div>
-		      	<div class="input-field col l4">
+		      	<div class="input-field col l6">
 		      		<select required name = 'pg_class'>
 				      <option value="" disabled selected>Choose your option</option>
 				      <option  value="Honours">Honours</option>
@@ -281,7 +277,7 @@
 
 		      	<div class="input-field col l4 s4">
 		      		<span>Year of Passing</span>
-		      		<input required id="reg_number" type="number" class="validate" name="pg_yop"> 
+		      		<input required id="reg_number" type="number" class="validate" name="pg_yop" min="2000" max="2018"> 
 		      	</div>
 		      </div>
 
@@ -291,10 +287,10 @@
 		      		<input required placeholder="Enter GATE/NET/SLET/CSIR/CAT/UGC Score" id="reg_number" type="number" class="validate" name="score">
 		      	</div>
 		      	<div class="col l6 s6">
-		      		<input required placeholder="Enter GATE/NET/SLET/CSIR/CAT/UGC Rank" id="reg_number" type="Number" class="validate" name="rank">
+		      		<input required placeholder="Enter GATE/NET/SLET/CSIR/CAT/UGC Rank" id="reg_number" type="Number" class="validate" name="rank" min="1" max="100000">
 		      	</div>
 		      	<div class="col l12 s12">
-		      		<input required placeholder="Title of P.G Project" id="reg_number" type="text" class="validate" name="title_of_project">
+		      		<input required placeholder="Title of P.G Project" id="reg_number" type="text" class="validate" name="title_of_project" minlength="30">
 		      	</div>
 		      	<div class="col l12 s12">
 		      		<p for="textarea1">Details of publication in refereed journals/ Proceedings of Conferences</p><br>
@@ -333,7 +329,7 @@
 
 		      	<div class="col s6 l5">
 		      		<p>Date of Submission</p>
-		      		<input required id="reg_number" type="date" name="date" class="validate">
+		      		<input required id="reg_number" type="date" name="date" class="validate" max="2016-06-31" min="2016-01-31">
 		      	</div>
 		      	<div class="space-medium"></div>
 		      	<div class="col s6 l5 offset-l1">
