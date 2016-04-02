@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+	
+	 <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Error Page</title>
+  <title>Admin Portal</title>
   <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
   <!-- <link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> -->
@@ -12,6 +13,7 @@
 
   <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
   <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
+</head>
 <body>
 	<header> 
   </header>
@@ -22,15 +24,15 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd Admission's</a></li>
-        <li><a href="/form">M.Sc Admission's</a></li>
-        <li><a href="/admin/login">Admin</a></li>
+        <li><a href="/phd">Phd Admission's</a></li>
+        <li><a href="/msc">M.Sc Admission's</a></li>
+        <li><a href="/adminlogin">Admin</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd Admission's</a></li>
-        <li><a href="/form">M.Sc Admission's</a></li>
-        <li><a href="/admin/login">Admin</a></li>
+        <li><a href="/phd">Phd Admission's</a></li>
+        <li><a href="/msc">M.Sc Admission's</a></li>
+        <li><a href="/adminlogin">Admin</a></li>
       </ul>
     </div>
   </nav>
@@ -38,8 +40,24 @@
   <div class="space-medium"></div>
   <div class="container">
   	<div class="row">
-      <h5>{!! $message !!}</h5>
-        <a class="btn btn-waves" href="/home">Click here to go back</a>
+      {!! Form::open(array( 'action' => 'AdminController@login', 'method'=>'POST')) !!}
+        <div class="secure flow-text center">Login</div>
+
+        <div class="input-field col s8 offset-s2">
+          <input placeholder="Enter Username" id="username" name="username" type="text" class="validate">
+          <label for="first_name">Username</label>
+        </div>
+        <div class="input-field col s8 offset-s2">
+          <input placeholder="Enter Password" id="password" name="password" type="password" class="validate">
+          <label for="first_name">Password</label>
+
+        </div>
+        <div class="center col s8 offset-s2">
+          {!! Form::submit('Submit', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
+        </div>
+
+        
+        {!! Form::close() !!}
   	</div>
   </div>
   

@@ -21,7 +21,15 @@ Route::get('/', function () {
 
 // Route::post('upload', 'FileUploadController@upload');
 
-Route::post('admin', 'AdminController@adminView'); 
+Route::group(['middleware' => 'adminauth'], function () {
+    Route::get('admin/home', function()
+        {
+            return view('admin.home');
+        });
+    Route::get('admin/{phdormsc}', 'AdminController@adminView');
+});
+
+Route::post('admin/auth', 'AdminController@login');
 
 Route::post('success', 'ValidationController@validated');
 
@@ -43,9 +51,9 @@ Route::get('error', function()
     {
         return view('error');
     });
-Route::get('/adminlogin', function()
+Route::get('admin/login', function()
     {
-        return view('login');
+        return view('admin.login');
     });
 // Route::post('/redirect', 'AdminController@adminView');
 
@@ -53,9 +61,9 @@ Route::get('/home', function()
     {
         return view('home');
     });
-Route::get('/phd', function()
+Route::get('/form', function()
     {
-        return view('phd');
+        return view('form');
     });
 Route::get('/msc', function()
     {

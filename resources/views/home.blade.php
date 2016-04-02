@@ -24,15 +24,15 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/phd">Phd Admission's</a></li>
-        <li><a href="/msc">M.Sc Admission's</a></li>
-        <li><a href="/adminlogin">Admin</a></li>
+        <li><a href="/form">Phd Admission's</a></li>
+        <li><a href="/form">M.Sc Admission's</a></li>
+        <li><a href="/admin/login">Admin</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/phd">Phd Admission's</a></li>
-        <li><a href="/msc">M.Sc Admission's</a></li>
-        <li><a href="/adminlogin">Admin</a></li>
+        <li><a href="/form">Phd Admission's</a></li>
+        <li><a href="/form">M.Sc Admission's</a></li>
+        <li><a href="/admin/login">Admin</a></li>
       </ul>
     </div>
   </nav>
@@ -45,8 +45,8 @@
     <div class="space-large"></div>
   	<div class="row">
       <div col l12 s6>
-        <a class="waves-effect waves-light btn" href="/phd">PhD Admissions</a>
-        <a class="waves-effect waves-light btn" href="/msc">M.Sc Admissions</a>
+        <a class="waves-effect waves-light btn" href="/form">PhD Admissions</a>
+        <a class="waves-effect waves-light btn" href="/form">M.Sc Admissions</a>
       </div>
       
   	</div>

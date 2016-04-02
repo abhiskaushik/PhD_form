@@ -5,9 +5,11 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>M.Sc. Registration Form</title>
+    <meta id="token" name="csrf-token" content="{{ csrf_token() }}">
+	<title>Ph.d Registration Form</title>
 	<link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
 	<link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
+	<!-- <link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> -->
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
@@ -40,7 +42,7 @@
 
 	<div class="container">
 		<div class="row text-center">
-			<h3>APPLICATION FOR ADMISSION TO M.Sc. PROGRAMME (2015 – 2016)</h3>
+			<h3>APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME (2015 – 2016)</h3>
 			<div class="space-medium"></div>
 			<div class="divider"></div><div class="divider"></div>
 		</div>
@@ -48,8 +50,16 @@
 		<div class="row">
 
 		{!! Form::open(array('url'=>'success','method'=>'POST', 'files'=>true )) !!}
-
-			
+		<!-- <input type="hidden" name="_token" id="_token" value={!! csrf_field() !!} /> -->
+		<div class="row">
+		<div class="input-field col l12 s12">
+		      		<select required name="phdormsc">
+				      <option value="" disabled selected>Choose your option</option>
+				      <option value="phd">Ph D</option>
+				      <option value="msc">MSc</option>
+				    </select>
+		        </div>
+		    </div>
 		
   		<div class="row">
   			<p>Demand Draft Details:</p>
@@ -155,7 +165,7 @@
 		         	<select required name="marital_status">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="married">Married</option>
-				      <option value="not married">Not Married</option>
+				      <option value="notmarried">Not Married</option>
 				    </select>
 		        </div>
 		      </div> 
@@ -309,11 +319,11 @@
 		      	</div>
 		      	<div class="col s12 l12">
 		      		<p for="textarea1">Name & Address of Employer 2</p><br>
-		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2"></textarea>
 		      	</div>
 		      	<div class="col s12 l12">
 		      		<p for="textarea1">Name & Address of Employer 3</p><br>
-		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3"></textarea>
 		      	</div>
 		      </div>
 

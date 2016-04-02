@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+	<t<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Error Page</title>
+  <title>Success Page</title>
   <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
   <!-- <link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> -->
@@ -12,6 +12,8 @@
 
   <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
   <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
+  <script src="{{URL::asset('assets/js/print.js')}}"></script>
+</head>
 <body>
 	<header> 
   </header>
@@ -22,28 +24,32 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd Admission's</a></li>
-        <li><a href="/form">M.Sc Admission's</a></li>
-        <li><a href="/admin/login">Admin</a></li>
+        <li><a href="/phd">Phd Admission's</a></li>
+        <li><a href="/msc">M.Sc Admission's</a></li>
+        <li><a href="/adminlogin">Admin</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd Admission's</a></li>
-        <li><a href="/form">M.Sc Admission's</a></li>
-        <li><a href="/admin/login">Admin</a></li>
+        <li><a href="/phd">Phd Admission's</a></li>
+        <li><a href="/msc">M.Sc Admission's</a></li>
+        <li><a href="/adminlogin">Admin</a></li>
       </ul>
     </div>
   </nav>
 
   <div class="space-medium"></div>
-  <div class="container">
-  	<div class="row">
-      <h5>{!! $message !!}</h5>
-        <a class="btn btn-waves" href="/home">Click here to go back</a>
-  	</div>
-  </div>
-  
+
   <div class="space-large"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s6">
+          <a href='msc' class="print btn modal-action modal-close waves-effect waves-green btn-flat">M.Sc.</a>
+      </div>
+      <div class="col l6 s6">
+          <a href="phd" class="print btn modal-action modal-close waves-effect waves-green btn-flat">Ph.D.</a>
+      </div>
+    </div>
+  </div>
 <footer class="page-footer teal darken-4">
           <div class="container">
             <div class="row">
@@ -74,10 +80,12 @@
             
 
   <script type="text/javascript">
-  $(document ).ready(function(){
-    $(".button-collapse").sideNav();
-  })
+      $(document).ready(function(){
+        $(".button-collapse").sideNav();
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });
   </script>
-  
+
 </body>
 </html>
