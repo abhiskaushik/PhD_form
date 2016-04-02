@@ -12,6 +12,7 @@
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
+	<script src="{{URL::asset('assets/js/jquery-ui.js')}}"></script>
 	
 </head>
 <body>
@@ -60,8 +61,7 @@
 		          <input required placeholder="Enter D.D Number" id="reg_number" type="number" class="validate" name="dd_no">
 		        </div>
 		        <div class="input-field col l4 s6 offset-l4">
-
-		          <input required id="last_name" type="date" class="validate" name="date_of_sub" max="2016-06-31" min="2016-06-31">
+		          <input required type="text" id="datepicker" class="validate" name="date_of_sub" max="2016-06-31" min="2016-06-31">
 		        </div>
 		      </div>      
 		      <div class="row">
@@ -125,6 +125,7 @@
 
 		      <div class="row">
 		        <div class="input-field col l5">
+		        	<span>Date of Birth:</span>
 		      		<input required id="reg_number" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31">
 		        </div>
 
@@ -177,11 +178,11 @@
 
 		       <div class="row">
 		        <div class="input-field col l5">      		  
-					<textarea required id="textarea1" class="materialize-textarea" name="addr_for_commn"></textarea>
+					<textarea required id="textarea1" class="materialize-textarea" name="addr_for_commn" maxlength="200"></textarea>
 		            <label for="textarea1">Address for Communication</label><br>
 		        </div>
 		         <div class="input-field col l5 offset-l2">
-		         <textarea required id="textarea1" class="materialize-textarea" name="permanent_addr"></textarea>
+		         <textarea required id="textarea1" class="materialize-textarea" name="permanent_addr" maxlength="200"></textarea>
 		            <label for="textarea1">Permanent Address</label><br>
 		        </div>
 		      </div> 
@@ -204,7 +205,7 @@
 		      <div class="row">
 		      	
 		      	<div class="input-field col l6">
-		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate" name="ug_gpa" min="4" max="10">
+		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate" name="ug_gpa" min="4" max="10" step="0.01">
 		      	</div>
 		      	<div class="input-field col l6">
 		      		<select required name="ug_class">
@@ -250,7 +251,7 @@
 		      <div class="row">
 		      	
 		      	<div class="input-field col l6">
-		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate" name="pg_gpa" min="4" max="10">
+		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate" name="pg_gpa" min="4" max="10" step="0.01">
 		      	</div>
 		      	<div class="input-field col l6">
 		      		<select required name = 'pg_class'>
@@ -289,11 +290,11 @@
 		      		<input required placeholder="Enter GATE/NET/SLET/CSIR/CAT/UGC Rank" id="reg_number" type="Number" class="validate" name="rank" min="1" max="100000">
 		      	</div>
 		      	<div class="col l12 s12">
-		      		<input required placeholder="Title of P.G Project" id="reg_number" type="text" class="validate" name="title_of_project" minlength="30">
+		      		<input required placeholder="Title of P.G Project" id="reg_number" type="text" class="validate" name="title_of_project" >
 		      	</div>
 		      	<div class="col l12 s12">
 		      		<p for="textarea1">Details of publication in refereed journals/ Proceedings of Conferences</p><br>
-		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub"></textarea>
+		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub" minlength="30"></textarea>
 		      	</div>
 		      	<div class="col l12 s12">
 		      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
@@ -310,11 +311,11 @@
 		      	</div>
 		      	<div class="col s12 l12">
 		      		<p for="textarea1">Name & Address of Employer 2</p><br>
-		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2"></textarea>
 		      	</div>
 		      	<div class="col s12 l12">
 		      		<p for="textarea1">Name & Address of Employer 3</p><br>
-		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3"></textarea>
 		      	</div>
 		      </div>
 

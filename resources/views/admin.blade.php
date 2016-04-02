@@ -96,7 +96,7 @@
           <p><b>Category:</b> {!! $data['candidates'][$i]['category'] !!}</p>
           <p><b>Sex :</b> {!! $data['candidates'][$i]['sex'] !!}</p>
           <p><b>Marital Status: </b>{!! $data['candidates'][$i]['maritalStatus'] !!}</p>
-          <p><b>Physically Handicapped:</b> {!! $data['candidates'][$i]['PH'] !!}</p><!-- wtf -->
+          <p><b>Physically Handicapped:</b> {!! $data['candidates'][$i]['PH'] !!}</p>
           <p><b>Nationality:</b> {!! $data['candidates'][$i]['nationality'] !!}</p>
           <p><b>Address for Communication:</b> {!! $data['candidates'][$i]['addrforcomm'] !!}</p>
           <p><b>Permanent Address:</b> {!! $data['candidates'][$i]['permanentaddr'] !!}</p>
