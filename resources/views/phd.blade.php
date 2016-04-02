@@ -90,15 +90,14 @@
 		    </div>
 		    <div class="col l4 s12">
 		      	<div class="file-field input-field">
-				      <a class="btn">
-				        <span>File</span>
-				        <input type="file">
-				      </a>
-				      <div class="file-path-wrapper">
-				        <input class="file-path validate" type="text" name="image_path">
-				      </div>
-				      <span>Upload Image Here</span>
-    			</div>
+	          		<div class="btn teal darken-1 btn waves-effect waves-light">
+	          			<span>File</span>
+	          			{!! Form::file('image_path' , array('class'=>'')) !!}			
+	          		</div>
+	          		<div class="file-path-wrapper">
+        				<input class="file-path validate" type="text">
+      				</div>
+	          	</div>
 		      </div>
   		</div>
 	</div>

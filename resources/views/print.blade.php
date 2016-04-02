@@ -7,7 +7,6 @@
   <title>Success Page</title>
   <link rel="stylesheet" href="{{base_path('public/assets/css/style.css')}}">
   <link rel="stylesheet" href="{{base_path('public/assets/css/materialize.min.css')}}">
-  <!-- <link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg -->
   <!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 
   <script src="{{base_path('public/assets/js/jquery-2.1.1.min.js')}}"></script>
