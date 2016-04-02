@@ -23,6 +23,7 @@ $(document).ready(function(){
 	        success: function(data){
 	        	console.log("helo");
 	        	$('.'+regNo).hide('slow');
+	        	location.reload();
 	        },
 	        error: function(jqXHR,testStatus,errorThrown){
 	        	console.log(errorThrown);

@@ -71,6 +71,12 @@ class ValidationController extends Controller
     	}
         else
         {
+
+        	$bool = Candidates::where('name' , Input::get('name'))
+        						->where('addrforcomm' , Input::get('addr_for_commn'))
+        						->first();
+        	dd($bool);
+        	if($bool == NULL){
             $details = array(
                 'date' => Input::get('date'),
                 'dd_no' => Input::get('dd_no'),
@@ -194,9 +200,14 @@ class ValidationController extends Controller
             $extension = Input::file('image_path')->getClientOriginalExtension();
             if($extension == 'jpg' || $extension=='png' || $extension == 'jpeg')
             {
-                Storage::disk('local')->put('.'.$regNo.$extension,  File::get($file));
+                Storage::disk('local')->put($reg_number.'.'.$extension,  File::get($file));
             }
             return View::make('success')->with('details', $details);
+            }
+            else{
+            	$message = "User already exists ";
+            	return View::make('error')->with('message' , $message);
+            }
         }
     }
 }
