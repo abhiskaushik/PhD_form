@@ -36,6 +36,11 @@ Route::get('error', function()
         return view('error');
     });
 
+Route::get('contact', function()
+    {
+        return view('contact');
+    });
+
 Route::get('login', function()
     {
         return view('admin.login');

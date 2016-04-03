@@ -27,15 +27,15 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd Admission's</a></li>
-        <li><a href="/form">M.Sc Admission's</a></li>
+        <li><a href="/form">Phd/M.S. Admission's</a></li>
         <li><a href="/login">Admin</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd Admission's</a></li>
-        <li><a href="/form">M.Sc Admission's</a></li>
+        <li><a href="/form">Phd/M.S. Admission's</a></li>
         <li><a href="/login">Admin</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -59,7 +59,7 @@
 		      		<select required name="phdormsc">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="phd">Ph D</option>
-				      <option value="msc">MSc</option>
+				      <option value="msc">M.S.</option>
 				    </select>
 		        </div>
 		    </div>

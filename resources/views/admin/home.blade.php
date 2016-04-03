@@ -17,21 +17,21 @@
 	<header> 
   </header>
   
-  <nav>
+ <nav>
     <div class="nav-wrapper ">
       
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/phd">Phd Admission's</a></li>
-        <li><a href="/msc">M.Sc Admission's</a></li>
+        <li><a href="/form">Phd/M.S. Admission's</a></li>
         <li><a href="/login">Admin</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/phd">Phd Admission's</a></li>
-        <li><a href="/msc">M.Sc Admission's</a></li>
+        <li><a href="/form">Phd/M.S. Admission's</a></li>
         <li><a href="/login">Admin</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -42,7 +42,7 @@
   <div class="container">
     <div class="row">
       <div class="col l6 s6">
-          <a href='msc' class="print btn modal-action modal-close waves-effect waves-green btn-flat">M.Sc.</a>
+          <a href='msc' class="print btn modal-action modal-close waves-effect waves-green btn-flat">M.S.</a>
       </div>
       <div class="col l6 s6">
           <a href="phd" class="print btn modal-action modal-close waves-effect waves-green btn-flat">Ph.D.</a>
