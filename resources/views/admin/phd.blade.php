@@ -29,13 +29,13 @@
         <li><a href="/home">Home</a></li>
         <li><a href="/phd">Phd Admission's</a></li>
         <li><a href="/msc">M.Sc Admission's</a></li>
-        <li><a href="/adminlogin">Admin</a></li>
+        <li><a href="/login">Admin</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
         <li><a href="/phd">Phd Admission's</a></li>
         <li><a href="/msc">M.Sc Admission's</a></li>
-        <li><a href="/adminlogin">Admin</a></li>
+        <li><a href="/login">Admin</a></li>
       </ul>
       
     </div>
@@ -167,7 +167,7 @@
           <div class="footer-copyright dark">
             <div class="container center">
             
-            <a class="grey-text text-lighten-4" href="#!">Made with * by Delta Force</a>
+            <a class="grey-text text-lighten-4" href="#!">Made with &hearts; by Delta Force</a>
             </div>
           </div>
         </footer>

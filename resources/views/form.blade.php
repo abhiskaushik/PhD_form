@@ -27,15 +27,15 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/phd">Phd Admission's</a></li>
-        <li><a href="/msc">M.Sc Admission's</a></li>
-        <li><a href="/adminlogin">Admin</a></li>
+        <li><a href="/form">Phd Admission's</a></li>
+        <li><a href="/form">M.Sc Admission's</a></li>
+        <li><a href="/login">Admin</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/phd">Phd Admission's</a></li>
-        <li><a href="/msc">M.Sc Admission's</a></li>
-        <li><a href="/adminlogin">Admin</a></li>
+        <li><a href="/form">Phd Admission's</a></li>
+        <li><a href="/form">M.Sc Admission's</a></li>
+        <li><a href="/login">Admin</a></li>
       </ul>
     </div>
   </nav>

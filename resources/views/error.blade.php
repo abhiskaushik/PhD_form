@@ -67,7 +67,7 @@
           <div class="footer-copyright dark">
             <div class="container center">
             
-            <a class="grey-text text-lighten-4" href="#!">Made with * by Delta Force</a>
+            <a class="grey-text text-lighten-4" href="#!">Made with &hearts; by Delta Force</a>
             </div>
           </div>
         </footer>

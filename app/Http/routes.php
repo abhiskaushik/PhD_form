@@ -15,12 +15,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-// Route::get('/upload', function () {
-// 	return view('upload');
-// });
-
-// Route::post('upload', 'FileUploadController@upload');
-
 Route::group(['middleware' => 'adminauth'], function () {
     Route::get('admin/home', function()
         {
@@ -37,36 +31,22 @@ Route::post('delete', 'AdminController@deleted' );
 
 Route::get('print/{regNo}', 'AdminController@printer' );
 
-// Route::get('print', function()
-//     {
-//         return view('print');
-//     });
-
-// Route::get('/success', function()
-//     {
-//         return view('success');
-//     });
-
 Route::get('error', function()
     {
         return view('error');
     });
-Route::get('admin/login', function()
+
+Route::get('login', function()
     {
         return view('admin.login');
     });
-// Route::post('/redirect', 'AdminController@adminView');
 
-Route::get('/home', function()
+Route::get('home', function()
     {
         return view('home');
     });
-Route::get('/form', function()
+Route::get('form', function()
     {
         return view('form');
-    });
-Route::get('/msc', function()
-    {
-        return view('msc');
     });
 
