@@ -42,10 +42,12 @@
   <div class="container">
     <div class="row">
       <div class="col l6 s6">
-          <a href='msc' class="print btn modal-action modal-close waves-effect waves-green btn-flat">M.S.</a>
+          <a class="waves-effect waves-light btn" href="msc">M.S.</a>
+         
       </div>
       <div class="col l6 s6">
-          <a href="phd" class="print btn modal-action modal-close waves-effect waves-green btn-flat">Ph.D.</a>
+          <a class="waves-effect waves-light btn" href="phd">PhD</a>
+          
       </div>
     </div>
   </div>

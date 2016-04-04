@@ -141,7 +141,10 @@
     <li class="waves-effect"><a href={!! $data["candidates"]->nextPageUrl()!!}><i class="material-icons">chevron_right</i></a></li>
   </ul>
    </div>
-  
+    <div class="space-medium"></div>
+  <div class="center">
+    <a class="waves-effect waves-light btn" href="phd">View PhD applicants</a>
+    </div>
 <div class="space-large"></div>
 <footer class="page-footer teal darken-4">
           <div class="container">
