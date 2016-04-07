@@ -11,11 +11,6 @@
 |
 */
 
-use Illuminate\Support\Facades\Mail;
-
-Route::get('/', function () {
-    return view('index');
-});
 
 Route::group(['middleware' => 'adminauth'], function () {
     Route::get('admin/home', function()
@@ -30,6 +25,7 @@ Route::post('admin/auth', 'AdminController@login');
 Route::post('success', 'ValidationController@validated');
 
 Route::post('delete', 'AdminController@deleted' );
+Route::post('accept', 'AdminController@accepted');
 
 Route::get('print/{regNo}', 'AdminController@printer' );
 

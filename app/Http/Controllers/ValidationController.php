@@ -40,6 +40,7 @@ class ValidationController extends Controller
 	        'ph' => 'required|in:yes,no',
 	        'nationality' => 'required',
 	        'addr_for_commn' => 'required|max:200',
+            'email' => 'required|email|unique:Candidates'
 	        'ug_deg' => 'required',
 	        'ug_branch' => 'required',
 	        'ug_gpa' => 'required',
@@ -67,7 +68,6 @@ class ValidationController extends Controller
         if($validator->fails())
     	{
     		$message = 'Please fill in all the details';
-            // dd($request->all());
 			return View::make('error')->with('message', $validator->errors());
     	}
         else
