@@ -129,7 +129,7 @@
 		    <div class="col s12">
 
 		      <div class="row dept">
-		        <div class="input-field col l12 s12 ">
+		        <div class="input-field col l6 s6 ">
 		      		<select class="validate" name="department" required>
 		      			 <option value="" disabled selected>Choose your Department</option>
 		      			<option value="ARC">Architecture</option>
@@ -141,8 +141,14 @@
 		      			<option value="MNG">Management Studies</option>
 		      			<option value="MATH">Mathematics</option>
 		      		</select>
-		      		<p>Click <a onclick="addNew()">Here</a> if applying for more than 1 Department's</p>
+		      		<!-- <p>Click <a onclick="addNew()">Here</a> if applying for more than 1 Department's</p> -->
 		        </div>
+		        
+		        <div class="input-field col s6 l6">
+		        	          <input id="email" name="email" type="email" class="validate" required>
+		        	          <label for="last_name">Email</label>
+		       	</div>
+		        
 		         <div class="input-field col l12 s12">
 		         <span class="light">Area of Research:</span>
 		          <input required placeholder="Area of Research" id="reg_number" type="text" class="validate" name="area_of_research" maxlength="50">

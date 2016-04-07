@@ -88,6 +88,7 @@
           <p><b>Drawn At(D.D):</b> {!! $data['dd'][$i]->drawnAt !!}</p>
           <p><b>Application Category:</b> {!! $data['candidates'][$i]->applicationCategory !!}</p>
           <p><b>Department:</b> {!! $data['candidates'][$i]->dept !!}</p>
+          <p><b>Email Id:</b> {!! $data['candidates'][$i]->email !!}</p>
           <p><b>Area of Research:</b> {!! $data['candidates'][$i]->areaOfResearch !!}</p>
           <p><b>Name of Candidate:</b> {!! $data['candidates'][$i]->name !!}</p>
           <p><b>Father's Name:</b> {!! $data['candidates'][$i]->fatherName !!}</p>

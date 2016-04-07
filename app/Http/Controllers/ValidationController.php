@@ -40,7 +40,7 @@ class ValidationController extends Controller
 	        'ph' => 'required|in:yes,no',
 	        'nationality' => 'required',
 	        'addr_for_commn' => 'required|max:200',
-            'email' => 'required|email|unique:Candidates'
+            'email' => 'required|email|unique:candidates',
 	        'ug_deg' => 'required',
 	        'ug_branch' => 'required',
 	        'ug_gpa' => 'required',
