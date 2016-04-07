@@ -16,6 +16,7 @@ use App\Pg;
 use App\Other;
 use paginate;
 use Session;
+use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
@@ -41,7 +42,6 @@ class AdminController extends Controller
             if($username == 'blah' && $password == 'blah')
             {
                 Session::put('userName', $username);
-                // $data = json_decode(file_get_contents('details.json'));
                 return redirect('admin/home');
             }
             else
@@ -56,55 +56,61 @@ class AdminController extends Controller
 	{
         $candidates = Candidates::where('deleted', false)
                                     ->where('phdormsc', $phdormsc)
-                                    ->paginate(2);
+                                    ->paginate(6);
         $candidates_id= $candidates->lists('registrationNumber');
-        // dd($candidates_id);
                 $ugDetails = Ug::whereIn('registrationNumber', $candidates_id)->get();
                 $pgDetails = Pg::whereIn('registrationNumber', $candidates_id)->get();
                 $ddDetails = DD::whereIn('registrationNumber', $candidates_id)->get(); 
                 $otherDetails = Other::whereIn('registrationNumber', $candidates_id)->get();
-                // dd($candidates[0]->registrationNumber);
                 $data = array('candidates' => $candidates,
                                 'ug' => $ugDetails,
                                 'pg' => $pgDetails,
                                 'dd' => $ddDetails,
                                 'others' => $otherDetails
                                 );
-                // json_encode($data);
                 return View::make('admin/'.$phdormsc)->with('data', $data);
 	}
 
 	public function deleted(Request $request)
 	{	
-		// return "Hello World";
 		$reg_number = $request->input('regNo');
-		// echo $reg_number;
-		// dd($reg_number);
 		Candidates::where('registrationNumber', $reg_number)
 					->update(['deleted' => true]);
-		$candidates = Candidates::all()->toArray();
-        $ugDetails = Ug::all()->toArray();
-        $pgDetails = Pg::all()->toArray();
-        $ddDetails = DD::all()->toArray();
-        $otherDetails = Other::all()->toArray();
-        $data = array('candidates' => $candidates,
-        				'ug' => $ugDetails,
-        				'pg' => $pgDetails,
-        				'dd' => $ddDetails,
-        				'others' => $otherDetails
-        				);
-	    // return View::make('admin')->with('data', $data);
+
+        $user = Candidates::select('name', 'email')
+                    ->where('registrationNumber', $reg_number)
+                    ->first();
+
+        Mail::send('emails.reminder', ['user' => $user->name], function ($m) {
+            $m->to($user->email, $user->name)->subject('Greetings form NIT, Trichy!');
+        });
+
 	    return json_encode($reg_number);
-		// echo $request->input('reg_number');
-		// $data = json_decode(file_get_contents('details.json'));
 		
 	}
+
+    public function accepted(Request $request)
+    {
+        $reg_number = $request->input('regNo');
+        Candidates::where('registrationNumber', $reg_number)
+                    ->update(['accepted' => true]);
+
+        $user = Candidates::select('name', 'email')
+                    ->where('registrationNumber', $reg_number)
+                    ->first();
+
+        Mail::send('emails.reminder', ['user' => $user->name], function ($m) {
+            $m->to($user->email, $user->name)->subject('Greetings form NIT, Trichy!');
+        });
+
+        return json_encode($reg_number);
+    }
+
 	public function printer($reg_number)
 	{
 	
 		$candidates = Candidates::where('registrationNumber', $reg_number)
 								->first();
-		// dd($candidates['registrationNumber']);
 		if(!$candidates)
 		{
 			$message = 'Invalid registration number';
@@ -127,10 +133,6 @@ class AdminController extends Controller
         $pdf = PDF::loadView('print', $data);
         return response($pdf->output())
         				->header('Content-Type', 'application/pdf');
-        // dd($data);
-	    // return View::make('print')->with('data', $data);
-	    // echo "heel";
-	    // return ($reg_number);
 	}
 	
 }
