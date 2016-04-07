@@ -48,7 +48,7 @@
     @for($i = 0; $i < sizeof($data['candidates']); $i++)
         
         @if(!$data['candidates'][$i]->deleted && $data['candidates'][$i]->phdormsc == 'msc')
-     <div class="{!! $data['candidates'][$i]->registrationNumber !!} col l5 offset-l1 s5 offset-s1" } data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
+     <div class="{!! $data['candidates'][$i]->registrationNumber !!} col l5 offset-l1 s5 offset-s1" } data-reg = "{!! $data['candidates'][$i]->dept.$data['candidates'][$i]->registrationNumber !!}">
         <div class="card">
           <div class=" waves-effect waves-block waves-light">  
           </div>

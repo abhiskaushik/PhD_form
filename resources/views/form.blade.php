@@ -128,22 +128,22 @@
   			<p>Applicant Details</p>
 		    <div class="col s12">
 
-		      <div class="row">
-		        <div class="input-field col l5 s6">
-
+		      <div class="row dept">
+		        <div class="input-field col l12 s12 ">
 		      		<select class="validate" name="department" required>
 		      			 <option value="" disabled selected>Choose your Department</option>
-		      			<option value="Architecture">Architecture</option>
-		      			<option value="Chemical">Chemical</option>
-		      			<option value="Civil Engineering ">Civil Engineering </option>
-		      			<option value="Electrical & Electronics Engineering">Electrical & Electronics Engineering</option>
-		      			<option value="Electronics & Communication Engineering">Electronics & Communication Engineering</option>
-		      			<option value="Humanities">Humanities</option>
-		      			<option value="Management Studies">Management Studies</option>
-		      			<option value="Mathematics">Mathematics</option>
+		      			<option value="ARC">Architecture</option>
+		      			<option value="CHEM">Chemical</option>
+		      			<option value="CIV">Civil Engineering </option>
+		      			<option value="EEE">Electrical & Electronics Engineering</option>
+		      			<option value="ECE">Electronics & Communication Engineering</option>
+		      			<option value="HM">Humanities</option>
+		      			<option value="MNG">Management Studies</option>
+		      			<option value="MATH">Mathematics</option>
 		      		</select>
+		      		<p>Click <a onclick="addNew()">Here</a> if applying for more than 1 Department's</p>
 		        </div>
-		         <div class="input-field col l5 offset-l2 s6">
+		         <div class="input-field col l12 s12">
 		         <span class="light">Area of Research:</span>
 		          <input required placeholder="Area of Research" id="reg_number" type="text" class="validate" name="area_of_research" maxlength="50">
 		        </div>

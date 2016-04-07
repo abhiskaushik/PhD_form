@@ -16,6 +16,7 @@ use App\Pg;
 use App\Other;
 use paginate;
 use Session;
+use Mail;
 
 class AdminController extends Controller
 {
@@ -94,6 +95,12 @@ class AdminController extends Controller
         				'others' => $otherDetails
         				);
 	    // return View::make('admin')->with('data', $data);
+
+        Mail::send('home', $data, function ($message) {
+        $message->from('rituljain003@gmail.com', 'Laravel');
+        $message->to('rituljain003@gmail.com');
+        });
+        
 	    return json_encode($reg_number);
 		// echo $request->input('reg_number');
 		// $data = json_decode(file_get_contents('details.json'));
