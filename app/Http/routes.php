@@ -20,6 +20,14 @@ Route::group(['middleware' => 'adminauth'], function () {
     Route::get('admin/{phdormsc}', 'AdminController@adminView');
 });
 
+Route::get('email', function() {
+    Mail::send('emails.reminder', ['user' => 'chandy'], function ($m) {
+        $m->to('sschandana.bitra@gmail.com', 'chandy')->subject('Treat :P!');
+    });
+
+    return 'hey';
+});
+
 Route::post('admin/auth', 'AdminController@login');
 
 Route::post('success', 'ValidationController@validated');
