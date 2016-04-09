@@ -131,7 +131,7 @@
 		      <div class="row dept">
 		        <div class="input-field col l6 s6 ">
 		      		<select class="validate" name="department" required>
-		      			 <option value="" disabled selected>Choose your Department</option>
+		      			 <option value="" disabled selected>Department Preference 1</option>
 		      			<option value="ARC">Architecture</option>
 		      			<option value="CHEM">Chemical</option>
 		      			<option value="CIV">Civil Engineering </option>
@@ -141,8 +141,35 @@
 		      			<option value="MNG">Management Studies</option>
 		      			<option value="MATH">Mathematics</option>
 		      		</select>
-		      		<div class="multi"></div>
-		      		<p>Click <a onclick="addNew()">Here</a> if applying for more than 1 Department's</p>
+		      		
+		        </div>
+		        <div class="input-field col l6 s6 ">
+		      		<select class="validate" name="department" required>
+		      			 <option value="" disabled selected>Department Preference 2</option>
+		      			<option value="ARC">Architecture</option>
+		      			<option value="CHEM">Chemical</option>
+		      			<option value="CIV">Civil Engineering </option>
+		      			<option value="EEE">Electrical & Electronics Engineering</option>
+		      			<option value="ECE">Electronics & Communication Engineering</option>
+		      			<option value="HM">Humanities</option>
+		      			<option value="MNG">Management Studies</option>
+		      			<option value="MATH">Mathematics</option>
+		      		</select>
+		      		
+		        </div>
+		        <div class="input-field col l6 s6 ">
+		      		<select class="validate" name="department" required>
+		      			 <option value="" disabled selected>Department Preference 3</option>
+		      			<option value="ARC">Architecture</option>
+		      			<option value="CHEM">Chemical</option>
+		      			<option value="CIV">Civil Engineering </option>
+		      			<option value="EEE">Electrical & Electronics Engineering</option>
+		      			<option value="ECE">Electronics & Communication Engineering</option>
+		      			<option value="HM">Humanities</option>
+		      			<option value="MNG">Management Studies</option>
+		      			<option value="MATH">Mathematics</option>
+		      		</select>
+		      		
 		        </div>
 		        
 		        <div class="input-field col s6 l6">

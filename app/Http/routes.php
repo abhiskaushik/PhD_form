@@ -60,4 +60,7 @@ Route::get('form', function()
     {
         return view('form');
     });
-
+Route::get('form_multi', function()
+    {
+        return view('form_multi');
+    });
