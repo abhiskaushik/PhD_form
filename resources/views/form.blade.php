@@ -142,7 +142,7 @@
 		      			<option value="MATH">Mathematics</option>
 		      		</select>
 		      		<div class="multi"></div>
-		      		<p>Click <a onclick="addNew()">Here</a> if applying for more than 1 Department's</p>
+		      		<p>Click <a href="form_multi">Here</a> if applying for more than 1 Department's</p>
 		        </div>
 		        
 		        <div class="input-field col s6 l6">
