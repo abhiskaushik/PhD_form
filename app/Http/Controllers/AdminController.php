@@ -84,8 +84,8 @@ class AdminController extends Controller
                     ->where('registrationNumber', $reg_number)
                     ->first();
 
-        Mail::send('emails.reminder', ['user' => 'chandy'], function ($m) {
-        $m->to('rituljain003@gmail.com', 'chandy')->subject('Treat :P!');
+        Mail::send('emails.reminder', ['user' => $user->name], function ($m) {
+            $m->to('rituljain003@gmail.com', $user->name)->subject('Greetings from NITT!');
         });
 
 

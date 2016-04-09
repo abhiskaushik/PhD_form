@@ -84,7 +84,9 @@
         <p><b>Amount(D.D):</b> {!! $details['amount'] !!}</p>
         <p><b>Drawn At(D.D):</b> {!! $details['drawn_at'] !!}</p>
         <p><b>Application Category:</b> {!! $details['appl_categ'] !!}</p>
-        <p><b>Department:</b> {!! $details['department'] !!}</p>
+        <p><b>Department 1:</b> {!! $details['department1'] !!}</p>
+        <p><b>Department 2:</b> {!! $details['department2'] !!}</p>
+        <p><b>Department 3:</b> {!! $details['department3'] !!}</p>
         <p><b>Email:</b> {!! $details['email'] !!}</p>
         <p><b>Area of Research:</b> {!! $details['area_of_research'] !!}</p>
         <p><b>Name of Candidate:</b> {!! $details['name'] !!}</p>

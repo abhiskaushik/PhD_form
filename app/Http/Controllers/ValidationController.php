@@ -29,7 +29,9 @@ class ValidationController extends Controller
 	        'amount' => 'required',
 	        'drawn_at' => 'required',
 	        'appl_categ' => 'required',
-	        'department' => 'required',
+	        // 'department1' => 'required',
+         //    'department2' => 'required',
+         //    'department3' => 'required',
 	        'area_of_research' => 'required',
 	        'name' => 'required',
 	        'father_name' => 'required',
@@ -75,6 +77,7 @@ class ValidationController extends Controller
 
         	$bool = Candidates::where('name' , Input::get('name'))
         						->where('addrforcomm' , Input::get('addr_for_commn'))
+                                ->where('phdormsc', Input::get('phdormsc'))
         						->first();
         	if($bool == NULL){
             $details = array(
@@ -86,7 +89,9 @@ class ValidationController extends Controller
                 'drawn_at' => Input::get('drawn_at'),
                 'appl_categ' => Input::get('appl_categ'),//dont know how to add $name attribute here
                 'image_path' => Input::get('image_path'),
-                'department' => Input::get('department'),
+                'department1' => Input::get('department1'),
+                'department2' => Input::get('department2'),
+                'department3' => Input::get('department3'),
                 'area_of_research' => Input::get('area_of_research'),
                 'name' => Input::get('name'),
                 'father_name' => Input::get('father_name'),
@@ -123,12 +128,26 @@ class ValidationController extends Controller
                 'employer_details_3' => Input::get('employer_details_3')
             );
 
+            $department = '';
+
+            for($i = 1; $i <= 3; $i++)
+            {
+                if(Input::get('department'.$i) && $i != 3)
+                {
+                    $department = $department.Input::get('department'.$i).',';
+                }
+                if($i == 3)
+                {
+                    $department = $department.Input::get('department'.$i);
+                }
+            }
+
             $candidate = new Candidates();
 
             $candidate->phdormsc = Input::get('phdormsc');
             $candidate->applicationCategory = Input::get('appl_categ');
             $candidate->dateOfReg = Input::get('date');
-            $candidate->dept = Input::get('department');
+            $candidate->dept = $department;
             $candidate->areaOfResearch = Input::get('area_of_research');
             $candidate->name = Input::get('name');
             $candidate->fatherName = Input::get('father_name');

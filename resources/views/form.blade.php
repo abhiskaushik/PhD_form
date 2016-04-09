@@ -130,7 +130,7 @@
 
 		      <div class="row dept">
 		        <div class="input-field col l6 s6 ">
-		      		<select class="validate" name="department" required>
+		      		<select name="department1" required>
 		      			 <option value="" disabled selected>Department Preference 1</option>
 		      			<option value="ARC">Architecture</option>
 		      			<option value="CHEM">Chemical</option>
@@ -144,7 +144,7 @@
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 ">
-		      		<select class="validate" name="department" required>
+		      		<select name="department2" required>
 		      			 <option value="" disabled selected>Department Preference 2</option>
 		      			<option value="ARC">Architecture</option>
 		      			<option value="CHEM">Chemical</option>
@@ -158,7 +158,7 @@
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 ">
-		      		<select class="validate" name="department" required>
+		      		<select name="department3" required>
 		      			 <option value="" disabled selected>Department Preference 3</option>
 		      			<option value="ARC">Architecture</option>
 		      			<option value="CHEM">Chemical</option>
