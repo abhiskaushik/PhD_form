@@ -60,3 +60,8 @@ Route::get('form', function()
     {
         return view('form');
     });
+
+Route::get('ms', function()
+    {
+        return view('form_ms');
+    });

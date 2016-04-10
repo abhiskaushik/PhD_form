@@ -21,6 +21,7 @@ class ValidationController extends Controller
 {
     public function validated(Request $request)
     {
+
     	$rules = array(
             'phdormsc' => 'required',                        
 	        'date' => 'required',     
@@ -64,10 +65,11 @@ class ValidationController extends Controller
             'awards' => 'required',
             'employer_details_1' => 'required'               
     	);
+
         
     	$validator = Validator::make(Input::all(), $rules);
 
-        if($validator->fails())
+        if(!($validator->fails()))
     	{
     		$message = 'Please fill in all the details';
 			return View::make('error')->with('message', $validator->errors());
@@ -128,6 +130,7 @@ class ValidationController extends Controller
                 'employer_details_3' => Input::get('employer_details_3')
             );
 
+
             $department = '';
 
             for($i = 1; $i <= 3; $i++)
@@ -147,6 +150,7 @@ class ValidationController extends Controller
             $candidate->phdormsc = Input::get('phdormsc');
             $candidate->applicationCategory = Input::get('appl_categ');
             $candidate->dateOfReg = Input::get('date');
+
             $candidate->dept = $department;
             $candidate->areaOfResearch = Input::get('area_of_research');
             $candidate->name = Input::get('name');
