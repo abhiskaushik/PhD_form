@@ -9,8 +9,8 @@
 	<title>Ph.d Registration Form</title>
 	<link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
 	<link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
-	<!-- <link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> -->
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- <link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> --><!-- 
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 	<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/jquery-ui.js')}}"></script>
@@ -27,13 +27,15 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd/M.S. Admission's</a></li>
+        <li><a href="/form">Phd Admission's</a></li>
+        <li><a href="/ms">M.S Admission's</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd/M.S. Admission's</a></li>
+        <li><a href="/form">Phd Admission's</a></li>
+        <li><a href="/ms">Ms Admission's</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
@@ -48,67 +50,21 @@
 			<div class="space-medium"></div>
 			<div class="divider"></div><div class="divider"></div>
 		</div>
-
+		<div class="space-medium"></div>
 		<div class="row">
 
 		{!! Form::open(array('url'=>'success','method'=>'POST', 'files'=>true )) !!}
-		<!-- <input type="hidden" name="_token" id="_token" value={!! csrf_field() !!} /> -->
-		<div class="row">
-		<span class="light">Application Type:</span>
-		<div class="input-field col l12 s12">
-		      		<select required name="phdormsc">
-				      <option value="" disabled selected>Choose your option</option>
-				      <option value="phd">Ph D</option>
-				      <option value="msc">M.S.</option>
-				    </select>
-		        </div>
-		    </div>
-		
-  		<div class="row">
-  			<span class="light">Demand Draft Details:</span>
-  			<div class="space-small"></div>
-		    <div class="col s12">
-		      <div class="row">
-		        <div class="input-field col l4 s6">
-		        	<span class="light">D.D. Number:</span>
-
-		          <input required placeholder="Enter D.D Number" id="reg_number" type="number" class="validate" name="dd_no" min="1" max="1000000000">
-		        </div>
-
-		        <div class="input-field col l4 s6 offset-l4">
-		        	<span class="light">Date of D.D:</span>
-		        	<div class="space-small"></div>
-		          <input required type="date" class="validate" name="date_of_sub" max="2016-06-31" min="2016-06-31">
-
-		        </div>
-		      </div>      
-		      <div class="row">
-		        <div class="input-field col l4 s6">
-		        <span class="light">Amount:</span>
-		          <input required placeholder="Enter Amount" id="reg_number" type="number" class="validate" name="amount" max="2000000" min="1000">
-		        </div>
-		        <div class="input-field col l4 s6 offset-l4">
-		        <span class="light">Drawn At:</span>
-		          <input required placeholder="Drawn At" id="reg_number" type="text" class="validate" name="drawn_at" maxlength="30">
-		        </div>
-		      </div>      
-		    </div>
-
-		    <div class="row">
-  			<p>Application Category</p>
-		    <div class="col s8">
-		      <div class="row">
-		        <div class="input-field col l4 s6">
+		<!-- <input type="hidden" name="_token" id="_token" value={!! csrf_field() !!} /> -->			
+  		<div class="row">  					   
+  			<p>Application Category</p>		    
+		        <div class="input-field col l6 s12">
 		      		<select required name="appl_categ">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="Part Time">Part Time</option>
 				      <option value="Full Time">Full Time</option>
 				    </select>
-		        </div>
-		        
-		      </div>      
-		    </div>
-		    <div class="col l4 s12">
+		        </div>		        		    		    
+		    <div class="col l6 s12">
 		    <p>Upload Image</p>
 		      	<div class="file-field input-field">`
 	          		<div class="btn teal darken-1 btn waves-effect waves-light">
@@ -118,19 +74,19 @@
 	          		<div class="file-path-wrapper">
         				<input class="file-path validate" type="text">
       				</div>
-
 	          	</div>
-
 		      </div>
-  		</div>
-	</div>
+  		
+	
   		<div class="row">
   			<p>Applicant Details</p>
 		    <div class="col s12">
 
 		      <div class="row dept">
 		        <div class="input-field col l6 s6 ">
+
 		      		<select name="department1" required>
+
 		      			 <option value="" disabled selected>Department Preference 1</option>
 		      			<option value="ARC">Architecture</option>
 		      			<option value="CHEM">Chemical</option>
@@ -144,7 +100,9 @@
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 ">
+
 		      		<select name="department2" required>
+
 		      			 <option value="" disabled selected>Department Preference 2</option>
 		      			<option value="ARC">Architecture</option>
 		      			<option value="CHEM">Chemical</option>
@@ -158,7 +116,9 @@
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 ">
+
 		      		<select name="department3" required>
+
 		      			 <option value="" disabled selected>Department Preference 3</option>
 		      			<option value="ARC">Architecture</option>
 		      			<option value="CHEM">Chemical</option>
@@ -369,16 +329,46 @@
 		      	<span class="light">Other Details:</span>
 		      	<p>(*Write as 'RA'if results awaiting)</p>
 		      	<div class="space-small"></div>
-		      	<div class="exam">
-			      	<div class="col l6 s12">
-			      		<span class="light">Enter GATE/NET/SLET/CSIR/CAT/UGC Score:</span>
-			      		<input required placeholder="Enter GATE/NET/SLET/CSIR/CAT/UGC Score" id="reg_number" type="number" class="validate" name="score" max="10000">
-			      	</div>
-			      	<div class="col l6 s12">
-			      		<span class="light">Enter GATE/NET/SLET/CSIR/CAT/UGC Rank:</span>
-			      		<input required placeholder="Enter GATE/NET/SLET/CSIR/CAT/UGC Rank" id="reg_number" type="Number" class="validate" name="rank" min="1" max="100000">
-			      	</div>
+		      	<div class="results_announced center">
+		      		<p class="center">Are results announced?</p>
+		      		<span>
+		      			<input type="checkbox" id="announced" />
+		      			<label for="announced">Announced</label>
+		      		</span>
+		      		<span>
+		      			<input type="checkbox" id="nannounced" />
+		      			<label for="nannounced">Not-Announced</label>
+		      		</span>
 		      	</div>
+		      	<div class="space-medium"></div>
+		      	<div class="exam">
+		      		<div class="col l3 s6">
+		      	      		<span class="light">Examination:</span>
+		      	      		<select class="exam_select" required name = 'pg_class'>
+		      			      <option value="hey" selected>Choose your Exam</option>
+		      			      <option  value="GATE">GATE</option>
+		      			      <option  value="NET">NET</option>
+		      			      <option  value="SLET">SLET</option>
+		      			      <option  value="CSIR">CSIR</option>
+		      			      <option  value="CAT">CAT</option>
+		      			      <option  value="UGC">UGC</option>
+		      			    </select>
+		      		</div>
+		      		<div class="col l3 s6">
+		      			<span class="light">Enter Score:</span>
+		      			<input required placeholder="Enter  Score" id="reg_number" type="number" class="validate" name="score" max="10000">
+		      		</div>
+			      	<div class="col l3 s6">
+			      		<span class="light">Enter Rank:</span>
+			      		<input required placeholder="Enter Rank" id="reg_number" type="number" class="validate" name="score" max="10000">
+			      	</div>
+			      	<div class="col l3 s6">
+			      		<span class="light">Valid Till:</span>
+			      		<input id="valid" type="Number" class="validate" name="rank" min="2015" max="2010">
+			      	</div>
+			      	<div class="space-small"></div>
+		      	</div>
+
 		      	<div class="col l12 s12">
 		      		<span class="light">Title of P.G Project:</span>
 		      		<input required placeholder="Title of P.G Project" id="reg_number" type="text" class="validate" name="title_of_project" maxlength="100">
@@ -414,6 +404,16 @@
 		      <div class="row">
 		      	<div class="col l12 s12 ">
 		      		<p>I do hereby declare that the information furnished in this application are true and correct to the best of my knowledge. If, any of the particulars furnished above is found to be incorrect at the time of admission, the admission may be cancelled.</p>
+		      		<p class="center agreement">
+		      			<span>
+		      		      <input type="checkbox" id="agree" class="check" />
+		      		      <label for="agree">Agree</label>
+		      		    </span>
+		      		    <span>
+		      		      <input type="checkbox" id="disagree" class="check" />
+		      		      <label for="disagree">Disagree</label>
+		      		    </span>
+		      		</p>
 		      	</div>
 		      </div>
 		      <div class="space-medium"></div>
@@ -441,6 +441,7 @@
 	 </div>
 	 	
 	      {!! Form::close() !!}
+	      </div>
 	      </div>
 	      </div>
 	<!-- form starts here -->

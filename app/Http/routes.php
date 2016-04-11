@@ -11,7 +11,7 @@
 |
 */
 
-
+Route::post('admin/auth', 'AdminController@login');
 Route::group(['middleware' => 'adminauth'], function () {
     Route::get('admin/home', function()
         {
@@ -19,24 +19,11 @@ Route::group(['middleware' => 'adminauth'], function () {
         });
     Route::get('admin/{phdormsc}', 'AdminController@adminView');
 });
-
-Route::get('email', function() {
-    Mail::send('emails.reminder', ['user' => 'chandy'], function ($m) {
-        $m->to('sschandana.bitra@gmail.com', 'chandy')->subject('Treat :P!');
-    });
-
-    return 'hey';
-});
-
-Route::post('admin/auth', 'AdminController@login');
-
-Route::post('success', 'ValidationController@validated');
-
 Route::post('delete', 'AdminController@deleted' );
 Route::post('accept', 'AdminController@accepted');
-
 Route::get('print/{regNo}', 'AdminController@printer' );
 
+Route::post('success', 'ValidationController@validated');
 Route::get('error', function()
     {
         return view('error');
@@ -56,7 +43,12 @@ Route::get('home', function()
     {
         return view('home');
     });
-Route::get('form', function()
+Route::get('phd', function()
     {
-        return view('form');
+        return view('phd');
+    });
+
+Route::get('ms', function()
+    {
+        return view('ms');
     });
