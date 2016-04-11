@@ -13,7 +13,7 @@ class CreateMsProExpTable extends Migration
     public function up()
     {
         Schema::create('msProexp', function (Blueprint $table) {
-            $table->string('registrationNumber', 25);
+            $table->integer('applNo')->unsigned();
             $table->string('proexp1', 150);
             $table->string('proexp2', 150);
             $table->string('proexp3', 150);
@@ -30,8 +30,8 @@ class CreateMsProExpTable extends Migration
         });
 
         Schema::table('msProexp', function (Blueprint $table) {
-            $table->foreign('registrationNumber')
-                  ->references('registrationNumber')
+            $table->foreign('applNo')
+                  ->references('applNo')
                   ->on('ms');
         });
     }

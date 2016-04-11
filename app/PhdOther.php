@@ -8,4 +8,3 @@ class PhdOther extends Model
 {
     protected $table = 'phdother';
 }
-}

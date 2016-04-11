@@ -13,6 +13,7 @@ class CreatePhdcandidatesTable extends Migration
     public function up()
     {
         Schema::create('phd', function (Blueprint $table) {
+            $table->increments('applNo');
             $table->string('applicationCategory', 20);
             $table->string('registrationNumber', 25);
             $table->string('dateOfReg', 15);
@@ -37,11 +38,6 @@ class CreatePhdcandidatesTable extends Migration
             $table->boolean('deleted')->default(false);
             $table->boolean('accepted')->default(false);
             $table->timestamps();
-        });
-
-        Schema::table('phd', function(Blueprint $table) {
-            $table->primary('registrationNumber');
-            $table->unique('registrationNumber');
         });
     }
 

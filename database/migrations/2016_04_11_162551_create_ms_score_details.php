@@ -13,7 +13,7 @@ class CreateMsScoreDetails extends Migration
     public function up()
     {
         Schema::create('msSemScore', function (Blueprint $table) {
-            $table->string('registrationNumber', 25);
+            $table->integer('applNo')->unsigned();
             $table->string('gpamax1', 6);
             $table->string('gpa1', 6);
             $table->string('gpamax2', 6);
@@ -33,8 +33,8 @@ class CreateMsScoreDetails extends Migration
         });
 
         Schema::table('msSemScore', function (Blueprint $table) {
-            $table->foreign('registrationNumber')
-                  ->references('registrationNumber')
+            $table->foreign('applNo')
+                  ->references('applNo')
                   ->on('ms');
         });
     }
