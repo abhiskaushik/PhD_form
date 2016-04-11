@@ -76,6 +76,13 @@
       				</div>
 	          	</div>
 		      </div>
+		      <div class="input-field col l6 s12">
+		      		<select required name="appl_categ">
+				      <option value="" disabled selected>Choose your option</option>
+				      <option value="Part Time">Part Time</option>
+				      <option value="Full Time">Full Time</option>
+				    </select>
+		        </div>		
   		
 	
   		<div class="row">
@@ -326,61 +333,100 @@
 		      </div>
 
 		      <div class="row">
-		      	<span class="light">Other Details:</span>
-		      	<p>(*Write as 'RA'if results awaiting)</p>
-		      	<div class="space-small"></div>
-		      	<div class="results_announced center">
-		      		<p class="center">Are results announced?</p>
-		      		<span>
-		      			<input type="checkbox" id="announced" />
-		      			<label for="announced">Announced</label>
-		      		</span>
-		      		<span>
-		      			<input type="checkbox" id="nannounced" />
-		      			<label for="nannounced">Not-Announced</label>
-		      		</span>
-		      	</div>
-		      	<div class="space-medium"></div>
-		      	<div class="exam">
-		      		<div class="col l3 s6">
-		      	      		<span class="light">Examination:</span>
-		      	      		<select class="exam_select" required name = 'pg_class'>
-		      			      <option value="hey" selected>Choose your Exam</option>
-		      			      <option  value="GATE">GATE</option>
-		      			      <option  value="NET">NET</option>
-		      			      <option  value="SLET">SLET</option>
-		      			      <option  value="CSIR">CSIR</option>
-		      			      <option  value="CAT">CAT</option>
-		      			      <option  value="UGC">UGC</option>
-		      			    </select>
-		      		</div>
-		      		<div class="col l3 s6">
-		      			<span class="light">Enter Score:</span>
-		      			<input required placeholder="Enter  Score" id="reg_number" type="number" class="validate" name="score" max="10000">
-		      		</div>
-			      	<div class="col l3 s6">
-			      		<span class="light">Enter Rank:</span>
-			      		<input required placeholder="Enter Rank" id="reg_number" type="number" class="validate" name="score" max="10000">
-			      	</div>
-			      	<div class="col l3 s6">
-			      		<span class="light">Valid Till:</span>
-			      		<input id="valid" type="Number" class="validate" name="rank" min="2015" max="2010">
-			      	</div>
-			      	<div class="space-small"></div>
-		      	</div>
+		      	<table class="highlight centered responsive-table">
+		      	        <thead>
+		      	          <tr>
+		      	              <th data-field="id">Year</th>
+		      	              <th data-field="name">Semester</th>
+		      	              <th data-field="price">Maximum G.P.A</th>
+		      	              <th data-field="price">G.P.A obtained</th>
+		      	          </tr>
+		      	        </thead>
 
-		      	<div class="col l12 s12">
-		      		<span class="light">Title of P.G Project:</span>
-		      		<input required placeholder="Title of P.G Project" id="reg_number" type="text" class="validate" name="title_of_project" maxlength="100">
-		      	</div>
-		      	<div class="col l12 s12">
-		      		<p for="textarea1">Details of publication in refereed journals/ Proceedings of Conferences</p><br>
-		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub" maxlength="200"></textarea>
-		      	</div>
-		      	<div class="col l12 s12">
-		      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
-		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards" maxlength="200"></textarea>
-		      	</div>
+		      	        <tbody>
+		      	          <tr>
+		      	            <td>1</td>
+		      	            <td>First</td>
+		      	            <td>
+		      	            <input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            </td>
+		      	            <td>
+		      	            	<input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            </td>
+		      	          </tr>
+		      	          <tr>
+		      	            <td>1</td>
+		      	            <td>Second</td>
+		      	            <td>
+		      	            <input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            </td>
+		      	            <td>
+		      	            	<input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            </td>
+		      	          </tr>
+		      	          <tr>
+		      	            <td>2</td>
+		      	            <td>Third</td>
+		      	            <td>
+		      	            <input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            </td>
+		      	            <td>
+		      	            	<input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            </td>
+		      	          </tr>
+		      	          <tr>
+		      	            <td>2</td>
+		      	            <td>Fourth</td>
+		      	            <td>
+		      	            <input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            </td>
+		      	            <td>
+		      	            	<input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            </td>
+		      	          </tr>
+		      	          <tr>
+		      	            <td>3</td>
+		      	            <td>Fifth</td>
+		      	            <td>
+		      	            <input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            </td>
+		      	            <td>
+		      	            	<input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            </td>
+		      	          </tr>
+		      	          <tr>
+		      	            <td>3</td>
+		      	            <td>Sixth</td>
+		      	            <td>
+		      	            <input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            </td>
+		      	            <td>
+		      	            	<input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            </td>
+		      	          </tr>
+		      	          <tr>
+		      	            <td>4</td>
+		      	            <td>Seventh</td>
+		      	            <td>
+		      	            <input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            </td>
+		      	            <td>
+		      	            	<input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            </td>
+		      	          </tr>
+		      	          <tr>
+		      	            <td>4</td>
+		      	            <td>Eighth</td>
+		      	            <td>
+		      	            <input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            </td>
+		      	            <td>
+		      	            	<input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            </td>
+		      	          </tr>
+		      	          
+		      	        </tbody>
+		      	      </table>
 		      </div>
 
 		      <div class="row">
@@ -390,14 +436,50 @@
 		      	<div class="col s12 l12">
 		      		<p for="textarea1">Name & Address of Employer 1</p><br>
 		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_1"></textarea>
+
+		      		 <p>Position Held:</p>
+		      		 <input required id="reg_number" type="text" class="validate" name="emp_pos_1" maxlength="100">
+
+		      		 <div class="col l6 s6">
+		      		 	<p>From:</p>
+		      		 	<input required id="reg_number" type="number" class="validate" name="emp_from_1" maxlength="100">
+		      		 </div>
+		      		 <div class="col l6 s6">
+		      		 	<p>To:</p>
+		      		 	<input required id="reg_number" type="number" class="validate" name="emp_to_1" maxlength="100">
+		      		 </div>
 		      	</div>
 		      	<div class="col s12 l12">
 		      		<p for="textarea1">Name & Address of Employer 2</p><br>
 		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2"></textarea>
+
+		      		 <p>Position Held:</p>
+		      		 <input required id="reg_number" type="text" class="validate" name="emp_pos_2" maxlength="100">
+
+		      		 <div class="col l6 s6">
+		      		 	<p>From:</p>
+		      		 	<input required id="reg_number" type="number" class="validate" name="emp_from_2" maxlength="100">
+		      		 </div>
+		      		 <div class="col l6 s6">
+		      		 	<p>From:</p>
+		      		 	<input required id="reg_number" type="number" class="validate" name="emp_to_2" maxlength="100">
+		      		 </div>
 		      	</div>
 		      	<div class="col s12 l12">
 		      		<p for="textarea1">Name & Address of Employer 3</p><br>
 		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3"></textarea>
+
+		      		 <p>Position Held:</p>
+		      		 <input required id="reg_number" type="text" class="validate" name="emp_pos_3" maxlength="100">
+
+		      		 <div class="col l6 s6">
+		      		 	<p>From:</p>
+		      		 	<input required id="reg_number" type="number" class="validate" name="emp_from_3" maxlength="100">
+		      		 </div>
+		      		 <div class="col l6 s6">
+		      		 	<p>From:</p>
+		      		 	<input required id="reg_number" type="number" class="validate" name="emp_to_3" maxlength="100">
+		      		 </div>
 		      	</div>
 		      </div>
 
@@ -409,10 +491,7 @@
 		      		      <input type="checkbox" id="agree" class="check" />
 		      		      <label for="agree">Agree</label>
 		      		    </span>
-		      		    <span>
-		      		      <input type="checkbox" id="disagree" class="check" />
-		      		      <label for="disagree">Disagree</label>
-		      		    </span>
+		      		   
 		      		</p>
 		      	</div>
 		      </div>

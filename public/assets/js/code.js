@@ -20,6 +20,22 @@ $(document).ready(function(){
 		$('.exam').hide('slow');
 	});
 
+	$('.applicationCateg').change(function()
+	{
+		var p=$('.applicationCateg option:selected').text();
+		if(p=='Part Time'){
+			$('.upload').removeClass('offset-l4');
+			$('.part').show('slow');
+			$('.full').hide();
+
+		}
+		else if(p=='Full Time'){
+			$('.upload').removeClass('offset-l4');
+			$('.full').show('slow');
+			$('.part').hide();
+		}
+	});
+	
 
 	var x=$('.exam_select');
 	x.change(function()

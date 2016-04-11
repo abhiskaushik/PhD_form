@@ -57,14 +57,33 @@
 		<!-- <input type="hidden" name="_token" id="_token" value={!! csrf_field() !!} /> -->			
   		<div class="row">  					   
   			<p>Application Category</p>		    
-		        <div class="input-field col l6 s12">
-		      		<select required name="appl_categ">
+		        <div class="input-field col l4 s12">
+		      		<select class="applicationCateg" required name="appl_categ">
 				      <option value="" disabled selected>Choose your option</option>
-				      <option value="Part Time">Part Time</option>
-				      <option value="Full Time">Full Time</option>
+				      <option value="PartTime">Part Time</option>
+				      <option value="FullTime">Full Time</option>
 				    </select>
 		        </div>		        		    		    
-		    <div class="col l6 s12">
+		        <div class="input-field col l4 s12 part" hidden>
+		      		<select required name="appl_categ" >
+				      <option value="" disabled selected>Choose your option</option>
+				      <option value="OnCampus">On Campus</option>
+				      <option value="External">External</option>
+				    </select>
+		        </div>	
+		        <div class="col l4 s12">
+		        	<p>    </p>
+		        </div>	
+		        <div class="input-field col l4 s12 full" hidden>
+		      		<select required name="appl_categ" >
+				      <option value="" disabled selected>Choose your option</option>
+				      <option value="stipendiary">Stipendiary</option>
+				      <option value="nonStipendiary">Non-Stipendiary</option>
+				      <option value="Project">Project</option>
+				      <option value="Other">Other Fellowships</option>
+				    </select>
+		        </div>		
+		    <div class="upload col l4 s12 offset-l4">
 		    <p>Upload Image</p>
 		      	<div class="file-field input-field">`
 	          		<div class="btn teal darken-1 btn waves-effect waves-light">
@@ -76,6 +95,7 @@
       				</div>
 	          	</div>
 		      </div>
+		      
   		
 	
   		<div class="row">
@@ -373,9 +393,17 @@
 		      		<span class="light">Title of P.G Project:</span>
 		      		<input required placeholder="Title of P.G Project" id="reg_number" type="text" class="validate" name="title_of_project" maxlength="100">
 		      	</div>
-		      	<div class="col l12 s12">
-		      		<p for="textarea1">Details of publication in refereed journals/ Proceedings of Conferences</p><br>
-		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub" maxlength="200"></textarea>
+		      	<div class="col l4 s12">
+		      		<p for="textarea1">Publications:</p><br>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub" maxlength="200"></textarea>
+		      	</div>
+		      	<div class="col l4 s12">
+		      		<p for="textarea1">Publications:</p><br>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub" maxlength="200"></textarea>
+		      	</div>
+		      	<div class="col l4 s12">
+		      		<p for="textarea1">Publications:</p><br>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub" maxlength="200"></textarea>
 		      	</div>
 		      	<div class="col l12 s12">
 		      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
@@ -390,14 +418,50 @@
 		      	<div class="col s12 l12">
 		      		<p for="textarea1">Name & Address of Employer 1</p><br>
 		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_1"></textarea>
+
+		      		 <p>Position Held:</p>
+		      		 <input required id="reg_number" type="text" class="validate" name="emp_pos_1" maxlength="100">
+
+		      		 <div class="col l6 s6">
+		      		 	<p>From:</p>
+		      		 	<input required id="reg_number" type="number" class="validate" name="emp_from_1" maxlength="100">
+		      		 </div>
+		      		 <div class="col l6 s6">
+		      		 	<p>To:</p>
+		      		 	<input required id="reg_number" type="number" class="validate" name="emp_to_1" maxlength="100">
+		      		 </div>
 		      	</div>
 		      	<div class="col s12 l12">
 		      		<p for="textarea1">Name & Address of Employer 2</p><br>
 		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2"></textarea>
+
+		      		 <p>Position Held:</p>
+		      		 <input required id="reg_number" type="text" class="validate" name="emp_pos_2" maxlength="100">
+
+		      		 <div class="col l6 s6">
+		      		 	<p>From:</p>
+		      		 	<input required id="reg_number" type="number" class="validate" name="emp_from_2" maxlength="100">
+		      		 </div>
+		      		 <div class="col l6 s6">
+		      		 	<p>From:</p>
+		      		 	<input required id="reg_number" type="number" class="validate" name="emp_to_2" maxlength="100">
+		      		 </div>
 		      	</div>
 		      	<div class="col s12 l12">
 		      		<p for="textarea1">Name & Address of Employer 3</p><br>
 		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3"></textarea>
+
+		      		 <p>Position Held:</p>
+		      		 <input required id="reg_number" type="text" class="validate" name="emp_pos_3" maxlength="100">
+
+		      		 <div class="col l6 s6">
+		      		 	<p>From:</p>
+		      		 	<input required id="reg_number" type="number" class="validate" name="emp_from_3" maxlength="100">
+		      		 </div>
+		      		 <div class="col l6 s6">
+		      		 	<p>From:</p>
+		      		 	<input required id="reg_number" type="number" class="validate" name="emp_to_3" maxlength="100">
+		      		 </div>
 		      	</div>
 		      </div>
 
@@ -409,10 +473,7 @@
 		      		      <input type="checkbox" id="agree" class="check" />
 		      		      <label for="agree">Agree</label>
 		      		    </span>
-		      		    <span>
-		      		      <input type="checkbox" id="disagree" class="check" />
-		      		      <label for="disagree">Disagree</label>
-		      		    </span>
+		      		    
 		      		</p>
 		      	</div>
 		      </div>
