@@ -127,8 +127,9 @@
           
         </div>
       <div class="modal-footer">
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="ajax btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
         <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn-flat">Accept</a>
       </div>
       </div>
         </div>

@@ -29,9 +29,9 @@ class ValidationController extends Controller
 	        'amount' => 'required',
 	        'drawn_at' => 'required',
 	        'appl_categ' => 'required',
-	        // 'department1' => 'required',
-         //    'department2' => 'required',
-         //    'department3' => 'required',
+	        'department1' => 'required',
+            'department2' => 'required',
+            'department3' => 'required',
 	        'area_of_research' => 'required',
 	        'name' => 'required',
 	        'father_name' => 'required',
@@ -93,6 +93,7 @@ class ValidationController extends Controller
                 'department2' => Input::get('department2'),
                 'department3' => Input::get('department3'),
                 'area_of_research' => Input::get('area_of_research'),
+                'email' => Input::get('email'),
                 'name' => Input::get('name'),
                 'father_name' => Input::get('father_name'),
                 'dob' => Input::get('dob'),
@@ -159,6 +160,7 @@ class ValidationController extends Controller
             $candidate->nationality = Input::get('nationality');
             $candidate->addrforcomm = Input::get('addr_for_commn');
             $candidate->permanentaddr = Input::get('permanent_addr');
+            $candidate->email = Input::get('email');
 
             $candidate->save();
 

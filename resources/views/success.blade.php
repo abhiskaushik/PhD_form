@@ -59,7 +59,9 @@
             </div>
             <div class="row">
               <div class="col l6 s6">Name:{!! $details['name']!!}</div>
-              <div class="col l6 s6">Department:{!! $details['department'] !!}</div>
+              <div class="col l6 s6">Department:{!! $details['department1'] !!}</div>
+              <div class="col l6 s6">Department:{!! $details['department2'] !!}</div>
+              <div class="col l6 s6">Department:{!! $details['department3'] !!}</div>
             </div>
             <div class="space-small center">
             </div>

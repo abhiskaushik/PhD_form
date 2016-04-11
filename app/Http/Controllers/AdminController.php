@@ -85,7 +85,7 @@ class AdminController extends Controller
                     ->first();
 
         Mail::send('emails.reminder', ['user' => $user->name], function ($m) {
-            $m->to('rituljain003@gmail.com', $user->name)->subject('Greetings from NITT!');
+            $m->to($user->email, $user->name)->subject('Greetings from NITT!');
         });
 
 
