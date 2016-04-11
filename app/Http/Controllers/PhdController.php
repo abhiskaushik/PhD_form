@@ -38,8 +38,8 @@ class PhdController extends Controller
 	        'ph' => 'required|in:yes,no',
 	        'nationality' => 'required',
 	        'addr_for_commn' => 'required|max:200',
-            'permanent_addr' =>'required|max:200'
-            'email' => 'required|email|unique:candidates',
+            'permanent_addr' =>'required|max:200',
+            'email' => 'required|email|unique:phd',
             'mobile' => 'required',
             'landline' => 'required',
 	        'ug_deg' => 'required',
@@ -139,7 +139,7 @@ class PhdController extends Controller
                 'to2' => Input::get('emp_to_2'),
                 'to3' => Input::get('emp_to_3')
             );
-
+            // dd(Input::get('landline'));
             $candidate = new Phd();
 
             $candidate->applicationCategory = Input::get('appl_categ');
@@ -160,13 +160,13 @@ class PhdController extends Controller
             $candidate->permanentaddr = Input::get('permanent_addr');
             $candidate->email = Input::get('email');
             $candidate->mobile = Input::get('mobile');
-            $candidate->landline = Input::get('landline');
+            $candidate->lanline = Input::get('landline');
 
             $candidate->save();
 
             $applNo = $candidate->applNo;
             $reg_number = 'PHD/';
-            for(int $i = 1; $i <= 3; $i++)
+            for($i = 1; $i <= 3; $i++)
             {
                 if(Input::get('department'.$i))
                 {

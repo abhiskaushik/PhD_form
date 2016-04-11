@@ -66,7 +66,7 @@
 		        </div>		        		    		    
 		    <div class="col l6 s12">
 		    <p>Upload Image</p>
-		      	<div class="file-field input-field">`
+		      	<div class="file-field input-field">
 	          		<div class="btn teal darken-1 btn waves-effect waves-light">
 	          			<span class="light">File</span>
 	          			{!! Form::file('image_path' , array('class'=>'')) !!}			
@@ -282,57 +282,10 @@
 		      	</div>
 		      </div>
 
+		      
+		      <div class="space-medium"></div>
 		      <div class="row">
-  			<div class="col s12">
-  			<p>Postgraduate</p>
-  				 <div class="row">
-		        <div class="input-field col l5">
-		        	<span class="light">Name of Degree:</span>
-		      		<input required placeholder="Name of Degree" id="reg_number" type="text" class="validate" name="pg_deg" maxlength="50">
-		        </div>
-		         <div class="input-field col l5 offset-l2">
-		         	<span class="light">Branch Name:</span>
-		         	<input required placeholder="Branch/Specialization" id="reg_number" type="text" class="validate" name="pg_branch" maxlength="50">
-		        </div>
-		      </div>
-
-		      <div class="row">
-		      	
-		      	<div class="input-field col l6">
-		      		<span class="light">C.G.P.A:</span>
-		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate" name="pg_gpa" min="4" max="10" step="0.01">
-		      	</div>
-		      	<div class="input-field col l6">
-		      		<span class="light">Class:</span>
-		      		<select required name = 'pg_class'>
-				      <option value="" disabled selected>Choose your option</option>
-				      <option  value="Honours">Honours</option>
-				      <option  value="Distinction">Distinction</option>
-				      <option  value="First">First</option>
-				      <option  value="Second">Second</option>
-				    </select>
-		      	</div>
-		      </div> 
-		      </div>
-		      </div>
-		      <div class="row">
-		      	<div class="input-field col l12 s12">
-		      		<span class="light">College Name:</span>
-		      		<input required placeholder="College Name" id="reg_number" type="text" class="validate" name="pg_name_of_inst" maxlength="50">
-		      	</div>
-
-		      	<div class="input-field col l12 s12">
-		      	<span class="light">University Name:</span>
-		      		<input required placeholder="University Name" id="reg_number" type="text" class="validate" name="pg_name_of_uni" maxlength="50">
-		      	</div>
-
-		      	<div class="input-field col l4 s4">
-		      		<span class="light">Year of Passing</span>
-		      		<input required id="reg_number" type="number" class="validate" name="pg_yop" min="2000" max="2018"> 
-		      	</div>
-		      </div>
-
-		      <div class="row">
+		      <p>Academic Details:</p>
 		      	<table class="highlight centered responsive-table">
 		      	        <thead>
 		      	          <tr>
@@ -348,87 +301,90 @@
 		      	            <td>1</td>
 		      	            <td>First</td>
 		      	            <td>
-		      	            <input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            <input required id="reg_number" type="number" class="validate" name="max1" >
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            	<input required id="reg_number" type="number" class="validate" name="gpa1" >
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
 		      	            <td>1</td>
 		      	            <td>Second</td>
 		      	            <td>
-		      	            <input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            <input required id="reg_number" type="number" class="validate" name="max2" >
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            	<input required id="reg_number" type="number" class="validate" name="gpa2" >
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
 		      	            <td>2</td>
 		      	            <td>Third</td>
 		      	            <td>
-		      	            <input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            <input required id="reg_number" type="number" class="validate" name="max3" >
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            	<input required id="reg_number" type="number" class="validate" name="gpa3" >
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
 		      	            <td>2</td>
 		      	            <td>Fourth</td>
 		      	            <td>
-		      	            <input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            <input required id="reg_number" type="number" class="validate" name="max4">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            	<input required id="reg_number" type="number" class="validate" name="gpa4" >
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
 		      	            <td>3</td>
 		      	            <td>Fifth</td>
 		      	            <td>
-		      	            <input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            <input required id="reg_number" type="number" class="validate" name="max5">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            	<input required id="reg_number" type="number" class="validate" name="gpa5">
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
 		      	            <td>3</td>
 		      	            <td>Sixth</td>
 		      	            <td>
-		      	            <input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            <input required id="reg_number" type="number" class="validate" name="max6">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            	<input required id="reg_number" type="number" class="validate" name="gpa6" >
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
 		      	            <td>4</td>
 		      	            <td>Seventh</td>
 		      	            <td>
-		      	            <input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            <input required id="reg_number" type="number" class="validate" name="max7">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            	<input required id="reg_number" type="number" class="validate" name="gpa7" >
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
 		      	            <td>4</td>
 		      	            <td>Eighth</td>
 		      	            <td>
-		      	            <input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            <input required id="reg_number" type="number" class="validate eight" name="max8">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="reg_number" type="number" class="validate" name="pg_yop" >
+		      	            	<input required id="reg_number" type="number" class="validate eight" name="gpa8" >
 		      	            </td>
 		      	          </tr>
 		      	          
 		      	        </tbody>
 		      	      </table>
 		      </div>
-
+		      <p>
+		      	<input type="checkbox" id="ra3" name="ra3" />
+			      <label for="ra3">If *th Semester results are not announced,click </label>
+		      </p>
 		      <div class="row">
 		      	<span class="light">Details of Professional Experience</span>
 		      	<p>*(In case of more than one employer fill the details,else fill N.A.)</p>

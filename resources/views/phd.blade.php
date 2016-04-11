@@ -57,33 +57,26 @@
 		<!-- <input type="hidden" name="_token" id="_token" value={!! csrf_field() !!} /> -->			
   		<div class="row">  					   
   			<p>Application Category</p>		    
-		        <div class="input-field col l4 s12">
-		      		<select class="applicationCateg" required name="appl_categ">
-				      <option value="" disabled selected>Choose your option</option>
-				      <option value="PartTime">Part Time</option>
-				      <option value="FullTime">Full Time</option>
-				    </select>
-		        </div>		        		    		    
-		        <div class="input-field col l4 s12 part" hidden>
-		      		<select required name="appl_categ" >
-				      <option value="" disabled selected>Choose your option</option>
-				      <option value="OnCampus">On Campus</option>
-				      <option value="External">External</option>
-				    </select>
-		        </div>	
-		        <div class="col l4 s12">
-		        	<p>    </p>
-		        </div>	
-		        <div class="input-field col l4 s12 full" hidden>
-		      		<select required name="appl_categ" >
-				      <option value="" disabled selected>Choose your option</option>
-				      <option value="stipendiary">Stipendiary</option>
-				      <option value="nonStipendiary">Non-Stipendiary</option>
-				      <option value="Project">Project</option>
-				      <option value="Other">Other Fellowships</option>
-				    </select>
-		        </div>		
-		    <div class="upload col l4 s12 offset-l4">
+		        
+		      		
+				    <div class="input-field col l6 s12">
+				        <select class="applicationCateg" name="appl_categ">
+				        <option value="" disabled selected>Select</option>
+				          <optgroup label="Part Time">
+				            <option value="onCampus">On Campus</option>
+				            <option value="External">External</option>
+				          </optgroup>
+				          <optgroup label="Full Time">
+				            <option value="stipendiary">Stipendiary</option>
+				            <option value="nonStipendiary">Non-Stipendiary</option>
+				            <option value="Project">Project</option>
+				      		<option value="Other">Other Fellowships</option>
+				          </optgroup>
+				        </select>
+				        <label>Choose Category</label>
+				      </div>
+
+				      <div class="upload col l6 s12 ">
 		    <p>Upload Image</p>
 		      	<div class="file-field input-field">`
 	          		<div class="btn teal darken-1 btn waves-effect waves-light">
@@ -96,6 +89,11 @@
 	          	</div>
 		      </div>
 		      
+
+		        </div>		        		    		    
+		        
+		        
+		    
   		
 	
   		<div class="row">
@@ -165,23 +163,23 @@
 		      </div>      
 
 		      <div class="row">
-		        <div class="input-field col l5 s6">
+		        <div class="input-field col l6 s6">
 		        	<span class="light">Name:</span>
 		      		<input required placeholder="Name of Candidate" id="reg_number" type="text" class="validate" name="name" maxlength="32">
 		        </div>
-		         <div class="input-field col l5 offset-l2 s6">
+		         <div class="input-field col l6  s6">
 		         <span class="light">Father's Name:</span>
 		          <input required placeholder="Father's/Guardian Name" id="reg_number" type="text" class="validate" name="father_name" maxlength="32">
 		        </div>
 		      </div>
 
 		      <div class="row">
-		        <div class="input-field col l5">
+		        <div class="input-field col l6">
 		        	<span class="light">Date of Birth:</span>
 		      		<input required id="reg_number" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31">
 		        </div>
 
-		         <div class="input-field col l5 offset-l2">
+		         <div class="input-field col l6 ">
 		         <span class="light">Category</span><br>
 		         	<select required name="category">
 				      <option value="" disabled selected>Choose your Category</option>
@@ -194,7 +192,7 @@
 		      </div> 
 
 		      <div class="row">
-		        <div class="input-field col l5">
+		        <div class="input-field col l6">
 		      		<span class="light">Sex</span><br>
 		         	<select required name="sex">
 				      <option value="" disabled selected>Choose your Gender</option>
@@ -204,7 +202,7 @@
 		      		
 		        </div>
 
-		         <div class="input-field col l5 offset-l2">
+		         <div class="input-field col l6 ">
 		         <span class="light">Marital Status</span><br>
 		         	<select required name="marital_status">
 				      <option value="" disabled selected>Choose your Marital Status</option>
@@ -215,7 +213,7 @@
 		      </div> 
 
 		      <div class="row">
-		        <div class="input-field col l5">
+		        <div class="input-field col l6">
 		      		  <span class="light">Physically Challenged(P.H)</span><br>
 		         	<select required name="ph">
 				      <option value="" disabled selected>Choose your option</option>
@@ -223,7 +221,7 @@
 				      <option value="no">No</option>
 				    </select>
 		        </div>
-		         <div class="input-field col l5 offset-l2">
+		         <div class="input-field col l6 ">
 
 		         <span class="light">Nationality:</span>
 		          <input required placeholder="Nationality" id="reg_number" type="text" class="validate" name="nationality" maxlength="32">
@@ -231,14 +229,24 @@
 		      </div>           
 
 		       <div class="row">
-		        <div class="input-field col l5">      		  
+		        <div class="input-field col l6"> 
+		        	<span for="textarea1">Address for Communication</span><br>     		  
 					<textarea required id="textarea1" class="materialize-textarea" name="addr_for_commn" maxlength="200"></textarea>
-		            <span for="textarea1">Address for Communication</span><br>
+		            
+
+		            <p>Mobile Number:</p>
+		            <input pattern="^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$" required type="number" min="7000000000" max="9999999999" class="validate" name="mobile"></input>
 		        </div>
-		         <div class="input-field col l5 offset-l2">
+		         <div class="input-field col l6 ">
+		         <span for="textarea1">Permanent Address</span><br>
 		         <textarea required id="textarea1" class="materialize-textarea" name="permanent_addr" maxlength="200"></textarea>
-		            <span for="textarea1">Permanent Address</span><br>
+		            
+
+		            <p>Land-Line Number:</p>
+		            <input required id="reg_number" type="number" class="validate" minlength="10" maxlength="10" name="landline">
 		        </div>
+
+
 		      </div> 
 
 		    </div>
@@ -248,11 +256,11 @@
   			<div class="col s12">
   			<p>Undergraduate</p>
   				 <div class="row">
-		        <div class="input-field col l5">
+		        <div class="input-field col l6">
 		        	<span class="light">Name of Degree:</span>
 		      		<input required placeholder="Name of Degree" id="reg_number" type="text" class="validate" name="ug_deg" maxlength="32">
 		        </div>
-		         <div class="input-field col l5 offset-l2">
+		         <div class="input-field col l6 ">
 		         	<span class="light">Branch Name:</span>
 		         	<input required placeholder="Branch/Specialization" id="reg_number" type="text" class="validate" name="ug_branch" maxlength="50">
 		        </div>
@@ -260,9 +268,9 @@
 
 		      <div class="row">
 		      	
-		      	<div class="input-field col l6">
+		      	<div class="input-field col l6 ">
 		      		<span class="light">C.G.P.A:</span>
-		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate" name="ug_gpa" min="4" max="10" step="0.01">
+		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate ug_cgpa" name="ug_gpa" min="4" max="10" step="0.01">
 		      	</div>
 		      	<div class="input-field col l6">
 		      		<span class="light">Class:</span>
@@ -275,6 +283,10 @@
 				    </select>
 		      	</div>
 		      </div> 
+		      <p>
+		      	<input type="checkbox" id="ra1" name="ra1" />
+			      <label for="ra1">If results are not announced,click </label>
+		      </p>
 		      </div>
 		      </div>
 
@@ -299,11 +311,11 @@
   			<div class="col s12">
   			<p>Postgraduate</p>
   				 <div class="row">
-		        <div class="input-field col l5">
+		        <div class="input-field col l6">
 		        	<span class="light">Name of Degree:</span>
 		      		<input required placeholder="Name of Degree" id="reg_number" type="text" class="validate" name="pg_deg" maxlength="50">
 		        </div>
-		         <div class="input-field col l5 offset-l2">
+		         <div class="input-field col l6 ">
 		         	<span class="light">Branch Name:</span>
 		         	<input required placeholder="Branch/Specialization" id="reg_number" type="text" class="validate" name="pg_branch" maxlength="50">
 		        </div>
@@ -313,7 +325,7 @@
 		      	
 		      	<div class="input-field col l6">
 		      		<span class="light">C.G.P.A:</span>
-		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate" name="pg_gpa" min="4" max="10" step="0.01">
+		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate pg_cgpa" name="pg_gpa" min="4" max="10" step="0.01">
 		      	</div>
 		      	<div class="input-field col l6">
 		      		<span class="light">Class:</span>
@@ -326,6 +338,10 @@
 				    </select>
 		      	</div>
 		      </div> 
+		      <p>
+			      <input type="checkbox" id="ra2" name="ra2" />
+			      <label for="ra2">If results are not announced,click </label>
+			  </p>
 		      </div>
 		      </div>
 		      <div class="row">
@@ -352,8 +368,8 @@
 		      	<div class="results_announced center">
 		      		<p class="center">Are results announced?</p>
 		      		<span>
-		      			<input type="checkbox" id="announced" />
-		      			<label for="announced">Announced</label>
+		      			<input type="checkbox" id="announced" name="ann" />
+		      			<label for="announced" name="nann">Announced</label>
 		      		</span>
 		      		<span>
 		      			<input type="checkbox" id="nannounced" />
@@ -364,7 +380,7 @@
 		      	<div class="exam">
 		      		<div class="col l3 s6">
 		      	      		<span class="light">Examination:</span>
-		      	      		<select class="exam_select" required name = 'pg_class'>
+		      	      		<select class="exam_select" required name = 'exam'>
 		      			      <option value="hey" selected>Choose your Exam</option>
 		      			      <option  value="GATE">GATE</option>
 		      			      <option  value="NET">NET</option>
@@ -380,12 +396,13 @@
 		      		</div>
 			      	<div class="col l3 s6">
 			      		<span class="light">Enter Rank:</span>
-			      		<input required placeholder="Enter Rank" id="reg_number" type="number" class="validate" name="score" max="10000">
+			      		<input required placeholder="Enter Rank" id="reg_number" type="number" class="validate" name="rank" max="10000">
 			      	</div>
 			      	<div class="col l3 s6">
 			      		<span class="light">Valid Till:</span>
-			      		<input id="valid" type="Number" class="validate" name="rank" min="2015" max="2010">
+			      		<input id="valid" type="Number" class="validate" name="validity" max="2018" min="2010">
 			      	</div>
+			      	<!-- disipline needs to be added-->
 			      	<div class="space-small"></div>
 		      	</div>
 
@@ -395,19 +412,27 @@
 		      	</div>
 		      	<div class="col l4 s12">
 		      		<p for="textarea1">Publications:</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub" maxlength="200"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub1" maxlength="200"></textarea>
 		      	</div>
 		      	<div class="col l4 s12">
 		      		<p for="textarea1">Publications:</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub" maxlength="200"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub2" maxlength="200"></textarea>
 		      	</div>
 		      	<div class="col l4 s12">
 		      		<p for="textarea1">Publications:</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub" maxlength="200"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub3" maxlength="200"></textarea>
 		      	</div>
-		      	<div class="col l12 s12">
+		      	<div class="col l4 s12">
 		      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
-		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards" maxlength="200"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards1" maxlength="200"></textarea>
+		      	</div>
+		      	<div class="col l4 s12">
+		      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards2" maxlength="200"></textarea>
+		      	</div>
+		      	<div class="col l4 s12">
+		      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards3" maxlength="200"></textarea>
 		      	</div>
 		      </div>
 
@@ -415,52 +440,52 @@
 		      	<span class="light">Details of Professional Experience</span>
 		      	<p>*(In case of more than one employer fill the details,else fill N.A.)</p>
 		      	<div class="space-small"></div>
-		      	<div class="col s12 l12">
+		      	<div class="col s12 l12 emp_details">
 		      		<p for="textarea1">Name & Address of Employer 1</p><br>
-		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_1"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_1"></textarea>
 
 		      		 <p>Position Held:</p>
-		      		 <input required id="reg_number" type="text" class="validate" name="emp_pos_1" maxlength="100">
+		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_1" maxlength="100">
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input required id="reg_number" type="number" class="validate" name="emp_from_1" maxlength="100">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_1" maxlength="100">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>To:</p>
-		      		 	<input required id="reg_number" type="number" class="validate" name="emp_to_1" maxlength="100">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_1" maxlength="100">
 		      		 </div>
 		      	</div>
-		      	<div class="col s12 l12">
+		      	<div class="col s12 l12 emp_details">
 		      		<p for="textarea1">Name & Address of Employer 2</p><br>
 		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2"></textarea>
 
 		      		 <p>Position Held:</p>
-		      		 <input required id="reg_number" type="text" class="validate" name="emp_pos_2" maxlength="100">
+		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_2" maxlength="100">
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input required id="reg_number" type="number" class="validate" name="emp_from_2" maxlength="100">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_2" maxlength="100">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input required id="reg_number" type="number" class="validate" name="emp_to_2" maxlength="100">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_2" maxlength="100">
 		      		 </div>
 		      	</div>
-		      	<div class="col s12 l12">
+		      	<div class="col s12 l12 emp_details">
 		      		<p for="textarea1">Name & Address of Employer 3</p><br>
 		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3"></textarea>
 
 		      		 <p>Position Held:</p>
-		      		 <input required id="reg_number" type="text" class="validate" name="emp_pos_3" maxlength="100">
+		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_3" maxlength="100">
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input required id="reg_number" type="number" class="validate" name="emp_from_3" maxlength="100">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_3" maxlength="100">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input required id="reg_number" type="number" class="validate" name="emp_to_3" maxlength="100">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_3" maxlength="100">
 		      		 </div>
 		      	</div>
 		      </div>
@@ -480,7 +505,7 @@
 		      <div class="space-medium"></div>
 		      <div class="row">
 
-		      	<div class="col s6 l5">
+		      	<div class="col s6 l6">
 		      		<p>Date of Submission</p>
 		      		<input required id="reg_number" type="date" name="date" class="validate" max="2016-06-31" min="2016-01-31">
 		      	</div>
@@ -516,7 +541,7 @@
                 <p class="grey-text text-lighten-4">Tiruchirappalli - 620015</p>
                 <p class="grey-text text-lighten-4">Tamil Nadu, INDIA</p>
               </div>
-              <div class="col l4 offset-l2 s12">
+              <div class="col l4  s12">
                 <h5 class="white-text">QuickLinks</h5>
                 <ul>
                   <li><a class="grey-text text-lighten-3" href="https://www.nitt.edu">Institute Website</a></li>

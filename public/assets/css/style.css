@@ -150,7 +150,9 @@ span{
 .results_announced p{
 	font-size: 18px;
 }
-
+.emp_details p:first-child{
+	font-size: 20px;
+}
 @media screen and (max-width: 480px) {
 	.full-width{
 		width: 90%;

@@ -19,7 +19,37 @@ $(document).ready(function(){
 		$('#announced').prop('checked',false);
 		$('.exam').hide('slow');
 	});
-
+	$('#ra1').click(function()
+	{
+		if($('#ra1').is(':checked')){
+		
+		$('.ug_cgpa').val('');
+		$('.ug_cgpa').prop('disabled',true);
+		}
+		else{
+			$('.ug_cgpa').prop('disabled',false);	
+		}
+	});
+	$('#ra2').click(function()
+	{
+		if($('#ra2').is(':checked')){
+		$('.pg_cgpa').val('');
+		$('.pg_cgpa').prop('disabled',true);
+		}
+		else{
+			$('.pg_cgpa').prop('disabled',false);	
+		}
+	});
+	$('#ra3').click(function()
+	{
+		if($('#ra3').is(':checked')){
+		$('.eight').val('');
+		$('.eight').prop('disabled',true);
+		}
+		else{
+			$('.eight').prop('disabled',false);	
+		}
+	});
 	$('.applicationCateg').change(function()
 	{
 		var p=$('.applicationCateg option:selected').text();

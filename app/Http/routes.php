@@ -52,3 +52,11 @@ Route::get('ms', function()
     {
         return view('ms');
     });
+Route::get('test', function()
+    {
+        return view('test');
+    });
+Route::post('change', function()
+    {
+        dd(Input::get('ra1'));
+    });
