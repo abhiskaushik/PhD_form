@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUgDetailsTable extends Migration
+class CreatePhdPgDetails extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateUgDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ugdetails', function (Blueprint $table) {
-            $table->integer('registrationNumber')->unsigned();
+        Schema::create('phdpg', function (Blueprint $table) {
+            $table->string('registrationNumber', 25);
             $table->string('degreeName', 50);
             $table->string('branch', 50);
-            $table->float('percenatge');
+            $table->string('gpa', 5);
             $table->enum('class', ['Honours', 'Distinction', 'First', 'Second']);
             $table->string('institutionName', 50);
             $table->string('universityName', 50);
@@ -24,10 +24,10 @@ class CreateUgDetailsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('ugdetails', function (Blueprint $table) {
+        Schema::table('phdpg', function (Blueprint $table) {
             $table->foreign('registrationNumber')
                   ->references('registrationNumber')
-                  ->on('candidates');
+                  ->on('phd');
         });
     }
 
@@ -38,6 +38,6 @@ class CreateUgDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('ugdetails');
+        Schema::drop('phdpg');
     }
 }

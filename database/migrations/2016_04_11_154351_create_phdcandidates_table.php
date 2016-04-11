@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCandidatePersonalDetailsTable extends Migration
+class CreatePhdcandidatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,14 @@ class CreateCandidatePersonalDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('candidates', function (Blueprint $table) {
+        Schema::create('phd', function (Blueprint $table) {
             $table->string('applicationCategory', 20);
-            $table->increments('registrationNumber');
+            $table->string('registrationNumber', 25);
             $table->string('dateOfReg', 15);
             $table->string('imagePath', 50);
-            $table->string('dept', 50);
+            $table->string('dept1', 50);
+            $table->string('dept2', 50);
+            $table->string('dept3', 50);
             $table->string('areaOfResearch', 50);
             $table->string('name', 50);
             $table->string('fatherName', 50);
@@ -29,8 +31,17 @@ class CreateCandidatePersonalDetailsTable extends Migration
             $table->string('nationality', 20);
             $table->string('addrforcomm', 150);
             $table->string('permanentaddr', 150);
-            $table->boolean('deleted', 6)->default(false);
+            $table->string('email', 100);
+            $table->bigInteger('mobile');
+            $table->bigInteger('lanline');
+            $table->boolean('deleted')->default(false);
+            $table->boolean('accepted')->default(false);
             $table->timestamps();
+        });
+
+        Schema::table('phd', function(Blueprint $table) {
+            $table->primary('registrationNumber');
+            $table->unique('registrationNumber');
         });
     }
 
@@ -41,6 +52,6 @@ class CreateCandidatePersonalDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('candidates');
+        Schema::drop('phd');
     }
 }

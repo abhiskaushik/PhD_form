@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddEmailToCandidatesTable extends Migration
+class CreateAdminTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,12 @@ class AddEmailToCandidatesTable extends Migration
      */
     public function up()
     {
-        Schema::table('candidates', function (Blueprint $table) {
-            $table->string('email', 250);
-            $table->boolean('accepted')->default(0);   
+        Schema::create('admin', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('dept', 6);
+            $table->string('userName');
+            $table->string('password');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +28,6 @@ class AddEmailToCandidatesTable extends Migration
      */
     public function down()
     {
-        Schema::table('candidates', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('admin');
     }
 }

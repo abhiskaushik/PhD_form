@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Other extends Model
+class PhdPg extends Model
 {
-    protected $table = 'otherdetails';
+    protected $table = 'phdpg';
 }

@@ -14,6 +14,7 @@ use App\Candidates;
 use App\Ug;
 use App\Pg;
 use App\Other;
+use App\Admin;
 use paginate;
 use Session;
 
@@ -41,9 +42,14 @@ class AdminController extends Controller
             $username = Input::get('username');
             $password = Input::get('password');
 
-            if($username == 'blah' && $password == 'blah')
+            $auth = Admin::where('userName', $username)
+                ->where('password', $password)
+                ->first();
+
+            if(sizeof($auth) > 0)
             {
                 Session::put('userName', $username);
+                Session::put('dept', $auth->dept);
                 return redirect('admin/home');
             }
             else
@@ -58,6 +64,7 @@ class AdminController extends Controller
 	{
         $candidates = Candidates::where('deleted', false)
                                     ->where('phdormsc', $phdormsc)
+                                    ->where('dept', Session::get('dept'))
                                     ->paginate(6);
         $candidates_id= $candidates->lists('registrationNumber');
                 $ugDetails = Ug::whereIn('registrationNumber', $candidates_id)->get();

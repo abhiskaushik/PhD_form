@@ -11,24 +11,18 @@ use Validator;
 use View;
 use File;
 use Storage;
-use App\DD;
-use App\Candidates;
-use App\Ug;
-use App\Pg;
-use App\Other;
+use App\Ms;
+use App\MsUg;
+use MsScores;
+use App\MsPro;
 
-class ValidationController extends Controller
+class MsController extends Controller
 {
     public function validated(Request $request)
     {
 
-    	$rules = array(
-            'phdormsc' => 'required',                        
+    	$rules = array(                        
 	        'date' => 'required',     
-	        'dd_no' => 'required',
-	        'date_of_sub' => 'required',
-	        'amount' => 'required',
-	        'drawn_at' => 'required',
 	        'appl_categ' => 'required',
 	        'department1' => 'required',
             'department2' => 'required',
@@ -43,27 +37,37 @@ class ValidationController extends Controller
 	        'ph' => 'required|in:yes,no',
 	        'nationality' => 'required',
 	        'addr_for_commn' => 'required|max:200',
+            'permanent_addr' =>'required|max:200'
             'email' => 'required|email|unique:candidates',
+            'mobile' => 'required',
+            'landline' => 'required',
 	        'ug_deg' => 'required',
 	        'ug_branch' => 'required',
-	        'ug_gpa' => 'required',
+	        // 'ug_gpa' => 'required',
 	        'ug_class' => 'required|in:Honours,Distinction,First,Second',
 	        'ug_name_of_inst' => 'required',
 	        'ug_name_of_uni' => 'required',
 	        'ug_yop' => 'required',
-            'pg_deg' => 'required',
-            'pg_branch' => 'required',
-            'pg_gpa' => 'required',
-            'pg_class' => 'required|in:Honours,Distinction,First,Second',
-            'pg_name_of_inst' => 'required',
-            'pg_name_of_uni' => 'required',
-            'pg_yop' => 'required',
-            'score' => 'required',
-            'rank' => 'required',
-            'title_of_project' => 'required',
-            'details_of_pub' => 'required|max:30',
-            'awards' => 'required',
-            'employer_details_1' => 'required'               
+	        'max1' => 'required',
+	        'max2' => 'required',
+	        'max3' => 'required',
+	        'max4' => 'required',
+	        'max5' => 'required',
+	        'max6' => 'required',
+	        'max7' => 'required',
+	        'max8' => 'required',
+	        'gpa1' => 'required',
+	        'gpa2' => 'required',
+	        'gpa3' => 'required',
+	        'gpa4' => 'required',
+	        'gpa5' => 'required',
+	        'gpa6' => 'required',
+	        'gpa7' => 'required',
+	        'gpa8' => 'required',
+            // 'title_of_project' => 'required',
+            // 'details_of_pub' => 'required|max:30',
+            // 'awards' => 'required',
+            // 'employer_details_1' => 'required'               
     	);
 
         
@@ -77,18 +81,14 @@ class ValidationController extends Controller
         else
         {
 
-        	$bool = Candidates::where('name' , Input::get('name'))
+        	$bool = Phd::where('name' , Input::get('name'))
         						->where('addrforcomm' , Input::get('addr_for_commn'))
-                                ->where('phdormsc', Input::get('phdormsc'))
         						->first();
+
         	if($bool == NULL){
             $details = array(
-                'phdormsc' => Input::get('phdormsc'),
                 'date' => Input::get('date'),
-                'dd_no' => Input::get('dd_no'),
                 'date_of_sub' => Input::get('date_of_sub'),
-                'amount' => Input::get('amount'),
-                'drawn_at' => Input::get('drawn_at'),
                 'appl_categ' => Input::get('appl_categ'),//dont know how to add $name attribute here
                 'image_path' => Input::get('image_path'),
                 'department1' => Input::get('department1'),
@@ -96,6 +96,8 @@ class ValidationController extends Controller
                 'department3' => Input::get('department3'),
                 'area_of_research' => Input::get('area_of_research'),
                 'email' => Input::get('email'),
+                'mobile' => Input::get('mobile'),
+                'landline' => Input::get('landline'),
                 'name' => Input::get('name'),
                 'father_name' => Input::get('father_name'),
                 'dob' => Input::get('dob'),
@@ -110,49 +112,47 @@ class ValidationController extends Controller
                 'ug_branch' => Input::get('ug_branch'),
                 'ug_percentage' => Input::get('ug_percentage'),
                 'ug_gpa' => Input::get('ug_gpa'),
-                'ug_class' => Input::get('ug_class'),
+                // 'ug_class' => Input::get('ug_class'),
                 'ug_name_of_inst' => Input::get('ug_name_of_inst'),
                 'ug_name_of_uni' => Input::get('ug_name_of_uni'),
                 'ug_yop' => Input::get('ug_yop'),
-                'pg_deg' => Input::get('pg_deg'),
-                'pg_branch' => Input::get('pg_branch'),
-                'pg_gpa' => Input::get('pg_gpa'),
-                'pg_class' => Input::get('pg_class'),
-                'pg_name_of_inst' => Input::get('pg_name_of_inst'),
-                'pg_name_of_uni' => Input::get('pg_name_of_uni'),
-                'pg_yop' => Input::get('pg_yop'),
-                'score' => Input::get('score'),
-                'rank' => Input::get('rank'),
-                'title_of_project' => Input::get('title_of_project'),
-                'details_of_pub' => Input::get('details_of_pub'),
-                'awards' => Input::get('awards'),
+                // 'score' => Input::get('score'),
+                // 'rank' => Input::get('rank'),
                 'employer_details_1' => Input::get('employer_details_1'),
                 'employer_details_2' =>Input::get('employer_details_2'),
-                'employer_details_3' => Input::get('employer_details_3')
+                'employer_details_3' => Input::get('employer_details_3'),
+                'postion1' => Input::get('emp_pos_1'),
+                'postion2' => Input::get('emp_pos_2'),
+                'postion3' => Input::get('emp_pos_3'),
+                'from1' => Input::get('emp_from_1'),
+                'from2' => Input::get('emp_from_2'),
+                'from3' => Input::get('emp_from_3'),
+                'to1' => Input::get('emp_to_1'),
+                'to2' => Input::get('emp_to_2'),
+                'to3' => Input::get('emp_to_3'),
+                'max1' => Input::get('max1'),
+                'max2' => Input::get('max2'),
+                'max3' => Input::get('max3'),
+                'max4' => Input::get('max4'),
+                'max5' => Input::get('max5'),
+                'max6' => Input::get('max6'),
+                'max7' => Input::get('max7'),
+                'gpa1' => Input::get('gpa1'),
+                'gpa2' => Input::get('gpa2'),
+                'gpa3' => Input::get('gpa3'),
+                'gpa4' => Input::get('gpa4'),
+                'gpa5' => Input::get('gpa5'),
+                'gpa6' => Input::get('gpa6'),
+                'gpa7' => Input::get('gpa7')
             );
 
+            $candidate = new Phd();
 
-            $department = '';
-
-            for($i = 1; $i <= 3; $i++)
-            {
-                if(Input::get('department'.$i) && $i != 3)
-                {
-                    $department = $department.Input::get('department'.$i).',';
-                }
-                if($i == 3)
-                {
-                    $department = $department.Input::get('department'.$i);
-                }
-            }
-
-            $candidate = new Candidates();
-
-            $candidate->phdormsc = Input::get('phdormsc');
             $candidate->applicationCategory = Input::get('appl_categ');
             $candidate->dateOfReg = Input::get('date');
-
-            $candidate->dept = $department;
+            $candidate->dept1 = Input::get('department1');
+            $candidate->dept2 = Input::get('department2');
+            $candidate->dept3 = Input::get('department3');
             $candidate->areaOfResearch = Input::get('area_of_research');
             $candidate->name = Input::get('name');
             $candidate->fatherName = Input::get('father_name');
@@ -165,17 +165,45 @@ class ValidationController extends Controller
             $candidate->addrforcomm = Input::get('addr_for_commn');
             $candidate->permanentaddr = Input::get('permanent_addr');
             $candidate->email = Input::get('email');
+            $candidate->mobile = Input::get('mobile');
+            $candidate->landline = Input::get('landline');
 
             $candidate->save();
 
-            $reg_number = $candidate->registrationNumber;
+            $applNo = $candidate->applNo;
+            $reg_number = 'MS/';
+            for(int $i = 1; $i <= 3; $i++)
+            {
+                if(Input::get('department'.$i))
+                {
+                    $reg_number = $reg_number.Input::get('department'.$i).'/';
+                }
+            }
+            $reg_number = $reg_number.$applNo;
+            Phd::where('applNo', $applNo)
+                    ->update(['registrationNumber' => $reg_number]);
 
-            $ugDetails = new Ug();
+            if(Input::get('ra1') == 'on')
+            {
+                $details['ug_gpa'] = 'RA';
+            }
+            if(Input::get('ra3') == 'on')
+            {
+                $details['gpa8'] = 'RA';
+                $details['max8'] = 'RA';
+            }
+            else
+            {
+            	$details['gpa8'] = Input::get('gpa8');
+            	$details['max8'] = Input::get('max8');
+            }
+
+            $ugDetails = new MsUg();
 
             $ugDetails->registrationNumber = $reg_number;
             $ugDetails->degreeName = Input::get('ug_deg');
             $ugDetails->branch = Input::get('ug_branch');
-            $ugDetails->percenatge = Input::get('ug_gpa');
+            $ugDetails->gpa = $details['ug_gpa'];
             // replace this field by gpa
             $ugDetails->class = Input::get('ug_class');
             $ugDetails->institutionName = Input::get('ug_name_of_inst');
@@ -184,43 +212,43 @@ class ValidationController extends Controller
             
             $ugDetails->save();
 
-            $pgDetails = new Pg();
-            
-            $pgDetails->registrationNumber = $reg_number;
-            $pgDetails->degreeName = Input::get('pg_deg');
-            $pgDetails->branch = Input::get('pg_branch');
-            $pgDetails->percenatge = Input::get('pg_gpa');
-            $pgDetails->class = Input::get('pg_class');
-            $pgDetails->institutionName = Input::get('pg_name_of_inst');
-            $pgDetails->universityName= Input::get('pg_name_of_uni');
-            $pgDetails->yop = Input::get('pg_yop');
-            
-            $pgDetails->save();
+            $pro = new MsPro();
 
-            $dd = new DD();
+			$pro->proexp1 = Input::get('employer_details_1');
+            $pro->proexp2 = Input::get('employer_details_2');
+            $pro->proexp3 = Input::get('employer_details_3');
+            $pro->position1 = Input::get('emp_pos_1');
+            $pro->position2 = Input::get('emp_pos_2');
+            $pro->position3 = Input::get('emp_pos_3');
+            $pro->from1 = Input::get('emp_from_1');
+            $pro->from2 = Input::get('emp_from_2');
+            $pro->from3 = Input::get('emp_from_3');
+            $pro->to1 = Input::get('emp_to_1');
+            $pro->to2 = Input::get('emp_to_2');
+            $pro->to3 = Input::get('emp_to_3');
 
-            $dd->registrationNumber = $reg_number;
-            $dd->ddno = Input::get('dd_no');
-            $dd->date = Input::get('date_of_sub');
-            $dd->amount = Input::get('amount');
-            $dd->drawnAt = Input::get('drawn_at');
+            $pro->save();
 
-            $dd->save();
+            $msScores = new MsScores();
 
-            $others = new Other();
+            $msScores->gpamax1 = Input::get('max1');
+            $msScores->gpamax2 = Input::get('max2');
+            $msScores->gpamax3 = Input::get('max3');
+            $msScores->gpamax4 = Input::get('max4');
+            $msScores->gpamax5 = Input::get('max5');
+            $msScores->gpamax6 = Input::get('max6');
+            $msScores->gpamax7 = Input::get('max7');
+            $msScores->gpamax8 = $details['max8'];
+            $msScores->gpa1 = Input::get('gpa1');
+            $msScores->gpa2 = Input::get('gpa2');
+            $msScores->gpa3 = Input::get('gpa3');
+            $msScores->gpa4 = Input::get('gpa4');
+            $msScores->gpa5 = Input::get('gpa5');
+            $msScores->gpa6 = Input::get('gpa6');
+            $msScores->gpa7 = Input::get('gpa7');
+            $msScores->gpa8 = $details['gpa8'];
 
-            $others->registrationNumber = $reg_number;
-            $others->score = Input::get('score');
-            $others->rank = Input::get('rank');
-            $others->pgproject = Input::get('title_of_project');
-            $others->publications = Input::get('details_of_pub');
-            $others->awards = Input::get('awards');
-            $others->proexp1 = Input::get('employer_details_1');
-            $others->proexp2 = Input::get('employer_details_2');
-            $others->proexp3 = Input::get('employer_details_3');
-            $others->subdate = Input::get('date');
-
-            $others->save();
+            $msScores->save();
 
             $details['reg_number'] = $reg_number;
             $file = Input::file('image_path');
