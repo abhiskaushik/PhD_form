@@ -1,0 +1,240 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Input;
+use Validator; 
+use View;
+use File;
+use Storage;
+use App\DD;
+use App\Candidates;
+use App\Ug;
+use App\Pg;
+use App\Other;
+
+class ValidationController extends Controller
+{
+    public function validated(Request $request)
+    {
+
+    	$rules = array(
+            'phdormsc' => 'required',                        
+	        'date' => 'required',     
+	        'dd_no' => 'required',
+	        'date_of_sub' => 'required',
+	        'amount' => 'required',
+	        'drawn_at' => 'required',
+	        'appl_categ' => 'required',
+	        'department1' => 'required',
+            'department2' => 'required',
+            'department3' => 'required',
+	        'area_of_research' => 'required',
+	        'name' => 'required',
+	        'father_name' => 'required',
+	        'dob' => 'required',
+	        'category' => 'required|in:OBC,OC,SC,ST',
+	        'sex' => 'required|in:male,female',
+            'marital_status' => 'required',
+	        'ph' => 'required|in:yes,no',
+	        'nationality' => 'required',
+	        'addr_for_commn' => 'required|max:200',
+            'email' => 'required|email|unique:candidates',
+	        'ug_deg' => 'required',
+	        'ug_branch' => 'required',
+	        'ug_gpa' => 'required',
+	        'ug_class' => 'required|in:Honours,Distinction,First,Second',
+	        'ug_name_of_inst' => 'required',
+	        'ug_name_of_uni' => 'required',
+	        'ug_yop' => 'required',
+            'pg_deg' => 'required',
+            'pg_branch' => 'required',
+            'pg_gpa' => 'required',
+            'pg_class' => 'required|in:Honours,Distinction,First,Second',
+            'pg_name_of_inst' => 'required',
+            'pg_name_of_uni' => 'required',
+            'pg_yop' => 'required',
+            'score' => 'required',
+            'rank' => 'required',
+            'title_of_project' => 'required',
+            'details_of_pub' => 'required|max:30',
+            'awards' => 'required',
+            'employer_details_1' => 'required'               
+    	);
+
+        
+    	$validator = Validator::make(Input::all(), $rules);
+
+        if(!($validator->fails()))
+    	{
+    		$message = 'Please fill in all the details';
+			return View::make('error')->with('message', $validator->errors());
+    	}
+        else
+        {
+
+        	$bool = Candidates::where('name' , Input::get('name'))
+        						->where('addrforcomm' , Input::get('addr_for_commn'))
+                                ->where('phdormsc', Input::get('phdormsc'))
+        						->first();
+        	if($bool == NULL){
+            $details = array(
+                'phdormsc' => Input::get('phdormsc'),
+                'date' => Input::get('date'),
+                'dd_no' => Input::get('dd_no'),
+                'date_of_sub' => Input::get('date_of_sub'),
+                'amount' => Input::get('amount'),
+                'drawn_at' => Input::get('drawn_at'),
+                'appl_categ' => Input::get('appl_categ'),//dont know how to add $name attribute here
+                'image_path' => Input::get('image_path'),
+                'department1' => Input::get('department1'),
+                'department2' => Input::get('department2'),
+                'department3' => Input::get('department3'),
+                'area_of_research' => Input::get('area_of_research'),
+                'email' => Input::get('email'),
+                'name' => Input::get('name'),
+                'father_name' => Input::get('father_name'),
+                'dob' => Input::get('dob'),
+                'category' => Input::get('category'),//dont know how to add $name attribute here
+                'sex' => Input::get('sex'),//dont know how to add $name attribute here
+                'marital_status' => Input::get('marital_status'),
+                'ph' => Input::get('ph'),//dont know how to add $name attribute here
+                'nationality' => Input::get('nationality'),
+                'addr_for_commn' => Input::get('addr_for_commn'),
+                'permanent_addr' => Input::get('permanent_addr'),
+                'ug_deg' => Input::get('ug_deg'),
+                'ug_branch' => Input::get('ug_branch'),
+                'ug_percentage' => Input::get('ug_percentage'),
+                'ug_gpa' => Input::get('ug_gpa'),
+                'ug_class' => Input::get('ug_class'),
+                'ug_name_of_inst' => Input::get('ug_name_of_inst'),
+                'ug_name_of_uni' => Input::get('ug_name_of_uni'),
+                'ug_yop' => Input::get('ug_yop'),
+                'pg_deg' => Input::get('pg_deg'),
+                'pg_branch' => Input::get('pg_branch'),
+                'pg_gpa' => Input::get('pg_gpa'),
+                'pg_class' => Input::get('pg_class'),
+                'pg_name_of_inst' => Input::get('pg_name_of_inst'),
+                'pg_name_of_uni' => Input::get('pg_name_of_uni'),
+                'pg_yop' => Input::get('pg_yop'),
+                'score' => Input::get('score'),
+                'rank' => Input::get('rank'),
+                'title_of_project' => Input::get('title_of_project'),
+                'details_of_pub' => Input::get('details_of_pub'),
+                'awards' => Input::get('awards'),
+                'employer_details_1' => Input::get('employer_details_1'),
+                'employer_details_2' =>Input::get('employer_details_2'),
+                'employer_details_3' => Input::get('employer_details_3')
+            );
+
+
+            $department = '';
+
+            for($i = 1; $i <= 3; $i++)
+            {
+                if(Input::get('department'.$i) && $i != 3)
+                {
+                    $department = $department.Input::get('department'.$i).',';
+                }
+                if($i == 3)
+                {
+                    $department = $department.Input::get('department'.$i);
+                }
+            }
+
+            $candidate = new Candidates();
+
+            $candidate->phdormsc = Input::get('phdormsc');
+            $candidate->applicationCategory = Input::get('appl_categ');
+            $candidate->dateOfReg = Input::get('date');
+
+            $candidate->dept = $department;
+            $candidate->areaOfResearch = Input::get('area_of_research');
+            $candidate->name = Input::get('name');
+            $candidate->fatherName = Input::get('father_name');
+            $candidate->dob = Input::get('dob');
+            $candidate->category = Input::get('category');
+            $candidate->sex = Input::get('sex');
+            $candidate->maritalStatus = Input::get('marital_status');
+            $candidate->ph = Input::get('ph');
+            $candidate->nationality = Input::get('nationality');
+            $candidate->addrforcomm = Input::get('addr_for_commn');
+            $candidate->permanentaddr = Input::get('permanent_addr');
+            $candidate->email = Input::get('email');
+
+            $candidate->save();
+
+            $reg_number = $candidate->registrationNumber;
+
+            $ugDetails = new Ug();
+
+            $ugDetails->registrationNumber = $reg_number;
+            $ugDetails->degreeName = Input::get('ug_deg');
+            $ugDetails->branch = Input::get('ug_branch');
+            $ugDetails->percenatge = Input::get('ug_gpa');
+            // replace this field by gpa
+            $ugDetails->class = Input::get('ug_class');
+            $ugDetails->institutionName = Input::get('ug_name_of_inst');
+            $ugDetails->universityName= Input::get('ug_name_of_uni');
+            $ugDetails->yop = Input::get('ug_yop');
+            
+            $ugDetails->save();
+
+            $pgDetails = new Pg();
+            
+            $pgDetails->registrationNumber = $reg_number;
+            $pgDetails->degreeName = Input::get('pg_deg');
+            $pgDetails->branch = Input::get('pg_branch');
+            $pgDetails->percenatge = Input::get('pg_gpa');
+            $pgDetails->class = Input::get('pg_class');
+            $pgDetails->institutionName = Input::get('pg_name_of_inst');
+            $pgDetails->universityName= Input::get('pg_name_of_uni');
+            $pgDetails->yop = Input::get('pg_yop');
+            
+            $pgDetails->save();
+
+            $dd = new DD();
+
+            $dd->registrationNumber = $reg_number;
+            $dd->ddno = Input::get('dd_no');
+            $dd->date = Input::get('date_of_sub');
+            $dd->amount = Input::get('amount');
+            $dd->drawnAt = Input::get('drawn_at');
+
+            $dd->save();
+
+            $others = new Other();
+
+            $others->registrationNumber = $reg_number;
+            $others->score = Input::get('score');
+            $others->rank = Input::get('rank');
+            $others->pgproject = Input::get('title_of_project');
+            $others->publications = Input::get('details_of_pub');
+            $others->awards = Input::get('awards');
+            $others->proexp1 = Input::get('employer_details_1');
+            $others->proexp2 = Input::get('employer_details_2');
+            $others->proexp3 = Input::get('employer_details_3');
+            $others->subdate = Input::get('date');
+
+            $others->save();
+
+            $details['reg_number'] = $reg_number;
+            $file = Input::file('image_path');
+            $extension = Input::file('image_path')->getClientOriginalExtension();
+            if($extension == 'jpg' || $extension=='png' || $extension == 'jpeg')
+            {
+                Storage::disk('local')->put($reg_number.'.'.$extension,  File::get($file));
+            }
+            return View::make('success')->with('details', $details);
+            }
+            else{
+            	$message = "User already exists ";
+            	return View::make('error')->with('message' , $message);
+            }
+        }
+    }
+}
