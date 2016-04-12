@@ -21,7 +21,7 @@ Route::group(['middleware' => 'adminauth'], function () {
 });
 Route::post('delete', 'AdminController@deleted' );
 Route::post('accept', 'AdminController@accepted');
-Route::get('print/{regNo}', 'AdminController@printer' );
+Route::get('print/{phdormsc}/{regNo}', 'AdminController@printer' );
 
 Route::post('success', 'PhdController@validated');
 Route::get('error', function()
