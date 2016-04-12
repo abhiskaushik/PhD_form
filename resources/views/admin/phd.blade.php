@@ -79,6 +79,7 @@
           <div id="modal{!! $i !!}" class="modal l8">
           <div class="modal-content">
           <h4>Candidate's Form</h4>
+
           <p><b>Registration Number:</b> {!! $data['candidates'][$i]->registrationNumber !!}</p>
           <p><b>Date of Registration:</b> {!! $data['candidates'][$i]->dateOfReg !!}
           </p>
@@ -90,7 +91,9 @@
           <p><b>Department:</b> {!! $data['candidates'][$i]->dept !!}</p>
           <p><b>Email Id:</b> {!! $data['candidates'][$i]->email !!}</p>
           <p><b>Area of Research:</b> {!! $data['candidates'][$i]->areaOfResearch !!}</p>
-          <p><b>Name of Candidate:</b> {!! $data['candidates'][$i]->name !!}</p>
+          <p><b>Name of Candidate:</b> {!! $data['candidates'][$i]->
+          name !!}</p>
+          <p><b>Email Id:</b> {!! $data['candidates'][$i]->email !!}</p>
           <p><b>Father's Name:</b> {!! $data['candidates'][$i]->fatherName !!}</p>
           <p><b>Date of Birth:</b> {!! $data['candidates'][$i]->dob !!}</p>
           <p><b>Category:</b> {!! $data['candidates'][$i]->category !!}</p>
@@ -100,9 +103,12 @@
           <p><b>Nationality:</b> {!! $data['candidates'][$i]->nationality !!}</p>
           <p><b>Address for Communication:</b> {!! $data['candidates'][$i]->addrforcomm !!}</p>
           <p><b>Permanent Address:</b> {!! $data['candidates'][$i]->permanentaddr !!}</p>
+          <p><b>Mobile Number:</b> {!! $data['candidates'][$i]->mobile !!}</p>
+          <p><b>Landline Number:</b> {!! $data['candidates'][$i]->landline !!}</p>
+
           <p><b>Undergraduate Degree:</b> {!! $data['ug'][$i]->degreeName !!}</p>
           <p><b>Undergraduate Branch:</b> {!! $data['ug'][$i]->branch !!}</p>
-          <p><b>Undergraduate G.P.A:</b> {!! $data['ug'][$i]->percenatge !!}</p>
+          <p><b>Undergraduate G.P.A:</b> {!! $data['ug'][$i]->gpa !!}</p>
           <p><b>Undergraduate Class:</b> {!! $data['ug'][$i]->class !!}</p>
           <p><b>Undergraduate Name of Institution:</b> {!! $data['ug'][$i]->institutionName !!}</p>
           <p><b>Undergraduate Name of University:</b> {!! $data['ug'][$i]->universityName !!}</p>
@@ -110,21 +116,38 @@
 
           <p><b>Post-graduate Degree:</b> {!! $data['pg'][$i]->degreeName !!}</p>
           <p><b>Post-graduate Branch:</b> {!! $data['pg'][$i]->branch !!}</p>
-          <p><b>Post-graduate G.P.A:</b> {!! $data['pg'][$i]->percenatge !!}</p>
+          <p><b>Post-graduate G.P.A:</b> {!! $data['pg'][$i]->gpa !!}</p>
           <p><b>Post-graduate Class:</b> {!! $data['pg'][$i]->class !!}</p>
           <p><b>Post-graduate Name of Institution:</b> {!! $data['pg'][$i]->institutionName !!}</p>
           <p><b>Post-graduate Name of University:</b> {!! $data['pg'][$i]->universityName !!}</p>
           <p><b>Post-graduate Year of Passing:</b> {!! $data['pg'][$i]->yop !!}</p>
 
+          <p><b>Exam Name:</b> {!! $data['others'][$i]->exam !!}</p>
+          <p><b>Discipline:</b> {!! $data['others'][$i]->discipline !!}</p>
           <p><b>Score:</b> {!! $data['others'][$i]->score !!}</p>
           <p><b>Rank:</b> {!! $data['others'][$i]->rank !!}</p>
           <p><b>Title of Project:</b> {!! $data['others'][$i]->pgproject !!}</p>
-          <p><b>Details of Publication:</b> {!! $data['others'][$i]->publications !!}</p>
-          <p><b>Awards:</b> {!! $data['others'][$i]->awards !!}</p>
-          <p><b>Employer Details 1:</b> {!! $data['others'][$i]->proexp1 !!}</p>
-          <p><b>Employer Details 2:</b> {!! $data['others'][$i]->proexp2 !!}</p>
-          <p><b>Employer Details 3:</b> {!! $data['others'][$i]->proexp3 !!}</p>
+          <p><b>Details of Publication 1:</b> {!! $data['others'][$i]->publications1 !!}</p>
+          <p><b>Details of Publication 2:</b> {!! $data['others'][$i]->publications2 !!}</p>
+          <p><b>Details of Publication 3:</b> {!! $data['others'][$i]->publications3 !!}</p>
+          <p><b>Awards1:</b> {!! $data['others'][$i]->awards1 !!}</p>
+          <p><b>Awards2:</b> {!! $data['others'][$i]->awards2 !!}</p>
+          <p><b>Awards3:</b> {!! $data['others'][$i]->awards3 !!}</p>
+
+          <p><b>Employer Details 1:</b> {!! $data['pro'][$i]->proexp1 !!}</p>
+          <p><b>Position at Work 1:</b>{!! $data['pro'][$i]->position1 !!}</p>
+          <p><b>From 1:</b>{!! $data['pro'][$i]->from1 !!}</p>
+          <p><b>To 1:</b>{!! $data['pro'][$i]->to1 !!}</p>
+          <p><b>Employer Details 2:</b> {!! $data['pro'][$i]->proexp2 !!}</p>
+          <p><b>Position at Work 1:</b>{!! $data['pro'][$i]->position2 !!}</p>
+          <p><b>From 1:</b>{!! $data['pro'][$i]->from2 !!}</p>
+          <p><b>To 1:</b>{!! $data['pro'][$i]->to2 !!}</p>
+          <p><b>Employer Details 3:</b> {!! $data['pro'][$i]->proexp3 !!}</p>
+          <p><b>Position at Work 1:</b>{!! $data['pro'][$i]->position3 !!}</p>
+          <p><b>From 1:</b>{!! $data['pro'][$i]->from3 !!}</p>
+          <p><b>To 1:</b>{!! $data['pro'][$i]->to3 !!}</p>
           
+          <p><b>Submission Date:</b> {!! $data['others'][$i]->subdate !!}</p>
         </div>
       <div class="modal-footer">
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>

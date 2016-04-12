@@ -93,7 +93,7 @@ class AdminController extends Controller
             $candidates_id = $candidates->lists('applNo');
             $ugDetails = MsUg::whereIn('applNo', $candidates_id)->get(); 
             $otherDetails = MsOther::whereIn('applNo', $candidates_id)->get();
-            $scores = MsScores::whereIn('applNo', $candidates_id)->get();
+            $scores = MsSemScore::whereIn('applNo', $candidates_id)->get();//changed this from MsScores to MsSemScore 
             $proDetails = MsPro::whereIn('applNo', $candidates_id)->get();
             $data = array('candidates' => $candidates,
                             'ug' => $ugDetails,
@@ -102,6 +102,7 @@ class AdminController extends Controller
                             );
             return View::make('admin/'.$phdormsc)->with('data', $data);
         }
+
 	}
 
 	public function deleted(Request $request)

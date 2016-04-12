@@ -18,7 +18,7 @@
 	<header> 
   </header>
   
-  
+
   <nav>
     <div class="nav-wrapper ">
       
@@ -93,6 +93,7 @@
         <p><b>Email:</b> {!! $details['email'] !!}</p>
         <p><b>Area of Research:</b> {!! $details['area_of_research'] !!}</p>
         <p><b>Name of Candidate:</b> {!! $details['name'] !!}</p>
+        <p><b>Email Id:</b> {!! $details['email'] !!}</p>
         <p><b>Father's Name:</b> {!! $details['father_name'] !!}</p>
         <p><b>Date of Birth:</b> {!! $details['dob'] !!}</p>
         <p><b>Category:</b> {!! $details['category'] !!}</p>
@@ -102,7 +103,8 @@
         <p><b>Nationality:</b> {!! $details['nationality'] !!}</p>
         <p><b>Address for Communication:</b> {!! $details['addr_for_commn'] !!}</p>
         <p><b>Permanent Address:</b> {!! $details['permanent_addr'] !!}</p>
-
+        <p><b>Mobile Number:</b> {!! $details['mobile'] !!}</p>
+        <p><b>Landline Number:</b> {!! $details['landline'] !!}</p>
         <p><b>Undergraduate Degree:</b> {!! $details['ug_deg'] !!}</p>
         <p><b>Undergraduate Branch:</b> {!! $details['ug_branch'] !!}</p>
         <p><b>Undergraduate G.P.A:</b> {!! $details['ug_gpa'] !!}</p>
@@ -117,14 +119,30 @@
         <p><b>Post-Graduate Name of Institution:</b> {!! $details['ug_name_of_inst'] !!}</p>
         <p><b>Post-Graduate Name of University:</b> {!! $details['ug_name_of_uni'] !!}</p>
         <p><b>Post-Graduate Year of Passing:</b> {!! $details['ug_yop'] !!}</p>
+        <p><b>Exam:</b> {!! $details['exam'] !!}</p>
         <p><b>Score:</b> {!! $details['score'] !!}</p>
         <p><b>Rank:</b> {!! $details['rank'] !!}</p>
+        <p><b>Validity:</b> {!! $details['validity'] !!}</p>
+        <p><b>Discipline:</b> {!! $details['discipline'] !!}</p>
         <p><b>Title of Project:</b> {!! $details['title_of_project'] !!}</p>
-        <p><b>Details of Publication:</b> {!! $details['details_of_pub'] !!}</p>
-        <p><b>Awards:</b> {!! $details['awards'] !!}</p>
+        <p><b>Details of Publication 1:</b> {!! $details['details_of_pub1'] !!}</p>
+        <p><b>Details of Publication 2:</b> {!! $details['details_of_pub2'] !!}</p>
+        <p><b>Details of Publication 3:</b> {!! $details['details_of_pub3'] !!}</p>
+        <p><b>Awards 1:</b> {!! $details['awards1'] !!}</p>
+        <p><b>Awards 2:</b> {!! $details['awards2'] !!}</p>
+        <p><b>Awards 3:</b> {!! $details['awards3'] !!}</p>
         <p><b>Employer Details 1:</b> {!! $details['employer_details_1'] !!}</p>
+        <p><b>Postition 1:</b> {!! $details['emp_pos_1'] !!}</p>
+        <p><b>From 1:</b> {!! $details['emp_from_1'] !!}</p>
+        <p><b>To 1:</b> {!! $details['emp_to_1'] !!}</p>
         <p><b>Employer Details 2:</b> {!! $details['employer_details_2'] !!}</p>
+        <p><b>Postition 2:</b> {!! $details['emp_pos_2'] !!}</p>
+        <p><b>From 2:</b> {!! $details['emp_from_2'] !!}</p>
+        <p><b>To 2:</b> {!! $details['emp_to_2'] !!}</p>
         <p><b>Employer Details 3:</b> {!! $details['employer_details_3'] !!}</p>
+        <p><b>Postition 3:</b> {!! $details['emp_pos_3'] !!}</p>
+        <p><b>From 3:</b> {!! $details['emp_from_3'] !!}</p>
+        <p><b>To 3:</b> {!! $details['emp_to_3'] !!}</p>
       </div>
       <div class="modal-footer">
         <a href="#!"  data-reg={!! $details['reg_number']!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>

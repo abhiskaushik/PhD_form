@@ -88,7 +88,9 @@ header{
 }
 .container-fluid{
 	width: 100%;
-
+}
+.half{
+	width: 50%;
 }
 .nav-wrapper,.dark{
 	background-color:rgb(0,38,31) !important;
