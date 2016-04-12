@@ -23,57 +23,49 @@ class PhdController extends Controller
     {
 
     	$rules = array(                        
-	        'date' => 'required',     
-	        'appl_categ' => 'required',
-	        'department1' => 'required',
-            'department2' => 'required',
-            'department3' => 'required',
-	        'area_of_research' => 'required',
-	        'name' => 'required',
-	        'father_name' => 'required',
-	        'dob' => 'required',
-	        'category' => 'required|in:OBC,OC,SC,ST',
-	        'sex' => 'required|in:male,female',
-            'marital_status' => 'required',
-	        'ph' => 'required|in:yes,no',
-	        'nationality' => 'required',
-	        'addr_for_commn' => 'required|max:200',
-            'permanent_addr' =>'required|max:200',
-            'email' => 'required|email|unique:phd',
-            'mobile' => 'required',
-            'landline' => 'required',
-	        'ug_deg' => 'required',
-	        'ug_branch' => 'required',
-	        // 'ug_gpa' => 'required',
-	        'ug_class' => 'required|in:Honours,Distinction,First,Second',
-	        'ug_name_of_inst' => 'required',
-	        'ug_name_of_uni' => 'required',
-	        'ug_yop' => 'required',
-            'pg_deg' => 'required',
-            'pg_branch' => 'required',
-            // 'pg_gpa' => 'required',
-            'pg_class' => 'required|in:Honours,Distinction,First,Second',
-            'pg_name_of_inst' => 'required',
-            'pg_name_of_uni' => 'required',
-            'pg_yop' => 'required'
-            // 'score' => 'required',
-            // 'rank' => 'required',
-            // 'title_of_project' => 'required',
-            // 'details_of_pub' => 'required|max:30',
-            // 'awards' => 'required',
-            // 'employer_details_1' => 'required'               
+	        // 'date' => 'required',     
+	        // 'appl_categ' => 'required',
+	        // 'department1' => 'required',
+         //    'department2' => 'required',
+         //    'department3' => 'required',
+	        // 'area_of_research' => 'required',
+	        // 'name' => 'required',
+	        // 'father_name' => 'required',
+	        // 'dob' => 'required',
+	        // 'category' => 'required|in:OBC,OC,SC,ST',
+	        // 'sex' => 'required|in:male,female',
+         //    'marital_status' => 'required',
+	        // 'ph' => 'required|in:yes,no',
+	        // 'nationality' => 'required',
+	        // 'addr_for_commn' => 'required|max:200',
+         //    'permanent_addr' =>'required|max:200',
+         //    'email' => 'required|email|unique:phd',
+         //    'mobile' => 'required',
+         //    'landline' => 'required',
+	        // 'ug_deg' => 'required',
+	        // 'ug_branch' => 'required',
+	        // 'ug_class' => 'required|in:Honours,Distinction,First,Second',
+	        // 'ug_name_of_inst' => 'required',
+	        // 'ug_name_of_uni' => 'required',
+	        // 'ug_yop' => 'required',
+         //    'pg_deg' => 'required',
+         //    'pg_branch' => 'required',
+         //    'pg_class' => 'required|in:Honours,Distinction,First,Second',
+         //    'pg_name_of_inst' => 'required',
+         //    'pg_name_of_uni' => 'required',
+         //    'pg_yop' => 'required'              
     	);
 
         
-    	$validator = Validator::make(Input::all(), $rules);
+   //  	$validator = Validator::make(Input::all(), $rules);
 
-        if(!($validator->fails()))
-    	{
-    		$message = 'Please fill in all the details';
-			return View::make('error')->with('message', $validator->errors());
-    	}
-        else
-        {
+   //      if(!($validator->fails()))
+   //  	{
+   //  		$message = 'Please fill in all the details';
+			// return View::make('error')->with('message', $validator->errors());
+   //  	}
+   //      else
+   //      {
 
         	$bool = Phd::where('name' , Input::get('name'))
         						->where('addrforcomm' , Input::get('addr_for_commn'))
@@ -181,9 +173,17 @@ class PhdController extends Controller
             {
                 $details['ug_gpa'] = 'RA';
             }
+            else
+            {
+            	$details['ug_gpa'] = Input::get('ug_gpa');
+            }
             if(Input::get('ra2') == 'on')
             {
                 $details['pg_gpa'] = 'RA';
+            }
+            else
+            {
+            	$details['pg_gpa'] = Input::get('pg_gpa');
             }
             if(Input::get('ann') == 'on')
             {
@@ -204,7 +204,7 @@ class PhdController extends Controller
 
             $ugDetails = new PhdUg();
 
-            $ugDetails->registrationNumber = $reg_number;
+            $ugDetails->applNo = $applNo;
             $ugDetails->degreeName = Input::get('ug_deg');
             $ugDetails->branch = Input::get('ug_branch');
             $ugDetails->gpa = $details['ug_gpa'];
@@ -218,7 +218,7 @@ class PhdController extends Controller
 
             $pgDetails = new PhdPg();
             
-            $pgDetails->registrationNumber = $reg_number;
+            $pgDetails->applNo = $applNo;;
             $pgDetails->degreeName = Input::get('pg_deg');
             $pgDetails->branch = Input::get('pg_branch');
             $pgDetails->gpa = $details['pg_gpa'];
@@ -231,7 +231,7 @@ class PhdController extends Controller
 
             $others = new PhdOther();
 
-            $others->registrationNumber = $reg_number;
+            $others->applNo = $applNo;;
             $others->score = $details['score'];
             $others->rank = $details['rank'];
             $others->validity = $details['validity'];
@@ -250,7 +250,7 @@ class PhdController extends Controller
 
             $pro = new PhdPro();
 
-
+            $pro->applNo = $applNo;
             $pro->proexp1 = Input::get('employer_details_1');
             $pro->proexp2 = Input::get('employer_details_2');
             $pro->proexp3 = Input::get('employer_details_3');
@@ -279,6 +279,6 @@ class PhdController extends Controller
             	$message = "User already exists ";
             	return View::make('error')->with('message' , $message);
             }
-        }
+        // }
     }
 }

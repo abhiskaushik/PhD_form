@@ -13,6 +13,7 @@ class CreateMsCandidates extends Migration
     public function up()
     {
         Schema::create('ms', function (Blueprint $table) {
+            $table->increments('applNo');
             $table->string('applicationCategory', 20);
             $table->string('registrationNumber', 25);
             $table->string('dateOfReg', 15);
@@ -37,11 +38,6 @@ class CreateMsCandidates extends Migration
             $table->boolean('deleted')->default(false);
             $table->boolean('accepted')->default(false);
             $table->timestamps();
-        });
-
-        Schema::table('ms', function(Blueprint $table) {
-            $table->primary('registrationNumber');
-            $table->unique('registrationNumber');
         });
     }
 

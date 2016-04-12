@@ -13,7 +13,7 @@ class CreatePhdOtherDetails extends Migration
     public function up()
     {
         Schema::create('phdother', function (Blueprint $table) {
-            $table->string('registrationNumber', 25)->nullable();
+            $table->integer('applNo')->unsigned();
             $table->string('score', 5)->nullable();
             $table->string('rank', 6)->nullable();
             $table->string('pgproject', 50)->nullable();
@@ -28,8 +28,8 @@ class CreatePhdOtherDetails extends Migration
         });
 
         Schema::table('phdother', function (Blueprint $table) {
-            $table->foreign('registrationNumber')
-                  ->references('registrationNumber')
+            $table->foreign('applNo')
+                  ->references('applNo')
                   ->on('phd');
         });
     }

@@ -403,6 +403,9 @@
 			      		<input id="valid" type="Number" class="validate" name="validity" max="2018" min="2010">
 			      	</div>
 			      	<!-- disipline needs to be added-->
+			      	<div class="col l12 s12">
+			      		<input type="text" class="validate" name="discipline" required 	/>
+			      	</div>
 			      	<div class="space-small"></div>
 		      	</div>
 

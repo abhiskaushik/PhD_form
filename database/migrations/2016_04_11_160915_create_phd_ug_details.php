@@ -13,7 +13,7 @@ class CreatePhdUgDetails extends Migration
     public function up()
     {
         Schema::create('phdug', function (Blueprint $table) {
-            $table->string('registrationNumber', 25);
+            $table->integer('applNo')->unsigned();
             $table->string('degreeName', 50);
             $table->string('branch', 50);
             $table->string('gpa', 5);
@@ -25,8 +25,8 @@ class CreatePhdUgDetails extends Migration
         });
 
         Schema::table('phdug', function (Blueprint $table) {
-            $table->foreign('registrationNumber')
-                  ->references('registrationNumber')
+            $table->foreign('applNo')
+                  ->references('applNo')
                   ->on('phd');
         });
     }
