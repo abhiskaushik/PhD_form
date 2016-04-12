@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Ms extends Model
 {
     protected $table = 'ms';
-    public $primaryKey = 'registrationNumber';
+    public $primaryKey = 'applNo';
 }

@@ -404,7 +404,7 @@
 			      	</div>
 			      	<!-- disipline needs to be added-->
 			      	<div class="col l12 s12">
-			      		<input type="text" class="validate" name="discipline" required 	/>
+			      		<input type="text" class="validate" name="discipline" required 	/ 	>
 			      	</div>
 			      	<div class="space-small"></div>
 		      	</div>
