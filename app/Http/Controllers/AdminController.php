@@ -181,24 +181,24 @@ class AdminController extends Controller
         }
     }
 
-	public function printer($reg_number, $phdormsc)
+	public function printer($phdormsc, $reg_number)
 	{
-	    if($phdormsc == 'phd')
+	    if($phdormsc == 'PHD')
         {
-            $candidates = Phd::where('registrationNumber', $reg_number)
+            $candidates = Phd::where('applNo', $reg_number)
                                 ->first();
             if(!$candidates)
             {
                 $message = 'Invalid registration number';
                 return View::make('error')->with('message', $message);
             }                               
-            $ugDetails = PhdUg::where('registrationNumber', $reg_number)
+            $ugDetails = PhdUg::where('applNo', $reg_number)
                                     ->first();
-            $pgDetails = PhdPg::where('registrationNumber', $reg_number)
+            $pgDetails = PhdPg::where('applNo', $reg_number)
                                     ->first();
-            $otherDetails = PhdOther::where('registrationNumber', $reg_number)
+            $otherDetails = PhdOther::where('applNo', $reg_number)
                                     ->first();
-            $proDetails = PhdPro::where('registrationNumber', $reg_number)
+            $proDetails = PhdPro::where('applNo', $reg_number)
                                     ->first();
             $data = array('candidates' => $candidates,
                             'ug' => $ugDetails,
@@ -212,18 +212,18 @@ class AdminController extends Controller
         }
         else
         {
-            $candidates = Ms::where('registrationNumber', $reg_number)
+            $candidates = Ms::where('applNo', $reg_number)
                                 ->first();
             if(!$candidates)
             {
                 $message = 'Invalid registration number';
                 return View::make('error')->with('message', $message);
             }                               
-            $ugDetails = MsUg::where('registrationNumber', $reg_number)
+            $ugDetails = MsUg::where('applNo', $reg_number)
                                     ->first();
-            $proDetails = MsPro::where('registrationNumber', $reg_number)
+            $proDetails = MsPro::where('applNo', $reg_number)
                                     ->first();
-            $scores = MsScores::where('registrationNumber', $reg_number)
+            $scores = MsScores::where('applNo', $reg_number)
                                     ->first();
             $data = array('candidates' => $candidates,
                             'ug' => $ugDetails,

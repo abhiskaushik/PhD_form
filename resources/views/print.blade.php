@@ -28,38 +28,13 @@
 
 <div class="container-fluid">
 
- <!--  <div class="row">
-    <div class="col l12">
-      <p class="large"><b>Registration Number:</b>  {!! $candidates['registrationNumber'] !!}</p>      
-    </div>
-  </div>
-
-  <div class="row">
-    <p>Demand Draft Details</p>  
-    <div class="col l12">
-      <p class="large"><b>D.D Number:</b>{!! $dd['ddno'] !!}</p>
-    </div>
-    <div class="col l12">
-      <p class="large"><b>D.D Date:</b>{!! $dd['date'] !!}</p>
-    </div>
-  </div>
-
-  <div class="row">
-    
-  </div> -->
-
   <h5>Candidate's Form</h5>
           <p><b>Registration Number:</b> {!! $candidates['registrationNumber'] !!}</p>
           <p><b>Date of Registration:</b> {!! $candidates['dateOfReg'] !!}
           </p>
-          <h5>D.D. Details:</h5>
-          <p><b>D.D Number:</b> {!! $dd['ddno'] !!}</p>
-          <p><b>Date of Submission of D.D:</b>{!! $dd['date'] !!} </p>
-          <p><b>Amount(D.D):</b> {!! $dd['amount'] !!}</p>
-          <p><b>Drawn At(D.D):</b> {!! $dd['drawnAt'] !!}</p>
           <p><b>Application Category:</b> {!! $candidates['applicationCategory'] !!}</p>
           <h5>General Details:</h5>
-          <p><b>Department:</b> {!! $candidates['dept'] !!}</p>
+          <p><b>Department:</b> {!! $candidates['dept1'] !!}</p>
           <p><b>Area of Research:</b> {!! $candidates['areaOfResearch'] !!}</p>
           <p><b>Name of Candidate:</b> {!! $candidates['name'] !!}</p>
           <p><b>Father's Name:</b> {!! $candidates['fatherName'] !!}</p>
@@ -90,12 +65,12 @@
           <h5>Other Details:</h5>
           <p><b>Score:</b> {!! $others['score'] !!}</p>
           <p><b>Rank:</b> {!! $others['rank'] !!}</p>
-          <p><b>Title of Project:</b> {!! $others['pgt'] !!}</p>
-          <p><b>Details of Publication:</b> {!! $others['publications'] !!}</p>
-          <p><b>Awards:</b> {!! $others['awards'] !!}</p>
-          <p><b>Employer Details 1:</b> {!! $others['proexp1'] !!}</p>
-          <p><b>Employer Details 2:</b> {!! $others['proexp2'] !!}</p>
-          <p><b>Employer Details 3:</b> {!! $others['proexp3'] !!}</p>
+          <p><b>Title of Project:</b> {!! $others['pgproject'] !!}</p>
+          <p><b>Details of Publication:</b> {!! $others['publications1'] !!}</p>
+          <p><b>Awards:</b> {!! $others['awards1'] !!}</p>
+          <p><b>Employer Details 1:</b> {!! $pro['proexp1'] !!}</p>
+          <p><b>Employer Details 2:</b> {!! $pro['proexp2'] !!}</p>
+          <p><b>Employer Details 3:</b> {!! $pro['proexp3'] !!}</p>
 </div>
 
 </body>
