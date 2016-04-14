@@ -78,7 +78,7 @@
 
 				      <div class="upload col l6 s12 ">
 		    <p>Upload Image</p>
-		      	<div class="file-field input-field">`
+		      	<div class="file-field input-field">
 	          		<div class="btn teal darken-1 btn waves-effect waves-light">
 	          			<span class="light">File</span>
 	          			{!! Form::file('image_path' , array('class'=>'')) !!}			
