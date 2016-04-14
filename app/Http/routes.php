@@ -60,3 +60,7 @@ Route::post('change', function()
     {
         dd(Input::get('ra1'));
     });
+Route::get('admit', function()
+    {
+        return view('admit');
+    });

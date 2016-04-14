@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admit Card</title>
+  <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
+  <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
+  <script src="{{URL::asset('assets/js/print.js')}}"></script>
+</head>
+<body>
+	<header> 
+  </header>
+  
+ <nav>
+    <div class="nav-wrapper ">
+      
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="hide-on-med-and-down">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/form">Phd/M.S. Admission's</a></li>
+        <li><a href="/login">Admin</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+       <li><a href="/home">Home</a></li>
+        <li><a href="/form">Phd/M.S. Admission's</a></li>
+        <li><a href="/login">Admin</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="space-medium"></div>
+
+  <div class="space-large"></div>
+  <div class="container">
+  <h5 class="center">ADMIT CARD</h5>
+  <div class="space-medium"></div>
+  <hr><hr>
+    <div class="row admit">
+      <div class="col l8">
+        <div class="space-large"></div>
+        <p><b>Name of the Candidate:</b>  </p>
+        <p><b>Signature of Candidate:</b> </p>
+        <div class="space-large"></div>
+      </div>
+      <div class="col l4">
+        <p>Image goes here</p>
+      </div>
+    </div>
+      <hr><hr>
+      <div class="space-small"></div>
+      <p class="center head">FOR OFFICE USE ONLY</p>
+    <div class="row admit">
+      <div class="col l12">
+        <p><b>Registration Number:</b>  </p>
+        <p><b>Department:</b>  </p>
+        <p><b>Examination Date:</b>  </p>
+        <p><b>Examination Time:</b>  </p>
+        <div class="space-medium"></div>
+        <span class="left"><b>HoD/Admission Co-ordinator</b></span>
+        <span class="right"><b>Seal</b></span>
+        <div class="space-large"></div>
+      </div>
+    </div>
+      <hr><hr>
+      <div class="space-medium"></div>
+        <h5 class="center">Address Slip</h5>
+        <div class="space-medium"></div>
+        <hr><hr>
+      <div class="row admit">
+        <div class="col l12">
+          <p><b>To</b></p>
+          <p>Mr/Mrs</p>
+          <p>Address goes here..</p>
+          <p>PIN: .................</p>
+        </div>
+        <hr>
+        <div class="col l12">
+          <p><b>To</b></p>
+          <p>Mr/Mrs</p>
+          <p>Address goes here..</p>
+          <p>PIN: .................</p>
+        </div>
+        <hr>
+      </div>
+  </div>
+  <div class="space-large"></div>
+<footer class="page-footer teal darken-4">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">National Institute of Technology</p>
+                <p class="grey-text text-lighten-4">Tiruchirappalli - 620015</p>
+                <p class="grey-text text-lighten-4">Tamil Nadu, INDIA</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">QuickLinks</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://www.nitt.edu">Institute Website</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/academics/departments/">Departments</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/admissions/">Admissions</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/contact">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright dark">
+            <div class="container center">
+            
+            <a class="grey-text text-lighten-4" href="#!">Made with &hearts; by Delta Force</a>
+            </div>
+          </div>
+        </footer>
+            
+
+  <script type="text/javascript">
+      $(document).ready(function(){
+        $(".button-collapse").sideNav();
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });
+  </script>
+
+</body>
+</html>
