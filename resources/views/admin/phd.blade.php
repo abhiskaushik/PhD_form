@@ -47,8 +47,8 @@
     <div class="row candidates">
     @for($i = 0; $i < sizeof($data['candidates']); $i++)
         
-        @if(!$data['candidates'][$i]->deleted && $data['candidates'][$i]->phdormsc == 'phd')
-     <div class="{!! $data['candidates'][$i]->registrationNumber !!} col l5 offset-l1 s5 offset-s1" } data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
+        @if(!$data['candidates'][$i]->deleted)
+     <div class="{!! $data['candidates'][$i]->applNo !!} col l5 offset-l1 s5 offset-s1" } data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
         <div class="card">
           <div class=" waves-effect waves-block waves-light">  
           </div>
@@ -147,7 +147,7 @@
           <p><b>Submission Date:</b> {!! $data['others'][$i]->subdate !!}</p>
         </div>
       <div class="modal-footer">
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->applNo!!} class="discard btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
         <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn-flat">Accept</a>
       </div>

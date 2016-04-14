@@ -50,7 +50,7 @@ Route::get('phd', function()
 
 Route::get('ms', function()
     {
-        return view('ms');
+        return view('msc');
     });
 Route::get('test', function()
     {

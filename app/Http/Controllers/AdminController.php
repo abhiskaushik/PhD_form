@@ -69,11 +69,15 @@ class AdminController extends Controller
         Session::put('phdormsc', $phdormsc);
         if($phdormsc == 'phd')
         {
-            $candidates = Phd::where('deleted', false)
-                                        ->where('dept1', Session::get('dept'))
-                                        ->orWhere('dept2', Session::get('dept'))
-                                        ->orWhere('dept3', Session::get('dept'))
+            $rules1 = ['deleted' => false , 'dept1' => Session::get('dept')];
+            $rules2 = ['deleted' => false , 'dept2' => Session::get('dept')];
+            $rules3 = ['deleted' => false , 'dept3' => Session::get('dept')];
+            $candidates = Phd::where($rules1)
+                                        ->orWhere($rules2)
+                                        ->orWhere($rules3)
                                         ->paginate(6);
+
+                                        
             $candidates_id = $candidates->lists('applNo');
             $ugDetails = PhdUg::whereIn('applNo', $candidates_id)->get();
             $pgDetails = PhdPg::whereIn('applNo', $candidates_id)->get(); 
@@ -85,7 +89,7 @@ class AdminController extends Controller
                             'others' => $otherDetails,
                             'pro' => $proDetails
                             );
-            return View::make('admin/'.$phdormsc)->with('data', $data);
+            return View::make('admin.'.$phdormsc)->with('data', $data);
         }
         else
         {
@@ -111,53 +115,55 @@ class AdminController extends Controller
 
 	public function deleted(Request $request)
 	{	
-		$reg_number = $request->input('regNo');
+		$appl_number = $request->input('applNo');
         $phdormsc = Session::get('phdormsc');
         if($phdormsc == 'phd')
         {
-            Phd::where('registrationNumber', $reg_number)
+            Phd::where('applNo', $appl_number)
                     ->update(['deleted' => true]);
 
             $user = Phd::select('name', 'email')
-                                ->where('registrationNumber', $reg_number)
+                                ->where('applNo', $appl_number)
                                 ->first();
-
+                                
+            
             Mail::send('emails.reminder', ['user' => $user->name], function ($m) {
-                $m->to($user->email, $user->name)->subject('Greetings from NITT!');
+
+                $m->to('rituljain003@gmail.com', 'Applicant' )->subject('Greetings from NITT!');
             });
 
 
-            return json_encode($reg_number);
+            return json_encode($appl_number);
         }
         else
         {
-            Ms::where('registrationNumber', $reg_number)
+            Ms::where('applNo', $appl_number)
                     ->update(['deleted' => true]);
 
             $user = Ms::select('name', 'email')
-                                ->where('registrationNumber', $reg_number)
+                                ->where('applNo', $appl_number)
                                 ->first();
 
             Mail::send('emails.reminder', ['user' => $user->name], function ($m) {
-                $m->to($user->email, $user->name)->subject('Greetings from NITT!');
+                $m->to('rituljain003@gmail.com', 'jfisjif')->subject('Greetings from NITT!');
             });
 
 
-            return json_encode($reg_number);
+            return json_encode($appl_number);
         }
 	}
 
     public function accepted(Request $request)
     {
-        $reg_number = $request->input('regNo');
+        $reg_number = $request->input('applNo');
         $phdormsc = Session::get('phdormsc');
         if($phdormsc == 'phd')
         {
-            Phd::where('registrationNumber', $reg_number)
+            Phd::where('applNo', $appl_number)
                     ->update(['accepted' => true]);
 
             $user = Phd::select('name', 'email')
-                                ->where('registrationNumber', $reg_number)
+                                ->where('applNo', $appl_number)
                                 ->first();
 
             Mail::send('emails.reminder', ['user' => $user->name], function ($m) {
@@ -165,15 +171,15 @@ class AdminController extends Controller
             });
 
 
-            return json_encode($reg_number);
+            return json_encode($appl_number);
         }
         else
         {
-            Ms::where('registrationNumber', $reg_number)
+            Ms::where('applNo', $appl_number)
                     ->update(['accepted' => true]);
 
             $user = Ms::select('name', 'email')
-                                ->where('registrationNumber', $reg_number)
+                                ->where('applNo', $appl_number)
                                 ->first();
 
             Mail::send('emails.reminder', ['user' => $user->name], function ($m) {
@@ -181,7 +187,7 @@ class AdminController extends Controller
             });
 
 
-            return json_encode($reg_number);
+            return json_encode($appl_number);
         }
     }
 

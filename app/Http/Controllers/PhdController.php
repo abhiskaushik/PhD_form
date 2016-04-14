@@ -267,11 +267,13 @@ class PhdController extends Controller
             $pro->save();
 
             $details['reg_number'] = $reg_number;
+
             $file = $request->file('image_path');
+            // dd($file);   
             $extension = $request->file('image_path')->getClientOriginalExtension();
             if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
             {
-                Storage::disk('local')->put($reg_number.'.'.$extension,  File::get($file));
+                Storage::disk('local')->put('PHD/'.$applNo.'/'.$applNo.$extension,  File::get($file));
             }
             return View::make('success')->with('details', $details);
             }

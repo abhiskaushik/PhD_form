@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$('.discard').click(function(e){
-		var regNo = $(this).attr('data-reg');
+		var applNo = $(this).attr('data-reg');
 		$.ajaxSetup(
 	    {
 	        headers:
@@ -9,7 +9,8 @@ $(document).ready(function(){
 	        }
 	    });
 		var data = {};
-		data.regNo = regNo;
+		data.applNo = applNo;
+
 		var baseurl = 'http://localhost:8000';
 		var url = '/delete';
 		$.ajax(
@@ -20,7 +21,7 @@ $(document).ready(function(){
 	        dataType: "json",
 	        success: function(data){
 	        	console.log("helo");
-	        	$('.'+regNo).hide('slow');
+	        	$('.'+applNo).hide('slow');
 	        	location.reload();
 	        },
 	        error: function(jqXHR,testStatus,errorThrown){
@@ -30,7 +31,7 @@ $(document).ready(function(){
 	}); 
 
 	$('.accept').click(function(e){
-		var regNo = $(this).attr('data-reg');
+		var applNo = $(this).attr('data-reg');
 		$.ajaxSetup(
 	    {
 	        headers:
@@ -39,7 +40,7 @@ $(document).ready(function(){
 	        }
 	    });
 		var data = {};
-		data.regNo = regNo;
+		data.applNo = applNo;
 		var baseurl = 'http://localhost:8000';
 		var url = '/accept';
 		$.ajax(
@@ -50,7 +51,7 @@ $(document).ready(function(){
 	        dataType: "json",
 	        success: function(data){
 	        	console.log("helo");
-	        	// $('.'+regNo).hide('slow');
+	        	// $('.'+applNo).hide('slow');
 	        	location.reload();
 	        },
 	        error: function(jqXHR,testStatus,errorThrown){
