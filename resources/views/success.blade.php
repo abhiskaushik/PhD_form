@@ -82,10 +82,7 @@
         <h4>Candidate's Form</h4>
         <p><b>Registration Number:</b> {!! $details['reg_number'] !!}</p>
         <p><b>Date of Registration:</b> {!! $details['date'] !!}</p>
-        <p><b>D.D Number:</b> {!! $details['dd_no'] !!}</p>
-        <p><b>Date of Submission of D.D:</b> {!! $details['date_of_sub'] !!}</p>
-        <p><b>Amount(D.D):</b> {!! $details['amount'] !!}</p>
-        <p><b>Drawn At(D.D):</b> {!! $details['drawn_at'] !!}</p>
+        
         <p><b>Application Category:</b> {!! $details['appl_categ'] !!}</p>
         <p><b>Department 1:</b> {!! $details['department1'] !!}</p>
         <p><b>Department 2:</b> {!! $details['department2'] !!}</p>
@@ -132,17 +129,17 @@
         <p><b>Awards 2:</b> {!! $details['awards2'] !!}</p>
         <p><b>Awards 3:</b> {!! $details['awards3'] !!}</p>
         <p><b>Employer Details 1:</b> {!! $details['employer_details_1'] !!}</p>
-        <p><b>Postition 1:</b> {!! $details['emp_pos_1'] !!}</p>
-        <p><b>From 1:</b> {!! $details['emp_from_1'] !!}</p>
-        <p><b>To 1:</b> {!! $details['emp_to_1'] !!}</p>
+        <p><b>Postition 1:</b> {!! $details['position1'] !!}</p>
+        <p><b>From 1:</b> {!! $details['from1'] !!}</p>
+        <p><b>To 1:</b> {!! $details['to1'] !!}</p>
         <p><b>Employer Details 2:</b> {!! $details['employer_details_2'] !!}</p>
-        <p><b>Postition 2:</b> {!! $details['emp_pos_2'] !!}</p>
-        <p><b>From 2:</b> {!! $details['emp_from_2'] !!}</p>
-        <p><b>To 2:</b> {!! $details['emp_to_2'] !!}</p>
+        <p><b>Postition 2:</b> {!! $details['position2'] !!}</p>
+        <p><b>From 2:</b> {!! $details['from2'] !!}</p>
+        <p><b>To 2:</b> {!! $details['to2'] !!}</p>
         <p><b>Employer Details 3:</b> {!! $details['employer_details_3'] !!}</p>
-        <p><b>Postition 3:</b> {!! $details['emp_pos_3'] !!}</p>
-        <p><b>From 3:</b> {!! $details['emp_from_3'] !!}</p>
-        <p><b>To 3:</b> {!! $details['emp_to_3'] !!}</p>
+        <p><b>Postition 3:</b> {!! $details['position3'] !!}</p>
+        <p><b>From 3:</b> {!! $details['from3'] !!}</p>
+        <p><b>To 3:</b> {!! $details['to3'] !!}</p>
       </div>
       <div class="modal-footer">
         <a href="#!"  data-reg={!! $details['reg_number']!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>

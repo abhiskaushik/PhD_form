@@ -48,7 +48,7 @@
     @for($i = 0; $i < sizeof($data['candidates']); $i++)
         
         @if(!$data['candidates'][$i]->deleted && $data['candidates'][$i]->phdormsc == 'phd')
-     <div class="{!! $data['candidates'][$i]->registrationNumber !!} col l5 offset-l1 s5 offset-s1" } data-reg = "{!! $data['candidates'][$i]->dept.$data['candidates'][$i]->registrationNumber !!}">
+     <div class="{!! $data['candidates'][$i]->registrationNumber !!} col l5 offset-l1 s5 offset-s1" } data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
         <div class="card">
           <div class=" waves-effect waves-block waves-light">  
           </div>
@@ -83,10 +83,7 @@
           <p><b>Registration Number:</b> {!! $data['candidates'][$i]->registrationNumber !!}</p>
           <p><b>Date of Registration:</b> {!! $data['candidates'][$i]->dateOfReg !!}
           </p>
-          <p><b>D.D Number:</b> {!! $data['dd'][$i]->ddno !!}</p>
-          <p><b>Date of Submission of D.D:</b>{!! $data['dd'][$i]->date !!} </p>
-          <p><b>Amount(D.D):</b> {!! $data['dd'][$i]->amount !!}</p>
-          <p><b>Drawn At(D.D):</b> {!! $data['dd'][$i]->drawnAt !!}</p>
+         
           <p><b>Application Category:</b> {!! $data['candidates'][$i]->applicationCategory !!}</p>
           <p><b>Department:</b> {!! $data['candidates'][$i]->dept !!}</p>
           <p><b>Email Id:</b> {!! $data['candidates'][$i]->email !!}</p>

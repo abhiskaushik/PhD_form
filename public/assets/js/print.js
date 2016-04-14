@@ -5,8 +5,6 @@ $(document).ready(function(){
 		var dept = regNo.split('/');
 		var categ = dept[0];
 		var applNo = dept[dept.length-1];
-
 		window.location = 'http://localhost:8000/print/' + categ + '/' + applNo;
-		console.log("hey");
 	}); 
  });

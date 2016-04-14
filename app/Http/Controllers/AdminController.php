@@ -70,7 +70,9 @@ class AdminController extends Controller
         if($phdormsc == 'phd')
         {
             $candidates = Phd::where('deleted', false)
-                                        ->where('dept', Session::get('dept'))
+                                        ->where('dept1', Session::get('dept'))
+                                        ->orWhere('dept2', Session::get('dept'))
+                                        ->orWhere('dept3', Session::get('dept'))
                                         ->paginate(6);
             $candidates_id = $candidates->lists('applNo');
             $ugDetails = PhdUg::whereIn('applNo', $candidates_id)->get();
@@ -88,7 +90,9 @@ class AdminController extends Controller
         else
         {
             $candidates = Ms::where('deleted', false)
-                                        ->where('dept', Session::get('dept'))
+                                        ->where('dept1', Session::get('dept'))
+                                        ->orWhere('dept2', Session::get('dept'))
+                                        ->orWhere('dept3', Session::get('dept'))
                                         ->paginate(6);
             $candidates_id = $candidates->lists('applNo');
             $ugDetails = MsUg::whereIn('applNo', $candidates_id)->get(); 
@@ -181,6 +185,7 @@ class AdminController extends Controller
         }
     }
 
+
 	public function printer($phdormsc, $reg_number)
 	{
 	    if($phdormsc == 'PHD')
@@ -192,6 +197,7 @@ class AdminController extends Controller
                 $message = 'Invalid registration number';
                 return View::make('error')->with('message', $message);
             }                               
+
             $ugDetails = PhdUg::where('applNo', $reg_number)
                                     ->first();
             $pgDetails = PhdPg::where('applNo', $reg_number)
