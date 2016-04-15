@@ -50,7 +50,7 @@ Route::get('phd', function()
 
 Route::get('ms', function()
     {
-        return view('msc');
+        return view('ms');
     });
 Route::get('test', function()
     {
@@ -60,4 +60,6 @@ Route::post('change', function()
     {
         dd(Input::get('ra1'));
     });
+
 Route::get('admit/{phdormsc}/{regNo}', 'AdminController@admitCard');
+

@@ -14,7 +14,7 @@
 	<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/jquery-ui.js')}}"></script>
-	<script src="{{URL::asset('assets/js/code.js')}}"></script>
+	<script src="{{URL::asset('assets/js/code_ms.js')}}"></script>
 	
 </head>
 <body>
@@ -46,7 +46,7 @@
 
 	<div class="container">
 		<div class="row text-center">
-			<h3>APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME (2016 - 2017)</h3>
+			<h3>APPLICATION FOR ADMISSION TO M.S PROGRAMME (2016 - 2017)</h3>
 			<div class="space-medium"></div>
 			<div class="divider"></div><div class="divider"></div>
 		</div>
@@ -58,7 +58,7 @@
   		<div class="row">  					   
   			<p>Application Category</p>		    
 		        <div class="input-field col l6 s12">
-		      		<select required name="appl_categ">
+		      		<select required name="appl_categ" class="applicationCateg">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="Part Time">Part Time</option>
 				      <option value="Full Time">Full Time</option>
@@ -468,6 +468,12 @@
 		      	</div>
 		      </div>
 
+		      <div class="row">
+		      		<div class="upload_container">
+		      	
+		      		</div>	
+		      </div>
+		      
   		
 
 

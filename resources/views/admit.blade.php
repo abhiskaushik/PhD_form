@@ -18,16 +18,13 @@
   <div class="container-fluid">
   <div class="row">
     
-      <img src="{{base_path('public/assets/images/admit.png')}}">
+      <img src="{{ URL::asset('assets/images/admit.png')}}">
     
     
   </div>
 </div>
  
 
-  <div class="space-medium"></div>
-
-  <div class="space-large"></div>
   <div class="container">
   <h5 class="center"><u>ADMIT CARD</u></h5>
   <div class="space-medium"></div>
@@ -49,6 +46,7 @@
       <p class="center head"><u>FOR OFFICE USE ONLY</u></p>
     <div class="row admit">
       <div class="col l12">
+
         <p><b>Registration Number: </b> {!! $regNo !!} </p>
         <p><b>Department:</b>  {!! $dept !!}</p>
         <p><b>Examination Date:</b>  </p>

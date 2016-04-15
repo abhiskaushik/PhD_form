@@ -377,37 +377,7 @@
 		      		</span>
 		      	</div>
 		      	<div class="space-medium"></div>
-		      	<div class="exam">
-		      		<div class="col l3 s6">
-		      	      		<span class="light">Examination:</span>
-		      	      		<select class="exam_select" required name = 'exam'>
-		      			      <option value="hey" selected>Choose your Exam</option>
-		      			      <option  value="GATE">GATE</option>
-		      			      <option  value="NET">NET</option>
-		      			      <option  value="SLET">SLET</option>
-		      			      <option  value="CSIR">CSIR</option>
-		      			      <option  value="CAT">CAT</option>
-		      			      <option  value="UGC">UGC</option>
-		      			    </select>
-		      		</div>
-		      		<div class="col l3 s6">
-		      			<span class="light">Enter Score:</span>
-		      			<input required placeholder="Enter  Score" id="reg_number" type="number" class="validate" name="score" max="10000">
-		      		</div>
-			      	<div class="col l3 s6">
-			      		<span class="light">Enter Rank:</span>
-			      		<input required placeholder="Enter Rank" id="reg_number" type="number" class="validate" name="rank" max="10000">
-			      	</div>
-			      	<div class="col l3 s6">
-			      		<span class="light">Valid Till:</span>
-			      		<input id="valid" type="Number" class="validate" name="validity" max="2018" min="2010">
-			      	</div>
-			      	<!-- disipline needs to be added-->
-			      	<div class="col l12 s12">
-			      		<input type="text" class="validate" name="discipline" required 	/ 	>
-			      	</div>
-			      	<div class="space-small"></div>
-		      	</div>
+				<div class="exams"></div>		      
 
 		      	<div class="col l12 s12">
 		      		<span class="light">Title of P.G Project:</span>
@@ -521,7 +491,11 @@
 		      	<p><b>Note:</b> The part time external Ph.D. applicant should attach the duly filled in Form-1 & Form-2, and Part-Time on campus applicant should attach the duly filled in Form-3. Otherwise, the application will be summarily rejected.</p>
 		      	</div>
 		      </div>
-
+		      
+				<div class="upload_container " >
+		      
+		      
+		      </div>
   		
 
 
