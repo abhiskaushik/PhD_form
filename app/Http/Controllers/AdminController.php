@@ -21,6 +21,7 @@ use App\MsPro;
 use App\Admin;
 use paginate;
 use Session;
+use File;
 
 use Illuminate\Support\Facades\Mail;
 
@@ -247,5 +248,39 @@ class AdminController extends Controller
                             ->header('Content-Type', 'application/pdf');
         }
 	}
+
+    public function admitCard($phdormsc, $applNo)
+    {
+        $filename = $phdormsc.'/'.$applNo.'/'.$applNo;
+        $path = public_path() . '/uploads/' . $filename;
+        // dd(file_exists($path.'.jpg'));
+        if(file_exists($path.'.jpg'))
+        {
+            $type = 'jpg';
+        }
+        else if(file_exists($path.'.jpeg'))
+        {
+            $type = 'jpeg';
+        }
+        else if(file_exists($path.'.png'))
+        {
+            $type = 'png';
+        }
+
+        if($phdormsc == 'PHD')
+        {
+            $candidate = Phd::select('name', 'registrationNumber')
+                            ->where('applNo', $applNo)
+                            ->first();
+        }
+
+        $data = array(
+            'image' => $phdormsc.'/'.$applNo.'/'.$applNo.'.'.$type,
+            'name' => $candidate->name,
+            'dept' => Session::get('dept'),
+            'regNo' => $candidate->registrationNumber
+        );
+        return view('admit')->with($data);
+    }
 	
 }

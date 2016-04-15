@@ -35,12 +35,13 @@
     <div class="row admit">
       <div class="col l8">
         <div class="space-large"></div>
-        <p><b>Name of the Candidate:</b>  </p>
+        <p><b>Name of the Candidate: </b>  {!! $name !!} </p>
         <p><b>Signature of Candidate:</b> </p>
         <div class="space-large"></div>
       </div>
       <div class="col l4">
-        <p>Image goes here</p>
+        <img src={{URL::asset('uploads/'.$image)}}>
+
       </div>
     </div>
       <hr><hr>
@@ -48,8 +49,8 @@
       <p class="center head"><u>FOR OFFICE USE ONLY</u></p>
     <div class="row admit">
       <div class="col l12">
-        <p><b>Registration Number:</b>  </p>
-        <p><b>Department:</b>  </p>
+        <p><b>Registration Number: </b> {!! $regNo !!} </p>
+        <p><b>Department:</b>  {!! $dept !!}</p>
         <p><b>Examination Date:</b>  </p>
         <p><b>Examination Time:</b>  </p>
         <div class="space-medium"></div>
@@ -77,7 +78,7 @@
       </div>
   </div>
   <div class="space-large"></div>
-            
+       <a href="#!" class="admit btn  waves-effect waves-green btn-flat" onclick="$(this).hide;window.print()">Admit</a>     
 
   <script type="text/javascript">
       $(document).ready(function(){

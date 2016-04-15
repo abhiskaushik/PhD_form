@@ -150,6 +150,7 @@
         <a href="#!" data-reg={!! $data['candidates'][$i]->applNo!!} class="discard btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
         <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn-flat">Accept</a>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn modal-action modal-close waves-effect waves-green btn-flat">Admit</a>
       </div>
       </div>
         </div>

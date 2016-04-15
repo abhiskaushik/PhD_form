@@ -81,7 +81,7 @@ class MsController extends Controller
         else
         {
 
-        	$bool = Phd::where('name' , $request->get('name'))
+        	$bool = Ms::where('name' , $request->get('name'))
         						->where('addrforcomm' , $request->get('addr_for_commn'))
         						->first();
 
@@ -146,7 +146,31 @@ class MsController extends Controller
                 'gpa7' => $request->get('gpa7')
             );
 
-            $candidate = new Phd();
+            $file = $request->file('image_path');   
+            $extension = $request->file('image_path')->getClientOriginalExtension();
+            if($extension != 'jpg' || $extension != 'png' || $extension != 'jpeg')
+            {
+                $message = 'Inavlid file format for the uploaded image';
+                return View::make('error')->with('message', $message);
+            }
+
+            if($request->input('appl_categ') == 'Sponsered')
+            {
+                $cert = $request->file('cert');
+                if(!$cert)
+                {
+                    $message = 'Upload all the required forms';
+                    return View::make('error')->with('message', $message);
+                }
+                $extension3 = $request->file('cert')->getClientOriginalExtension();
+                if($extension3 != 'pdf')
+                {
+                    $message = 'Invalid file format for the uploaded files'
+                    return View::make('error')->with('message', $message);
+                }
+            }
+
+            $candidate = new Ms();
 
             $candidate->applicationCategory = $request->get('appl_categ');
             $candidate->dateOfReg = $request->get('date');
@@ -180,7 +204,7 @@ class MsController extends Controller
                 }
             }
             $reg_number = $reg_number.$applNo;
-            Phd::where('applNo', $applNo)
+            Ms::where('applNo', $applNo)
                     ->update(['registrationNumber' => $reg_number]);
 
             if($request->get('ra1') == 'on')
@@ -251,11 +275,14 @@ class MsController extends Controller
             $msScores->save();
 
             $details['reg_number'] = $reg_number;
-            $file = $request->file('image_path');
-            $extension = $request->file('image_path')->getClientOriginalExtension();
-            if($extension == 'jpg' || $extension=='png' || $extension == 'jpeg')
+
+            if($file)
             {
-                Storage::disk('local')->put($reg_number.'.'.$extension,  File::get($file));
+                $file = $file->move(public_path().'/uploads/MS/'.$applNo. '/'. $applNo.$extension, $file->getClientOriginalName());
+            }
+            if($cert)
+            {
+                $cert = $cert->move(public_path().'/uploads/MS/'.$applNo. '/'. $applNo.'cert'.$extension3, $cert->getClientOriginalName());
             }
             return View::make('success')->with('details', $details);
             }

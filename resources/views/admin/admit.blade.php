@@ -62,6 +62,7 @@
         <span class="right">Seal</span>
       </div>
     </div>
+    <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn modal-action modal-close waves-effect waves-green btn-flat">Admit</a>
   </div>
 <footer class="page-footer teal darken-4">
           <div class="container">

@@ -132,6 +132,48 @@ class PhdController extends Controller
                 'to3' => $request->input('emp_to_3')
             );
             // dd($request->input('landline'));
+
+            $file = $request->file('image_path');   
+            $extension = $request->file('image_path')->getClientOriginalExtension();
+            if($extension != 'jpg' || $extension != 'png' || $extension != 'jpeg')
+            {
+                $message = 'Inavlid file format for the uploaded image';
+                return View::make('error')->with('message', $message);
+            }
+
+            if($request->input('appl_categ') == 'onCampus')
+            {
+                $form1 = $request->file('form1');
+                $form2 = $request->file('form2');
+                if(!$form1 || !$form2)
+                {
+                    $message = 'Upload all the required forms';
+                    return view('error')->with('message', $message);
+                }
+                $extension1 = $request->file('form1')->getClientOriginalExtension();
+                $extension2 = $request->file('form2')->getClientOriginalExtension();
+                if($extension1 != 'pdf' || $extension2 != 'pdf')
+                {
+                    $message = 'Invalid file format for the uploaded files'
+                    return View::make('error')->with('message', $message);
+                }
+            }
+            if($request->input('appl_categ') == 'External')
+            {
+                $form3 = $request->file('form3');
+                if(!$form3)
+                {
+                    $message = 'Upload all the required forms';
+                    return View::make('error')->with('message', $message);
+                }
+                $extension3 = $request->file('form3')->getClientOriginalExtension();
+                if($extension3 != 'pdf')
+                {
+                    $message = 'Invalid file format for the uploaded files'
+                    return View::make('error')->with('message', $message);
+                }
+            }
+            
             $candidate = new Phd();
 
             $candidate->applicationCategory = $request->input('appl_categ');
@@ -268,13 +310,21 @@ class PhdController extends Controller
 
             $details['reg_number'] = $reg_number;
 
-            $file = $request->file('image_path');
-            // dd($file);   
-            $extension = $request->file('image_path')->getClientOriginalExtension();
-            if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
+            if($form1 && $form2)
             {
-                Storage::disk('local')->put('PHD/'.$applNo.'/'.$applNo.$extension,  File::get($file));
+                $form1 = $form1->move(public_path().'/uploads/PHD/'.$applNo. '/'. $applNo.'form1'.$extension1, $form1->getClientOriginalName());
+                $form2 = $form2->move(public_path().'/uploads/PHD/'.$applNo. '/'. $applNo.'form2'.$extension2, $form2->getClientOriginalName());
             }
+            else if($form3)
+            {
+                $form3 = $form3->move(public_path().'/uploads/PHD/'.$applNo. '/'. $applNo.'form3'.$extension3, $form3->getClientOriginalName());
+            }
+
+            if($file)
+            {
+                $file = $file->move(public_path().'/uploads/PHD/'.$applNo. '/'. $applNo.$extension, $file->getClientOriginalName());
+            }
+
             return View::make('success')->with('details', $details);
             }
             else{
