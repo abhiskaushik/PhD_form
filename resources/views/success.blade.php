@@ -43,6 +43,9 @@
   <div class="space-large"></div>
   <div class="container">
     <div class="row">
+
+<!-- if condition goes here -->
+
     @for($i = 0; $i < 1; $i++)
       <div class="col l10 offset-l1 s10 offset-s1 ">
         <div class="card">
@@ -148,6 +151,120 @@
 
       @endfor
     </div>
+
+    <!-- else condition -->
+    <!-- ms modal -->
+    @for($i = 0; $i < 1; $i++)
+      <div class="col l10 offset-l1 s10 offset-s1 ">
+        <div class="card">
+          <div class=" waves-effect waves-block waves-light">  
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Candidate's Card</span>
+            <div class="row">
+              <div class="col l6 s6">
+                <p>Registration Number:{!! $details['reg_number'] !!}</p>
+              </div>
+              <div class="col l6 s6">
+                <p>Date of Submission:{!! $details['date'] !!}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col l6 s6">Name:{!! $details['name']!!}</div>
+              <div class="col l6 s6">Department:{!! $details['department1'] !!}</div>
+              <div class="col l6 s6">Department:{!! $details['department2'] !!}</div>
+              <div class="col l6 s6">Department:{!! $details['department3'] !!}</div>
+            </div>
+            <div class="space-small center">
+            </div>
+            <div class="center">
+              <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Click Here To view full form</a>
+            </div>
+          </div>
+          
+          </div>
+        </div>
+      </div>
+
+      <!-- modal goes here -->
+
+      <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Candidate's Form</h4>
+        <p><b>Registration Number:</b> {!! $details['reg_number'] !!}</p>
+        <p><b>Date of Registration:</b> {!! $details['date'] !!}</p>
+        
+        <p><b>Application Category:</b> {!! $details['appl_categ'] !!}</p>
+        <p><b>Department 1:</b> {!! $details['department1'] !!}</p>
+        <p><b>Department 2:</b> {!! $details['department2'] !!}</p>
+        <p><b>Department 3:</b> {!! $details['department3'] !!}</p>
+        <p><b>Email:</b> {!! $details['email'] !!}</p>
+        <p><b>Area of Research:</b> {!! $details['area_of_research'] !!}</p>
+        <p><b>Name of Candidate:</b> {!! $details['name'] !!}</p>
+        <p><b>Email Id:</b> {!! $details['email'] !!}</p>
+        <p><b>Father's Name:</b> {!! $details['father_name'] !!}</p>
+        <p><b>Date of Birth:</b> {!! $details['dob'] !!}</p>
+        <p><b>Category:</b> {!! $details['category'] !!}</p>
+        <p><b>Sex:</b> {!! $details['sex'] !!}</p>
+        <p><b>Marital Status: {!! $details['marital_status'] !!}</b></p>
+        <p><b>Physically Handicapped:</b> {!! $details['ph'] !!}</p>
+        <p><b>Nationality:</b> {!! $details['nationality'] !!}</p>
+        <p><b>Address for Communication:</b> {!! $details['addr_for_commn'] !!}</p>
+        <p><b>Permanent Address:</b> {!! $details['permanent_addr'] !!}</p>
+        <p><b>Mobile Number:</b> {!! $details['mobile'] !!}</p>
+        <p><b>Landline Number:</b> {!! $details['landline'] !!}</p>
+        <p><b>Undergraduate Degree:</b> {!! $details['ug_deg'] !!}</p>
+        <p><b>Undergraduate Branch:</b> {!! $details['ug_branch'] !!}</p>
+        <p><b>Undergraduate G.P.A:</b> {!! $details['ug_gpa'] !!}</p>
+        <p><b>Undergraduate Class:</b> {!! $details['ug_class'] !!}</p>
+        <p><b>Undergraduate Name of Institution:</b> {!! $details['ug_name_of_inst'] !!}</p>
+        <p><b>Undergraduate Name of University:</b> {!! $details['ug_name_of_uni'] !!}</p>
+        <p><b>Undergraduate Year of Passing:</b> {!! $details['ug_yop'] !!}</p>
+        
+        <p><b>Semester 1:</b></p>
+        <p><b>C.G.P.A Scored:</b> {!! $details['gpa1'] !!}  </p>
+        <p><b>Total C.G.P.A:</b> {!! $details['max1'] !!}  </p>
+        <p><b>Semester 2:</b></p>
+        <p><b>C.G.P.A Scored:</b> {!! $details['gpa2'] !!}  </p>
+        <p><b>Total C.G.P.A:</b> {!! $details['max2'] !!}  </p>
+        <p><b>Semester 3:</b></p>
+        <p><b>C.G.P.A Scored:</b> {!! $details['gpa3'] !!}  </p>
+        <p><b>Total C.G.P.A:</b> {!! $details['max3'] !!}  </p>
+        <p><b>Semester 4:</b></p>
+        <p><b>C.G.P.A Scored:</b> {!! $details['gpa4'] !!}  </p>
+        <p><b>Total C.G.P.A:</b> {!! $details['max4'] !!}  </p>
+        <p><b>Semester 5:</b></p>
+        <p><b>C.G.P.A Scored:</b> {!! $details['gpa5'] !!}  </p>
+        <p><b>Total C.G.P.A:</b> {!! $details['max5'] !!}  </p>
+        <p><b>Semester 6:</b></p>
+        <p><b>C.G.P.A Scored:</b> {!! $details['gpa6'] !!}  </p>
+        <p><b>Total C.G.P.A:</b> {!! $details['max6'] !!}  </p>
+        <p><b>Semester 7:</b></p>
+        <p><b>C.G.P.A Scored:</b> {!! $details['gpa7'] !!}  </p>
+        <p><b>Total C.G.P.A:</b> {!! $details['max7'] !!}  </p>
+        <p><b>Semester 8:</b></p>
+        <p><b>C.G.P.A Scored:</b> {!! $details['gpa8'] !!}  </p>
+        <p><b>Total C.G.P.A:</b> {!! $details['max8'] !!}  </p>
+
+        <p><b>Employer Details 1:</b> {!! $details['employer_details_1'] !!}</p>
+        <p><b>Postition 1:</b> {!! $details['position1'] !!}</p>
+        <p><b>From 1:</b> {!! $details['from1'] !!}</p>
+        <p><b>To 1:</b> {!! $details['to1'] !!}</p>
+        <p><b>Employer Details 2:</b> {!! $details['employer_details_2'] !!}</p>
+        <p><b>Postition 2:</b> {!! $details['position2'] !!}</p>
+        <p><b>From 2:</b> {!! $details['from2'] !!}</p>
+        <p><b>To 2:</b> {!! $details['to2'] !!}</p>
+        <p><b>Employer Details 3:</b> {!! $details['employer_details_3'] !!}</p>
+        <p><b>Postition 3:</b> {!! $details['position3'] !!}</p>
+        <p><b>From 3:</b> {!! $details['from3'] !!}</p>
+        <p><b>To 3:</b> {!! $details['to3'] !!}</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!"  data-reg={!! $details['reg_number']!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
+      </div>
+      </div>
+
+      @endfor
   
   
 <footer class="page-footer teal darken-4">
