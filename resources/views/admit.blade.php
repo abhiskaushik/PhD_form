@@ -14,33 +14,22 @@
   <script src="{{URL::asset('assets/js/print.js')}}"></script>
 </head>
 <body>
-	<header> 
-  </header>
-  
- <nav>
-    <div class="nav-wrapper ">
-      
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="hide-on-med-and-down">
-        <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd/M.S. Admission's</a></li>
-        <li><a href="/login">Admin</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-       <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd/M.S. Admission's</a></li>
-        <li><a href="/login">Admin</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+
+  <div class="container-fluid">
+  <div class="row">
+    
+      <img src="{{base_path('public/assets/images/admit.png')}}">
+    
+    
+  </div>
+</div>
+ 
 
   <div class="space-medium"></div>
 
   <div class="space-large"></div>
   <div class="container">
-  <h5 class="center">ADMIT CARD</h5>
+  <h5 class="center"><u>ADMIT CARD</u></h5>
   <div class="space-medium"></div>
   <hr><hr>
     <div class="row admit">
@@ -56,7 +45,7 @@
     </div>
       <hr><hr>
       <div class="space-small"></div>
-      <p class="center head">FOR OFFICE USE ONLY</p>
+      <p class="center head"><u>FOR OFFICE USE ONLY</u></p>
     <div class="row admit">
       <div class="col l12">
         <p><b>Registration Number:</b>  </p>
@@ -71,54 +60,23 @@
     </div>
       <hr><hr>
       <div class="space-medium"></div>
-        <h5 class="center">Address Slip</h5>
+        <h5 class="center"><u>Address Slip</u></h5>
         <div class="space-medium"></div>
         <hr><hr>
       <div class="row admit">
         <div class="col l12">
           <p><b>To</b></p>
           <p>Mr/Mrs</p>
-          <p>Address goes here..</p>
-          <p>PIN: .................</p>
+          <p>Address: .............................................................................................................<br>..............................................................................................................................<br>..............................................................................................................................<br></p>
+          <p>PIN: .....................................................................................................................<br></p>
         </div>
         <hr>
-        <div class="col l12">
-          <p><b>To</b></p>
-          <p>Mr/Mrs</p>
-          <p>Address goes here..</p>
-          <p>PIN: .................</p>
-        </div>
+        
         <hr>
+
       </div>
   </div>
   <div class="space-large"></div>
-<footer class="page-footer teal darken-4">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">National Institute of Technology</p>
-                <p class="grey-text text-lighten-4">Tiruchirappalli - 620015</p>
-                <p class="grey-text text-lighten-4">Tamil Nadu, INDIA</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">QuickLinks</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="https://www.nitt.edu">Institute Website</a></li>
-                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/academics/departments/">Departments</a></li>
-                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/admissions/">Admissions</a></li>
-                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/contact">Contact Us</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright dark">
-            <div class="container center">
-            
-            <a class="grey-text text-lighten-4" href="#!">Made with &hearts; by Delta Force</a>
-            </div>
-          </div>
-        </footer>
             
 
   <script type="text/javascript">
