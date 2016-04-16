@@ -53,7 +53,7 @@
 		<div class="space-medium"></div>
 		<div class="row">
 
-		{!! Form::open(array('url'=>'success','method'=>'POST', 'files'=>true )) !!}
+		{!! Form::open(array('url'=>'msvalidate','method'=>'POST', 'files'=>true )) !!}
 		<!-- <input type="hidden" name="_token" id="_token" value={!! csrf_field() !!} /> -->			
   		<div class="row">  					   
   			<p>Application Category</p>		    
@@ -75,14 +75,7 @@
         				<input class="file-path validate" type="text">
       				</div>
 	          	</div>
-		      </div>
-		      <div class="input-field col l6 s12">
-		      		<select required name="appl_categ">
-				      <option value="" disabled selected>Choose your option</option>
-				      <option value="Part Time">Part Time</option>
-				      <option value="Full Time">Full Time</option>
-				    </select>
-		        </div>		
+		      </div>	
   		
 	
   		<div class="row">
@@ -219,12 +212,18 @@
 
 		       <div class="row">
 		        <div class="input-field col l5">      		  
+		        	<span for="textarea1">Address for Communication</span><br>
 					<textarea required id="textarea1" class="materialize-textarea" name="addr_for_commn" maxlength="200"></textarea>
-		            <span for="textarea1">Address for Communication</span><br>
+		            
+		            <p>Mobile Number:</p>
+		            <input pattern="^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$" required type="number" min="7000000000" max="9999999999" class="validate" name="mobile"></input>
 		        </div>
 		         <div class="input-field col l5 offset-l2">
+		         	<span for="textarea1">Permanent Address</span><br>
 		         <textarea required id="textarea1" class="materialize-textarea" name="permanent_addr" maxlength="200"></textarea>
-		            <span for="textarea1">Permanent Address</span><br>
+		            
+		            <p>Landline Number:</p>
+		            <input pattern="^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$" required type="number" min="7000000000" max="9999999999" class="validate" name="landline"></input>
 		        </div>
 		      </div> 
 
@@ -391,18 +390,18 @@
 		      	<div class="space-small"></div>
 		      	<div class="col s12 l12">
 		      		<p for="textarea1">Name & Address of Employer 1</p><br>
-		      		 <textarea required id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_1"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_1"></textarea>
 
 		      		 <p>Position Held:</p>
-		      		 <input required id="reg_number" type="text" class="validate" name="emp_pos_1" maxlength="100">
+		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_1" maxlength="100">
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input required id="reg_number" type="number" class="validate" name="emp_from_1" maxlength="100">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_1" maxlength="100">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>To:</p>
-		      		 	<input required id="reg_number" type="number" class="validate" name="emp_to_1" maxlength="100">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_1" maxlength="100">
 		      		 </div>
 		      	</div>
 		      	<div class="col s12 l12">
@@ -410,15 +409,15 @@
 		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2"></textarea>
 
 		      		 <p>Position Held:</p>
-		      		 <input required id="reg_number" type="text" class="validate" name="emp_pos_2" maxlength="100">
+		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_2" maxlength="100">
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input required id="reg_number" type="number" class="validate" name="emp_from_2" maxlength="100">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_2" maxlength="100">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input required id="reg_number" type="number" class="validate" name="emp_to_2" maxlength="100">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_2" maxlength="100">
 		      		 </div>
 		      	</div>
 		      	<div class="col s12 l12">
@@ -426,15 +425,15 @@
 		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3"></textarea>
 
 		      		 <p>Position Held:</p>
-		      		 <input required id="reg_number" type="text" class="validate" name="emp_pos_3" maxlength="100">
+		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_3" maxlength="100">
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input required id="reg_number" type="number" class="validate" name="emp_from_3" maxlength="100">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_3" maxlength="100">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input required id="reg_number" type="number" class="validate" name="emp_to_3" maxlength="100">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_3" maxlength="100">
 		      		 </div>
 		      	</div>
 		      </div>

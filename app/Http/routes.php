@@ -23,7 +23,8 @@ Route::post('delete', 'AdminController@deleted' );
 Route::post('accept', 'AdminController@accepted');
 Route::get('print/{phdormsc}/{regNo}', 'AdminController@printer' );
 
-Route::post('success', 'PhdController@validated');
+Route::post('phdvalidate', 'PhdController@validated');
+Route::post('msvalidate', 'MsController@validated');
 Route::get('error', function()
     {
         return view('error');

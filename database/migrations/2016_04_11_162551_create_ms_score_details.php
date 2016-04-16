@@ -30,6 +30,7 @@ class CreateMsScoreDetails extends Migration
             $table->string('gpa7', 6);
             $table->string('gpamax8', 6);
             $table->string('gpa8', 6);
+            $table->timestamps();
         });
 
         Schema::table('msSemScore', function (Blueprint $table) {

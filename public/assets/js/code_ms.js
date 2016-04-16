@@ -6,7 +6,7 @@ $(document).ready(function(){
 		console.log(p);
 		if(p=='Part Time'){
 			
-			$('.upload_container').append('<div class="spon"><input type="file" name="form1" /></div>');
+			$('.upload_container').append('<div class="spon"><input type="file" name="form1" required /></div>');
 
 		}
 		

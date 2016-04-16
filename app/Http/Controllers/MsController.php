@@ -37,8 +37,8 @@ class MsController extends Controller
 	        'ph' => 'required|in:yes,no',
 	        'nationality' => 'required',
 	        'addr_for_commn' => 'required|max:200',
-            'permanent_addr' =>'required|max:200'
-            'email' => 'required|email|unique:candidates',
+            'permanent_addr' =>'required|max:200',
+            'email' => 'required|email|unique:ms',
             'mobile' => 'required',
             'landline' => 'required',
 	        'ug_deg' => 'required',
@@ -73,7 +73,7 @@ class MsController extends Controller
         
     	$validator = Validator::make($request->all(), $rules);
 
-        if(!($validator->fails()))
+        if(count($validator->errors()) > 0)
     	{
     		$message = 'Please fill in all the details';
 			return View::make('error')->with('message', $validator->errors());
@@ -148,24 +148,29 @@ class MsController extends Controller
 
             $file = $request->file('image_path');   
             $extension = $request->file('image_path')->getClientOriginalExtension();
-            if($extension != 'jpg' || $extension != 'png' || $extension != 'jpeg')
+            // dd($extension);
+            if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
+            {
+                
+            }
+            else
             {
                 $message = 'Inavlid file format for the uploaded image';
                 return View::make('error')->with('message', $message);
             }
 
-            if($request->input('appl_categ') == 'Sponsered')
+            if($request->input('appl_categ') == 'Part Time')
             {
-                $cert = $request->file('cert');
+                $cert = $request->file('form1');
                 if(!$cert)
                 {
                     $message = 'Upload all the required forms';
                     return View::make('error')->with('message', $message);
                 }
-                $extension3 = $request->file('cert')->getClientOriginalExtension();
+                $extension3 = $request->file('form1')->getClientOriginalExtension();
                 if($extension3 != 'pdf')
                 {
-                    $message = 'Invalid file format for the uploaded files'
+                    $message = 'Invalid file format for the uploaded files';
                     return View::make('error')->with('message', $message);
                 }
             }
@@ -190,13 +195,13 @@ class MsController extends Controller
             $candidate->permanentaddr = $request->get('permanent_addr');
             $candidate->email = $request->get('email');
             $candidate->mobile = $request->get('mobile');
-            $candidate->landline = $request->get('landline');
+            $candidate->lanline = $request->get('landline');
 
             $candidate->save();
 
             $applNo = $candidate->applNo;
             $reg_number = 'MS/';
-            for(int $i = 1; $i <= 3; $i++)
+            for($i = 1; $i <= 3; $i++)
             {
                 if($request->get('department'.$i))
                 {
@@ -224,7 +229,7 @@ class MsController extends Controller
 
             $ugDetails = new MsUg();
 
-            $ugDetails->registrationNumber = $reg_number;
+            $ugDetails->applNo = $applNo;
             $ugDetails->degreeName = $request->get('ug_deg');
             $ugDetails->branch = $request->get('ug_branch');
             $ugDetails->gpa = $details['ug_gpa'];
@@ -238,6 +243,7 @@ class MsController extends Controller
 
             $pro = new MsPro();
 
+            $pro->applNo = $applNo;
 			$pro->proexp1 = $request->get('employer_details_1');
             $pro->proexp2 = $request->get('employer_details_2');
             $pro->proexp3 = $request->get('employer_details_3');
@@ -255,6 +261,7 @@ class MsController extends Controller
 
             $msScores = new MsScores();
 
+            $msScores->applNo = $applNo;
             $msScores->gpamax1 = $request->get('max1');
             $msScores->gpamax2 = $request->get('max2');
             $msScores->gpamax3 = $request->get('max3');
@@ -278,11 +285,11 @@ class MsController extends Controller
 
             if($file)
             {
-                $file = $file->move(public_path().'/uploads/MS/'.$applNo. '/'. $applNo.$extension, $file->getClientOriginalName());
+                $file = $file->move(public_path().'/uploads/MS/'.$applNo , $applNo.'.'.$extension);
             }
             if($cert)
             {
-                $cert = $cert->move(public_path().'/uploads/MS/'.$applNo. '/'. $applNo.'cert'.$extension3, $cert->getClientOriginalName());
+                $cert = $cert->move(public_path().'/uploads/MS/'.$applNo, $applNo.'cert'.'.'.$extension3);
             }
             return View::make('success')->with('details', $details);
             }

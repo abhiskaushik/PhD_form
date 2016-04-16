@@ -53,7 +53,7 @@
 		<div class="space-medium"></div>
 		<div class="row">
 
-		{!! Form::open(array('url'=>'success','method'=>'POST', 'files'=>true )) !!}
+		{!! Form::open(array('url'=>'phdvalidate','method'=>'POST', 'files'=>true )) !!}
 		<!-- <input type="hidden" name="_token" id="_token" value={!! csrf_field() !!} /> -->			
   		<div class="row">  					   
   			<p>Application Category</p>		    

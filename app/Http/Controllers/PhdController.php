@@ -169,7 +169,7 @@ class PhdController extends Controller
                 $extension3 = $request->file('form3')->getClientOriginalExtension();
                 if($extension3 != 'pdf')
                 {
-                    $message = 'Invalid file format for the uploaded files'
+                    $message = 'Invalid file format for the uploaded files';
                     return View::make('error')->with('message', $message);
                 }
             }
