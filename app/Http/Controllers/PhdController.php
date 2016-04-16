@@ -131,11 +131,47 @@ class PhdController extends Controller
                 'to2' => $request->input('emp_to_2'),
                 'to3' => $request->input('emp_to_3')
             );
-            // dd($request->input('landline'));
 
-            $file = $request->file('image_path');   
+            if($request->input('ra1') == 'on')
+            {
+                $details['ug_gpa'] = 'RA';
+            }
+            else
+            {
+                $details['ug_gpa'] = $request->input('ug_gpa');
+            }
+            if($request->input('ra2') == 'on')
+            {
+                $details['pg_gpa'] = 'RA';
+            }
+            else
+            {
+                $details['pg_gpa'] = $request->input('pg_gpa');
+            }
+            if($request->input('ann') == 'on')
+            {
+                $details['score'] = $request->input('score');
+                $details['rank'] = $request->input('rank');
+                $details['validity'] = $request->input('validity');
+                $details['discipline'] = $request->input('discipline');
+                $details['exam'] = $request->input('exam');
+            }
+            if($request->input('nann') == 'on')
+            {
+                $details['score'] = 'RA';
+                $details['rank'] = 'RA';
+                $details['validity'] = 'RA';
+                $details['discipline'] = 'RA';
+                $details['exam'] = 'RA';
+            }
+
+            $file = $request->file('image_path');  
             $extension = $request->file('image_path')->getClientOriginalExtension();
-            if($extension != 'jpg' || $extension != 'png' || $extension != 'jpeg')
+            if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
+            {
+                
+            }
+            else
             {
                 $message = 'Inavlid file format for the uploaded image';
                 return View::make('error')->with('message', $message);
@@ -154,7 +190,7 @@ class PhdController extends Controller
                 $extension2 = $request->file('form2')->getClientOriginalExtension();
                 if($extension1 != 'pdf' || $extension2 != 'pdf')
                 {
-                    $message = 'Invalid file format for the uploaded files'
+                    $message = 'Invalid file format for the uploaded files';
                     return View::make('error')->with('message', $message);
                 }
             }
@@ -210,39 +246,6 @@ class PhdController extends Controller
             $reg_number = $reg_number.$applNo;
             Phd::where('applNo', $applNo)
                     ->update(['registrationNumber' => $reg_number]);
-
-            if($request->input('ra1') == 'on')
-            {
-                $details['ug_gpa'] = 'RA';
-            }
-            else
-            {
-            	$details['ug_gpa'] = $request->input('ug_gpa');
-            }
-            if($request->input('ra2') == 'on')
-            {
-                $details['pg_gpa'] = 'RA';
-            }
-            else
-            {
-            	$details['pg_gpa'] = $request->input('pg_gpa');
-            }
-            if($request->input('ann') == 'on')
-            {
-                $details['score'] = $request->input('score');
-                $details['rank'] = $request->input('rank');
-                $details['validity'] = $request->input('validity');
-                $details['discipline'] = $request->input('discipline');
-                $details['exam'] = $request->input('exam');
-            }
-            if($request->input('nann') == 'on')
-            {
-                $details['score'] = 'RA';
-                $details['rank'] = 'RA';
-                $details['validity'] = 'RA';
-                $details['discipline'] = 'RA';
-                $details['exam'] = 'RA';
-            }
 
             $ugDetails = new PhdUg();
 
@@ -309,20 +312,21 @@ class PhdController extends Controller
             $pro->save();
 
             $details['reg_number'] = $reg_number;
+            $details['phdorms'] = 'phd';
 
             if($form1 && $form2)
             {
-                $form1 = $form1->move(public_path().'/uploads/PHD/'.$applNo. '/'. $applNo.'form1'.$extension1, $form1->getClientOriginalName());
-                $form2 = $form2->move(public_path().'/uploads/PHD/'.$applNo. '/'. $applNo.'form2'.$extension2, $form2->getClientOriginalName());
+                $form1 = $form1->move(public_path().'/uploads/PHD/'.$applNo, $applNo.'form1'.'.'.$extension1);
+                $form2 = $form2->move(public_path().'/uploads/PHD/'.$applNo, $applNo.'form2'.'.'.$extension2);
             }
             else if($form3)
             {
-                $form3 = $form3->move(public_path().'/uploads/PHD/'.$applNo. '/'. $applNo.'form3'.$extension3, $form3->getClientOriginalName());
+                $form3 = $form3->move(public_path().'/uploads/PHD/'.$applNo, $applNo.'form3'.'.'.$extension3);
             }
 
             if($file)
             {
-                $file = $file->move(public_path().'/uploads/PHD/'.$applNo. '/'. $applNo.$extension, $file->getClientOriginalName());
+                $file = $file->move(public_path().'/uploads/PHD/'.$applNo, $applNo.'.'.$extension);
             }
 
             return View::make('success')->with('details', $details);

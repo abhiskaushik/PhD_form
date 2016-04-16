@@ -27,15 +27,15 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd/M.S. Admission's</a></li>
-        <li><a href="/login">Admin</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="/phd">PhdAdmissions</a></li>
+        <li><a href="/ms">M.S. Admissions</a></li>
+        <li><a href="/logout">Logout</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd/M.S. Admission's</a></li>
-        <li><a href="/login">Admin</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="/phd">PhdAdmissions</a></li>
+        <li><a href="/ms">M.S. Admissions</a></li>
+        <li><a href="/logout">Logout</a></li>
       </ul>
     </div>
   </nav>
@@ -47,7 +47,7 @@
     <div class="row candidates">
     @for($i = 0; $i < sizeof($data['candidates']); $i++)
         
-        @if(!$data['candidates'][$i]->deleted && $data['candidates'][$i]->phdormsc == 'msc')
+        @if(!$data['candidates'][$i]->deleted)
      <div class="{!! $data['candidates'][$i]->registrationNumber !!} col l5 offset-l1 s5 offset-s1" } data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
         <div class="card">
           <div class=" waves-effect waves-block waves-light">  
@@ -114,21 +114,21 @@
           <p>Scores:</p>
           
           <p><b>Semester 1:</b></p>
-          <p><span class="half"><b>G.P.A obtained:</b>{!! $data['msSemScore'][$i]->gpa1 !!}</span class="half"><b>Out of:</b>{!! $data['msSemScore'][$i]->gpamax1 !!}<span></span></p>
+          <p><span class="half"><b>G.P.A obtained:</b>{!! $data['scores'][$i]->gpa1 !!}</span class="half"><b>Out of:</b>{!! $data['scores'][$i]->gpamax1 !!}<span></span></p>
           <p><b>Semester 2:</b></p>
-          <p><span class="half"><b>G.P.A obtained:</b>{!! $data['msSemScore'][$i]->gpa2 !!}</span class="half"><b>Out of:</b>{!! $data['msSemScore'][$i]->gpamax2 !!}<span></span></p>
+          <p><span class="half"><b>G.P.A obtained:</b>{!! $data['scores'][$i]->gpa2 !!}</span class="half"><b>Out of:</b>{!! $data['scores'][$i]->gpamax2 !!}<span></span></p>
           <p><b>Semester 3:</b></p>
-          <p><span class="half"><b>G.P.A obtained:</b>{!! $data['msSemScore'][$i]->gpa3 !!}</span class="half"><b>Out of:</b>{!! $data['msSemScore'][$i]->gpamax3 !!}<span></span></p>
+          <p><span class="half"><b>G.P.A obtained:</b>{!! $data['scores'][$i]->gpa3 !!}</span class="half"><b>Out of:</b>{!! $data['scores'][$i]->gpamax3 !!}<span></span></p>
           <p><b>Semester 4:</b></p>
-          <p><span class="half"><b>G.P.A obtained:</b>{!! $data['msSemScore'][$i]->gpa4 !!}</span class="half"><b>Out of:</b>{!! $data['msSemScore'][$i]->gpamax4 !!}<span></span></p>
+          <p><span class="half"><b>G.P.A obtained:</b>{!! $data['scores'][$i]->gpa4 !!}</span class="half"><b>Out of:</b>{!! $data['scores'][$i]->gpamax4 !!}<span></span></p>
           <p><b>Semester 5:</b></p>
-          <p><span class="half"><b>G.P.A obtained:</b>{!! $data['msSemScore'][$i]->gpa5 !!}</span class="half"><b>Out of:</b>{!! $data['msSemScore'][$i]->gpamax5 !!}<span></span></p>
+          <p><span class="half"><b>G.P.A obtained:</b>{!! $data['scores'][$i]->gpa5 !!}</span class="half"><b>Out of:</b>{!! $data['scores'][$i]->gpamax5 !!}<span></span></p>
           <p><b>Semester 6:</b></p>
-          <p><span class="half"><b>G.P.A obtained:</b>{!! $data['msSemScore'][$i]->gpa6 !!}</span class="half"><b>Out of:</b>{!! $data['msSemScore'][$i]->gpamax6 !!}<span></span></p>
+          <p><span class="half"><b>G.P.A obtained:</b>{!! $data['scores'][$i]->gpa6 !!}</span class="half"><b>Out of:</b>{!! $data['scores'][$i]->gpamax6 !!}<span></span></p>
           <p><b>Semester 7:</b></p>
-          <p><span class="half"><b>G.P.A obtained:</b>{!! $data['msSemScore'][$i]->gpa7 !!}</span class="half"><b>Out of:</b>{!! $data['msSemScore'][$i]->gpamax7 !!}<span></span></p>
+          <p><span class="half"><b>G.P.A obtained:</b>{!! $data['scores'][$i]->gpa7 !!}</span class="half"><b>Out of:</b>{!! $data['scores'][$i]->gpamax7 !!}<span></span></p>
           <p><b>Semester 8:</b></p>
-          <p><span class="half"><b>G.P.A obtained:</b>{!! $data['msSemScore'][$i]->gpa8 !!}</span class="half"><b>Out of:</b>{!! $data['msSemScore'][$i]->gpamax8 !!}<span></span></p>
+          <p><span class="half"><b>G.P.A obtained:</b>{!! $data['scores'][$i]->gpa8 !!}</span class="half"><b>Out of:</b>{!! $data['scores'][$i]->gpamax8 !!}<span></span></p>
 
           <p><b>Employer Details 1:</b> {!! $data['pro'][$i]->proexp1 !!}</p>
           <p><b>Position at Work 1:</b>{!! $data['pro'][$i]->position1 !!}</p>
@@ -143,12 +143,13 @@
           <p><b>From 1:</b>{!! $data['pro'][$i]->from3 !!}</p>
           <p><b>To 1:</b>{!! $data['pro'][$i]->to3 !!}</p>
           
-          <p><b>Submission Date:</b> {!! $data['others'][$i]->subdate !!}</p>
+
+          
         </div>
       <div class="modal-footer">
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
-        <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn-flat">Accept</a>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->applNo!!} class="discard btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
+        <a href="#!"  data-reg={!! $data['candidates'][$i]->applNo!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->applNo!!} class="accept btn modal-action modal-close waves-effect waves-green btn-flat">Accept</a>
       </div>
       </div>
         </div>

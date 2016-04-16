@@ -20,7 +20,7 @@ $(document).ready(function(){
 	        data: data,
 	        dataType: "json",
 	        success: function(data){
-	        	console.log("helo");
+	        	console.log(data);
 	        	$('.'+applNo).hide('slow');
 	        	location.reload();
 	        },

@@ -112,7 +112,7 @@ class MsController extends Controller
                 'ug_branch' => $request->get('ug_branch'),
                 'ug_percentage' => $request->get('ug_percentage'),
                 'ug_gpa' => $request->get('ug_gpa'),
-                // 'ug_class' => $request->get('ug_class'),
+                'ug_class' => $request->get('ug_class'),
                 'ug_name_of_inst' => $request->get('ug_name_of_inst'),
                 'ug_name_of_uni' => $request->get('ug_name_of_uni'),
                 'ug_yop' => $request->get('ug_yop'),
@@ -121,9 +121,9 @@ class MsController extends Controller
                 'employer_details_1' => $request->get('employer_details_1'),
                 'employer_details_2' =>$request->get('employer_details_2'),
                 'employer_details_3' => $request->get('employer_details_3'),
-                'postion1' => $request->get('emp_pos_1'),
-                'postion2' => $request->get('emp_pos_2'),
-                'postion3' => $request->get('emp_pos_3'),
+                'position1' => $request->get('emp_pos_1'),
+                'position2' => $request->get('emp_pos_2'),
+                'position3' => $request->get('emp_pos_3'),
                 'from1' => $request->get('emp_from_1'),
                 'from2' => $request->get('emp_from_2'),
                 'from3' => $request->get('emp_from_3'),
@@ -148,7 +148,6 @@ class MsController extends Controller
 
             $file = $request->file('image_path');   
             $extension = $request->file('image_path')->getClientOriginalExtension();
-            // dd($extension);
             if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
             {
                 
@@ -282,6 +281,7 @@ class MsController extends Controller
             $msScores->save();
 
             $details['reg_number'] = $reg_number;
+            $details['phdorms'] = 'ms';
 
             if($file)
             {

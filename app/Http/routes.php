@@ -18,13 +18,20 @@ Route::group(['middleware' => 'adminauth'], function () {
             return view('admin.home');
         });
     Route::get('admin/{phdormsc}', 'AdminController@adminView');
+    Route::get('admit/{phdormsc}/{regNo}', 'AdminController@admitCard');
+    Route::post('delete', 'AdminController@deleted' );
+    Route::post('accept', 'AdminController@accepted');
+    Route::get('logout', 'AdminController@logout');
 });
-Route::post('delete', 'AdminController@deleted' );
-Route::post('accept', 'AdminController@accepted');
 Route::get('print/{phdormsc}/{regNo}', 'AdminController@printer' );
 
 Route::post('phdvalidate', 'PhdController@validated');
 Route::post('msvalidate', 'MsController@validated');
+Route::post('application', 'ApplicationController@view');
+
+Route::get('view', function() {
+    return view('view');
+});
 Route::get('error', function()
     {
         return view('error');
@@ -48,19 +55,7 @@ Route::get('phd', function()
     {
         return view('phd');
     });
-
 Route::get('ms', function()
     {
         return view('ms');
     });
-Route::get('test', function()
-    {
-        return view('test');
-    });
-Route::post('change', function()
-    {
-        dd(Input::get('ra1'));
-    });
-
-Route::get('admit/{phdormsc}/{regNo}', 'AdminController@admitCard');
-

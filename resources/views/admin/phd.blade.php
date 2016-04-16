@@ -27,15 +27,15 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd/M.S. Admission's</a></li>
-        <li><a href="/login">Admin</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="/phd">PhdAdmissions</a></li>
+        <li><a href="/ms">M.S. Admissions</a></li>
+        <li><a href="/logout">Logout</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd/M.S. Admission's</a></li>
-        <li><a href="/login">Admin</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="/phd">PhdAdmissions</a></li>
+        <li><a href="/ms">M.S. Admissions</a></li>
+        <li><a href="/logout">Logout</a></li>
       </ul>
     </div>
   </nav>
@@ -167,7 +167,7 @@
    </div>
    <div class="space-medium"></div>
 <div class="center">
-   <a class="waves-effect waves-light btn" href="msc">View M.S. applicants</a>
+   <a class="waves-effect waves-light btn" href="ms">View M.S. applicants</a>
   </div>
 <div class="space-large"></div>
 <footer class="page-footer teal darken-4">

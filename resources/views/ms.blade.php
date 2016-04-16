@@ -27,15 +27,13 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd Admission's</a></li>
-        <li><a href="/ms">M.S Admission's</a></li>
+        <li><a href="/phd">Phd Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd Admission's</a></li>
-        <li><a href="/ms">Ms Admission's</a></li>
+        <li><a href="/phd">Phd Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
@@ -382,7 +380,7 @@
 		      </div>
 		      <p>
 		      	<input type="checkbox" id="ra3" name="ra3" />
-			      <label for="ra3">If *th Semester results are not announced,click </label>
+			      <label for="ra3">If the Semester results are not announced,click </label>
 		      </p>
 		      <div class="row">
 		      	<span class="light">Details of Professional Experience</span>
@@ -443,7 +441,7 @@
 		      		<p>I do hereby declare that the information furnished in this application are true and correct to the best of my knowledge. If, any of the particulars furnished above is found to be incorrect at the time of admission, the admission may be cancelled.</p>
 		      		<p class="center agreement">
 		      			<span>
-		      		      <input type="checkbox" id="agree" class="check" />
+		      		      <input type="checkbox" id="agree" class="check" required/>
 		      		      <label for="agree">Agree</label>
 		      		    </span>
 		      		   

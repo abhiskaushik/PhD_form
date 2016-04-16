@@ -78,7 +78,6 @@ class AdminController extends Controller
                                         ->orWhere($rules3)
                                         ->paginate(6);
 
-                                        
             $candidates_id = $candidates->lists('applNo');
             $ugDetails = PhdUg::whereIn('applNo', $candidates_id)->get();
             $pgDetails = PhdPg::whereIn('applNo', $candidates_id)->get(); 
@@ -94,22 +93,24 @@ class AdminController extends Controller
         }
         else
         {
-            $candidates = Ms::where('deleted', false)
-                                        ->where('dept1', Session::get('dept'))
-                                        ->orWhere('dept2', Session::get('dept'))
-                                        ->orWhere('dept3', Session::get('dept'))
+            $rules1 = ['deleted' => false , 'dept1' => Session::get('dept')];
+            $rules2 = ['deleted' => false , 'dept2' => Session::get('dept')];
+            $rules3 = ['deleted' => false , 'dept3' => Session::get('dept')];
+            $candidates = Ms::where($rules1)
+                                        ->orWhere($rules2)
+                                        ->orWhere($rules3)
                                         ->paginate(6);
+
             $candidates_id = $candidates->lists('applNo');
             $ugDetails = MsUg::whereIn('applNo', $candidates_id)->get(); 
-            $otherDetails = MsOther::whereIn('applNo', $candidates_id)->get();
-            $scores = MsSemScore::whereIn('applNo', $candidates_id)->get();//changed this from MsScores to MsSemScore 
+            $scores = MsScores::whereIn('applNo', $candidates_id)->get();//changed this from MsScores to MsSemScore 
             $proDetails = MsPro::whereIn('applNo', $candidates_id)->get();
             $data = array('candidates' => $candidates,
                             'ug' => $ugDetails,
                             'scores' => $scores,
                             'pro' => $proDetails
                             );
-            return View::make('admin/'.$phdormsc)->with('data', $data);
+            return View::make('admin.'.$phdormsc)->with('data', $data);
         }
 
 	}
@@ -125,14 +126,10 @@ class AdminController extends Controller
 
             $user = Phd::select('name', 'email')
                                 ->where('applNo', $appl_number)
-                                ->first();
-                                
-            
+                                ->first();                 
             Mail::send('emails.reminder', ['user' => $user->name], function ($m) {
-
-                $m->to('rituljain003@gmail.com', 'Applicant' )->subject('Greetings from NITT!');
+                $m->to('sshchandana.bitra@gmail.com', 'Applicant' )->subject('Greetings from NITT!');
             });
-
 
             return json_encode($appl_number);
         }
@@ -144,11 +141,9 @@ class AdminController extends Controller
             $user = Ms::select('name', 'email')
                                 ->where('applNo', $appl_number)
                                 ->first();
-
             Mail::send('emails.reminder', ['user' => $user->name], function ($m) {
-                $m->to('rituljain003@gmail.com', 'jfisjif')->subject('Greetings from NITT!');
+                $m->to('sshchandana.bitra@gmail.com', 'Applicant')->subject('Greetings from NITT!');
             });
-
 
             return json_encode($appl_number);
         }
@@ -156,7 +151,7 @@ class AdminController extends Controller
 
     public function accepted(Request $request)
     {
-        $reg_number = $request->input('applNo');
+        $appl_number = $request->input('applNo');
         $phdormsc = Session::get('phdormsc');
         if($phdormsc == 'phd')
         {
@@ -168,10 +163,9 @@ class AdminController extends Controller
                                 ->first();
 
             Mail::send('emails.reminder', ['user' => $user->name], function ($m) {
-                $m->to($user->email, $user->name)->subject('Greetings from NITT!');
+                $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
             });
-
-
+            
             return json_encode($appl_number);
         }
         else
@@ -184,9 +178,8 @@ class AdminController extends Controller
                                 ->first();
 
             Mail::send('emails.reminder', ['user' => $user->name], function ($m) {
-                $m->to($user->email, $user->name)->subject('Greetings from NITT!');
+                $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
             });
-
 
             return json_encode($appl_number);
         }
@@ -253,7 +246,6 @@ class AdminController extends Controller
     {
         $filename = $phdormsc.'/'.$applNo.'/'.$applNo;
         $path = public_path() . '/uploads/' . $filename;
-        // dd(file_exists($path.'.jpg'));
         if(file_exists($path.'.jpg'))
         {
             $type = 'jpg';
@@ -273,6 +265,12 @@ class AdminController extends Controller
                             ->where('applNo', $applNo)
                             ->first();
         }
+        else
+        {
+            $candidate = Ms::select('name', 'registrationNumber')
+                            ->where('applNo', $applNo)
+                            ->first();
+        }
 
         $data = array(
             'image' => $phdormsc.'/'.$applNo.'/'.$applNo.'.'.$type,
@@ -280,7 +278,12 @@ class AdminController extends Controller
             'dept' => Session::get('dept'),
             'regNo' => $candidate->registrationNumber
         );
-        return view('admit')->with($data);
+        return view('admin.admit')->with($data);
     }
 	
+    public function logout()
+    {
+        Session::flush();
+        return redirect('login');
+    }
 }

@@ -24,13 +24,13 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd/M.S. Admission's</a></li>
+        <li><a href="/home">Phd/M.S. Admission's</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd/M.S. Admission's</a></li>
+        <li><a href="/home">Phd/M.S. Admission's</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
@@ -40,13 +40,14 @@
   <div class="space-medium"></div>
   <div class="container center">
     <p>
-      Text goes here...
+      Welcome to NITT PhD and Ms application portal!
     </p>
     <div class="space-large"></div>
   	<div class="row">
       <div col l12 s6>
-        <a class="waves-effect waves-light btn" href="/form">PhD Admissions</a>
-        <a class="waves-effect waves-light btn" href="/form">M.Sc Admissions</a>
+        <a class="waves-effect waves-light btn" href="/phd">PhD Admissions</a>
+        <a class="waves-effect waves-light btn" href="/ms">M.S Admissions</a>
+        <a class="waves-effect waves-light btn" href="/view">View my application</a>
       </div>
       
   	</div>

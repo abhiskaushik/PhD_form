@@ -27,15 +27,13 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd Admission's</a></li>
-        <li><a href="/ms">M.S Admission's</a></li>
+        <li><a href="/ms">M.S Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd Admission's</a></li>
-        <li><a href="/ms">Ms Admission's</a></li>
+        <li><a href="/ms">Ms Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
@@ -53,14 +51,13 @@
 		<div class="space-medium"></div>
 		<div class="row">
 
-		{!! Form::open(array('url'=>'phdvalidate','method'=>'POST', 'files'=>true )) !!}
-		<!-- <input type="hidden" name="_token" id="_token" value={!! csrf_field() !!} /> -->			
+		{!! Form::open(array('url'=>'phdvalidate','method'=>'POST', 'files'=>true )) !!}			
   		<div class="row">  					   
   			<p>Application Category</p>		    
 		        
 		      		
 				    <div class="input-field col l6 s12">
-				        <select class="applicationCateg" name="appl_categ">
+				        <select class="applicationCateg" name="appl_categ" required>
 				        <option value="" disabled selected>Select</option>
 				          <optgroup label="Part Time">
 				            <option value="onCampus">On Campus</option>
@@ -119,7 +116,7 @@
 		        </div>
 		        <div class="input-field col l6 s6 ">
 
-		      		<select name="department2" required>
+		      		<select name="department2">
 
 		      			 <option value="" disabled selected>Department Preference 2</option>
 		      			<option value="ARC">Architecture</option>
@@ -135,7 +132,7 @@
 		        </div>
 		        <div class="input-field col l6 s6 ">
 
-		      		<select name="department3" required>
+		      		<select name="department3">
 
 		      			 <option value="" disabled selected>Department Preference 3</option>
 		      			<option value="ARC">Architecture</option>
@@ -369,10 +366,10 @@
 		      		<p class="center">Are results announced?</p>
 		      		<span>
 		      			<input type="checkbox" id="announced" name="ann" />
-		      			<label for="announced" name="nann">Announced</label>
+		      			<label for="announced">Announced</label>
 		      		</span>
 		      		<span>
-		      			<input type="checkbox" id="nannounced" />
+		      			<input type="checkbox" id="nannounced" name="nann" />
 		      			<label for="nannounced">Not-Announced</label>
 		      		</span>
 		      	</div>
@@ -468,7 +465,7 @@
 		      		<p>I do hereby declare that the information furnished in this application are true and correct to the best of my knowledge. If, any of the particulars furnished above is found to be incorrect at the time of admission, the admission may be cancelled.</p>
 		      		<p class="center agreement">
 		      			<span>
-		      		      <input type="checkbox" id="agree" class="check" />
+		      		      <input type="checkbox" id="agree" class="check" required/>
 		      		      <label for="agree">Agree</label>
 		      		    </span>
 		      		    

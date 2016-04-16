@@ -25,13 +25,13 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd/M.S. Admission's</a></li>
+        <li><a href="/home">Phd/M.S. Admission's</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/form">Phd/M.S. Admission's</a></li>
+        <li><a href="/home">Phd/M.S. Admission's</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
@@ -45,8 +45,7 @@
     <div class="row">
 
 <!-- if condition goes here -->
-
-    @for($i = 0; $i < 1; $i++)
+    @if($details['phdorms']  == 'phd')
       <div class="col l10 offset-l1 s10 offset-s1 ">
         <div class="card">
           <div class=" waves-effect waves-block waves-light">  
@@ -148,13 +147,11 @@
         <a href="#!"  data-reg={!! $details['reg_number']!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
       </div>
       </div>
-
-      @endfor
     </div>
 
+    @else
     <!-- else condition -->
     <!-- ms modal -->
-    @for($i = 0; $i < 1; $i++)
       <div class="col l10 offset-l1 s10 offset-s1 ">
         <div class="card">
           <div class=" waves-effect waves-block waves-light">  
@@ -264,7 +261,7 @@
       </div>
       </div>
 
-      @endfor
+      @endif
   
   
 <footer class="page-footer teal darken-4">
