@@ -185,7 +185,7 @@
 		        
 		        
 		        <div class="input-field col s6 l6">
-		        	          <input id="email" name="email" type="email" class="validate" required value="{!! $details->email !!}">
+		        	          <input id="email" name="email" type="email" class="validate" required value="{!! $details->name !!}">
 		        	          <label for="last_name">Email</label>
 		       	</div>
 		        

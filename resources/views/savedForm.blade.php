@@ -44,24 +44,24 @@
     </p>
     <div class="space-large"></div>
   	<div class="row">
-      <form>
+      {!! Form::open(array('action' => 'SaveController@fetch', 'method'=>'POST', 'files'=>true )) !!}
       <div class="col l6 s12">
-        <span class="light">Enter Registration Number</span>
-        <input type="text" class="validate">
+        <span class="light">Enter Application Number</span>
+        <input type="text" class="validate" name="applNo">
         </div>
         <div class="col l6 s12">
         <span class="light">Application Category:</span>
-              <select required name="phdorms">
+              <select required name="category">
               <option value="" disabled selected>Choose your option</option>
-              <option  value="PHD">Phd</option>
-              <option  value="MS">MS</option>
+              <option  value="phd">Phd</option>
+              <option  value="ms">MS</option>
             </select>
       </div>
       <div class="space-medium"></div>
       <div class="center">
-        <a href="#" type="button" class="btn"> Submit </a>
-      </div>
-      </form>
+   {!! Form::submit('Submit', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
+   </div>
+      {!! Form::close() !!}
   	</div>
   </div>
   <div class="space-large"></div>
