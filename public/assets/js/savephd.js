@@ -54,7 +54,9 @@ $(document).ready(function(){
 		data.emp_to_2 = $('#emp_to_2').val();
 		data.emp_to_3 = $('#emp_to_3').val();
 		data.date = $('#date').val();
-
+		console.log(data);
+		
+		
 		var baseurl = 'http://localhost:8000';
 		var url = '/savephd';
 		$.ajax(
@@ -64,7 +66,7 @@ $(document).ready(function(){
 	        data: data,
 	        dataType: "json",
 	        success: function(data){
-
+	        	console.log('happy');
 	        },
 	        error: function(jqXHR,testStatus,errorThrown){
 	        	console.log(errorThrown);

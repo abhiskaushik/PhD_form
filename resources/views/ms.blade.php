@@ -57,7 +57,7 @@
   		<div class="row">  					   
   			<p>Application Category</p>		    
 		        <div class="input-field col l6 s12">
-		      		<select required name="appl_categ" class="applicationCateg" id="appl_categ">
+		      		<select name="appl_categ" class="applicationCateg" id="appl_categ">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="Part Time">Part Time</option>
 				      <option value="Full Time">Full Time</option>

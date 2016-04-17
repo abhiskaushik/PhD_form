@@ -13,6 +13,7 @@ class SaveController extends Controller
 {
     public function savephd(Request $request)
     {
+
     	$candidate = new SavePhd();
 
 		$candidate->applicationCategory = $request->input('appl_categ');
@@ -34,21 +35,21 @@ class SaveController extends Controller
         $candidate->email = $request->input('email');
         $candidate->mobile = $request->input('mobile');
         $candidate->lanline = $request->input('landline');
-        $candidate->degreeName = $request->input('ug_deg');
-        $candidate->branch = $request->input('ug_branch');
+        $candidate->ugdegreeName = $request->input('ug_deg');
+        $candidate->ugbranch = $request->input('ug_branch');
         // $candidate->gpa = $details['ug_gpa'];
         // replace this field by gpa
-        $candidate->class = $request->input('ug_class');
-        $candidate->institutionName = $request->input('ug_name_of_inst');
-        $candidate->universityName= $request->input('ug_name_of_uni');
-        $candidate->yop = $request->input('ug_yop');
-        $candidate->degreeName = $request->input('pg_deg');
-        $candidate->branch = $request->input('pg_branch');
+        $candidate->ugclass = $request->input('ug_class');
+        $candidate->uginstitutionName = $request->input('ug_name_of_inst');
+        $candidate->uguniversityName= $request->input('ug_name_of_uni');
+        $candidate->ugyop = $request->input('ug_yop');
+        $candidate->pgdegreeName = $request->input('pg_deg');
+        $candidate->pgbranch = $request->input('pg_branch');
         // $candidate->gpa = $details['pg_gpa'];
-        $candidate->class = $request->input('pg_class');
-        $candidate->institutionName = $request->input('pg_name_of_inst');
-        $candidate->universityName= $request->input('pg_name_of_uni');
-        $candidate->yop = $request->input('pg_yop');
+        $candidate->pgclass = $request->input('pg_class');
+        $candidate->pginstitutionName = $request->input('pg_name_of_inst');
+        $candidate->pguniversityName= $request->input('pg_name_of_uni');
+        $candidate->pgyop = $request->input('pg_yop');
         // $candidate->score = $details['score'];
         // $candidate->rank = $details['rank'];
         // $candidate->validity = $details['validity'];
@@ -77,9 +78,9 @@ class SaveController extends Controller
 
         $candidate->save();
 
-        dd($request->input('father_name'));
+        
 
-        return 'hey';
+        return json_encode(0);
     }
 
     public function savems(Request $request)
@@ -105,14 +106,14 @@ class SaveController extends Controller
         $candidate->email = $request->get('email');
         $candidate->mobile = $request->get('mobile');
         $candidate->lanline = $request->get('landline');
-        $candidate->degreeName = $request->get('ug_deg');
-        $candidate->branch = $request->get('ug_branch');
+        $candidate->ugdegreeName = $request->get('ug_deg');
+        $candidate->ugbranch = $request->get('ug_branch');
         // $candidate->gpa = $details['ug_gpa'];
         // replace this field by gpa
-        $candidate->class = $request->get('ug_class');
-        $candidate->institutionName = $request->get('ug_name_of_inst');
-        $candidate->universityName= $request->get('ug_name_of_uni');
-        $candidate->yop = $request->get('ug_yop');
+        $candidate->ugclass = $request->get('ug_class');
+        $candidate->uginstitutionName = $request->get('ug_name_of_inst');
+        $candidate->uguniversityName= $request->get('ug_name_of_uni');
+        $candidate->ugyop = $request->get('ug_yop');
         $candidate->proexp1 = $request->get('employer_details_1');
         $candidate->proexp2 = $request->get('employer_details_2');
         $candidate->proexp3 = $request->get('employer_details_3');
@@ -125,7 +126,7 @@ class SaveController extends Controller
         $candidate->to1 = $request->get('emp_to_1');
         $candidate->to2 = $request->get('emp_to_2');
         $candidate->to3 = $request->get('emp_to_3');
-        $candidate->applNo = $applNo;
+        
         $candidate->gpamax1 = $request->get('max1');
         $candidate->gpamax2 = $request->get('max2');
         $candidate->gpamax3 = $request->get('max3');
@@ -142,5 +143,6 @@ class SaveController extends Controller
         $candidate->gpa6 = $request->get('gpa6');
         $candidate->gpa7 = $request->get('gpa7');
         // $candidate->gpa8 = $details['gpa8'];
+        return json_encode(0);
     }
 }

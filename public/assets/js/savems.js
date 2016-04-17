@@ -6,7 +6,7 @@ $(document).ready(function(){
 	            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 	        }
 	    });
-		var data = {};
+		var data = [{}];
 		data.name = $('#name').val();
 		data.email = $('#email').val();
 		data.appl_categ = $('#appl_categ').val();
@@ -61,7 +61,7 @@ $(document).ready(function(){
 		data.emp_to_2 = $('#emp_to_2').val();
 		data.emp_to_3 = $('#emp_to_3').val();
 		data.date = $('#date').val();
-
+		console.log(data);
 		var baseurl = 'http://localhost:8000';
 		var url = '/savems';
 		$.ajax(

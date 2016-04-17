@@ -276,7 +276,7 @@
 		            
 
 		            <p>Land-Line Number:</p>
-		            <input required id="reg_number" type="number" class="validate" min="7000000000" max="9999999999" name="landline" value="{!! $data['landline'] !!}">
+		            <input required id="reg_number" type="number" class="validate" min="7000000000" max="9999999999" name="landline" value="{!! $data['lanline'] !!}">
 		        </div>
 
 

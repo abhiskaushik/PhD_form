@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class SaveMs extends Model
 {
-    protected $table = 'savems';
+    protected $table = 'savedms';
     public $primaryKey = 'applNo';
 }
