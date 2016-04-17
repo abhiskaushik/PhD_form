@@ -28,7 +28,6 @@ Route::get('print/{phdormsc}/{regNo}', 'AdminController@printer' );
 Route::post('phdvalidate', 'PhdController@validated');
 Route::post('msvalidate', 'MsController@validated');
 Route::post('application', 'ApplicationController@view');
-
 Route::get('view', function() {
     return view('view');
 });
