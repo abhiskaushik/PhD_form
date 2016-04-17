@@ -86,14 +86,19 @@
 		      		<select name="department1" required>
 
 		      			 <option value="" disabled selected>Department Preference 1</option>
-		      			<option value="ARC">Architecture</option>
-		      			<option value="CHEM">Chemical</option>
-		      			<option value="CIV">Civil Engineering </option>
-		      			<option value="EEE">Electrical & Electronics Engineering</option>
-		      			<option value="ECE">Electronics & Communication Engineering</option>
-		      			<option value="HM">Humanities</option>
-		      			<option value="MNG">Management Studies</option>
-		      			<option value="MATH">Mathematics</option>
+		      			<option value="CS">Computer Science and Engineering</option>
+		      			<option value="CL">Chemical</option>
+		      			<option value="CV">Civil Engineering </option>
+		      			<option value="EE">Electrical & Electronics Engineering</option>
+		      			<option value="EC">Electronics & Communication Engineering</option>
+		      			<option value="ME">Mechanical 
+		      			Engineering</option>
+		      			<option value="PR">Production Engineering</option
+		      			<option value="IC">Instrumentation And Control Engineering</option>
+		      			<option value="MME">Metalurgy and Material Sciences</option>
+		      			<option value="PH">Physics</option>
+		      			<option value="EN">DEE</option>
+		      			<option value="CC">CECASE</option>
 		      		</select>
 		      		
 		        </div>
