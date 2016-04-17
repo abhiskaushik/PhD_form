@@ -9,13 +9,12 @@
 	<title>Ph.d Registration Form</title>
 	<link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
 	<link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
-	<!-- <link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> --><!-- 
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+	<link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> 
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/jquery-ui.js')}}"></script>
 	<script src="{{URL::asset('assets/js/code.js')}}"></script>
-	<script src="{{URL::asset('assets/js/validate.js')}}"></script>
 	
 </head>
 <body>
@@ -41,23 +40,24 @@
     </div>
   </nav>
 
-  <div class="space-medium"></div>	
+  <div class="space-medium"></div>
 
-  <div class="container">
-  	<div class="row">
-  		<h3>APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME (2016 - 2017)</h3>
+	<div class="container">
+		<div class="row text-center">
+			<h3>APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME (2016 - 2017)</h3>
+			<div class="space-medium"></div>
+			<div class="divider"></div><div class="divider"></div>
+		</div>
 		<div class="space-medium"></div>
-		<div class="divider"></div><div class="divider"></div>
-  	</div>
-  	
-  	{!! Form::open(array('url'=>'phdvalidate','method'=>'POST', 'files'=>true )) !!}
-  		
+		<div class="row">
+
+		{!! Form::open(array('url'=>'phdvalidate','method'=>'POST', 'files'=>true )) !!}			
   		<div class="row">  					   
   			<p>Application Category</p>		    
 		        
 		      		
 				    <div class="input-field col l6 s12">
-				        <select class="applicationCateg" name="appl_categ" data-error="1">
+				        <select class="applicationCateg" name="appl_categ" required>
 				        <option value="" disabled selected>Select</option>
 				          <optgroup label="Part Time">
 				            <option value="onCampus">On Campus</option>
@@ -73,12 +73,12 @@
 				        <label>Choose Category</label>
 				      </div>
 
-				      <div class="col l6 s12">
+				      <div class="upload col l6 s12 ">
 		    <p>Upload Image</p>
 		      	<div class="file-field input-field">
 	          		<div class="btn teal darken-1 btn waves-effect waves-light">
 	          			<span class="light">File</span>
-	          			{!! Form::file('image_path' , array('class'=>'')) !!}			
+	          			{!! Form::file('image_path' , array('class'=>'', 'required')) !!}			
 	          		</div>
 	          		<div class="file-path-wrapper">
         				<input class="file-path validate" type="text">
@@ -87,22 +87,42 @@
 		      </div>
 		      
 
-		        </div>
+		        </div>		        		    		    
+		        
+		        
+		    
+  		
+	
+  		<div class="row">
+  			<p>Applicant Details</p>
+		    <div class="col s12">
 
-		        <div class="row dept">
+		      <div class="row dept">
 		        <div class="input-field col l6 s6 ">
 
 		      		<select name="department1" required>
 
 		      			 <option value="" disabled selected>Department Preference 1</option>
-		      			<option value="ARC">Architecture</option>
-		      			<option value="CHEM">Chemical</option>
-		      			<option value="CIV">Civil Engineering </option>
-		      			<option value="EEE">Electrical & Electronics Engineering</option>
-		      			<option value="ECE">Electronics & Communication Engineering</option>
+		      			<option value="AR">Architecture</option>
+		      			<option value="CS">Computer Science and Engineering</option>
+		      			<option value="CL">Chemical</option>
+		      			<option value="CV">Civil Engineering </option>
+		      			<option value="CY">Chemistry </option>
+		      			<option value="CA">CA </option>
+		      			<option value="EE">Electrical & Electronics Engineering</option>
+		      			<option value="EC">Electronics & Communication Engineering</option>
 		      			<option value="HM">Humanities</option>
-		      			<option value="MNG">Management Studies</option>
-		      			<option value="MATH">Mathematics</option>
+		      			<option value="ME">Mechanical 
+		      			Engineering</option>
+		      			<option value="MA">Maths</option>
+		      			<option value="MS">MBA
+		      			Engineering</option>
+		      			<option value="PR">Production Engineering</option
+		      			<option value="IC">Instrumentation And Control Engineering</option>
+		      			<option value="MME">Metalurgy and Material Sciences</option>
+		      			<option value="PH">Physics</option>
+		      			<option value="EN">DEE</option>
+		      			<option value="CC">CECASE</option>
 		      		</select>
 		      		
 		        </div>
@@ -110,15 +130,27 @@
 
 		      		<select name="department2">
 
-		      			 <option value="" disabled selected>Department Preference 2</option>
-		      			<option value="ARC">Architecture</option>
-		      			<option value="CHEM">Chemical</option>
-		      			<option value="CIV">Civil Engineering </option>
-		      			<option value="EEE">Electrical & Electronics Engineering</option>
-		      			<option value="ECE">Electronics & Communication Engineering</option>
+		      			 <option value="" disabled selected>Department Preference 1</option>
+		      			<option value="AR">Architecture</option>
+		      			<option value="CS">Computer Science and Engineering</option>
+		      			<option value="CL">Chemical</option>
+		      			<option value="CV">Civil Engineering </option>
+		      			<option value="CY">Chemistry </option>
+		      			<option value="CA">CA </option>
+		      			<option value="EE">Electrical & Electronics Engineering</option>
+		      			<option value="EC">Electronics & Communication Engineering</option>
 		      			<option value="HM">Humanities</option>
-		      			<option value="MNG">Management Studies</option>
-		      			<option value="MATH">Mathematics</option>
+		      			<option value="ME">Mechanical 
+		      			Engineering</option>
+		      			<option value="MA">Maths</option>
+		      			<option value="MS">MBA
+		      			Engineering</option>
+		      			<option value="PR">Production Engineering</option
+		      			<option value="IC">Instrumentation And Control Engineering</option>
+		      			<option value="MME">Metalurgy and Material Sciences</option>
+		      			<option value="PH">Physics</option>
+		      			<option value="EN">DEE</option>
+		      			<option value="CC">CECASE</option>
 		      		</select>
 		      		
 		        </div>
@@ -126,51 +158,58 @@
 
 		      		<select name="department3">
 
-		      			 <option value="" disabled selected>Department Preference 3</option>
-		      			<option value="ARC">Architecture</option>
-		      			<option value="CHEM">Chemical</option>
-		      			<option value="CIV">Civil Engineering </option>
-		      			<option value="EEE">Electrical & Electronics Engineering</option>
-		      			<option value="ECE">Electronics & Communication Engineering</option>
+		      			 <option value="" disabled selected>Department Preference 1</option>
+		      			<option value="AR">Architecture</option>
+		      			<option value="CS">Computer Science and Engineering</option>
+		      			<option value="CL">Chemical</option>
+		      			<option value="CV">Civil Engineering </option>
+		      			<option value="CY">Chemistry </option>
+		      			<option value="CA">CA </option>
+		      			<option value="EE">Electrical & Electronics Engineering</option>
+		      			<option value="EC">Electronics & Communication Engineering</option>
 		      			<option value="HM">Humanities</option>
-		      			<option value="MNG">Management Studies</option>
-		      			<option value="MATH">Mathematics</option>
+		      			<option value="ME">Mechanical 
+		      			Engineering</option>
+		      			<option value="MA">Maths</option>
+		      			<option value="MS">MBA
+		      			Engineering</option>
+		      			<option value="PR">Production Engineering</option
+		      			<option value="IC">Instrumentation And Control Engineering</option>
+		      			<option value="MME">Metalurgy and Material Sciences</option>
+		      			<option value="PH">Physics</option>
+		      			<option value="EN">DEE</option>
+		      			<option value="CC">CECASE</option>
 		      		</select>
 		      		
 		        </div>
 		        
 		        
 		        <div class="input-field col s6 l6">
-		        	          <input id="email" name="email" type="email" data-error=".error1">
-		        	          <label for="email">Email</label>
-		        	          <div class="error1"></div>
+		        	          <input id="email" name="email" type="email" class="validate" required>
+		        	          <label for="last_name">Email</label>
 		       	</div>
 		        
 		         <div class="input-field col l12 s12">
 		         <span class="light">Area of Research:</span>
-		          <input placeholder="Area of Research" type="text" name="area_of_research" data-error=".error2">
-		          <div class="error2"></div>
+		          <input required placeholder="Area of Research" id="reg_number" type="text" class="validate" name="area_of_research" maxlength="50">
 		        </div>
-		      </div> 
+		      </div>      
 
 		      <div class="row">
 		        <div class="input-field col l6 s6">
 		        	<span class="light">Name:</span>
-		      		<input placeholder="Name of Candidate" type="text" name="name" data-error=".error3">
-		      		<div class="error3"></div>
+		      		<input required placeholder="Name of Candidate" id="reg_number" type="text" class="validate" name="name" maxlength="32">
 		        </div>
 		         <div class="input-field col l6  s6">
 		         <span class="light">Father's Name:</span>
-		          <input placeholder="Father's/Guardian Name" type="text" name="father_name" data-error=".error4">
-		          <div class="error4"></div>
+		          <input required placeholder="Father's/Guardian Name" id="reg_number" type="text" class="validate" name="father_name" maxlength="32">
 		        </div>
 		      </div>
 
 		      <div class="row">
 		        <div class="input-field col l6">
 		        	<span class="light">Date of Birth:</span>
-		      		<input type="date" class="validate" name="dob" data-error=".error5">
-		      		<div class="error5"></div>
+		      		<input required id="reg_number" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31">
 		        </div>
 
 		         <div class="input-field col l6 ">
@@ -183,7 +222,7 @@
 				      <option value="ST">ST</option>
 				    </select>
 		        </div>
-		      </div> 		        		    		    
+		      </div> 
 
 		      <div class="row">
 		        <div class="input-field col l6">
@@ -218,20 +257,18 @@
 		         <div class="input-field col l6 ">
 
 		         <span class="light">Nationality:</span>
-		          <input placeholder="Nationality" type="text" class="validate" name="nationality" data-error=".error6">
-		          <div class="error6"></div>
+		          <input required placeholder="Nationality" id="reg_number" type="text" class="validate" name="nationality" maxlength="32">
 		        </div>
 		      </div>           
 
-		      <div class="row">
+		       <div class="row">
 		        <div class="input-field col l6"> 
 		        	<span for="textarea1">Address for Communication</span><br>     		  
 					<textarea required id="textarea1" class="materialize-textarea" name="addr_for_commn" maxlength="200"></textarea>
 		            
 
 		            <p>Mobile Number:</p>
-		            <input pattern="^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$" type="number" min="7000000000" max="9999999999" class="validate" name="mobile" data-error=".error7"></input>
-		            <div class="error7"></div>
+		            <input pattern="^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$" required type="number" min="7000000000" max="9999999999" class="validate" name="mobile"></input>
 		        </div>
 		         <div class="input-field col l6 ">
 		         <span for="textarea1">Permanent Address</span><br>
@@ -239,24 +276,26 @@
 		            
 
 		            <p>Land-Line Number:</p>
-		            <input type="number" class="validate" minlength="10" maxlength="10" name="landline" data-error=".error8">
-		            <div class="error8"></div>
+		            <input required id="reg_number" type="number" class="validate" min="7000000000" max="9999999999" name="landline">
 		        </div>
+
+
 		      </div> 
 
-		    <div class="row">
+		    </div>
+  		</div>
+
+  		<div class="row">
   			<div class="col s12">
   			<p>Undergraduate</p>
   				 <div class="row">
 		        <div class="input-field col l6">
 		        	<span class="light">Name of Degree:</span>
-		      		<input placeholder="Name of Degree" type="text" class="validate" name="ug_deg" data-error=".error9">
-		      		<div class="error9"></div>
+		      		<input required placeholder="Name of Degree" id="reg_number" type="text" class="validate" name="ug_deg" maxlength="32">
 		        </div>
 		         <div class="input-field col l6 ">
 		         	<span class="light">Branch Name:</span>
-		         	<input placeholder="Branch/Specialization" type="text" class="validate" name="ug_branch" data-error=".error10">
-		         	<div class="error10"></div>
+		         	<input required placeholder="Branch/Specialization" id="reg_number" type="text" class="validate" name="ug_branch" maxlength="50">
 		        </div>
 		      </div>
 
@@ -264,8 +303,7 @@
 		      	
 		      	<div class="input-field col l6 ">
 		      		<span class="light">C.G.P.A:</span>
-		      		<input placeholder="C.G.P.A" type="number" class="validate ug_cgpa" name="ug_gpa" min="4" max="10" step="0.01" data-error=".error11">
-		      		<div class="error11"></div>
+		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate ug_cgpa" name="ug_gpa" min="4" max="10" step="0.01">
 		      	</div>
 		      	<div class="input-field col l6">
 		      		<span class="light">Class:</span>
@@ -288,20 +326,17 @@
 		      <div class="row">
 		      	<div class="input-field col l12 s12">
 		      		<span class="light">College Name:</span>
-		      		<input placeholder="College Name" type="text" class="validate" name="ug_name_of_inst" data-error=".error12">
-		      		<div class="error12"></div>
+		      		<input required placeholder="College Name" id="reg_number" type="text" class="validate" name="ug_name_of_inst" maxlength="50">
 		      	</div>
 
 		      	<div class="input-field col l12 s12">
 		      		<span class="light">University Name:</span>
-		      		<input placeholder="University Name" type="text" class="validate" name="ug_name_of_uni" data-error=".error13">
-		      		<div class="error13"></div>
+		      		<input required placeholder="University Name" id="reg_number" type="text" class="validate" name="ug_name_of_uni" maxlength="50">
 		      	</div>
 
 		      	<div class="input-field col l4 s4">
 		      		<span class="light">Year of Passing</span>
-		      		<input type="number" class="validate" name="ug_yop" min="2000" max="2018" data-error=".error14">
-		      		<div class="error14"></div>
+		      		<input required id="reg_number" type="number" class="validate" name="ug_yop" min="2000" max="2018">
 		      	</div>
 		      </div>
 
@@ -311,13 +346,11 @@
   				 <div class="row">
 		        <div class="input-field col l6">
 		        	<span class="light">Name of Degree:</span>
-		      		<input placeholder="Name of Degree" type="text" class="validate" name="pg_deg" data-error=".error15">
-		      		<div class="error15"></div>
+		      		<input required placeholder="Name of Degree" id="reg_number" type="text" class="validate" name="pg_deg" maxlength="50">
 		        </div>
 		         <div class="input-field col l6 ">
 		         	<span class="light">Branch Name:</span>
-		         	<input placeholder="Branch/Specialization" type="text" class="validate" name="pg_branch" data-error=".error16" >
-		         	<div class="error16"></div>
+		         	<input required placeholder="Branch/Specialization" id="reg_number" type="text" class="validate" name="pg_branch" maxlength="50">
 		        </div>
 		      </div>
 
@@ -325,8 +358,7 @@
 		      	
 		      	<div class="input-field col l6">
 		      		<span class="light">C.G.P.A:</span>
-		      		<input placeholder="C.G.P.A" type="number" class="validate pg_cgpa" name="pg_gpa" data-error=".error17">
-		      		<div class="error17"></div>
+		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate pg_cgpa" name="pg_gpa" min="4" max="10" step="0.01">
 		      	</div>
 		      	<div class="input-field col l6">
 		      		<span class="light">Class:</span>
@@ -348,20 +380,17 @@
 		      <div class="row">
 		      	<div class="input-field col l12 s12">
 		      		<span class="light">College Name:</span>
-		      		<input placeholder="College Name" type="text" class="validate" name="pg_name_of_inst" data-error=".error18" >
-		      		<div class="error18"></div>
+		      		<input required placeholder="College Name" id="reg_number" type="text" class="validate" name="pg_name_of_inst" maxlength="50">
 		      	</div>
 
 		      	<div class="input-field col l12 s12">
 		      	<span class="light">University Name:</span>
-		      		<input placeholder="University Name" type="text" class="validate" name="pg_name_of_uni" data-error=".error19">
-		      		<div class="error19"></div>
+		      		<input required placeholder="University Name" id="reg_number" type="text" class="validate" name="pg_name_of_uni" maxlength="50">
 		      	</div>
 
 		      	<div class="input-field col l4 s4">
 		      		<span class="light">Year of Passing</span>
-		      		<input type="number" class="validate" name="pg_yop" data-error=".error20">
-		      		<div class="error20"></div> 
+		      		<input required id="reg_number" type="number" class="validate" name="pg_yop" min="2000" max="2018"> 
 		      	</div>
 		      </div>
 
@@ -385,31 +414,31 @@
 
 		      	<div class="col l12 s12">
 		      		<span class="light">Title of P.G Project:</span>
-		      		<input  placeholder="Title of P.G Project"  type="text" class="validate" name="title_of_project" >
+		      		<input required placeholder="Title of P.G Project" id="reg_number" type="text" class="validate" name="title_of_project" maxlength="100">
 		      	</div>
 		      	<div class="col l4 s12">
 		      		<p for="textarea1">Publications:</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub1"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub1" maxlength="200"></textarea>
 		      	</div>
 		      	<div class="col l4 s12">
 		      		<p for="textarea1">Publications:</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub2"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub2" maxlength="200"></textarea>
 		      	</div>
 		      	<div class="col l4 s12">
 		      		<p for="textarea1">Publications:</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub3"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub3" maxlength="200"></textarea>
 		      	</div>
 		      	<div class="col l4 s12">
 		      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards1"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards1" maxlength="200"></textarea>
 		      	</div>
 		      	<div class="col l4 s12">
 		      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards2"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards2" maxlength="200"></textarea>
 		      	</div>
 		      	<div class="col l4 s12">
 		      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards3"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards3" maxlength="200"></textarea>
 		      	</div>
 		      </div>
 
@@ -422,15 +451,15 @@
 		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_1"></textarea>
 
 		      		 <p>Position Held:</p>
-		      		 <input type="text" class="validate" name="emp_pos_1">
+		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_1" maxlength="100">
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input type="number" class="validate" name="emp_from_1">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_1" maxlength="100">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>To:</p>
-		      		 	<input type="number" class="validate" name="emp_to_1">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_1" maxlength="100">
 		      		 </div>
 		      	</div>
 		      	<div class="col s12 l12 emp_details">
@@ -438,15 +467,15 @@
 		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2"></textarea>
 
 		      		 <p>Position Held:</p>
-		      		 <input type="text" class="validate" name="emp_pos_2">
+		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_2" maxlength="100">
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input type="number" class="validate" name="emp_from_2">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_2" maxlength="100">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input type="number" class="validate" name="emp_to_2">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_2" maxlength="100">
 		      		 </div>
 		      	</div>
 		      	<div class="col s12 l12 emp_details">
@@ -454,15 +483,15 @@
 		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3"></textarea>
 
 		      		 <p>Position Held:</p>
-		      		 <input type="text" class="validate" name="emp_pos_3">
+		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_3" maxlength="100">
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input type="number" class="validate" name="emp_from_3">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_3" maxlength="100">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input type="number" class="validate" name="emp_to_3">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_3" maxlength="100">
 		      		 </div>
 		      	</div>
 		      </div>
@@ -484,7 +513,7 @@
 
 		      	<div class="col s6 l6">
 		      		<p>Date of Submission</p>
-		      		<input type="date" name="date" class="validate">
+		      		<input required id="reg_number" type="date" name="date" class="validate" max="2016-06-31" min="2016-01-31">
 		      	</div>
 		      	<div class="space-medium"></div>
 		      	
@@ -500,247 +529,53 @@
 		      
 		      
 		      </div>
+  		
 
 
   		<div class="center">
 	 {!! Form::submit('Submit', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
 	 </div>
 	 	
-	      {!! Form::close() !!}	
-  	<script type="text/javascript">
-  		  $(document).ready(function() {
-    	  $('select').material_select();
-    // 	  $('.datepicker').pickadate({
-		  //   selectMonths: true, // Creates a dropdown to control month
-		  //   selectYears: 100 // Creates a dropdown of 15 years to control year
-		  // });
-    	  $('#formPhd').validate({
-    	  	rules:{
-    	  		email: 'required',
-           		area_of_research:{
-           			required: true,
-           			minlength: 20
-           		},
-           		name:{
-           			required:true,
-           			maxlength:32
-           		},
-           		father_name:{
-           			required:true,
-           			maxlength:32
-           		},
-           		dob:{
-           			required:true,
-           			min:'1990-06-31',
-           			max:'2010-06-31'
-           		},
-           		nationality:{
-           			required:true,
-           			maxlength:32
-           		},
-           		mobile:{
-           			required:true,
-           			minlength:7000000000,
-           			maxlength:9999999999
-           		},
-           		landline:{
-           			required:true,
-           			minlength:7000000000,
-           			maxlength:9999999999
-           		},
-           		ug_deg:{
-           			required:true,
-           			maxlength:32
-           		},
-           		ug_branch:{
-           			required:true,
-           			maxlength:50
-           		},
-           		ug_gpa:{
-           			required:true,
-           			min:4,
-           			max:10,
-           			step:0.01
-           		},
-           		ug_name_of_uni:{
-           			required:true,
-           			maxlength:50
-           		},
-           		ug_name_of_inst:{
-           			required:true,
-           			maxlength:50
-           		},
-           		ug_yop:{
-           			required:true,
-           			max:2018,
-           			min:2000
-           		},
-           		pg_deg:{
-           			required:true,
-           			maxlength:32
-           		},
-           		pg_branch:{
-           			required:true,
-           			maxlength:50
-           		},
-           		pg_gpa:{
-           			required:true,
-           			min:4,
-           			max:10,
-           			step:0.01
-           		},
-           		pg_name_of_uni:{
-           			required:true,
-           			maxlength:50
-           		},
-           		pg_name_of_inst:{
-           			required:true,
-           			maxlength:50
-           		},
-           		pg_yop:{
-           			required:true,
-           			max:2018,
-           			min:2000
-           		},
-           		title_of_project:{
-           			required:true,
-           			maxlength:100
-           		},
-           		details_of_pub1:{
-           			required:true,
-           			maxlength:200
-           		},
-           		details_of_pub2:{
-           			required:true,
-           			maxlength:200
-           		},
-           		details_of_pub3:{
-           			required:true,
-           			maxlength:200
-           		},
-           		awards1:{
-           			required:true,
-           			maxlength:200
-           		},
-           		awards2:{
-           			required:true,
-           			maxlength:200
-           		},
-           		awards3:{
-           			required:true,
-           			maxlength:200
-           		},
-           		employer_details_1:{
-           			maxlength:200,
-           		},
-           		emp_pos_1:{
-           			maxlength:100,
-           		},
-           		emp_to_1:{
-           			min:2010,
-           			max:2016
-           		},
-           		emp_from_1:{
-           			min:2010,
-           			max:2016
-           		},
-           		employer_details_2:{
-           			maxlength:200,
-           		},
-           		emp_pos_2:{
-           			maxlength:100,
-           		},
-           		emp_to_2:{
-           			min:2010,
-           			max:2016
-           		},
-           		emp_from_2:{
-           			min:2010,
-           			max:2016
-           		},
-           		employer_details_3:{
-           			maxlength:200,
-           		},
-           		emp_pos_3:{
-           			maxlength:100,
-           		},
-           		emp_to_3:{
-           			min:2010,
-           			max:2016
-           		},
-           		emp_from_3:{
-           			min:2010,
-           			max:2016
-           		},
-           		date:{
-           			required:true,
-           			min:'2016-01-1',
-           			max:'2016-06-31'
-           		}
-    	  	},
-    	  	messages:{
-    	  		email:"Please fill your email id",
-    	  		area_of_research:{
-    	  			required:"Please fill the area of research",
-    	  			minlength:"Enter atleast 20 characters"
-    	  		},
-    	  		name:{
-    	  			required:"Please fill the details",
-    	  			minlength:"Enter atmost 32 characters"
-    	  		},
-    	  		father_name:{
-    	  			required:"Please fill the details",
-    	  			minlength:"Enter atmost 32 characters"
-    	  		},
-    	  		dob:{
-					required:"Please fill the DOB",
-					min:"Enter date between 1990-06-31 & 2010-06-31"
-    	  		},
-    	  		nationality:{
-    	  			required:"Please fill the details",
-    	  			minlength:"Enter atmost 32 characters"
-    	  		},
-    	  		mobile:{
-    	  			required:"Please fill correct MObile Number",
-    	  		},
-    	  		landline:{
-    	  			required:"Please fill correct Landline Number",
-    	  		},
-    	  		ug_deg:{
-    	  			required:"Fill the required detail"
-    	  		},
-    	  		ug_branch:{
-    	  			required:"Fill the required detail",
-    	  			minlength:"Enter atmost 50 characters"
-    	  		},
-    	  		ug_gpa:{
-    	  			required:"Fill the required G.P.A"
-    	  		},
-    	  		pg_deg:{
-    	  			required:"Fill the required detail"
-    	  		},
-    	  		pg_branch:{
-    	  			required:"Fill the required detail",
-    	  			minlength:"Enter atmost 50 characters"
-    	  		},
-    	  		pg_gpa:{
-    	  			required:"Fill the required G.P.A"
-    	  		}
+	      {!! Form::close() !!}
+	      </div>
+	      </div>
+	      </div>
+<div class="space-large"></div>
+<footer class="page-footer teal darken-4">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">National Institute of Technology</p>
+                <p class="grey-text text-lighten-4">Tiruchirappalli - 620015</p>
+                <p class="grey-text text-lighten-4">Tamil Nadu, INDIA</p>
+              </div>
+              <div class="col l4  s12">
+                <h5 class="white-text">QuickLinks</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://www.nitt.edu">Institute Website</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/academics/departments/">Departments</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/admissions/">Admissions</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/contact">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright dark">
+            <div class="container center">
+            
+            <a class="grey-text text-lighten-4" href="#!">Made with &hearts; by Delta Force</a>
+            </div>
+          </div>
+        </footer>
+            
 
-    	  	},
-    	  	errorElement:'div',
-    	  	errorPlacement: function(error , element){
-    	  		var placement = $(element).data('error');
-    	  		if(placement){
-    	  			$(placement).append(error);
-    	  		}
-    	  		else{
-    	  			error.insertAfter(element);
-    	  		}
-    	  	}
-    	  });
-  });
-  	</script>
-  </div>
+	<script type="text/javascript">
+	$(document ).ready(function(){
+		$(".button-collapse").sideNav();
+		$('select').material_select();
+	})
+	</script>
+
 </body>
 </html>

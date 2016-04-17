@@ -75,7 +75,7 @@
           
           </div>
         </div>
-      </div>
+      
 
       <!-- modal goes here -->
 
@@ -181,7 +181,7 @@
           
           </div>
         </div>
-      </div>
+      
 
       <!-- modal goes here -->
 
@@ -262,7 +262,8 @@
       </div>
 
       @endif
-  
+  </div>
+</div>
   
 <footer class="page-footer teal darken-4">
           <div class="container">
