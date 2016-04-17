@@ -59,3 +59,7 @@ Route::get('ms', function()
     {
         return view('ms');
     });
+Route::get('savedForm', function()
+    {
+        return view('savedForm');
+    });
