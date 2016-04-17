@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\SavePhd;
+use App\SaveMs;
 
-class SavePhdController extends Controller
+class SaveController extends Controller
 {
-    public function save(Request $request)
-    {	
-		$candidate = new SavePhd();
+    public function savephd(Request $request)
+    {
+    	$candidate = new SavePhd();
 
 		$candidate->applicationCategory = $request->input('appl_categ');
         $candidate->dateOfReg = $request->input('date');
@@ -79,5 +80,67 @@ class SavePhdController extends Controller
         dd($request->input('father_name'));
 
         return 'hey';
-	}
+    }
+
+    public function savems(Request $request)
+    {
+    	$candidate = new SaveMs();
+
+    	$candidate->applicationCategory = $request->get('appl_categ');
+        $candidate->dateOfReg = $request->get('date');
+        $candidate->dept1 = $request->get('department1');
+        $candidate->dept2 = $request->get('department2');
+        $candidate->dept3 = $request->get('department3');
+        $candidate->areaOfResearch = $request->get('area_of_research');
+        $candidate->name = $request->get('name');
+        $candidate->fatherName = $request->get('father_name');
+        $candidate->dob = $request->get('dob');
+        $candidate->category = $request->get('category');
+        $candidate->sex = $request->get('sex');
+        $candidate->maritalStatus = $request->get('marital_status');
+        $candidate->ph = $request->get('ph');
+        $candidate->nationality = $request->get('nationality');
+        $candidate->addrforcomm = $request->get('addr_for_commn');
+        $candidate->permanentaddr = $request->get('permanent_addr');
+        $candidate->email = $request->get('email');
+        $candidate->mobile = $request->get('mobile');
+        $candidate->lanline = $request->get('landline');
+        $candidate->degreeName = $request->get('ug_deg');
+        $candidate->branch = $request->get('ug_branch');
+        // $candidate->gpa = $details['ug_gpa'];
+        // replace this field by gpa
+        $candidate->class = $request->get('ug_class');
+        $candidate->institutionName = $request->get('ug_name_of_inst');
+        $candidate->universityName= $request->get('ug_name_of_uni');
+        $candidate->yop = $request->get('ug_yop');
+        $candidate->proexp1 = $request->get('employer_details_1');
+        $candidate->proexp2 = $request->get('employer_details_2');
+        $candidate->proexp3 = $request->get('employer_details_3');
+        $candidate->position1 = $request->get('emp_pos_1');
+        $candidate->position2 = $request->get('emp_pos_2');
+        $candidate->position3 = $request->get('emp_pos_3');
+        $candidate->from1 = $request->get('emp_from_1');
+        $candidate->from2 = $request->get('emp_from_2');
+        $candidate->from3 = $request->get('emp_from_3');
+        $candidate->to1 = $request->get('emp_to_1');
+        $candidate->to2 = $request->get('emp_to_2');
+        $candidate->to3 = $request->get('emp_to_3');
+        $candidate->applNo = $applNo;
+        $candidate->gpamax1 = $request->get('max1');
+        $candidate->gpamax2 = $request->get('max2');
+        $candidate->gpamax3 = $request->get('max3');
+        $candidate->gpamax4 = $request->get('max4');
+        $candidate->gpamax5 = $request->get('max5');
+        $candidate->gpamax6 = $request->get('max6');
+        $candidate->gpamax7 = $request->get('max7');
+        // $candidate->gpamax8 = $details['max8'];
+        $candidate->gpa1 = $request->get('gpa1');
+        $candidate->gpa2 = $request->get('gpa2');
+        $candidate->gpa3 = $request->get('gpa3');
+        $candidate->gpa4 = $request->get('gpa4');
+        $candidate->gpa5 = $request->get('gpa5');
+        $candidate->gpa6 = $request->get('gpa6');
+        $candidate->gpa7 = $request->get('gpa7');
+        // $candidate->gpa8 = $details['gpa8'];
+    }
 }

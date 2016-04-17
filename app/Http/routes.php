@@ -10,7 +10,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::post('savephd', 'SaveController@savephd');
+Route::post('savems', 'SaveController@savems');
 Route::post('admin/auth', 'AdminController@login');
 Route::group(['middleware' => 'adminauth'], function () {
     Route::get('admin/home', function()

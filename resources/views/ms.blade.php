@@ -15,6 +15,7 @@
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/jquery-ui.js')}}"></script>
 	<script src="{{URL::asset('assets/js/code_ms.js')}}"></script>
+	<script src="{{URL::asset('assets/js/savems.js')}}"></script>
 	
 </head>
 <body>
@@ -493,7 +494,7 @@
 		      		</div>	
 		      </div>
 		      
-  		
+  		<a id="save" class="btn">Save</a>
 
 
   		<div class="center">

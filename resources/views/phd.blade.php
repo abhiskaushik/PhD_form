@@ -15,6 +15,7 @@
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/jquery-ui.js')}}"></script>
 	<script src="{{URL::asset('assets/js/code.js')}}"></script>
+	<script src="{{URL::asset('assets/js/savephd.js')}}"></script>
 	
 </head>
 <body>
@@ -268,7 +269,7 @@
 		            
 
 		            <p>Mobile Number:</p>
-		            <input pattern="^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$" required type="number" min="7000000000" max="9999999999" class="validate" name="mobile" id="mobile"></input>
+		            <input required type="number" min="7000000000" max="9999999999" class="validate" name="mobile" id="mobile"></input>
 		        </div>
 		         <div class="input-field col l6 ">
 		         <span for="textarea1">Permanent Address</span><br>
@@ -530,7 +531,7 @@
 		      
 		      </div>
   		
-		      <a onclick="fun()" class="btn">Save</a>
+		      <a id="save" class="btn">Save</a>
 
   		<div class="center">
 	 {!! Form::submit('Submit', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
@@ -576,9 +577,6 @@
 		$('select').material_select();
 
 	});
-	function fun(){
-		console.log($('#email').val());
-	}
 	</script>
 
 </body>
