@@ -24,7 +24,7 @@
 	<nav>
     <div class="nav-wrapper ">
       
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#" details-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
         <li><a href="/ms">M.S Admissions</a></li>
@@ -185,31 +185,31 @@
 		        
 		        
 		        <div class="input-field col s6 l6">
-		        	          <input id="email" name="email" type="email" class="validate" required value="{!! $data['email'] !!}">
+		        	          <input id="email" name="email" type="email" class="validate" required value="{!! $details->email !!}">
 		        	          <label for="last_name">Email</label>
 		       	</div>
 		        
 		         <div class="input-field col l12 s12">
 		         <span class="light">Area of Research:</span>
-		          <input required placeholder="Area of Research" id="reg_number" type="text" class="validate" name="area_of_research" maxlength="50" value="{!! $data['area_of_research'] !!}">
+		          <input required placeholder="Area of Research" id="reg_number" type="text" class="validate" name="area_of_research" maxlength="50" value="{!! $details->areaOfResearch !!}">
 		        </div>
 		      </div>      
 
 		      <div class="row">
 		        <div class="input-field col l6 s6">
 		        	<span class="light">Name:</span>
-		      		<input required placeholder="Name of Candidate" id="reg_number" type="text" class="validate" name="name" maxlength="32" value="{!! $data['name'] !!}">
+		      		<input required placeholder="Name of Candidate" id="reg_number" type="text" class="validate" name="name" maxlength="32" value="{!! $details->name !!}">
 		        </div>
 		         <div class="input-field col l6  s6">
 		         <span class="light">Father's Name:</span>
-		          <input required placeholder="Father's/Guardian Name" id="reg_number" type="text" class="validate" name="father_name" maxlength="32" value="{!! $data['father_name'] !!}">
+		          <input required placeholder="Father's/Guardian Name" id="reg_number" type="text" class="validate" name="father_name" maxlength="32" value="{!! $details->fatherName !!}">
 		        </div>
 		      </div>
 
 		      <div class="row">
 		        <div class="input-field col l6">
 		        	<span class="light">Date of Birth:</span>
-		      		<input required id="reg_number" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31" value="{!! $data['dob'] !!}">
+		      		<input required id="reg_number" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31" value="{!! $details->dob !!}">
 		        </div>
 
 		         <div class="input-field col l6 ">
@@ -257,26 +257,26 @@
 		         <div class="input-field col l6 ">
 
 		         <span class="light">Nationality:</span>
-		          <input required placeholder="Nationality" id="reg_number" type="text" class="validate" name="nationality" maxlength="32" value="{!! $data['nationality'] !!}">
+		          <input required placeholder="Nationality" id="reg_number" type="text" class="validate" name="nationality" maxlength="32" value="{!! $details->nationality !!}">
 		        </div>
 		      </div>           
 
 		       <div class="row">
 		        <div class="input-field col l6"> 
 		        	<span for="textarea1">Address for Communication</span><br>     		  
-					<textarea required id="textarea1" class="materialize-textarea" name="addr_for_commn" maxlength="200" value="{!! $data['addr_for_commn'] !!}"></textarea>
+					<textarea required id="textarea1" class="materialize-textarea" name="addr_for_commn" maxlength="200" value="{!! $details->addrforcommn !!}"></textarea>
 		            
 
 		            <p>Mobile Number:</p>
-		            <input required type="number" min="7000000000" max="9999999999" class="validate" name="mobile" value="{!! $data['mobile'] !!}"></input>
+		            <input required type="number" min="7000000000" max="9999999999" class="validate" name="mobile" value="{!! $details->mobile !!}"></input>
 		        </div>
 		         <div class="input-field col l6 ">
 		         <span for="textarea1">Permanent Address</span><br>
-		         <textarea required id="textarea1" class="materialize-textarea" name="permanent_addr" maxlength="200" value="{!! $data['permanent_addr'] !!}"></textarea>
+		         <textarea required id="textarea1" class="materialize-textarea" name="permanent_addr" maxlength="200" value="{!! $details->permanentaddr !!}"></textarea>
 		            
 
 		            <p>Land-Line Number:</p>
-		            <input required id="reg_number" type="number" class="validate" min="7000000000" max="9999999999" name="landline" value="{!! $data['lanline'] !!}">
+		            <input required id="reg_number" type="number" class="validate" min="7000000000" max="9999999999" name="landline" value="{!! $details->lanline !!}">
 		        </div>
 
 
@@ -291,11 +291,11 @@
   				 <div class="row">
 		        <div class="input-field col l6">
 		        	<span class="light">Name of Degree:</span>
-		      		<input required placeholder="Name of Degree" id="reg_number" type="text" class="validate" name="ug_deg" maxlength="32" value="{!! $data['ug_deg'] !!}">
+		      		<input required placeholder="Name of Degree" id="reg_number" type="text" class="validate" name="ug_deg" maxlength="32" value="{!! $details->ugdeg !!}">
 		        </div>
 		         <div class="input-field col l6 ">
 		         	<span class="light">Branch Name:</span>
-		         	<input required placeholder="Branch/Specialization" id="reg_number" type="text" class="validate" name="ug_branch" maxlength="50" value="{!! $data['ug_branch'] !!}">
+		         	<input required placeholder="Branch/Specialization" id="reg_number" type="text" class="validate" name="ug_branch" maxlength="50" value="{!! $details->ugbranch !!}">
 		        </div>
 		      </div>
 
@@ -303,7 +303,7 @@
 		      	
 		      	<div class="input-field col l6 ">
 		      		<span class="light">C.G.P.A:</span>
-		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate ug_cgpa" name="ug_gpa" min="4" max="10" step="0.01" value="{!! $data['ug_gpa'] !!}">
+		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate ug_cgpa" name="ug_gpa" min="4" max="10" step="0.01" value="{!! $details->uggpa !!}">
 		      	</div>
 		      	<div class="input-field col l6">
 		      		<span class="light">Class:</span>
@@ -326,17 +326,17 @@
 		      <div class="row">
 		      	<div class="input-field col l12 s12">
 		      		<span class="light">College Name:</span>
-		      		<input required placeholder="College Name" id="reg_number" type="text" class="validate" name="ug_name_of_inst" maxlength="50" value="{!! $data['ug_name_of_inst'] !!}">
+		      		<input required placeholder="College Name" id="reg_number" type="text" class="validate" name="ug_name_of_inst" maxlength="50" value="{!! $details->uginstitutionName !!}">
 		      	</div>
 
 		      	<div class="input-field col l12 s12">
 		      		<span class="light">University Name:</span>
-		      		<input required placeholder="University Name" id="reg_number" type="text" class="validate" name="ug_name_of_uni" maxlength="50" value="{!! $data['ug_name_of_uni'] !!}">
+		      		<input required placeholder="University Name" id="reg_number" type="text" class="validate" name="ug_name_of_uni" maxlength="50" value="{!! $details->uguniversityName !!}">
 		      	</div>
 
 		      	<div class="input-field col l4 s4">
 		      		<span class="light">Year of Passing</span>
-		      		<input required id="reg_number" type="number" class="validate" name="ug_yop" min="2000" max="2018" value="{!! $data['ug_yop'] !!}">
+		      		<input required id="reg_number" type="number" class="validate" name="ug_yop" min="2000" max="2018" value="{!! $details->ugyop !!}">
 		      	</div>
 		      </div>
 
@@ -346,11 +346,11 @@
   				 <div class="row">
 		        <div class="input-field col l6">
 		        	<span class="light">Name of Degree:</span>
-		      		<input required placeholder="Name of Degree" id="reg_number" type="text" class="validate" name="pg_deg" maxlength="50" value="{!! $data['pg_deg'] !!}">
+		      		<input required placeholder="Name of Degree" id="reg_number" type="text" class="validate" name="pg_deg" maxlength="50" value="{!! $details->pgdeg !!}">
 		        </div>
 		         <div class="input-field col l6 ">
 		         	<span class="light">Branch Name:</span>
-		         	<input required placeholder="Branch/Specialization" id="reg_number" type="text" class="validate" name="pg_branch" maxlength="50" value="{!! $data['pg_branch'] !!}">
+		         	<input required placeholder="Branch/Specialization" id="reg_number" type="text" class="validate" name="pg_branch" maxlength="50" value="{!! $details->pgbranch !!}">
 		        </div>
 		      </div>
 
@@ -358,11 +358,11 @@
 		      	
 		      	<div class="input-field col l6">
 		      		<span class="light">C.G.P.A:</span>
-		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate pg_cgpa" name="pg_gpa" min="4" max="10" step="0.01" value="{!! $data['pg_gpa'] !!}">
+		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate pg_cgpa" name="pg_gpa" min="4" max="10" step="0.01" value="{!! $details->pggpa !!}">
 		      	</div>
 		      	<div class="input-field col l6">
 		      		<span class="light">Class:</span>
-		      		<select required name = 'pg_class'>
+		      		<select required name = 'pgclass'>
 				      <option value="" disabled selected>Choose your option</option>
 				      <option  value="Honours">Honours</option>
 				      <option  value="Distinction">Distinction</option>
@@ -380,17 +380,17 @@
 		      <div class="row">
 		      	<div class="input-field col l12 s12">
 		      		<span class="light">College Name:</span>
-		      		<input required placeholder="College Name" id="reg_number" type="text" class="validate" name="pg_name_of_inst" maxlength="50" value="{!! $data['pg_name_of_inst'] !!}">
+		      		<input required placeholder="College Name" id="reg_number" type="text" class="validate" name="pg_name_of_inst" maxlength="50" value="{!! $details->pginstitutionName !!}">
 		      	</div>
 
 		      	<div class="input-field col l12 s12">
 		      	<span class="light">University Name:</span>
-		      		<input required placeholder="University Name" id="reg_number" type="text" class="validate" name="pg_name_of_uni" maxlength="50" value="{!! $data['pg_name_of_uni'] !!}">
+		      		<input required placeholder="University Name" id="reg_number" type="text" class="validate" name="pg_name_of_uni" maxlength="50" value="{!! $details->pguniversityName !!}">
 		      	</div>
 
 		      	<div class="input-field col l4 s4">
 		      		<span class="light">Year of Passing</span>
-		      		<input required id="reg_number" type="number" class="validate" name="pg_yop" min="2000" max="2018" value="{!! $data['pg_yop'] !!}"> 
+		      		<input required id="reg_number" type="number" class="validate" name="pg_yop" min="2000" max="2018" value="{!! $details->pgyop !!}"> 
 		      	</div>
 		      </div>
 
@@ -414,31 +414,31 @@
 
 		      	<div class="col l12 s12">
 		      		<span class="light">Title of P.G Project:</span>
-		      		<input required placeholder="Title of P.G Project" id="reg_number" type="text" class="validate" name="title_of_project" maxlength="100" value="{!! $data['title_of_project'] !!}">
+		      		<input required placeholder="Title of P.G Project" id="reg_number" type="text" class="validate" name="title_of_project" maxlength="100" value="{!! $details->pgproject !!}">
 		      	</div>
 		      	<div class="col l4 s12">
 		      		<p for="textarea1">Publications:</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub1" maxlength="200" value="{!! $data['details_of_pub1'] !!}"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub1" maxlength="200" value="{!! $details->publications1 !!}"></textarea>
 		      	</div>
 		      	<div class="col l4 s12">
 		      		<p for="textarea1">Publications:</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub2" maxlength="200" value="{!! $data['details_of_pub2'] !!}"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub2" maxlength="200" value="{!! $details->publications2 !!}"></textarea>
 		      	</div>
 		      	<div class="col l4 s12">
 		      		<p for="textarea1">Publications:</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub3" maxlength="200" value="{!! $data['details_of_pub3'] !!}"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub3" maxlength="200" value="{!! $details->publications3 !!}"></textarea>
 		      	</div>
 		      	<div class="col l4 s12">
 		      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards1" maxlength="200" value="{!! $data['awards1'] !!}"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards1" maxlength="200" value="{!! $details->awards1 !!}"></textarea>
 		      	</div>
 		      	<div class="col l4 s12">
 		      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards2" maxlength="200" value="{!! $data['awards2'] !!}"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards2" maxlength="200" value="{!! $details->awards2 !!}"></textarea>
 		      	</div>
 		      	<div class="col l4 s12">
 		      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards3" maxlength="200" value="{!! $data['awards2'] !!}"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="awards3" maxlength="200" value="{!! $details->awards3 !!}"></textarea>
 		      	</div>
 		      </div>
 
@@ -448,50 +448,50 @@
 		      	<div class="space-small"></div>
 		      	<div class="col s12 l12 emp_details">
 		      		<p for="textarea1">Name & Address of Employer 1</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_1" value="{!! $data['employer_details_1'] !!}"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_1" value="{!! $details->proexp1 !!}"></textarea>
 
 		      		 <p>Position Held:</p>
-		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_1" maxlength="100" value="{!! $data['emp_pos_1'] !!}">
+		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_1" maxlength="100" value="{!! $details->position1 !!}">
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_1" maxlength="100" value="{!! $data['emp_from_1'] !!}">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_1" maxlength="100" value="{!! $details->from1 !!}">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>To:</p>
-		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_1" maxlength="100" value="{!! $data['emp_to_1'] !!}">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_1" maxlength="100" value="{!! $details->to1 !!}">
 		      		 </div>
 		      	</div>
 		      	<div class="col s12 l12 emp_details">
 		      		<p for="textarea1">Name & Address of Employer 2</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2" value="{!! $data['employer_details_2'] !!}"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2" value="{!! $details->proexp2 !!}"></textarea>
 
 		      		 <p>Position Held:</p>
-		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_2" maxlength="100" value="{!! $data['emp_pos_2'] !!}">
+		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_2" maxlength="100" value="{!! $details->position2 !!}">
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_2" maxlength="100" value="{!! $data['emp_from_2'] !!}">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_2" maxlength="100" value="{!! $details->from2 !!}">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>To:</p>
-		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_2" maxlength="100" value="{!! $data['emp_to_2'] !!}">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_2" maxlength="100" value="{!! $details->to2 !!}">
 		      		 </div>
 		      	</div>
 		      	<div class="col s12 l12 emp_details">
 		      		<p for="textarea1">Name & Address of Employer 3</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3" value="{!! $data['employer_details_3'] !!}"></textarea>
+		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3" value="{!! $details->proexp3 !!}"></textarea>
 
 		      		 <p>Position Held:</p>
-		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_3" maxlength="100" value="{!! $data['emp_pos_3'] !!}">
+		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_3" maxlength="100" value="{!! $details->position3 !!}">
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_3" maxlength="100" value="{!! $data['emp_from_3'] !!}">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_3" maxlength="100" value="{!! $details->from3 !!}">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>To:</p>
-		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_3" maxlength="100" value="{!! $data['emp_to_3'] !!}">
+		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_3" maxlength="100" value="{!! $details->to3 !!}">
 		      		 </div>
 		      	</div>
 		      </div>
@@ -513,7 +513,7 @@
 
 		      	<div class="col s6 l6">
 		      		<p>Date of Submission</p>
-		      		<input required id="reg_number" type="date" name="date" class="validate" max="2016-06-31" min="2016-01-31" value="{!! $data['date'] !!}">
+		      		<input required id="reg_number" type="date" name="date" class="validate" max="2016-06-31" min="2016-01-31" value="{!! $details->date !!}">
 		      	</div>
 		      	<div class="space-medium"></div>
 		      	

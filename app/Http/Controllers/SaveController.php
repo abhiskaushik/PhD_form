@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\SavePhd;
 use App\SaveMs;
+use Validator;
 
 class SaveController extends Controller
 {
@@ -78,8 +79,6 @@ class SaveController extends Controller
 
         $candidate->save();
 
-        
-
         return json_encode(0);
     }
 
@@ -144,5 +143,39 @@ class SaveController extends Controller
         $candidate->gpa7 = $request->get('gpa7');
         // $candidate->gpa8 = $details['gpa8'];
         return json_encode(0);
+    }
+
+    public function fetch(Request $request)
+    {
+    	$category = $request->input('category');
+    	$applNo = $request->input('applNo');
+
+    	$rules = array(
+    		'category' => 'required',
+    		'applNo' => 'required'
+    	);
+
+    	$validator = Validator::make($request->all(), $rules);
+
+    	if(count($validator->errors()) > 0)
+    	{
+    		$message = 'Please fill all the details';
+    		return view('error')->with('message', $message);
+    	}
+    	else
+    	{
+    		if($category == 'phd')
+    		{
+    			$details = SavePhd::where('applNo', $applNo)
+    									->get();
+    			return view('saved.phd')->with('details', $details);
+    		}
+    		else
+    		{
+    			$details = SaveMs::where('applNo', $applNo)
+    									->get();
+    			return view('saved.ms')->with('details', $details);
+    		}
+    	}
     }
 }
