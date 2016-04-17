@@ -51,7 +51,7 @@ $(document).ready(function(){
 			if($('.upload_container').has('.ext'))
 				$('.ext').remove();
 				// console.log($('.upload_container').has('.ext'));
-			$('.upload_container').append('<div class="oc"><input type="file" name="form1" required/><br><input type="file" name="form2" required/></div>');
+			$('.upload_container').append('<div class="oc"><input type="file" name="form1" required/><br><input type="file" name="form2" required /></div>');
 
 		}
 		else if(p=='External'){
