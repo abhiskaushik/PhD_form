@@ -128,7 +128,7 @@
 		        </div>
 		        <div class="input-field col l6 s6 ">
 
-		      		<select name="department2">
+		      		<select name="department2" id="department2">
 
 		      			 <option value="" disabled selected>Department Preference 1</option>
 		      			<option value="AR">Architecture</option>
