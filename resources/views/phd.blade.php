@@ -57,7 +57,7 @@
 		        
 		      		
 				    <div class="input-field col l6 s12">
-				        <select class="applicationCateg" name="appl_categ" required>
+				        <select class="applicationCateg" name="appl_categ" required id="appl_categ">
 				        <option value="" disabled selected>Select</option>
 				          <optgroup label="Part Time">
 				            <option value="onCampus">On Campus</option>
@@ -156,7 +156,7 @@
 		        </div>
 		        <div class="input-field col l6 s6 ">
 
-		      		<select name="department3">
+		      		<select name="department3" id="department3">
 
 		      			 <option value="" disabled selected>Department Preference 1</option>
 		      			<option value="AR">Architecture</option>
@@ -214,7 +214,7 @@
 
 		         <div class="input-field col l6 ">
 		         <span class="light">Category</span><br>
-		         	<select required name="category">
+		         	<select required name="category" id="category">
 				      <option value="" disabled selected>Choose your Category</option>
 				      <option value="OBC">OBC</option>
 				      <option value="OC">OC</option>
@@ -227,7 +227,7 @@
 		      <div class="row">
 		        <div class="input-field col l6">
 		      		<span class="light">Sex</span><br>
-		         	<select required name="sex">
+		         	<select required name="sex" id="sex">
 				      <option value="" disabled selected>Choose your Gender</option>
 				      <option value="male">Male</option>
 				      <option value="female">Female</option>
@@ -237,7 +237,7 @@
 
 		         <div class="input-field col l6 ">
 		         <span class="light">Marital Status</span><br>
-		         	<select required name="marital_status">
+		         	<select required name="marital_status" id="marital_status">
 				      <option value="" disabled selected>Choose your Marital Status</option>
 				      <option value="married">Married</option>
 				      <option value="notmarried">Not Married</option>
@@ -248,7 +248,7 @@
 		      <div class="row">
 		        <div class="input-field col l6">
 		      		  <span class="light">Physically Challenged(P.H)</span><br>
-		         	<select required name="ph">
+		         	<select required name="ph" id="ph">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="yes">Yes</option>
 				      <option value="no">No</option>
@@ -307,7 +307,7 @@
 		      	</div>
 		      	<div class="input-field col l6">
 		      		<span class="light">Class:</span>
-		      		<select required name="ug_class">
+		      		<select required name="ug_class" id="ug_class">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option  value="Honours">Honours</option>
 				      <option  value="Distinction">Distinction</option>
@@ -362,7 +362,7 @@
 		      	</div>
 		      	<div class="input-field col l6">
 		      		<span class="light">Class:</span>
-		      		<select required name = 'pg_class'>
+		      		<select required name = 'pg_class' id="pg_class">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option  value="Honours">Honours</option>
 				      <option  value="Distinction">Distinction</option>
