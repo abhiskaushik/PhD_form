@@ -167,13 +167,13 @@ class SaveController extends Controller
     		if($category == 'phd')
     		{
     			$details = SavePhd::where('applNo', $applNo)
-    									->get();
+    									->first();
     			return view('saved.phd')->with('details', $details);
     		}
     		else
     		{
     			$details = SaveMs::where('applNo', $applNo)
-    									->get();
+    									->first();
     			return view('saved.ms')->with('details', $details);
     		}
     	}
