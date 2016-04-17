@@ -44,18 +44,25 @@
     </p>
     <div class="space-large"></div>
   	<div class="row">
-      
-      <div class="col l12 s12">
-        <a class="waves-effect waves-light btn" href="/phd">PhD Admissions</a>
-        <a class="waves-effect waves-light btn" href="/ms">M.S Admissions</a>
-        <a class="waves-effect waves-light btn" href="/view">View my application</a>
+      <form>
+      <div class="col l6 s12">
+        <span class="light">Enter Registration Number</span>
+        <input type="text" class="validate">
+        </div>
+        <div class="col l6 s12">
+        <span class="light">Application Category:</span>
+              <select required name="phdorms">
+              <option value="" disabled selected>Choose your option</option>
+              <option  value="PHD">Phd</option>
+              <option  value="MS">MS</option>
+            </select>
       </div>
-      
+      <div class="space-medium"></div>
+      <div class="center">
+        <a href="#" type="button" class="btn"> Submit </a>
+      </div>
+      </form>
   	</div>
-    <div class="space-medium"></div>
-    <div class="row center">
-      <p>If filled application before, click <a href="savedForm">Here</a> </p>
-    </div>
   </div>
   <div class="space-large"></div>
   <footer class="page-footer teal darken-4">
@@ -90,6 +97,7 @@
   <script type="text/javascript">
   $(document ).ready(function(){
     $(".button-collapse").sideNav();
+    $('select').material_select();
   })
   </script>
   
