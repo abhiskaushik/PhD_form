@@ -41,12 +41,12 @@
   <div class="space-large"></div>
   <div class="container">
     <div class="row">
-      <div class="col l6 s6">
-          <a class="waves-effect waves-light btn" href="ms">M.S.</a>
+      <div class="col l6 s6 center">
+          <a class="waves-effect waves-light btn" href="ms">M.S. Applicants</a>
          
       </div>
-      <div class="col l6 s6">
-          <a class="waves-effect waves-light btn" href="phd">PhD</a>
+      <div class="col l6 s6 center">
+          <a class="waves-effect waves-light btn" href="phd">PhD Applicants</a>
           
       </div>
     </div>
@@ -55,7 +55,7 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
+                <h5 class="white-text">Contact Us</h5>
                 <p class="grey-text text-lighten-4">National Institute of Technology</p>
                 <p class="grey-text text-lighten-4">Tiruchirappalli - 620015</p>
                 <p class="grey-text text-lighten-4">Tamil Nadu, INDIA</p>

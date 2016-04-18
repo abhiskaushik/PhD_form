@@ -531,9 +531,10 @@
 		      
 		      </div>
   		
-		      <a id="save" class="btn">Save</a>
+		      
 
   		<div class="center">
+  		<a id="save" class="teal darken-1 send-btn btn waves-effect waves-light center">Save</a>
 	 {!! Form::submit('Submit', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
 	 </div>
 	 	
@@ -546,7 +547,7 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
+                <h5 class="white-text">Contact Us</h5>
                 <p class="grey-text text-lighten-4">National Institute of Technology</p>
                 <p class="grey-text text-lighten-4">Tiruchirappalli - 620015</p>
                 <p class="grey-text text-lighten-4">Tamil Nadu, INDIA</p>

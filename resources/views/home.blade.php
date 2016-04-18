@@ -39,9 +39,11 @@
 
   <div class="space-medium"></div>
   <div class="container center">
-    <p>
+    <p class="large">
       Welcome to NITT PhD and Ms application portal!
     </p>
+    <div class="space-small"></div>
+    <!-- <p>The Ph.D. degree is granted for distinction attained in a special field of concentration, by the demonstrated ability to modify or enlarge a significant subject in a dissertation, based upon original research scholarship. The minimum requirement is that the doctoral student follow a unified and organized program of study.</p> -->
     <div class="space-large"></div>
   	<div class="row">
       
@@ -62,7 +64,7 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
+                <h5 class="white-text">Contact Us</h5>
                 <p class="grey-text text-lighten-4">National Institute of Technology</p>
                 <p class="grey-text text-lighten-4">Tiruchirappalli - 620015</p>
                 <p class="grey-text text-lighten-4">Tamil Nadu, INDIA</p>

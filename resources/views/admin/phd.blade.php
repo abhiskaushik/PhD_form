@@ -159,11 +159,13 @@
       @endif
       @endfor
     </div>
+    <div class="center">
       <ul class="pagination">
     <li class="disabled"><a href={!! $data["candidates"]->previousPageUrl()!!}><i class="material-icons">chevron_left</i></a></li>
     <li class="active teal" ><a href="#!">{!! $data["candidates"]->currentPage() !!}</a></li>
     <li class="waves-effect"><a href={!! $data["candidates"]->nextPageUrl()!!}><i class="material-icons">chevron_right</i></a></li>
   </ul>
+  </div>
    </div>
    <div class="space-medium"></div>
 <div class="center">
@@ -174,7 +176,7 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
+                <h5 class="white-text">Contact Us</h5>
                 <p class="grey-text text-lighten-4">National Institute of Technology</p>
                 <p class="grey-text text-lighten-4">Tiruchirappalli - 620015</p>
                 <p class="grey-text text-lighten-4">Tamil Nadu, INDIA</p>
