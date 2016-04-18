@@ -12,6 +12,8 @@
 */
 Route::post('savephd', 'SaveController@savephd');
 Route::post('savems', 'SaveController@savems');
+Route::post('save2phd', 'SaveController@save2phd');
+Route::post('save2ms', 'SaveController@save2ms');
 Route::post('fetch', 'SaveController@fetch');
 Route::post('admin/auth', 'AdminController@login');
 Route::group(['middleware' => 'adminauth'], function () {

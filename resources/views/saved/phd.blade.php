@@ -15,6 +15,7 @@
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/jquery-ui.js')}}"></script>
 	<script src="{{URL::asset('assets/js/code.js')}}"></script>
+	<script src="{{URL::asset('assets/js/savephd.js')}}"></script>
 	
 </head>
 <body>
@@ -185,7 +186,7 @@
 		        
 		        
 		        <div class="input-field col s6 l6">
-		        	          <input id="email" name="email" type="email" class="validate" required value="{!! $details->name !!}">
+		        	          <input id="email" name="email" type="email" class="validate" required value="{!! $details->email !!}">
 		        	          <label for="last_name">Email</label>
 		       	</div>
 		        
@@ -530,7 +531,7 @@
 		      
 		      </div>
   		
-
+		      <a id="save2" class="btn">Save</a>
 
   		<div class="center">
 	 {!! Form::submit('Submit', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
