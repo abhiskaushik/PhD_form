@@ -57,7 +57,7 @@
   		<div class="row">  					   
   			<p>Application Category</p>		    
 		        <div class="input-field col l6 s12">
-		      		<select required name="appl_categ" class="applicationCateg">
+		      		<select required name="appl_categ" class="applicationCateg" id="applicationCateg">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="Part Time">Part Time</option>
 				      <option value="Full Time">Full Time</option>
@@ -84,7 +84,7 @@
 		      <div class="row dept">
 		        <div class="input-field col l6 s6 ">
 
-		      		<select name="department1" required>
+		      		<select name="department1" required id="department1">
 
 		      			 <option value="" disabled selected>Department Preference 1</option>
 		      			<option value="CS">Computer Science and Engineering</option>
@@ -105,7 +105,7 @@
 		        </div>
 		        <div class="input-field col l6 s6 ">
 
-		      		<select name="department2" required>
+		      		<select name="department2" required id="department2">
 
 		      			 <option value="" disabled selected>Department Preference 1</option>
 		      			<option value="CS">Computer Science and Engineering</option>
@@ -126,7 +126,7 @@
 		        </div>
 		        <div class="input-field col l6 s6 ">
 
-		      		<select name="department3" required>
+		      		<select name="department3" required id="department3">
 
 		      			 <option value="" disabled selected>Department Preference 1</option>
 		      			<option value="CS">Computer Science and Engineering</option>
@@ -147,37 +147,38 @@
 		        </div>
 		        
 		        
-		         <div class="input-field col s6 l6">
-		        	          <input id="email" name="email" type="email" class="validate" required value="{!! $details['email'] !!}">
+		         
+		        <div class="input-field col s6 l6">
+		        	          <input id="email" name="email" type="email" class="validate" required value="{!! $details->email !!}">
 		        	          <label for="last_name">Email</label>
 		       	</div>
 		        
 		         <div class="input-field col l12 s12">
 		         <span class="light">Area of Research:</span>
-		          <input required placeholder="Area of Research" id="reg_number" type="text" class="validate" name="area_of_research" maxlength="50" value="{!! $details['area_of_research'] !!}">
+		          <input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research" maxlength="50" value="{!! $details->areaOfResearch !!}">
 		        </div>
 		      </div>      
 
 		      <div class="row">
 		        <div class="input-field col l6 s6">
 		        	<span class="light">Name:</span>
-		      		<input required placeholder="Name of Candidate" id="reg_number" type="text" class="validate" name="name" maxlength="32" value="{!! $details['name'] !!}">
+		      		<input required placeholder="Name of Candidate" id="name" type="text" class="validate" name="name" maxlength="32" value="{!! $details->name !!}">
 		        </div>
 		         <div class="input-field col l6  s6">
 		         <span class="light">Father's Name:</span>
-		          <input required placeholder="Father's/Guardian Name" id="reg_number" type="text" class="validate" name="father_name" maxlength="32" value="{!! $details['father_name'] !!}">
+		          <input required placeholder="Father's/Guardian Name" id="father_name" type="text" class="validate" name="father_name" maxlength="32" value="{!! $details->fatherName !!}">
 		        </div>
 		      </div>
 
 		      <div class="row">
 		        <div class="input-field col l6">
 		        	<span class="light">Date of Birth:</span>
-		      		<input required id="reg_number" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31" value="{!! $details['dob'] !!}">
+		      		<input required id="dob" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31" value="{!! $details->dob !!}">
 		        </div>
 
 		         <div class="input-field col l6 ">
 		         <span class="light">Category</span><br>
-		         	<select required name="category">
+		         	<select required name="category" id="category">
 				      <option value="" disabled selected>Choose your Category</option>
 				      <option value="OBC">OBC</option>
 				      <option value="OC">OC</option>
@@ -190,7 +191,7 @@
 		      <div class="row">
 		        <div class="input-field col l6">
 		      		<span class="light">Sex</span><br>
-		         	<select required name="sex">
+		         	<select required name="sex" id="sex">
 				      <option value="" disabled selected>Choose your Gender</option>
 				      <option value="male">Male</option>
 				      <option value="female">Female</option>
@@ -200,7 +201,7 @@
 
 		         <div class="input-field col l6 ">
 		         <span class="light">Marital Status</span><br>
-		         	<select required name="marital_status">
+		         	<select required name="marital_status" id="marital_status">
 				      <option value="" disabled selected>Choose your Marital Status</option>
 				      <option value="married">Married</option>
 				      <option value="notmarried">Not Married</option>
@@ -211,7 +212,7 @@
 		      <div class="row">
 		        <div class="input-field col l6">
 		      		  <span class="light">Physically Challenged(P.H)</span><br>
-		         	<select required name="ph">
+		         	<select required name="ph" id="ph">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="yes">Yes</option>
 				      <option value="no">No</option>
@@ -220,26 +221,26 @@
 		         <div class="input-field col l6 ">
 
 		         <span class="light">Nationality:</span>
-		          <input required placeholder="Nationality" id="reg_number" type="text" class="validate" name="nationality" maxlength="32" value="{!! $details['nationality'] !!}">
+		          <input required placeholder="Nationality" id="nationality" type="text" class="validate" name="nationality" maxlength="32" value="{!! $details->nationality !!}">
 		        </div>
 		      </div>           
 
 		       <div class="row">
 		        <div class="input-field col l6"> 
 		        	<span for="textarea1">Address for Communication</span><br>     		  
-					<textarea required id="textarea1" class="materialize-textarea" name="addr_for_commn" maxlength="200" value="{!! $details['addr_for_commn'] !!}"></textarea>
+					<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200" value="{!! $details->addrforcommn !!}"></textarea>
 		            
 
 		            <p>Mobile Number:</p>
-		            <input required type="number" min="7000000000" max="9999999999" class="validate" name="mobile" value="{!! $details['mobile'] !!}"></input>
+		            <input required id="mobile" type="number" min="7000000000" max="9999999999" class="validate" name="mobile" value="{!! $details->mobile !!}"></input>
 		        </div>
 		         <div class="input-field col l6 ">
 		         <span for="textarea1">Permanent Address</span><br>
-		         <textarea required id="textarea1" class="materialize-textarea" name="permanent_addr" maxlength="200" value="{!! $details['permanent_addr'] !!}"></textarea>
+		         <textarea required id="permanent_addr" class="materialize-textarea" name="permanent_addr" maxlength="200" value="{!! $details->permanentaddr !!}"></textarea>
 		            
 
 		            <p>Land-Line Number:</p>
-		            <input required id="reg_number" type="number" class="validate" min="7000000000" max="9999999999" name="landline" value="{!! $details['landline'] !!}">
+		            <input required id="landline" type="number" class="validate" min="7000000000" max="9999999999" name="landline" value="{!! $details->lanline !!}">
 		        </div>
 
 
@@ -254,11 +255,11 @@
   				 <div class="row">
 		        <div class="input-field col l6">
 		        	<span class="light">Name of Degree:</span>
-		      		<input required placeholder="Name of Degree" id="reg_number" type="text" class="validate" name="ug_deg" maxlength="32" value="{!! $details['ug_deg'] !!}">
+		      		<input required placeholder="Name of Degree" id="ug_deg" type="text" class="validate" name="ug_deg" maxlength="32" value="{!! $details->ugdeg !!}">
 		        </div>
 		         <div class="input-field col l6 ">
 		         	<span class="light">Branch Name:</span>
-		         	<input required placeholder="Branch/Specialization" id="reg_number" type="text" class="validate" name="ug_branch" maxlength="50" value="{!! $details['ug_branch'] !!}">
+		         	<input required placeholder="Branch/Specialization" id="ug_branch" type="text" class="validate" name="ug_branch" maxlength="50" value="{!! $details->ugbranch !!}">
 		        </div>
 		      </div>
 
@@ -266,11 +267,11 @@
 		      	
 		      	<div class="input-field col l6 ">
 		      		<span class="light">C.G.P.A:</span>
-		      		<input required placeholder="C.G.P.A" id="reg_number" type="number" class="validate ug_cgpa" name="ug_gpa" min="4" max="10" step="0.01" value="{!! $details['ug_gpa'] !!}">
+		      		<input required placeholder="C.G.P.A" id="ug_gpa" type="number" class="validate ug_cgpa" name="ug_gpa" min="4" max="10" step="0.01" value="{!! $details->uggpa !!}" >
 		      	</div>
 		      	<div class="input-field col l6">
 		      		<span class="light">Class:</span>
-		      		<select required name="ug_class">
+		      		<select required name="ug_class" id="ug_class">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option  value="Honours">Honours</option>
 				      <option  value="Distinction">Distinction</option>
@@ -289,20 +290,20 @@
 		      <div class="row">
 		      	<div class="input-field col l12 s12">
 		      		<span class="light">College Name:</span>
-		      		<input required placeholder="College Name" id="reg_number" type="text" class="validate" name="ug_name_of_inst" maxlength="50" value="{!! $details['ug_name_of_inst'] !!}">
+		      		<input required placeholder="College Name" id="ug_name_of_inst" type="text" class="validate" name="ug_name_of_inst" maxlength="50" value="{!! $details->uginstitutionName !!}">
 		      	</div>
 
 		      	<div class="input-field col l12 s12">
 		      		<span class="light">University Name:</span>
-		      		<input required placeholder="University Name" id="reg_number" type="text" class="validate" name="ug_name_of_uni" maxlength="50" value="{!! $details['ug_name_of_uni'] !!}">
+		      		<input required placeholder="University Name" id="ug_name_of_uni" type="text" class="validate" name="ug_name_of_uni" maxlength="50" value="{!! $details->uguniversityName !!}">
 		      	</div>
 
 		      	<div class="input-field col l4 s4">
 		      		<span class="light">Year of Passing</span>
-		      		<input required id="reg_number" type="number" class="validate" name="ug_yop" min="2000" max="2018" value="{!! $details['ug_yop'] !!}">
+		      		<input required id="ug_yop" type="number" class="validate" name="ug_yop" min="2000" max="2018" value="{!! $details->ugyop !!}">
 		      	</div>
 		      </div>
-		      
+
 		      <div class="space-medium"></div>
 		      <div class="row">
 		      <p>Academic Details:</p>
@@ -321,80 +322,80 @@
 		      	            <td>1</td>
 		      	            <td>First</td>
 		      	            <td>
-		      	            <input required id="reg_number" type="number" class="validate" name="max1" value="{!! $details['max1'] !!}">
+		      	            <input required id="max1" type="number" class="validate" name="max1" value="{!! $details['max1'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="reg_number" type="number" class="validate" name="gpa1" value="{!! $details['gpa1'] !!}">
+		      	            	<input required id="" type="number" class="validate" name="gpa1" value="{!! $details['gpa1'] !!}">
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
 		      	            <td>1</td>
 		      	            <td>Second</td>
 		      	            <td>
-		      	            <input required id="reg_number" type="number" class="validate" name="max2" value="{!! $details['max2'] !!}">
+		      	            <input required id="max2" type="number" class="validate" name="max2" value="{!! $details['max2'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="reg_number" type="number" class="validate" name="gpa2" value="{!! $details['gpa2'] !!}">
+		      	            	<input required id="gpa2" type="number" class="validate" name="gpa2" value="{!! $details['gpa2'] !!}">
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
 		      	            <td>2</td>
 		      	            <td>Third</td>
 		      	            <td>
-		      	            <input required id="reg_number" type="number" class="validate" name="max3" value="{!! $details['max3'] !!}">
+		      	            <input required id="max3" type="number" class="validate" name="max3" value="{!! $details['max3'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="reg_number" type="number" class="validate" name="gpa3" value="{!! $details['gpa3'] !!}">
+		      	            	<input required id="gpa3" type="number" class="validate" name="gpa3" value="{!! $details['gpa3'] !!}">
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
 		      	            <td>2</td>
 		      	            <td>Fourth</td>
 		      	            <td>
-		      	            <input required id="reg_number" type="number" class="validate" name="max4" value="{!! $details['max4'] !!}">
+		      	            <input required id="max4" type="number" class="validate" name="max4" value="{!! $details['max4'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="reg_number" type="number" class="validate" name="gpa4" value="{!! $details['gpa4'] !!}">
+		      	            	<input required id="gpa4" type="number" class="validate" name="gpa4" value="{!! $details['gpa4'] !!}">
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
 		      	            <td>3</td>
 		      	            <td>Fifth</td>
 		      	            <td>
-		      	            <input required id="reg_number" type="number" class="validate" name="max5" value="{!! $details['max5'] !!}">
+		      	            <input required id="max5" type="number" class="validate" name="max5" value="{!! $details['max5'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="reg_number" type="number" class="validate" name="gpa5" value="{!! $details['gpa5'] !!}">
+		      	            	<input required id="gpa5" type="number" class="validate" name="gpa5" value="{!! $details['gpa5'] !!}">
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
 		      	            <td>3</td>
 		      	            <td>Sixth</td>
 		      	            <td>
-		      	            <input required id="reg_number" type="number" class="validate" name="max6" value="{!! $details['max6'] !!}">
+		      	            <input required id="max6" type="number" class="validate" name="max6" value="{!! $details['max6'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="reg_number" type="number" class="validate" name="gpa6" value="{!! $details['gpa6'] !!}">
+		      	            	<input required id="gpa6" type="number" class="validate" name="gpa6" value="{!! $details['gpa6'] !!}">
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
 		      	            <td>4</td>
 		      	            <td>Seventh</td>
 		      	            <td>
-		      	            <input required id="reg_number" type="number" class="validate" name="max7" value="{!! $details['max7'] !!}">
+		      	            <input required id="max7" type="number" class="validate" name="max7" value="{!! $details['max7'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="reg_number" type="number" class="validate" name="gpa7" value="{!! $details['gpa7'] !!}">
+		      	            	<input required id="gpa7" type="number" class="validate" name="gpa7" value="{!! $details['gpa7'] !!}">
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
 		      	            <td>4</td>
 		      	            <td>Eighth</td>
 		      	            <td>
-		      	            <input required id="reg_number" type="number" class="validate eight" name="max8" value="{!! $details['max8'] !!}">
+		      	            <input required id="max8" type="number" class="validate eight" name="max8" value="{!! $details['max8'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="reg_number" type="number" class="validate eight" name="gpa8" value="{!! $details['gpa8'] !!}">
+		      	            	<input required id="gpa8" type="number" class="validate eight" name="gpa8" value="{!! $details['gpa8'] !!}">
 		      	            </td>
 		      	          </tr>
 		      	          
@@ -411,54 +412,53 @@
 		      	<div class="space-small"></div>
 		      	<div class="col s12 l12 emp_details">
 		      		<p for="textarea1">Name & Address of Employer 1</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_1" value="{!! $details['employer_details_1'] !!}"></textarea>
+		      		 <textarea id="employer_details_1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_1" value="{!! $details->proexp1 !!}"></textarea>
 
 		      		 <p>Position Held:</p>
-		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_1" maxlength="100" value="{!! $details['emp_pos_1'] !!}">
+		      		 <input id="emp_pos_1" type="text" class="validate" name="emp_pos_1" maxlength="100" value="{!! $details->position1 !!}">
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_1" maxlength="100" value="{!! $details['emp_from_1'] !!}">
+		      		 	<input id="emp_from_1" type="number" class="validate" name="emp_from_1" maxlength="100" value="{!! $details->from1 !!}">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>To:</p>
-		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_1" maxlength="100" value="{!! $details['emp_to_1'] !!}">
+		      		 	<input id="emp_to_1" type="number" class="validate" name="emp_to_1" maxlength="100" value="{!! $details->to1 !!}">
 		      		 </div>
 		      	</div>
 		      	<div class="col s12 l12 emp_details">
 		      		<p for="textarea1">Name & Address of Employer 2</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2" value="{!! $details['employer_details_2'] !!}"></textarea>
+		      		 <textarea id="employer_details_2" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2" value="{!! $details->proexp2 !!}"></textarea>
 
 		      		 <p>Position Held:</p>
-		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_2" maxlength="100" value="{!! $details['emp_pos_2'] !!}">
+		      		 <input id="emp_pos_2" type="text" class="validate" name="emp_pos_2" maxlength="100" value="{!! $details->position2 !!}">
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_2" maxlength="100" value="{!! $details['emp_from_2'] !!}">
+		      		 	<input id="emp_from_2" type="number" class="validate" name="emp_from_2" maxlength="100" value="{!! $details->from2 !!}">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>To:</p>
-		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_2" maxlength="100" value="{!! $details['emp_to_2'] !!}">
+		      		 	<input id="emp_to_2" type="number" class="validate" name="emp_to_2" maxlength="100" value="{!! $details->to2 !!}">
 		      		 </div>
 		      	</div>
 		      	<div class="col s12 l12 emp_details">
 		      		<p for="textarea1">Name & Address of Employer 3</p><br>
-		      		 <textarea id="textarea1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3" value="{!! $details['employer_details_3'] !!}"></textarea>
+		      		 <textarea id="employer_details_3" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3" value="{!! $details->proexp3 !!}"></textarea>
 
 		      		 <p>Position Held:</p>
-		      		 <input id="reg_number" type="text" class="validate" name="emp_pos_3" maxlength="100" value="{!! $details['emp_pos_3'] !!}">
+		      		 <input id="emp_pos_3" type="text" class="validate" name="emp_pos_3" maxlength="100" value="{!! $details->position3 !!}">
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input id="reg_number" type="number" class="validate" name="emp_from_3" maxlength="100" value="{!! $details['emp_from_3'] !!}">
+		      		 	<input id="emp_from_3" type="number" class="validate" name="emp_from_3" maxlength="100" value="{!! $details->from3 !!}">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>To:</p>
-		      		 	<input id="reg_number" type="number" class="validate" name="emp_to_3" maxlength="100" value="{!! $details['emp_to_3'] !!}">
+		      		 	<input id="emp_to_3" type="number" class="validate" name="emp_to_3" maxlength="100" value="{!! $details->to3 !!}">
 		      		 </div>
 		      	</div>
 		      </div>
-
 
 		      <div class="row">
 		      	<div class="col l12 s12 ">
@@ -477,7 +477,7 @@
 
 		      	<div class="col s6 l5">
 		      		<p>Date of Submission</p>
-		      		<input required id="reg_number" type="date" name="date" class="validate" max="2016-06-31" min="2016-01-31" value="{!! $details['date'] !!}">
+		      		<input required id="date" type="date" name="date" class="validate" max="2016-06-31" min="2016-01-31" value="{!! $details['date'] !!}">
 		      	</div>
 		      	<div class="space-medium"></div>
 		      	
