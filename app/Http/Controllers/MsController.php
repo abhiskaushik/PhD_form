@@ -157,7 +157,9 @@ class MsController extends Controller
                 $message = 'Inavlid file format for the uploaded image';
                 return View::make('error')->with('message', $message);
             }
-            $cert = NULL;
+
+            $cert = null;
+
             if($request->input('appl_categ') == 'Part Time')
             {
                 $cert = $request->file('form1');
@@ -166,11 +168,14 @@ class MsController extends Controller
                     $message = 'Upload all the required forms';
                     return View::make('error')->with('message', $message);
                 }
-                $extension3 = $request->file('form1')->getClientOriginalExtension();
-                if($extension3 != 'pdf')
+                else
                 {
-                    $message = 'Invalid file format for the uploaded files';
-                    return View::make('error')->with('message', $message);
+                    $extension3 = $request->file('form1')->getClientOriginalExtension();
+                    if($extension3 != 'pdf')
+                    {
+                        $message = 'Invalid file format for the uploaded files';
+                        return View::make('error')->with('message', $message);
+                    }
                 }
             }
 
