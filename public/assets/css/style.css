@@ -31,6 +31,9 @@ body{
 .large{
 	font-size: 1.3em;
 }
+.vlarge{
+	font-size: 1.5em;
+}
 .right{
 	float: right;
 }
@@ -153,13 +156,18 @@ span{
 .results_announced p{
 	font-size: 18px;
 }
-.emp_details p:first-child{
-	font-size: 20px;
-}
+
 .admit .col p , .head{
 	padding: 10px;
 	font-size: 18px;
 }
+.first{
+	color: red !important;
+}
+input.select-dropdown,input.validate{
+	color: #bdbdbd !important;
+}
+
 @media screen and (max-width: 480px) {
 	.full-width{
 		width: 90%;

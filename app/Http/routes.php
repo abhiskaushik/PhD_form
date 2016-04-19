@@ -66,3 +66,23 @@ Route::get('savedForm', function()
     {
         return view('savedForm');
     });
+Route::get('phdform_1', function()
+    {
+        return view('phdForm_1');
+    });
+Route::get('phdform_2', function()
+    {
+        return view('phdForm_2');
+    });
+Route::get('phdform_3', function()
+    {
+        return view('phdForm_3');
+    });
+Route::get('msform_3', function()
+    {
+        return view('phdForm_3');
+    });
+Route::get('msform_3', function()
+    {
+        return view('phdForm_3');
+    });
