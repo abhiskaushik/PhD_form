@@ -48,15 +48,18 @@
   	<div class="row">
       
       <div class="col l12 s12">
-        <a class="waves-effect waves-light btn" href="/phd">PhD Admissions</a>
-        <a class="waves-effect waves-light btn" href="/ms">M.S Admissions</a>
+        <a class="waves-effect waves-light btn" href="/phd">Click here for PhD Admissions</a>
+        <a class="waves-effect waves-light btn" href="/ms">Click here for M.S Admissions</a>
+        </div>
+        <div class="space-medium"> </div>
+        <div class="col l12 s12">
         <a class="waves-effect waves-light btn" href="/view">View my application</a>
       </div>
       
   	</div>
     <div class="space-medium"></div>
     <div class="row center">
-      <p>If filled application before, click <a href="savedForm">Here</a> </p>
+      <p>Click <a href="savedForm">here</a> to continue with saved application form </p>
     </div>
   </div>
   <div class="space-large"></div>

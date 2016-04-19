@@ -157,7 +157,7 @@ class MsController extends Controller
                 $message = 'Inavlid file format for the uploaded image';
                 return View::make('error')->with('message', $message);
             }
-
+            $cert = NULL;
             if($request->input('appl_categ') == 'Part Time')
             {
                 $cert = $request->file('form1');

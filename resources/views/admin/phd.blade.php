@@ -40,7 +40,7 @@
     </div>
   </nav>
 <div class="search">
-        <input type="text" id="search" ></input>
+        <input type="text" id="search" placeholder="search"></input>
       </div> 
   <div class="space-large"></div>
   <div class="container">

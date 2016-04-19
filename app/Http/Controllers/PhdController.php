@@ -173,11 +173,23 @@ class PhdController extends Controller
             }
             else
             {
-                $message = 'Inavlid file format for the uploaded image';
+                $message = 'Invalid file format for the uploaded image';
                 return View::make('error')->with('message', $message);
             }
 
-            if($request->input('appl_categ') == 'onCampus')
+            $sign = $request->file('sign');  
+            $signExt = $request->file('sign')->getClientOriginalExtension();
+            if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
+            {
+                
+            }
+            else
+            {
+                $message = 'Invalid file format for the uploaded Signature';
+                return View::make('error')->with('message', $message);
+            }
+
+            if($request->input('appl_categ') == 'External')
             {
                 $form1 = $request->file('form1');
                 $form2 = $request->file('form2');
@@ -194,7 +206,7 @@ class PhdController extends Controller
                     return View::make('error')->with('message', $message);
                 }
             }
-            if($request->input('appl_categ') == 'External')
+            if($request->input('appl_categ') == 'onCampus')
             {
                 $form3 = $request->file('form3');
                 if(!$form3)
@@ -327,6 +339,11 @@ class PhdController extends Controller
             if($file)
             {
                 $file = $file->move(public_path().'/uploads/PHD/'.$applNo, $applNo.'.'.$extension);
+            }
+
+            if($sign)
+            {
+                $sign = $sign->move(public_path().'/uploads/PHD/'.$applNo, $applNo.'sign.'.$signExt);
             }
 
             return View::make('success')->with('details', $details);

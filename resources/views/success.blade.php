@@ -111,13 +111,13 @@
         <p><b>Undergraduate Name of Institution:</b> {!! $details['ug_name_of_inst'] !!}</p>
         <p><b>Undergraduate Name of University:</b> {!! $details['ug_name_of_uni'] !!}</p>
         <p><b>Undergraduate Year of Passing:</b> {!! $details['ug_yop'] !!}</p>
-        <p><b>Post-Graduate Degree:</b> {!! $details['ug_deg'] !!}</p>
-        <p><b>Post-Graduate Branch:</b> {!! $details['ug_branch'] !!}</p>
-        <p><b>Post-Graduate G.P.A:</b> {!! $details['ug_gpa'] !!}</p>
-        <p><b>Post-Graduate Class:</b> {!! $details['ug_class'] !!}</p>
-        <p><b>Post-Graduate Name of Institution:</b> {!! $details['ug_name_of_inst'] !!}</p>
-        <p><b>Post-Graduate Name of University:</b> {!! $details['ug_name_of_uni'] !!}</p>
-        <p><b>Post-Graduate Year of Passing:</b> {!! $details['ug_yop'] !!}</p>
+        <p><b>Post-Graduate Degree:</b> {!! $details['pg_deg'] !!}</p>
+        <p><b>Post-Graduate Branch:</b> {!! $details['pg_branch'] !!}</p>
+        <p><b>Post-Graduate G.P.A:</b> {!! $details['pg_gpa'] !!}</p>
+        <p><b>Post-Graduate Class:</b> {!! $details['pg_class'] !!}</p>
+        <p><b>Post-Graduate Name of Institution:</b> {!! $details['pg_name_of_inst'] !!}</p>
+        <p><b>Post-Graduate Name of University:</b> {!! $details['pg_name_of_uni'] !!}</p>
+        <p><b>Post-Graduate Year of Passing:</b> {!! $details['pg_yop'] !!}</p>
         <p><b>Exam:</b> {!! $details['exam'] !!}</p>
         <p><b>Score:</b> {!! $details['score'] !!}</p>
         <p><b>Rank:</b> {!! $details['rank'] !!}</p>
@@ -297,6 +297,7 @@
   <script type="text/javascript">
       $(document).ready(function(){
         $(".button-collapse").sideNav();
+
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal-trigger').leanModal();
   });

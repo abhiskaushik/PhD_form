@@ -16,6 +16,7 @@
 	<script src="{{URL::asset('assets/js/jquery-ui.js')}}"></script>
 	<script src="{{URL::asset('assets/js/code.js')}}"></script>
 	<script src="{{URL::asset('assets/js/savephd.js')}}"></script>
+	<script src="{{URL::asset('assets/js/preview.js')}}"></script>
 	
 </head>
 <body>
@@ -45,14 +46,22 @@
 
 	<div class="container">
 		<div class="row text-center">
-			<h3>APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME (2016 - 2017)</h3>
+			<h4>APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME (2016 - 2017)</h4>
 			<div class="space-medium"></div>
 			<div class="divider"></div><div class="divider"></div>
 		</div>
 		<div class="space-medium"></div>
 		<div class="row">
 
-		{!! Form::open(array('url'=>'phdvalidate','method'=>'POST', 'files'=>true )) !!}			
+		{!! Form::open(array('url'=>'phdvalidate','method'=>'POST', 'files'=>true )) !!}	
+
+		<div class="row">
+			<div class="col l6 s12">
+			<p>Enter Bank Reference Number:</p>
+				<input id="bankRef" name="bankRef" type="text" class="validate" required>	            
+			</div>
+		</div>
+
   		<div class="row">  					   
   			<p>Application Category</p>		    
 		        
@@ -103,26 +112,24 @@
 
 		      		<select name="department1" required id="department1">
 
-		      			 <option value="" disabled selected>Department Preference 1</option>
+		      			 <option value="" disabled selected>Department 1</option>
 		      			<option value="AR">Architecture</option>
 		      			<option value="CS">Computer Science and Engineering</option>
-		      			<option value="CL">Chemical</option>
+		      			<option value="CL">Chemical Engineering</option>
 		      			<option value="CV">Civil Engineering </option>
 		      			<option value="CY">Chemistry </option>
-		      			<option value="CA">CA </option>
-		      			<option value="EE">Electrical & Electronics Engineering</option>
+		      			<option value="CA">Computer Applications </option>
 		      			<option value="EC">Electronics & Communication Engineering</option>
-		      			<option value="HM">Humanities</option>
+		      			<option value="EE">Electrical & Electronics Engineering</option>		      			
+		      			<option value="HM">Humanities & Social Science</option>
 		      			<option value="ME">Mechanical 
 		      			Engineering</option>
-		      			<option value="MA">Maths</option>
-		      			<option value="MS">MBA
+		      			<option value="MA">Mathematics</option>
+		      			<option value="MS">Management Studies
 		      			Engineering</option>
-		      			<option value="PR">Production Engineering</option
-		      			<option value="IC">Instrumentation And Control Engineering</option>
-		      			<option value="MME">Metalurgy and Material Sciences</option>
-		      			<option value="PH">Physics</option>
-		      			<option value="EN">DEE</option>
+		      			<option value="MME">Metalurgy and Material Engineering</option>
+		      			<option value="PR">Production Engineering</option>		      					 
+		      			<option value="EN">Department of Energy Engineering</option>
 		      			<option value="CC">CECASE</option>
 		      		</select>
 		      		
@@ -131,26 +138,24 @@
 
 		      		<select name="department2" id="department2">
 
-		      			 <option value="" disabled selected>Department Preference 1</option>
+		      			  <option value="" disabled selected>Department 2</option>
 		      			<option value="AR">Architecture</option>
 		      			<option value="CS">Computer Science and Engineering</option>
-		      			<option value="CL">Chemical</option>
+		      			<option value="CL">Chemical Engineering</option>
 		      			<option value="CV">Civil Engineering </option>
 		      			<option value="CY">Chemistry </option>
-		      			<option value="CA">CA </option>
-		      			<option value="EE">Electrical & Electronics Engineering</option>
+		      			<option value="CA">Computer Applications </option>
 		      			<option value="EC">Electronics & Communication Engineering</option>
-		      			<option value="HM">Humanities</option>
+		      			<option value="EE">Electrical & Electronics Engineering</option>		      			
+		      			<option value="HM">Humanities & Social Science</option>
 		      			<option value="ME">Mechanical 
 		      			Engineering</option>
-		      			<option value="MA">Maths</option>
-		      			<option value="MS">MBA
+		      			<option value="MA">Mathematics</option>
+		      			<option value="MS">Management Studies
 		      			Engineering</option>
-		      			<option value="PR">Production Engineering</option
-		      			<option value="IC">Instrumentation And Control Engineering</option>
-		      			<option value="MME">Metalurgy and Material Sciences</option>
-		      			<option value="PH">Physics</option>
-		      			<option value="EN">DEE</option>
+		      			<option value="MME">Metalurgy and Material Engineering</option>
+		      			<option value="PR">Production Engineering</option>		      					 
+		      			<option value="EN">Department of Energy Engineering</option>
 		      			<option value="CC">CECASE</option>
 		      		</select>
 		      		
@@ -159,26 +164,24 @@
 
 		      		<select name="department3" id="department3">
 
-		      			 <option value="" disabled selected>Department Preference 1</option>
+		      		 <option value="" disabled selected>Department 3</option>
 		      			<option value="AR">Architecture</option>
 		      			<option value="CS">Computer Science and Engineering</option>
-		      			<option value="CL">Chemical</option>
+		      			<option value="CL">Chemical Engineering</option>
 		      			<option value="CV">Civil Engineering </option>
 		      			<option value="CY">Chemistry </option>
-		      			<option value="CA">CA </option>
-		      			<option value="EE">Electrical & Electronics Engineering</option>
+		      			<option value="CA">Computer Applications </option>
 		      			<option value="EC">Electronics & Communication Engineering</option>
-		      			<option value="HM">Humanities</option>
+		      			<option value="EE">Electrical & Electronics Engineering</option>		      			
+		      			<option value="HM">Humanities & Social Science</option>
 		      			<option value="ME">Mechanical 
 		      			Engineering</option>
-		      			<option value="MA">Maths</option>
-		      			<option value="MS">MBA
+		      			<option value="MA">Mathematics</option>
+		      			<option value="MS">Management Studies
 		      			Engineering</option>
-		      			<option value="PR">Production Engineering</option
-		      			<option value="IC">Instrumentation And Control Engineering</option>
-		      			<option value="MME">Metalurgy and Material Sciences</option>
-		      			<option value="PH">Physics</option>
-		      			<option value="EN">DEE</option>
+		      			<option value="MME">Metalurgy and Material Engineering</option>
+		      			<option value="PR">Production Engineering</option>		      					 
+		      			<option value="EN">Department of Energy Engineering</option>
 		      			<option value="CC">CECASE</option>
 		      		</select>
 		      		
@@ -202,15 +205,20 @@
 		      		<input required placeholder="Name of Candidate" id="name" type="text" class="validate" name="name" maxlength="32">
 		        </div>
 		         <div class="input-field col l6  s6">
-		         <span class="light">Father's Name:</span>
+		         <span class="light">Father's Name/Guardian's Name/Husband's Name:</span>
 		          <input required placeholder="Father's/Guardian Name" id="father_name" type="text" class="validate" name="father_name" maxlength="32">
 		        </div>
 		      </div>
 
 		      <div class="row">
-		        <div class="input-field col l6">
+		        <div class="input-field col l4">
 		        	<span class="light">Date of Birth:</span>
 		      		<input required id="dob" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31" >
+		        </div>
+
+		        <div class="input-field col l2">
+		        	<span class="light">Age:</span>
+		      		<input placeholder="Enter Age" required id="age" type="number" class="validate" name="age" max="50" min="12" >
 		        </div>
 
 		         <div class="input-field col l6 ">
@@ -241,14 +249,14 @@
 		         	<select required name="marital_status" id="marital_status">
 				      <option value="" disabled selected>Choose your Marital Status</option>
 				      <option value="married">Married</option>
-				      <option value="notmarried">Not Married</option>
+				      <option value="notmarried">Single</option>
 				    </select>
 		        </div>
 		      </div> 
 
 		      <div class="row">
 		        <div class="input-field col l6">
-		      		  <span class="light">Physically Challenged(P.H)</span><br>
+		      		  <span class="light">Person With Disability(PWD):</span><br>
 		         	<select required name="ph" id="ph">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="yes">Yes</option>
@@ -326,7 +334,7 @@
 
 		      <div class="row">
 		      	<div class="input-field col l12 s12">
-		      		<span class="light">College Name:</span>
+		      		<span class="light">College Name/Institution Name:</span>
 		      		<input required placeholder="College Name" id="ug_name_of_inst" type="text" class="validate" name="ug_name_of_inst" maxlength="50">
 		      	</div>
 
@@ -337,7 +345,7 @@
 
 		      	<div class="input-field col l4 s4">
 		      		<span class="light">Year of Passing</span>
-		      		<input required id="ug_yop" type="number" class="validate" name="ug_yop" min="2000" max="2018">
+		      		<input required id="ug_yop" type="number" class="validate" name="ug_yop" min="1900" max="2018">
 		      	</div>
 		      </div>
 
@@ -380,7 +388,7 @@
 		      </div>
 		      <div class="row">
 		      	<div class="input-field col l12 s12">
-		      		<span class="light">College Name:</span>
+		      		<span class="light">College Name/Institution Name:</span>
 		      		<input required placeholder="College Name" id="pg_name_of_inst" type="text" class="validate" name="pg_name_of_inst" maxlength="50">
 		      	</div>
 
@@ -391,23 +399,23 @@
 
 		      	<div class="input-field col l4 s4">
 		      		<span class="light">Year of Passing</span>
-		      		<input required id="pg_yop" type="number" class="validate" name="pg_yop" min="2000" max="2018"> 
+		      		<input required id="pg_yop" type="number" class="validate" name="pg_yop" min="1900" max="2018"> 
 		      	</div>
 		      </div>
 
 		      <div class="row">
 		      	<span class="light">Other Details:</span>
-		      	<p>(*Write as 'RA'if results awaiting)</p>
+		      	
 		      	<div class="space-small"></div>
 		      	<div class="results_announced center">
-		      		<p class="center">Are results announced?</p>
+		      		<p class="center">Have you qualified in GATE or other Competitive Exam?</p>
 		      		<span>
 		      			<input type="checkbox" id="announced" name="ann" />
-		      			<label for="announced">Announced</label>
+		      			<label for="announced">Yes</label>
 		      		</span>
 		      		<span>
 		      			<input type="checkbox" id="nannounced" name="nann" />
-		      			<label for="nannounced">Not-Announced</label>
+		      			<label for="nannounced">No</label>
 		      		</span>
 		      	</div>
 		      	<div class="space-medium"></div>
@@ -516,6 +524,18 @@
 		      		<p>Date of Submission</p>
 		      		<input required id="date" type="date" name="date" class="validate" max="2016-06-31" min="2016-01-31">
 		      	</div>
+		      	<div class="col l6 s6">
+		      		<p>Upload Signature</p>
+		      	<div class="file-field input-field">
+	          		<div class="btn teal darken-1 btn waves-effect waves-light">
+	          			<span class="light">File</span>
+	          			{!! Form::file('sign' , array('class'=>'', 'required')) !!}			
+	          		</div>
+	          		<div class="file-path-wrapper">
+        				<input class="file-path validate" type="text">
+      				</div>
+	          	</div>
+		      	</div>
 		      	<div class="space-medium"></div>
 		      	
 		      </div>
@@ -534,6 +554,7 @@
 		      
 
   		<div class="center">
+  		<a id="preview1" href="#preview" class="waves-effect waves-light btn modal-trigger">Save</a>
   		<a id="save" class="teal darken-1 send-btn btn waves-effect waves-light center">Save</a>
 	 {!! Form::submit('Submit', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
 	 </div>
@@ -542,6 +563,11 @@
 	      </div>
 	      </div>
 	      </div>
+
+	      <div id="preview" class="modal">
+	      	
+	      </div>
+
 <div class="space-large"></div>
 <footer class="page-footer teal darken-4">
           <div class="container">
