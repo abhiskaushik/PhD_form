@@ -48,6 +48,202 @@
     <div class="row">
   {!! Form::open(array('url'=>'phdvalidate','method'=>'POST', 'files'=>true )) !!}  
 
+<div class="row">              
+        <p class="vlarge">Application Category</p>       
+            <div class="input-field col l6 s12">
+              <select required name="appl_categ" class="applicationCateg" id="applicationCateg">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="Part Time">Part Time</option>
+              <option value="Full Time">Full Time</option>
+            </select>
+            </div>                            
+        <div class="col l6 s12">
+        <p>Upload Image</p>
+            <div class="file-field input-field">
+                <div class="btn teal darken-1 btn waves-effect waves-light">
+                  <span class="light">File</span>
+                  {!! Form::file('image_path' , array('class'=>'', 'required')) !!}     
+                </div>
+                <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+              </div>
+          </div>  
+      
+  
+      <div class="row">
+        <p>Applicant Details</p>
+        <div class="col s12">
+
+          <div class="row dept">
+            <div class="input-field col l6 s6 ">
+
+              <select name="department1" required id="department1">
+
+                 <option value="" disabled selected>Department Preference 1</option>
+                <option value="CS">Computer Science and Engineering</option>
+                <option value="CL">Chemical</option>
+                <option value="CV">Civil Engineering </option>
+                <option value="EE">Electrical & Electronics Engineering</option>
+                <option value="EC">Electronics & Communication Engineering</option>
+                <option value="ME">Mechanical 
+                Engineering</option>
+                <option value="PR">Production Engineering</option
+                <option value="IC">Instrumentation And Control Engineering</option>
+                <option value="MME">Metalurgy and Material Sciences</option>
+                <option value="PH">Physics</option>
+                <option value="EN">DEE</option>
+                <option value="CC">CECASE</option>
+              </select>
+              
+            </div>
+            <div class="input-field col l6 s6 ">
+
+              <select name="department2" required id="department2">
+
+                 <option value="" disabled selected>Department Preference 1</option>
+                <option value="CS">Computer Science and Engineering</option>
+                <option value="CL">Chemical</option>
+                <option value="CV">Civil Engineering </option>
+                <option value="EE">Electrical & Electronics Engineering</option>
+                <option value="EC">Electronics & Communication Engineering</option>
+                <option value="ME">Mechanical 
+                Engineering</option>
+                <option value="PR">Production Engineering</option
+                <option value="IC">Instrumentation And Control Engineering</option>
+                <option value="MME">Metalurgy and Material Sciences</option>
+                <option value="PH">Physics</option>
+                <option value="EN">DEE</option>
+                <option value="CC">CECASE</option>
+              </select>
+              
+            </div>
+            <div class="input-field col l6 s6 ">
+
+              <select name="department3" required id="department3">
+
+                 <option value="" disabled selected>Department Preference 1</option>
+                <option value="CS">Computer Science and Engineering</option>
+                <option value="CL">Chemical</option>
+                <option value="CV">Civil Engineering </option>
+                <option value="EE">Electrical & Electronics Engineering</option>
+                <option value="EC">Electronics & Communication Engineering</option>
+                <option value="ME">Mechanical 
+                Engineering</option>
+                <option value="PR">Production Engineering</option
+                <option value="IC">Instrumentation And Control Engineering</option>
+                <option value="MME">Metalurgy and Material Sciences</option>
+                <option value="PH">Physics</option>
+                <option value="EN">DEE</option>
+                <option value="CC">CECASE</option>
+              </select>
+              
+            </div>
+            
+            
+             
+            <div class="input-field col s6 l6">
+                        <input id="email" name="email" type="email" class="validate" required value="{!! $details->email !!}">
+                        <label for="last_name">Email</label>
+            </div>
+            
+             <div class="input-field col l12 s12">
+             <span class="light">Area of Research:</span>
+              <input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research" maxlength="50" value="{!! $details->areaOfResearch !!}">
+            </div>
+          </div>      
+
+          <div class="row">
+            <div class="input-field col l6 s6">
+              <span class="light">Name:</span>
+              <input required placeholder="Name of Candidate" id="name" type="text" class="validate" name="name" maxlength="32" value="{!! $details->name !!}">
+            </div>
+             <div class="input-field col l6  s6">
+             <span class="light">Father's Name:</span>
+              <input required placeholder="Father's/Guardian Name" id="father_name" type="text" class="validate" name="father_name" maxlength="32" value="{!! $details->fatherName !!}">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col l6">
+              <span class="light">Date of Birth:</span>
+              <input required id="dob" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31" value="{!! $details->dob !!}">
+            </div>
+
+             <div class="input-field col l6 ">
+             <span class="light">Category</span><br>
+              <select required name="category" id="category">
+              <option value="" disabled selected>Choose your Category</option>
+              <option value="OBC">OBC</option>
+              <option value="OC">OC</option>
+              <option value="SC">SC</option>
+              <option value="ST">ST</option>
+            </select>
+            </div>
+          </div> 
+
+          <div class="row">
+            <div class="input-field col l6">
+              <span class="light">Sex</span><br>
+              <select required name="sex" id="sex">
+              <option value="" disabled selected>Choose your Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+              
+            </div>
+
+             <div class="input-field col l6 ">
+             <span class="light">Marital Status</span><br>
+              <select required name="marital_status" id="marital_status">
+              <option value="" disabled selected>Choose your Marital Status</option>
+              <option value="married">Married</option>
+              <option value="notmarried">Not Married</option>
+            </select>
+            </div>
+          </div> 
+
+          <div class="row">
+            <div class="input-field col l6">
+                <span class="light">Physically Challenged(P.H)</span><br>
+              <select required name="ph" id="ph">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+            </div>
+             <div class="input-field col l6 ">
+
+             <span class="light">Nationality:</span>
+              <input required placeholder="Nationality" id="nationality" type="text" class="validate" name="nationality" maxlength="32" value="{!! $details->nationality !!}">
+            </div>
+          </div>           
+
+           <div class="row">
+            <div class="input-field col l6"> 
+              <span for="textarea1">Address for Communication</span><br>          
+          <textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200" value="{!! $details->addrforcommn !!}"></textarea>
+                
+
+                <p>Mobile Number:</p>
+                <input required id="mobile" type="number" min="7000000000" max="9999999999" class="validate" name="mobile" value="{!! $details->mobile !!}"></input>
+            </div>
+             <div class="input-field col l6 ">
+             <span for="textarea1">Permanent Address</span><br>
+             <textarea required id="permanent_addr" class="materialize-textarea" name="permanent_addr" maxlength="200" value="{!! $details->permanentaddr !!}"></textarea>
+                
+
+                <p>Land-Line Number:</p>
+                <input required id="landline" type="number" class="validate" min="7000000000" max="9999999999" name="landline" value="{!! $details->lanline !!}">
+            </div>
+
+
+          </div> 
+
+        </div>
+      </div>
+
+
   <div class="row">
         <div class="col s12">
         <p class="large">Undergraduate</p>

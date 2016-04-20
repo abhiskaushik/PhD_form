@@ -2,7 +2,21 @@ $(document).ready(function(){
 	$('#preview1').click(function(e){		
 		var data = {};
 		
-		
+		data.name = $('#name').val();
+		data.email = $('#email').val();
+		data.appl_categ = $('.applicationCateg option:selected').text();
+		data.department1 = $('#department1 option:selected').text();
+		data.department2 = $('#department2 option:selected').text();
+		data.department3 = $('#department3 option:selected').text();
+		data.email = $('#email').val();
+		data.area_of_research = $('#area_of_research').val();
+		data.father_name = $('#father_name').val();
+		data.dob = $('#dob').val();
+		data.nationality = $('#nationality').val();
+		data.addr_for_commn = $('#addr_for_commn').val();
+		data.permanent_addr = $('#permanent_addr').val();
+		data.mobile = $('#mobile').val();
+		data.landline = $('#landline').val();
 		data.ug_deg = $('#ug_deg').val();
 		data.ug_branch = $('#ug_branch').val();
 		data.ug_gpa = $('#ug_gpa').val();
@@ -58,6 +72,28 @@ $(document).ready(function(){
 		var div = '<div class="modal-content">\
         <h4>Candidate"s Form</h4>\
         \
+<p><b>Registration Number:</b> '+data.reg_number+'</p>\
+        <p><b>Date of Registration:</b> '+data.date+'</p>\
+      </div>\
+        <p><b>Application Category:</b> '+data.appl_categ+'</p>\
+        <p><b>Department 1:</b> '+data.department1+'</p>\
+        <p><b>Department 2:</b> '+data.department2+'</p>\
+        <p><b>Department 3:</b> '+data.department3+'</p>\
+        <p><b>Email:</b> '+data.email+'</p>\
+        <p><b>Area of Research:</b> '+data.area_of_research+'</p>\
+        <p><b>Name of Candidate:</b> '+data.name+'</p>\
+        <p><b>Email Id:</b> '+data.email+'</p>\
+        <p><b>Father"s Name:</b> '+data.father_name+'</p>\
+        <p><b>Date of Birth:</b> '+data.dob+'</p>\
+        <p><b>Category:</b> '+data.category+'</p>\
+        <p><b>Sex:</b> '+data.sex+'</p>\
+        <p><b>Marital Status: '+data.marital_status+'</b></p>\
+        <p><b>Physically Handicapped:</b> '+data.ph+'</p>\
+        <p><b>Nationality:</b> '+data.nationality+'</p>\
+        <p><b>Address for Communication:</b> '+data.addr_for_commn+'</p>\
+        <p><b>Permanent Address:</b> '+data.permanent_addr+'</p>\
+        <p><b>Mobile Number:</b> '+data.mobile+'</p>\
+        <p><b>Landline Number:</b> '+data.landline+'</p>\
         <p><b>Undergraduate Degree:</b> '+data.ug_deg+'</p>\
         <p><b>Undergraduate Branch:</b> '+data.ug_branch+'</p>\
         <p><b>Undergraduate G.P.A:</b> '+data.ug_gpa+'</p>\
@@ -109,7 +145,21 @@ $(document).ready(function(){
 	    
 		var data = {};
 		
-		
+		data.name = $('#name').val();
+		data.email = $('#email').val();
+		data.appl_categ = $('.applicationCateg option:selected').text();
+		data.department1 = $('#department1 option:selected').text();
+		data.department2 = $('#department2 option:selected').text();
+		data.department3 = $('#department3 option:selected').text();
+		data.email = $('#email').val();
+		data.area_of_research = $('#area_of_research').val();
+		data.father_name = $('#father_name').val();
+		data.dob = $('#dob').val();
+		data.nationality = $('#nationality').val();
+		data.addr_for_commn = $('#addr_for_commn').val();
+		data.permanent_addr = $('#permanent_addr').val();
+		data.mobile = $('#mobile').val();
+		data.landline = $('#landline').val();
 		data.ug_deg = $('#ug_deg').val();
 		data.ug_branch = $('#ug_branch').val();
 		data.ug_gpa = $('#ug_gpa').val();
@@ -154,6 +204,28 @@ $(document).ready(function(){
 		var div = '<div class="modal-content">\
         <h4>Candidate"s Form</h4>\
         \
+<p><b>Registration Number:</b> '+data.reg_number+'</p>\
+        <p><b>Date of Registration:</b> '+data.date+'</p>\
+      </div>\
+        <p><b>Application Category:</b> '+data.appl_categ+'</p>\
+        <p><b>Department 1:</b> '+data.department1+'</p>\
+        <p><b>Department 2:</b> '+data.department2+'</p>\
+        <p><b>Department 3:</b> '+data.department3+'</p>\
+        <p><b>Email:</b> '+data.email+'</p>\
+        <p><b>Area of Research:</b> '+data.area_of_research+'</p>\
+        <p><b>Name of Candidate:</b> '+data.name+'</p>\
+        <p><b>Email Id:</b> '+data.email+'</p>\
+        <p><b>Father"s Name:</b> '+data.father_name+'</p>\
+        <p><b>Date of Birth:</b> '+data.dob+'</p>\
+        <p><b>Category:</b> '+data.category+'</p>\
+        <p><b>Sex:</b> '+data.sex+'</p>\
+        <p><b>Marital Status: '+data.marital_status+'</b></p>\
+        <p><b>Physically Handicapped:</b> '+data.ph+'</p>\
+        <p><b>Nationality:</b> '+data.nationality+'</p>\
+        <p><b>Address for Communication:</b> '+data.addr_for_commn+'</p>\
+        <p><b>Permanent Address:</b> '+data.permanent_addr+'</p>\
+        <p><b>Mobile Number:</b> '+data.mobile+'</p>\
+        <p><b>Landline Number:</b> '+data.landline+'</p>\
         <p><b>Undergraduate Degree:</b> '+data.ug_deg+'</p>\
         <p><b>Undergraduate Branch:</b> '+data.ug_branch+'</p>\
         <p><b>Undergraduate G.P.A:</b> '+data.ug_gpa+'</p>\
@@ -193,45 +265,3 @@ $(document).ready(function(){
 	}); 
  });
 
-
-// <p><b>Registration Number:</b> '+data.reg_number+'</p>\
-//         <p><b>Date of Registration:</b> '+data.date+'</p>\
-//       </div>\
-//         <p><b>Application Category:</b> '+data.appl_categ+'</p>\
-//         <p><b>Department 1:</b> '+data.department1+'</p>\
-//         <p><b>Department 2:</b> '+data.department2+'</p>\
-//         <p><b>Department 3:</b> '+data.department3+'</p>\
-//         <p><b>Email:</b> '+data.email+'</p>\
-//         <p><b>Area of Research:</b> '+data.area_of_research+'</p>\
-//         <p><b>Name of Candidate:</b> '+data.name+'</p>\
-//         <p><b>Email Id:</b> '+data.email+'</p>\
-//         <p><b>Father"s Name:</b> '+data.father_name+'</p>\
-//         <p><b>Date of Birth:</b> '+data.dob+'</p>\
-//         <p><b>Category:</b> '+data.category+'</p>\
-//         <p><b>Sex:</b> '+data.sex+'</p>\
-//         <p><b>Marital Status: '+data.marital_status+'</b></p>\
-//         <p><b>Physically Handicapped:</b> '+data.ph+'</p>\
-//         <p><b>Nationality:</b> '+data.nationality+'</p>\
-//         <p><b>Address for Communication:</b> '+data.addr_for_commn+'</p>\
-//         <p><b>Permanent Address:</b> '+data.permanent_addr+'</p>\
-//         <p><b>Mobile Number:</b> '+data.mobile+'</p>\
-//         <p><b>Landline Number:</b> '+data.landline+'</p>\
-
-
-
-
-// data.name = $('#name').val();
-// 		data.email = $('#email').val();
-// 		data.appl_categ = $('.applicationCateg option:selected').text();
-// 		data.department1 = $('#department1 option:selected').text();
-// 		data.department2 = $('#department2 option:selected').text();
-// 		data.department3 = $('#department3 option:selected').text();
-// 		data.email = $('#email').val();
-// 		data.area_of_research = $('#area_of_research').val();
-// 		data.father_name = $('#father_name').val();
-// 		data.dob = $('#dob').val();
-// 		data.nationality = $('#nationality').val();
-// 		data.addr_for_commn = $('#addr_for_commn').val();
-// 		data.permanent_addr = $('#permanent_addr').val();
-// 		data.mobile = $('#mobile').val();
-// 		data.landline = $('#landline').val();

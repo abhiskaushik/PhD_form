@@ -164,8 +164,11 @@ span{
 .first{
 	color: red !important;
 }
-input.select-dropdown,input.validate{
+input.select-dropdown{
 	color: #bdbdbd !important;
+}
+input.validate{
+	color: #004d40 !important;
 }
 
 @media screen and (max-width: 480px) {
