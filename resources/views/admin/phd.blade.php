@@ -46,10 +46,10 @@
   </div>
   <div class="space-large"></div>
   <div class="container">
-    <div class="candidates">
+    <div class="candidates row">
      @for($i = 0; $i < sizeof($data['candidates']); $i++)
         @if(!$data['candidates'][$i]->deleted)
-        <div class="{!! $data['candidates'][$i]->applNo !!} col l5 offset-l1 s12 " } data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
+        <div class="{!! $data['candidates'][$i]->applNo !!} col l5 offset-l1  " } data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
         <div class="card center">
           <div class="card-content">
             <span class="card-title activator grey-text text-darken-4">Candidate's Card</span>

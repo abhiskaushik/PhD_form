@@ -60,7 +60,7 @@
   			<p class="large">Application Category</p>		    
 		        
 		      		
-				    div class="input-field col l6 s12">
+				    <div class="input-field col l6 s12">
 		      		<select name="appl_categ" class="applicationCateg" id="appl_categ">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="Part Time">Part Time</option>
@@ -269,8 +269,8 @@
   		      
 
   		<div class="center">
-  		
-	 {!! Form::submit('Submit', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
+  		<a class="valid teal darken-1 send-btn btn waves-effect waves-light">Submit</a>
+	 {!! Form::submit('Submit', array('class'=>'valid teal darken-1 send-btn btn waves-effect waves-light' )) !!}
 	 </div>
 	 	
 	      {!! Form::close() !!}
@@ -278,8 +278,25 @@
 	      </div>
 	      </div>
 
-	      <div id="preview" class="modal">
-	      	
+	      <div class="modal" id="error">
+	      	<div class="modal-content">
+	      		<div class="error"></div>
+	      	</div>
+	      	<div class="modal-footer">
+	      		<a class="btn modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+	      	</div>
+	      </div>
+
+	      <div id="regNo" class="modal">	
+	      	<div class="modal-content">
+	      		Your reg no is blah blah blah..
+	      	</div>
+	      	<div class="modal-footer">
+	      		{!! Form::submit('Submit Form', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
+	      	</div>
+	      </div>
+
+	      <div id="preview" class="modal">	
 	      </div>
 
 <div class="space-large"></div>

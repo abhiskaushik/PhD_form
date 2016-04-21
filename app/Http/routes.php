@@ -78,11 +78,11 @@ Route::get('phdform_3', function()
     {
         return view('phdForm_3');
     });
-Route::get('msform_3', function()
+Route::get('msform_1', function()
     {
-        return view('phdForm_3');
+        return view('msForm_1');
     });
 Route::get('msform_3', function()
     {
-        return view('phdForm_3');
+        return view('msForm_3');
     });

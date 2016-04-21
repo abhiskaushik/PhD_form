@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+	$('.exam').hide();
 	$('#agree').click(function()
 	{
 		$('#disagree').prop('checked',false);
@@ -8,7 +8,7 @@ $(document).ready(function(){
 	{
 		$('#agree').prop('checked',false);
 	});
-	$('.exam').hide();
+
 	$('#announced').click(function()
 	{
 		if($('.exams').has('.add'))
@@ -22,6 +22,7 @@ $(document).ready(function(){
 		$('#announced').prop('checked',false);
 		$('.add').remove();
 	});
+
 	$('#ra1').click(function()
 	{
 		if($('#ra1').is(':checked')){
@@ -43,9 +44,37 @@ $(document).ready(function(){
 			$('.pg_cgpa').prop('disabled',false);	
 		}
 	});
+
 	$('.discard1').click(function(){
 		$('#discard').openModal();
 	});
+
+	var count =0;
+	//validating via front end 
+	$('.valid').click(function(){
+		var data={};
+		data.appl_categ = $('.applicationCateg option:selected').text();
+		data.department1 = $('#department1 option:selected').text();
+		data.department2 = $('#department2 option:selected').text();
+		data.department3 = $('#department3 option:selected').text();
+		data.category = $('#category option:selected').text();
+		data.sex = $('#sex option:selected').text();
+		data.ph = $('#ph option:selected').text();
+		data.marital_status = $('#marital_status option:selected').text();
+		console.log(data);
+		count++;
+		if(data.appl_categ == 'Select' || data.department1 == 'Department 1' || data.department2 == 'Department 2' || data.department3 == 'Department 3' || data.marital_status == 'Choose your Marital Status' || data.sex == 'Choose your Gender' || data.category == 'Choose your Category' || data.ph == 'Choose your option'){
+			var error = "Please select all the dropdowns";
+			if(count==1)
+				$('#error .modal-content .error').append('<p>'+error+'</p>');
+			$('#error').openModal();
+			
+			return false;
+		}
+		$('#regNo').openModal();
+		return true;
+	})
+
 	$('.applicationCateg').change(function()
 	{
 		var p=$('.applicationCateg option:selected').text();
@@ -60,7 +89,7 @@ $(document).ready(function(){
 		else if(p=='External'){
 			if($('.upload_container').has('.oc'))
 				$('.oc').remove();
-			// console.log($('.upload_container').has('.oc'));
+			
 			$('.upload_container').append('<div class="oc"><input type="file" name="form1" required/><br><input type="file" name="form2" required /></div>');
 		}
 		else{
@@ -68,11 +97,11 @@ $(document).ready(function(){
 				$('.ext').remove();
 			if($('.upload_container').has('.oc'))
 				$('.oc').remove();
-			// console.log($('.upload_container').has('.ext'));
-			// console.log($('.upload_container').has('.oc'));
+			
 		}
 	});
 	
+
 	
 
 	var x=$('.exam_select');

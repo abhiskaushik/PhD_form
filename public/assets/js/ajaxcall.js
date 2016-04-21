@@ -1,38 +1,19 @@
 $(document).ready(function(){
 	$('.discard').click(function(e){
 		var applNo = $(this).attr('data-reg');
-		$.ajaxSetup(
-	    {
-	        headers:
-	        {
-	            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-	        }
-	    });
-		var data = {};
-		data.applNo = applNo;
-
-		var baseurl = 'http://localhost:8000';
-		var url = '/delete';
-		$.ajax(
-	    {
-	        type: "POST",
-	        url: baseurl + url,
-	        data: data,
-	        dataType: "json",
-	        success: function(data){
-	        	console.log(data);
-	        	$('.'+applNo).hide('slow');
-	        		location.reload();
-	        },
-	        error: function(jqXHR,testStatus,errorThrown){
-	        	console.log(errorThrown);
-	        }
-		});
+		ajaxCall(applNo, 'delete');
 	}); 
 
 	$('.accept').click(function(e){
 		var applNo = $(this).attr('data-reg');
-		$.ajaxSetup(
+		ajaxCall(applNo, 'accept')
+ });
+
+});
+
+
+function ajaxCall(x,y){
+	$.ajaxSetup(
 	    {
 	        headers:
 	        {
@@ -40,9 +21,9 @@ $(document).ready(function(){
 	        }
 	    });
 		var data = {};
-		data.applNo = applNo;
+		data.applNo = x;
 		var baseurl = 'http://localhost:8000';
-		var url = '/accept';
+		var url = '/'+y;
 		$.ajax(
 	    {
 	        type: "POST",
@@ -51,12 +32,10 @@ $(document).ready(function(){
 	        dataType: "json",
 	        success: function(data){
 	        	console.log("helo");
-	        	// $('.'+applNo).hide('slow');
 	        	location.reload();
 	        },
 	        error: function(jqXHR,testStatus,errorThrown){
 	        	console.log(errorThrown);
 	        }
 		});
-	});
- });
+}
