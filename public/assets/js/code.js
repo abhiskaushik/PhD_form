@@ -43,6 +43,9 @@ $(document).ready(function(){
 			$('.pg_cgpa').prop('disabled',false);	
 		}
 	});
+	$('.discard1').click(function(){
+		$('#discard').openModal();
+	});
 	$('.applicationCateg').change(function()
 	{
 		var p=$('.applicationCateg option:selected').text();

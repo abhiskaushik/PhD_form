@@ -8,7 +8,7 @@
 }
 body{
 	font-family: "font";
-	padding-left: 10px;
+	
 	margin: 0px;
 	padding: 0px;
 }
@@ -172,6 +172,12 @@ input.validate{
 }
 
 @media screen and (max-width: 480px) {
+	.card-content span {
+		font-size: 10px;	
+	}
+	.card{
+
+	}
 	.full-width{
 		width: 90%;
 	}

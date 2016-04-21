@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta id="token" name="csrf-token" content="{{ csrf_token() }}">
@@ -13,15 +13,16 @@
   <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
   <script src="{{URL::asset('assets/js/code.js')}}"></script>
   <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
-	<script src="{{URL::asset('assets/js/ajaxcall.js')}}"></script>
+  <script src="{{URL::asset('assets/js/ajaxcall.js')}}"></script>
   <script src="{{URL::asset('assets/js/print.js')}}"></script>
   
 </head>
 <body>
-	<header> 
-  </header>
   
-  <nav>
+<header>
+</header>
+
+<nav>
     <div class="nav-wrapper ">
       
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -39,43 +40,33 @@
       </ul>
     </div>
   </nav>
-<div class="search">
-        <input type="text" id="search" placeholder="search"></input>
-      </div> 
+
+  <div class="search">
+        <input type="text" id="search" placeholder="search" />
+  </div>
   <div class="space-large"></div>
   <div class="container">
-    <div class="row candidates">
-    @for($i = 0; $i < sizeof($data['candidates']); $i++)
-        
+    <div class="candidates">
+     @for($i = 0; $i < sizeof($data['candidates']); $i++)
         @if(!$data['candidates'][$i]->deleted)
-     <div class="{!! $data['candidates'][$i]->applNo !!} col l5 offset-l1 s5 offset-s1" } data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
-        <div class="card">
-          <div class=" waves-effect waves-block waves-light">  
-          </div>
+        <div class="{!! $data['candidates'][$i]->applNo !!} col l5 offset-l1 s12 " } data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
+        <div class="card center">
           <div class="card-content">
-
             <span class="card-title activator grey-text text-darken-4">Candidate's Card</span>
             <div class="row">
-              <div class="col l12 s12">
+              
                 <p>Registration Number:  {!! $data['candidates'][$i]->registrationNumber !!}</p>
-              </div>
-              <div class="col l12 s12">
-                <!-- <p>Date of Submission:</p> -->
-              </div>
+              
             </div>
            
-            <div class="space-small center">
+            <div class="space-small">
             </div>
             <div class="center">
               <a class="waves-effect waves-light btn modal-trigger" href="#modal{!! $i !!}">Click Here To view full form</a>
             </div>
-           <!--  {!! Form::open(array('action'=>array('AdminController@deleted' , ))) !!}
+          </div>
+          </div>
 
-            {!! Form::submit('Reject Application', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
-            {!! Form::close() !!} -->
-          </div>
-          
-          </div>
           <div id="modal{!! $i !!}" class="modal l8">
           <div class="modal-content">
           <h4>Candidate's Form</h4>
@@ -146,20 +137,35 @@
           
           <p><b>Submission Date:</b> {!! $data['others'][$i]->subdate !!}</p>
         </div>
-      <div class="modal-footer">
-        
-        <a href="#!" data-reg={!! $data['candidates'][$i]->applNo!!} class="discard btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
+      <div class="modal-footer center">
+        <div class="col s12">
+          <a href="#!" data-reg={!! $data['candidates'][$i]->applNo!!} class="discard1 btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
         <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
+        </div>
+        <div class="col s12">
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn-flat">Accept</a>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn modal-action modal-close waves-effect waves-green btn-flat">Admit</a>
-      </div>
-      </div>
         </div>
+      </div>
+      </div>
         
-      @endif
-      @endfor
+    <div class="modal" id="discard">
+      <div class="modal-content">
+        <p class="large">
+        Enter Message Here:-
+        </p>
+        <textarea required id="discard-msg" class="materialize-textarea" name="discard-msg" maxlength="500" placeholder="Enter your message here"></textarea>
+      </div>
+
+      <div class="modal-footer">
+        <a href="#!" data-reg={!! $data['candidates'][$i]->applNo!!} class="discard btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
+      </div>
+    </div> 
     </div>
-    <div class="center">
+          @endif
+          @endfor
+
+        <div class="center">
       <ul class="pagination">
     <li class="disabled"><a href={!! $data["candidates"]->previousPageUrl()!!}><i class="material-icons">chevron_left</i></a></li>
     <li class="active teal" ><a href="#!">{!! $data["candidates"]->currentPage() !!}</a></li>
@@ -171,7 +177,9 @@
 <div class="center">
    <a class="waves-effect waves-light btn" href="ms">View M.S. applicants</a>
   </div>
+   </div>
 <div class="space-large"></div>
+
 <footer class="page-footer teal darken-4">
           <div class="container">
             <div class="row">
@@ -216,4 +224,3 @@
 
 </body>
 </html>
-

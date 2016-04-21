@@ -22,7 +22,7 @@ $(document).ready(function(){
 	        success: function(data){
 	        	console.log(data);
 	        	$('.'+applNo).hide('slow');
-	        	location.reload();
+	        		location.reload();
 	        },
 	        error: function(jqXHR,testStatus,errorThrown){
 	        	console.log(errorThrown);

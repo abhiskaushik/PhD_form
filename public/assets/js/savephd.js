@@ -9,10 +9,10 @@ $(document).ready(function(){
 		var data = {};
 		data.name = $('#name').val();
 		data.email = $('#email').val();
-		data.appl_categ = $('#appl_categ').val();
-		data.department1 = $('#department1').val();
-		data.department2 = $('#department2').val();
-		data.department3 = $('#department3').val();
+		data.appl_categ = $('.applicationCateg option:selected').text();
+		data.department1 = $('#department1 option:selected').text();
+		data.department2 = $('#department2 option:selected').text();
+		data.department3 = $('#department3 option:selected').text();
 		data.email = $('#email').val();
 		data.area_of_research = $('#area_of_research').val();
 		data.father_name = $('#father_name').val();
@@ -25,13 +25,14 @@ $(document).ready(function(){
 		data.ug_deg = $('#ug_deg').val();
 		data.ug_branch = $('#ug_branch').val();
 		data.ug_gpa = $('#ug_gpa').val();
-		data.ug_class = $('#ug_class').val();
+		data.ug_class = $('#ug_class option:selected').text();
 		data.ug_name_of_inst = $('#ug_name_of_inst').val();
 		data.ug_name_of_uni = $('#ug_name_of_uni').val();
 		data.ug_yop = $('#ug_yop').val();
 		data.pg_deg = $('#pg_deg').val();
 		data.pg_branch = $('#pg_branch').val();
 		data.pg_gpa = $('#pg_gpa').val();
+		data.pg_class = $('#pg_class option:selected').text();
 		data.pg_name_of_inst = $('#pg_name_of_inst').val();
 		data.pg_name_of_uni = $('#pg_name_of_uni').val();
 		data.pg_yop = $('#pg_yop').val();
@@ -55,8 +56,23 @@ $(document).ready(function(){
 		data.emp_to_2 = $('#emp_to_2').val();
 		data.emp_to_3 = $('#emp_to_3').val();
 		data.date = $('#date').val();
+
+		if($('#announced').is(':checked')){
+			data.exam = $('#exam option:selected').text();
+			data.score = $('#score').val();
+			data.rank = $('#rank').val();
+			data.validity = $('#validity').val();
+			data.discipline = $('#discipline').val();
+		}
+		else{
+			data.exam ='';
+			data.score ='';
+			data.rank ='';
+			data.validity ='';
+			data.discipline ='';
+		}
+
 		console.log(data);
-		
 		
 		var baseurl = 'http://localhost:8000';
 		var url = '/savephd';
