@@ -61,6 +61,7 @@ $(document).ready(function(){
 		data.sex = $('#sex option:selected').text();
 		data.ph = $('#ph option:selected').text();
 		data.marital_status = $('#marital_status option:selected').text();
+		data.checker = $('.checker').val();
 		console.log(data);
 		count++;
 		if(data.appl_categ == 'Select' || data.department1 == 'Department 1' || data.department2 == 'Department 2' || data.department3 == 'Department 3' || data.marital_status == 'Choose your Marital Status' || data.sex == 'Choose your Gender' || data.category == 'Choose your Category' || data.ph == 'Choose your option'){
@@ -71,9 +72,81 @@ $(document).ready(function(){
 			
 			return false;
 		}
-		$('#regNo').openModal();
-		return true;
-	})
+
+		$.ajaxSetup(
+	    {
+	        headers:
+	        {
+	            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	        }
+	    });
+		
+		
+		var baseurl = 'http://localhost:8000';
+		var url = '/';//route to the controller goes here
+		$.ajax(
+	    {
+	        type: "POST",
+	        url: baseurl + url,
+	        data: data,
+	        dataType: "json",
+	        success: function(data){
+	        	//append the regNo which we get from controller to modal
+	        	$('.regno').append('<p>You Registration Number is: '+ data + '</p>');
+	        	$('#regNo').openModal();
+	        },
+	        error: function(jqXHR,testStatus,errorThrown){
+	        	console.log(errorThrown);
+	        }
+		});
+		// 
+		// return true;
+	});
+
+	//validating front-end in form 3
+	$('.valid1').click(function(){
+		var data={};
+		data.appl_categ = $('.applicationCateg option:selected').text();
+		data.department1 = $('#department1 option:selected').text();
+		data.department2 = $('#department2 option:selected').text();
+		data.department3 = $('#department3 option:selected').text();
+		data.category = $('#category option:selected').text();
+		data.sex = $('#sex option:selected').text();
+		data.ph = $('#ph option:selected').text();
+		data.marital_status = $('#marital_status option:selected').text();
+		data.checker = $('.checker').val();
+		data.ug_class = $('#ug_class option:selected').text();
+		if(data.checker == 'phd'){
+		data.pg_class = $('#pg_class option:selected').text();
+		if($('#announced').prop('checked',true)){
+				data.exam = data.pg_class = $('#exam option:selected').text();
+		}
+		console.log(data);
+		count++;
+		if(data.appl_categ == 'Select' || data.department1 == 'Department 1' || data.department2 == 'Department 2' || data.department3 == 'Department 3' || data.marital_status == 'Choose your Marital Status' || data.sex == 'Choose your Gender' || data.category == 'Choose your Category' || data.ph == 'Choose your option' || data.ug_class == '' || data.pg_class == ''){
+			var error = "Please select all the dropdowns";
+			if(count==1)
+				$('#error .modal-content .error').append('<p>'+error+'</p>');
+			$('#error').openModal();
+			
+			return false;
+		}
+		}
+		else{
+			console.log(data);
+		count++;
+		if(data.appl_categ == 'Select' || data.department1 == 'Department 1' || data.department2 == 'Department 2' || data.department3 == 'Department 3' || data.marital_status == 'Choose your Marital Status' || data.sex == 'Choose your Gender' || data.category == 'Choose your Category' || data.ph == 'Choose your option' || data.ug_class == ''){
+			var error = "Please select all the dropdowns";
+			if(count==1)
+				$('#error .modal-content .error').append('<p>'+error+'</p>');
+			$('#error').openModal();
+			
+			return false;
+		}	
+		}
+
+		
+	});	
 
 	$('.applicationCateg').change(function()
 	{

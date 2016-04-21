@@ -55,7 +55,7 @@
 
 		{!! Form::open(array('url'=>'phdvalidate','method'=>'POST', 'files'=>true )) !!}	
 
-
+		<input type="text" hidden value="phd" class="checker" />
   		<div class="row">  					   
   			<p class="large">Application Category</p>		    
 		        

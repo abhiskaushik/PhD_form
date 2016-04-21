@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
 	<link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
 	<link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> 
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 	<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/jquery-ui.js')}}"></script>
@@ -55,7 +55,7 @@
 
 		{!! Form::open(array('url'=>'phdvalidate','method'=>'POST', 'files'=>true )) !!}	
 
-
+		<input type="text" hidden value="ms" class="checker" />
   		<div class="row">  					   
   			<p class="large">Application Category</p>		    
 		        
@@ -270,7 +270,6 @@
 
   		<div class="center">
   		<a class="valid teal darken-1 send-btn btn waves-effect waves-light">Submit</a>
-	 {!! Form::submit('Submit', array('class'=>'valid teal darken-1 send-btn btn waves-effect waves-light' )) !!}
 	 </div>
 	 	
 	      {!! Form::close() !!}
@@ -289,7 +288,8 @@
 
 	      <div id="regNo" class="modal">	
 	      	<div class="modal-content">
-	      		Your reg no is blah blah blah..
+	      		<div class="regno"></div>
+	      		
 	      	</div>
 	      	<div class="modal-footer">
 	      		{!! Form::submit('Submit Form', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
@@ -298,6 +298,8 @@
 
 	      <div id="preview" class="modal">	
 	      </div>
+
+
 
 <div class="space-large"></div>
 <footer class="page-footer teal darken-4">

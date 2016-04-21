@@ -47,9 +47,9 @@
   <div class="container">
     <div class="row">
   {!! Form::open(array('url'=>'phdvalidate','method'=>'POST', 'files'=>true )) !!}  
-
+  <input type="text" hidden value="phd" class="checker" />
   <div class="row">              
-        <p class="large">Application Category</p>       
+        <p class="vlarge">Application Category</p>       
             
               
             <div class="input-field col l6 s12">
@@ -584,8 +584,8 @@
 
       <div class="center">
       <a id="preview1" href="#preview" class="teal darken-1 waves-effect waves-light btn modal-trigger">Preview Form</a>
-      
-   {!! Form::submit('Submit', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
+      <a class="valid1 teal darken-1 send-btn btn waves-effect waves-light">Submit</a>
+   {!! Form::submit('Submit', array('class'=>'valid1 teal darken-1 send-btn btn waves-effect waves-light' )) !!}
    <a id="save" class="teal darken-1 send-btn btn waves-effect waves-light center">Save Form</a>
    </div>
     
@@ -593,8 +593,16 @@
         </div>
   </div>
 
-  <div id="preview" class="modal">
-          
+    <div class="modal" id="error">
+          <div class="modal-content">
+            <div class="error"></div>
+          </div>
+          <div class="modal-footer">
+            <a class="btn modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+          </div>
+        </div>
+
+        <div id="preview" class="modal">  
         </div>
 
 <div class="space-large"></div>
