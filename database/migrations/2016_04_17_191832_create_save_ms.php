@@ -16,6 +16,7 @@ class CreateSaveMs extends Migration
             $table->increments('applNo');
             $table->string('applicationCategory', 20)->default('');
             $table->string('registrationNumber', 25)->default('');
+            $table->string('chalanNo', 30)->default('');
             $table->string('dateOfReg', 15)->default('');
             $table->string('imagePath', 50)->default('');
             $table->string('dept1', 50)->default('');
@@ -35,6 +36,7 @@ class CreateSaveMs extends Migration
             $table->string('email', 100)->default('');
             $table->bigInteger('mobile')->default(7000000000);
             $table->bigInteger('lanline')->default(7000000000);
+            $table->string('age', 3)->default('');
             $table->string('ugdegreeName', 50)->default('');
             $table->string('ugbranch', 50)->default('');
             $table->string('uggpa', 5)->default('');

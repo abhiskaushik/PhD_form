@@ -16,6 +16,7 @@ class CreateSavePhd extends Migration
             $table->increments('applNo');
             $table->string('applicationCategory', 20)->default('');
             $table->string('registrationNumber', 25)->default('');
+            $table->string('chalanNo', 30)->default('');
             $table->string('dateOfReg', 15)->default('');
             $table->string('imagePath', 50)->default('');
             $table->string('dept1', 50)->default('');
@@ -29,6 +30,7 @@ class CreateSavePhd extends Migration
             $table->string('sex', 10)->nullable();
             $table->string('maritalStatus', 10)->nullable();
             $table->string('PH', 5)->nullable();
+            $table->string('age', 3)->default('');
             $table->string('nationality', 20)->default('');
             $table->string('addrforcomm', 150)->default('');
             $table->string('permanentaddr', 150)->default('');

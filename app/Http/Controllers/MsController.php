@@ -21,7 +21,8 @@ class MsController extends Controller
     public function validated(Request $request)
     {
 
-    	$rules = array(                        
+    	$rules = array(   
+            'chalanNo' => 'required',                     
 	        'date' => 'required',     
 	        'appl_categ' => 'required',
 	        'department1' => 'required',
@@ -181,6 +182,7 @@ class MsController extends Controller
 
             $candidate = new Ms();
 
+            $candidate->chalanNo = $request->input('chalanNo');
             $candidate->applicationCategory = $request->get('appl_categ');
             $candidate->dateOfReg = $request->get('date');
             $candidate->dept1 = $request->get('department1');

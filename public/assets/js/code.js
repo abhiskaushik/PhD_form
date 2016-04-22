@@ -61,6 +61,16 @@ $(document).ready(function(){
 		data.sex = $('#sex option:selected').text();
 		data.ph = $('#ph option:selected').text();
 		data.marital_status = $('#marital_status option:selected').text();
+		data.name = $('#name').val();
+		data.email = $('#email').val();
+		data.area_of_research = $('#area_of_research').val();
+		data.father_name = $('#father_name').val();
+		data.dob = $('#dob').val();
+		data.nationality = $('#nationality').val();
+		data.addr_for_commn = $('#addr_for_commn').val();
+		data.permanent_addr = $('#permanent_addr').val();
+		data.mobile = $('#mobile').val();
+		data.landline = $('#landline').val();
 		data.checker = $('.checker').val();
 		console.log(data);
 		count++;
@@ -83,7 +93,7 @@ $(document).ready(function(){
 		
 		
 		var baseurl = 'http://localhost:8000';
-		var url = '/';//route to the controller goes here
+		var url = '/save' + data.checker;//route to the controller goes here
 		$.ajax(
 	    {
 	        type: "POST",

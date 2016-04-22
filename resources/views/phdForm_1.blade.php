@@ -296,6 +296,14 @@
   		<a class="valid teal darken-1 send-btn btn waves-effect waves-light">Submit</a>
 	 
 	 </div>
+	 <div id="regNo" class="modal">	
+	      	<div class="modal-content">
+	      		Your reg no is blah blah blah..
+	      	</div>
+	      	<div class="modal-footer">
+	      		{!! Form::submit('Submit Form', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
+	      	</div>
+	      </div>
 	 	
 	      {!! Form::close() !!}
 	      </div>
@@ -307,15 +315,6 @@
 	      	</div>
 	      	<div class="modal-footer">
 	      		<a class="btn modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-	      	</div>
-	      </div>
-
-	      <div id="regNo" class="modal">	
-	      	<div class="modal-content">
-	      		Your reg no is blah blah blah..
-	      	</div>
-	      	<div class="modal-footer">
-	      		{!! Form::submit('Submit Form', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
 	      	</div>
 	      </div>
 

@@ -16,6 +16,7 @@ class CreatePhdcandidatesTable extends Migration
             $table->increments('applNo');
             $table->string('applicationCategory', 20);
             $table->string('registrationNumber', 25);
+            $table->string('chalanNo', 30);
             $table->string('dateOfReg', 15);
             $table->string('imagePath', 50);
             $table->string('dept1', 50);
@@ -29,6 +30,7 @@ class CreatePhdcandidatesTable extends Migration
             $table->string('sex', 10);
             $table->string('maritalStatus', 10);
             $table->string('PH', 5);
+            $table->string('age', 3);
             $table->string('nationality', 20);
             $table->string('addrforcomm', 150);
             $table->string('permanentaddr', 150);

@@ -23,7 +23,8 @@ class PhdController extends Controller
     {
 
     	$rules = array(                        
-	        'date' => 'required',     
+	        'date' => 'required', 
+            'chalanNo' => 'required',    
 	        'appl_categ' => 'required',
 	        'department1' => 'required',
             'department2' => 'required',
@@ -224,6 +225,7 @@ class PhdController extends Controller
             
             $candidate = new Phd();
 
+            $candidate->chalanNo = $request->input('chalanNo');
             $candidate->applicationCategory = $request->input('appl_categ');
             $candidate->dateOfReg = $request->input('date');
             $candidate->dept1 = $request->input('department1');
