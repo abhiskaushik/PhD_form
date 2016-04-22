@@ -13,7 +13,6 @@
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 	<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
-	<script src="{{URL::asset('assets/js/jquery-ui.js')}}"></script>
 	<script src="{{URL::asset('assets/js/code_ms.js')}}"></script>
 	<script src="{{URL::asset('assets/js/savems.js')}}"></script>
 	
@@ -85,42 +84,40 @@
 		        <div class="input-field col l6 s6 ">
 
 		      		<select name="department1" required id="department1">
-
-		      			 <option value="" disabled selected>Department Preference 1</option>
-		      			<option value="CS">Computer Science and Engineering</option>
-		      			<option value="CL">Chemical</option>
-		      			<option value="CV">Civil Engineering </option>
-		      			<option value="EE">Electrical & Electronics Engineering</option>
-		      			<option value="EC">Electronics & Communication Engineering</option>
-		      			<option value="ME">Mechanical 
-		      			Engineering</option>
-		      			<option value="PR">Production Engineering</option
-		      			<option value="IC">Instrumentation And Control Engineering</option>
-		      			<option value="MME">Metalurgy and Material Sciences</option>
-		      			<option value="PH">Physics</option>
-		      			<option value="EN">DEE</option>
-		      			<option value="CC">CECASE</option>
+ 	<option value="" disabled selected>Department Preference 1</option>
+                <option value="CS">Computer Science and Engineering</option>
+                <option value="CL">Chemical Engineering</option>
+                <option value="CV">Civil Engineering </option>
+                <option value="CC">CECASE</option>
+                <option value="EN">Department of Energy Engineering</option>
+                <option value="EE">Electrical & Electronics Engineering</option>
+                <option value="EC">Electronics & Communication Engineering</option>
+                <option value="ME">Mechanical 
+                Engineering</option>
+                <option value="PR">Production Engineering</option
+                <option value="IC">Instrumentation And Control Engineering</option>
+                <option value="MME">Metalurgy and Material Sciences</option>
+                <option value="PH">Physics</option>
 		      		</select>
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 ">
 
 		      		<select name="department2" required id="department2">
-
-		      			 <option value="" disabled selected>Department Preference 1</option>
-		      			<option value="CS">Computer Science and Engineering</option>
-		      			<option value="CL">Chemical</option>
-		      			<option value="CV">Civil Engineering </option>
-		      			<option value="EE">Electrical & Electronics Engineering</option>
-		      			<option value="EC">Electronics & Communication Engineering</option>
-		      			<option value="ME">Mechanical 
-		      			Engineering</option>
-		      			<option value="PR">Production Engineering</option
-		      			<option value="IC">Instrumentation And Control Engineering</option>
-		      			<option value="MME">Metalurgy and Material Sciences</option>
-		      			<option value="PH">Physics</option>
-		      			<option value="EN">DEE</option>
-		      			<option value="CC">CECASE</option>
+ <option value="" disabled selected>Department Preference 2</option>
+                <option value="CS">Computer Science and Engineering</option>
+                <option value="CL">Chemical Engineering</option>
+                <option value="CV">Civil Engineering </option>
+                <option value="CC">CECASE</option>
+                <option value="EN">Department of Energy Engineering</option>
+                <option value="EE">Electrical & Electronics Engineering</option>
+                <option value="EC">Electronics & Communication Engineering</option>
+                <option value="ME">Mechanical 
+                Engineering</option>
+                <option value="PR">Production Engineering</option
+                <option value="IC">Instrumentation And Control Engineering</option>
+                <option value="MME">Metalurgy and Material Sciences</option>
+                <option value="PH">Physics</option>
 		      		</select>
 		      		
 		        </div>
@@ -128,20 +125,20 @@
 
 		      		<select name="department3" required id="department3">
 
-		      			 <option value="" disabled selected>Department Preference 1</option>
-		      			<option value="CS">Computer Science and Engineering</option>
-		      			<option value="CL">Chemical</option>
-		      			<option value="CV">Civil Engineering </option>
-		      			<option value="EE">Electrical & Electronics Engineering</option>
-		      			<option value="EC">Electronics & Communication Engineering</option>
-		      			<option value="ME">Mechanical 
-		      			Engineering</option>
-		      			<option value="PR">Production Engineering</option
-		      			<option value="IC">Instrumentation And Control Engineering</option>
-		      			<option value="MME">Metalurgy and Material Sciences</option>
-		      			<option value="PH">Physics</option>
-		      			<option value="EN">DEE</option>
-		      			<option value="CC">CECASE</option>
+		      			 <option value="" disabled selected>Department Preference 3</option>
+                <option value="CS">Computer Science and Engineering</option>
+                <option value="CL">Chemical Engineering</option>
+                <option value="CV">Civil Engineering </option>
+                <option value="CC">CECASE</option>
+                <option value="EN">Department of Energy Engineering</option>
+                <option value="EE">Electrical & Electronics Engineering</option>
+                <option value="EC">Electronics & Communication Engineering</option>
+                <option value="ME">Mechanical 
+                Engineering</option>
+                <option value="PR">Production Engineering</option
+                <option value="IC">Instrumentation And Control Engineering</option>
+                <option value="MME">Metalurgy and Material Sciences</option>
+                <option value="PH">Physics</option>
 		      		</select>
 		      		
 		        </div>

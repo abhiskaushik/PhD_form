@@ -13,7 +13,6 @@
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
-	<script src="{{URL::asset('assets/js/jquery-ui.js')}}"></script>
 	<script src="{{URL::asset('assets/js/code.js')}}"></script>
 	<script src="{{URL::asset('assets/js/savephd.js')}}"></script>
 	<script src="{{URL::asset('assets/js/preview.js')}}"></script>
@@ -53,7 +52,7 @@
 		<div class="space-medium"></div>
 		<div class="row">
 
-		{!! Form::open(array('url'=>'phdvalidate','method'=>'POST', 'files'=>true )) !!}	
+		
 
 		<input type="text" hidden value="phd" class="checker" />
   		<div class="row">  					   
@@ -115,6 +114,8 @@
 		      			<option value="CV">Civil Engineering </option>
 		      			<option value="CY">Chemistry </option>
 		      			<option value="CA">Computer Applications </option>
+		      			<option value="CC">CECASE</option>
+		      			<option value="EN">Department of Energy Engineering</option>
 		      			<option value="EC">Electronics & Communication Engineering</option>
 		      			<option value="EE">Electrical & Electronics Engineering</option>		      			
 		      			<option value="HM">Humanities & Social Science</option>
@@ -125,8 +126,8 @@
 		      			Engineering</option>
 		      			<option value="MME">Metalurgy and Material Engineering</option>
 		      			<option value="PR">Production Engineering</option>		      					 
-		      			<option value="EN">Department of Energy Engineering</option>
-		      			<option value="CC">CECASE</option>
+		      			
+		      			
 		      		</select>
 		      		
 		        </div>
@@ -141,6 +142,8 @@
 		      			<option value="CV">Civil Engineering </option>
 		      			<option value="CY">Chemistry </option>
 		      			<option value="CA">Computer Applications </option>
+		      			<option value="CC">CECASE</option>
+		      			<option value="EN">Department of Energy Engineering</option>
 		      			<option value="EC">Electronics & Communication Engineering</option>
 		      			<option value="EE">Electrical & Electronics Engineering</option>		      			
 		      			<option value="HM">Humanities & Social Science</option>
@@ -150,9 +153,7 @@
 		      			<option value="MS">Management Studies
 		      			Engineering</option>
 		      			<option value="MME">Metalurgy and Material Engineering</option>
-		      			<option value="PR">Production Engineering</option>		      					 
-		      			<option value="EN">Department of Energy Engineering</option>
-		      			<option value="CC">CECASE</option>
+		      			<option value="PR">Production Engineering</option>		      
 		      		</select>
 		      		
 		        </div>
@@ -160,13 +161,15 @@
 
 		      		<select name="department3" id="department3">
 
-		      		 <option value="" disabled selected>Department 3</option>
+		      		  <option value="" disabled selected>Department 3</option>
 		      			<option value="AR">Architecture</option>
 		      			<option value="CS">Computer Science and Engineering</option>
 		      			<option value="CL">Chemical Engineering</option>
 		      			<option value="CV">Civil Engineering </option>
 		      			<option value="CY">Chemistry </option>
 		      			<option value="CA">Computer Applications </option>
+		      			<option value="CC">CECASE</option>
+		      			<option value="EN">Department of Energy Engineering</option>
 		      			<option value="EC">Electronics & Communication Engineering</option>
 		      			<option value="EE">Electrical & Electronics Engineering</option>		      			
 		      			<option value="HM">Humanities & Social Science</option>
@@ -176,9 +179,7 @@
 		      			<option value="MS">Management Studies
 		      			Engineering</option>
 		      			<option value="MME">Metalurgy and Material Engineering</option>
-		      			<option value="PR">Production Engineering</option>		      					 
-		      			<option value="EN">Department of Energy Engineering</option>
-		      			<option value="CC">CECASE</option>
+		      			<option value="PR">Production Engineering</option>		      
 		      		</select>
 		      		
 		        </div>
@@ -294,18 +295,17 @@
 
   		<div class="center">
   		<a class="valid teal darken-1 send-btn btn waves-effect waves-light">Submit</a>
-	 
 	 </div>
-	 <div id="regNo" class="modal">	
+
+	 	    <div id="regNo" class="modal">	
+
 	      	<div class="modal-content">
 	      		Your reg no is blah blah blah..
 	      	</div>
 	      	<div class="modal-footer">
-	      		{!! Form::submit('Submit Form', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
+	      		<a class="redirect teal darken-1 send-btn btn waves-effect waves-light" >Proceed</a>
 	      	</div>
 	      </div>
-	 	
-	      {!! Form::close() !!}
 	      </div>
 	      </div>
 	      </div>
@@ -316,8 +316,7 @@
 	      	<div class="modal-footer">
 	      		<a class="btn modal-action modal-close waves-effect waves-green btn-flat">Close</a>
 	      	</div>
-	      </div>
-
+	      </div>	  
 	      <div id="preview" class="modal">	
 	      </div>
 

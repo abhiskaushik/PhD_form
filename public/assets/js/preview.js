@@ -215,7 +215,7 @@ $(document).ready(function(){
         <p><b>Area of Research:</b> '+data.area_of_research+'</p>\
         <p><b>Name of Candidate:</b> '+data.name+'</p>\
         <p><b>Email Id:</b> '+data.email+'</p>\
-        <p><b>Father"s Name:</b> '+data.father_name+'</p>\
+        <p><b>Father\'s Name:</b> '+data.father_name+'</p>\
         <p><b>Date of Birth:</b> '+data.dob+'</p>\
         <p><b>Category:</b> '+data.category+'</p>\
         <p><b>Sex:</b> '+data.sex+'</p>\

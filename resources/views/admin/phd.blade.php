@@ -11,9 +11,8 @@
   <!-- <link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> -->
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
-  <script src="{{URL::asset('assets/js/code.js')}}"></script>
+  <script src="{{URL::asset('assets/js/admin.js')}}"></script>
   <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
-  <script src="{{URL::asset('assets/js/ajaxcall.js')}}"></script>
   <script src="{{URL::asset('assets/js/print.js')}}"></script>
   
 </head>

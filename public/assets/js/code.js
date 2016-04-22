@@ -73,6 +73,7 @@ $(document).ready(function(){
 		data.landline = $('#landline').val();
 		data.checker = $('.checker').val();
 		console.log(data);
+		console.log($('#dob').val());
 		count++;
 		if(data.appl_categ == 'Select' || data.department1 == 'Department 1' || data.department2 == 'Department 2' || data.department3 == 'Department 3' || data.marital_status == 'Choose your Marital Status' || data.sex == 'Choose your Gender' || data.category == 'Choose your Category' || data.ph == 'Choose your option'){
 			var error = "Please select all the dropdowns";
@@ -102,7 +103,9 @@ $(document).ready(function(){
 	        dataType: "json",
 	        success: function(data){
 	        	//append the regNo which we get from controller to modal
-	        	$('.regno').append('<p>You Registration Number is: '+ data + '</p>');
+	        	var div = '<p>You Registration Number is: '+ data.reg_number + '</p>\
+	        				<a class="redirect teal darken-1 send-btn btn waves-effect waves-light" data-reg="'+data.reg_number+'">';
+	        	$('.regno').append(div);
 	        	$('#regNo').openModal();
 	        },
 	        error: function(jqXHR,testStatus,errorThrown){
@@ -113,6 +116,25 @@ $(document).ready(function(){
 		// return true;
 	});
 
+	$('.redirect').click(function()
+	{
+		var regNo = $(this).attr('data-reg');
+		var dept = regNo.split('/');
+		var categ = dept[0];
+		var applNo = dept[dept.length-1];
+		var checker = $('.checker').val();
+		var dob = $('#dob').value();
+		window.location = 'http://localhost:8000/'+checker + '/' + applNo + '/' + dob;
+	});
+	$('.redirect1').click(function()
+	{
+		var regNo = $('#regNo').val();
+		var dept = regNo.split('/');
+		var categ = dept[0];
+		var applNo = dept[dept.length-1];
+		var dob = $('#dob').value();
+		window.location = 'http://localhost:8000/'+categ + '/' + applNo + '/' + dob;
+	});
 	//validating front-end in form 3
 	$('.valid1').click(function(){
 		var data={};
@@ -195,20 +217,5 @@ $(document).ready(function(){
 	});
 	
 
-	$('#search').keyup(function(){
-		var searchVal = $(this).val().toLowerCase();
-		console.log(searchVal);
-		if(searchVal == ''){
-			$('.candidates > div').show();
-		}
-		else{
-			$('.candidates > div').each(function(){
-				var text = $(this).attr('data-reg');
-				text = text.toLowerCase();
-				console.log("text is-"+text);
-				(text.indexOf(searchVal) >= 0) ? $(this).show("slow") : $(this).hide("slow");
-			});
-
-		}
-	});
+	
 });

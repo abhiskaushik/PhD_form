@@ -13,7 +13,6 @@
 	<!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 	<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
-	<script src="{{URL::asset('assets/js/jquery-ui.js')}}"></script>
 	<script src="{{URL::asset('assets/js/code.js')}}"></script>
 	<script src="{{URL::asset('assets/js/savephd.js')}}"></script>
 	<script src="{{URL::asset('assets/js/preview.js')}}"></script>
@@ -53,8 +52,7 @@
 		<div class="space-medium"></div>
 		<div class="row">
 
-		{!! Form::open(array('url'=>'phdvalidate','method'=>'POST', 'files'=>true )) !!}	
-
+	
 		<input type="text" hidden value="ms" class="checker" />
   		<div class="row">  					   
   			<p class="large">Application Category</p>		    
@@ -272,7 +270,7 @@
   		<a class="valid teal darken-1 send-btn btn waves-effect waves-light">Submit</a>
 	 </div>
 	 	
-	      {!! Form::close() !!}
+	      
 	      </div>
 	      </div>
 	      </div>
@@ -292,7 +290,7 @@
 	      		
 	      	</div>
 	      	<div class="modal-footer">
-	      		{!! Form::submit('Submit Form', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
+	      		
 	      	</div>
 	      </div>
 
