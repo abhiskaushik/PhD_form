@@ -327,7 +327,7 @@ class PhdController extends Controller
 
             $details['reg_number'] = $reg_number;
             $details['phdorms'] = 'phd';
-
+    if($request->input('appl_categ') == 'External' || $request->input('appl_categ') == 'onCampus'){
             if($form1 && $form2)
             {
                 $form1 = $form1->move(public_path().'/uploads/PHD/'.$applNo, $applNo.'form1'.'.'.$extension1);
@@ -337,7 +337,7 @@ class PhdController extends Controller
             {
                 $form3 = $form3->move(public_path().'/uploads/PHD/'.$applNo, $applNo.'form3'.'.'.$extension3);
             }
-
+        }
             if($file)
             {
                 $file = $file->move(public_path().'/uploads/PHD/'.$applNo, $applNo.'.'.$extension);

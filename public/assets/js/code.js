@@ -54,13 +54,13 @@ $(document).ready(function(){
 	$('.valid').click(function(){
 		var data={};
 		data.appl_categ = $('.applicationCateg option:selected').text();
-		data.department1 = $('#department1 option:selected').text();
-		data.department2 = $('#department2 option:selected').text();
-		data.department3 = $('#department3 option:selected').text();
-		data.category = $('#category option:selected').text();
-		data.sex = $('#sex option:selected').text();
-		data.ph = $('#ph option:selected').text();
-		data.marital_status = $('#marital_status option:selected').text();
+		data.department1 = $('#department1 option:selected').val();
+		data.department2 = $('#department2 option:selected').val();
+		data.department3 = $('#department3 option:selected').val();
+		data.category = $('#category option:selected').val();
+		data.sex = $('#sex option:selected').val();
+		data.ph = $('#ph option:selected').val();
+		data.marital_status = $('#marital_status option:selected').val();
 		data.name = $('#name').val();
 		data.email = $('#email').val();
 		data.area_of_research = $('#area_of_research').val();
@@ -71,6 +71,7 @@ $(document).ready(function(){
 		data.permanent_addr = $('#permanent_addr').val();
 		data.mobile = $('#mobile').val();
 		data.landline = $('#landline').val();
+		data.age = $('#age').val();
 		data.checker = $('.checker').val();
 		console.log(data);
 		console.log($('#dob').val());
@@ -103,8 +104,16 @@ $(document).ready(function(){
 	        dataType: "json",
 	        success: function(data){
 	        	//append the regNo which we get from controller to modal
-	        	var div = '<p>You Registration Number is: '+ data.reg_number + '</p>\
-	        				<a class="redirect teal darken-1 send-btn btn waves-effect waves-light" data-reg="'+data.reg_number+'">';
+	        	console.log(data);
+	        	if(data==0){
+	        		$('.regNo').remove();
+	        		$('#regNo .modal-content').append('<div class="regNo"></div>');
+	        		var div = '<p>User already exists</p>';
+	        	}
+	        	else{
+	        		var div = '<p>You Registration Number is: '+ data + '</p>\
+	        				<a class="redirect teal darken-1 send-btn btn waves-effect waves-light" data-reg="'+data+'">Proceed</a>';
+	        	}
 	        	$('.regno').append(div);
 	        	$('#regNo').openModal();
 	        },
@@ -116,15 +125,16 @@ $(document).ready(function(){
 		// return true;
 	});
 
-	$('.redirect').click(function()
+	$('#regNo').on('click' , '.redirect' ,function()
 	{
+		alert('jdfjds');
 		var regNo = $(this).attr('data-reg');
 		var dept = regNo.split('/');
 		var categ = dept[0];
 		var applNo = dept[dept.length-1];
 		var checker = $('.checker').val();
-		var dob = $('#dob').value();
-		window.location = 'http://localhost:8000/'+checker + '/' + applNo + '/' + dob;
+		var dob = $('#dob').val();
+		window.location = 'http://localhost:8000/fetch/'+checker + '/' + applNo + '/' + dob;
 	});
 	$('.redirect1').click(function()
 	{

@@ -300,11 +300,9 @@
 	 	    <div id="regNo" class="modal">	
 
 	      	<div class="modal-content">
-	      		Your reg no is blah blah blah..
+	      		<div class="regno"></div>
 	      	</div>
-	      	<div class="modal-footer">
-	      		<a class="redirect teal darken-1 send-btn btn waves-effect waves-light" >Proceed</a>
-	      	</div>
+	      	
 	      </div>
 	      </div>
 	      </div>

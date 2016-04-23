@@ -15,6 +15,7 @@
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/code.js')}}"></script>
 	<script src="{{URL::asset('assets/js/savephd.js')}}"></script>
+	<script src="{{URL::asset('assets/js/preview.js')}}"></script>
 	
 </head>
 <body>
@@ -363,7 +364,7 @@
 		      	</div>
 		      	<div class="input-field col l6">
 		      		<span class="light">Class:</span>
-		      		<select required name = 'pgclass' id="pgclass">
+		      		<select required name = "pg_class" id="pgclass">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option  value="Honours">Honours</option>
 				      <option  value="Distinction">Distinction</option>
@@ -516,6 +517,17 @@
 		      		<p>Date of Submission</p>
 		      		<input required id="date" type="date" name="date" class="validate" max="2016-06-31" min="2016-01-31" value="{!! $details->date !!}">
 		      	</div>
+		      	<div class="upload col l6 s6 ">
+		    <p>Upload Signature</p>
+		      	<div class="file-field input-field">
+	          		<div class="btn teal darken-1 btn waves-effect waves-light">
+	          			<span class="light">File</span>
+	          			{!! Form::file('sign' , array('class'=>'', 'required')) !!}			
+	          		</div>
+	          		<div class="file-path-wrapper">
+        				<input class="file-path validate" type="text">
+      				</div>
+	          	</div>
 		      	<div class="space-medium"></div>
 		      	
 		      </div>
@@ -546,7 +558,7 @@
 
 	       <div id="preview" class="modal">
           
-        </div>
+        	</div>
 <div class="space-large"></div>
 <footer class="page-footer teal darken-4">
           <div class="container">
