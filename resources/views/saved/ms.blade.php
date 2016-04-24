@@ -233,7 +233,7 @@
 		       <div class="row">
 		        <div class="input-field col l6"> 
 		        	<span for="textarea1">Address for Communication</span><br>     		  
-					<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200" value="{!! $details->addrforcommn !!}"></textarea>
+					<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200" value="{!! $details->addrforcomm !!}"></textarea>
 		            
 
 		            <p>Mobile Number:</p>
@@ -552,6 +552,18 @@
 	$(document ).ready(function(){
 		$(".button-collapse").sideNav();
 		$('select').material_select();
+		console.log('hey');
+		console.log('{!! $details->addrforcomm !!}');
+		$("textarea#addr_for_commn").val('{!! $details->addrforcomm !!}');
+		$("textarea#permanent_addr").val('{!! $details->permanentaddr !!}');
+		var x = $('#department1 option');
+		var y = '{!! $details->dept1 !!}';
+		console.log(y);
+		x[0].selected = false;
+		x[1].selected = true;
+		console.log($('#department1 option:selected'));
+		console.log(x[1].selected);
+
 	})
 	</script>
 
