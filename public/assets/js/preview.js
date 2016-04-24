@@ -201,12 +201,12 @@ $(document).ready(function(){
 
 		console.log(data);
 		
-		var div = '<div class="modal-content">\
+		var div = '<div class="modal-content padding">\
         <h4>Candidate\'s Form</h4>\
         \
 <p><b>Registration Number:</b> '+data.reg_number+'</p>\
         <p><b>Date of Registration:</b> '+data.date+'</p>\
-      </div>\
+      \
         <p><b>Application Category:</b> '+data.appl_categ+'</p>\
         <p><b>Department 1:</b> '+data.department1+'</p>\
         <p><b>Department 2:</b> '+data.department2+'</p>\
@@ -235,26 +235,27 @@ $(document).ready(function(){
         <p><b>Undergraduate Year of Passing:</b> '+data.ug_yop+'</p>\
         \
         <p><b>Academic Details</b></p>\
-        <p><b>Semester 1:</b> <span>G.P.A. Obtained:'+data.gpa1 +'</span><span class="right">Max. G.P.A: '+data.max1+'</span></p>\
-        <p><b>Semester 2:</b> <span>G.P.A. Obtained:'+data.gpa2 +'</span><span class="right">Max. G.P.A: '+data.max2+'</span></p>\
-        <p><b>Semester 3:</b> <span>G.P.A. Obtained:'+data.gpa3 +'</span><span class="right">Max. G.P.A: '+data.max3+'</span></p>\
-        <p><b>Semester 4:</b> <span>G.P.A. Obtained:'+data.gpa4 +'</span><span class="right">Max. G.P.A: '+data.max4+'</span></p>\
-        <p><b>Semester 5:</b> <span>G.P.A. Obtained:'+data.gpa5 +'</span><span class="right">Max. G.P.A: '+data.max5+'</span></p>\
-        <p><b>Semester 6:</b> <span>G.P.A. Obtained:'+data.gpa6 +'</span><span class="right">Max. G.P.A: '+data.max6+'</span></p>\
-        <p><b>Semester 7:</b> <span>G.P.A. Obtained:'+data.gpa7 +'</span><span class="right">Max. G.P.A: '+data.max7+'</span></p>\
-        <p><b>Semester 8:</b> <span>G.P.A. Obtained:'+data.gpa8 +'</span><span class="right">Max. G.P.A: '+data.max8+'</span></p>\
+        <p><b>Semester 1:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa1 +'</p><p class="modal-p">Max. G.P.A: '+data.max1+'</p></p>\
+        <p><b>Semester 2:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa2 +'</p><p class="modal-p">Max. G.P.A: '+data.max2+'</p></p>\
+        <p><b>Semester 3:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa3 +'</p><p class="modal-p">Max. G.P.A: '+data.max3+'</p></p>\
+        <p><b>Semester 4:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa4 +'</p><p class="modal-p">Max. G.P.A: '+data.max4+'</p></p>\
+        <p><b>Semester 5:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa5 +'</p><p class="modal-p">Max. G.P.A: '+data.max5+'</p></p>\
+        <p><b>Semester 6:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa6 +'</p><p class="modal-p">Max. G.P.A: '+data.max6+'</p></p>\
+        <p><b>Semester 7:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa7 +'</p><p class="modal-p">Max. G.P.A: '+data.max7+'</p></p>\
+        <p><b>Semester 8:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa8 +'</p><p class="modal-p">Max. G.P.A: '+data.max8+'</p></p>\
         <p><b>Employer Details 1:</b> '+data.employer_details_1+'</p>\
-        <p><b>Postition 1:</b> '+data.emp_pos_1+'</p>\
-        <p><b>From 1:</b> '+data.emp_from_1+'</p>\
-        <p><b>To 1:</b> '+data.emp_to_1+'</p>\
+        <p><b>Position 1:</b> '+data.emp_pos_1+'</p>\
+        <p class="modal-p"><b>From 1:</b> '+data.emp_from_1+'</p>\
+        <p class="modal-p"><b>To 1:</b> '+data.emp_to_1+'</p>\
         <p><b>Employer Details 2:</b> '+data.employer_details_2+'</p>\
-        <p><b>Postition 2:</b> '+data.emp_pos_2+'</p>\
-        <p><b>From 2:</b> '+data.emp_from_2+'</p>\
-        <p><b>To 2:</b> '+data.emp_to_2+'</p>\
+        <p><b>Position 2:</b> '+data.emp_pos_2+'</p>\
+        <p class="modal-p"><b>From 2:</b> '+data.emp_from_2+'</p>\
+        <p class="modal-p"><b>To 2:</b> '+data.emp_to_2+'</p>\
         <p><b>Employer Details 3:</b> '+data.employer_details_3+'</p>\
-        <p><b>Postition 3:</b> '+data.emp_pos_3+'</p>\
-        <p><b>From 3:</b> '+data.emp_from_3+'</p>\
-        <p><b>To 3:</b> '+data.emp_to_3+'</p>\
+        <p><b>Position 3:</b> '+data.emp_pos_3+'</p>\
+        <p class="modal-p"><b>From 3:</b> '+data.emp_from_3+'</p>\
+        <p class="modal-p"><b>To 3:</b> '+data.emp_to_3+'</p>\
+        </div>\
       <div class="modal-footer">\
       </div>\
       </div>';
