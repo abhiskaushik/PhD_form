@@ -56,7 +56,7 @@
 
 		<div class="row">
 			<div class="col l6 s12">
-				<p>Chalan Number:</p>
+				<p>Bank Reference Number:</p>
 				<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number. " required />
 			</div>
 		</div>
@@ -266,7 +266,7 @@
 		       <div class="row">
 		        <div class="input-field col l6"> 
 		        	<span for="textarea1">Address for Communication</span><br>     		  
-					<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200" value="{!! $details->addrforcommn !!}"></textarea>
+					<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200"></textarea>
 		            
 
 		            <p>Mobile Number:</p>
@@ -304,8 +304,8 @@
 		      <div class="row">
 		      	
 		      	<div class="input-field col l6 ">
-		      		<span class="light">C.G.P.A:</span>
-		      		<input required placeholder="C.G.P.A" id="ug_gpa" type="number" class="validate ug_cgpa" name="ug_gpa" min="4" max="10" step="0.01" value="{!! $details->uggpa !!}" >
+		      		<span class="light">C.G.P.A/Percentage:</span>
+		      		<input required placeholder="C.G.P.A" id="ug_gpa" type="number" class="validate ug_cgpa" name="ug_gpa" min="4" max="100" step="0.01" value="{!! $details->uggpa !!}" >
 		      	</div>
 		      	<div class="input-field col l6">
 		      		<span class="light">Class:</span>
@@ -320,7 +320,7 @@
 		      </div> 
 		      <p>
 		      	<input type="checkbox" id="ra1" name="ra1" />
-			      <label for="ra1">If results are not announced,click </label>
+			      <label for="ra1">Click here if final semester results are not announced.</label>
 		      </p>
 		      </div>
 		      </div>
@@ -337,7 +337,7 @@
 		      	</div>
 
 		      	<div class="input-field col l4 s4">
-		      		<span class="light">Year of Passing</span>
+		      		<span class="light">Year of Passing:</span>
 		      		<input required id="ug_yop" type="number" class="validate" name="ug_yop" min="2000" max="2018" value="{!! $details->ugyop !!}">
 		      	</div>
 		      </div>
@@ -359,8 +359,8 @@
 		      <div class="row">
 		      	
 		      	<div class="input-field col l6">
-		      		<span class="light">C.G.P.A:</span>
-		      		<input required placeholder="C.G.P.A" id="pg_gpa" type="number" class="validate pg_cgpa" name="pg_gpa" min="4" max="10" step="0.01" value="{!! $details->pggpa !!}">
+		      		<span class="light">C.G.P.A/Percentage:</span>
+		      		<input required placeholder="C.G.P.A" id="pg_gpa" type="number" class="validate pg_cgpa" name="pg_gpa" min="4" max="100" step="0.01" value="{!! $details->pggpa !!}">
 		      	</div>
 		      	<div class="input-field col l6">
 		      		<span class="light">Class:</span>
@@ -375,7 +375,7 @@
 		      </div> 
 		      <p>
 			      <input type="checkbox" id="ra2" name="ra2" />
-			      <label for="ra2">If results are not announced,click </label>
+			      <label for="ra2">Click here if final semester results are not announced.</label>
 			  </p>
 		      </div>
 		      </div>
@@ -398,17 +398,16 @@
 
 		      <div class="row">
 		      	<span class="light">Other Details:</span>
-		      	<p>(*Write as 'RA'if results awaiting)</p>
 		      	<div class="space-small"></div>
 		      	<div class="results_announced center">
-		      		<p class="center">Are results announced?</p>
+		      		<p class="center">Qualified in GATE/NET/SLET/CSIR/CAT/UGC/NBHM</p>
 		      		<span>
 		      			<input type="checkbox" id="announced" name="ann" />
-		      			<label for="announced">Announced</label>
+		      			<label for="announced">Yes</label>
 		      		</span>
 		      		<span>
 		      			<input type="checkbox" id="nannounced" name="nann" />
-		      			<label for="nannounced">Not-Announced</label>
+		      			<label for="nannounced">No</label>
 		      		</span>
 		      	</div>
 		      	<div class="space-medium"></div>
@@ -593,6 +592,9 @@
 	$(document ).ready(function(){
 		$(".button-collapse").sideNav();
 		$('select').material_select();
+		alert({!! $details->addrforcommn !!});
+		$('#addr_for_commn').val({!! "hey".$details->addrforcommn !!});
+
 	})
 	</script>
 

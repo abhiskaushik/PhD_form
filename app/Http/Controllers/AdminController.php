@@ -127,7 +127,7 @@ class AdminController extends Controller
             $user = Phd::select('name', 'email')
                                 ->where('applNo', $appl_number)
                                 ->first();                 
-            Mail::send('emails.reminder', ['user' => $user->name], function ($m) {
+            Mail::send('emails.delete', ['user' => $user->name], function ($m) {
                 $m->to('sshchandana.bitra@gmail.com', 'Applicant' )->subject('Greetings from NITT!');
             });
 
@@ -141,7 +141,7 @@ class AdminController extends Controller
             $user = Ms::select('name', 'email')
                                 ->where('applNo', $appl_number)
                                 ->first();
-            Mail::send('emails.reminder', ['user' => $user->name], function ($m) {
+            Mail::send('emails.delete', ['user' => $user->name], function ($m) {
                 $m->to('sshchandana.bitra@gmail.com', 'Applicant')->subject('Greetings from NITT!');
             });
 
@@ -162,7 +162,7 @@ class AdminController extends Controller
                                 ->where('applNo', $appl_number)
                                 ->first();
 
-            Mail::send('emails.reminder', ['user' => $user->name], function ($m) {
+            Mail::send('emails.accept', ['user' => $user->name], function ($m) {
                 $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
             });
             
@@ -177,7 +177,7 @@ class AdminController extends Controller
                                 ->where('applNo', $appl_number)
                                 ->first();
 
-            Mail::send('emails.reminder', ['user' => $user->name], function ($m) {
+            Mail::send('emails.accept', ['user' => $user->name], function ($m) {
                 $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
             });
 

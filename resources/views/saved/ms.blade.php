@@ -55,7 +55,7 @@
 		<!-- <input type="hidden" name="_token" id="_token" value={!! csrf_field() !!} /> -->			
 		<div class="row">
 			<div class="col l6 s12">
-				<p>Chalan Number:</p>
+				<p>Bank Reference Number:</p>
 				<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number. " required />
 			</div>
 		</div>
@@ -271,8 +271,8 @@
 		      <div class="row">
 		      	
 		      	<div class="input-field col l6 ">
-		      		<span class="light">C.G.P.A:</span>
-		      		<input required placeholder="C.G.P.A" id="ug_gpa" type="number" class="validate ug_cgpa" name="ug_gpa" min="4" max="10" step="0.01" value="{!! $details->uggpa !!}" >
+		      		<span class="light">C.G.P.A/Percentage:</span>
+		      		<input required placeholder="C.G.P.A" id="ug_gpa" type="number" class="validate ug_cgpa" name="ug_gpa" min="4" max="100" step="0.01" value="{!! $details->uggpa !!}" >
 		      	</div>
 		      	<div class="input-field col l6">
 		      		<span class="light">Class:</span>
@@ -287,7 +287,7 @@
 		      </div> 
 		      <p>
 		      	<input type="checkbox" id="ra1" name="ra1" />
-			      <label for="ra1">If results are not announced,click </label>
+			      <label for="ra1">Click here if final semester results are not announced.</label>
 		      </p>
 		      </div>
 		      </div>
@@ -409,7 +409,7 @@
 		      </div>
 		      <p>
 		      	<input type="checkbox" id="ra3" name="ra3" />
-			      <label for="ra3">If the Semester results are not announced,click </label>
+			      <label for="ra3">Click here if final semester results are not announced.</label>
 		      </p>
 		      <div class="row">
 		      	<span class="light">Details of Professional Experience</span>

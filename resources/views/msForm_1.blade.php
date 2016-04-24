@@ -54,34 +54,7 @@
 
 	
 		<input type="text" hidden value="ms" class="checker" />
-  		<div class="row">  					   
-  			<p class="large">Application Category</p>		    
-		        
-		      		
-				    <div class="input-field col l6 s12">
-		      		<select name="appl_categ" class="applicationCateg" id="appl_categ">
-				      <option value="" disabled selected>Choose your option</option>
-				      <option value="Part Time">Part Time</option>
-				      <option value="Full Time">Full Time</option>
-				    </select>
-		        </div>		       
-
-				      <div class="upload col l6 s12 ">
-		    <p class="large">Upload Image</p>
-		      	<div class="file-field input-field">
-	          		<div class="btn teal darken-1 btn waves-effect waves-light">
-	          			<span class="light">File</span>
-	          			{!! Form::file('image_path' , array('class'=>'', 'required')) !!}			
-	          		</div>
-	          		<div class="file-path-wrapper">
-        				<input class="file-path validate" type="text">
-      				</div>
-	          	</div>
-		      </div>
-		      
-
-		        </div>		        		    		    
-		        
+  		        
 		        
 		    
   		
@@ -96,62 +69,62 @@
 
 		      				      		<select name="department1" required id="department1">
 
-		      			 <option value="" disabled selected>Department Preference 1</option>
-		      			<option value="CS">Computer Science and Engineering</option>
-		      			<option value="CL">Chemical</option>
-		      			<option value="CV">Civil Engineering </option>
-		      			<option value="EE">Electrical & Electronics Engineering</option>
-		      			<option value="EC">Electronics & Communication Engineering</option>
-		      			<option value="ME">Mechanical 
-		      			Engineering</option>
-		      			<option value="PR">Production Engineering</option
-		      			<option value="IC">Instrumentation And Control Engineering</option>
-		      			<option value="MME">Metalurgy and Material Sciences</option>
-		      			<option value="PH">Physics</option>
-		      			<option value="EN">DEE</option>
-		      			<option value="CC">CECASE</option>
+		      			  <option value="" disabled selected>Department Preference 2</option>
+                <option value="CS">Computer Science and Engineering</option>
+                <option value="CL">Chemical Engineering</option>
+                <option value="CV">Civil Engineering </option>
+                <option value="CC">CECASE</option>
+                <option value="EN">Department of Energy Engineering</option>
+                <option value="EE">Electrical & Electronics Engineering</option>
+                <option value="EC">Electronics & Communication Engineering</option>
+                <option value="ME">Mechanical 
+                Engineering</option>
+                <option value="PR">Production Engineering</option
+                <option value="IC">Instrumentation And Control Engineering</option>
+                <option value="MME">Metalurgy and Material Sciences</option>
+                <option value="PH">Physics</option>
 		      		</select>
 
 		        </div>
 		        <div class="input-field col l6 s6 ">
 
-		      				      		<select name="department1" required id="department1">
+		      				      		<select name="department2" required id="department2">
 
-		      			 <option value="" disabled selected>Department Preference 1</option>
-		      			<option value="CS">Computer Science and Engineering</option>
-		      			<option value="CL">Chemical</option>
-		      			<option value="CV">Civil Engineering </option>
-		      			<option value="EE">Electrical & Electronics Engineering</option>
-		      			<option value="EC">Electronics & Communication Engineering</option>
-		      			<option value="ME">Mechanical 
-		      			Engineering</option>
-		      			<option value="PR">Production Engineering</option
-		      			<option value="IC">Instrumentation And Control Engineering</option>
-		      			<option value="MME">Metalurgy and Material Sciences</option>
-		      			<option value="PH">Physics</option>
-		      			<option value="EN">DEE</option>
-		      			<option value="CC">CECASE</option>
+		      			  <option value="" disabled selected>Department Preference 2</option>
+                <option value="CS">Computer Science and Engineering</option>
+                <option value="CL">Chemical Engineering</option>
+                <option value="CV">Civil Engineering </option>
+                <option value="CC">CECASE</option>
+                <option value="EN">Department of Energy Engineering</option>
+                <option value="EE">Electrical & Electronics Engineering</option>
+                <option value="EC">Electronics & Communication Engineering</option>
+                <option value="ME">Mechanical 
+                Engineering</option>
+                <option value="PR">Production Engineering</option
+                <option value="IC">Instrumentation And Control Engineering</option>
+                <option value="MME">Metalurgy and Material Sciences</option>
+                <option value="PH">Physics</option>
 		      		</select>
 
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 ">
-		      		<select name="department1" required id="department1">
+		      		<select name="department3" required id="department3">
 
-		      			 <option value="" disabled selected>Department Preference 1</option>
-		      			<option value="CS">Computer Science and Engineering</option>
-		      			<option value="CL">Chemical</option>
-		      			<option value="CV">Civil Engineering </option>
-		      			<option value="EE">Electrical & Electronics Engineering</option>
-		      			<option value="EC">Electronics & Communication Engineering</option>
-		      			<option value="ME">Mechanical 
-		      			Engineering</option>
-		      			<option value="PR">Production Engineering</option
-		      			<option value="IC">Instrumentation And Control Engineering</option>
-		      			<option value="MME">Metalurgy and Material Sciences</option>
-		      			<option value="PH">Physics</option>
-		      			<option value="EN">DEE</option>
-		      			<option value="CC">CECASE</option>
+		      			  <option value="" disabled selected>Department Preference 2</option>
+                <option value="CS">Computer Science and Engineering</option>
+                <option value="CL">Chemical Engineering</option>
+                <option value="CV">Civil Engineering </option>
+                <option value="CC">CECASE</option>
+                <option value="EN">Department of Energy Engineering</option>
+                <option value="EE">Electrical & Electronics Engineering</option>
+                <option value="EC">Electronics & Communication Engineering</option>
+                <option value="ME">Mechanical 
+                Engineering</option>
+                <option value="PR">Production Engineering</option
+                <option value="IC">Instrumentation And Control Engineering</option>
+                <option value="MME">Metalurgy and Material Sciences</option>
+                <option value="PH">Physics</option>
 		      		</select>
 
 		      		

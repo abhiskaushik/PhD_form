@@ -55,43 +55,7 @@
 		
 
 		<input type="text" hidden value="phd" class="checker" />
-  		<div class="row">  					   
-  			<p class="large">Application Category</p>		    
-		        
-		      		
-				    <div class="input-field col l6 s12">
-				    
-				        <select class="applicationCateg" name="appl_categ" required id="appl_categ">
-				        <option value="" disabled selected class="first">Select</option>
-				          <optgroup label="Part Time">
-				            <option value="onCampus">On Campus</option>
-				            <option value="External">External</option>
-				          </optgroup>
-				          <optgroup label="Full Time">
-				            <option value="stipendiary">Stipendiary</option>
-				            <option value="nonStipendiary">Non-Stipendiary</option>
-				            <option value="Project">Project</option>
-				      		<option value="Other">Other Fellowships</option>
-				          </optgroup>
-				        </select>
-				        <label>Choose Category</label>
-				      </div>
-
-				      <div class="upload col l6 s12 ">
-		    <p class="large">Upload Image</p>
-		      	<div class="file-field input-field">
-	          		<div class="btn teal darken-1 btn waves-effect waves-light">
-	          			<span class="light">File</span>
-	          			{!! Form::file('image_path' , array('class'=>'', 'required')) !!}			
-	          		</div>
-	          		<div class="file-path-wrapper">
-        				<input class="file-path validate" type="text">
-      				</div>
-	          	</div>
-		      </div>
-		      
-
-		        </div>		        		    		    
+  				        		    		    
 		        
 		        
 		    
@@ -270,7 +234,7 @@
 		       <div class="row">
 		        <div class="input-field col l6"> 
 		        	<span for="textarea1">Address for Communication</span><br>     		  
-					<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200"></textarea>
+					<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200" value="hey"></textarea>
 		            
 
 		            <span>Mobile Number:</span>

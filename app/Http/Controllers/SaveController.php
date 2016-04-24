@@ -17,7 +17,6 @@ use Log;
         public function savephd(Request $request)
         {
             $rules = array(                        
-                'appl_categ' => 'required',
                 'department1' => 'required',
                 'department2' => 'required',
                 'department3' => 'required',
@@ -46,7 +45,6 @@ use Log;
 
         	$candidate = new SavePhd();
 
-    		$candidate->applicationCategory = $request->input('appl_categ');
             $candidate->dept1 = $request->input('department1');
             $candidate->dept2 = $request->input('department2');
             $candidate->dept3 = $request->input('department3');
@@ -92,7 +90,6 @@ use Log;
         public function savems(Request $request)
         {
             $rules = array(                        
-                'appl_categ' => 'required',
                 'department1' => 'required',
                 'department2' => 'required',
                 'department3' => 'required',
@@ -121,7 +118,6 @@ use Log;
 
         	$candidate = new SaveMs();
 
-        	$candidate->applicationCategory = $request->get('appl_categ');
             $candidate->dept1 = $request->get('department1');
             $candidate->dept2 = $request->get('department2');
             $candidate->dept3 = $request->get('department3');
@@ -184,7 +180,7 @@ use Log;
     		else
     		{
     			$details = SaveMs::where('applNo', $applNo)
-                                        >where('dob', $dob)
+                                        ->where('dob', $dob)
                                         ->first();
                 if($details)
                 {

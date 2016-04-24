@@ -72,7 +72,7 @@ Route::get('phd1', function()
     });
 Route::get('phd3', function()
     {
-        return view('phdForm_3');
+        return view('saved.phd');
     });
 Route::get('ms1', function()
     {
