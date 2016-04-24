@@ -53,7 +53,6 @@ $(document).ready(function(){
 	//validating via front end 
 	$('.valid').click(function(){
 		var data={};
-		data.appl_categ = $('.applicationCateg option:selected').text();
 		data.department1 = $('#department1 option:selected').val();
 		data.department2 = $('#department2 option:selected').val();
 		data.department3 = $('#department3 option:selected').val();
@@ -74,9 +73,9 @@ $(document).ready(function(){
 		data.age = $('#age').val();
 		data.checker = $('.checker').val();
 		console.log(data);
-		console.log($('#dob').val());
+		// console.log($('#dob').val());
 		count++;
-		if(data.appl_categ == 'Select' || data.department1 == 'Department 1' || data.department2 == 'Department 2' || data.department3 == 'Department 3' || data.marital_status == 'Choose your Marital Status' || data.sex == 'Choose your Gender' || data.category == 'Choose your Category' || data.ph == 'Choose your option'){
+		if(data.department1 == '' || data.department2 == '' || data.department3 == '' || data.marital_status == '' || data.sex == '' || data.category == '' || data.ph == ''){
 			var error = "Please select all the dropdowns";
 			if(count==1)
 				$('#error .modal-content .error').append('<p>'+error+'</p>');
@@ -94,7 +93,7 @@ $(document).ready(function(){
 	    });
 		
 		
-		var baseurl = 'http://localhost:8000';
+		var baseurl = 'http://admission.nitt.edu';
 		var url = '/save' + data.checker;//route to the controller goes here
 		$.ajax(
 	    {
@@ -106,7 +105,6 @@ $(document).ready(function(){
 	        	//append the regNo which we get from controller to modal
 	        	console.log(data);
 	        	if(data==0){
-	        		$('.regNo').remove();
 	        		$('#regNo .modal-content').append('<div class="regNo"></div>');
 	        		var div = '<p>User already exists</p>';
 	        	}
@@ -114,6 +112,7 @@ $(document).ready(function(){
 	        		var div = '<p>You Registration Number is: '+ data + '</p>\
 	        				<a class="redirect teal darken-1 send-btn btn waves-effect waves-light" data-reg="'+data+'">Proceed</a>';
 	        	}
+	        	$('.regno').html("");
 	        	$('.regno').append(div);
 	        	$('#regNo').openModal();
 	        },
@@ -127,14 +126,13 @@ $(document).ready(function(){
 
 	$('#regNo').on('click' , '.redirect' ,function()
 	{
-		alert('jdfjds');
 		var regNo = $(this).attr('data-reg');
 		var dept = regNo.split('/');
 		var categ = dept[0];
 		var applNo = dept[dept.length-1];
 		var checker = $('.checker').val();
 		var dob = $('#dob').val();
-		window.location = 'http://localhost:8000/fetch/'+checker + '/' + applNo + '/' + dob;
+		window.location = 'http://admission.nitt.edu/fetch/'+ checker + '/' + applNo + '/' + dob;
 	});
 	$('.redirect1').click(function()
 	{
@@ -142,8 +140,9 @@ $(document).ready(function(){
 		var dept = regNo.split('/');
 		var categ = dept[0];
 		var applNo = dept[dept.length-1];
-		var dob = $('#dob').value();
-		window.location = 'http://localhost:8000/'+categ + '/' + applNo + '/' + dob;
+		var dob = $('#dob').val();
+		console.log('hey'+dob);
+		window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
 	});
 	//validating front-end in form 3
 	$('.valid1').click(function(){
@@ -165,7 +164,7 @@ $(document).ready(function(){
 		}
 		console.log(data);
 		count++;
-		if(data.appl_categ == 'Select' || data.department1 == 'Department 1' || data.department2 == 'Department 2' || data.department3 == 'Department 3' || data.marital_status == 'Choose your Marital Status' || data.sex == 'Choose your Gender' || data.category == 'Choose your Category' || data.ph == 'Choose your option' || data.ug_class == '' || data.pg_class == ''){
+		if(data.appl_categ == '' || data.department1 == '' || data.department2 == '' || data.department3 == '' || data.marital_status == '' || data.sex == '' || data.category == '' || data.ph == '' || data.ug_class == '' || data.pg_class == ''){
 			var error = "Please select all the dropdowns";
 			if(count==1)
 				$('#error .modal-content .error').append('<p>'+error+'</p>');
@@ -177,7 +176,7 @@ $(document).ready(function(){
 		else{
 			console.log(data);
 		count++;
-		if(data.appl_categ == 'Select' || data.department1 == 'Department 1' || data.department2 == 'Department 2' || data.department3 == 'Department 3' || data.marital_status == 'Choose your Marital Status' || data.sex == 'Choose your Gender' || data.category == 'Choose your Category' || data.ph == 'Choose your option' || data.ug_class == ''){
+		if(data.appl_categ == '' || data.department1 == '' || data.department2 == '' || data.department3 == '' || data.marital_status == '' || data.sex == '' || data.category == '' || data.ph == '' || data.ug_class == ''){
 			var error = "Please select all the dropdowns";
 			if(count==1)
 				$('#error .modal-content .error').append('<p>'+error+'</p>');

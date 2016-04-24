@@ -48,14 +48,14 @@ class AdminController extends Controller
             $password = $request->input('password');
 
             $auth = Admin::where('userName', $username)
-                ->where('password', $password)
+                ->where('password', sha1($password))
                 ->first();
 
             if(count($auth) > 0)
             {
                 Session::put('userName', $username);
                 Session::put('dept', $auth->dept);
-                return view('admin/home');
+                return view('admin.home');
             }
             else
             {
@@ -68,11 +68,20 @@ class AdminController extends Controller
 	public function adminView($phdormsc)
 	{
         Session::put('phdormsc', $phdormsc);
-        if($phdormsc == 'phd')
+        if(Session::get('dept') == 'all')
+        {
+            $rules1 = ['deleted' => false];
+            $rules2 = ['deleted' => false];
+            $rules3 = ['deleted' => false];
+        }
+        else
         {
             $rules1 = ['deleted' => false , 'dept1' => Session::get('dept')];
             $rules2 = ['deleted' => false , 'dept2' => Session::get('dept')];
             $rules3 = ['deleted' => false , 'dept3' => Session::get('dept')];
+        }
+        if($phdormsc == 'phd')
+        {
             $candidates = Phd::where($rules1)
                                         ->orWhere($rules2)
                                         ->orWhere($rules3)
@@ -93,9 +102,6 @@ class AdminController extends Controller
         }
         else
         {
-            $rules1 = ['deleted' => false , 'dept1' => Session::get('dept')];
-            $rules2 = ['deleted' => false , 'dept2' => Session::get('dept')];
-            $rules3 = ['deleted' => false , 'dept3' => Session::get('dept')];
             $candidates = Ms::where($rules1)
                                         ->orWhere($rules2)
                                         ->orWhere($rules3)
@@ -128,7 +134,7 @@ class AdminController extends Controller
                                 ->where('applNo', $appl_number)
                                 ->first();                 
             Mail::send('emails.delete', ['user' => $user->name], function ($m) {
-                $m->to('sshchandana.bitra@gmail.com', 'Applicant' )->subject('Greetings from NITT!');
+                $m->to($user->email, 'Applicant' )->subject('Greetings from NITT!');
             });
 
             return json_encode($appl_number);
@@ -142,7 +148,7 @@ class AdminController extends Controller
                                 ->where('applNo', $appl_number)
                                 ->first();
             Mail::send('emails.delete', ['user' => $user->name], function ($m) {
-                $m->to('sshchandana.bitra@gmail.com', 'Applicant')->subject('Greetings from NITT!');
+                $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
             });
 
             return json_encode($appl_number);

@@ -31,7 +31,7 @@ use Log;
                 'nationality' => 'required',
                 'addr_for_commn' => 'required|max:200',
                 'permanent_addr' =>'required|max:200',
-                'email' => 'required|email|unique:phd',
+                'email' => 'required|email|unique:savephd',
                 'mobile' => 'required',
                 'landline' => 'required',
                 'age' => 'required');
@@ -104,7 +104,7 @@ use Log;
                 'nationality' => 'required',
                 'addr_for_commn' => 'required|max:200',
                 'permanent_addr' =>'required|max:200',
-                'email' => 'required|email|unique:phd',
+                'email' => 'required|email|unique:savems',
                 'mobile' => 'required',
                 'landline' => 'required',
                 'age' => 'required');
@@ -162,12 +162,12 @@ use Log;
         public function fetch($category, $applNo, $dob)
         {
             Session::put('applNo', $applNo);
-    		if($category == 'phd')
+    		if($category == 'PHD')
     		{
     			$details = SavePhd::where('applNo', $applNo)
                                         ->where('dob', $dob)
     									->first();
-                if($details)
+                if($details != NULL)
                 {
                     return view('saved.phd')->with('details', $details);
                 }
@@ -182,14 +182,15 @@ use Log;
     			$details = SaveMs::where('applNo', $applNo)
                                         ->where('dob', $dob)
                                         ->first();
-                if($details)
+                if($details != NULL)
                 {
                     
                     return view('saved.ms')->with('details', $details);
                 }
                 else
                 {
-                    return json_encode(0);
+                    $message = 'Invalid details';
+                    return view('error')->with('message', $message);
                 }
     		}
         }

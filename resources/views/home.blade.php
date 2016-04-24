@@ -24,7 +24,7 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/home">Phd/M.S. Admission's</a></li>
+        <li><a href="/home">PhD/M.S Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
@@ -40,7 +40,7 @@
   <div class="space-medium"></div>
   <div class="container center">
     <p class="large">
-      Welcome to NITT PhD and Ms application portal!
+      Welcome to NITT PhD and M.S application portal!
     </p>
     <div class="space-small"></div>
     <!-- <p>The Ph.D. degree is granted for distinction attained in a special field of concentration, by the demonstrated ability to modify or enlarge a significant subject in a dissertation, based upon original research scholarship. The minimum requirement is that the doctoral student follow a unified and organized program of study.</p> -->
@@ -48,8 +48,8 @@
   	<div class="row">
       
       <div class="col l12 s12">
-        <a class="waves-effect waves-light btn" href="/phd">Click here for PhD Admissions</a>
-        <a class="waves-effect waves-light btn" href="/ms">Click here for M.S Admissions</a>
+        <a class="waves-effect waves-light btn" href="/phd1">Click here for PhD Admissions</a>
+        <a class="waves-effect waves-light btn" href="/ms1">Click here for M.S Admissions</a>
         </div>
         <div class="space-medium"> </div>
         <div class="col l12 s12">

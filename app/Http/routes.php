@@ -10,6 +10,9 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('/', function() {
+    return redirect('home');
+});
 Route::post('savephd', 'SaveController@savephd');
 Route::post('savems', 'SaveController@savems');
 Route::post('save2phd', 'SaveController@save2phd');
@@ -54,14 +57,6 @@ Route::get('home', function()
     {
         return view('home');
     });
-Route::get('phd', function()
-    {
-        return view('phd');
-    });
-Route::get('ms', function()
-    {
-        return view('ms');
-    });
 Route::get('savedForm', function()
     {
         return view('savedForm');
@@ -74,11 +69,11 @@ Route::get('phd3', function()
     {
         return view('saved.phd');
     });
+Route::get('ms3', function()
+    {
+        return view('saved.ms');
+    });
 Route::get('ms1', function()
     {
         return view('msForm_1');
-    });
-Route::get('ms3', function()
-    {
-        return view('msForm_3');
     });

@@ -12,6 +12,7 @@
 
   <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
   <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
+  <script src="{{URL::asset('assets/js/code.js')}}"></script>
 </head>
 <body>
 	 
@@ -45,12 +46,12 @@
     <div class="space-large"></div>
   	<div class="row">
       <div class="col l6 s12">
-        <span class="light">Enter Application Number</span>
+        <span class="light">Enter Registration Number</span>
         <input type="text" id="regNo" class="validate" name="applNo" required>
         </div>
         <div class="col l6 s12">
           <span class="light">Enter Date of Birth </span>
-          <input type="date" name="date" id="date" required />
+          <input type="date" name="date" id="dob" required />
       </div>
       <div class="space-medium"></div>
       <div class="center">

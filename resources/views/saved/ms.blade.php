@@ -14,6 +14,7 @@
 	<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/code_ms.js')}}"></script>
+	<script src="{{URL::asset('assets/js/preview.js')}}"></script>
 	<script src="{{URL::asset('assets/js/savems.js')}}"></script>
 	
 </head>
@@ -27,13 +28,13 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/phd">Phd Admissions</a></li>
+        <li><a href="/phd1">Phd Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/phd">Phd Admissions</a></li>
+        <li><a href="/phd1">Phd Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
@@ -245,7 +246,7 @@
 		            
 
 		            <p>Land-Line Number:</p>
-		            <input required id="landline" type="number" class="validate" min="7000000000" max="9999999999" name="landline" value="{!! $details->lanline !!}">
+		            <input required id="landline" type="text" class="validate" name="landline" value="{!! $details->lanline !!}">
 		        </div>
 
 
@@ -330,7 +331,7 @@
 		      	            <input required id="max1" type="number" class="validate" name="max1" value="{!! $details['max1'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="" type="number" class="validate" name="gpa1" value="{!! $details['gpa1'] !!}">
+		      	            	<input required id="gpa1" type="number" class="validate" name="gpa1" value="{!! $details['gpa1'] !!}">
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
@@ -504,7 +505,7 @@
 
 
   		 <div class="center">
-      <a id="preview1" href="#preview" class="teal darken-1 waves-effect waves-light btn modal-trigger">Preview Form</a>
+      <a id="preview2" class="teal darken-1 waves-effect waves-light btn modal-trigger">Preview Form</a>
       
    {!! Form::submit('Submit', array('class'=>'valid1 teal darken-1 send-btn btn waves-effect waves-light' )) !!}
    <a id="save2" class="teal darken-1 send-btn btn waves-effect waves-light center">Save Form</a>

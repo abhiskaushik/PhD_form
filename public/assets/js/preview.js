@@ -70,7 +70,7 @@ $(document).ready(function(){
 		console.log(data);
 		
 		var div = '<div class="modal-content">\
-        <h4>Candidate"s Form</h4>\
+        <h4>Candidate\'s Form</h4>\
         \
 <p><b>Registration Number:</b> '+data.reg_number+'</p>\
         <p><b>Date of Registration:</b> '+data.date+'</p>\
@@ -136,7 +136,7 @@ $(document).ready(function(){
       </div>\
       </div>';
       
-
+      $('#preview').html('');
       $('#preview').append(div);
       $('#preview').openModal();
 	}); 
@@ -202,7 +202,7 @@ $(document).ready(function(){
 		console.log(data);
 		
 		var div = '<div class="modal-content">\
-        <h4>Candidate"s Form</h4>\
+        <h4>Candidate\'s Form</h4>\
         \
 <p><b>Registration Number:</b> '+data.reg_number+'</p>\
         <p><b>Date of Registration:</b> '+data.date+'</p>\
@@ -259,7 +259,7 @@ $(document).ready(function(){
       </div>\
       </div>';
       
-
+      $('#preview').html('');
       $('#preview').append(div);
       $('#preview').openModal();
 	}); 

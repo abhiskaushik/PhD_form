@@ -28,13 +28,13 @@
       <a href="#" details-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/ms">M.S Admissions</a></li>
+        <li><a href="/ms1">M.S Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/ms">Ms Admissions</a></li>
+        <li><a href="/ms1">Ms Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
@@ -278,7 +278,7 @@
 		            
 
 		            <p>Land-Line Number:</p>
-		            <input required id="landline" type="number" class="validate" min="7000000000" max="9999999999" name="landline" value="{!! $details->lanline !!}">
+		            <input required id="landline" type="text" class="validate" name="landline" value="{!! $details->lanline !!}">
 		        </div>
 
 
@@ -544,7 +544,7 @@
   		
 
   		<div class="center">
-      <a id="preview1" href="#preview" class="teal darken-1 waves-effect waves-light btn modal-trigger">Preview Form</a>
+      <a id="preview1" class="teal darken-1 waves-effect waves-light btn modal-trigger">Preview Form</a>
       
    {!! Form::submit('Submit', array('class'=>'valid1 teal darken-1 send-btn btn waves-effect waves-light' )) !!}
    <a id="save2" class="teal darken-1 send-btn btn waves-effect waves-light center">Save Form</a>
@@ -592,8 +592,17 @@
 	$(document ).ready(function(){
 		$(".button-collapse").sideNav();
 		$('select').material_select();
-		alert({!! $details->addrforcommn !!});
-		$('#addr_for_commn').val({!! "hey".$details->addrforcommn !!});
+		console.log('hey');
+		console.log('{!! $details->addrforcomm !!}');
+		$("textarea#addr_for_commn").val('{!! $details->addrforcomm !!}');
+		$("textarea#permanent_addr").val('{!! $details->permanentaddr !!}');
+		var x = $('#department1 option');
+		var y = '{!! $details->dept1 !!}';
+		console.log(y);
+		x[0].selected = false;
+		x[1].selected = true;
+		// console.log($('#department1 option:selected'));
+		// console.log(x[1].selected);
 
 	})
 	</script>

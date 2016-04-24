@@ -28,13 +28,13 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/ms">M.S Admissions</a></li>
+        <li><a href="/ms1">M.S Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/ms">Ms Admissions</a></li>
+        <li><a href="/ms1">Ms Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
@@ -246,7 +246,7 @@
 		            
 
 		            <span>Land-Line Number:</span>
-		            <input required id="landline" type="number" class="validate" min="7000000000" max="9999999999" name="landline" >
+		            <input required id="landline" type="text" class="validate" name="landline" >
 		        </div>
 
 
