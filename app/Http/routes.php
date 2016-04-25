@@ -57,23 +57,15 @@ Route::get('home', function()
     {
         return view('home');
     });
-Route::get('savedForm', function()
+Route::get('continue', function()
     {
-        return view('savedForm');
+        return view('continue');
     });
-Route::get('phd1', function()
+Route::get('phdstage1', function()
     {
         return view('phdForm_1');
     });
-Route::get('phd3', function()
-    {
-        return view('saved.phd');
-    });
-Route::get('ms3', function()
-    {
-        return view('saved.ms');
-    });
-Route::get('ms1', function()
+Route::get('msstage1', function()
     {
         return view('msForm_1');
     });

@@ -90,6 +90,7 @@
 		
 		        <div class="input-field col l6 s6 ">
 		      		<select name="department1" required id="department1">
+
 		      			  <option value="" disabled selected>Department Preference 1</option>
                 <option value="CS">Computer Science and Engineering</option>
                 <option value="CL">Chemical Engineering</option>
@@ -206,7 +207,7 @@
 		         	<select required name="marital_status" id="marital_status">
 				      <option value="" disabled selected>Choose your Marital Status</option>
 				      <option value="married">Married</option>
-				      <option value="notmarried">Not Married</option>
+				      <option value="single">Single</option>
 				    </select>
 		        </div>
 		      </div> 
@@ -497,8 +498,7 @@
 		      		</div>	
 		      </div>
 		      
-  		
-
+		      {!! app('captcha')->display(); !!}
 
   		 <div class="center">
       <a id="preview2" class="teal darken-1 waves-effect waves-light btn modal-trigger">Preview Form</a>

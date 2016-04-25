@@ -72,8 +72,9 @@ $(document).ready(function(){
 		data.landline = $('#landline').val();
 		data.age = $('#age').val();
 		data.checker = $('.checker').val();
-		console.log(data);
+		// console.log(data);
 		// console.log($('#dob').val());
+
 		count++;
 		if(data.department1 == '' || data.department2 == '' || data.department3 == '' || data.marital_status == '' || data.sex == '' || data.category == '' || data.ph == ''){
 			var error = "Please select all the dropdowns";
@@ -93,7 +94,7 @@ $(document).ready(function(){
 	    });
 		
 		
-		var baseurl = 'http://localhost:8000';
+		var baseurl = 'http://admission.nitt.edu';
 		var url = '/save' + data.checker;//route to the controller goes here
 		$.ajax(
 	    {
@@ -113,6 +114,7 @@ $(document).ready(function(){
 	        				<a class="redirect teal darken-1 send-btn btn waves-effect waves-light" data-reg="'+data+'">Proceed</a>';
 	        	}
 	        	$('.regno').html("");
+
 	        	$('.regno').append(div);
 	        	$('#regNo').openModal();
 	        },
@@ -124,6 +126,7 @@ $(document).ready(function(){
 		// return true;
 	});
 
+
 	$('#regNo').on('click' , '.redirect' ,function()
 	{
 		var regNo = $(this).attr('data-reg');
@@ -132,7 +135,7 @@ $(document).ready(function(){
 		var applNo = dept[dept.length-1];
 		var checker = $('.checker').val();
 		var dob = $('#dob').val();
-		window.location = 'http://localhost:8000/fetch/'+ checker + '/' + applNo + '/' + dob;
+		window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
 	});
 	$('.redirect1').click(function()
 	{
@@ -140,9 +143,9 @@ $(document).ready(function(){
 		var dept = regNo.split('/');
 		var categ = dept[0];
 		var applNo = dept[dept.length-1];
+
 		var dob = $('#dob').val();
-		console.log('hey'+dob);
-		window.location = 'http://localhost:8000/fetch/'+ categ + '/' + applNo + '/' + dob;
+		window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
 	});
 	//validating front-end in form 3
 	$('.valid1').click(function(){

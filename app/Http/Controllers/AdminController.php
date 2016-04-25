@@ -133,7 +133,7 @@ class AdminController extends Controller
             $user = Phd::select('name', 'email')
                                 ->where('applNo', $appl_number)
                                 ->first();                 
-            Mail::send('emails.delete', ['user' => $user->name], function ($m) {
+            Mail::send('emails.delete', ['user' => $user->name], function ($m) use($user) {
                 $m->to($user->email, 'Applicant' )->subject('Greetings from NITT!');
             });
 
@@ -147,7 +147,7 @@ class AdminController extends Controller
             $user = Ms::select('name', 'email')
                                 ->where('applNo', $appl_number)
                                 ->first();
-            Mail::send('emails.delete', ['user' => $user->name], function ($m) {
+            Mail::send('emails.delete', ['user' => $user->name], function ($m) use($user) {
                 $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
             });
 
@@ -168,7 +168,7 @@ class AdminController extends Controller
                                 ->where('applNo', $appl_number)
                                 ->first();
 
-            Mail::send('emails.accept', ['user' => $user->name], function ($m) {
+            Mail::send('emails.accept', ['user' => $user->name], function ($m) use($user) {
                 $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
             });
             
@@ -183,7 +183,7 @@ class AdminController extends Controller
                                 ->where('applNo', $appl_number)
                                 ->first();
 
-            Mail::send('emails.accept', ['user' => $user->name], function ($m) {
+            Mail::send('emails.accept', ['user' => $user->name], function ($m) use($user) {
                 $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
             });
 
@@ -217,7 +217,8 @@ class AdminController extends Controller
                             'ug' => $ugDetails,
                             'pg' => $pgDetails,
                             'others' => $otherDetails,
-                            'pro' => $proDetails
+                            'pro' => $proDetails,
+                            'phdorms' => $phdormsc
                             );
             $data['candidates']->phdormsc = $phdormsc;
             $pdf = PDF::loadView('print', $data);
