@@ -61,11 +61,11 @@ Route::get('continue', function()
     {
         return view('continue');
     });
-Route::get('phdstage1', function()
+Route::get('phd', function()
     {
         return view('phdForm_1');
     });
-Route::get('msstage1', function()
+Route::get('ms', function()
     {
         return view('msForm_1');
     });
