@@ -39,7 +39,8 @@
   <div class="container">
   	<div class="row">
       <h5>{!! $message !!}</h5>
-        <a class="btn btn-waves" href="/home">Click here to go back</a>
+        
+        <input action="action" type="button" value="Click here to go back" class="btn teal" onclick="history.go(-1);" />
   	</div>
   </div>
   
