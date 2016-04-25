@@ -162,11 +162,13 @@ use Log;
         public function fetch($category, $applNo, $dob)
         {
             Session::put('applNo', $applNo);
-    		if($category == 'PHD')
+            
+    		if($category == 'phd')
     		{
     			$details = SavePhd::where('applNo', $applNo)
                                         ->where('dob', $dob)
     									->first();
+
                 if($details != NULL)
                 {
                     return view('saved.phd')->with('details', $details);
