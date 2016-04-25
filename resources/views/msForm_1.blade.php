@@ -70,7 +70,7 @@
 
 		      				      		<select name="department1" required id="department1">
 
-		      			  <option value="" disabled selected>Department Preference 2</option>
+		      			  <option value="" disabled selected>Department Preference 1</option>
                 <option value="CS">Computer Science and Engineering</option>
                 <option value="CL">Chemical Engineering</option>
                 <option value="CV">Civil Engineering </option>
@@ -112,7 +112,7 @@
 		        <div class="input-field col l6 s6 ">
 		      		<select name="department3" required id="department3">
 
-		      			  <option value="" disabled selected>Department Preference 2</option>
+		      			  <option value="" disabled selected>Department Preference 3</option>
                 <option value="CS">Computer Science and Engineering</option>
                 <option value="CL">Chemical Engineering</option>
                 <option value="CV">Civil Engineering </option>
@@ -286,7 +286,7 @@
               <div class="col l4  s12">
                 <h5 class="white-text">QuickLinks</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="https://www.nitt.edu">Institute Website</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/">Institute Website</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/academics/departments/">Departments</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/admissions/">Admissions</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/contact">Contact Us</a></li>

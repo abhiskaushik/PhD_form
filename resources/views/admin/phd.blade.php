@@ -49,7 +49,11 @@
      @for($i = 0; $i < sizeof($data['candidates']); $i++)
         @if(!$data['candidates'][$i]->deleted)
         <div class="{!! $data['candidates'][$i]->applNo !!} col l5 offset-l1  " } data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
+        @if($data['candidates'][$i]->accepted)
+        <div class="card center border">
+        @else
         <div class="card center">
+        @endif
           <div class="card-content">
             <span class="card-title activator grey-text text-darken-4">Candidate's Card</span>
             <div class="row">
@@ -69,7 +73,7 @@
           <div id="modal{!! $i !!}" class="modal l8">
           <div class="modal-content">
           <h4>Candidate's Form</h4>
-
+          
           <p><b>Registration Number:</b> {!! $data['candidates'][$i]->registrationNumber !!}</p>
           <p><b>Date of Registration:</b> {!! $data['candidates'][$i]->dateOfReg !!}
           </p>
@@ -191,7 +195,7 @@
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">QuickLinks</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="https://www.nitt.edu">Institute Website</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/">Institute Website</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/academics/departments/">Departments</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/admissions/">Admissions</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/contact">Contact Us</a></li>

@@ -45,7 +45,7 @@
 
 	<div class="container">
 		<div class="row text-center">
-			<h3>APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME (2016 - 2017)</h3>
+			<h4>APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME (2016 - 2017)</h4>
 			<div class="space-medium"></div>
 			<div class="divider"></div><div class="divider"></div>
 		</div>
@@ -56,13 +56,13 @@
 
 		<div class="row">
 			<div class="col l6 s12">
-				<p>Bank Reference Number:</p>
+				<p class="large">Bank Reference Number:</p>
 				<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number. " required />
 			</div>
 		</div>
 
   		<div class="row">  					   
-  			<p>Application Category</p>		    
+  			<p class="large">Application Category</p>		    
 		        
 		      		
 				    <div class="input-field col l6 s12">
@@ -103,7 +103,7 @@
   		
 	
   		<div class="row">
-  			<p>Applicant Details</p>
+  			<p class="vlarge">Applicant Details</p>
 		    <div class="col s12">
 
 		      <div class="row dept">
@@ -289,7 +289,7 @@
 
   		<div class="row">
   			<div class="col s12">
-  			<p>Undergraduate</p>
+  			<p class="vlarge">Undergraduate</p>
   				 <div class="row">
 		        <div class="input-field col l6">
 		        	<span class="light">Name of Degree:</span>
@@ -344,7 +344,7 @@
 
 		      <div class="row">
   			<div class="col s12">
-  			<p>Postgraduate</p>
+  			<p class="vlarge">Postgraduate</p>
   				 <div class="row">
 		        <div class="input-field col l6">
 		        	<span class="light">Name of Degree:</span>
@@ -397,7 +397,7 @@
 		      </div>
 
 		      <div class="row">
-		      	<span class="light">Other Details:</span>
+		      	<p class="vlarge">Other Details:</p>
 		      	<div class="space-small"></div>
 		      	<div class="results_announced center">
 		      		<p class="center">Qualified in GATE/NET/SLET/CSIR/CAT/UGC/NBHM</p>
@@ -444,7 +444,7 @@
 		      </div>
 
 		      <div class="row">
-		      	<span class="light">Details of Professional Experience</span>
+		      	<p class="vlarge">Details of Professional Experience</p>
 		      	<p>*(In case of more than one employer fill the details,else fill N.A.)</p>
 		      	<div class="space-small"></div>
 		      	<div class="col s12 l12 emp_details">
@@ -571,7 +571,7 @@
               <div class="col l4  s12">
                 <h5 class="white-text">QuickLinks</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="https://www.nitt.edu">Institute Website</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/">Institute Website</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/academics/departments/">Departments</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/admissions/">Admissions</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/contact">Contact Us</a></li>

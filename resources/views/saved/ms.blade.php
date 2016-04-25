@@ -42,10 +42,10 @@
   </nav>
 
   <div class="space-medium"></div>
-
+  <h4 class="center">APPLICATION FOR ADMISSION TO M.S PROGRAMME (2016 - 2017)</h4>
 	<div class="container">
 		<div class="row text-center">
-			<h3>APPLICATION FOR ADMISSION TO M.S PROGRAMME (2016 - 2017)</h3>
+			
 			<div class="space-medium"></div>
 			<div class="divider"></div><div class="divider"></div>
 		</div>
@@ -56,13 +56,14 @@
 		<!-- <input type="hidden" name="_token" id="_token" value={!! csrf_field() !!} /> -->			
 		<div class="row">
 			<div class="col l6 s12">
-				<p>Bank Reference Number:</p>
+				<span class="light">Bank Reference Number:</span>
 				<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number. " required />
 			</div>
 		</div>
   		<div class="row">  					   
-  			<p>Application Category</p>		    
+  			
 		        <div class="input-field col l6 s12">
+		        <span class="light">Application Category</span>		    
 		      		<select required name="appl_categ" class="applicationCateg" id="applicationCateg">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="Part Time">Part Time</option>
@@ -81,17 +82,14 @@
       				</div>
 	          	</div>
 		      </div>	
-  		
-	
-  		<div class="row">
-  			<p>Applicant Details</p>
-		    <div class="col s12">
-
+  		</div>
+		<p class="vlarge">Applicant Details</p>
+  		<div class="row">  			
+		    <div class="col s12 l12">
 		      <div class="row dept">
+		
 		        <div class="input-field col l6 s6 ">
-
 		      		<select name="department1" required id="department1">
-
 		      			  <option value="" disabled selected>Department Preference 1</option>
                 <option value="CS">Computer Science and Engineering</option>
                 <option value="CL">Chemical Engineering</option>
@@ -110,7 +108,6 @@
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 ">
-
 		      		<select name="department2" required id="department2">
 
 		      			  <option value="" disabled selected>Department Preference 2</option>
@@ -131,7 +128,6 @@
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 ">
-
 		      		<select name="department3" required id="department3">
 
 		      			 <option value="" disabled selected>Department Preference 3</option>
@@ -257,7 +253,7 @@
 
   		<div class="row">
   			<div class="col s12">
-  			<p>Undergraduate</p>
+  			<p class="vlarge">Undergraduate</p>
   				 <div class="row">
 		        <div class="input-field col l6">
 		        	<span class="light">Name of Degree:</span>
@@ -312,7 +308,7 @@
 
 		      <div class="space-medium"></div>
 		      <div class="row">
-		      <p>Academic Details:</p>
+		      <p class="vlarge">Academic Details:</p>
 		      	<table class="highlight centered responsive-table">
 		      	        <thead>
 		      	          <tr>
@@ -413,7 +409,7 @@
 			      <label for="ra3">Click here if final semester results are not announced.</label>
 		      </p>
 		      <div class="row">
-		      	<span class="light">Details of Professional Experience</span>
+		      	<p class="vlarge">Details of Professional Experience</p>
 		      	<p>*(In case of more than one employer fill the details,else fill N.A.)</p>
 		      	<div class="space-small"></div>
 		      	<div class="col s12 l12 emp_details">
@@ -532,7 +528,7 @@
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">QuickLinks</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="https://www.nitt.edu">Institute Website</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/">Institute Website</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/academics/departments/">Departments</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/admissions/">Admissions</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/contact">Contact Us</a></li>

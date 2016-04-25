@@ -60,7 +60,7 @@ $(document).ready(function(){
 		console.log(data);
 		
 		
-		var baseurl = 'http://admission.nitt.edu';
+		var baseurl = 'http://admission.nitt.edu';//admission.nitt.edu
 		var url = '/save2phd';
 		$.ajax(
 	    {
