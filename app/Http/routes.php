@@ -59,7 +59,7 @@ Route::get('home', function()
     });
 Route::get('continue', function()
     {
-        return view('continue');
+        return view('savedForm');
     });
 Route::get('phd', function()
     {

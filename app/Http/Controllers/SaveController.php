@@ -124,8 +124,9 @@ use Log;
         public function fetch($category, $applNo, $dob)
         {
             Session::put('applNo', $applNo);
+            // dd($category);
             
-    		if($category == 'phd')
+    		if($category == 'PHD')
     		{
     			$details = SavePhd::where('applNo', $applNo)
                                         ->where('dob', $dob)

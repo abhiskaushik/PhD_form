@@ -46,7 +46,7 @@ function ajaxCall(x,y){
 	        data: data,
 	        dataType: "json",
 	        success: function(data){
-	        	console.log("helo");
+	        	// console.log("helo");
 	        	location.reload();
 	        },
 	        error: function(jqXHR,testStatus,errorThrown){
