@@ -48,8 +48,8 @@
   	<div class="row">
       
       <div class="col l12 s12">
-        <a class="waves-effect waves-light btn" href="/phdstage1">Click here for PhD Admissions</a>
-        <a class="waves-effect waves-light btn" href="/msstage1">Click here for M.S Admissions</a>
+        <a class="waves-effect waves-light btn" href="/phd">Click here for PhD Admissions</a>
+        <a class="waves-effect waves-light btn" href="/ms">Click here for M.S Admissions</a>
         </div>
         <div class="space-medium"> </div>
         <div class="col l12 s12">
