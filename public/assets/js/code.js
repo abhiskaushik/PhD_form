@@ -190,7 +190,30 @@ $(document).ready(function(){
 		}
 		console.log(data);
 		count++;
-
+		var a = $('#mobile').val();
+		console.log(a);
+		var filter = /^[0-9-+]+$/;
+		console.log(filter.test(a));
+		var len = a.length;
+		if(filter.test(a) && a.length == 10){
+			
+		}	
+		else{
+			alert('Enter a valid 10 digit mobile number');
+			return false;
+		}
+		var b = $('#landline').val();
+		console.log(b);
+		var filter = /^[0-9-+]+$/;
+		console.log(filter.test(b));
+		var len = b.length;
+		if(filter.test(b) && b.length >= 9){
+			
+		}	
+		else{
+			alert('Enter a valid landline number');
+			return false;
+		}
 
 
 		if(data.appl_categ == '' || data.department1 == '' || data.department2 == '' || data.department3 == '' || data.marital_status == '' || data.sex == '' || data.category == '' || data.ph == '' || data.ug_class == '' || data.pg_class == ''){
