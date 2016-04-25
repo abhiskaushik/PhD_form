@@ -48,7 +48,7 @@ class AdminController extends Controller
             $password = $request->input('password');
 
             $auth = Admin::where('userName', $username)
-                ->where('password', ($password))    //sha1
+                ->where('password', sha1($password))    //sha1
                 ->first();
 
             if(count($auth) > 0)
@@ -254,6 +254,7 @@ class AdminController extends Controller
     {
         $filename = $phdormsc.'/'.$applNo.'/'.$applNo;
         $path = public_path() . '/uploads/' . $filename;
+        dd($path);
         if(file_exists($path.'.jpg'))
         {
             $type = 'jpg';

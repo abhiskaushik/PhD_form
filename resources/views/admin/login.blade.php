@@ -5,7 +5,7 @@
    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin Portal</title>
+  <title>Admissions NITT | Admin Portal</title>
   <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -72,7 +72,7 @@
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">QuickLinks</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="https://www.nitt.edu">Institute Website</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/">Institute Website</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/academics/departments/">Departments</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/admissions/">Admissions</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/contact">Contact Us</a></li>
