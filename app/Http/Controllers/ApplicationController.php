@@ -23,6 +23,7 @@ class ApplicationController extends Controller
     public function view(Request $request)
     {
     	$regNo = $request->input('regNo');
+    	// dd($regNo);
 
     	$rules = array(
     		'regNo' => 'required'
@@ -58,7 +59,8 @@ class ApplicationController extends Controller
 	                            'ug' => $ugDetails,
 	                            'pg' => $pgDetails,
 	                            'others' => $otherDetails,
-	                            'pro' => $proDetails
+	                            'pro' => $proDetails,
+	                            'phdorms' => $categ
 	                            );
 	            $pdf = PDF::loadView('print', $data);
 	            return response($pdf->output())
@@ -82,7 +84,8 @@ class ApplicationController extends Controller
 	            $data = array('candidates' => $candidates,
 	                            'ug' => $ugDetails,
 	                            'scores' => $scores,
-	                            'pro' => $proDetails
+	                            'pro' => $proDetails,
+	                            'phdorms' => $categ
 	                            );
 	            $pdf = PDF::loadView('print', $data);
 	            return response($pdf->output())

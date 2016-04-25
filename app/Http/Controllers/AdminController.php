@@ -134,6 +134,7 @@ class AdminController extends Controller
                                 ->where('applNo', $appl_number)
                                 ->first();                 
             Mail::send('emails.delete', ['user' => $user->name], function ($m) use($user) {
+                $m->from('106114018@nitt.edu', '');
                 $m->to($user->email, 'Applicant' )->subject('Greetings from NITT!');
             });
 
@@ -148,6 +149,7 @@ class AdminController extends Controller
                                 ->where('applNo', $appl_number)
                                 ->first();
             Mail::send('emails.delete', ['user' => $user->name], function ($m) use($user) {
+                $m->from('106114018@nitt.edu', '');
                 $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
             });
 
@@ -169,6 +171,7 @@ class AdminController extends Controller
                                 ->first();
 
             Mail::send('emails.accept', ['user' => $user->name], function ($m) use($user) {
+                $m->from('106114018@nitt.edu', '');
                 $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
             });
             
@@ -184,6 +187,7 @@ class AdminController extends Controller
                                 ->first();
 
             Mail::send('emails.accept', ['user' => $user->name], function ($m) use($user) {
+                $m->from('106114018@nitt.edu', '');
                 $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
             });
 
@@ -243,7 +247,8 @@ class AdminController extends Controller
             $data = array('candidates' => $candidates,
                             'ug' => $ugDetails,
                             'scores' => $scores,
-                            'pro' => $proDetails
+                            'pro' => $proDetails,
+                            'phdorms' => $phdormsc
                             );
             $pdf = PDF::loadView('print', $data);
             return response($pdf->output())
