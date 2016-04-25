@@ -35,7 +35,7 @@
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/ms">Ms Admissions</a></li>
+        <li><a href="/ms">M.S Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>

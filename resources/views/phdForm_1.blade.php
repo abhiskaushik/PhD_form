@@ -28,13 +28,13 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/ms1">M.S Admissions</a></li>
+        <li><a href="/msstage1">M.S Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/ms1">Ms Admissions</a></li>
+        <li><a href="/msstage1">M.S Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
@@ -210,7 +210,7 @@
 		         	<select required name="marital_status" id="marital_status">
 				      <option value="" disabled selected>Choose your Marital Status</option>
 				      <option value="married">Married</option>
-				      <option value="notmarried">Single</option>
+				      <option value="single">Single</option>
 				    </select>
 		        </div>
 		      </div> 

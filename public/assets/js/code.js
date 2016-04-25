@@ -72,7 +72,7 @@ $(document).ready(function(){
 		data.landline = $('#landline').val();
 		data.age = $('#age').val();
 		data.checker = $('.checker').val();
-		console.log(data);
+		// console.log(data);
 		// console.log($('#dob').val());
 		count++;
 		if(data.department1 == '' || data.department2 == '' || data.department3 == '' || data.marital_status == '' || data.sex == '' || data.category == '' || data.ph == ''){
@@ -132,7 +132,7 @@ $(document).ready(function(){
 		var applNo = dept[dept.length-1];
 		var checker = $('.checker').val();
 		var dob = $('#dob').val();
-		window.location = 'http://admission.nitt.edu/fetch/'+ checker + '/' + applNo + '/' + dob;
+		window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
 	});
 	$('.redirect1').click(function()
 	{
@@ -141,7 +141,6 @@ $(document).ready(function(){
 		var categ = dept[0];
 		var applNo = dept[dept.length-1];
 		var dob = $('#dob').val();
-		console.log('hey'+dob);
 		window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
 	});
 	//validating front-end in form 3

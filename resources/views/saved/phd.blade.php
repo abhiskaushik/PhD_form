@@ -242,7 +242,7 @@
 		         	<select required name="marital_status" id="marital_status">
 				      <option value="" disabled selected>Choose your Marital Status</option>
 				      <option value="married">Married</option>
-				      <option value="notmarried">Not Married</option>
+				      <option value="single">Single</option>
 				    </select>
 		        </div>
 		      </div> 
@@ -541,7 +541,7 @@
 		      
 		      
 		      </div>
-  		
+  		{!! app('captcha')->display(); !!}
 
   		<div class="center">
       <a id="preview1" class="teal darken-1 waves-effect waves-light btn modal-trigger">Preview Form</a>

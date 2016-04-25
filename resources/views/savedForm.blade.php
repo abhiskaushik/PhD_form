@@ -25,13 +25,13 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/home">Phd/M.S. Admission's</a></li>
+        <li><a href="/home">PhD/M.S Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/home">Phd/M.S. Admission's</a></li>
+        <li><a href="/home">PhD/M.S Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
@@ -41,7 +41,7 @@
   <div class="space-medium"></div>
   <div class="container center">
     <p>
-      Welcome to NITT PhD and Ms application portal!
+      Welcome to NITT PhD and M.S application portal!
     </p>
     <div class="space-large"></div>
   	<div class="row">

@@ -16,25 +16,6 @@ use Log;
     {
         public function savephd(Request $request)
         {
-            $rules = array(                        
-                'department1' => 'required',
-                'department2' => 'required',
-                'department3' => 'required',
-                'area_of_research' => 'required',
-                'name' => 'required',
-                'father_name' => 'required',
-                'dob' => 'required',
-                'category' => 'required|in:OBC,OC,SC,ST',
-                'sex' => 'required|in:male,female',
-                'marital_status' => 'required',
-                'ph' => 'required|in:yes,no',
-                'nationality' => 'required',
-                'addr_for_commn' => 'required|max:200',
-                'permanent_addr' =>'required|max:200',
-                'email' => 'required|email|unique:savephd',
-                'mobile' => 'required',
-                'landline' => 'required',
-                'age' => 'required');
 
             $bool = SavePhd::where('name' , $request->input('name'))
                                     ->where('addrforcomm' , $request->input('addr_for_commn'))
@@ -89,25 +70,6 @@ use Log;
 
         public function savems(Request $request)
         {
-            $rules = array(                        
-                'department1' => 'required',
-                'department2' => 'required',
-                'department3' => 'required',
-                'area_of_research' => 'required',
-                'name' => 'required',
-                'father_name' => 'required',
-                'dob' => 'required',
-                'category' => 'required|in:OBC,OC,SC,ST',
-                'sex' => 'required|in:male,female',
-                'marital_status' => 'required',
-                'ph' => 'required|in:yes,no',
-                'nationality' => 'required',
-                'addr_for_commn' => 'required|max:200',
-                'permanent_addr' =>'required|max:200',
-                'email' => 'required|email|unique:savems',
-                'mobile' => 'required',
-                'landline' => 'required',
-                'age' => 'required');
 
             $bool = SavePhd::where('name' , $request->input('name'))
                                     ->where('addrforcomm' , $request->input('addr_for_commn'))

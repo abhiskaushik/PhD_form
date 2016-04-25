@@ -64,6 +64,7 @@ class MsController extends Controller
 	        'gpa5' => 'required',
 	        'gpa6' => 'required',
 	        'gpa7' => 'required',
+            'g-recaptcha-response' => 'required|captcha'
 	        // 'gpa8' => 'required',
             // 'title_of_project' => 'required',
             // 'details_of_pub' => 'required|max:30',

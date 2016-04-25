@@ -30,7 +30,7 @@
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/home">Phd/M.S. Admission's</a></li>
+        <li><a href="/home">PhD/M.S Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
@@ -48,8 +48,8 @@
   	<div class="row">
       
       <div class="col l12 s12">
-        <a class="waves-effect waves-light btn" href="/phd1">Click here for PhD Admissions</a>
-        <a class="waves-effect waves-light btn" href="/ms1">Click here for M.S Admissions</a>
+        <a class="waves-effect waves-light btn" href="/phdstage1">Click here for PhD Admissions</a>
+        <a class="waves-effect waves-light btn" href="/msstage1">Click here for M.S Admissions</a>
         </div>
         <div class="space-medium"> </div>
         <div class="col l12 s12">
@@ -59,7 +59,7 @@
   	</div>
     <div class="space-medium"></div>
     <div class="row center">
-      <p>Click <a href="savedForm">here</a> to continue with saved application form </p>
+      <p>Click <a href="continue">here</a> to continue with saved application form </p>
     </div>
   </div>
   <div class="space-large"></div>
