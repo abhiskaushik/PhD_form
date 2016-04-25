@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta id="token" name="csrf-token" content="{{ csrf_token() }}">
-	<title>Ph.d Registration Form</title>
+	<title>Admissions NITT | Ph.d Registration Form</title>
 	<link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
 	<link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
 	<link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> 
@@ -545,6 +545,7 @@
 
   		<div class="center">
       <a id="preview1" class="teal darken-1 waves-effect waves-light btn modal-trigger">Preview Form</a>
+
       
    {!! Form::submit('Submit', array('class'=>'valid1 teal darken-1 send-btn btn waves-effect waves-light' )) !!}
    <a id="save2" class="teal darken-1 send-btn btn waves-effect waves-light center">Save Form</a>
@@ -557,7 +558,9 @@
 
 	       <div id="preview" class="modal">
           
+
         	</div>
+
 <div class="space-large"></div>
 <footer class="page-footer teal darken-4">
           <div class="container">

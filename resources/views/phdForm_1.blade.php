@@ -261,6 +261,7 @@
   		<a class="valid teal darken-1 send-btn btn waves-effect waves-light">Submit</a>
 	 </div>
 
+
 	 	    <div id="regNo" class="modal">	
 
 	      	<div class="modal-content">
@@ -268,6 +269,7 @@
 	      	</div>
 	      	
 	      </div>
+
 	      </div>
 	      </div>
 	      </div>
@@ -279,6 +281,7 @@
 	      		<a class="btn modal-action modal-close waves-effect waves-green btn-flat">Close</a>
 	      	</div>
 	      </div>	  
+
 	      <div id="preview" class="modal">	
 	      </div>
 

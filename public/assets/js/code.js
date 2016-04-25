@@ -74,6 +74,7 @@ $(document).ready(function(){
 		data.checker = $('.checker').val();
 		// console.log(data);
 		// console.log($('#dob').val());
+
 		count++;
 		if(data.department1 == '' || data.department2 == '' || data.department3 == '' || data.marital_status == '' || data.sex == '' || data.category == '' || data.ph == ''){
 			var error = "Please select all the dropdowns";
@@ -113,6 +114,7 @@ $(document).ready(function(){
 	        				<a class="redirect teal darken-1 send-btn btn waves-effect waves-light" data-reg="'+data+'">Proceed</a>';
 	        	}
 	        	$('.regno').html("");
+
 	        	$('.regno').append(div);
 	        	$('#regNo').openModal();
 	        },
@@ -123,6 +125,7 @@ $(document).ready(function(){
 		// 
 		// return true;
 	});
+
 
 	$('#regNo').on('click' , '.redirect' ,function()
 	{
@@ -140,6 +143,7 @@ $(document).ready(function(){
 		var dept = regNo.split('/');
 		var categ = dept[0];
 		var applNo = dept[dept.length-1];
+
 		var dob = $('#dob').val();
 		window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
 	});

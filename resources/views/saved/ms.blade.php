@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta id="token" name="csrf-token" content="{{ csrf_token() }}">
-	<title>Ph.d Registration Form</title>
+	<title>Admissions NITT | Ph.d Registration Form</title>
 	<link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
 	<link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
 	<!-- <link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> --><!-- 
@@ -90,6 +90,7 @@
 		
 		        <div class="input-field col l6 s6 ">
 		      		<select name="department1" required id="department1">
+
 		      			  <option value="" disabled selected>Department Preference 1</option>
                 <option value="CS">Computer Science and Engineering</option>
                 <option value="CL">Chemical Engineering</option>
@@ -497,7 +498,6 @@
 		      		</div>	
 		      </div>
 		      
-  		
 		      {!! app('captcha')->display(); !!}
 
   		 <div class="center">
