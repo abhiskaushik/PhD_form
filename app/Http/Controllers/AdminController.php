@@ -48,7 +48,7 @@ class AdminController extends Controller
             $password = $request->input('password');
 
             $auth = Admin::where('userName', $username)
-                ->where('password', sha1($password))    
+                ->where('password', ($password))    //sha1
                 ->first();
 
             if(count($auth) > 0)
@@ -198,6 +198,7 @@ class AdminController extends Controller
         {
             $candidates = Phd::where('applNo', $reg_number)
                                 ->first();
+
             if(!$candidates)
             {
                 $message = 'Invalid registration number';
@@ -218,6 +219,7 @@ class AdminController extends Controller
                             'others' => $otherDetails,
                             'pro' => $proDetails
                             );
+            $data['candidates']->phdormsc = $phdormsc;
             $pdf = PDF::loadView('print', $data);
             return response($pdf->output())
                             ->header('Content-Type', 'application/pdf');
