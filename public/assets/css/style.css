@@ -180,6 +180,12 @@ input.select-dropdown{
 input.validate{
 	color: #004d40 !important;
 }
+.inst{
+	padding-left: 10%;
+}
+.inst ol li ul{
+	padding-left: 5%;
+}
 
 @media screen and (max-width: 480px) {
 	.card-content span {

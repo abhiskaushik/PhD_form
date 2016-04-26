@@ -69,3 +69,11 @@ Route::get('ms', function()
     {
         return view('msForm_1');
     });
+Route::get('msinstructions', function()
+    {
+        return view('msinstructions');
+    });
+Route::get('phdinstructions', function()
+    {
+        return view('phdinstructions');
+    });

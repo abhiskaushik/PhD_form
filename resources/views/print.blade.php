@@ -21,14 +21,14 @@
     </div>
     <div class="col l8">
        <div class="space-small"></div>
-          <h4>APPLICATION FOR ADMISSION<br> TO Ph.D. PROGRAMME <br>(2015 – 2016)</h4>
+          <h4>APPLICATION FOR ADMISSION<br> TO Ph.D. PROGRAMME <br>(2016 – 2017)</h4>
     </div>
   </div>
 </div>
 
 <div class="container-fluid">
 @if($phdorms  == 'PHD')
-  <h5>Candidate's Form</h5>
+  <h5>Candidate's Details</h5>
           <p><b>Registration Number:</b> {!! $candidates['registrationNumber'] !!}</p>
           <p><b>Date of Registration:</b> {!! $candidates['dateOfReg'] !!}
           </p>

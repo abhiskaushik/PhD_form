@@ -262,7 +262,6 @@ class AdminController extends Controller
     {
         $filename = $phdormsc.'/'.$applNo.'/'.$applNo;
         $path = public_path() . '/uploads/' . $filename;
-        dd($path);
         if(file_exists($path.'.jpg'))
         {
             $type = 'jpg';
