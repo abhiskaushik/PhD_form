@@ -58,8 +58,11 @@ class ApplicationController extends Controller
 	                            'ug' => $ugDetails,
 	                            'pg' => $pgDetails,
 	                            'others' => $otherDetails,
-	                            'pro' => $proDetails
+	                            'pro' => $proDetails,
+	                            'phdorms' => $categ
 	                            );
+
+	            
 	            $pdf = PDF::loadView('print', $data);
 	            return response($pdf->output())
 	                            ->header('Content-Type', 'application/pdf');
@@ -68,6 +71,7 @@ class ApplicationController extends Controller
 	        {
 	            $candidates = Ms::where('applNo', $applNo)
 	                                ->first();
+	                                dd($candidates);
 	            if(!$candidates)
 	            {
 	                $message = 'Invalid registration number';
