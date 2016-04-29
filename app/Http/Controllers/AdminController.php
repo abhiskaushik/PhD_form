@@ -96,7 +96,8 @@ class AdminController extends Controller
                             'ug' => $ugDetails,
                             'pg' => $pgDetails,
                             'others' => $otherDetails,
-                            'pro' => $proDetails
+                            'pro' => $proDetails,
+                            'dept' => Session::get('dept')
                             );
             return View::make('admin.'.$phdormsc)->with('data', $data);
         }
@@ -114,7 +115,8 @@ class AdminController extends Controller
             $data = array('candidates' => $candidates,
                             'ug' => $ugDetails,
                             'scores' => $scores,
-                            'pro' => $proDetails
+                            'pro' => $proDetails,
+                            'dept' => Session::get('dept')
                             );
             return View::make('admin.'.$phdormsc)->with('data', $data);
         }
@@ -134,6 +136,7 @@ class AdminController extends Controller
                                 ->where('applNo', $appl_number)
                                 ->first();                 
             Mail::send('emails.delete', ['user' => $user->name], function ($m) use($user) {
+                $m->from('phdsection@nitt.edu', 'NITT Admissions');
                 $m->to($user->email, 'Applicant' )->subject('Greetings from NITT!');
             });
 
@@ -148,6 +151,7 @@ class AdminController extends Controller
                                 ->where('applNo', $appl_number)
                                 ->first();
             Mail::send('emails.delete', ['user' => $user->name], function ($m) use($user) {
+                $m->from('phdsection@nitt.edu', 'NITT Admissions');
                 $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
             });
 
@@ -169,6 +173,7 @@ class AdminController extends Controller
                                 ->first();
 
             Mail::send('emails.accept', ['user' => $user->name], function ($m) use($user) {
+                $m->from('phdsection@nitt.edu', 'NITT Admissions');
                 $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
             });
             
@@ -184,6 +189,7 @@ class AdminController extends Controller
                                 ->first();
 
             Mail::send('emails.accept', ['user' => $user->name], function ($m) use($user) {
+                $m->from('phdsection@nitt.edu', 'NITT Admissions');
                 $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
             });
 
@@ -243,7 +249,8 @@ class AdminController extends Controller
             $data = array('candidates' => $candidates,
                             'ug' => $ugDetails,
                             'scores' => $scores,
-                            'pro' => $proDetails
+                            'pro' => $proDetails,
+                            'phdorms' => $phdormsc
                             );
             $pdf = PDF::loadView('print', $data);
             return response($pdf->output())
@@ -255,7 +262,6 @@ class AdminController extends Controller
     {
         $filename = $phdormsc.'/'.$applNo.'/'.$applNo;
         $path = public_path() . '/uploads/' . $filename;
-        dd($path);
         if(file_exists($path.'.jpg'))
         {
             $type = 'jpg';

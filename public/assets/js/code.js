@@ -15,7 +15,7 @@ $(document).ready(function(){
 			$('.add').remove();
 		$('#nannounced').prop('checked',false);
 		if($('#announced').is(':checked'))
-			$('.exams').append('<div class="add"><div class="col l3 s6"> <span class="light">Examination:</span> <select class="exam_select" required name="exam"> <option value="" selected>Choose your Exam</option> <option value="GATE">GATE</option> <option value="NET">NET</option> <option value="SLET">SLET</option> <option value="CSIR">CSIR</option> <option value="CAT">CAT</option> <option value="UGC">UGC</option> </select> </div> <div class="col l3 s6"> <span class="light">Enter Score:</span> <input required placeholder="Enter Score" id="reg_number" type="number" class="validate" name="score" max="10000"> </div> <div class="col l3 s6"> <span class="light">Enter Rank:</span> <input required placeholder="Enter Rank" id="reg_number" type="number" class="validate" name="rank" max="10000"> </div> <div class="col l3 s6"> <span class="light">Valid Till:</span> <input id="valid" type="Number" class="validate" name="validity" max="2018" min="2010"> </div> <!-- disipline needs to be added--> <div class="col l12 s12"> <span class="light">Discipline:</span> <input type="text" class="validate" name="discipline" required / > </div> <div class="space-small"></div></div><script>$("select").material_select();</script>');
+			$('.exams').append('<div class="add"><div class="col l3 s6"> <span class="light">Examination:</span> <select class="exam_select" required name="exam"> <option value="" selected>Choose your Exam</option> <option value="GATE">GATE</option> <option value="NET">NET</option> <option value="SLET">SLET</option> <option value="CSIR">CSIR</option> <option value="CAT">CAT</option> <option value="UGC">UGC</option> </select> </div> <div class="col l3 s6"> <span class="light">Enter Score:</span> <input placeholder="Enter Score" id="reg_number" type="number" class="validate" name="score" max="10000"> </div> <div class="col l3 s6"> <span class="light">Enter Rank:</span> <input placeholder="Enter Rank" id="reg_number" type="number" class="validate" name="rank" max="10000"> </div> <div class="col l3 s6"> <span class="light">Valid Till:</span> <input id="valid" type="Number" class="validate" name="validity" max="2018" min="2010"> </div> <!-- disipline needs to be added--> <div class="col l12 s12"> <span class="light">Discipline:</span> <input type="text" class="validate" name="discipline" required /> </div> <div class="space-small"></div></div><script>$("select").material_select();</script>');
 	});
 	$('#nannounced').click(function()
 	{
@@ -28,20 +28,32 @@ $(document).ready(function(){
 		if($('#ra1').is(':checked')){
 		
 		$('.ug_cgpa').val('');
-		$('.ug_cgpa').prop('disabled',true);
+		
 		}
 		else{
-			$('.ug_cgpa').prop('disabled',false);	
+			
 		}
 	});
 	$('#ra2').click(function()
 	{
 		if($('#ra2').is(':checked')){
 		$('.pg_cgpa').val('');
-		$('.pg_cgpa').prop('disabled',true);
+		
 		}
 		else{
-			$('.pg_cgpa').prop('disabled',false);	
+			
+		}
+	});
+
+	$('#deptCheck1').click(function()
+	{
+		if($('#deptCheck1').is(':checked')){
+			$('.dfield input').hide('slow');
+			$('.dfield-select').show('slow');
+		}
+		else{
+			$('.dfield input').show('slow');
+			$('.dfield-select').hide('slow');	
 		}
 	});
 
@@ -99,7 +111,7 @@ $(document).ready(function(){
 			return false;
 		}
 		count++;
-		if(data.department1 == '' || data.department2 == '' || data.department3 == '' || data.marital_status == '' || data.sex == '' || data.category == '' || data.ph == ''){
+		if(data.department1 == '' || data.marital_status == '' || data.sex == '' || data.category == '' || data.ph == ''){
 			var error = "Please select all the dropdowns";
 			if(count==1)
 				$('#error .modal-content .error').append('<p>'+error+'</p>');
@@ -117,7 +129,7 @@ $(document).ready(function(){
 	    });
 		
 		
-		var baseurl = 'http://admission.nitt.edu';
+		var baseurl = 'http://localhost:8000';
 		var url = '/save' + data.checker;//route to the controller goes here
 		$.ajax(
 	    {
@@ -158,7 +170,7 @@ $(document).ready(function(){
 		var applNo = dept[dept.length-1];
 		var checker = $('.checker').val();
 		var dob = $('#dob').val();
-		window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
+		window.location = 'http://localhost:8000/fetch/'+ categ + '/' + applNo + '/' + dob;
 	});
 	$('.redirect1').click(function()
 	{
@@ -168,7 +180,7 @@ $(document).ready(function(){
 		var applNo = dept[dept.length-1];
 
 		var dob = $('#dob').val();
-		window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
+		window.location = 'http://localhost:8000/fetch/'+ categ + '/' + applNo + '/' + dob;
 	});
 	//validating front-end in form 3
 	$('.valid1').click(function(){
@@ -216,7 +228,7 @@ $(document).ready(function(){
 		}
 
 
-		if(data.appl_categ == '' || data.department1 == '' || data.department2 == '' || data.department3 == '' || data.marital_status == '' || data.sex == '' || data.category == '' || data.ph == '' || data.ug_class == '' || data.pg_class == ''){
+		if(data.appl_categ == '' || data.department1 == '' ||  data.marital_status == '' || data.sex == '' || data.category == '' || data.ph == '' || data.ug_class == '' || data.pg_class == ''){
 			var error = "Please select all the dropdowns";
 			if(count==1)
 				$('#error .modal-content .error').append('<p>'+error+'</p>');

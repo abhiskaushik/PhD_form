@@ -59,7 +59,7 @@ Route::get('home', function()
     });
 Route::get('continue', function()
     {
-        return view('continue');
+        return view('savedForm');
     });
 Route::get('phd', function()
     {
@@ -68,4 +68,12 @@ Route::get('phd', function()
 Route::get('ms', function()
     {
         return view('msForm_1');
+    });
+Route::get('msinstructions', function()
+    {
+        return view('msinstructions');
+    });
+Route::get('phdinstructions', function()
+    {
+        return view('phdinstructions');
     });

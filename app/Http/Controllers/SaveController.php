@@ -43,6 +43,7 @@ use Log;
             $candidate->permanentaddr = $request->input('permanent_addr');
             $candidate->email = $request->input('email');
             $candidate->mobile = $request->input('mobile');
+            $candidate->lanline = $request->get('landline');
 
             $candidate->save();
 
@@ -124,13 +125,14 @@ use Log;
         public function fetch($category, $applNo, $dob)
         {
             Session::put('applNo', $applNo);
+            // dd($category);
             
-    		if($category == 'phd')
+    		if($category == 'PHD')
     		{
     			$details = SavePhd::where('applNo', $applNo)
                                         ->where('dob', $dob)
     									->first();
-
+                
                 if($details != NULL)
                 {
                     return view('saved.phd')->with('details', $details);

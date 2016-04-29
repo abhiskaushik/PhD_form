@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
 	<link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
 	<link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> 
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 	<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/code.js')}}"></script>
@@ -68,7 +68,7 @@
 
 		      <div class="row dept">
 		        <div class="input-field col l6 s6 ">
-
+		        
 		      		<select name="department1" required id="department1">
 
 		      			 <option value="" disabled selected>Department 1</option>

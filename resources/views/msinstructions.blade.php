@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ph.d Registration Form</title>
+  <title>Admissions NITT | Rules</title>
   <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
   <!-- <link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> -->
@@ -12,10 +12,8 @@
 
   <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
   <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
-</head>
 <body>
-	 
-   <header> 
+  <header> 
   </header>
   
   <nav>
@@ -38,32 +36,36 @@
   </nav>
 
   <div class="space-medium"></div>
-  <div class="container center">
-    <p class="large">
-      Welcome to NITT PhD and M.S application portal!
-    </p>
-    <div class="space-small"></div>
-    <!-- <p>The Ph.D. degree is granted for distinction attained in a special field of concentration, by the demonstrated ability to modify or enlarge a significant subject in a dissertation, based upon original research scholarship. The minimum requirement is that the doctoral student follow a unified and organized program of study.</p> -->
-    <div class="space-large"></div>
-  	<div class="row">
-      
-      <div class="col l12 s12">
-        <a class="waves-effect waves-light btn" href="/phdinstructions">Click here for PhD Admissions</a>
-        <a class="waves-effect waves-light btn" href="/msinstructions">Click here for M.S Admissions</a>
-        </div>
-        <div class="space-medium"> </div>
-        <div class="col l12 s12">
-        <a class="waves-effect waves-light btn" href="/view">View my application</a>
+  <div class="container">
+    <div class="row">
+      <h5 class="center">
+        Instructions to fill the application
+      </h5>
+      <div class="space-small"></div>
+      <div class="inst">
+        <ol>
+          <li>Use Google Chrome to fill the application.</li>
+          <li>The entire registration process is of 3 stages. 
+            <ul>
+              <li>Stage 1: Personal details</li>
+              <li>Stage 2: Online payment</li>
+              <li>Stage 3: Other details</li>
+            </ul>
+          </li>
+          <li>Application fees should be paid through  <a href="https://www.onlinesbi.com/prelogin/icollecthome.htm?corpID=88587">State Bank iCollect</a> before the submission of the application form.</li>
+          <li>If any information given in the application is found incorrect, the application will be rejected.</li>
+        </ol>
       </div>
-      
-  	</div>
-    <div class="space-medium"></div>
-    <div class="row center">
-      <p>Click <a href="continue">here</a> to continue with saved application form </p>
+      <div class="space-small"></div>
+      <div class="center">
+      <a href="/ms" class="center btn teal waves">Proceed</a>
+
+      </div>
     </div>
   </div>
+  
   <div class="space-large"></div>
-  <footer class="page-footer teal darken-4">
+<footer class="page-footer teal darken-4">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -75,7 +77,7 @@
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">QuickLinks</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="https://www.nitt.edu">Institute Website</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/">Institute Website</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/academics/departments/">Departments</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/home/admissions/">Admissions</a></li>
                   <li><a class="grey-text text-lighten-3" href="http://www.nitt.edu/contact">Contact Us</a></li>

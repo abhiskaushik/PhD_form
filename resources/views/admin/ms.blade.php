@@ -48,7 +48,11 @@
         
         @if(!$data['candidates'][$i]->deleted)
      <div class="{!! $data['candidates'][$i]->registrationNumber !!} col l5 offset-l1 s5 offset-s1" } data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
-        <div class="card">
+        @if($data['candidates'][$i]->accepted)
+        <div class="card center border">
+        @else
+        <div class="card center">
+        @endif
           <div class=" waves-effect waves-block waves-light">  
           </div>
           <div class="card-content">
@@ -146,9 +150,11 @@
           
         </div>
       <div class="modal-footer">
+        @if($data['dept'] == 'all')
         <a href="#!" data-reg={!! $data['candidates'][$i]->applNo!!} class="discard btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
-        <a href="#!"  data-reg={!! $data['candidates'][$i]->applNo!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
-        <a href="#!" data-reg={!! $data['candidates'][$i]->applNo!!} class="accept btn modal-action modal-close waves-effect waves-green btn-flat">Accept</a>
+        <a href="#!"  data-reg={!! $data['candidates'][$i]->applNo!!} class="accept btn modal-action modal-close waves-effect waves-green btn-flat">Accept</a>
+        @endif
+        <a href="#!" data-reg={!! $data['candidates'][$i]->applNo!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn modal-action modal-close waves-effect waves-green btn-flat">Admit</a>
       </div>
       </div>

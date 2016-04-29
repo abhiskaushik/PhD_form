@@ -51,6 +51,7 @@
       </div>
     </div>
   </div>
+  <div class="space-medium"></div>
 <footer class="page-footer teal darken-4">
           <div class="container">
             <div class="row">

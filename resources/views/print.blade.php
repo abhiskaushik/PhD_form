@@ -21,14 +21,16 @@
     </div>
     <div class="col l8">
        <div class="space-small"></div>
-          <h4>APPLICATION FOR ADMISSION<br> TO Ph.D. PROGRAMME <br>(2015 – 2016)</h4>
+          <h4>APPLICATION FOR ADMISSION<br> TO Ph.D. PROGRAMME <br>(2016 – 2017)</h4>
     </div>
   </div>
 </div>
 
 <div class="container-fluid">
+
 @if($phdorms  == 'phd')
   <h5>Candidate's Form</h5>
+
           <p><b>Registration Number:</b> {!! $candidates['registrationNumber'] !!}</p>
           <p><b>Date of Registration:</b> {!! $candidates['dateOfReg'] !!}
           </p>
@@ -61,13 +63,13 @@
           <p><b>Undergraduate Name of University:</b> {!! $ug['universityName'] !!}</p>
           <p><b>Undergraduate Year of Passing:</b> {!! $ug['yop'] !!}</p>
           <h5>Post-Graduate Details:</h5>
-          <p><b>Post-graduate Degree:</b> {!! $pg['degreeName'] !!}</p>
-          <p><b>Post-graduate Branch:</b> {!! $pg['branch'] !!}</p>
-          <p><b>Post-graduate G.P.A:</b> {!! $pg['gpa'] !!}</p>
-          <p><b>Post-graduate Class:</b> {!! $pg['class'] !!}</p>
-          <p><b>Post-graduate Name of Institution:</b> {!! $pg['institutionName'] !!}</p>
-          <p><b>Post-graduate Name of University:</b> {!! $pg['universityName'] !!}</p>
-          <p><b>Post-graduate Year of Passing:</b> {!! $pg['yop'] !!}</p>
+          <p><b>Degree:</b> {!! $pg['degreeName'] !!}</p>
+          <p><b>Branch:</b> {!! $pg['branch'] !!}</p>
+          <p><b>G.P.A:</b> {!! $pg['gpa'] !!}</p>
+          <p><b>Class:</b> {!! $pg['class'] !!}</p>
+          <p><b>Name of Institution:</b> {!! $pg['institutionName'] !!}</p>
+          <p><b>Name of University:</b> {!! $pg['universityName'] !!}</p>
+          <p><b>Year of Passing:</b> {!! $pg['yop'] !!}</p>
           <h5>Other Details:</h5>
           <p><b>Score:</b> {!! $others['score'] !!}</p>
           <p><b>Rank:</b> {!! $others['rank'] !!}</p>
@@ -118,13 +120,13 @@
           <p><b>Landline Number:</b> {!! $candidates['landline'] !!}</p>
 
           <h5>Undergraduate Details:</h5>
-          <p><b>Undergraduate Degree:</b> {!! $ug['degreeName'] !!}</p>
-          <p><b>Undergraduate Branch:</b> {!! $ug['branch'] !!}</p>
-          <p><b>Undergraduate G.P.A:</b> {!! $ug['gpa'] !!}</p>
-          <p><b>Undergraduate Class:</b> {!! $ug['class'] !!}</p>
-          <p><b>Undergraduate Name of Institution:</b> {!! $ug['institutionName'] !!}</p>
-          <p><b>Undergraduate Name of University:</b> {!! $ug['universityName'] !!}</p>
-          <p><b>Undergraduate Year of Passing:</b> {!! $ug['yop'] !!}</p>
+          <p><b>Degree:</b> {!! $ug['degreeName'] !!}</p>
+          <p><b>Branch:</b> {!! $ug['branch'] !!}</p>
+          <p><b>G.P.A:</b> {!! $ug['gpa'] !!}</p>
+          <p><b>Class:</b> {!! $ug['class'] !!}</p>
+          <p><b>Name of Institution:</b> {!! $ug['institutionName'] !!}</p>
+          <p><b>Name of University:</b> {!! $ug['universityName'] !!}</p>
+          <p><b>Year of Passing:</b> {!! $ug['yop'] !!}</p>
           
           <h5>Educational Details:</h5>
           <p><b>Semester 1:</b></p>
@@ -165,6 +167,8 @@
           <p><b>From :</b> {!! $pro['from3'] !!}</p>
           <p><b>To :</b> {!! $pro['to3'] !!}</p>
           @endif
+
 </div>
 
 </body>
+</html>

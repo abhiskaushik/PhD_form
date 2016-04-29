@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
 	<link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
 	<link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> 
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 	<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/code.js')}}"></script>
@@ -28,13 +28,13 @@
       <a href="#" details-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/ms1">M.S Admissions</a></li>
+        <li><a href="/ms">M.S Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/ms1">Ms Admissions</a></li>
+        <li><a href="/ms">Ms Admissions</a></li>
         <li><a href="/login">Admin</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
@@ -108,8 +108,14 @@
 
 		      <div class="row dept">
 		        <div class="input-field col l6 s6 ">
+		        <div class="dfield">
+		        <input type="text" name="department1" value="{!! $details->dept1 !!}" readonly="true"  />
 
-		      		<select name="department1" required id="department1">
+
+
+		        </div>
+		        <div class="dfield-select" hidden>
+		        	<select name="department1" id="department1">
  						<option value="" disabled selected>Department 1</option>
 		      			<option value="AR">Architecture</option>
 		      			<option value="CS">Computer Science and Engineering</option>
@@ -130,11 +136,38 @@
 		      			<option value="MME">Metalurgy and Material Engineering</option>
 		      			<option value="PR">Production Engineering</option>		      
 		      		</select>
-		      		
+		        </div>
+		        <p>
+		      	<input type="checkbox" id="deptCheck1" name="depCheck1" />
+			      <label for="deptCheck1">Click here to change department.</label>
+		      	</p>
+
+		      		<!-- <select name="department1" required id="department1">
+ 						<option value="" disabled selected>Department 1</option>
+		      			<option value="AR">Architecture</option>
+		      			<option value="CS">Computer Science and Engineering</option>
+		      			<option value="CL">Chemical Engineering</option>
+		      			<option value="CV">Civil Engineering </option>
+		      			<option value="CY">Chemistry </option>
+		      			<option value="CA">Computer Applications </option>
+		      			<option value="CC">CECASE</option>
+		      			<option value="EN">Department of Energy Engineering</option>
+		      			<option value="EC">Electronics & Communication Engineering</option>
+		      			<option value="EE">Electrical & Electronics Engineering</option>		      			
+		      			<option value="HM">Humanities & Social Science</option>
+		      			<option value="ME">Mechanical 
+		      			Engineering</option>
+		      			<option value="MA">Mathematics</option>
+		      			<option value="MS">Management Studies
+		      			Engineering</option>
+		      			<option value="MME">Metalurgy and Material Engineering</option>
+		      			<option value="PR">Production Engineering</option>		      
+		      		</select> -->
+		      	
 		        </div>
 		        <div class="input-field col l6 s6 ">
 
-		      		<select name="department2">
+		      		<select name="department2" id="department2">
 
 		      			  <option value="" disabled selected>Department 2</option>
 		      			<option value="AR">Architecture</option>
@@ -162,7 +195,7 @@
 
 		      		<select name="department3" id="department3">
 
-		      			 < <option value="" disabled selected>Department 3</option>
+		      			  <option value="" disabled selected>Department 3</option>
 		      			<option value="AR">Architecture</option>
 		      			<option value="CS">Computer Science and Engineering</option>
 		      			<option value="CL">Chemical Engineering</option>
@@ -382,7 +415,7 @@
 		      <div class="row">
 		      	<div class="input-field col l12 s12">
 		      		<span class="light">College Name:</span>
-		      		<input required placeholder="College Name" id="pg_name_pf_inst" type="text" class="validate" name="pg_name_of_inst" maxlength="50" value="{!! $details->pginstitutionName !!}">
+		      		<input required placeholder="College Name" id="pg_name_of_inst" type="text" class="validate" name="pg_name_of_inst" maxlength="50" value="{!! $details->pginstitutionName !!}">
 		      	</div>
 
 		      	<div class="input-field col l12 s12">

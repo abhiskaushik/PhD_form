@@ -141,29 +141,19 @@
           <p><b>Submission Date:</b> {!! $data['others'][$i]->subdate !!}</p>
         </div>
       <div class="modal-footer center">
+        @if($data['dept'] == 'all')
         <div class="col s12">
           <a href="#!" data-reg={!! $data['candidates'][$i]->applNo!!} class="discard1 btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
-        <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
+        <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn-flat">Accept</a>
         </div>
+        @endif
         <div class="col s12">
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn-flat">Accept</a>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn modal-action modal-close waves-effect waves-green btn-flat">Admit</a>
         </div>
       </div>
       </div>
         
-    <div class="modal" id="discard">
-      <div class="modal-content">
-        <p class="large">
-        Enter Message Here:-
-        </p>
-        <textarea required id="discard-msg" class="materialize-textarea" name="discard-msg" maxlength="500" placeholder="Enter your message here"></textarea>
-      </div>
-
-      <div class="modal-footer">
-        <a href="#!" data-reg={!! $data['candidates'][$i]->applNo!!} class="discard btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
-      </div>
-    </div> 
     </div>
           @endif
           @endfor
