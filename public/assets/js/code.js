@@ -13,16 +13,11 @@ $(document).ready(function(){
 	{
 		if($('.exams').has('.add'))
 			$('.add').remove();
-		$('#nannounced').prop('checked',false);
+		
 		if($('#announced').is(':checked'))
 			$('.exams').append('<div class="add"><div class="col l3 s6"> <span class="light">Examination:</span> <select class="exam_select" required name="exam"> <option value="" selected>Choose your Exam</option> <option value="GATE">GATE</option> <option value="NET">NET</option> <option value="SLET">SLET</option> <option value="CSIR">CSIR</option> <option value="CAT">CAT</option> <option value="UGC">UGC</option> </select> </div> <div class="col l3 s6"> <span class="light">Enter Score:</span> <input placeholder="Enter Score" id="reg_number" type="number" class="validate" name="score" max="10000"> </div> <div class="col l3 s6"> <span class="light">Enter Rank:</span> <input placeholder="Enter Rank" id="reg_number" type="number" class="validate" name="rank" max="10000"> </div> <div class="col l3 s6"> <span class="light">Valid Till:</span> <input id="valid" type="Number" class="validate" name="validity" max="2018" min="2010"> </div> <!-- disipline needs to be added--> <div class="col l12 s12"> <span class="light">Discipline:</span> <input type="text" class="validate" name="discipline" required /> </div> <div class="space-small"></div></div><script>$("select").material_select();</script>');
 	});
-	$('#nannounced').click(function()
-	{
-		$('#announced').prop('checked',false);
-		$('.add').remove();
-	});
-
+	
 	$('#ra1').click(function()
 	{
 		if($('#ra1').is(':checked')){
@@ -47,13 +42,58 @@ $(document).ready(function(){
 
 	$('#deptCheck1').click(function()
 	{
+		$('.chDep1').hide();
 		if($('#deptCheck1').is(':checked')){
-			$('.dfield input').hide('slow');
-			$('.dfield-select').show('slow');
+			$('.dfield input').hide();
+			$('.dfield-select').show();
+			$('#deptCheck1').hide();
 		}
-		else{
-			$('.dfield input').show('slow');
-			$('.dfield-select').hide('slow');	
+	});
+	$('#deptCheck2').click(function()
+	{	
+		$('.chDep2').hide();
+		if($('#deptCheck2').is(':checked')){
+			$('.dfield2 input').hide();
+			$('.dfield-select2').show();
+			
+		}
+	});
+	$('#deptCheck3').click(function()
+	{
+		$('.chDep3').hide();
+		if($('#deptCheck3').is(':checked')){
+			$('.dfield3 input').hide();
+			$('.dfield-select3').show();
+			$('#deptCheck3').hide();
+		}
+	});
+	$('#categCheck').click(function()
+	{
+		$('.chCateg').hide();
+		if($('#categCheck').is(':checked')){
+			$('.categField input').hide();
+			$('.categDrop').show();
+			$('#categCheck').hide();
+		}
+	});
+
+	$('#statusCheck').click(function()
+	{
+		$('.chStatus').hide();
+		if($('#statusCheck').is(':checked')){
+			$('.statusField input').hide();
+			$('.statusDrop').show();
+			$('#statusCheck').hide();
+		}
+	});
+
+	$('#phCheck').click(function()
+	{
+		$('.chPh').hide();
+		if($('#phCheck').is(':checked')){
+			$('.phField input').hide();
+			$('.phDrop').show();
+			$('#phCheck').hide();
 		}
 	});
 
@@ -261,14 +301,14 @@ $(document).ready(function(){
 			if($('.upload_container').has('.ext'))
 				$('.ext').remove();
 				// console.log($('.upload_container').has('.ext'));
-			$('.upload_container').append('<div class="ext"><input type="file" name="form3" required/></div>');
+			$('.upload_container').append('<div class="ext"><input type="file" name="form3"/></div>');
 
 		}
 		else if(p=='External'){
 			if($('.upload_container').has('.oc'))
 				$('.oc').remove();
 			
-			$('.upload_container').append('<div class="oc"><input type="file" name="form1" required/><br><input type="file" name="form2" required /></div>');
+			$('.upload_container').append('<div class="oc"><input type="file" name="form1"/><br><input type="file" name="form2" /></div>');
 		}
 		else{
 			if($('.upload_container').has('.ext'))

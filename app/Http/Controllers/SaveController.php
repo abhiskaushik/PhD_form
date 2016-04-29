@@ -125,7 +125,7 @@ use Log;
         public function fetch($category, $applNo, $dob)
         {
             Session::put('applNo', $applNo);
-            // dd($category);
+            
             
     		if($category == 'PHD')
     		{
@@ -135,6 +135,7 @@ use Log;
                 
                 if($details != NULL)
                 {
+                    
                     return view('saved.phd')->with('details', $details);
                 }
                 else

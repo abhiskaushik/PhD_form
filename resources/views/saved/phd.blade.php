@@ -109,10 +109,7 @@
 		      <div class="row dept">
 		        <div class="input-field col l6 s6 ">
 		        <div class="dfield">
-		        <input type="text" name="department1" value="{!! $details->dept1 !!}" readonly="true"  />
-
-
-
+		        <input type="text" id="deptInput1" name="department1" value="{!! $details->dept1 !!}" readonly="true"  />
 		        </div>
 		        <div class="dfield-select" hidden>
 		        	<select name="department1" id="department1">
@@ -131,45 +128,28 @@
 		      			<option value="ME">Mechanical 
 		      			Engineering</option>
 		      			<option value="MA">Mathematics</option>
-		      			<option value="MS">Management Studies
-		      			Engineering</option>
+		      			</option>
 		      			<option value="MME">Metalurgy and Material Engineering</option>
-		      			<option value="PR">Production Engineering</option>		      
-		      		</select>
+		      			<option value="PR">Production Engineering</option>
+		     		</select>
 		        </div>
-		        <p>
+		        <p class="chDep1">
 		      	<input type="checkbox" id="deptCheck1" name="depCheck1" />
 			      <label for="deptCheck1">Click here to change department.</label>
 		      	</p>
 
-		      		<!-- <select name="department1" required id="department1">
- 						<option value="" disabled selected>Department 1</option>
-		      			<option value="AR">Architecture</option>
-		      			<option value="CS">Computer Science and Engineering</option>
-		      			<option value="CL">Chemical Engineering</option>
-		      			<option value="CV">Civil Engineering </option>
-		      			<option value="CY">Chemistry </option>
-		      			<option value="CA">Computer Applications </option>
-		      			<option value="CC">CECASE</option>
-		      			<option value="EN">Department of Energy Engineering</option>
-		      			<option value="EC">Electronics & Communication Engineering</option>
-		      			<option value="EE">Electrical & Electronics Engineering</option>		      			
-		      			<option value="HM">Humanities & Social Science</option>
-		      			<option value="ME">Mechanical 
-		      			Engineering</option>
-		      			<option value="MA">Mathematics</option>
-		      			<option value="MS">Management Studies
-		      			Engineering</option>
-		      			<option value="MME">Metalurgy and Material Engineering</option>
-		      			<option value="PR">Production Engineering</option>		      
-		      		</select> -->
 		      	
 		        </div>
 		        <div class="input-field col l6 s6 ">
+		        <div class="dfield2">
+		        <input type="text" name="department2" value="{!! $details->dept2 !!}" readonly="true"  />
 
-		      		<select name="department2" id="department2">
 
-		      			  <option value="" disabled selected>Department 2</option>
+
+		        </div>
+		        <div class="dfield-select2" hidden>
+		        	<select name="department2" id="department2">
+ 						<option value="" disabled selected>Department 2</option>
 		      			<option value="AR">Architecture</option>
 		      			<option value="CS">Computer Science and Engineering</option>
 		      			<option value="CL">Chemical Engineering</option>
@@ -184,18 +164,31 @@
 		      			<option value="ME">Mechanical 
 		      			Engineering</option>
 		      			<option value="MA">Mathematics</option>
-		      			<option value="MS">Management Studies
-		      			Engineering</option>
+		      			</option>
 		      			<option value="MME">Metalurgy and Material Engineering</option>
 		      			<option value="PR">Production Engineering</option>		      
 		      		</select>
-		      		
 		        </div>
+		        <p class="chDep2">
+		      	<input type="checkbox" id="deptCheck2" name="depCheck2" />
+			      <label for="deptCheck2">Click here to change department.</label>
+		      	</p>
+
+		      		
+		      	
+		        </div>
+		        </div>
+		        <div class="dept row">
 		        <div class="input-field col l6 s6 ">
+		        <div class="dfield3">
+		        <input type="text" name="department3" value="{!! $details->dept3 !!}" readonly="true"  />
 
-		      		<select name="department3" id="department3">
 
-		      			  <option value="" disabled selected>Department 3</option>
+
+		        </div>
+		        <div class="dfield-select3" hidden>
+		        	<select name="department3" id="department3">
+ 						<option value="" disabled selected>Department 3</option>
 		      			<option value="AR">Architecture</option>
 		      			<option value="CS">Computer Science and Engineering</option>
 		      			<option value="CL">Chemical Engineering</option>
@@ -207,29 +200,37 @@
 		      			<option value="EC">Electronics & Communication Engineering</option>
 		      			<option value="EE">Electrical & Electronics Engineering</option>		      			
 		      			<option value="HM">Humanities & Social Science</option>
-		      			<option value="ME">Mechanical 
-		      			Engineering</option>
+		      			<option value="ME">Mechanical Engineering</option>
 		      			<option value="MA">Mathematics</option>
-		      			<option value="MS">Management Studies
-		      			Engineering</option>
+		      			</option>
 		      			<option value="MME">Metalurgy and Material Engineering</option>
 		      			<option value="PR">Production Engineering</option>		      
 		      		</select>
+		        </div>
+		        <p class="chDep3">
+		      	<input type="checkbox" id="deptCheck3" name="depCheck3" />
+			      <label for="deptCheck3">Click here to change department.</label>
+		      	</p>
+
 		      		
 		        </div>
-		        
-		        
 		        <div class="input-field col s6 l6">
+		        	<input type="text" value="dept" hidden="true"></input>
+		        </div>
+		      </div>      
+		      <div class="space-small"></div>
+		       <div class="row">
+		        <div class="input-field col s6 l6">
+		        	<span class="light">Email Id:</span>
 		        	          <input id="email" name="email" type="email" class="validate" required value="{!! $details->email !!}">
-		        	          <label for="last_name">Email</label>
+		        	          
 		       	</div>
 		        
-		         <div class="input-field col l12 s12">
+		         <div class="input-field col l6 s6">
 		         <span class="light">Area of Research:</span>
 		          <input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research" maxlength="50" value="{!! $details->areaOfResearch !!}">
 		        </div>
-		      </div>      
-
+		        </div>
 		      <div class="row">
 		        <div class="input-field col l6 s6">
 		        	<span class="light">Name:</span>
@@ -249,6 +250,10 @@
 
 		         <div class="input-field col l6 ">
 		         <span class="light">Category</span><br>
+		         <div class="categField">
+		        	<input type="text" id="categInput" name="department3" value="{!! $details->category !!}" readonly="true"  />
+		        </div>
+		        <div class="categDrop" hidden>
 		         	<select required name="category" id="category">
 				      <option value="" disabled selected>Choose your Category</option>
 				      <option value="OBC">OBC</option>
@@ -256,6 +261,13 @@
 				      <option value="SC">SC</option>
 				      <option value="ST">ST</option>
 				    </select>
+				</div>
+
+				<p class="chCateg">
+		      	<input type="checkbox" id="categCheck" name="categCheck" />
+			      <label for="categCheck">Click here to change department.</label>
+		      	</p>
+
 		        </div>
 		      </div> 
 
@@ -272,22 +284,42 @@
 
 		         <div class="input-field col l6 ">
 		         <span class="light">Marital Status</span><br>
+		         <div class="statusField">
+		        	<input type="text" id="statusInput" value="{!! $details->maritalStatus !!}" readonly="true"  />
+		        </div>
+		        <div class="statusDrop" hidden>
 		         	<select required name="marital_status" id="marital_status">
 				      <option value="" disabled selected>Choose your Marital Status</option>
 				      <option value="married">Married</option>
 				      <option value="single">Single</option>
 				    </select>
+				</div>
+				<p class="chStatus">
+		      	<input type="checkbox" id="statusCheck" name="statusCheck" />
+			      <label for="statusCheck">Click here to change marital status.</label>
+		      	</p>
 		        </div>
+
+		        
 		      </div> 
 
 		      <div class="row">
 		        <div class="input-field col l6">
-		      		  <span class="light">Physically Challenged(P.H)</span><br>
+		      		  <span class="light">Physically Disability(P.W.D)</span><br>
+		      	<div class="phField">
+		        	<input type="text" id="phInput" name="ph" value="{!! $details->PH !!}" readonly="true"  />
+		        </div>
+		        <div class="phDrop" hidden>
 		         	<select required name="ph" id="ph">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="yes">Yes</option>
 				      <option value="no">No</option>
 				    </select>
+				</div>
+				<p class="chPh">
+		      	<input type="checkbox" id="phCheck" name="phCheck" />
+			      <label for="phCheck">Click here to change option.</label>
+		      	</p>
 		        </div>
 		         <div class="input-field col l6 ">
 
@@ -438,10 +470,7 @@
 		      			<input type="checkbox" id="announced" name="ann" />
 		      			<label for="announced">Yes</label>
 		      		</span>
-		      		<span>
-		      			<input type="checkbox" id="nannounced" name="nann" />
-		      			<label for="nannounced">No</label>
-		      		</span>
+		      		
 		      	</div>
 		      	<div class="space-medium"></div>
 				<div class="exams"></div>		      
