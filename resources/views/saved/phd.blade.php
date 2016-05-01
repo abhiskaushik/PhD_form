@@ -627,6 +627,12 @@
 		//     return $(this).text() == text1; 
 		// }).attr('selected', true);
 		// console.log($('select#sex option').val());
+
+
+		// $('.sexCheck .select-wrapper ul>li:eq(1)').addClass('active selected');	
+		////this adds the require class but doesnt show any change in the html so i tried another thing
+			
+
 		var t='{!! $details->sex !!}';
 		if(t=='male'){
 			$('.sexCheck .select-wrapper input').val(t);
