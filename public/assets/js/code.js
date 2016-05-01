@@ -77,15 +77,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$('#statusCheck').click(function()
-	{
-		$('.chStatus').hide();
-		if($('#statusCheck').is(':checked')){
-			$('.statusField input').hide();
-			$('.statusDrop').show();
-			$('#statusCheck').hide();
-		}
-	});
+
 
 	$('#phCheck').click(function()
 	{
@@ -124,7 +116,7 @@ $(document).ready(function(){
 		data.landline = $('#landline').val();
 		data.age = $('#age').val();
 		data.checker = $('.checker').val();
-		// console.log(data);
+		console.log(data);
 		// console.log($('#dob').val());
 		var a = $('#mobile').val();
 		console.log(a);
@@ -230,9 +222,9 @@ $(document).ready(function(){
 		data.department2 = $('#department2 option:selected').text();
 		data.department3 = $('#department3 option:selected').text();
 		data.category = $('#category option:selected').text();
-		data.sex = $('#sex option:selected').text();
+		data.sex = $('#sex').val();
 		data.ph = $('#ph option:selected').text();
-		data.marital_status = $('#marital_status option:selected').text();
+		data.marital_status = $('#marital_status').val();
 		data.checker = $('.checker').val();
 		data.ug_class = $('#ug_class option:selected').text();
 		if(data.checker == 'phd'){

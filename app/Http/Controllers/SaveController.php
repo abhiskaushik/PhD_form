@@ -135,7 +135,7 @@ use Log;
                 
                 if($details != NULL)
                 {
-                    
+                       
                     return view('saved.phd')->with('details', $details);
                 }
                 else
@@ -187,7 +187,7 @@ use Log;
                 'lanline' => $request->input('landline'),
                 'ugdegreeName' => $request->input('ug_deg'),
                 'ugbranch' => $request->input('ug_branch'),
-                // 'gpa' => $details['ug_gpa'],
+                'uggpa' => $request->input('ug_gpa'),
                 // replace this field by gpa
                 'ugclass' => $request->input('ug_class'),
                 'uginstitutionName' => $request->input('ug_name_of_inst'),
@@ -195,7 +195,7 @@ use Log;
                 'ugyop' => $request->input('ug_yop'),
                 'pgdegreeName' => $request->input('pg_deg'),
                 'pgbranch' => $request->input('pg_branch'),
-                // 'gpa' => $details['pg_gpa'],
+                'pggpa' => $request->input('pg_gpa'),
                 'pgclass' => $request->input('pg_class'),
                 'pginstitutionName' => $request->input('pg_name_of_inst'),
                 'pguniversityName'=> $request->input('pg_name_of_uni'),
@@ -227,7 +227,7 @@ use Log;
                 'to3' => $request->input('emp_to_3')
             );
 
-            Log::info($request->input('name').$request->input('father_name'));
+            Log::info($request->input('applicationCategory').$request->input('father_name'));
             SavePhd::where('applNo', Session::get('applNo'))
                         ->update($details);
 
@@ -299,4 +299,53 @@ use Log;
 
             return json_encode(0);
         }
-    }
+
+    //     public function department($dept)
+    //     {
+    //         if($dept == 'CS')
+    //         {
+    //             $dept = 'Computer Science and Engineering';
+    //         }
+    //         else if($dept == 'CY')
+    //         {
+    //             $dept = 'Chemistry';
+    //         }
+    //         else if($dept == 'AR')
+    //         {
+    //             $dept = 'Chemistry';
+    //         }
+    //         else if($dept == 'CY')
+    //         {
+    //             $dept = 'Chemistry';
+    //         }
+    //         else if($dept == 'CY')
+    //         {
+    //             $dept = 'Chemistry';
+    //         }
+    //         else if($dept == 'CY')
+    //         {
+    //             $dept = 'Chemistry';
+    //         }
+    //         else if($dept == 'CY')
+    //         {
+    //             $dept = 'Chemistry';
+    //         }
+    //         else if($dept == 'CY')
+    //         {
+    //             $dept = 'Chemistry';
+    //         }
+    //         else if($dept == 'CY')
+    //         {
+    //             $dept = 'Chemistry';
+    //         }
+    //         else if($dept == 'CY')
+    //         {
+    //             $dept = 'Chemistry';
+    //         }
+    //         else if($dept == 'CY')
+    //         {
+    //             $dept = 'Chemistry';
+    //         }
+    //         return $dept;
+    //     }
+   }

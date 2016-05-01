@@ -65,7 +65,7 @@
   			<p class="large">Application Category</p>		    
 		        
 		      		
-				    <div class="input-field col l6 s12">
+				    <div class="input-field col l6 s12 appCheck">
 				        <select class="applicationCateg" name="appl_categ" required id="applicationCateg"> 
 				        <option value="" disabled selected>Select</option>
 				          <optgroup label="Part Time">
@@ -107,11 +107,9 @@
 		    <div class="col s12">
 
 		      <div class="row dept">
-		        <div class="input-field col l6 s6 ">
-		        <div class="dfield">
-		        <input type="text" id="deptInput1" name="department1" value="{!! $details->dept1 !!}" readonly="true"  />
-		        </div>
-		        <div class="dfield-select" hidden>
+		        <div class="input-field col l6 s6 dep1Check">
+		        
+		        
 		        	<select name="department1" id="department1">
  						<option value="" disabled selected>Department 1</option>
 		      			<option value="AR">Architecture</option>
@@ -133,21 +131,7 @@
 		      			<option value="PR">Production Engineering</option>
 		     		</select>
 		        </div>
-		        <p class="chDep1">
-		      	<input type="checkbox" id="deptCheck1" name="depCheck1" />
-			      <label for="deptCheck1">Click here to change department.</label>
-		      	</p>
-
-		      	
-		        </div>
-		        <div class="input-field col l6 s6 ">
-		        <div class="dfield2">
-		        <input type="text" name="department2" value="{!! $details->dept2 !!}" readonly="true"  />
-
-
-
-		        </div>
-		        <div class="dfield-select2" hidden>
+		        <div class="input-field col l6 s6 dep2Check">
 		        	<select name="department2" id="department2">
  						<option value="" disabled selected>Department 2</option>
 		      			<option value="AR">Architecture</option>
@@ -168,26 +152,14 @@
 		      			<option value="MME">Metalurgy and Material Engineering</option>
 		      			<option value="PR">Production Engineering</option>		      
 		      		</select>
-		        </div>
-		        <p class="chDep2">
-		      	<input type="checkbox" id="deptCheck2" name="depCheck2" />
-			      <label for="deptCheck2">Click here to change department.</label>
-		      	</p>
-
-		      		
+		   
 		      	
 		        </div>
 		        </div>
 		        <div class="dept row">
-		        <div class="input-field col l6 s6 ">
-		        <div class="dfield3">
-		        <input type="text" name="department3" value="{!! $details->dept3 !!}" readonly="true"  />
-
-
-
-		        </div>
-		        <div class="dfield-select3" hidden>
-		        	<select name="department3" id="department3">
+		        
+		        <div class="input-field col s6 l6 dep3Check">
+		        	<select name="department3" id="department3" >
  						<option value="" disabled selected>Department 3</option>
 		      			<option value="AR">Architecture</option>
 		      			<option value="CS">Computer Science and Engineering</option>
@@ -206,13 +178,7 @@
 		      			<option value="MME">Metalurgy and Material Engineering</option>
 		      			<option value="PR">Production Engineering</option>		      
 		      		</select>
-		        </div>
-		        <p class="chDep3">
-		      	<input type="checkbox" id="deptCheck3" name="depCheck3" />
-			      <label for="deptCheck3">Click here to change department.</label>
-		      	</p>
-
-		      		
+		     
 		        </div>
 		        <div class="input-field col s6 l6">
 		        	<input type="text" value="dept" hidden="true"></input>
@@ -248,12 +214,9 @@
 		      		<input required id="dob" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31" value="{!! $details->dob !!}">
 		        </div>
 
-		         <div class="input-field col l6 ">
+		         <div class="input-field col l6 categCheck">
 		         <span class="light">Category</span><br>
-		         <div class="categField">
-		        	<input type="text" id="categInput" name="department3" value="{!! $details->category !!}" readonly="true"  />
-		        </div>
-		        <div class="categDrop" hidden>
+		         
 		         	<select required name="category" id="category">
 				      <option value="" disabled selected>Choose your Category</option>
 				      <option value="OBC">OBC</option>
@@ -261,65 +224,44 @@
 				      <option value="SC">SC</option>
 				      <option value="ST">ST</option>
 				    </select>
-				</div>
-
-				<p class="chCateg">
-		      	<input type="checkbox" id="categCheck" name="categCheck" />
-			      <label for="categCheck">Click here to change department.</label>
-		      	</p>
-
+				
 		        </div>
 		      </div> 
 
 		      <div class="row">
-		        <div class="input-field col l6">
+		        <div class="input-field col l6 sexCheck">
 		      		<span class="light">Sex</span><br>
-		         	<select required name="sex" id="sex">
-				      <option value="" disabled selected>Choose your Gender</option>
-				      <option value="male">Male</option>
-				      <option value="female">Female</option>
-				    </select>
+		         	<!-- <input name="sex" id="sex" readonly="true" value="{!! $details->sex !!}" /> -->
+		         	<select id="sex" name="sex" required="true">
+		         		<option value="" disabled selected>Choose your Option</option>
+		         		<option value="male">Male</option>
+		         		<option value="female">Female</option>
+		         	</select>
 		      		
 		        </div>
 
-		         <div class="input-field col l6 ">
+		         <div class="input-field col l6 statusCheck">
 		         <span class="light">Marital Status</span><br>
-		         <div class="statusField">
-		        	<input type="text" id="statusInput" value="{!! $details->maritalStatus !!}" readonly="true"  />
-		        </div>
-		        <div class="statusDrop" hidden>
+		         
 		         	<select required name="marital_status" id="marital_status">
 				      <option value="" disabled selected>Choose your Marital Status</option>
 				      <option value="married">Married</option>
 				      <option value="single">Single</option>
 				    </select>
-				</div>
-				<p class="chStatus">
-		      	<input type="checkbox" id="statusCheck" name="statusCheck" />
-			      <label for="statusCheck">Click here to change marital status.</label>
-		      	</p>
-		        </div>
-
+				
 		        
 		      </div> 
 
 		      <div class="row">
-		        <div class="input-field col l6">
+		        <div class="input-field col l6 pdCheck">
 		      		  <span class="light">Physically Disability(P.W.D)</span><br>
-		      	<div class="phField">
-		        	<input type="text" id="phInput" name="ph" value="{!! $details->PH !!}" readonly="true"  />
-		        </div>
-		        <div class="phDrop" hidden>
+		      
 		         	<select required name="ph" id="ph">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="yes">Yes</option>
 				      <option value="no">No</option>
 				    </select>
-				</div>
-				<p class="chPh">
-		      	<input type="checkbox" id="phCheck" name="phCheck" />
-			      <label for="phCheck">Click here to change option.</label>
-		      	</p>
+				
 		        </div>
 		         <div class="input-field col l6 ">
 
@@ -358,7 +300,7 @@
   				 <div class="row">
 		        <div class="input-field col l6">
 		        	<span class="light">Name of Degree:</span>
-		      		<input required placeholder="Name of Degree" id="ug_deg" type="text" class="validate" name="ug_deg" maxlength="32" value="{!! $details->ugdeg !!}">
+		      		<input required placeholder="Name of Degree" id="ug_deg" type="text" class="validate" name="ug_deg" maxlength="32" value="{!! $details->ugdegreeName !!}">
 		        </div>
 		         <div class="input-field col l6 ">
 		         	<span class="light">Branch Name:</span>
@@ -657,18 +599,110 @@
 	$(document ).ready(function(){
 		$(".button-collapse").sideNav();
 		$('select').material_select();
-		console.log('hey');
+		
 		console.log('{!! $details->addrforcomm !!}');
 		$("textarea#addr_for_commn").val('{!! $details->addrforcomm !!}');
 		$("textarea#permanent_addr").val('{!! $details->permanentaddr !!}');
+		$("textarea#details_of_pub1").val('{!! $details->publications1 !!}');
+		$("textarea#details_of_pub2").val('{!! $details->publications2 !!}');
+		$("textarea#details_of_pub3").val('{!! $details->publications3 !!}');
+		$("textarea#awards3").val('{!! $details->awards3 !!}');
+		$("textarea#awards2").val('{!! $details->awards2 !!}');
+		$("textarea#awards1").val('{!! $details->awards1 !!}');
+		$("textarea#employer_details_1").val('{!! $details->proexp1 !!}');
+		$("textarea#employer_details_2").val('{!! $details->proexp2 !!}');
+		$("textarea#employer_details_3").val('{!! $details->proexp3 !!}');
+		
 		var x = $('#department1 option');
 		var y = '{!! $details->dept1 !!}';
 		console.log(y);
-		x[0].selected = false;
-		x[1].selected = true;
-		// console.log($('#department1 option:selected'));
-		// console.log(x[1].selected);
+		console.log(document.getElementById('sex').value);
+		
+		console.log(document.getElementById('sex').value);
+		// var t = '{!! $details->sex !!}';
+		// $('select#sex').val('male');
+		// var text1 = 'male';
+		// $("select#sex option").filter(function() {
+		//     //may want to use $.trim in here
+		//     return $(this).text() == text1; 
+		// }).attr('selected', true);
+		// console.log($('select#sex option').val());
+		var t='{!! $details->sex !!}';
+		if(t=='male'){
+			$('.sexCheck .select-wrapper input').val(t);
+		}
+		else{
+			$('.sexCheck .select-wrapper input').val(t);
+		}
 
+		t='{!! $details->maritalStatus !!}';
+		
+		if(t=='single'){
+			$('.statusCheck .select-wrapper input').val(t);
+		}
+		else{
+			$('.statusCheck .select-wrapper input').val(t);
+		}
+
+		t='{!! $details->PH !!}';
+		console.log('hey');
+		if(t=='no'){
+			$('.pdCheck .select-wrapper input').val(t);
+		}
+		else{
+			$('.pdCheck .select-wrapper input').val(t);
+		}
+		t='{!! $details->applicationCateg !!}';
+		console.log(t);
+		if(t!=''){
+			$('.appCheck .select-wrapper input').val(t);	
+		}
+
+		//if conditions for departments left
+
+		t='{!! $details->dept1 !!}';
+		console.log(t);
+		if(t=='AR'){
+			t='Architecture';
+			$('.dep1Check .select-wrapper input').val(t);		
+		}
+		else{
+			$('.dep1Check .select-wrapper input').val(t);			
+		}
+		t='{!! $details->dept2 !!}';
+		console.log(t);
+		if(t=='AR'){
+			t='Architecture';
+			$('.dep2Check .select-wrapper input').val(t);		
+		}
+		else{
+			$('.dep2Check .select-wrapper input').val(t);			
+		}
+		t='{!! $details->dept3 !!}';
+		console.log(t);
+		if(t=='AR'){
+			t='Architecture';
+			$('.dep3Check .select-wrapper input').val(t);		
+		}
+		else{
+			$('.dep3Check .select-wrapper input').val(t);			
+		}
+
+		t='{!! $details->category !!}';
+		console.log(t);
+		if(t=='OBC'){
+			
+			$('.categCheck .select-wrapper input').val(t);		
+		}
+		else if(t=='OC'){
+			$('.categCheck .select-wrapper input').val(t);			
+		}
+		else if(t=='SC'){
+			$('.categCheck .select-wrapper input').val(t);			
+		}
+		else if(t=='ST'){
+			$('.categCheck .select-wrapper input').val(t);			
+		}
 	})
 	</script>
 

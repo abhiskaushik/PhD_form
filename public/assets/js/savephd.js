@@ -11,46 +11,18 @@ $(document).ready(function(){
 		data.chalanNo = $('#chalanNo').val();
 		data.name = $('#name').val();
 		data.email = $('#email').val();
-		data.appl_categ = $('#appl_categ').val();
-		if($('#deptCheck1').is(':checked')){
-			data.department1 = $('#department1').val();
-		}
-		else{
-			data.department1 = $('#deptInput1').val();	
-		}
-		if($('#deptCheck2').is(':checked')){
-			data.department2 = $('#department2').val();
-		}
-		else{
-			data.department2 = $('#deptInput2').val();	
-		}
-		if($('#deptCheck3').is(':checked')){
-			data.department3 = $('#department3').val();
-		}
-		else{
-			data.department3 = $('#deptInput3').val();	
-		}
-		if($('#categCheck').is(':checked')){
-			data.category = $('#category option:selected').val();
-			console.log('checked');
-		}
-		else{
-			data.category = $('#categInput').val();
-		}
-		if($('#phCheck').is(':checked')){
-			data.ph = $('#ph option:selected').val();
-			console.log('checked');
-		}
-		else{
-			data.ph = $('#phInput').val();
-		}
-		if($('#statusCheck').is(':checked')){
-			data.status = $('#marital_status option:selected').val();
-			console.log('checked');
-		}
-		else{
-			data.status = $('#statusInput').val();
-		}
+		data.appl_categ = $('.appCheck .select-wrapper input').val();
+			data.department1 = $('.dep1Check .select-wrapper input').val();		
+			data.department2 = $('.dep2Check .select-wrapper input').val();		
+			data.department3 = $('.dep3Check .select-wrapper input').val();
+		
+		
+			data.category = $('.categCheck .select-wrapper input').val();			
+		
+		
+		data.ph = $('.pdCheck .select-wrapper input').val();
+		data.marital_status = $('.statusCheck .select-wrapper input').val();
+		 data.sex = $('.sexCheck .select-wrapper input').val();
 		data.email = $('#email').val();
 		data.area_of_research = $('#area_of_research').val();
 		data.father_name = $('#father_name').val();
@@ -93,6 +65,7 @@ $(document).ready(function(){
 		data.emp_to_2 = $('#emp_to_2').val();
 		data.emp_to_3 = $('#emp_to_3').val();
 		data.date = $('#date').val();
+		console.log('hey');
 		console.log(data);
 		
 		
