@@ -636,27 +636,33 @@
 		var t='{!! $details->sex !!}';
 		if(t=='male'){
 			$('.sexCheck .select-wrapper input').val(t);
+			$('.sexCheck .select-wrapper ul>li:eq(1)').click();
 		}
 		else{
 			$('.sexCheck .select-wrapper input').val(t);
+			$('.sexCheck .select-wrapper ul>li:eq(2)').click();
 		}
 
 		t='{!! $details->maritalStatus !!}';
 		
 		if(t=='single'){
 			$('.statusCheck .select-wrapper input').val(t);
+			$('.statusCheck .select-wrapper ul>li:eq(2)').click();
 		}
 		else{
 			$('.statusCheck .select-wrapper input').val(t);
+			$('.statusCheck .select-wrapper ul>li:eq(1)').click();
 		}
 
 		t='{!! $details->PH !!}';
 		console.log('hey');
 		if(t=='no'){
 			$('.pdCheck .select-wrapper input').val(t);
+			$('.pdCheck .select-wrapper ul>li:eq(2)').click();
 		}
 		else{
 			$('.pdCheck .select-wrapper input').val(t);
+			$('.pdCheck .select-wrapper ul>li:eq(1)').click();
 		}
 		t='{!! $details->applicationCateg !!}';
 		console.log(t);
@@ -693,22 +699,33 @@
 		else{
 			$('.dep3Check .select-wrapper input').val(t);			
 		}
+		t='hello';
+// 		console.log($('.categCheck select option:eq(1)').prop('selected', false));
+// 		$('.categCheck select option:eq(0)').removeAttr('selected');
+// 		$('.categCheck select option:eq(1)').attr('selected',true);
+// console.log($('.categCheck select option:eq(1)'));
+		
+		$('.categCheck .select-wrapper ul>li:eq(1)').click()
 
-		t='{!! $details->category !!}';
-		console.log(t);
-		if(t=='OBC'){
+		// $('.categCheck .select-wrapper ul>li:eq(1)').addClass('selected active');
+
+
+		// t='{!! $details->category !!}';
+		// console.log(t);
+		// if(t=='OBC'){
 			
-			$('.categCheck .select-wrapper input').val(t);		
-		}
-		else if(t=='OC'){
-			$('.categCheck .select-wrapper input').val(t);			
-		}
-		else if(t=='SC'){
-			$('.categCheck .select-wrapper input').val(t);			
-		}
-		else if(t=='ST'){
-			$('.categCheck .select-wrapper input').val(t);			
-		}
+		// 	$('.categCheck .select-wrapper input').val(t);
+
+		// }
+		// else if(t=='OC'){
+		// 	$('.categCheck .select-wrapper input').val(t);			
+		// }
+		// else if(t=='SC'){
+		// 	$('.categCheck .select-wrapper input').val(t);			
+		// }
+		// else if(t=='ST'){
+		// 	$('.categCheck .select-wrapper input').val(t);			
+		// }
 	})
 	</script>
 
