@@ -88,8 +88,8 @@
 		    <div class="col s12 l12">
 		      <div class="row dept">
 		
-		        <div class="input-field col l6 s6 ">
-		      		<select name="department1" required id="department1">
+		        <div class="input-field col l6 s6 dep1Check">
+		      		<select name="department1" id="department1">
 
 		      			  <option value="" disabled selected>Department Preference 1</option>
                 <option value="CS">Computer Science and Engineering</option>
@@ -108,8 +108,8 @@
 		      		</select>
 		      		
 		        </div>
-		        <div class="input-field col l6 s6 ">
-		      		<select name="department2" required id="department2">
+		        <div class="input-field col l6 s6 dep2Check">
+		      		<select name="department2" id="department2">
 
 		      			  <option value="" disabled selected>Department Preference 2</option>
                 <option value="CS">Computer Science and Engineering</option>
@@ -128,8 +128,8 @@
 		      		</select>
 		      		
 		        </div>
-		        <div class="input-field col l6 s6 ">
-		      		<select name="department3" required id="department3">
+		        <div class="input-field col l6 s6 dep3Check">
+		      		<select name="department3"  id="department3">
 
 		      			 <option value="" disabled selected>Department Preference 3</option>
                 <option value="CS">Computer Science and Engineering</option>
@@ -179,7 +179,7 @@
 		      		<input required id="dob" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31" value="{!! $details->dob !!}">
 		        </div>
 
-		         <div class="input-field col l6 ">
+		         <div class="input-field col l6 categCheck">
 		         <span class="light">Category</span><br>
 		         	<select required name="category" id="category">
 				      <option value="" disabled selected>Choose your Category</option>
@@ -192,7 +192,7 @@
 		      </div> 
 
 		      <div class="row">
-		        <div class="input-field col l6">
+		        <div class="input-field col l6 sexCheck">
 		      		<span class="light">Sex</span><br>
 		         	<select required name="sex" id="sex">
 				      <option value="" disabled selected>Choose your Gender</option>
@@ -202,7 +202,7 @@
 		      		
 		        </div>
 
-		         <div class="input-field col l6 ">
+		         <div class="input-field col l6 statusCheck">
 		         <span class="light">Marital Status</span><br>
 		         	<select required name="marital_status" id="marital_status">
 				      <option value="" disabled selected>Choose your Marital Status</option>
@@ -213,7 +213,7 @@
 		      </div> 
 
 		      <div class="row">
-		        <div class="input-field col l6">
+		        <div class="input-field col l6 pdCheck">
 		      		  <span class="light">Physically Challenged(P.H)</span><br>
 		         	<select required name="ph" id="ph">
 				      <option value="" disabled selected>Choose your option</option>
@@ -560,7 +560,137 @@
 		x[1].selected = true;
 		console.log($('#department1 option:selected'));
 		console.log(x[1].selected);
+		
+			$("textarea#employer_details_1").val('{!! $details->proexp1 !!}');
+			$("textarea#employer_details_2").val('{!! $details->proexp2 !!}');
+			$("textarea#employer_details_3").val('{!! $details->proexp3 !!}');
+			
+			var x = $('#department1 option');
+			var y = '{!! $details->dept1 !!}';
+			console.log(y);
+			console.log(document.getElementById('sex').value);
+			
+			console.log(document.getElementById('sex').value);
+			// var t = '{!! $details->sex !!}';
+			// $('select#sex').val('male');
+			// var text1 = 'male';
+			// $("select#sex option").filter(function() {
+			//     //may want to use $.trim in here
+			//     return $(this).text() == text1; 
+			// }).attr('selected', true);
+			// console.log($('select#sex option').val());
 
+
+			// $('.sexCheck .select-wrapper ul>li:eq(1)').addClass('active selected');	
+			////this adds the require class but doesnt show any change in the html so i tried another thing
+				
+			console.log('{!! $details->email !!}')
+			var t='{!! $details->sex !!}';
+			console.log(t);
+			if(t=='male'){
+				$('.sexCheck .select-wrapper input').val(t);
+				$('.sexCheck .select-wrapper ul>li:eq(1)').click();
+			}
+			else{
+				$('.sexCheck .select-wrapper input').val(t);
+				$('.sexCheck .select-wrapper ul>li:eq(2)').click();
+			}
+
+			t='{!! $details->maritalStatus !!}';
+			
+			if(t=='single'){
+				$('.statusCheck .select-wrapper input').val(t);
+				$('.statusCheck .select-wrapper ul>li:eq(2)').click();
+			}
+			else{
+				$('.statusCheck .select-wrapper input').val(t);
+				$('.statusCheck .select-wrapper ul>li:eq(1)').click();
+			}
+
+			t='{!! $details->PH !!}';
+			console.log('hey');
+			if(t=='no'){
+				$('.pdCheck .select-wrapper input').val(t);
+				$('.pdCheck .select-wrapper ul>li:eq(2)').click();
+			}
+			else{
+				$('.pdCheck .select-wrapper input').val(t);
+				$('.pdCheck .select-wrapper ul>li:eq(1)').click();
+			}
+			t='{!! $details->applicationCateg !!}';
+			console.log(t);
+			if(t!=''){
+				$('.appCheck .select-wrapper input').val(t);	
+			}
+
+			//if conditions for departments left
+
+			t='{!! $details->dept1 !!}';
+			console.log(t);
+			if(t=='AR'){
+				t='Architecture';
+				$('.dep1Check .select-wrapper input').val(t);
+				$('.dep1Check .select-wrapper input').click();					
+				$('.dep1Check .select-wrapper input').click();					
+			}
+			else{
+				$('.dep1Check .select-wrapper input').val(t);	
+				$('.dep1Check .select-wrapper input').click();					
+				$('.dep1Check .select-wrapper input').click();					
+			}
+			t='{!! $details->dept2 !!}';
+			console.log(t);
+			if(t=='AR'){
+				t='Architecture';
+				$('.dep2Check .select-wrapper input').val(t);
+				$('.dep2Check .select-wrapper input').click();					
+				$('.dep2Check .select-wrapper input').click();					
+			}
+			else{
+				$('.dep2Check .select-wrapper input').val(t);	
+				$('.dep2Check .select-wrapper input').click();					
+				$('.dep2Check .select-wrapper input').click();					
+			}
+			t='{!! $details->dept3 !!}';
+			console.log(t);
+			if(t=='AR'){
+				t='Architecture';
+				$('.dep3Check .select-wrapper input').val(t);		
+				$('.dep3Check .select-wrapper input').click();			
+				$('.dep3Check .select-wrapper input').click();			
+			}
+			else{
+				$('.dep3Check .select-wrapper input').val(t);			
+				$('.dep3Check .select-wrapper input').click();			
+				$('.dep3Check .select-wrapper input').click();			
+			}
+			t='hello';
+	// 		console.log($('.categCheck select option:eq(1)').prop('selected', false));
+	// 		$('.categCheck select option:eq(0)').removeAttr('selected');
+	// 		$('.categCheck select option:eq(1)').attr('selected',true);
+	// console.log($('.categCheck select option:eq(1)'));
+			
+			$('.categCheck .select-wrapper ul>li:eq(1)').click()
+
+			// $('.categCheck .select-wrapper ul>li:eq(1)').addClass('selected active');
+
+
+			// t='{!! $details->category !!}';
+			// console.log(t);
+			// if(t=='OBC'){
+				
+			// 	$('.categCheck .select-wrapper input').val(t);
+
+			// }
+			// else if(t=='OC'){
+			// 	$('.categCheck .select-wrapper input').val(t);			
+			// }
+			// else if(t=='SC'){
+			// 	$('.categCheck .select-wrapper input').val(t);			
+			// }
+			// else if(t=='ST'){
+			// 	$('.categCheck .select-wrapper input').val(t);			
+			// }	
 	})
 	</script>
 

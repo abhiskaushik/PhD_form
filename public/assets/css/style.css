@@ -48,6 +48,11 @@ body{
 	background: black;
 	margin-top: 2px;
 }
+.g-recaptcha{
+	position: relative;
+	margin: 0 auto;
+
+}
 header{
 	height: 25vh;
 	padding: 0px;

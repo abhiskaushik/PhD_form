@@ -4,6 +4,7 @@ $(document).ready(function(){
 		
 		data.name = $('#name').val();
 		data.email = $('#email').val();
+		data.reg_number = $('#chalanNo').val();
 		data.appl_categ = $('.applicationCateg option:selected').text();
 		data.department1 = $('#department1 option:selected').text();
 		data.department2 = $('#department2 option:selected').text();
@@ -16,6 +17,10 @@ $(document).ready(function(){
 		data.addr_for_commn = $('#addr_for_commn').val();
 		data.permanent_addr = $('#permanent_addr').val();
 		data.mobile = $('#mobile').val();
+		data.category = $('#category').val();
+		data.sex = $('#sex').val();
+		data.marital_status = $('#marital_status').val();
+		data.ph = $('#ph').val();
 		data.landline = $('#landline').val();
 		data.ug_deg = $('#ug_deg').val();
 		data.ug_branch = $('#ug_branch').val();
@@ -74,7 +79,7 @@ $(document).ready(function(){
         \
 <p><b>Registration Number:</b> '+data.reg_number+'</p>\
         <p><b>Date of Registration:</b> '+data.date+'</p>\
-      </div>\
+     \
         <p><b>Application Category:</b> '+data.appl_categ+'</p>\
         <p><b>Department 1:</b> '+data.department1+'</p>\
         <p><b>Department 2:</b> '+data.department2+'</p>\
@@ -147,6 +152,7 @@ $(document).ready(function(){
 		
 		data.name = $('#name').val();
 		data.email = $('#email').val();
+		data.reg_number = $('#chalanNo').val();
 		data.appl_categ = $('.applicationCateg option:selected').text();
 		data.department1 = $('#department1 option:selected').text();
 		data.department2 = $('#department2 option:selected').text();
@@ -167,6 +173,10 @@ $(document).ready(function(){
 		data.ug_name_of_inst = $('#ug_name_of_inst').val();
 		data.ug_name_of_uni = $('#ug_name_of_uni').val();
 		data.ug_yop = $('#ug_yop').val();
+		data.category = $('#category').val();
+		data.sex = $('#sex').val();
+		data.marital_status = $('#marital_status').val();
+		data.ph = $('#ph').val();
 		data.gpa1 = $('#gpa1').val();
 		data.gpa2 = $('#gpa2').val();
 		data.gpa3 = $('#gpa3').val();
