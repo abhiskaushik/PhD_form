@@ -38,20 +38,23 @@
   <div class="space-medium"></div>
   <div class="container">
     <div class="row">
-      {!! Form::open(array( 'action' => 'AdminController@login', 'method'=>'POST')) !!}
+      {!! Form::open(array( 'action' => 'AdminController@change', 'method'=>'POST')) !!}
         <div class="secure flow-text center">Login</div>
 
         <div class="input-field col s8 offset-s2">
-          <input placeholder="Enter Username" id="username" name="username" type="text" class="validate">
-          <label for="first_name">Username</label>
+          <input placeholder="Enter username" id="username" name="username" type="text" class="validate">
+          <label for="user_name">Username</label>
         </div>
         <div class="input-field col s8 offset-s2">
-          <input placeholder="Enter Password" id="password" name="password" type="password" class="validate">
-          <label for="first_name">Password</label>
+          <input placeholder="Enter old password" id="old_password" name="old_password" type="password" class="validate">
+          <label for="old_password">Old Password</label>
         </div>
-        <p>Click <a href='change'>here</a> to change password</p>
+        <div class="input-field col s8 offset-s2">
+          <input placeholder="Enter new password" id="new_password" name="new_password" type="password" class="validate">
+          <label for="new_password">Old Password</label>
+        </div>
         <div class="center col s8 offset-s2">
-          {!! Form::submit('Submit', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
+          {!! Form::submit('Change', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
         </div>
 
         

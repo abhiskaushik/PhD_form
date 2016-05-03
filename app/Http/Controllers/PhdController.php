@@ -158,14 +158,6 @@ class PhdController extends Controller
                 $details['discipline'] = $request->input('discipline');
                 $details['exam'] = $request->input('exam');
             }
-            if($request->input('nann') == 'on')
-            {
-                $details['score'] = 'RA';
-                $details['rank'] = 'RA';
-                $details['validity'] = 'RA';
-                $details['discipline'] = 'RA';
-                $details['exam'] = 'RA';
-            }
 
             $file = $request->file('image_path');  
             $extension = $request->file('image_path')->getClientOriginalExtension();
@@ -197,15 +189,17 @@ class PhdController extends Controller
                 $form2 = $request->file('form2');
                 if(!$form1 || !$form2)
                 {
-                    $message = 'Upload all the required forms';
-                    return view('error')->with('message', $message);
+
                 }
-                $extension1 = $request->file('form1')->getClientOriginalExtension();
-                $extension2 = $request->file('form2')->getClientOriginalExtension();
-                if($extension1 != 'pdf' || $extension2 != 'pdf')
+                else
                 {
-                    $message = 'Invalid file format for the uploaded files';
-                    return View::make('error')->with('message', $message);
+                    $extension1 = $request->file('form1')->getClientOriginalExtension();
+                    $extension2 = $request->file('form2')->getClientOriginalExtension();
+                    if($extension1 != 'pdf' || $extension2 != 'pdf')
+                    {
+                        $message = 'Invalid file format for the uploaded files';
+                        return View::make('error')->with('message', $message);
+                    }
                 }
             }
             if($request->input('appl_categ') == 'onCampus')
@@ -213,14 +207,16 @@ class PhdController extends Controller
                 $form3 = $request->file('form3');
                 if(!$form3)
                 {
-                    $message = 'Upload all the required forms';
-                    return View::make('error')->with('message', $message);
+
                 }
-                $extension3 = $request->file('form3')->getClientOriginalExtension();
-                if($extension3 != 'pdf')
+                else
                 {
-                    $message = 'Invalid file format for the uploaded files';
-                    return View::make('error')->with('message', $message);
+                    $extension3 = $request->file('form3')->getClientOriginalExtension();
+                    if($extension3 != 'pdf')
+                    {
+                        $message = 'Invalid file format for the uploaded files';
+                        return View::make('error')->with('message', $message);
+                    }
                 }
             }
             
@@ -328,7 +324,7 @@ class PhdController extends Controller
 
             $details['reg_number'] = $reg_number;
             $details['phdorms'] = 'phd';
-    if($request->input('appl_categ') == 'External' || $request->input('appl_categ') == 'onCampus'){
+            if($request->input('appl_categ') == 'External' || $request->input('appl_categ') == 'onCampus'){
             if($form1 && $form2)
             {
                 $form1 = $form1->move(public_path().'/uploads/PHD/'.$applNo, $applNo.'form1'.'.'.$extension1);

@@ -19,6 +19,7 @@ Route::post('save2phd', 'SaveController@save2phd');
 Route::post('save2ms', 'SaveController@save2ms');
 Route::get('fetch/{phdorms}/{applNo}/{dob}', 'SaveController@fetch');
 Route::post('admin/auth', 'AdminController@login');
+Route::post('admin/change', 'AdminController@change');
 Route::group(['middleware' => 'adminauth'], function () {
     Route::get('admin/home', function()
         {
@@ -76,4 +77,8 @@ Route::get('msinstructions', function()
 Route::get('phdinstructions', function()
     {
         return view('phdinstructions');
+    });
+Route::get('change', function()
+    {
+        return view('admin.change');
     });

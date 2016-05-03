@@ -48,11 +48,52 @@ class AdminController extends Controller
             $password = $request->input('password');
 
             $auth = Admin::where('userName', $username)
-                ->where('password', ($password))    //sha1
+                ->where('password', sha1($password)) 
                 ->first();
 
             if(count($auth) > 0)
             {
+                Session::put('userName', $username);
+                Session::put('dept', $auth->dept);
+                return view('admin.home');
+            }
+            else
+            {
+                $message = 'Username or Password is incorrect';
+                return View::make('error')->with('message', $message);
+            }
+        }
+    }
+
+    public function change(Request $request)
+    {
+        $rules = array(
+            'username' => 'required',
+            'old_password' => 'required',
+        );
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if($validator->fails())
+        {
+            $message = 'Please fill in all the details';
+            return View::make('error')->with('message', $message);
+        }
+        else
+        {
+            $username = $request->input('username');
+            $oldpassword = $request->input('old_password');
+            $newpassword = $request->input('new_password');
+
+            $auth = Admin::where('userName', $username)
+                ->where('password', sha1($oldpassword)) 
+                ->first();
+
+            if(count($auth) > 0)
+            {
+                Admin::where('userName', $username)
+                            ->where('password', sha1($oldpassword))
+                            ->update(['password' => sha1($newpassword)]);
                 Session::put('userName', $username);
                 Session::put('dept', $auth->dept);
                 return view('admin.home');

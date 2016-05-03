@@ -167,8 +167,7 @@ class MsController extends Controller
                 $cert = $request->file('form1');
                 if(!$cert)
                 {
-                    $message = 'Upload all the required forms';
-                    return View::make('error')->with('message', $message);
+                    
                 }
                 else
                 {
