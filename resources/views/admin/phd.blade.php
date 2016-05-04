@@ -158,14 +158,15 @@
           @endif
           @endfor
 
-        <div class="center">
+           </div>
+           <div class="center">
       <ul class="pagination">
     <li class="disabled"><a href={!! $data["candidates"]->previousPageUrl()!!}><i class="material-icons">chevron_left</i></a></li>
     <li class="active teal" ><a href="#!">{!! $data["candidates"]->currentPage() !!}</a></li>
     <li class="waves-effect"><a href={!! $data["candidates"]->nextPageUrl()!!}><i class="material-icons">chevron_right</i></a></li>
   </ul>
   </div>
-   </div>
+
    <div class="space-medium"></div>
 <div class="center">
    <a class="waves-effect waves-light btn" href="ms">View M.S. applicants</a>

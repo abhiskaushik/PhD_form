@@ -89,7 +89,7 @@
 		      <div class="row dept">
 		
 		        <div class="input-field col l6 s6 dep1Check">
-		      		<select name="department1" id="department1">
+		      		<!-- <select name="department1" id="department1">
 
 		      			  <option value="" disabled selected>Department Preference 1</option>
                 <option value="CS">Computer Science and Engineering</option>
@@ -105,11 +105,12 @@
                 <option value="IC">Instrumentation And Control Engineering</option>
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
-		      		</select>
+		      		</select> -->
+		      		<input type="text" readonly="true" name="department1" value="{!! $details->dept1 !!}" />
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 dep2Check">
-		      		<select name="department2" id="department2">
+		      		<!-- <select name="department2" id="department2">
 
 		      			  <option value="" disabled selected>Department Preference 2</option>
                 <option value="CS">Computer Science and Engineering</option>
@@ -125,11 +126,12 @@
                 <option value="IC">Instrumentation And Control Engineering</option>
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
-		      		</select>
+		      		</select> -->
+		      		<input type="text" readonly="true" name="department2" value="{!! $details->dept2 !!}" />
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 dep3Check">
-		      		<select name="department3"  id="department3">
+		      		<!-- <select name="department3"  id="department3">
 
 		      			 <option value="" disabled selected>Department Preference 3</option>
                 <option value="CS">Computer Science and Engineering</option>
@@ -145,7 +147,8 @@
                 <option value="IC">Instrumentation And Control Engineering</option>
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
-		      		</select>
+		      		</select> -->
+		      		<input type="text" readonly="true" name="department3" value="{!! $details->dept3 !!}" />
 		      		
 		        </div>
 		        
@@ -468,7 +471,7 @@
 		      		<p>I do hereby declare that the information furnished in this application are true and correct to the best of my knowledge. If, any of the particulars furnished above is found to be incorrect at the time of admission, the admission may be cancelled.</p>
 		      		<p class="center agreement">
 		      			<span>
-		      		      <input type="checkbox" id="agree" class="check" required/>
+		      		      <input type="checkbox" id="agree" class="check" required="true"/>
 		      		      <label for="agree">Agree</label>
 		      		    </span>
 		      		   

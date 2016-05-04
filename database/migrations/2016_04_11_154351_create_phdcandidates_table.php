@@ -20,8 +20,8 @@ class CreatePhdcandidatesTable extends Migration
             $table->string('dateOfReg', 15);
             $table->string('imagePath', 50);
             $table->string('dept1', 50);
-            $table->string('dept2', 50);
-            $table->string('dept3', 50);
+            $table->string('dept2', 50)->nullable();
+            $table->string('dept3', 50)->nullable();
             $table->string('areaOfResearch', 50);
             $table->string('name', 50);
             $table->string('fatherName', 50);

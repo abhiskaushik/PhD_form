@@ -1,13 +1,5 @@
 $(document).ready(function(){
 	$('.exam').hide();
-	$('#agree').click(function()
-	{
-		$('#disagree').prop('checked',false);
-	});
-	$('#disagree').click(function()
-	{
-		$('#agree').prop('checked',false);
-	});
 
 	$('#announced').click(function()
 	{
@@ -25,67 +17,12 @@ $(document).ready(function(){
 		$('.ug_cgpa').val('');
 		
 		}
-		else{
-			
-		}
 	});
 	$('#ra2').click(function()
 	{
 		if($('#ra2').is(':checked')){
 		$('.pg_cgpa').val('');
 		
-		}
-		else{
-			
-		}
-	});
-
-	$('#deptCheck1').click(function()
-	{
-		$('.chDep1').hide();
-		if($('#deptCheck1').is(':checked')){
-			$('.dfield input').hide();
-			$('.dfield-select').show();
-			$('#deptCheck1').hide();
-		}
-	});
-	$('#deptCheck2').click(function()
-	{	
-		$('.chDep2').hide();
-		if($('#deptCheck2').is(':checked')){
-			$('.dfield2 input').hide();
-			$('.dfield-select2').show();
-			
-		}
-	});
-	$('#deptCheck3').click(function()
-	{
-		$('.chDep3').hide();
-		if($('#deptCheck3').is(':checked')){
-			$('.dfield3 input').hide();
-			$('.dfield-select3').show();
-			$('#deptCheck3').hide();
-		}
-	});
-	$('#categCheck').click(function()
-	{
-		$('.chCateg').hide();
-		if($('#categCheck').is(':checked')){
-			$('.categField input').hide();
-			$('.categDrop').show();
-			$('#categCheck').hide();
-		}
-	});
-
-
-
-	$('#phCheck').click(function()
-	{
-		$('.chPh').hide();
-		if($('#phCheck').is(':checked')){
-			$('.phField input').hide();
-			$('.phDrop').show();
-			$('#phCheck').hide();
 		}
 	});
 
@@ -218,9 +155,6 @@ $(document).ready(function(){
 	$('.valid1').click(function(){
 		var data={};
 		data.appl_categ = $('.applicationCateg option:selected').text();
-		data.department1 = $('#department1 option:selected').text();
-		data.department2 = $('#department2 option:selected').text();
-		data.department3 = $('#department3 option:selected').text();
 		data.category = $('#category option:selected').text();
 		data.sex = $('#sex').val();
 		data.ph = $('#ph option:selected').text();
@@ -260,7 +194,7 @@ $(document).ready(function(){
 		}
 
 
-		if(data.appl_categ == '' || data.department1 == '' ||  data.marital_status == '' || data.sex == '' || data.category == '' || data.ph == '' || data.ug_class == '' || data.pg_class == ''){
+		if(data.appl_categ == '' ||  data.marital_status == '' || data.sex == '' || data.category == '' || data.ph == '' || data.ug_class == '' || data.pg_class == ''){
 			var error = "Please select all the dropdowns";
 			if(count==1)
 				$('#error .modal-content .error').append('<p>'+error+'</p>');
@@ -272,7 +206,7 @@ $(document).ready(function(){
 		else{
 			console.log(data);
 		count++;
-		if(data.appl_categ == '' || data.department1 == '' || data.department2 == '' || data.department3 == '' || data.marital_status == '' || data.sex == '' || data.category == '' || data.ph == '' || data.ug_class == ''){
+		if(data.appl_categ == '' || data.marital_status == '' || data.sex == '' || data.category == '' || data.ph == '' || data.ug_class == ''){
 			var error = "Please select all the dropdowns";
 			if(count==1)
 				$('#error .modal-content .error').append('<p>'+error+'</p>');
