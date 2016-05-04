@@ -49,7 +49,9 @@
           <input placeholder="Enter Password" id="password" name="password" type="password" class="validate">
           <label for="first_name">Password</label>
         </div>
-        <p>Click <a href='change'>here</a> to change password</p>
+        <div class="col s8 offset-s2 center">
+          <p>Click <a href='change'>here</a> to change password</p>  
+        </div>
         <div class="center col s8 offset-s2">
           {!! Form::submit('Submit', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
         </div>

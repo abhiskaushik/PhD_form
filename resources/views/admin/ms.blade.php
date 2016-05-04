@@ -164,6 +164,7 @@
       @endfor
     </div>
     <div class="center">
+     <div class="center">
       <ul class="pagination">
     <li class="disabled"><a href={!! $data["candidates"]->previousPageUrl()!!}><i class="material-icons">chevron_left</i></a></li>
     <li class="active teal" ><a href="#!">{!! $data["candidates"]->currentPage() !!}</a></li>
