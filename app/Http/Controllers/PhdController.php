@@ -158,6 +158,14 @@ class PhdController extends Controller
                 $details['discipline'] = $request->input('discipline');
                 $details['exam'] = $request->input('exam');
             }
+            else
+            {
+                $details['score'] = 'RA';
+                $details['rank'] = 'RA';
+                $details['validity'] = 'RA';
+                $details['discipline'] = 'RA';
+                $details['exam'] = 'RA';
+            }
 
             $file = $request->file('image_path');  
             $extension = $request->file('image_path')->getClientOriginalExtension();
@@ -202,7 +210,7 @@ class PhdController extends Controller
                     }
                 }
             }
-            if($request->input('appl_categ') == 'onCampus')
+            else if($request->input('appl_categ') == 'onCampus')
             {
                 $form3 = $request->file('form3');
                 if(!$form3)
@@ -218,6 +226,10 @@ class PhdController extends Controller
                         return View::make('error')->with('message', $message);
                     }
                 }
+            }
+            else 
+            {
+                $form1 = $form2 = $form3 = NULL;
             }
             
             $candidate = new Phd();

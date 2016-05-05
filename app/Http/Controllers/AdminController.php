@@ -55,7 +55,7 @@ class AdminController extends Controller
             {
                 Session::put('userName', $username);
                 Session::put('dept', $auth->dept);
-                return view('admin.home');
+                return redirect('admin/home');
             }
             else
             {

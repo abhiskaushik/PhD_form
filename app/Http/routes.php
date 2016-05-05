@@ -49,7 +49,7 @@ Route::get('contact', function()
         return view('contact');
     });
 
-Route::get('login', function()
+Route::get('adminlogin', function()
     {
         return view('admin.login');
     });

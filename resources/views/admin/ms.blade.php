@@ -25,14 +25,14 @@
       
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
-        <li><a href="#">Home</a></li>
-        <li><a href="phd">PhdAdmissions</a></li>
+        <li><a href="home">Home</a></li>
+        <li><a href="phd">PhD Admissions</a></li>
         <li><a href="ms">M.S. Admissions</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-       <li><a href="#">Home</a></li>
-        <li><a href="phd">PhdAdmissions</a></li>
+       <li><a href="home">Home</a></li>
+        <li><a href="phd">PhD Admissions</a></li>
         <li><a href="ms">M.S. Admissions</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
@@ -164,19 +164,19 @@
       @endfor
     </div>
     <div class="center">
-     <div class="center">
       <ul class="pagination">
     <li class="disabled"><a href={!! $data["candidates"]->previousPageUrl()!!}><i class="material-icons">chevron_left</i></a></li>
     <li class="active teal" ><a href="#!">{!! $data["candidates"]->currentPage() !!}</a></li>
     <li class="waves-effect"><a href={!! $data["candidates"]->nextPageUrl()!!}><i class="material-icons">chevron_right</i></a></li>
   </ul>
   </div>
+   <div class="space-medium"></div>
+<div class="center">
+   <a class="waves-effect waves-light btn" href="phd">View PhD applicants</a>
+  </div>
    </div>
-    <div class="space-medium"></div>
-  <div class="center">
-    <a class="waves-effect waves-light btn" href="phd">View PhD applicants</a>
-    </div>
 <div class="space-large"></div>
+
 <footer class="page-footer teal darken-4">
           <div class="container">
             <div class="row">
