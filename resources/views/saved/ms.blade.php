@@ -104,7 +104,7 @@
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
 		      		</select> -->
-		      		<input type="text" readonly="true" name="department1" value="{!! $details->dept1 !!}" />
+		      		<input type="text" readonly="true" id="department1" name="department1" value="{!! $details->dept1 !!}" />
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 dep2Check">
@@ -125,7 +125,7 @@
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
 		      		</select> -->
-		      		<input type="text" readonly="true" name="department2" value="{!! $details->dept2 !!}" />
+		      		<input type="text" readonly="true" id="department2" name="department2" value="{!! $details->dept2 !!}" />
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 dep3Check">
@@ -146,7 +146,7 @@
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
 		      		</select> -->
-		      		<input type="text" readonly="true" name="department3" value="{!! $details->dept3 !!}" />
+		      		<input type="text" readonly="true" id="department3" name="department3" value="{!! $details->dept3 !!}" />
 		      		
 		        </div>
 		        
@@ -244,7 +244,7 @@
 		            
 
 		            <p>Land-Line Number:</p>
-		            <input required id="landline" type="text" class="validate" name="landline" value="{!! $details->lanline !!}">
+		            <input id="landline" type="text" class="validate" name="landline" value="{!! $details->lanline !!}">
 		        </div>
 
 
@@ -550,28 +550,28 @@
 	$(document ).ready(function(){
 		$(".button-collapse").sideNav();
 		$('select').material_select();
-		console.log('hey');
-		console.log('{!! $details->addrforcomm !!}');
+		// console.log('hey');
+		// console.log('{!! $details->addrforcomm !!}');
 		$("textarea#addr_for_commn").val('{!! $details->addrforcomm !!}');
 		$("textarea#permanent_addr").val('{!! $details->permanentaddr !!}');
-		var x = $('#department1 option');
-		var y = '{!! $details->dept1 !!}';
-		console.log(y);
-		x[0].selected = false;
-		x[1].selected = true;
-		console.log($('#department1 option:selected'));
-		console.log(x[1].selected);
+		// var x = $('#department1 option');
+		// var y = '{!! $details->dept1 !!}';
+		// console.log(y);
+		// x[0].selected = false;
+		// x[1].selected = true;
+		// console.log($('#department1 option:selected'));
+		// console.log(x[1].selected);
 		
 			$("textarea#employer_details_1").val('{!! $details->proexp1 !!}');
 			$("textarea#employer_details_2").val('{!! $details->proexp2 !!}');
 			$("textarea#employer_details_3").val('{!! $details->proexp3 !!}');
 			
-			var x = $('#department1 option');
-			var y = '{!! $details->dept1 !!}';
-			console.log(y);
-			console.log(document.getElementById('sex').value);
+			// var x = $('#department1 option');
+			// var y = '{!! $details->dept1 !!}';
+			// console.log(y);
+			// console.log(document.getElementById('sex').value);
 			
-			console.log(document.getElementById('sex').value);
+			// console.log(document.getElementById('sex').value);
 			// var t = '{!! $details->sex !!}';
 			// $('select#sex').val('male');
 			// var text1 = 'male';
@@ -585,7 +585,7 @@
 			// $('.sexCheck .select-wrapper ul>li:eq(1)').addClass('active selected');	
 			////this adds the require class but doesnt show any change in the html so i tried another thing
 				
-			console.log('{!! $details->email !!}')
+			// console.log('{!! $details->email !!}')
 			var t='{!! $details->sex !!}';
 			console.log(t);
 			if(t=='male'){

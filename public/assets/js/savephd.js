@@ -12,10 +12,10 @@ $(document).ready(function(){
 		data.name = $('#name').val();
 		data.email = $('#email').val();
 		data.appl_categ = $('.appCheck .select-wrapper input').val();
-			data.department1 = $('.dep1Check .select-wrapper input').val();		
-			data.department2 = $('.dep2Check .select-wrapper input').val();		
-			data.department3 = $('.dep3Check .select-wrapper input').val();
-		
+			data.department1 = $('#department1').val();		
+			data.department2 = $('#department2').val();		
+			data.department3 = $('#department3').val();
+			console.log(data.department1);
 		
 			data.category = $('.categCheck .select-wrapper input').val();			
 		

@@ -234,7 +234,7 @@
 			            
 
 			            <span>Land-Line Number:</span>
-			            <input required id="landline" type="text" class="validate" name="landline" />
+			            <input id="landline" type="text" class="validate" name="landline" />
 			        </div>
 			      </div> 
 

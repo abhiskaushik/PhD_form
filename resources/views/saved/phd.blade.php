@@ -118,7 +118,7 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>
 			     		</select> -->
-			     		<input type="text" readonly="true" name="department1" value="{!! $details->dept1 !!}" />
+			     		<input type="text" readonly="true" id"department1" name="department1" value="{!! $details->dept1 !!}" />
 			        </div>
 			        <div class="input-field col l6 s6 dep2Check">
 			        	<!-- <select name="department2" id="department2">
@@ -139,7 +139,7 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>		      
 			      		</select> -->
-			   		<input type="text" readonly="true" name="department2" value="{!! $details->dept2 !!}" />
+			   		<input type="text" readonly="true" id"department2" name="department2" value="{!! $details->dept2 !!}" />
 			      	
 			        </div>
 			        </div>
@@ -163,7 +163,7 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>		      
 			      		</select>	 -->
-			      		<input type="text" readonly="true" name="department3" value="{!! $details->dept3 !!}" />		     
+			      		<input type="text" readonly="true" id"department3" name="department3" value="{!! $details->dept3 !!}" />		     
 			        </div>
 			        <div class="input-field col s6 l6">
 			        	<input type="text" value="dept" hidden="true" />
@@ -237,7 +237,7 @@
 
 			      <div class="row">
 			        <div class="input-field col l6 pdCheck">
-			      		  <span class="light">Physically Disability(P.W.D)</span><br>
+			      		  <span class="light">Person With Disability(P.W.D)</span><br>
 			      
 			         	<select required name="ph" id="ph">
 					      <option value="" disabled selected>Choose your option</option>
@@ -264,7 +264,7 @@
 			         <span for="textarea1">Permanent Address</span><br>
 			         <textarea required id="permanent_addr" class="materialize-textarea" name="permanent_addr" maxlength="200" value="{!! $details->permanentaddr !!}"></textarea>			            
 			            <p>Land-Line Number:</p>
-			            <input required id="landline" type="text" class="validate" name="landline" value="{!! $details->lanline !!}" />
+			            <input id="landline" type="text" class="validate" name="landline" value="{!! $details->lanline !!}" />
 			        </div>
 
 
@@ -658,26 +658,26 @@
 			t='{!! $details->dept1 !!}';
 			console.log(t);
 			if(t=='AR'){
-				$('.dep1Check .select-wrapper input').val(t);		
+				$('#department1').val(t);		
 			}
 			else{
-				$('.dep1Check .select-wrapper input').val(t);			
+				$('#department1').val(t);			
 			}
 			t='{!! $details->dept2 !!}';
 			console.log(t);
 			if(t=='AR'){
-				$('.dep2Check .select-wrapper input').val(t);		
+				$('#department2').val(t);		
 			}
 			else{
-				$('.dep2Check .select-wrapper input').val(t);			
+				$('#department2').val(t);			
 			}
 			t='{!! $details->dept3 !!}';
 			console.log(t);
 			if(t=='AR'){
-				$('.dep3Check .select-wrapper input').val(t);		
+				$('#department3').val(t);		
 			}
 			else{
-				$('.dep3Check .select-wrapper input').val(t);			
+				$('#department3').val(t);			
 			}
 			t='hello';
 	// 		console.log($('.categCheck select option:eq(1)').prop('selected', false));

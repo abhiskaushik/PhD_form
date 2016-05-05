@@ -42,7 +42,7 @@ class PhdController extends Controller
             'permanent_addr' =>'required|max:200',
             'email' => 'required|email|unique:phd',
             'mobile' => 'required',
-            'landline' => 'required',
+            // 'landline' => 'required',
 	        'ug_deg' => 'required',
 	        'ug_branch' => 'required',
 	        'ug_class' => 'required|in:Honours,Distinction,First,Second',

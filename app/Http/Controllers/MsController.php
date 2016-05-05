@@ -41,7 +41,7 @@ class MsController extends Controller
             'permanent_addr' =>'required|max:200',
             'email' => 'required|email|unique:ms',
             'mobile' => 'required',
-            'landline' => 'required',
+            // 'landline' => 'required',
 	        'ug_deg' => 'required',
 	        'ug_branch' => 'required',
 	        // 'ug_gpa' => 'required',
