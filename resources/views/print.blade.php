@@ -28,8 +28,8 @@
 
 <div class="container-fluid">
 
-@if($phdorms  == 'phd')
-  <h5>Candidate's Form</h5>
+@if($phdorms  == 'PHD')
+  <h5>Form Details: </h5>
 
           <p><b>Registration Number:</b> {!! $candidates['registrationNumber'] !!}</p>
           <p><b>Date of Registration:</b> {!! $candidates['dateOfReg'] !!}

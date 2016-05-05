@@ -629,41 +629,26 @@
 			t='{!! $details->dept1 !!}';
 			console.log(t);
 			if(t=='AR'){
-				t='Architecture';
-				$('.dep1Check .select-wrapper input').val(t);
-				$('.dep1Check .select-wrapper input').click();					
-				$('.dep1Check .select-wrapper input').click();					
+				$('.dep1Check .select-wrapper input').val(t);				
 			}
 			else{
-				$('.dep1Check .select-wrapper input').val(t);	
-				$('.dep1Check .select-wrapper input').click();					
-				$('.dep1Check .select-wrapper input').click();					
+				$('.dep1Check .select-wrapper input').val(t);						
 			}
 			t='{!! $details->dept2 !!}';
 			console.log(t);
 			if(t=='AR'){
-				t='Architecture';
-				$('.dep2Check .select-wrapper input').val(t);
-				$('.dep2Check .select-wrapper input').click();					
-				$('.dep2Check .select-wrapper input').click();					
+				$('.dep2Check .select-wrapper input').val(t);					
 			}
 			else{
-				$('.dep2Check .select-wrapper input').val(t);	
-				$('.dep2Check .select-wrapper input').click();					
-				$('.dep2Check .select-wrapper input').click();					
+				$('.dep2Check .select-wrapper input').val(t);					
 			}
 			t='{!! $details->dept3 !!}';
 			console.log(t);
 			if(t=='AR'){
-				t='Architecture';
-				$('.dep3Check .select-wrapper input').val(t);		
-				$('.dep3Check .select-wrapper input').click();			
-				$('.dep3Check .select-wrapper input').click();			
+				$('.dep3Check .select-wrapper input').val(t);			
 			}
 			else{
 				$('.dep3Check .select-wrapper input').val(t);			
-				$('.dep3Check .select-wrapper input').click();			
-				$('.dep3Check .select-wrapper input').click();			
 			}
 			t='hello';
 	// 		console.log($('.categCheck select option:eq(1)').prop('selected', false));

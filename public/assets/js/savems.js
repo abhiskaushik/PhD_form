@@ -12,10 +12,18 @@ $(document).ready(function(){
 		data.chalanNo = $('#chalanNo').val();
 		data.name = $('#name').val();
 		data.email = $('#email').val();
-		data.appl_categ = $('#appl_categ').val();
-		data.department1 = $('#department1').val();
-		data.department2 = $('#department2').val();
-		data.department3 = $('#department3').val();
+		data.appl_categ = $('.appCheck .select-wrapper input').val();
+			data.department1 = $('.dep1Check .select-wrapper input').val();		
+			data.department2 = $('.dep2Check .select-wrapper input').val();		
+			data.department3 = $('.dep3Check .select-wrapper input').val();
+		
+		
+			data.category = $('.categCheck .select-wrapper input').val();			
+		
+		
+		data.ph = $('.pdCheck .select-wrapper input').val();
+		data.marital_status = $('.statusCheck .select-wrapper input').val();
+		 data.sex = $('.sexCheck .select-wrapper input').val();
 		data.email = $('#email').val();
 		data.area_of_research = $('#area_of_research').val();
 		data.father_name = $('#father_name').val();

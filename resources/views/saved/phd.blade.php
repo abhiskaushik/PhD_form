@@ -658,7 +658,6 @@
 			t='{!! $details->dept1 !!}';
 			console.log(t);
 			if(t=='AR'){
-				t='Architecture';
 				$('.dep1Check .select-wrapper input').val(t);		
 			}
 			else{
@@ -667,7 +666,6 @@
 			t='{!! $details->dept2 !!}';
 			console.log(t);
 			if(t=='AR'){
-				t='Architecture';
 				$('.dep2Check .select-wrapper input').val(t);		
 			}
 			else{
@@ -676,7 +674,6 @@
 			t='{!! $details->dept3 !!}';
 			console.log(t);
 			if(t=='AR'){
-				t='Architecture';
 				$('.dep3Check .select-wrapper input').val(t);		
 			}
 			else{

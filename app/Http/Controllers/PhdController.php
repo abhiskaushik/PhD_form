@@ -191,13 +191,14 @@ class PhdController extends Controller
                 return View::make('error')->with('message', $message);
             }
 
+            $form1 = $form2 = $form3 = NULL;
             if($request->input('appl_categ') == 'External')
             {
                 $form1 = $request->file('form1');
                 $form2 = $request->file('form2');
                 if(!$form1 || !$form2)
                 {
-
+                
                 }
                 else
                 {
@@ -215,7 +216,7 @@ class PhdController extends Controller
                 $form3 = $request->file('form3');
                 if(!$form3)
                 {
-
+                    
                 }
                 else
                 {

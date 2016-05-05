@@ -23,7 +23,6 @@ $(document).ready(function(){
 		data.ph = $('.pdCheck .select-wrapper input').val();
 		data.marital_status = $('.statusCheck .select-wrapper input').val();
 		 data.sex = $('.sexCheck .select-wrapper input').val();
-		data.email = $('#email').val();
 		data.area_of_research = $('#area_of_research').val();
 		data.father_name = $('#father_name').val();
 		data.dob = $('#dob').val();
@@ -42,6 +41,7 @@ $(document).ready(function(){
 		data.pg_deg = $('#pg_deg').val();
 		data.pg_branch = $('#pg_branch').val();
 		data.pg_gpa = $('#pg_gpa').val();
+		data.pg_class = $('#pg_class').val();
 		data.pg_name_of_inst = $('#pg_name_of_inst').val();
 		data.pg_name_of_uni = $('#pg_name_of_uni').val();
 		data.pg_yop = $('#pg_yop').val();

@@ -4,11 +4,11 @@ $(document).ready(function(){
 		
 		data.name = $('#name').val();
 		data.email = $('#email').val();
-		data.reg_number = $('#chalanNo').val();
+		data.chalan_no = $('#chalanNo').val();
 		data.appl_categ = $('.applicationCateg option:selected').text();
-		data.department1 = $('#department1 option:selected').text();
-		data.department2 = $('#department2 option:selected').text();
-		data.department3 = $('#department3 option:selected').text();
+		data.department1 = $('#department1').val();
+		data.department2 = $('#department2').val();
+		data.department3 = $('#department3').val();
 		data.email = $('#email').val();
 		data.area_of_research = $('#area_of_research').val();
 		data.father_name = $('#father_name').val();
@@ -77,7 +77,7 @@ $(document).ready(function(){
 		var div = '<div class="modal-content">\
         <h4>Candidate\'s Form</h4>\
         \
-<p><b>Registration Number:</b> '+data.reg_number+'</p>\
+<p><b>Bank Reference Number:</b> '+data.chalan_no+'</p>\
         <p><b>Date of Registration:</b> '+data.date+'</p>\
      \
         <p><b>Application Category:</b> '+data.appl_categ+'</p>\
@@ -88,7 +88,7 @@ $(document).ready(function(){
         <p><b>Area of Research:</b> '+data.area_of_research+'</p>\
         <p><b>Name of Candidate:</b> '+data.name+'</p>\
         <p><b>Email Id:</b> '+data.email+'</p>\
-        <p><b>Father"s Name:</b> '+data.father_name+'</p>\
+        <p><b>Father\'s Name:</b> '+data.father_name+'</p>\
         <p><b>Date of Birth:</b> '+data.dob+'</p>\
         <p><b>Category:</b> '+data.category+'</p>\
         <p><b>Sex:</b> '+data.sex+'</p>\
@@ -152,11 +152,11 @@ $(document).ready(function(){
 		
 		data.name = $('#name').val();
 		data.email = $('#email').val();
-		data.reg_number = $('#chalanNo').val();
+		data.chalan_no = $('#chalanNo').val();
 		data.appl_categ = $('.applicationCateg option:selected').text();
-		data.department1 = $('#department1 option:selected').text();
-		data.department2 = $('#department2 option:selected').text();
-		data.department3 = $('#department3 option:selected').text();
+		data.department1 = $('#department1').val();
+		data.department2 = $('#department2').val();
+		data.department3 = $('#department3').val();
 		data.email = $('#email').val();
 		data.area_of_research = $('#area_of_research').val();
 		data.father_name = $('#father_name').val();
@@ -214,7 +214,7 @@ $(document).ready(function(){
 		var div = '<div class="modal-content padding">\
         <h4>Candidate\'s Form</h4>\
         \
-<p><b>Registration Number:</b> '+data.reg_number+'</p>\
+<p><b>Bank Reference Number:</b> '+data.chalan_no+'</p>\
         <p><b>Date of Registration:</b> '+data.date+'</p>\
       \
         <p><b>Application Category:</b> '+data.appl_categ+'</p>\
@@ -224,7 +224,6 @@ $(document).ready(function(){
         <p><b>Email:</b> '+data.email+'</p>\
         <p><b>Area of Research:</b> '+data.area_of_research+'</p>\
         <p><b>Name of Candidate:</b> '+data.name+'</p>\
-        <p><b>Email Id:</b> '+data.email+'</p>\
         <p><b>Father\'s Name:</b> '+data.father_name+'</p>\
         <p><b>Date of Birth:</b> '+data.dob+'</p>\
         <p><b>Category:</b> '+data.category+'</p>\
