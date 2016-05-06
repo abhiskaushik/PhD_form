@@ -32,8 +32,8 @@ class CreateMsCandidates extends Migration
             $table->string('PH', 5);
             $table->string('age', 3);
             $table->string('nationality', 20);
-            $table->string('addrforcomm', 150);
-            $table->string('permanentaddr', 150);
+            $table->string('addrforcomm', 200);
+            $table->string('permanentaddr', 200);
             $table->string('email', 100);
             $table->bigInteger('mobile');
             $table->bigInteger('lanline');

@@ -259,7 +259,7 @@
   				 <div class="row">
 		        <div class="input-field col l6">
 		        	<span class="light">*Name of Degree:</span>
-		      		<input required placeholder="Name of Degree" id="ug_deg" type="text" class="validate" name="ug_deg" maxlength="32" value="{!! $details->ugdeg !!}">
+		      		<input required placeholder="Name of Degree" id="ug_deg" type="text" class="validate" name="ug_deg" maxlength="32" value="{!! $details->ugdegreeName !!}">
 		        </div>
 		         <div class="input-field col l6 ">
 		         	<span class="light">*Branch Name:</span>
@@ -273,7 +273,7 @@
 		      		<span class="light">*C.G.P.A/Percentage:</span>
 		      		<input required placeholder="C.G.P.A" id="ug_gpa" type="number" class="validate ug_cgpa" name="ug_gpa" min="4" max="100" step="0.01" value="{!! $details->uggpa !!}" >
 		      	</div>
-		      	<div class="input-field col l6">
+		      	<div class="input-field col l6 ugclassCheck">
 		      		<span class="light">*Class:</span>
 		      		<select required name="ug_class" id="ug_class">
 				      <option value="" disabled selected>Choose your option</option>
@@ -587,7 +587,6 @@
 				
 			// console.log('{!! $details->email !!}')
 			var t='{!! $details->sex !!}';
-			console.log(t);
 			if(t=='male'){
 				$('.sexCheck .select-wrapper input').val(t);
 				$('.sexCheck .select-wrapper ul>li:eq(1)').click();
@@ -609,7 +608,7 @@
 			}
 
 			t='{!! $details->PH !!}';
-			console.log('hey');
+			// console.log('hey');
 			if(t=='no'){
 				$('.pdCheck .select-wrapper input').val(t);
 				$('.pdCheck .select-wrapper ul>li:eq(2)').click();
@@ -618,8 +617,29 @@
 				$('.pdCheck .select-wrapper input').val(t);
 				$('.pdCheck .select-wrapper ul>li:eq(1)').click();
 			}
+
+			t='{!! $details->ugclass !!}';
+			if(t=='Honours'){
+				$('.ugclassCheck .select-wrapper input').val(t);
+				$('.ugclassCheck .select-wrapper ul>li:eq(1)').click();
+			}
+			else if(t == 'Distinction'){
+				$('.ugclassCheck .select-wrapper input').val(t);
+				$('.ugclassCheck .select-wrapper ul>li:eq(2)').click();
+			}
+			else if(t=='First')
+			{
+				$('.ugclassCheck .select-wrapper input').val(t);
+				$('.ugclassCheck .select-wrapper ul>li:eq(3)').click();
+			}
+			else if(t=='Second')
+			{
+				$('.ugclassCheck .select-wrapper input').val(t);
+				$('.ugclassCheck .select-wrapper ul>li:eq(4)').click();
+			}
+
 			t='{!! $details->applicationCateg !!}';
-			console.log(t);
+			// console.log(t);
 			if(t!=''){
 				$('.appCheck .select-wrapper input').val(t);	
 			}

@@ -237,7 +237,7 @@ class SaveController extends Controller
             'to3' => $request->input('emp_to_3')
         );
 
-        Log::info($request->input('applicationCategory').$request->input('father_name'));
+        Log::info($request);
         SavePhd::where('applNo', Session::get('applNo'))
                     ->update($details);
 
@@ -269,7 +269,7 @@ class SaveController extends Controller
             'lanline' => $request->get('landline'),
             'ugdegreeName' => $request->get('ug_deg'),
             'ugbranch' => $request->get('ug_branch'),
-            // 'gpa' => $details['ug_gpa'],
+            'uggpa' => $request->get('ug_gpa'),
             // replace this field by gpa
             'ugclass' => $request->get('ug_class'),
             'uginstitutionName' => $request->get('ug_name_of_inst'),
@@ -304,6 +304,8 @@ class SaveController extends Controller
             'gpa6' => $request->get('gpa6'),
             'gpa7' => $request->get('gpa7')
         );
+
+        Log::info($request);
         SaveMs::where('applNo', Session::get('applNo'))
                     ->update($details);
 

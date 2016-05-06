@@ -36,7 +36,8 @@ $(document).ready(function(){
 		data.ug_deg = $('#ug_deg').val();
 		data.ug_branch = $('#ug_branch').val();
 		data.ug_gpa = $('#ug_gpa').val();
-		data.ug_class = $('#ug_class').val();
+		console.log(data.ug_gpa);
+		data.ug_class = $('.ugclassCheck .select-wrapper input').val();
 		data.ug_name_of_inst = $('#ug_name_of_inst').val();
 		data.ug_name_of_uni = $('#ug_name_of_uni').val();
 		data.ug_yop = $('#ug_yop').val();

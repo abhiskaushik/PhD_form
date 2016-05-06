@@ -34,14 +34,14 @@ $(document).ready(function(){
 		data.ug_deg = $('#ug_deg').val();
 		data.ug_branch = $('#ug_branch').val();
 		data.ug_gpa = $('#ug_gpa').val();
-		data.ug_class = $('#ug_class').val();
+		data.ug_class = $('.ugclassCheck .select-wrapper input').val();
 		data.ug_name_of_inst = $('#ug_name_of_inst').val();
 		data.ug_name_of_uni = $('#ug_name_of_uni').val();
 		data.ug_yop = $('#ug_yop').val();
 		data.pg_deg = $('#pg_deg').val();
 		data.pg_branch = $('#pg_branch').val();
 		data.pg_gpa = $('#pg_gpa').val();
-		data.pg_class = $('#pg_class').val();
+		data.pg_class = $('.pgclassCheck .select-wrapper input').val();
 		data.pg_name_of_inst = $('#pg_name_of_inst').val();
 		data.pg_name_of_uni = $('#pg_name_of_uni').val();
 		data.pg_yop = $('#pg_yop').val();

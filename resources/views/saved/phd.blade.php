@@ -293,7 +293,7 @@
 			      		<span class="light">*C.G.P.A/Percentage:</span>
 			      		<input required placeholder="C.G.P.A" id="ug_gpa" type="number" class="validate ug_cgpa" name="ug_gpa" min="4" max="100" step="0.01" value="{!! $details->uggpa !!}" >
 			      	</div>
-			      	<div class="input-field col l6 classCheck">
+			      	<div class="input-field col l6 ugclassCheck">
 			      		<span class="light">*Class:</span>
 			      		<select required name="ug_class" id="ug_class">
 					      <option value="" disabled selected>Choose your option</option>
@@ -334,7 +334,7 @@
 	  				 <div class="row">
 			        <div class="input-field col l6">
 			        	<span class="light">*Name of Degree:</span>
-			      		<input required placeholder="Name of Degree" id="pg_deg" type="text" class="validate" name="pg_deg" maxlength="50" value="{!! $details->pgdeg !!}">
+			      		<input required placeholder="Name of Degree" id="pg_deg" type="text" class="validate" name="pg_deg" maxlength="50" value="{!! $details->pgdegreeName !!}">
 			        </div>
 			         <div class="input-field col l6 ">
 			         	<span class="light">*Branch Name:</span>
@@ -348,7 +348,7 @@
 			      		<span class="light">*C.G.P.A/Percentage:</span>
 			      		<input required placeholder="C.G.P.A" id="pg_gpa" type="number" class="validate pg_cgpa" name="pg_gpa" min="4" max="100" step="0.01" value="{!! $details->pggpa !!}">
 			      	</div>
-			      	<div class="input-field col l6">
+			      	<div class="input-field col l6 pgclassCheck">
 			      		<span class="light">*Class:</span>
 			      		<select required name = "pg_class" id="pgclass">
 					      <option value="" disabled selected>Choose your option</option>
@@ -600,12 +600,12 @@
 			$("textarea#employer_details_2").val('{!! $details->proexp2 !!}');
 			$("textarea#employer_details_3").val('{!! $details->proexp3 !!}');
 			
-			var x = $('#department1 option');
-			var y = '{!! $details->dept1 !!}';
-			console.log(y);
-			console.log(document.getElementById('sex').value);
+			// var x = $('#department1 option');
+			// var y = '{!! $details->dept1 !!}';
+			// console.log(y);
+			// console.log(document.getElementById('sex').value);
 			
-			console.log(document.getElementById('sex').value);
+			// console.log(document.getElementById('sex').value);
 			// var t = '{!! $details->sex !!}';
 			// $('select#sex').val('male');
 			// var text1 = 'male';
@@ -632,22 +632,43 @@
 
 			t='{!! $details->ugclass !!}';
 			if(t=='Honours'){
-				$('.classCheck .select-wrapper input').val(t);
-				$('.classCheck .select-wrapper ul>li:eq(1)').click();
+				$('.ugclassCheck .select-wrapper input').val(t);
+				$('.ugclassCheck .select-wrapper ul>li:eq(1)').click();
 			}
 			else if(t == 'Distinction'){
-				$('.classCheck .select-wrapper input').val(t);
-				$('.classCheck .select-wrapper ul>li:eq(2)').click();
+				$('.ugclassCheck .select-wrapper input').val(t);
+				$('.ugclassCheck .select-wrapper ul>li:eq(2)').click();
 			}
 			else if(t=='First')
 			{
-				$('.classCheck .select-wrapper input').val(t);
-				$('.classCheck .select-wrapper ul>li:eq(3)').click();
+				$('.ugclassCheck .select-wrapper input').val(t);
+				$('.ugclassCheck .select-wrapper ul>li:eq(3)').click();
 			}
 			else if(t=='Second')
 			{
-				$('.classCheck .select-wrapper input').val(t);
-				$('.classCheck .select-wrapper ul>li:eq(4)').click();
+				$('.ugclassCheck .select-wrapper input').val(t);
+				$('.ugclassCheck .select-wrapper ul>li:eq(4)').click();
+			}
+
+			t='{!! $details->pgclass !!}';
+			console.log(t);
+			if(t=='Honours'){
+				$('.pgclassCheck .select-wrapper input').val(t);
+				$('.pgclassCheck .select-wrapper ul>li:eq(1)').click();
+			}
+			else if(t == 'Distinction'){
+				$('.pgclassCheck .select-wrapper input').val(t);
+				$('.pgclassCheck .select-wrapper ul>li:eq(2)').click();
+			}
+			else if(t=='First')
+			{
+				$('.pgclassCheck .select-wrapper input').val(t);
+				$('.pgclassCheck .select-wrapper ul>li:eq(3)').click();
+			}
+			else if(t=='Second')
+			{
+				$('.pgclassCheck .select-wrapper input').val(t);
+				$('.pgclassCheck .select-wrapper ul>li:eq(4)').click();
 			}
 
 			t='{!! $details->maritalStatus !!}';

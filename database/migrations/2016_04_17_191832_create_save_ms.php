@@ -31,8 +31,8 @@ class CreateSaveMs extends Migration
             $table->string('maritalStatus', 10)->nullable();
             $table->string('PH', 5)->nullable();
             $table->string('nationality', 20)->default('');
-            $table->string('addrforcomm', 150)->default('');
-            $table->string('permanentaddr', 150)->default('');
+            $table->string('addrforcomm', 200)->default('');
+            $table->string('permanentaddr', 200)->default('');
             $table->string('email', 100)->default('');
             $table->bigInteger('mobile')->default(7000000000);
             $table->bigInteger('lanline')->default(7000000000);
@@ -40,7 +40,7 @@ class CreateSaveMs extends Migration
             $table->string('ugdegreeName', 50)->default('');
             $table->string('ugbranch', 50)->default('');
             $table->string('uggpa', 5)->default('');
-            $table->string('ugclass', 10)->nullable();
+            $table->string('ugclass', 15)->nullable();
             $table->string('uginstitutionName', 50)->default('');
             $table->string('uguniversityName', 50)->default('');
             $table->string('ugyop', 10)->default('');
