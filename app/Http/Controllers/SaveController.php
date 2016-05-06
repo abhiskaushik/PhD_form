@@ -11,6 +11,7 @@ use App\SaveMs;
 use Validator;
 use Session;
 use Log;
+use Illuminate\Support\Facades\Mail;
 
 class SaveController extends Controller
 {
