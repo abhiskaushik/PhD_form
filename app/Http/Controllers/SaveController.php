@@ -60,6 +60,11 @@ class SaveController extends Controller
         SavePhd::where('applNo', $applNo)
                     ->update(['registrationNumber' => $reg_number]);
 
+        Mail::send('emails.regnophd', ['applNo'=> $reg_number], function ($m) use($user) {
+            $m->from('phdsection@nitt.edu', 'NITT Admissions');
+            $m->to($user->email, 'Applicant' )->subject('Greetings from NITT!');
+        });
+
         return json_encode($reg_number);
 
         }
@@ -114,6 +119,11 @@ class SaveController extends Controller
         $reg_number = $reg_number.$applNo;
         SaveMs::where('applNo', $applNo)
                     ->update(['registrationNumber' => $reg_number]);
+
+        Mail::send('emails.regnoms', ['applNo'=> $reg_number], function ($m) use($user) {
+            $m->from('phdsection@nitt.edu', 'NITT Admissions');
+            $m->to($user->email, 'Applicant' )->subject('Greetings from NITT!');
+        });
 
         return json_encode($reg_number);
     }

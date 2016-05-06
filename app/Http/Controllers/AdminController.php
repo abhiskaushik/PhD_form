@@ -241,10 +241,20 @@ class AdminController extends Controller
 
 	public function printer($phdormsc, $reg_number)
 	{
+        $regNo = '';
+        $departments = explode('-', $reg_number);
+        for($i = 0; $i < sizeof($departments) - 1; $i++)
+        {
+            $regNo = $regNo.$departments[$i].'/';
+        }
+        $regNo = $regNo.$departments[sizeof($departments) - 1];
+
 	    if($phdormsc == 'PHD')
         {
-            $candidates = Phd::where('applNo', $reg_number)
+            $candidates = Phd::where('registrationNumber', $reg_number)
                                 ->first();
+
+            $applNo = $candidates->applNo;
 
             if(!$candidates)
             {
@@ -252,13 +262,13 @@ class AdminController extends Controller
                 return View::make('error')->with('message', $message);
             }                               
 
-            $ugDetails = PhdUg::where('applNo', $reg_number)
+            $ugDetails = PhdUg::where('applNo', $applNo)
                                     ->first();
-            $pgDetails = PhdPg::where('applNo', $reg_number)
+            $pgDetails = PhdPg::where('applNo', $applNo)
                                     ->first();
-            $otherDetails = PhdOther::where('applNo', $reg_number)
+            $otherDetails = PhdOther::where('applNo', $applNo)
                                     ->first();
-            $proDetails = PhdPro::where('applNo', $reg_number)
+            $proDetails = PhdPro::where('applNo', $applNo)
                                     ->first();
             $data = array('candidates' => $candidates,
                             'ug' => $ugDetails,
@@ -274,18 +284,21 @@ class AdminController extends Controller
         }
         else
         {
-            $candidates = Ms::where('applNo', $reg_number)
+            $candidates = Ms::where('registrationNumber', $reg_number)
                                 ->first();
+
+            $applNo = $candidates->applNo;
+
             if(!$candidates)
             {
                 $message = 'Invalid registration number';
                 return View::make('error')->with('message', $message);
             }                               
-            $ugDetails = MsUg::where('applNo', $reg_number)
+            $ugDetails = MsUg::where('applNo', $applNo)
                                     ->first();
-            $proDetails = MsPro::where('applNo', $reg_number)
+            $proDetails = MsPro::where('applNo', $applNo)
                                     ->first();
-            $scores = MsScores::where('applNo', $reg_number)
+            $scores = MsScores::where('applNo', $applNo)
                                     ->first();
             $data = array('candidates' => $candidates,
                             'ug' => $ugDetails,
@@ -299,8 +312,17 @@ class AdminController extends Controller
         }
 	}
 
-    public function admitCard($phdormsc, $applNo)
+    public function admitCard($phdormsc, $reg_number)
     {
+        $regNo = '';
+        $departments = explode('-', $reg_number);
+        for($i = 0; $i < sizeof($departments) - 1; $i++)
+        {
+            $regNo = $regNo.$departments[$i].'/';
+        }
+        $regNo = $regNo.$departments[sizeof($departments) - 1];
+        $applNo = $departments[sizeof($departments) - 1];
+
         $filename = $phdormsc.'/'.$applNo.'/'.$applNo;
         $path = public_path() . '/uploads/' . $filename;
         if(file_exists($path.'.jpg'))
@@ -319,13 +341,13 @@ class AdminController extends Controller
         if($phdormsc == 'PHD')
         {
             $candidate = Phd::select('name', 'registrationNumber')
-                            ->where('applNo', $applNo)
+                            ->where('registrationNumber', $regNo)
                             ->first();
         }
         else
         {
             $candidate = Ms::select('name', 'registrationNumber')
-                            ->where('applNo', $applNo)
+                            ->where('registrationNumber', $regNo)
                             ->first();
         }
 

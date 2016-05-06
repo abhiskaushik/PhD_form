@@ -52,15 +52,18 @@
 
 			{!! Form::open(array('url'=>'phdvalidate','method'=>'POST', 'files'=>true )) !!}	
 
+			
+			<input type="text" id="regNo" name="regNo" value="{!! $details->registrationNumber !!}" hidden="true"/>
+
 			<div class="row">
 				<div class="col l6 s12">
-					<p class="large">Bank Reference Number:</p>
+					<p class="large">*Bank Reference Number:</p>
 					<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number. " required />
 				</div>
 			</div>
 
 	  		<div class="row">  					   
-	  			<p class="large">Application Category</p>		    
+	  			<p class="large">*Application Category:</p>		    
 			        
 			      		
 					    <div class="input-field col l6 s12 appCheck">
@@ -81,7 +84,7 @@
 					      </div>
 
 					      <div class="upload col l6 s12 ">
-			    <p>Upload Image</p>
+			    <p>*Upload Image:</p>
 			      	<div class="file-field input-field">
 		          		<div class="btn teal darken-1 btn waves-effect waves-light">
 		          			<span class="light">File</span>
@@ -118,7 +121,7 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>
 			     		</select> -->
-			     		<input type="text" readonly="true" id"department1" name="department1" value="{!! $details->dept1 !!}" />
+			     		<input type="text" readonly="true" id="department1" name="department1" value="{!! $details->dept1 !!}" />
 			        </div>
 			        <div class="input-field col l6 s6 dep2Check">
 			        	<!-- <select name="department2" id="department2">
@@ -139,7 +142,7 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>		      
 			      		</select> -->
-			   		<input type="text" readonly="true" id"department2" name="department2" value="{!! $details->dept2 !!}" />
+			   		<input type="text" readonly="true" id="department2" name="department2" value="{!! $details->dept2 !!}" />
 			      	
 			        </div>
 			        </div>
@@ -163,7 +166,7 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>		      
 			      		</select>	 -->
-			      		<input type="text" readonly="true" id"department3" name="department3" value="{!! $details->dept3 !!}" />		     
+			      		<input type="text" readonly="true" id="department3" name="department3" value="{!! $details->dept3 !!}" />		     
 			        </div>
 			        <div class="input-field col s6 l6">
 			        	<input type="text" value="dept" hidden="true" />
@@ -172,35 +175,35 @@
 			      <div class="space-small"></div>
 			       <div class="row">
 			        <div class="input-field col s6 l6">
-			        	<span class="light">Email Id:</span>
+			        	<span class="light">*Email Id:</span>
 			        	          <input id="email" name="email" type="email" class="validate" required value="{!! $details->email !!}">
 			        	          
 			       	</div>
 			        
 			         <div class="input-field col l6 s6">
-			         <span class="light">Area of Research:</span>
+			         <span class="light">*Area of Research:</span>
 			          <input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research" maxlength="50" value="{!! $details->areaOfResearch !!}">
 			        </div>
 			        </div>
 			      <div class="row">
 			        <div class="input-field col l6 s6">
-			        	<span class="light">Name:</span>
+			        	<span class="light">*Name:</span>
 			      		<input required placeholder="Name of Candidate" id="name" type="text" class="validate" name="name" maxlength="32" value="{!! $details->name !!}">
 			        </div>
 			         <div class="input-field col l6  s6">
-			         <span class="light">Father's Name:</span>
+			         <span class="light">*Father's Name:</span>
 			          <input required placeholder="Father's/Guardian Name" id="father_name" type="text" class="validate" name="father_name" maxlength="32" value="{!! $details->fatherName !!}">
 			        </div>
 			      </div>
 
 			      <div class="row">
 			        <div class="input-field col l6">
-			        	<span class="light">Date of Birth:</span>
+			        	<span class="light">*Date of Birth:</span>
 			      		<input required id="dob" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31" value="{!! $details->dob !!}">
 			        </div>
 
 			         <div class="input-field col l6 categCheck">
-			         <span class="light">Category</span><br>
+			         <span class="light">*Category:</span><br>
 			         
 			         	<select required name="category" id="category">
 					      <option value="" disabled selected>Choose your Category</option>
@@ -215,7 +218,7 @@
 
 			      <div class="row">
 			        <div class="input-field col l6 sexCheck">
-			      		<span class="light">Sex</span><br>
+			      		<span class="light">*Sex:</span><br>
 			         	<!-- <input name="sex" id="sex" readonly="true" value="{!! $details->sex !!}" /> -->
 			         	<select id="sex" name="sex" required="true">
 			         		<option value="" disabled selected>Choose your Option</option>
@@ -225,7 +228,7 @@
 			      		
 			        </div>
 			         <div class="input-field col l6 statusCheck">
-			         <span class="light">Marital Status</span><br>
+			         <span class="light">*Marital Status:</span><br>
 			         
 			         	<select required name="marital_status" id="marital_status">
 					      <option value="" disabled selected>Choose your Marital Status</option>
@@ -237,7 +240,7 @@
 
 			      <div class="row">
 			        <div class="input-field col l6 pdCheck">
-			      		  <span class="light">Person With Disability(P.W.D)</span><br>
+			      		  <span class="light">*Person With Disability(P.W.D):</span><br>
 			      
 			         	<select required name="ph" id="ph">
 					      <option value="" disabled selected>Choose your option</option>
@@ -248,20 +251,20 @@
 			        </div>
 			         <div class="input-field col l6 ">
 
-			         <span class="light">Nationality:</span>
+			         <span class="light">*Nationality:</span>
 			          <input required placeholder="Nationality" id="nationality" type="text" class="validate" name="nationality" maxlength="32" value="{!! $details->nationality !!}">
 			        </div>
 			      </div>           
 
 			       <div class="row">
 			        <div class="input-field col l6"> 
-			        	<span for="textarea1">Address for Communication</span><br>     		  
+			        	<span for="textarea1">*Address for Communication:</span><br>     		  
 						<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200"></textarea>			          
-			            <p>Mobile Number:</p>
+			            <p>*Mobile Number:</p>
 			            <input required id="mobile" type="number" min="7000000000" max="9999999999" class="validate" name="mobile" value="{!! $details->mobile !!}" />
 			        </div>
 			         <div class="input-field col l6 ">
-			         <span for="textarea1">Permanent Address</span><br>
+			         <span for="textarea1">*Permanent Address:</span><br>
 			         <textarea required id="permanent_addr" class="materialize-textarea" name="permanent_addr" maxlength="200" value="{!! $details->permanentaddr !!}"></textarea>			            
 			            <p>Land-Line Number:</p>
 			            <input id="landline" type="text" class="validate" name="landline" value="{!! $details->lanline !!}" />
@@ -275,11 +278,11 @@
 	  			<p class="vlarge">Undergraduate</p>
 	  				 <div class="row">
 			        <div class="input-field col l6">
-			        	<span class="light">Name of Degree:</span>
+			        	<span class="light">*Name of Degree:</span>
 			      		<input required placeholder="Name of Degree" id="ug_deg" type="text" class="validate" name="ug_deg" maxlength="32" value="{!! $details->ugdegreeName !!}">
 			        </div>
 			         <div class="input-field col l6 ">
-			         	<span class="light">Branch Name:</span>
+			         	<span class="light">*Branch Name:</span>
 			         	<input required placeholder="Branch/Specialization" id="ug_branch" type="text" class="validate" name="ug_branch" maxlength="50" value="{!! $details->ugbranch !!}">
 			        </div>
 			      </div>
@@ -287,11 +290,11 @@
 			      <div class="row">
 			      	
 			      	<div class="input-field col l6 ">
-			      		<span class="light">C.G.P.A/Percentage:</span>
+			      		<span class="light">*C.G.P.A/Percentage:</span>
 			      		<input required placeholder="C.G.P.A" id="ug_gpa" type="number" class="validate ug_cgpa" name="ug_gpa" min="4" max="100" step="0.01" value="{!! $details->uggpa !!}" >
 			      	</div>
-			      	<div class="input-field col l6">
-			      		<span class="light">Class:</span>
+			      	<div class="input-field col l6 classCheck">
+			      		<span class="light">*Class:</span>
 			      		<select required name="ug_class" id="ug_class">
 					      <option value="" disabled selected>Choose your option</option>
 					      <option  value="Honours">Honours</option>
@@ -310,17 +313,17 @@
 
 			      <div class="row">
 			      	<div class="input-field col l12 s12">
-			      		<span class="light">College Name:</span>
+			      		<span class="light">*College Name:</span>
 			      		<input required placeholder="College Name" id="ug_name_of_inst" type="text" class="validate" name="ug_name_of_inst" maxlength="50" value="{!! $details->uginstitutionName !!}">
 			      	</div>
 
 			      	<div class="input-field col l12 s12">
-			      		<span class="light">University Name:</span>
+			      		<span class="light">*University Name:</span>
 			      		<input required placeholder="University Name" id="ug_name_of_uni" type="text" class="validate" name="ug_name_of_uni" maxlength="50" value="{!! $details->uguniversityName !!}">
 			      	</div>
 
 			      	<div class="input-field col l4 s4">
-			      		<span class="light">Year of Passing:</span>
+			      		<span class="light">*Year of Passing:</span>
 			      		<input required id="ug_yop" type="number" class="validate" name="ug_yop" min="2000" max="2018" value="{!! $details->ugyop !!}">
 			      	</div>
 			      </div>
@@ -330,11 +333,11 @@
 	  			<p class="vlarge">Postgraduate</p>
 	  				 <div class="row">
 			        <div class="input-field col l6">
-			        	<span class="light">Name of Degree:</span>
+			        	<span class="light">*Name of Degree:</span>
 			      		<input required placeholder="Name of Degree" id="pg_deg" type="text" class="validate" name="pg_deg" maxlength="50" value="{!! $details->pgdeg !!}">
 			        </div>
 			         <div class="input-field col l6 ">
-			         	<span class="light">Branch Name:</span>
+			         	<span class="light">*Branch Name:</span>
 			         	<input required placeholder="Branch/Specialization" id="pg_branch" type="text" class="validate" name="pg_branch" maxlength="50" value="{!! $details->pgbranch !!}">
 			        </div>
 			      </div>
@@ -342,11 +345,11 @@
 			      <div class="row">
 			      	
 			      	<div class="input-field col l6">
-			      		<span class="light">C.G.P.A/Percentage:</span>
+			      		<span class="light">*C.G.P.A/Percentage:</span>
 			      		<input required placeholder="C.G.P.A" id="pg_gpa" type="number" class="validate pg_cgpa" name="pg_gpa" min="4" max="100" step="0.01" value="{!! $details->pggpa !!}">
 			      	</div>
 			      	<div class="input-field col l6">
-			      		<span class="light">Class:</span>
+			      		<span class="light">*Class:</span>
 			      		<select required name = "pg_class" id="pgclass">
 					      <option value="" disabled selected>Choose your option</option>
 					      <option  value="Honours">Honours</option>
@@ -364,23 +367,23 @@
 			      </div>
 			      <div class="row">
 			      	<div class="input-field col l12 s12">
-			      		<span class="light">College Name:</span>
+			      		<span class="light">*College Name:</span>
 			      		<input required placeholder="College Name" id="pg_name_of_inst" type="text" class="validate" name="pg_name_of_inst" maxlength="50" value="{!! $details->pginstitutionName !!}">
 			      	</div>
 
 			      	<div class="input-field col l12 s12">
-			      	<span class="light">University Name:</span>
+			      	<span class="light">*University Name:</span>
 			      		<input required placeholder="University Name" id="pg_name_of_uni" type="text" class="validate" name="pg_name_of_uni" maxlength="50" value="{!! $details->pguniversityName !!}">
 			      	</div>
 
 			      	<div class="input-field col l4 s4">
-			      		<span class="light">Year of Passing</span>
+			      		<span class="light">*Year of Passing</span>
 			      		<input required id="pg_yop" type="number" class="validate" name="pg_yop" min="2000" max="2018" value="{!! $details->pgyop !!}"> 
 			      	</div>
 			      </div>
 
 			      <div class="row">
-			      	<p class="vlarge">Other Details:</p>
+			      	<p class="vlarge">*Other Details:</p>
 			      	<div class="space-small"></div>
 			      	<div class="results_announced center">
 			      		<p class="center">Qualified in GATE/NET/SLET/CSIR/CAT/UGC/NBHM</p>
@@ -394,7 +397,7 @@
 					<div class="exams"></div>		      
 
 			      	<div class="col l12 s12">
-			      		<span class="light">Title of P.G Project:</span>
+			      		<span class="light">*Title of P.G Project:</span>
 			      		<input required placeholder="Title of P.G Project" id="title_of_project" type="text" class="validate" name="title_of_project" maxlength="100" value="{!! $details->pgproject !!}" >
 			      	</div>
 			      	<div class="col l4 s12">
@@ -524,7 +527,8 @@
 					<div class="row">
 	   			<div class="captcha center l6 offset-l3">
 						{!! app('captcha')->display(); !!}      	
-			     </div>      
+			     </div>  
+			     <p>(*) indicates that it's a required field.</p>     
 	  			</div>
 
 	  		<div class="center">
@@ -626,6 +630,26 @@
 				$('.sexCheck .select-wrapper ul>li:eq(2)').click();
 			}
 
+			t='{!! $details->ugclass !!}';
+			if(t=='Honours'){
+				$('.classCheck .select-wrapper input').val(t);
+				$('.classCheck .select-wrapper ul>li:eq(1)').click();
+			}
+			else if(t == 'Distinction'){
+				$('.classCheck .select-wrapper input').val(t);
+				$('.classCheck .select-wrapper ul>li:eq(2)').click();
+			}
+			else if(t=='First')
+			{
+				$('.classCheck .select-wrapper input').val(t);
+				$('.classCheck .select-wrapper ul>li:eq(3)').click();
+			}
+			else if(t=='Second')
+			{
+				$('.classCheck .select-wrapper input').val(t);
+				$('.classCheck .select-wrapper ul>li:eq(4)').click();
+			}
+
 			t='{!! $details->maritalStatus !!}';
 			
 			if(t=='single'){
@@ -651,33 +675,6 @@
 			console.log(t);
 			if(t!=''){
 				$('.appCheck .select-wrapper input').val(t);	
-			}
-
-			//if conditions for departments left
-
-			t='{!! $details->dept1 !!}';
-			console.log(t);
-			if(t=='AR'){
-				$('#department1').val(t);		
-			}
-			else{
-				$('#department1').val(t);			
-			}
-			t='{!! $details->dept2 !!}';
-			console.log(t);
-			if(t=='AR'){
-				$('#department2').val(t);		
-			}
-			else{
-				$('#department2').val(t);			
-			}
-			t='{!! $details->dept3 !!}';
-			console.log(t);
-			if(t=='AR'){
-				$('#department3').val(t);		
-			}
-			else{
-				$('#department3').val(t);			
 			}
 			t='hello';
 	// 		console.log($('.categCheck select option:eq(1)').prop('selected', false));

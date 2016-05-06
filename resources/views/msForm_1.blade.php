@@ -115,39 +115,39 @@
 			        
 			        <div class="input-field col s6 l6">
 			        	          <input id="email" name="email" type="email" class="validate" required>
-			        	          <label for="last_name">Email</label>
+			        	          <label for="last_name">*Email:</label>
 			       	</div>
 			        
 			         <div class="input-field col l12 s12">
-			         <span class="light">Area of Research:</span>
+			         <span class="light">*Area of Research:</span>
 			          <input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research" maxlength="50">
 			        </div>
 			      </div>      
 
 			      <div class="row">
 			        <div class="input-field col l6 s6">
-			        	<span class="light">Name:</span>
+			        	<span class="light">*Name:</span>
 			      		<input required placeholder="Name of Candidate" id="name" type="text" class="validate" name="name" maxlength="32">
 			        </div>
 			         <div class="input-field col l6  s6">
-			         <span class="light">Father's Name/Guardian's Name/Husband's Name:</span>
+			         <span class="light">*Father's Name/Guardian's Name/Husband's Name:</span>
 			          <input required placeholder="Father's/Guardian Name" id="father_name" type="text" class="validate" name="father_name" maxlength="32">
 			        </div>
 			      </div>
 
 			      <div class="row">
 			        <div class="input-field col l4">
-			        	<span class="light">Date of Birth:</span>
+			        	<span class="light">*Date of Birth:</span>
 			      		<input required id="dob" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31" >
 			        </div>
 
 			        <div class="input-field col l2">
-			        	<span class="light">Age:</span>
+			        	<span class="light">*Age:</span>
 			      		<input placeholder="Enter Age" required id="age" type="number" class="validate" name="age" max="50" min="12" >
 			        </div>
 
 			         <div class="input-field col l6 ">
-			         <span class="light">Category</span><br>
+			         <span class="light">*Category:</span><br>
 			         	<select required name="category" id="category">
 					      <option value="" disabled selected>Choose your Category</option>
 					      <option value="OBC">OBC</option>
@@ -160,7 +160,7 @@
 
 			      <div class="row">
 			        <div class="input-field col l6">
-			      		<span class="light">Sex</span><br>
+			      		<span class="light">*Sex:</span><br>
 			         	<select required name="sex" id="sex">
 					      <option value="" disabled selected>Choose your Gender</option>
 					      <option value="male">Male</option>
@@ -170,7 +170,7 @@
 			        </div>
 
 			         <div class="input-field col l6 ">
-			         <span class="light">Marital Status</span><br>
+			         <span class="light">*Marital Status:</span><br>
 			         	<select required name="marital_status" id="marital_status">
 					      <option value="" disabled selected>Choose your Marital Status</option>
 					      <option value="married">Married</option>
@@ -181,7 +181,7 @@
 
 			      <div class="row">
 			        <div class="input-field col l6">
-			      		  <span class="light">Person With Disability(PWD):</span><br>
+			      		  <span class="light">*Person With Disability(PWD):</span><br>
 			         	<select required name="ph" id="ph">
 					      <option value="" disabled selected>Choose your option</option>
 					      <option value="yes">Yes</option>
@@ -190,22 +190,22 @@
 			        </div>
 			         <div class="input-field col l6 ">
 
-			         <span class="light">Nationality:</span>
+			         <span class="light">*Nationality:</span>
 			          <input required placeholder="Nationality" id="nationality" type="text" class="validate" name="nationality" maxlength="32">
 			        </div>
 			      </div>           
 
 			       <div class="row">
 			        <div class="input-field col l6"> 
-			        	<span for="textarea1">Address for Communication</span><br>     		  
+			        	<span for="textarea1">*Address for Communication:</span><br>     		  
 						<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200"></textarea>
 			            
 
-			            <span>Mobile Number:</span>
+			            <span>*Mobile Number:</span>
 			            <input required type="number" min="7000000000" max="9999999999" class="validate" name="mobile" id="mobile"></input>
 			        </div>
 			         <div class="input-field col l6 ">
-			         <span for="textarea1">Permanent Address</span><br>
+			         <span for="textarea1">*Permanent Address:</span><br>
 			         <textarea required id="permanent_addr" class="materialize-textarea" name="permanent_addr" maxlength="200"></textarea>
 			            
 
@@ -217,6 +217,7 @@
 			      </div> 
 
 			    </div>
+			    <p>(*) indicates that it's a required field.</p> 
 	  		</div>
 
 	  		      

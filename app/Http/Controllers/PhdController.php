@@ -236,6 +236,7 @@ class PhdController extends Controller
             $candidate = new Phd();
 
             $candidate->chalanNo = $request->input('chalanNo');
+            $candidate->registrationNumber = $request->input('regNo');
             $candidate->applicationCategory = $request->input('appl_categ');
             $candidate->dateOfReg = $request->input('date');
             $candidate->dept1 = $request->input('department1');
@@ -259,17 +260,20 @@ class PhdController extends Controller
             $candidate->save();
 
             $applNo = $candidate->applNo;
-            $reg_number = 'PHD/';
-            for($i = 1; $i <= 3; $i++)
-            {
-                if($request->input('department'.$i))
-                {
-                    $reg_number = $reg_number.$request->input('department'.$i).'/';
-                }
-            }
-            $reg_number = $reg_number.$applNo;
-            Phd::where('applNo', $applNo)
-                    ->update(['registrationNumber' => $reg_number]);
+            $reg_number = $request->input('regNo');
+            $departments = explode('/', $reg_number);
+            $reg_appl_no = $departments[sizeof($departments) - 1];
+            // $reg_number = 'PHD/';
+            // for($i = 1; $i <= 3; $i++)
+            // {
+            //     if($request->input('department'.$i))
+            //     {
+            //         $reg_number = $reg_number.$request->input('department'.$i).'/';
+            //     }
+            // }
+            // $reg_number = $reg_number.$applNo;
+            // Phd::where('applNo', $applNo)
+            //         ->update(['registrationNumber' => $reg_number]);
 
             $ugDetails = new PhdUg();
 
@@ -340,22 +344,22 @@ class PhdController extends Controller
             if($request->input('appl_categ') == 'External' || $request->input('appl_categ') == 'onCampus'){
             if($form1 && $form2)
             {
-                $form1 = $form1->move(public_path().'/uploads/PHD/'.$applNo, $applNo.'form1'.'.'.$extension1);
-                $form2 = $form2->move(public_path().'/uploads/PHD/'.$applNo, $applNo.'form2'.'.'.$extension2);
+                $form1 = $form1->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'form1'.'.'.$extension1);
+                $form2 = $form2->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'form2'.'.'.$extension2);
             }
             else if($form3)
             {
-                $form3 = $form3->move(public_path().'/uploads/PHD/'.$applNo, $applNo.'form3'.'.'.$extension3);
+                $form3 = $form3->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'form3'.'.'.$extension3);
             }
         }
             if($file)
             {
-                $file = $file->move(public_path().'/uploads/PHD/'.$applNo, $applNo.'.'.$extension);
+                $file = $file->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'.'.$extension);
             }
 
             if($sign)
             {
-                $sign = $sign->move(public_path().'/uploads/PHD/'.$applNo, $applNo.'sign.'.$signExt);
+                $sign = $sign->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'sign.'.$signExt);
             }
 
             return View::make('success')->with('details', $details);

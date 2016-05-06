@@ -183,6 +183,7 @@ class MsController extends Controller
             $candidate = new Ms();
 
             $candidate->chalanNo = $request->input('chalanNo');
+            $candidate->registrationNumber = $request->input('regNo');
             $candidate->applicationCategory = $request->get('appl_categ');
             $candidate->dateOfReg = $request->get('date');
             $candidate->dept1 = $request->get('department1');
@@ -206,17 +207,20 @@ class MsController extends Controller
             $candidate->save();
 
             $applNo = $candidate->applNo;
-            $reg_number = 'MS/';
-            for($i = 1; $i <= 3; $i++)
-            {
-                if($request->get('department'.$i))
-                {
-                    $reg_number = $reg_number.$request->get('department'.$i).'/';
-                }
-            }
-            $reg_number = $reg_number.$applNo;
-            Ms::where('applNo', $applNo)
-                    ->update(['registrationNumber' => $reg_number]);
+            $reg_number = $request->input('regNo');
+            $departments = explode('/', $reg_number);
+            $reg_appl_no = $departments[sizeof($departments) - 1];
+            // $reg_number = 'MS/';
+            // for($i = 1; $i <= 3; $i++)
+            // {
+            //     if($request->get('department'.$i))
+            //     {
+            //         $reg_number = $reg_number.$request->get('department'.$i).'/';
+            //     }
+            // }
+            // $reg_number = $reg_number.$applNo;
+            // Ms::where('applNo', $applNo)
+            //         ->update(['registrationNumber' => $reg_number]);
 
             if($request->get('ra1') == 'on')
             {
@@ -292,11 +296,11 @@ class MsController extends Controller
 
             if($file)
             {
-                $file = $file->move(public_path().'/uploads/MS/'.$applNo , $applNo.'.'.$extension);
+                $file = $file->move(public_path().'/uploads/MS/'.$reg_appl_no , $reg_appl_no.'.'.$extension);
             }
             if($cert)
             {
-                $cert = $cert->move(public_path().'/uploads/MS/'.$applNo, $applNo.'cert'.'.'.$extension3);
+                $cert = $cert->move(public_path().'/uploads/MS/'.$reg_appl_no, $reg_appl_no.'cert'.'.'.$extension3);
             }
             return View::make('success')->with('details', $details);
             }

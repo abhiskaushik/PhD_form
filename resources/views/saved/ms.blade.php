@@ -51,17 +51,17 @@
 		<div class="row">
 
 		{!! Form::open(array('url'=>'msvalidate','method'=>'POST', 'files'=>true )) !!}
-		<!-- <input type="hidden" name="_token" id="_token" value={!! csrf_field() !!} /> -->			
+		<input type="text" id="regNo" name="regNo" value="{!! $details->registrationNumber !!}" hidden="true"/>		
 		<div class="row">
 			<div class="col l6 s12">
-				<span class="light">Bank Reference Number:</span>
+				<span class="light">*Bank Reference Number:</span>
 				<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number. " required />
 			</div>
 		</div>
   		<div class="row">  					   
   			
 		        <div class="input-field col l6 s12">
-		        <span class="light">Application Category</span>		    
+		        <span class="light">*Application Category:</span>		    
 		      		<select required name="appl_categ" class="applicationCateg" id="applicationCateg">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="Part Time">Part Time</option>
@@ -69,7 +69,7 @@
 				    </select>
 		        </div>		        		    		    
 		    <div class="col l6 s12">
-		    <p>Upload Image</p>
+		    <p>*Upload Image</p>
 		      	<div class="file-field input-field">
 	          		<div class="btn teal darken-1 btn waves-effect waves-light">
 	          			<span class="light">File</span>
@@ -154,34 +154,34 @@
 		         
 		        <div class="input-field col s6 l6">
 		        	          <input id="email" name="email" type="email" class="validate" required value="{!! $details->email !!}">
-		        	          <label for="last_name">Email</label>
+		        	          <label for="last_name">*Email:</label>
 		       	</div>
 		        
 		         <div class="input-field col l12 s12">
-		         <span class="light">Area of Research:</span>
+		         <span class="light">*Area of Research:</span>
 		          <input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research" maxlength="50" value="{!! $details->areaOfResearch !!}">
 		        </div>
 		      </div>      
 
 		      <div class="row">
 		        <div class="input-field col l6 s6">
-		        	<span class="light">Name:</span>
+		        	<span class="light">*Name:</span>
 		      		<input required placeholder="Name of Candidate" id="name" type="text" class="validate" name="name" maxlength="32" value="{!! $details->name !!}">
 		        </div>
 		         <div class="input-field col l6  s6">
-		         <span class="light">Father's Name:</span>
+		         <span class="light">*Father's Name:</span>
 		          <input required placeholder="Father's/Guardian Name" id="father_name" type="text" class="validate" name="father_name" maxlength="32" value="{!! $details->fatherName !!}">
 		        </div>
 		      </div>
 
 		      <div class="row">
 		        <div class="input-field col l6">
-		        	<span class="light">Date of Birth:</span>
+		        	<span class="light">*Date of Birth:</span>
 		      		<input required id="dob" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31" value="{!! $details->dob !!}">
 		        </div>
 
 		         <div class="input-field col l6 categCheck">
-		         <span class="light">Category</span><br>
+		         <span class="light">*Category:</span><br>
 		         	<select required name="category" id="category">
 				      <option value="" disabled selected>Choose your Category</option>
 				      <option value="OBC">OBC</option>
@@ -194,7 +194,7 @@
 
 		      <div class="row">
 		        <div class="input-field col l6 sexCheck">
-		      		<span class="light">Sex</span><br>
+		      		<span class="light">*Sex:</span><br>
 		         	<select required name="sex" id="sex">
 				      <option value="" disabled selected>Choose your Gender</option>
 				      <option value="male">Male</option>
@@ -204,7 +204,7 @@
 		        </div>
 
 		         <div class="input-field col l6 statusCheck">
-		         <span class="light">Marital Status</span><br>
+		         <span class="light">*Marital Status:</span><br>
 		         	<select required name="marital_status" id="marital_status">
 				      <option value="" disabled selected>Choose your Marital Status</option>
 				      <option value="married">Married</option>
@@ -215,7 +215,7 @@
 
 		      <div class="row">
 		        <div class="input-field col l6 pdCheck">
-		      		  <span class="light">Physically Challenged(P.H)</span><br>
+		      		  <span class="light">*Person With Disability(PWD):</span><br>
 		         	<select required name="ph" id="ph">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="yes">Yes</option>
@@ -224,22 +224,22 @@
 		        </div>
 		         <div class="input-field col l6 ">
 
-		         <span class="light">Nationality:</span>
+		         <span class="light">*Nationality:</span>
 		          <input required placeholder="Nationality" id="nationality" type="text" class="validate" name="nationality" maxlength="32" value="{!! $details->nationality !!}">
 		        </div>
 		      </div>           
 
 		       <div class="row">
 		        <div class="input-field col l6"> 
-		        	<span for="textarea1">Address for Communication</span><br>     		  
+		        	<span for="textarea1">*Address for Communication:</span><br>     		  
 					<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200" value="{!! $details->addrforcomm !!}"></textarea>
 		            
 
-		            <p>Mobile Number:</p>
+		            <p>*Mobile Number:</p>
 		            <input required id="mobile" type="number" min="7000000000" max="9999999999" class="validate" name="mobile" value="{!! $details->mobile !!}"></input>
 		        </div>
 		         <div class="input-field col l6 ">
-		         <span for="textarea1">Permanent Address</span><br>
+		         <span for="textarea1">*Permanent Address:</span><br>
 		         <textarea required id="permanent_addr" class="materialize-textarea" name="permanent_addr" maxlength="200" value="{!! $details->permanentaddr !!}"></textarea>
 		            
 
@@ -258,11 +258,11 @@
   			<p class="vlarge">Undergraduate</p>
   				 <div class="row">
 		        <div class="input-field col l6">
-		        	<span class="light">Name of Degree:</span>
+		        	<span class="light">*Name of Degree:</span>
 		      		<input required placeholder="Name of Degree" id="ug_deg" type="text" class="validate" name="ug_deg" maxlength="32" value="{!! $details->ugdeg !!}">
 		        </div>
 		         <div class="input-field col l6 ">
-		         	<span class="light">Branch Name:</span>
+		         	<span class="light">*Branch Name:</span>
 		         	<input required placeholder="Branch/Specialization" id="ug_branch" type="text" class="validate" name="ug_branch" maxlength="50" value="{!! $details->ugbranch !!}">
 		        </div>
 		      </div>
@@ -270,11 +270,11 @@
 		      <div class="row">
 		      	
 		      	<div class="input-field col l6 ">
-		      		<span class="light">C.G.P.A/Percentage:</span>
+		      		<span class="light">*C.G.P.A/Percentage:</span>
 		      		<input required placeholder="C.G.P.A" id="ug_gpa" type="number" class="validate ug_cgpa" name="ug_gpa" min="4" max="100" step="0.01" value="{!! $details->uggpa !!}" >
 		      	</div>
 		      	<div class="input-field col l6">
-		      		<span class="light">Class:</span>
+		      		<span class="light">*Class:</span>
 		      		<select required name="ug_class" id="ug_class">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option  value="Honours">Honours</option>
@@ -293,24 +293,24 @@
 
 		      <div class="row">
 		      	<div class="input-field col l12 s12">
-		      		<span class="light">College Name:</span>
+		      		<span class="light">*College Name:</span>
 		      		<input required placeholder="College Name" id="ug_name_of_inst" type="text" class="validate" name="ug_name_of_inst" maxlength="50" value="{!! $details->uginstitutionName !!}">
 		      	</div>
 
 		      	<div class="input-field col l12 s12">
-		      		<span class="light">University Name:</span>
+		      		<span class="light">*University Name:</span>
 		      		<input required placeholder="University Name" id="ug_name_of_uni" type="text" class="validate" name="ug_name_of_uni" maxlength="50" value="{!! $details->uguniversityName !!}">
 		      	</div>
 
 		      	<div class="input-field col l4 s4">
-		      		<span class="light">Year of Passing</span>
+		      		<span class="light">*Year of Passing:</span>
 		      		<input required id="ug_yop" type="number" class="validate" name="ug_yop" min="2000" max="2018" value="{!! $details->ugyop !!}">
 		      	</div>
 		      </div>
 
 		      <div class="space-medium"></div>
 		      <div class="row">
-		      <p class="vlarge">Academic Details:</p>
+		      <p class="vlarge">*Academic Details:</p>
 		      	<table class="highlight centered responsive-table">
 		      	        <thead>
 		      	          <tr>
@@ -500,7 +500,7 @@
 		      </div>
 		      
 		      {!! app('captcha')->display(); !!}
-
+		      <p>(*) indicates that it's a required field.</p> 
   		 <div class="center">
       <a id="preview2" class="teal darken-1 waves-effect waves-light btn modal-trigger">Preview Form</a>
       
@@ -622,33 +622,6 @@
 			console.log(t);
 			if(t!=''){
 				$('.appCheck .select-wrapper input').val(t);	
-			}
-
-			//if conditions for departments left
-
-			t='{!! $details->dept1 !!}';
-			console.log(t);
-			if(t=='AR'){
-				$('.dep1Check .select-wrapper input').val(t);				
-			}
-			else{
-				$('.dep1Check .select-wrapper input').val(t);						
-			}
-			t='{!! $details->dept2 !!}';
-			console.log(t);
-			if(t=='AR'){
-				$('.dep2Check .select-wrapper input').val(t);					
-			}
-			else{
-				$('.dep2Check .select-wrapper input').val(t);					
-			}
-			t='{!! $details->dept3 !!}';
-			console.log(t);
-			if(t=='AR'){
-				$('.dep3Check .select-wrapper input').val(t);			
-			}
-			else{
-				$('.dep3Check .select-wrapper input').val(t);			
 			}
 			t='hello';
 	// 		console.log($('.categCheck select option:eq(1)').prop('selected', false));
