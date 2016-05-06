@@ -75,6 +75,10 @@ $(document).ready(function(){
 		if(filter.test(b) && b.length >= 9){
 			
 		}	
+		else if(b.length == 0)
+		{
+
+		}
 		else{
 			alert('Enter a valid landline number');
 			return false;
@@ -114,7 +118,8 @@ $(document).ready(function(){
 	        		var div = '<p>User already exists</p>';
 	        	}
 	        	else{
-	        		var div = '<p>You Registration Number is: '+ data + '</p>\
+	        		var div = '<p>Your Registration Number is: '+ data + '</p>\
+	        					<br><p>Check your Mail Inbox for further details</p>\
 	        				<a class="redirect teal darken-1 send-btn btn waves-effect waves-light" data-reg="'+data+'">Proceed</a>';
 	        	}
 	        	$('.regno').html("");
