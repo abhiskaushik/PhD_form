@@ -37,7 +37,92 @@ $(document).ready(function(){
 		data.landline = $('#landline').val();
 		data.age = $('#age').val();
 		data.checker = $('.checker').val();
+
+		data.email = $('#email').val();
+		data.name = $('#name').val();
+		data.father_name = $('#father_name').val();
+		data.dob = $('#dob').val();
+		data.age = $('#age').val();
+		data.nationality = $('#nationality').val();
+		data.addr_for_commn = $('#addr_for_commn').val();
+		data.permanent_addr = $('#permanent_addr').val();
+
 		console.log(data);
+
+		var ch = 1;
+		if(data.email == ''){
+			var error = "Please fill the email field";
+			$('#error .modal-content .error').remove();
+			var dived = '<div class="error"></div>';
+			$('#error .modal-content').append(dived);
+				$('#error .modal-content .error').append('<p>'+error+'</p>');
+			$('#error').openModal();
+			
+			return false;
+		}
+
+		if(data.name == ''){
+			var error = "Please fill the name field";
+			$('#error .modal-content .error').remove();
+			var dived = '<div class="error"></div>';
+			$('#error .modal-content').append(dived);
+				$('#error .modal-content .error').append('<p>'+error+'</p>');
+			$('#error').openModal();
+			
+			return false;
+		}
+		if(data.father_name == ''){
+			var error = "Please fill the father's name field";
+			$('#error .modal-content .error').remove();
+			var dived = '<div class="error"></div>';
+			$('#error .modal-content').append(dived);
+				$('#error .modal-content .error').append('<p>'+error+'</p>');
+			$('#error').openModal();
+			
+			return false;
+		}
+		if(data.dob == ''){
+			var error = "Please fill the date of birth field";
+			$('#error .modal-content .error').remove();
+			var dived = '<div class="error"></div>';
+			$('#error .modal-content').append(dived);
+				$('#error .modal-content .error').append('<p>'+error+'</p>');
+			$('#error').openModal();
+			
+			return false;
+		}
+		if(data.age == ''){
+			var error = "Please fill the age field";
+			$('#error .modal-content .error').remove();
+			var dived = '<div class="error"></div>';
+			$('#error .modal-content').append(dived);
+				$('#error .modal-content .error').append('<p>'+error+'</p>');
+			$('#error').openModal();
+			
+			return false;
+		}
+		if(data.permanent_addr == ''){
+			var error = "Please fill the permanent address field";
+			$('#error .modal-content .error').remove();
+			var dived = '<div class="error"></div>';
+			$('#error .modal-content').append(dived);
+				$('#error .modal-content .error').append('<p>'+error+'</p>');
+			$('#error').openModal();
+			
+			return false;
+		}
+		if(data.addr_for_commn == ''){
+			var error = "Please fill the address field";
+			$('#error .modal-content .error').remove();
+			var dived = '<div class="error"></div>';
+			$('#error .modal-content').append(dived);
+				$('#error .modal-content .error').append('<p>'+error+'</p>');
+			$('#error').openModal();
+			
+			return false;
+		}
+		
+
 		// console.log($('#dob').val());
 		var a = $('#mobile').val();
 		console.log(a);
@@ -118,6 +203,7 @@ $(document).ready(function(){
 		// 
 		// return true;
 	});
+
 
 
 	$('#regNo').on('click' , '.redirect' ,function()
@@ -244,6 +330,13 @@ $(document).ready(function(){
 		$('#valid').prop('required',true);
 	});
 	
-
+		function requiredCheck(x){
+		var error = "Please fill the "+x+" field";
+		if(count==1)
+				$('#error .modal-content .error').append('<p>'+error+'</p>');
+			$('#error').openModal();
+			
+			return false;
+	}
 	
 });
