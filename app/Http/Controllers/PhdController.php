@@ -136,19 +136,11 @@ class PhdController extends Controller
 
             if($request->input('ra1') == 'on')
             {
-                $details['ug_gpa'] = 'RA';
-            }
-            else
-            {
-                $details['ug_gpa'] = $request->input('ug_gpa');
+                $details['ug_gpa'] = $details['ug_gpa'].'-RA';
             }
             if($request->input('ra2') == 'on')
             {
-                $details['pg_gpa'] = 'RA';
-            }
-            else
-            {
-                $details['pg_gpa'] = $request->input('pg_gpa');
+                $details['pg_gpa'] = $details['pg_gpa'].'-RA';
             }
             if($request->input('ann') == 'on')
             {

@@ -9,28 +9,12 @@ $(document).ready(function(){
 		if($('#announced').is(':checked'))
 			$('.exams').append('<div class="add"><div class="col l3 s6"> <span class="light">Examination:</span> <select class="exam_select" required name="exam"> <option value="" selected>Choose your Exam</option> <option value="GATE">GATE</option> <option value="NET">NET</option> <option value="SLET">SLET</option> <option value="CSIR">CSIR</option> <option value="CAT">CAT</option> <option value="UGC">UGC</option> </select> </div> <div class="col l3 s6"> <span class="light">Enter Score:</span> <input placeholder="Enter Score" id="reg_number" type="number" class="validate" name="score" max="10000"> </div> <div class="col l3 s6"> <span class="light">Enter Rank:</span> <input placeholder="Enter Rank" id="reg_number" type="number" class="validate" name="rank" max="10000"> </div> <div class="col l3 s6"> <span class="light">Valid Till:</span> <input id="valid" type="Number" class="validate" name="validity" max="2018" min="2010"> </div> <!-- disipline needs to be added--> <div class="col l12 s12"> <span class="light">Discipline:</span> <input type="text" class="validate" name="discipline" required /> </div> <div class="space-small"></div></div><script>$("select").material_select();</script>');
 	});
-	
-	$('#ra1').click(function()
-	{
-		if($('#ra1').is(':checked')){
-		
-		$('.ug_cgpa').val('');
-		
-		}
-	});
-	$('#ra2').click(function()
-	{
-		if($('#ra2').is(':checked')){
-		$('.pg_cgpa').val('');
-		
-		}
-	});
 
 	$('.discard1').click(function(){
 		$('#discard').openModal();
 	});
 
-	var count =0;
+	var count = 0;
 	//validating via front end 
 	$('.valid').click(function(){
 		var data={};
