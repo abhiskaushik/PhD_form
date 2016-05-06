@@ -98,7 +98,7 @@ $(document).ready(function(){
 	    });
 		
 		
-		var baseurl = 'http://localhost:8000';
+		var baseurl = 'http://admission.nitt.edu';
 		var url = '/save' + data.checker;//route to the controller goes here
 		$.ajax(
 	    {
@@ -139,7 +139,7 @@ $(document).ready(function(){
 		var applNo = dept[dept.length-1];
 		var checker = $('.checker').val();
 		var dob = $('#dob').val();
-		window.location = 'http://localhost:8000/fetch/'+ categ + '/' + applNo + '/' + dob;
+		window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
 	});
 	$('.redirect1').click(function()
 	{
@@ -149,7 +149,7 @@ $(document).ready(function(){
 		var applNo = dept[dept.length-1];
 
 		var dob = $('#dob').val();
-		window.location = 'http://localhost:8000/fetch/'+ categ + '/' + applNo + '/' + dob;
+		window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
 	});
 	//validating front-end in form 3
 	$('.valid1').click(function(){

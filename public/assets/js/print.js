@@ -10,7 +10,7 @@ $(document).ready(function(){
 		}
 		department += dept[dept.length-1];
 		var categ = dept[0];
-		window.location = 'http://localhost:8000/print/' + categ + '/' + department;
+		window.location = 'http://admission.nitt.edu/print/' + categ + '/' + department;
 	}); 
 	$('.admit').click(function(e){
 		// e.preventDefault();
@@ -23,6 +23,6 @@ $(document).ready(function(){
 		}
 		department += dept[dept.length-1];
 		var categ = dept[0];
-		window.location = 'http://localhost:8000/print/' + categ + '/' + department;
+		window.location = 'http://admission.nitt.edu/print/' + categ + '/' + department;
 	}); 
  });
