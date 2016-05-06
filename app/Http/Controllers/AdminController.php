@@ -22,6 +22,7 @@ use App\Admin;
 use paginate;
 use Session;
 use File;
+use Log;
 
 use Illuminate\Support\Facades\Mail;
 
@@ -108,7 +109,7 @@ class AdminController extends Controller
 
 	public function adminView($phdormsc)
 	{
-        Session::put('phdormsc', $phdormsc);
+        // Session::put('phdormsc', $phdormsc);
         if(Session::get('dept') == 'all')
         {
             $rules1 = ['deleted' => false];
@@ -166,22 +167,23 @@ class AdminController extends Controller
 
 	public function deleted(Request $request)
 	{	
-		$appl_number = $request->input('applNo');
-        $phdormsc = Session::get('phdormsc');
-        if($phdormsc == 'phd')
+		$reg_number = $request->input('applNo');
+        $departments = explode('/', $reg_number);
+        $phdormsc = $departments[0];
+        if($phdormsc == 'PHD')
         {
-            Phd::where('applNo', $appl_number)
+            Phd::where('registrationNumber', $reg_number)
                     ->update(['deleted' => true]);
 
             $user = Phd::select('name', 'email')
-                                ->where('applNo', $appl_number)
+                                ->where('registrationNumber', $reg_number)
                                 ->first();                 
             Mail::send('emails.delete', ['user' => $user->name], function ($m) use($user) {
                 $m->from('phdsection@nitt.edu', 'NITT Admissions');
                 $m->to($user->email, 'Applicant' )->subject('Greetings from NITT!');
             });
 
-            return json_encode($appl_number);
+            return json_encode($reg_number);
         }
         else
         {
@@ -196,21 +198,23 @@ class AdminController extends Controller
                 $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
             });
 
-            return json_encode($appl_number);
+            return json_encode($reg_number);
         }
 	}
 
     public function accepted(Request $request)
     {
-        $appl_number = $request->input('applNo');
-        $phdormsc = Session::get('phdormsc');
-        if($phdormsc == 'phd')
+        $reg_number = $request->input('applNo');
+        $departments = explode('/', $reg_number);
+        $phdormsc = $departments[0];
+        Log::info($phdormsc);
+        if($phdormsc == 'PHD')
         {
-            Phd::where('applNo', $appl_number)
+            Phd::where('registrationNumber', $reg_number)
                     ->update(['accepted' => true]);
 
             $user = Phd::select('name', 'email')
-                                ->where('applNo', $appl_number)
+                                ->where('registrationNumber', $reg_number)
                                 ->first();
 
             Mail::send('emails.accept', ['user' => $user->name], function ($m) use($user) {
@@ -218,7 +222,7 @@ class AdminController extends Controller
                 $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
             });
             
-            return json_encode($appl_number);
+            return json_encode($reg_number);
         }
         else
         {
@@ -234,7 +238,7 @@ class AdminController extends Controller
                 $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
             });
 
-            return json_encode($appl_number);
+            return json_encode($reg_number);
         }
     }
 
@@ -248,12 +252,10 @@ class AdminController extends Controller
             $regNo = $regNo.$departments[$i].'/';
         }
         $regNo = $regNo.$departments[sizeof($departments) - 1];
-
 	    if($phdormsc == 'PHD')
         {
-            $candidates = Phd::where('registrationNumber', $reg_number)
+            $candidates = Phd::where('registrationNumber', $regNo)
                                 ->first();
-
             $applNo = $candidates->applNo;
 
             if(!$candidates)
@@ -284,7 +286,7 @@ class AdminController extends Controller
         }
         else
         {
-            $candidates = Ms::where('registrationNumber', $reg_number)
+            $candidates = Ms::where('registrationNumber', $regNo)
                                 ->first();
 
             $applNo = $candidates->applNo;
@@ -363,6 +365,6 @@ class AdminController extends Controller
     public function logout()
     {
         Session::flush();
-        return redirect('login');
+        return redirect('adminlogin');
     }
 }

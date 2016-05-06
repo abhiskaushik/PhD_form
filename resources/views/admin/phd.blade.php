@@ -141,7 +141,7 @@
       <div class="modal-footer center">
         @if($data['dept'] == 'all')
         <div class="col s12">
-          <a href="#!" data-reg={!! $data['candidates'][$i]->applNo!!} class="discard1 btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
+          <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard1 btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
         <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn-flat">Accept</a>
         </div>
         @endif
