@@ -20,5 +20,9 @@ class AdminAuth
         {
             return $next($request);
         }
+        else
+        {
+            return redirect('adminlogin');
+        }
     }
 }
