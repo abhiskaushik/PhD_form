@@ -54,12 +54,12 @@
 		<div class="row">
 			<div class="col l6 s12">
 				<span class="light">*Bank Reference Number:</span>
-				<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number. " required />
+				<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number" value="{!! $details->chalanNo !!}" required />
 			</div>
 		</div>
   		<div class="row">  					   
   			
-		        <div class="input-field col l6 s12">
+		        <div class="input-field col l6 s12 applCheck">
 		        <span class="light">*Application Category:</span>		    
 		      		<select required name="appl_categ" class="applicationCateg" id="applicationCateg">
 				      <option value="" disabled selected>Choose your option</option>
@@ -593,6 +593,16 @@
 			else{
 				$('.sexCheck .select-wrapper input').val(t);
 				$('.sexCheck .select-wrapper ul>li:eq(2)').click();
+			}
+
+			t='{!! $details->applicationCategory !!}';
+			if(t=='Part Time'){
+				$('.applCheck .select-wrapper input').val(t);
+				$('.applCheck .select-wrapper ul>li:eq(1)').click();
+			}
+			else if(t == 'Full Time'){
+				$('.applCheck .select-wrapper input').val(t);
+				$('.applCheck .select-wrapper ul>li:eq(2)').click();
 			}
 
 			t='{!! $details->maritalStatus !!}';

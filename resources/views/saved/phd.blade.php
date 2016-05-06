@@ -58,7 +58,7 @@
 			<div class="row">
 				<div class="col l6 s12">
 					<p class="large">*Bank Reference Number:</p>
-					<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number. " required />
+					<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number" value="{!! $details->chalanNo !!}" required />
 				</div>
 			</div>
 
@@ -66,7 +66,7 @@
 	  			<p class="large">*Application Category:</p>		    
 			        
 			      		
-					    <div class="input-field col l6 s12 appCheck">
+					    <div class="input-field col l6 s12 applCheck">
 					        <select class="applicationCateg" name="appl_categ" required id="applicationCateg"> 
 					        <option value="" disabled selected>Select</option>
 					          <optgroup label="Part Time">
@@ -77,7 +77,7 @@
 					            <option value="stipendiary">Stipendiary</option>
 					            <option value="nonStipendiary">Non-Stipendiary</option>
 					            <option value="Project">Project</option>
-					      		<option value="Other">Other Fellowships</option>
+					      		<option value="Others">Other Fellowships</option>
 					          </optgroup>
 					        </select>
 					        <label>Choose Category</label>
@@ -617,8 +617,7 @@
 
 
 			// $('.sexCheck .select-wrapper ul>li:eq(1)').addClass('active selected');	
-			////this adds the require class but doesnt show any change in the html so i tried another thing
-				
+			////this adds the require class but doesnt show any change in the html so i tried another thing	
 
 			var t='{!! $details->sex !!}';
 			if(t=='male'){
@@ -628,6 +627,32 @@
 			else{
 				$('.sexCheck .select-wrapper input').val(t);
 				$('.sexCheck .select-wrapper ul>li:eq(2)').click();
+			}
+
+			t='{!! $details->applicationCategory !!}';
+			if(t=='On Campus'){
+				$('.applCheck .select-wrapper input').val(t);
+				$('.applCheck .select-wrapper ul>li:eq(1)').click();
+			}
+			else if(t == 'External'){
+				$('.applCheck .select-wrapper input').val(t);
+				$('.applCheck .select-wrapper ul>li:eq(2)').click();
+			}
+			else if(t == 'stipendiary'){
+				$('.applCheck .select-wrapper input').val(t);
+				$('.applCheck .select-wrapper ul>li:eq(3)').click();
+			}
+			else if(t == 'nonStipendiary'){
+				$('.applCheck .select-wrapper input').val(t);
+				$('.applCheck .select-wrapper ul>li:eq(4)').click();
+			}
+			else if(t == 'Project'){
+				$('.applCheck .select-wrapper input').val(t);
+				$('.applCheck .select-wrapper ul>li:eq(5)').click();
+			}
+			else if(t == 'Others'){
+				$('.applCheck .select-wrapper input').val(t);
+				$('.applCheck .select-wrapper ul>li:eq(6)').click();
 			}
 
 			t='{!! $details->ugclass !!}';
@@ -651,7 +676,6 @@
 			}
 
 			t='{!! $details->pgclass !!}';
-			console.log(t);
 			if(t=='Honours'){
 				$('.pgclassCheck .select-wrapper input').val(t);
 				$('.pgclassCheck .select-wrapper ul>li:eq(1)').click();

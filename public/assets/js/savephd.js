@@ -11,11 +11,10 @@ $(document).ready(function(){
 		data.chalanNo = $('#chalanNo').val();
 		data.name = $('#name').val();
 		data.email = $('#email').val();
-		data.appl_categ = $('.appCheck .select-wrapper input').val();
+		data.appl_categ = $('.applCheck .select-wrapper input').val();
 			data.department1 = $('#department1').val();		
 			data.department2 = $('#department2').val();		
 			data.department3 = $('#department3').val();
-			console.log(data.department1);
 		
 			data.category = $('.categCheck .select-wrapper input').val();			
 		
