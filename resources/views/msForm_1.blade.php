@@ -41,6 +41,8 @@
 	  </nav>
 
 	  <div class="space-medium"></div>
+	  {!! Form::open(array('method'=>'POST', 'files'=>true )) !!}	
+
 	<h4 class="center">APPLICATION FOR ADMISSION TO M.S. PROGRAMME (2016 - 2017)</h4>
 		<div class="container">
 			<div class="row text-center">
@@ -223,10 +225,10 @@
 	  		      
 
 	  		<div class="center">
-	  		<a class="valid teal darken-1 send-btn btn waves-effect waves-light">Submit</a>
+	  		{!! Form::submit('Submit', array('class'=>'valid teal darken-1 send-btn btn waves-effect waves-light' )) !!}
 		 </div>
 		 	
-		      
+		      {!! Form::close() !!}
 		      
 
 		      <div class="modal" id="error">
