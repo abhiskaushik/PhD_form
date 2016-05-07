@@ -633,27 +633,27 @@
 			t='{!! $details->applicationCategory !!}';
 			if(t=='On Campus'){
 				$('.applCheck .select-wrapper input').val(t);
-				$('.applCheck .select-wrapper ul>li:eq(1)').click();
+				$('.applCheck .select-wrapper ul>li:eq(2)').click();
 			}
 			else if(t == 'External'){
 				$('.applCheck .select-wrapper input').val(t);
-				$('.applCheck .select-wrapper ul>li:eq(2)').click();
-			}
-			else if(t == 'stipendiary'){
-				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(3)').click();
 			}
-			else if(t == 'nonStipendiary'){
+			else if(t == 'Stipendiary'){
 				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(4)').click();
 			}
-			else if(t == 'Project'){
-				$('.applCheck .select-wrapper input').val(t);
-				$('.applCheck .select-wrapper ul>li:eq(5)').click();
-			}
-			else if(t == 'Others'){
+			else if(t == 'Non-Stipendiary'){
 				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(6)').click();
+			}
+			else if(t == 'Project'){
+				$('.applCheck .select-wrapper input').val(t);
+				$('.applCheck .select-wrapper ul>li:eq(7)').click();
+			}
+			else if(t == 'Other Fellowships'){
+				$('.applCheck .select-wrapper input').val(t);
+				$('.applCheck .select-wrapper ul>li:eq(8)').click();
 			}
 
 			t='{!! $details->ugclass !!}';

@@ -19,6 +19,7 @@ class SaveController extends Controller
     {
 
         $bool = SavePhd::where('name' , $request->input('name'))
+                                ->where('email', $request->input('email'))
                                 ->where('addrforcomm' , $request->input('addr_for_commn'))
                                 ->where('dob', $request->input('dob'))
                                 ->first();
@@ -80,6 +81,7 @@ class SaveController extends Controller
     {
 
         $bool = SavePhd::where('name' , $request->input('name'))
+                                ->where('email', $request->input('email'))
                                 ->where('addrforcomm' , $request->input('addr_for_commn'))
                                 ->where('dob', $request->input('dob'))
                                 ->first();
