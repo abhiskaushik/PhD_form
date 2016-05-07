@@ -122,7 +122,7 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>
 			     		</select> -->
-			     		<input type="text" readonly="true" id="department1" name="department1" value="{!! $details->dept1 !!}" />
+			     		<input type="text" readonly="true" id="department1" name="department1" data-reg="{!! $details->dept1 !!}" />
 			        </div>
 			        <div class="input-field col l6 s6 dep2Check">
 			        	<!-- <select name="department2" id="department2">
@@ -143,7 +143,7 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>		      
 			      		</select> -->
-			   		<input type="text" readonly="true" id="department2" name="department2" value="{!! $details->dept2 !!}" />
+			   		<input type="text" readonly="true" id="department2" name="department2" data-reg="{!! $details->dept2 !!}" />
 			      	
 			        </div>
 			        </div>
@@ -167,7 +167,7 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>		      
 			      		</select>	 -->
-			      		<input type="text" readonly="true" id="department3" name="department3" value="{!! $details->dept3 !!}" />		     
+			      		<input type="text" readonly="true" id="department3" name="department3" data-reg="{!! $details->dept3 !!}" />		     
 			        </div>
 			        <div class="input-field col s6 l6">
 			        	<input type="text" value="dept" hidden="true" />
@@ -200,7 +200,7 @@
 			      <div class="row">
 			        <div class="input-field col l6">
 			        	<span class="light">*Date of Birth:</span>
-			      		<input required id="dob" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31" value="{!! $details->dob !!}">
+			      		<input required id="dob" type="date" class="validate" name="dob" value="{!! $details->dob !!}">
 			        </div>
 
 			         <div class="input-field col l6 categCheck">
@@ -325,7 +325,7 @@
 
 			      	<div class="input-field col l4 s4">
 			      		<span class="light">*Year of Passing:</span>
-			      		<input required id="ug_yop" type="number" class="validate" name="ug_yop" min="2000" max="2018" value="{!! $details->ugyop !!}">
+			      		<input required id="ug_yop" type="number" class="validate" name="ug_yop" min="1900" value="{!! $details->ugyop !!}">
 			      	</div>
 			      </div>
 
@@ -379,7 +379,7 @@
 
 			      	<div class="input-field col l4 s4">
 			      		<span class="light">*Year of Passing</span>
-			      		<input required id="pg_yop" type="number" class="validate" name="pg_yop" min="2000" max="2018" value="{!! $details->pgyop !!}"> 
+			      		<input required id="pg_yop" type="number" class="validate" name="pg_yop" min="1900" value="{!! $details->pgyop !!}"> 
 			      	</div>
 			      </div>
 
@@ -440,11 +440,11 @@
 
 			      		 <div class="col l6 s6">
 			      		 	<p>From:</p>
-			      		 	<input id="emp_from_1" type="number" class="validate" name="emp_from_1" maxlength="100" value="{!! $details->from1 !!}">
+			      		 	<input id="emp_from_1" type="date" class="validate" name="emp_from_1" maxlength="100" value="{!! $details->from1 !!}">
 			      		 </div>
 			      		 <div class="col l6 s6">
 			      		 	<p>To:</p>
-			      		 	<input id="emp_to_1" type="number" class="validate" name="emp_to_1" maxlength="100" value="{!! $details->to1 !!}">
+			      		 	<input id="emp_to_1" type="date" class="validate" name="emp_to_1" maxlength="100" value="{!! $details->to1 !!}">
 			      		 </div>
 			      	</div>
 			      	<div class="col s12 l12 emp_details">
@@ -456,11 +456,11 @@
 
 			      		 <div class="col l6 s6">
 			      		 	<p>From:</p>
-			      		 	<input id="emp_from_2" type="number" class="validate" name="emp_from_2" maxlength="100" value="{!! $details->from2 !!}">
+			      		 	<input id="emp_from_2" type="date" class="validate" name="emp_from_2" maxlength="100" value="{!! $details->from2 !!}">
 			      		 </div>
 			      		 <div class="col l6 s6">
 			      		 	<p>To:</p>
-			      		 	<input id="emp_to_2" type="number" class="validate" name="emp_to_2" maxlength="100" value="{!! $details->to2 !!}">
+			      		 	<input id="emp_to_2" type="date" class="validate" name="emp_to_2" maxlength="100" value="{!! $details->to2 !!}">
 			      		 </div>
 			      	</div>
 			      	<div class="col s12 l12 emp_details">
@@ -472,11 +472,11 @@
 
 			      		 <div class="col l6 s6">
 			      		 	<p>From:</p>
-			      		 	<input id="emp_from_3" type="number" class="validate" name="emp_from_3" maxlength="100" value="{!! $details->from3 !!}">
+			      		 	<input id="emp_from_3" type="date" class="validate" name="emp_from_3" maxlength="100" value="{!! $details->from3 !!}">
 			      		 </div>
 			      		 <div class="col l6 s6">
 			      		 	<p>To:</p>
-			      		 	<input id="emp_to_3" type="number" class="validate" name="emp_to_3" maxlength="100" value="{!! $details->to3 !!}">
+			      		 	<input id="emp_to_3" type="date" class="validate" name="emp_to_3" maxlength="100" value="{!! $details->to3 !!}">
 			      		 </div>
 			      	</div>
 			      </div>
@@ -497,7 +497,7 @@
 			      <div class="row">
 			      	<div class="col s6 l6">
 			      		<p>Date of Submission</p>
-			      		<input required id="date" type="date" name="date" class="validate" max="2016-06-31" min="2016-01-31" value="{!! $details->date !!}">
+			      		<input required id="date" type="date" name="date" class="validate" value="{!! $details->date !!}">
 			      	</div>
 			      	<div class="upload col l6 s6 ">
 			    <p>Upload Signature</p>
@@ -600,25 +600,6 @@
 			$("textarea#employer_details_1").val('{!! $details->proexp1 !!}');
 			$("textarea#employer_details_2").val('{!! $details->proexp2 !!}');
 			$("textarea#employer_details_3").val('{!! $details->proexp3 !!}');
-			
-			// var x = $('#department1 option');
-			// var y = '{!! $details->dept1 !!}';
-			// console.log(y);
-			// console.log(document.getElementById('sex').value);
-			
-			// console.log(document.getElementById('sex').value);
-			// var t = '{!! $details->sex !!}';
-			// $('select#sex').val('male');
-			// var text1 = 'male';
-			// $("select#sex option").filter(function() {
-			//     //may want to use $.trim in here
-			//     return $(this).text() == text1; 
-			// }).attr('selected', true);
-			// console.log($('select#sex option').val());
-
-
-			// $('.sexCheck .select-wrapper ul>li:eq(1)').addClass('active selected');	
-			////this adds the require class but doesnt show any change in the html so i tried another thing	
 
 			var t='{!! $details->sex !!}';
 			if(t=='male'){
@@ -718,38 +699,76 @@
 				$('.pdCheck .select-wrapper ul>li:eq(1)').click();
 			}
 			t='{!! $details->applicationCateg !!}';
-			console.log(t);
 			if(t!=''){
 				$('.appCheck .select-wrapper input').val(t);	
 			}
-			t='hello';
-	// 		console.log($('.categCheck select option:eq(1)').prop('selected', false));
-	// 		$('.categCheck select option:eq(0)').removeAttr('selected');
-	// 		$('.categCheck select option:eq(1)').attr('selected',true);
-	// console.log($('.categCheck select option:eq(1)'));
 			
-			$('.categCheck .select-wrapper ul>li:eq(1)').click()
+			$('.categCheck .select-wrapper ul>li:eq(1)').click();
 
-			// $('.categCheck .select-wrapper ul>li:eq(1)').addClass('selected active');
+			$('#department1').val(department('{!! $details->dept1 !!}'));
+			$('#department2').val(department('{!! $details->dept2 !!}'));
+			$('#department3').val(department('{!! $details->dept3 !!}'));
 
-
-			// t='{!! $details->category !!}';
-			// console.log(t);
-			// if(t=='OBC'){
-				
-			// 	$('.categCheck .select-wrapper input').val(t);
-
-			// }
-			// else if(t=='OC'){
-			// 	$('.categCheck .select-wrapper input').val(t);			
-			// }
-			// else if(t=='SC'){
-			// 	$('.categCheck .select-wrapper input').val(t);			
-			// }
-			// else if(t=='ST'){
-			// 	$('.categCheck .select-wrapper input').val(t);			
-			// }
-		})
+			function department(t)
+			{
+				if(t == 'AR')
+				{
+					return 'Architecture';
+				}
+				if(t == 'CS')
+				{
+					return 'Computer Science and Engineering';
+				}
+				if(t == 'CL')
+				{
+					return 'Chemical Engineering';
+				}
+				if(t == 'CV')
+				{
+					return 'Civil Engineering';
+				}
+				if(t == 'CY')
+				{
+					return 'Chemistry';
+				}
+				if(t == 'CA')
+				{
+					return 'Computer Applications';
+				}
+				if(t == 'CC')
+				{
+					return 'CECASE';
+				}
+				if(t == 'EN')
+				{
+					return 'Department of Energy Engineering';
+				}
+				if(t == 'EE')
+				{
+					return 'Electrical and Electronics Engineering';
+				}
+				if(t == 'EC')
+				{
+					return 'Electronics and Communication Engineering';
+				}
+				if(t == 'ME')
+				{
+					return 'Mechanical Engineering';
+				}
+				if(t == 'PR')
+				{
+					return 'Production Engineering';
+				}
+				if(t == 'MME')
+				{
+					return 'Metalurgy and Material Sciences';
+				}
+				if(t == 'MA')
+				{
+					return 'Mathematics';
+				}		
+			}
+		});
 		</script>
 
 	</body>

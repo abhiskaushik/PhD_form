@@ -13,9 +13,9 @@ $(document).ready(function(){
 		data.name = $('#name').val();
 		data.email = $('#email').val();
 		data.appl_categ = $('.applCheck .select-wrapper input').val();
-			data.department1 = $('#department1').val();		
-			data.department2 = $('#department2').val();		
-			data.department3 = $('#department3').val();
+			data.department1 = $('#department1').attr('data-reg');		
+			data.department2 = $('#department2').attr('data-reg');		
+			data.department3 = $('#department3').attr('data-reg');
 		
 		
 			data.category = $('.categCheck .select-wrapper input').val();			
@@ -36,7 +36,6 @@ $(document).ready(function(){
 		data.ug_deg = $('#ug_deg').val();
 		data.ug_branch = $('#ug_branch').val();
 		data.ug_gpa = $('#ug_gpa').val();
-		console.log(data.ug_gpa);
 		data.ug_class = $('.ugclassCheck .select-wrapper input').val();
 		data.ug_name_of_inst = $('#ug_name_of_inst').val();
 		data.ug_name_of_uni = $('#ug_name_of_uni').val();

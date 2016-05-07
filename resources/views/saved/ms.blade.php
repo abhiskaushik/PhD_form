@@ -44,7 +44,7 @@
 		<div class="row text-center">
 			
 			<div class="space-medium"></div>
-			<div class="divider"></div><div class="divider"></div>
+			<div class="divider"></div><div class="divider"></div><br>
 			<b>*Note:</b> Upload all the necessary files including your image and image of the signature right before the final submission.
 		</div>
 		<div class="space-medium"></div>
@@ -104,7 +104,7 @@
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
 		      		</select> -->
-		      		<input type="text" readonly="true" id="department1" name="department1" value="{!! $details->dept1 !!}" />
+		      		<input type="text" readonly="true" id="department1" name="department1" data-reg="{!! $details->dept1 !!}" />
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 dep2Check">
@@ -125,7 +125,7 @@
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
 		      		</select> -->
-		      		<input type="text" readonly="true" id="department2" name="department2" value="{!! $details->dept2 !!}" />
+		      		<input type="text" readonly="true" id="department2" name="department2" data-reg="{!! $details->dept2 !!}" />
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 dep3Check">
@@ -146,7 +146,7 @@
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
 		      		</select> -->
-		      		<input type="text" readonly="true" id="department3" name="department3" value="{!! $details->dept3 !!}" />
+		      		<input type="text" readonly="true" id="department3" name="department3" data-reg="{!! $details->dept3 !!}" />
 		      		
 		        </div>
 		        
@@ -177,7 +177,7 @@
 		      <div class="row">
 		        <div class="input-field col l6">
 		        	<span class="light">*Date of Birth:</span>
-		      		<input required id="dob" type="date" class="validate" name="dob" max="2016-06-31" min="1990-06-31" value="{!! $details->dob !!}">
+		      		<input required id="dob" type="date" class="validate" name="dob" value="{!! $details->dob !!}">
 		        </div>
 
 		         <div class="input-field col l6 categCheck">
@@ -304,7 +304,7 @@
 
 		      	<div class="input-field col l4 s4">
 		      		<span class="light">*Year of Passing:</span>
-		      		<input required id="ug_yop" type="number" class="validate" name="ug_yop" min="2000" max="2018" value="{!! $details->ugyop !!}">
+		      		<input required id="ug_yop" type="number" class="validate" name="ug_yop" min="1900" value="{!! $details->ugyop !!}">
 		      	</div>
 		      </div>
 
@@ -326,7 +326,7 @@
 		      	            <td>1</td>
 		      	            <td>First</td>
 		      	            <td>
-		      	            <input required id="max1" type="number" class="validate" name="max1" value="{!! $details['max1'] !!}">
+		      	            <input required id="max1" type="number" class="validate" name="max1" value="{!! $details['gpamax1'] !!}">
 		      	            </td>
 		      	            <td>
 		      	            	<input required id="gpa1" type="number" class="validate" name="gpa1" value="{!! $details['gpa1'] !!}">
@@ -336,7 +336,7 @@
 		      	            <td>1</td>
 		      	            <td>Second</td>
 		      	            <td>
-		      	            <input required id="max2" type="number" class="validate" name="max2" value="{!! $details['max2'] !!}">
+		      	            <input required id="max2" type="number" class="validate" name="max2" value="{!! $details['gpamax2'] !!}">
 		      	            </td>
 		      	            <td>
 		      	            	<input required id="gpa2" type="number" class="validate" name="gpa2" value="{!! $details['gpa2'] !!}">
@@ -346,7 +346,7 @@
 		      	            <td>2</td>
 		      	            <td>Third</td>
 		      	            <td>
-		      	            <input required id="max3" type="number" class="validate" name="max3" value="{!! $details['max3'] !!}">
+		      	            <input required id="max3" type="number" class="validate" name="max3" value="{!! $details['gpamax3'] !!}">
 		      	            </td>
 		      	            <td>
 		      	            	<input required id="gpa3" type="number" class="validate" name="gpa3" value="{!! $details['gpa3'] !!}">
@@ -356,7 +356,7 @@
 		      	            <td>2</td>
 		      	            <td>Fourth</td>
 		      	            <td>
-		      	            <input required id="max4" type="number" class="validate" name="max4" value="{!! $details['max4'] !!}">
+		      	            <input required id="max4" type="number" class="validate" name="max4" value="{!! $details['gpamax4'] !!}">
 		      	            </td>
 		      	            <td>
 		      	            	<input required id="gpa4" type="number" class="validate" name="gpa4" value="{!! $details['gpa4'] !!}">
@@ -366,7 +366,7 @@
 		      	            <td>3</td>
 		      	            <td>Fifth</td>
 		      	            <td>
-		      	            <input required id="max5" type="number" class="validate" name="max5" value="{!! $details['max5'] !!}">
+		      	            <input required id="max5" type="number" class="validate" name="max5" value="{!! $details['gpamax5'] !!}">
 		      	            </td>
 		      	            <td>
 		      	            	<input required id="gpa5" type="number" class="validate" name="gpa5" value="{!! $details['gpa5'] !!}">
@@ -376,7 +376,7 @@
 		      	            <td>3</td>
 		      	            <td>Sixth</td>
 		      	            <td>
-		      	            <input required id="max6" type="number" class="validate" name="max6" value="{!! $details['max6'] !!}">
+		      	            <input required id="max6" type="number" class="validate" name="max6" value="{!! $details['gpamax6'] !!}">
 		      	            </td>
 		      	            <td>
 		      	            	<input required id="gpa6" type="number" class="validate" name="gpa6" value="{!! $details['gpa6'] !!}">
@@ -386,7 +386,7 @@
 		      	            <td>4</td>
 		      	            <td>Seventh</td>
 		      	            <td>
-		      	            <input required id="max7" type="number" class="validate" name="max7" value="{!! $details['max7'] !!}">
+		      	            <input required id="max7" type="number" class="validate" name="max7" value="{!! $details['gpamax7'] !!}">
 		      	            </td>
 		      	            <td>
 		      	            	<input required id="gpa7" type="number" class="validate" name="gpa7" value="{!! $details['gpa7'] !!}">
@@ -396,7 +396,7 @@
 		      	            <td>4</td>
 		      	            <td>Eighth</td>
 		      	            <td>
-		      	            <input required id="max8" type="number" class="validate eight" name="max8" value="{!! $details['max8'] !!}">
+		      	            <input required id="max8" type="number" class="validate eight" name="max8" value="{!! $details['gpamax8'] !!}">
 		      	            </td>
 		      	            <td>
 		      	            	<input required id="gpa8" type="number" class="validate eight" name="gpa8" value="{!! $details['gpa8'] !!}">
@@ -423,11 +423,11 @@
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input id="emp_from_1" type="number" class="validate" name="emp_from_1" maxlength="100" value="{!! $details->from1 !!}">
+		      		 	<input id="emp_from_1" type="date" class="validate" name="emp_from_1" maxlength="100" value="{!! $details->from1 !!}">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>To:</p>
-		      		 	<input id="emp_to_1" type="number" class="validate" name="emp_to_1" maxlength="100" value="{!! $details->to1 !!}">
+		      		 	<input id="emp_to_1" type="date" class="validate" name="emp_to_1" maxlength="100" value="{!! $details->to1 !!}">
 		      		 </div>
 		      	</div>
 		      	<div class="col s12 l12 emp_details">
@@ -439,11 +439,11 @@
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input id="emp_from_2" type="number" class="validate" name="emp_from_2" maxlength="100" value="{!! $details->from2 !!}">
+		      		 	<input id="emp_from_2" type="date" class="validate" name="emp_from_2" maxlength="100" value="{!! $details->from2 !!}">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>To:</p>
-		      		 	<input id="emp_to_2" type="number" class="validate" name="emp_to_2" maxlength="100" value="{!! $details->to2 !!}">
+		      		 	<input id="emp_to_2" type="date" class="validate" name="emp_to_2" maxlength="100" value="{!! $details->to2 !!}">
 		      		 </div>
 		      	</div>
 		      	<div class="col s12 l12 emp_details">
@@ -455,11 +455,11 @@
 
 		      		 <div class="col l6 s6">
 		      		 	<p>From:</p>
-		      		 	<input id="emp_from_3" type="number" class="validate" name="emp_from_3" maxlength="100" value="{!! $details->from3 !!}">
+		      		 	<input id="emp_from_3" type="date" class="validate" name="emp_from_3" maxlength="100" value="{!! $details->from3 !!}">
 		      		 </div>
 		      		 <div class="col l6 s6">
 		      		 	<p>To:</p>
-		      		 	<input id="emp_to_3" type="number" class="validate" name="emp_to_3" maxlength="100" value="{!! $details->to3 !!}">
+		      		 	<input id="emp_to_3" type="date" class="validate" name="emp_to_3" maxlength="100" value="{!! $details->to3 !!}">
 		      		 </div>
 		      	</div>
 		      </div>
@@ -481,11 +481,25 @@
 
 		      	<div class="col s6 l5">
 		      		<p>Date of Submission</p>
-		      		<input required id="date" type="date" name="date" class="validate" max="2016-06-31" min="2016-01-31" value="{!! $details['date'] !!}">
+		      		<input required id="date" type="date" name="date" class="validate" value="{!! $details['date'] !!}">
 		      	</div>
 		      	<div class="space-medium"></div>
-		      	
-		      </div>
+
+		      <div class="upload col l6 s6 ">
+			    <p>Upload Signature</p>
+			      	<div class="file-field input-field">
+		          		<div class="btn teal darken-1 btn waves-effect waves-light">
+		          			<span class="light">File</span>
+		          			{!! Form::file('sign' , array('class'=>'', 'required')) !!}			
+		          		</div>
+		          		<div class="file-path-wrapper">
+	        				<input class="file-path validate" type="text">
+	      				</div>
+		          	</div>
+			      	<div class="space-medium"></div>			      	
+			      </div>
+
+			  </div>
 
 		      <div class="row">
 		      	<div class="col l12 s12">
@@ -550,42 +564,12 @@
 	$(document ).ready(function(){
 		$(".button-collapse").sideNav();
 		$('select').material_select();
-		// console.log('hey');
-		// console.log('{!! $details->addrforcomm !!}');
 		$("textarea#addr_for_commn").val('{!! $details->addrforcomm !!}');
 		$("textarea#permanent_addr").val('{!! $details->permanentaddr !!}');
-		// var x = $('#department1 option');
-		// var y = '{!! $details->dept1 !!}';
-		// console.log(y);
-		// x[0].selected = false;
-		// x[1].selected = true;
-		// console.log($('#department1 option:selected'));
-		// console.log(x[1].selected);
-		
-			$("textarea#employer_details_1").val('{!! $details->proexp1 !!}');
-			$("textarea#employer_details_2").val('{!! $details->proexp2 !!}');
-			$("textarea#employer_details_3").val('{!! $details->proexp3 !!}');
-			
-			// var x = $('#department1 option');
-			// var y = '{!! $details->dept1 !!}';
-			// console.log(y);
-			// console.log(document.getElementById('sex').value);
-			
-			// console.log(document.getElementById('sex').value);
-			// var t = '{!! $details->sex !!}';
-			// $('select#sex').val('male');
-			// var text1 = 'male';
-			// $("select#sex option").filter(function() {
-			//     //may want to use $.trim in here
-			//     return $(this).text() == text1; 
-			// }).attr('selected', true);
-			// console.log($('select#sex option').val());
+		$("textarea#employer_details_1").val('{!! $details->proexp1 !!}');
+		$("textarea#employer_details_2").val('{!! $details->proexp2 !!}');
+		$("textarea#employer_details_3").val('{!! $details->proexp3 !!}');
 
-
-			// $('.sexCheck .select-wrapper ul>li:eq(1)').addClass('active selected');	
-			////this adds the require class but doesnt show any change in the html so i tried another thing
-				
-			// console.log('{!! $details->email !!}')
 			var t='{!! $details->sex !!}';
 			if(t=='male'){
 				$('.sexCheck .select-wrapper input').val(t);
@@ -618,7 +602,6 @@
 			}
 
 			t='{!! $details->PH !!}';
-			// console.log('hey');
 			if(t=='no'){
 				$('.pdCheck .select-wrapper input').val(t);
 				$('.pdCheck .select-wrapper ul>li:eq(2)').click();
@@ -647,40 +630,64 @@
 				$('.ugclassCheck .select-wrapper input').val(t);
 				$('.ugclassCheck .select-wrapper ul>li:eq(4)').click();
 			}
+			$('.categCheck .select-wrapper ul>li:eq(1)').click();
+			$('#department1').val(department('{!! $details->dept1 !!}'));
+			$('#department2').val(department('{!! $details->dept2 !!}'));
+			$('#department3').val(department('{!! $details->dept3 !!}'));
 
-			t='{!! $details->applicationCateg !!}';
-			// console.log(t);
-			if(t!=''){
-				$('.appCheck .select-wrapper input').val(t);	
+			function department(t)
+			{
+				if(t == 'CS')
+				{
+					return 'Computer Science and Engineering';
+				}
+				if(t == 'CL')
+				{
+					return 'Chemical Engineering';
+				}
+				if(t == 'CV')
+				{
+					return 'Civil Engineering';
+				}
+				if(t == 'CC')
+				{
+					return 'CECASE';
+				}
+				if(t == 'EN')
+				{
+					return 'Department of Energy Engineering';
+				}
+				if(t == 'EE')
+				{
+					return 'Electrical and Electronics Engineering';
+				}
+				if(t == 'EC')
+				{
+					return 'Electronics and Communication Engineering';
+				}
+				if(t == 'ME')
+				{
+					return 'Mechanical Engineering';
+				}
+				if(t == 'PR')
+				{
+					return 'Production Engineering';
+				}
+				if(t == 'IC')
+				{
+					return 'Instrumentation and Control Engineering';
+				}
+				if(t == 'MME')
+				{
+					return 'Metalurgy and Material Sciences';
+				}
+				if(t == 'PH')
+				{
+					return 'Physics';
+				}		
 			}
-			t='hello';
-	// 		console.log($('.categCheck select option:eq(1)').prop('selected', false));
-	// 		$('.categCheck select option:eq(0)').removeAttr('selected');
-	// 		$('.categCheck select option:eq(1)').attr('selected',true);
-	// console.log($('.categCheck select option:eq(1)'));
 			
-			$('.categCheck .select-wrapper ul>li:eq(1)').click()
-
-			// $('.categCheck .select-wrapper ul>li:eq(1)').addClass('selected active');
-
-
-			// t='{!! $details->category !!}';
-			// console.log(t);
-			// if(t=='OBC'){
-				
-			// 	$('.categCheck .select-wrapper input').val(t);
-
-			// }
-			// else if(t=='OC'){
-			// 	$('.categCheck .select-wrapper input').val(t);			
-			// }
-			// else if(t=='SC'){
-			// 	$('.categCheck .select-wrapper input').val(t);			
-			// }
-			// else if(t=='ST'){
-			// 	$('.categCheck .select-wrapper input').val(t);			
-			// }	
-	})
+	});
 	</script>
 
 </body>

@@ -152,11 +152,31 @@ class MsController extends Controller
             $extension = $request->file('image_path')->getClientOriginalExtension();
             if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
             {
-                
+                $size = $file->getSize();
+                if($size <= 10000)
+                {
+
+                }
             }
             else
             {
                 $message = 'Inavlid file format for the uploaded image';
+                return View::make('error')->with('message', $message);
+            }
+
+            $sign = $request->file('sign');  
+            $signExt = $request->file('sign')->getClientOriginalExtension();
+            if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
+            {
+                $size = $file->getSize();
+                if($size <= 10000)
+                {
+
+                }
+            }
+            else
+            {
+                $message = 'Invalid file format for the uploaded Signature';
                 return View::make('error')->with('message', $message);
             }
 
@@ -186,9 +206,9 @@ class MsController extends Controller
             $candidate->registrationNumber = $request->input('regNo');
             $candidate->applicationCategory = $request->get('appl_categ');
             $candidate->dateOfReg = $request->get('date');
-            $candidate->dept1 = $request->get('department1');
-            $candidate->dept2 = $request->get('department2');
-            $candidate->dept3 = $request->get('department3');
+            $candidate->dept1 = self::department($request->input('department1'));
+            $candidate->dept2 = self::department($request->input('department2'));
+            $candidate->dept3 = self::department($request->input('department3'));
             $candidate->areaOfResearch = $request->get('area_of_research');
             $candidate->name = $request->get('name');
             $candidate->fatherName = $request->get('father_name');
@@ -210,17 +230,6 @@ class MsController extends Controller
             $reg_number = $request->input('regNo');
             $departments = explode('/', $reg_number);
             $reg_appl_no = $departments[sizeof($departments) - 1];
-            // $reg_number = 'MS/';
-            // for($i = 1; $i <= 3; $i++)
-            // {
-            //     if($request->get('department'.$i))
-            //     {
-            //         $reg_number = $reg_number.$request->get('department'.$i).'/';
-            //     }
-            // }
-            // $reg_number = $reg_number.$applNo;
-            // Ms::where('applNo', $applNo)
-            //         ->update(['registrationNumber' => $reg_number]);
 
             if($request->get('ra1') == 'on')
             {
@@ -302,12 +311,68 @@ class MsController extends Controller
             {
                 $cert = $cert->move(public_path().'/uploads/MS/'.$reg_appl_no, $reg_appl_no.'cert'.'.'.$extension3);
             }
+            if($sign)
+            {
+                $sign = $sign->move(public_path().'/uploads/MS/'.$reg_appl_no, $reg_appl_no.'sign.'.$signExt);
+            }
             return View::make('success')->with('details', $details);
             }
             else{
             	$message = "User already exists ";
             	return View::make('error')->with('message' , $message);
             }
+        }
+    }
+
+    public function department($t)
+    {
+        if($t == 'Computer Science and Engineering')
+        {
+            return 'CS';
+        }
+        if($t == 'Chemical Engineering')
+        {
+            return 'CL';
+        }
+        if($t == 'Civil Engineering')
+        {
+            return 'CV';
+        }
+        if($t == 'CECASE')
+        {
+            return 'CC';
+        }
+        if($t == 'Department of Energy Engineering')
+        {
+            return 'EN';
+        }
+        if($t == 'Electrical and Electronics Engineering')
+        {
+            return 'EE';
+        }
+        if($t == 'Electronics and Communication Engineering')
+        {
+            return 'EC';
+        }
+        if($t == 'Mechanical Engineering')
+        {
+            return 'ME';
+        }
+        if($t == 'Production Engineering')
+        {
+            return 'PR';
+        }
+        if($t == 'Metalurgy and Material Sciences')
+        {
+            return 'MME';
+        }
+        if($t == 'Instrumentation and Control Engineering')
+        {
+            return 'IC';
+        }
+        if($t == 'Physics')
+        {
+            return 'PH';
         }
     }
 }

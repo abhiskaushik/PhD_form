@@ -142,7 +142,9 @@
         @if($data['dept'] == 'all')
         <div class="col s12">
           <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard1 btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
+        @if(!$data['candidates'][$i]->accepted)
         <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn-flat">Accept</a>
+        @endif
         </div>
         @endif
         <div class="col s12">

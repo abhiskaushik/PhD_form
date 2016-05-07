@@ -163,7 +163,11 @@ class PhdController extends Controller
             $extension = $request->file('image_path')->getClientOriginalExtension();
             if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
             {
-                
+                $size = $file->getSize();
+                if($size <= 10000)
+                {
+
+                }
             }
             else
             {
@@ -175,7 +179,11 @@ class PhdController extends Controller
             $signExt = $request->file('sign')->getClientOriginalExtension();
             if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
             {
-                
+                $size = $file->getSize();
+                if($size <= 10000)
+                {
+
+                }
             }
             else
             {
@@ -231,9 +239,9 @@ class PhdController extends Controller
             $candidate->registrationNumber = $request->input('regNo');
             $candidate->applicationCategory = $request->input('appl_categ');
             $candidate->dateOfReg = $request->input('date');
-            $candidate->dept1 = $request->input('department1');
-            $candidate->dept2 = $request->input('department2');
-            $candidate->dept3 = $request->input('department3');
+            $candidate->dept1 = self::department($request->input('department1'));
+            $candidate->dept2 = self::department($request->input('department2'));
+            $candidate->dept3 = self::department($request->input('department3'));
             $candidate->areaOfResearch = $request->input('area_of_research');
             $candidate->name = $request->input('name');
             $candidate->fatherName = $request->input('father_name');
@@ -255,17 +263,6 @@ class PhdController extends Controller
             $reg_number = $request->input('regNo');
             $departments = explode('/', $reg_number);
             $reg_appl_no = $departments[sizeof($departments) - 1];
-            // $reg_number = 'PHD/';
-            // for($i = 1; $i <= 3; $i++)
-            // {
-            //     if($request->input('department'.$i))
-            //     {
-            //         $reg_number = $reg_number.$request->input('department'.$i).'/';
-            //     }
-            // }
-            // $reg_number = $reg_number.$applNo;
-            // Phd::where('applNo', $applNo)
-            //         ->update(['registrationNumber' => $reg_number]);
 
             $ugDetails = new PhdUg();
 
@@ -360,6 +357,66 @@ class PhdController extends Controller
             	$message = "User already exists ";
             	return View::make('error')->with('message' , $message);
             }
+        }
+    }
+
+    public function department(t)
+    {
+        if(t == 'Architecture')
+        {
+            return 'AR';
+        }
+        if(t == 'Computer Science and Engineering')
+        {
+            return 'CS';
+        }
+        if(t == 'Chemical Engineering')
+        {
+            return 'CL';
+        }
+        if(t == 'Civil Engineering')
+        {
+            return 'CV';
+        }
+        if(t == 'Chemistry')
+        {
+            return 'CY';
+        }
+        if(t == 'Computer Applications')
+        {
+            return 'CA';
+        }
+        if(t == 'CECASE')
+        {
+            return 'CC';
+        }
+        if(t == 'Department of Energy Engineering')
+        {
+            return 'EN';
+        }
+        if(t == 'Electrical and Electronics Engineering')
+        {
+            return 'EE';
+        }
+        if(t == 'Electronics and Communication Engineering')
+        {
+            return 'EC';
+        }
+        if(t == 'Mechanical Engineering')
+        {
+            return 'ME';
+        }
+        if(t == 'Production Engineering')
+        {
+            return 'PR';
+        }
+        if(t == 'Metalurgy and Material Sciences')
+        {
+            return 'MME';
+        }
+        if(t == 'Mathematics')
+        {
+            return 'MA';
         }
     }
 }
