@@ -45,6 +45,7 @@
 			
 			<div class="space-medium"></div>
 			<div class="divider"></div><div class="divider"></div>
+			<b>*Note:</b> Upload all the necessary files including your image and image of the signature right before the final submission.
 		</div>
 		<div class="space-medium"></div>
 		<div class="row">

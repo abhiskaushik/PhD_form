@@ -61,6 +61,16 @@ $(document).ready(function(){
 			return false;
 		}
 
+		if(data.area_of_research == ''){
+			var error = "Please fill the area of research field";
+			$('#error .modal-content .error').remove();
+			var dived = '<div class="error"></div>';
+			$('#error .modal-content').append(dived);
+				$('#error .modal-content .error').append('<p>'+error+'</p>');
+			$('#error').openModal();
+			
+			return false;
+		}
 		if(data.name == ''){
 			var error = "Please fill the name field";
 			$('#error .modal-content .error').remove();
@@ -93,6 +103,16 @@ $(document).ready(function(){
 		}
 		if(data.age == ''){
 			var error = "Please fill the age field";
+			$('#error .modal-content .error').remove();
+			var dived = '<div class="error"></div>';
+			$('#error .modal-content').append(dived);
+				$('#error .modal-content .error').append('<p>'+error+'</p>');
+			$('#error').openModal();
+			
+			return false;
+		}
+		if(data.nationality == ''){
+			var error = "Please fill the nationality field";
 			$('#error .modal-content .error').remove();
 			var dived = '<div class="error"></div>';
 			$('#error .modal-content').append(dived);

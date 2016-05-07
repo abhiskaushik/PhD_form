@@ -45,7 +45,8 @@
 			<div class="row text-center">
 				<h4>APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME (2016 - 2017)</h4>
 				<div class="space-medium"></div>
-				<div class="divider"></div><div class="divider"></div>
+				<div class="divider"></div><div class="divider"></div><br>
+				<b>*Note:</b> Upload all the necessary files including your image and image of the signature right before the final submission.
 			</div>
 			<div class="space-medium"></div>
 			
