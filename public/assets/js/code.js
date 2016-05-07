@@ -200,42 +200,27 @@ $(document).ready(function(){
 	        data: data,
 	        dataType: "json",
 	        success: function(data){
-	        	//append the regNo which we get from controller to modal
-	        	console.log(data);
 	        	if(data==0){
-	        		$('#regNo .modal-content').append('<div class="regNo"></div>');
-	        		var div = '<p>User already exists</p>';
+	        		alert('User already exists!');
 	        	}
 	        	else{
-	        		var div = '<p>Your Registration Number is: '+ data + '</p>\
-	        					<br><p>Check your Mail Inbox for further details</p>\
-	        				<a class="redirect teal darken-1 send-btn btn waves-effect waves-light" data-reg="'+data+'">Proceed</a>';
-	        	}
-	        	$('.regno').html("");
 
-	        	$('.regno').append(div);
-	        	$('#regNo').openModal();
+	        		alert('Your Registration Number is ' + data + '. Check your Mail Inbox');
+	        			var dept = data.split('/');
+						var categ = dept[0];
+						var applNo = dept[dept.length-1];
+						var checker = $('.checker').val();
+						var dob = $('#dob').val();
+						window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
+	        		
+	        	}
 	        },
 	        error: function(jqXHR,testStatus,errorThrown){
 	        	console.log(errorThrown);
 	        }
 		});
-		// 
-		// return true;
 	});
 
-
-
-	$('#regNo').on('click' , '.redirect' ,function()
-	{
-		var regNo = $(this).attr('data-reg');
-		var dept = regNo.split('/');
-		var categ = dept[0];
-		var applNo = dept[dept.length-1];
-		var checker = $('.checker').val();
-		var dob = $('#dob').val();
-		window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
-	});
 	$('.redirect1').click(function()
 	{
 		var regNo = $('#regNo').val();
