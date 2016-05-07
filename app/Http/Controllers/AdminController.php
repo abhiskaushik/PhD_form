@@ -187,11 +187,11 @@ class AdminController extends Controller
         }
         else
         {
-            Ms::where('applNo', $appl_number)
+            Ms::where('applNo', $reg_number)
                     ->update(['deleted' => true]);
 
             $user = Ms::select('name', 'email')
-                                ->where('applNo', $appl_number)
+                                ->where('registrationNumber', $reg_number)
                                 ->first();
             Mail::send('emails.delete', ['user' => $user->name], function ($m) use($user) {
                 $m->from('phdsection@nitt.edu', 'NITT Admissions');
@@ -226,13 +226,13 @@ class AdminController extends Controller
         }
         else
         {
-            Ms::where('applNo', $appl_number)
+            Ms::where('registrationNumber', $reg_number)
                     ->update(['accepted' => true]);
 
             $user = Ms::select('name', 'email')
-                                ->where('applNo', $appl_number)
+                                ->where('registrationNumber', $reg_number)
                                 ->first();
-
+            Log::info($reg_number);
             Mail::send('emails.accept', ['user' => $user->name], function ($m) use($user) {
                 $m->from('phdsection@nitt.edu', 'NITT Admissions');
                 $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
