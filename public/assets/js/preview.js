@@ -76,7 +76,7 @@ $(document).ready(function(){
 		
 		var div = '<div class="modal-content">\
         <div class="">\
-  <h4>Candidate\'s Form</h4>\
+  <h4>Form Details:</h4>\
   <div class="row">\
     <div class="col l6">\
       <p><b>Bank Reference Number:</b> '+data.chalan_no+'</p>\
@@ -120,28 +120,29 @@ $(document).ready(function(){
   <h5>Undergraduate Details:</h5>\
   <div class="row">\
     <div class="col l6">\
-      <p><b>Undergraduate Degree:</b> '+data.ug_deg+'</p>\
-      <p><b>Undergraduate G.P.A:</b> '+data.ug_gpa+'</p>\
-      <p><b>Undergraduate Name of Institution:</b> '+data.ug_name_of_inst+'</p>\
-      <p><b>Undergraduate Year of Passing:</b> '+data.ug_yop+'</p>\
+      <p><b>Degree:</b> '+data.ug_deg+'</p>\
+      <p><b>G.P.A:</b> '+data.ug_gpa+'</p>\
+      <p><b>Name of Institution:</b> '+data.ug_name_of_inst+'</p>\
+      <p><b>Year of Passing:</b> '+data.ug_yop+'</p>\
     </div>\
     <div class="col l6">\
-      <p><b>Undergraduate Branch:</b> '+data.ug_branch+'</p>\
-      <p><b>Undergraduate Class:</b> '+data.ug_class+'</p>\
-      <p><b>Undergraduate Name of University:</b> '+data.ug_name_of_uni+'</p>\
+      <p><b>Branch:</b> '+data.ug_branch+'</p>\
+      <p><b>Class:</b> '+data.ug_class+'</p>\
+      <p><b>Name of University:</b> '+data.ug_name_of_uni+'</p>\
     </div>  \
   </div>\
+  <h5>Post-Graduate Details:</h5>\
   <div class="row">\
     <div class="col l6">\
-      <p><b>Post-Graduate Degree:</b> '+data.pg_deg+'</p>\
-      <p><b>Post-Graduate G.P.A:</b> '+data.pg_gpa+'</p>\
-      <p><b>Post-Graduate Name of Institution:</b> '+data.pg_name_of_inst+'</p>\
-      <p><b>Post-Graduate Year of Passing:</b> '+data.pg_yop+'</p>\
+      <p><b>Degree:</b> '+data.pg_deg+'</p>\
+      <p><b>G.P.A:</b> '+data.pg_gpa+'</p>\
+      <p><b>Name of Institution:</b> '+data.pg_name_of_inst+'</p>\
+      <p><b>Year of Passing:</b> '+data.pg_yop+'</p>\
     </div>\
     <div class="col l6">\
-      <p><b>Post-Graduate Branch:</b> '+data.pg_branch+'</p>\
-      <p><b>Post-Graduate Class:</b> '+data.pg_class+'</p>\
-      <p><b>Post-Graduate Name of University:</b> '+data.pg_name_of_uni+'</p>\
+      <p><b>Branch:</b> '+data.pg_branch+'</p>\
+      <p><b>Class:</b> '+data.pg_class+'</p>\
+      <p><b>Name of University:</b> '+data.pg_name_of_uni+'</p>\
     </div>  \
   </div>\
   <h5>Examination Details:</h5>\
@@ -284,7 +285,7 @@ $(document).ready(function(){
 		
 		var div = '<div class="modal-content padding">\
         <div class="">\
-  <h4>Candidate\'s Form</h4>\
+  <h4>Form Details:</h4>\
   <div class="row">\
     <div class="col l6">\
       <p><b>Bank Reference Number:</b> '+data.chalan_no+'</p>\
@@ -329,15 +330,15 @@ $(document).ready(function(){
   <h5>Undergraduate Details:</h5>\
   <div class="row">\
     <div class="col l6">\
-      <p><b>Undergraduate Degree:</b> '+data.ug_deg+'</p>\
-      <p><b>Undergraduate G.P.A:</b> '+data.ug_gpa+'</p>\
-      <p><b>Undergraduate Name of Institution:</b> '+data.ug_name_of_inst+'</p>\
-      <p><b>Undergraduate Year of Passing:</b> '+data.ug_yop+'</p>\
+      <p><b> Degree:</b> '+data.ug_deg+'</p>\
+      <p><b> G.P.A:</b> '+data.ug_gpa+'</p>\
+      <p><b> Name of Institution:</b> '+data.ug_name_of_inst+'</p>\
+      <p><b> Year of Passing:</b> '+data.ug_yop+'</p>\
     </div>\
     <div class="col l6">\
-      <p><b>Undergraduate Branch:</b> '+data.ug_branch+'</p>\
-      <p><b>Undergraduate Class:</b> '+data.ug_class+'</p>\
-      <p><b>Undergraduate Name of University:</b> '+data.ug_name_of_uni+'</p>\
+      <p><b> Branch:</b> '+data.ug_branch+'</p>\
+      <p><b> Class:</b> '+data.ug_class+'</p>\
+      <p><b> Name of University:</b> '+data.ug_name_of_uni+'</p>\
     </div>\
   </div>\
   <h5>Academic Details:</h5>\
