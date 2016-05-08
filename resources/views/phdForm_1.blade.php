@@ -18,7 +18,7 @@
 		<script src="{{URL::asset('assets/js/preview.js')}}"></script>
 		
 	</head>
-	<body>
+	<body >
 
 		<header></header>
 		
