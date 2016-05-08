@@ -78,15 +78,15 @@
       <div class="row">
         <h5>Undergraduate Details</h5>
         <div class="col l6">
-          <p><b>Undergraduate Degree:</b> {!! $ug['degreeName'] !!}</p>
-          <p><b>Undergraduate G.P.A:</b> {!! $ug['gpa'] !!}</p>
-          <p><b>Undergraduate Name of Institution:</b> {!! $ug['institutionName'] !!}</p>
-          <p><b>Undergraduate Year of Passing:</b> {!! $ug['yop'] !!}</p>
+          <p><b>Degree:</b> {!! $ug['degreeName'] !!}</p>
+          <p><b>G.P.A:</b> {!! $ug['gpa'] !!}</p>
+          <p><b>Name of Institution:</b> {!! $ug['institutionName'] !!}</p>
+          <p><b>Year of Passing:</b> {!! $ug['yop'] !!}</p>
         </div>
         <div class="col l6">
-          <p><b>Undergraduate Branch:</b> {!! $ug['branch'] !!}</p>
-          <p><b>Undergraduate Class:</b> {!! $ug['class'] !!}</p>
-          <p><b>Undergraduate Name of University:</b> {!! $ug['universityName'] !!}</p>
+          <p><b>Branch:</b> {!! $ug['branch'] !!}</p>
+          <p><b>Class:</b> {!! $ug['class'] !!}</p>
+          <p><b>Name of University:</b> {!! $ug['universityName'] !!}</p>
         </div>
       </div>
       <div class="row">
@@ -204,15 +204,15 @@
       <div class="row">
         <h5>Undergraduate Details</h5>
         <div class="col l6">
-          <p><b>Undergraduate Degree:</b> {!! $ug['degreeName'] !!}</p>
-          <p><b>Undergraduate G.P.A:</b> {!! $ug['gpa'] !!}</p>
-          <p><b>Undergraduate Name of Institution:</b> {!! $ug['institutionName'] !!}</p>
-          <p><b>Undergraduate Year of Passing:</b> {!! $ug['yop'] !!}</p>
+          <p><b>Degree:</b> {!! $ug['degreeName'] !!}</p>
+          <p><b>G.P.A:</b> {!! $ug['gpa'] !!}</p>
+          <p><b>Name of Institution:</b> {!! $ug['institutionName'] !!}</p>
+          <p><b>Year of Passing:</b> {!! $ug['yop'] !!}</p>
         </div>
         <div class="col l6">
-          <p><b>Undergraduate Branch:</b> {!! $ug['branch'] !!}</p>
-          <p><b>Undergraduate Class:</b> {!! $ug['class'] !!}</p>
-          <p><b>Undergraduate Name of University:</b> {!! $ug['universityName'] !!}</p>
+          <p><b>Branch:</b> {!! $ug['branch'] !!}</p>
+          <p><b>Class:</b> {!! $ug['class'] !!}</p>
+          <p><b>Name of University:</b> {!! $ug['universityName'] !!}</p>
         </div>
       </div>
       <div class="row">

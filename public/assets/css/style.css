@@ -191,7 +191,9 @@ input.validate{
 .inst ol li ul{
 	padding-left: 5%;
 }
-
+.buttons a{
+	width:100%;
+}
 @media screen and (max-width: 480px) {
 	.card-content span {
 		font-size: 10px;	

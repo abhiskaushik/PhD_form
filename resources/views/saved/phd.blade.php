@@ -89,13 +89,9 @@
 					      <div class="upload col l6 s12 ">
 			    <p>*Upload Image:</p>
 			      	<div class="file-field input-field">
-			      		<div class="demo">cd </div>
-			      		<script>
-			      		$('.demo').croppie({
-			      		    url: 'demo/demo-1.jpg',
-			      		});
-			      		</script>
-		          		<div class="btn teal darken-1 btn waves-effect waves-light">
+			      		<div class="demo"></div>
+			      		
+		          		<div class="uploadImg btn teal darken-1 btn waves-effect waves-light">
 		          			<span class="light">File</span>
 		          			{!! Form::file('image_path' , array('class'=>'', 'required')) !!}			
 		          		</div>
@@ -595,6 +591,13 @@
 		$(document ).ready(function(){
 			$(".button-collapse").sideNav();
 			$('select').material_select();
+			$('.uploadImg').click(function(){
+				var abc=$('.file-path[0]').val();
+				console.log($('.file-path'));
+			      		$('.demo').croppie({
+			      		    url: abc,
+			      		});	
+			});
 			
 			console.log('{!! $details->addrforcomm !!}');
 			$("textarea#addr_for_commn").val('{!! $details->addrforcomm !!}');
@@ -784,3 +787,5 @@
 
 	</body>
 	</html>
+
+	

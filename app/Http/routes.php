@@ -26,6 +26,7 @@ Route::get('admin/ms/home', function () {
 Route::get('admin/phd/home', function () {
     return view('admin.all.phd.dept');
 });
+Route::get('admin/{phdorms}/{dept}', 'AdminController@adminall');
 Route::group(['middleware' => 'adminauth'], function () {
     Route::get('admin/home', function()
         {
