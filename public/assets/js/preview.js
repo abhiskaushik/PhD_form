@@ -75,68 +75,139 @@ $(document).ready(function(){
 		console.log(data);
 		
 		var div = '<div class="modal-content">\
-        <h4>Candidate\'s Form</h4>\
-        \
-<p><b>Bank Reference Number:</b> '+data.chalan_no+'</p>\
-        <p><b>Date of Registration:</b> '+data.date+'</p>\
-     \
-        <p><b>Application Category:</b> '+data.appl_categ+'</p>\
-        <p><b>Department 1:</b> '+data.department1+'</p>\
-        <p><b>Department 2:</b> '+data.department2+'</p>\
-        <p><b>Department 3:</b> '+data.department3+'</p>\
-        <p><b>Email:</b> '+data.email+'</p>\
-        <p><b>Area of Research:</b> '+data.area_of_research+'</p>\
-        <p><b>Name of Candidate:</b> '+data.name+'</p>\
-        <p><b>Email Id:</b> '+data.email+'</p>\
-        <p><b>Father\'s Name:</b> '+data.father_name+'</p>\
-        <p><b>Date of Birth:</b> '+data.dob+'</p>\
-        <p><b>Category:</b> '+data.category+'</p>\
-        <p><b>Sex:</b> '+data.sex+'</p>\
-        <p><b>Marital Status: '+data.marital_status+'</b></p>\
-        <p><b>Physically Handicapped:</b> '+data.ph+'</p>\
-        <p><b>Nationality:</b> '+data.nationality+'</p>\
-        <p><b>Address for Communication:</b> '+data.addr_for_commn+'</p>\
-        <p><b>Permanent Address:</b> '+data.permanent_addr+'</p>\
-        <p><b>Mobile Number:</b> '+data.mobile+'</p>\
-        <p><b>Landline Number:</b> '+data.landline+'</p>\
-        <p><b>Undergraduate Degree:</b> '+data.ug_deg+'</p>\
-        <p><b>Undergraduate Branch:</b> '+data.ug_branch+'</p>\
-        <p><b>Undergraduate G.P.A:</b> '+data.ug_gpa+'</p>\
-        <p><b>Undergraduate Class:</b> '+data.ug_class+'</p>\
-        <p><b>Undergraduate Name of Institution:</b> '+data.ug_name_of_inst+'</p>\
-        <p><b>Undergraduate Name of University:</b> '+data.ug_name_of_uni+'</p>\
-        <p><b>Undergraduate Year of Passing:</b> '+data.ug_yop+'</p>\
-        <p><b>Post-Graduate Degree:</b> '+data.pg_deg+'</p>\
-        <p><b>Post-Graduate Branch:</b> '+data.pg_branch+'</p>\
-        <p><b>Post-Graduate G.P.A:</b> '+data.pg_gpa+'</p>\
-        <p><b>Post-Graduate Class:</b> '+data.pg_class+'</p>\
-        <p><b>Post-Graduate Name of Institution:</b> '+data.pg_name_of_inst+'</p>\
-        <p><b>Post-Graduate Name of University:</b> '+data.pg_name_of_uni+'</p>\
-        <p><b>Post-Graduate Year of Passing:</b> '+data.pg_yop+'</p>\
-        <p><b>Exam:</b> '+data.exam+'</p>\
-        <p><b>Score:</b> '+data.score+'</p>\
-        <p><b>Rank:</b> '+data.rank+'</p>\
-        <p><b>Validity:</b> '+data.validity+'</p>\
-        <p><b>Discipline:</b> '+data.discipline+'</p>\
-        <p><b>Title of Project:</b> '+data.title_of_project+'</p>\
-        <p><b>Details of Publication 1:</b> '+data.details_of_pub1+'</p>\
-        <p><b>Details of Publication 2:</b> '+data.details_of_pub2+'</p>\
-        <p><b>Details of Publication 3:</b> '+data.details_of_pub3+'</p>\
-        <p><b>Awards 1:</b> '+data.awards1+'</p>\
-        <p><b>Awards 2:</b> '+data.awards2+'</p>\
-        <p><b>Awards 3:</b> '+data.awards3+'</p>\
-        <p><b>Employer Details 1:</b> '+data.employer_details_1+'</p>\
-        <p><b>Postition 1:</b> '+data.emp_pos_1+'</p>\
-        <p><b>From 1:</b> '+data.emp_from_1+'</p>\
-        <p><b>To 1:</b> '+data.emp_to_1+'</p>\
-        <p><b>Employer Details 2:</b> '+data.employer_details_2+'</p>\
-        <p><b>Postition 2:</b> '+data.emp_pos_2+'</p>\
-        <p><b>From 2:</b> '+data.emp_from_2+'</p>\
-        <p><b>To 2:</b> '+data.emp_to_2+'</p>\
-        <p><b>Employer Details 3:</b> '+data.employer_details_3+'</p>\
-        <p><b>Postition 3:</b> '+data.emp_pos_3+'</p>\
-        <p><b>From 3:</b> '+data.emp_from_3+'</p>\
-        <p><b>To 3:</b> '+data.emp_to_3+'</p>\
+        <div class="">\
+  <h4>Candidate\'s Form</h4>\
+  <div class="row">\
+    <div class="col l6">\
+      <p><b>Bank Reference Number:</b> '+data.chalan_no+'</p>\
+    </div>\
+    <div class="col l6">\
+      <p><b>Date of Registration:</b> '+data.date+'</p>\
+    </div>\
+  </div>\
+  <h5>Application Details:</h5>\
+  <div class="row">\
+    <div class="col l6">\
+      <p><b>Application Category:</b> '+data.appl_categ+'</p>\
+      <p><b>Department 2:</b> '+data.department2+'</p>\
+    </div>\
+    <div class="col l6">\
+      <p><b>Department 1:</b> '+data.department1+'</p>\
+      <p><b>Department 3:</b> '+data.department3+'</p>\
+    </div>  \
+  </div>\
+  <h5>Personal Details:</h5>\
+  <div class="row">\
+    <div class="col l6">\
+      <p><b>Area of Research:</b> '+data.area_of_research+'</p>\
+      <p><b>Email Id:</b> '+data.email+'</p>\
+      <p><b>Date of Birth:</b> '+data.dob+'</p>\
+      <p><b>Sex:</b> '+data.sex+'</p>\
+      <p><b>Physically Handicapped:</b> '+data.ph+'</p>\
+      <p><b>Address for Communication:</b> '+data.addr_for_commn+'</p>\
+      <p><b>Mobile Number:</b> '+data.mobile+'</p>\
+    </div>\
+    <div class="col l6">\
+      <p><b>Name of Candidate:</b> '+data.name+'</p>\
+      <p><b>Father\'s Name:</b> '+data.father_name+'</p>\
+      <p><b>Category:</b> '+data.category+'</p>\
+      <p><b>Marital Status: '+data.marital_status+'</b></p>\
+      <p><b>Nationality:</b> '+data.nationality+'</p>\
+      <p><b>Permanent Address:</b> '+data.permanent_addr+'</p>\
+      <p><b>Landline Number:</b> '+data.landline+'</p>\
+    </div>  \
+  </div>\
+  <h5>Undergraduate Details:</h5>\
+  <div class="row">\
+    <div class="col l6">\
+      <p><b>Undergraduate Degree:</b> '+data.ug_deg+'</p>\
+      <p><b>Undergraduate G.P.A:</b> '+data.ug_gpa+'</p>\
+      <p><b>Undergraduate Name of Institution:</b> '+data.ug_name_of_inst+'</p>\
+      <p><b>Undergraduate Year of Passing:</b> '+data.ug_yop+'</p>\
+    </div>\
+    <div class="col l6">\
+      <p><b>Undergraduate Branch:</b> '+data.ug_branch+'</p>\
+      <p><b>Undergraduate Class:</b> '+data.ug_class+'</p>\
+      <p><b>Undergraduate Name of University:</b> '+data.ug_name_of_uni+'</p>\
+    </div>  \
+  </div>\
+  <div class="row">\
+    <div class="col l6">\
+      <p><b>Post-Graduate Degree:</b> '+data.pg_deg+'</p>\
+      <p><b>Post-Graduate G.P.A:</b> '+data.pg_gpa+'</p>\
+      <p><b>Post-Graduate Name of Institution:</b> '+data.pg_name_of_inst+'</p>\
+      <p><b>Post-Graduate Year of Passing:</b> '+data.pg_yop+'</p>\
+    </div>\
+    <div class="col l6">\
+      <p><b>Post-Graduate Branch:</b> '+data.pg_branch+'</p>\
+      <p><b>Post-Graduate Class:</b> '+data.pg_class+'</p>\
+      <p><b>Post-Graduate Name of University:</b> '+data.pg_name_of_uni+'</p>\
+    </div>  \
+  </div>\
+  <h5>Examination Details:</h5>\
+  <div class="row">\
+    <div class="col l6">\
+      <p><b>Exam:</b> '+data.exam+'</p>\
+      <p><b>Rank:</b> '+data.rank+'</p>\
+      <p><b>Discipline:</b> '+data.discipline+'</p>\
+    </div>\
+    <div class="col l6">\
+      <p><b>Score:</b> '+data.score+'</p>\
+      <p><b>Validity:</b> '+data.validity+'</p>\
+    </div>  \
+  </div>\
+  <div class="row">\
+    <h5>Publication/Project Details:</h5>\
+    <div class="col l6">\
+      <p><b>Title of Project:</b> '+data.title_of_project+'</p>\
+      <p><b>Details of Publication 2:</b> '+data.details_of_pub2+'</p>\
+      <p><b>Awards 1:</b> '+data.awards1+'</p>\
+      <p><b>Awards 3:</b> '+data.awards3+'</p>\
+    </div>\
+    <div class="col l6">\
+      <p><b>Details of Publication 1:</b> '+data.details_of_pub1+'</p>\
+      <p><b>Details of Publication 3:</b> '+data.details_of_pub3+'</p>\
+      <p><b>Awards 2:</b> '+data.awards2+'</p>\
+    </div>\
+  </div>\
+  <h5>Employer Details:</h5>\
+  <div class="row">\
+    <div class="col l12">\
+      <p><b>Employer Details 1:</b> '+data.employer_details_1+'</p>\
+      <p><b>Position 1:</b> '+data.emp_pos_1+'</p>\
+      <div class="col l6">\
+        <p class="modal-p"><b>From 1:</b> '+data.emp_from_1+'</p>\
+      </div>\
+      <div class="col l6">\
+        <p class="modal-p"><b>To 1:</b> '+data.emp_to_1+'</p>\
+      </div>\
+    </div>\
+  </div>\
+  <div class="row">\
+    <div class="col l12">\
+      <p><b>Employer Details 2:</b> '+data.employer_details_2+'</p>\
+      <p><b>Position 2:</b> '+data.emp_pos_2+'</p>\
+      <div class="col l6">\
+        <p class="modal-p"><b>From 2:</b> '+data.emp_from_2+'</p>\
+      </div>\
+      <div class="col l6">\
+        <p class="modal-p"><b>To 2:</b> '+data.emp_to_2+'</p>\
+      </div>\
+    </div>\
+  </div>\
+  <div class="row">\
+    <div class="col l12">\
+      <p><b>Employer Details 3:</b> '+data.employer_details_3+'</p>\
+      <p><b>Position 3:</b> '+data.emp_pos_3+'</p>\
+      <div class="col l6">\
+        <p class="modal-p"><b>From 3:</b> '+data.emp_from_3+'</p>\
+      </div>\
+      <div class="col l6">\
+        <p class="modal-p"><b>To 3:</b> '+data.emp_to_3+'</p>\
+      </div>\
+    </div>\
+  </div>\
+</div>\
       <div class="modal-footer">\
       </div>\
       </div>';
@@ -212,58 +283,114 @@ $(document).ready(function(){
 		console.log(data);
 		
 		var div = '<div class="modal-content padding">\
-        <h4>Candidate\'s Form</h4>\
+        <div class="">\
+  <h4>Candidate\'s Form</h4>\
+  <div class="row">\
+    <div class="col l6">\
+      <p><b>Bank Reference Number:</b> '+data.chalan_no+'</p>\
         \
-<p><b>Bank Reference Number:</b> '+data.chalan_no+'</p>\
-        <p><b>Date of Registration:</b> '+data.date+'</p>\
-      \
-        <p><b>Application Category:</b> '+data.appl_categ+'</p>\
-        <p><b>Department 1:</b> '+data.department1+'</p>\
-        <p><b>Department 2:</b> '+data.department2+'</p>\
-        <p><b>Department 3:</b> '+data.department3+'</p>\
-        <p><b>Email:</b> '+data.email+'</p>\
-        <p><b>Area of Research:</b> '+data.area_of_research+'</p>\
-        <p><b>Name of Candidate:</b> '+data.name+'</p>\
-        <p><b>Father\'s Name:</b> '+data.father_name+'</p>\
-        <p><b>Date of Birth:</b> '+data.dob+'</p>\
-        <p><b>Category:</b> '+data.category+'</p>\
-        <p><b>Sex:</b> '+data.sex+'</p>\
-        <p><b>Marital Status: '+data.marital_status+'</b></p>\
-        <p><b>Physically Handicapped:</b> '+data.ph+'</p>\
-        <p><b>Nationality:</b> '+data.nationality+'</p>\
-        <p><b>Address for Communication:</b> '+data.addr_for_commn+'</p>\
-        <p><b>Permanent Address:</b> '+data.permanent_addr+'</p>\
-        <p><b>Mobile Number:</b> '+data.mobile+'</p>\
-        <p><b>Landline Number:</b> '+data.landline+'</p>\
-        <p><b>Undergraduate Degree:</b> '+data.ug_deg+'</p>\
-        <p><b>Undergraduate Branch:</b> '+data.ug_branch+'</p>\
-        <p><b>Undergraduate G.P.A:</b> '+data.ug_gpa+'</p>\
-        <p><b>Undergraduate Class:</b> '+data.ug_class+'</p>\
-        <p><b>Undergraduate Name of Institution:</b> '+data.ug_name_of_inst+'</p>\
-        <p><b>Undergraduate Name of University:</b> '+data.ug_name_of_uni+'</p>\
-        <p><b>Undergraduate Year of Passing:</b> '+data.ug_yop+'</p>\
-        \
-        <p><b>Academic Details</b></p>\
-        <p><b>Semester 1:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa1 +'</p><p class="modal-p">Max. G.P.A: '+data.max1+'</p></p>\
-        <p><b>Semester 2:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa2 +'</p><p class="modal-p">Max. G.P.A: '+data.max2+'</p></p>\
-        <p><b>Semester 3:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa3 +'</p><p class="modal-p">Max. G.P.A: '+data.max3+'</p></p>\
-        <p><b>Semester 4:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa4 +'</p><p class="modal-p">Max. G.P.A: '+data.max4+'</p></p>\
-        <p><b>Semester 5:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa5 +'</p><p class="modal-p">Max. G.P.A: '+data.max5+'</p></p>\
-        <p><b>Semester 6:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa6 +'</p><p class="modal-p">Max. G.P.A: '+data.max6+'</p></p>\
-        <p><b>Semester 7:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa7 +'</p><p class="modal-p">Max. G.P.A: '+data.max7+'</p></p>\
-        <p><b>Semester 8:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa8 +'</p><p class="modal-p">Max. G.P.A: '+data.max8+'</p></p>\
-        <p><b>Employer Details 1:</b> '+data.employer_details_1+'</p>\
-        <p><b>Position 1:</b> '+data.emp_pos_1+'</p>\
+    </div>\
+    <div class="col l6">\
+      <p><b>Date of Registration:</b> '+data.date+'</p>\
+    </div>\
+  </div>\
+  <h5>Application Details:</h5>\
+  <div class="row">\
+    <div class="col l6">\
+      <p><b>Application Category:</b> '+data.appl_categ+'</p>\
+      <p><b>Department 2:</b> '+data.department2+'</p>\
+    </div>\
+    <div class="col l6">\
+      <p><b>Department 1:</b> '+data.department1+'</p>\
+      <p><b>Department 3:</b> '+data.department3+'</p>\
+    </div>\
+  </div>\
+  <h5>Personal Details:</h5>\
+  <div class="row">\
+    <div class="col l6">\
+      <p><b>Area of Research:</b> '+data.area_of_research+'</p>\
+      <p><b>Email Id:</b> '+data.email+'</p>\
+      <p><b>Date of Birth:</b> '+data.dob+'</p>\
+      <p><b>Sex:</b> '+data.sex+'</p>\
+      <p><b>Physically Handicapped:</b> '+data.ph+'</p>\
+      <p><b>Address for Communication:</b> '+data.addr_for_commn+'</p>\
+      <p><b>Mobile Number:</b> '+data.mobile+'</p>\
+    </div>\
+    <div class="col l6">\
+      <p><b>Name of Candidate:</b> '+data.name+'</p>\
+      <p><b>Father\'s Name:</b> '+data.father_name+'</p>\
+      <p><b>Category:</b> '+data.category+'</p>\
+      <p><b>Marital Status: '+data.marital_status+'</b></p>\
+      <p><b>Nationality:</b> '+data.nationality+'</p>\
+      <p><b>Permanent Address:</b> '+data.permanent_addr+'</p>\
+      <p><b>Landline Number:</b> '+data.landline+'</p>\
+    </div>\
+  </div>\
+  <h5>Undergraduate Details:</h5>\
+  <div class="row">\
+    <div class="col l6">\
+      <p><b>Undergraduate Degree:</b> '+data.ug_deg+'</p>\
+      <p><b>Undergraduate G.P.A:</b> '+data.ug_gpa+'</p>\
+      <p><b>Undergraduate Name of Institution:</b> '+data.ug_name_of_inst+'</p>\
+      <p><b>Undergraduate Year of Passing:</b> '+data.ug_yop+'</p>\
+    </div>\
+    <div class="col l6">\
+      <p><b>Undergraduate Branch:</b> '+data.ug_branch+'</p>\
+      <p><b>Undergraduate Class:</b> '+data.ug_class+'</p>\
+      <p><b>Undergraduate Name of University:</b> '+data.ug_name_of_uni+'</p>\
+    </div>\
+  </div>\
+  <h5>Academic Details:</h5>\
+  <div class="row">\
+    <div class="col l12">\
+      <p><b>Semester 1:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa1 +'</p><p class="modal-p">Max. G.P.A: '+data.max1+'</p></p>\
+      <p><b>Semester 2:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa2 +'</p><p class="modal-p">Max. G.P.A: '+data.max2+'</p></p>\
+      <p><b>Semester 3:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa3 +'</p><p class="modal-p">Max. G.P.A: '+data.max3+'</p></p>\
+      <p><b>Semester 4:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa4 +'</p><p class="modal-p">Max. G.P.A: '+data.max4+'</p></p>\
+      <p><b>Semester 5:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa5 +'</p><p class="modal-p">Max. G.P.A: '+data.max5+'</p></p>\
+      <p><b>Semester 6:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa6 +'</p><p class="modal-p">Max. G.P.A: '+data.max6+'</p></p>\
+      <p><b>Semester 7:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa7 +'</p><p class="modal-p">Max. G.P.A: '+data.max7+'</p></p>\
+      <p><b>Semester 8:</b> <p class="modal-p">G.P.A. Obtained:'+data.gpa8 +'</p><p class="modal-p">Max. G.P.A: '+data.max8+'</p></p>\
+    </div>\
+  </div>\
+  <h5>Employer Details:</h5>\
+  <div class="row">\
+    <div class="col l12">\
+      <p><b>Employer Details 1:</b> '+data.employer_details_1+'</p>\
+      <p><b>Position 1:</b> '+data.emp_pos_1+'</p>\
+      <div class="col l6">\
         <p class="modal-p"><b>From 1:</b> '+data.emp_from_1+'</p>\
+      </div>\
+      <div class="col l6">\
         <p class="modal-p"><b>To 1:</b> '+data.emp_to_1+'</p>\
-        <p><b>Employer Details 2:</b> '+data.employer_details_2+'</p>\
-        <p><b>Position 2:</b> '+data.emp_pos_2+'</p>\
+      </div>\
+    </div>\
+  </div>\
+  <div class="row">\
+    <div class="col l12">\
+      <p><b>Employer Details 2:</b> '+data.employer_details_2+'</p>\
+      <p><b>Position 2:</b> '+data.emp_pos_2+'</p>\
+      <div class="col l6">\
         <p class="modal-p"><b>From 2:</b> '+data.emp_from_2+'</p>\
+      </div>\
+      <div class="col l6">\
         <p class="modal-p"><b>To 2:</b> '+data.emp_to_2+'</p>\
-        <p><b>Employer Details 3:</b> '+data.employer_details_3+'</p>\
-        <p><b>Position 3:</b> '+data.emp_pos_3+'</p>\
+      </div>\
+    </div>\
+  </div>\
+  <div class="row">\
+    <div class="col l12">\
+      <p><b>Employer Details 3:</b> '+data.employer_details_3+'</p>\
+      <p><b>Position 3:</b> '+data.emp_pos_3+'</p>\
+      <div class="col l6">\
         <p class="modal-p"><b>From 3:</b> '+data.emp_from_3+'</p>\
+      </div>\
+      <div class="col l6">\
         <p class="modal-p"><b>To 3:</b> '+data.emp_to_3+'</p>\
+      </div>\
+    </div>\
+  </div>\
+</div>\
         </div>\
       <div class="modal-footer">\
       </div>\

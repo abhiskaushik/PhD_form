@@ -49,7 +49,7 @@ class AdminController extends Controller
             $password = $request->input('password');
 
             $auth = Admin::where('userName', $username)
-                ->where('password', sha1($password)) 
+                ->where('password', ($password)) 
                 ->first();
 
             if(count($auth) > 0)

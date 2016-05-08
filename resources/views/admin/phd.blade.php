@@ -63,12 +63,12 @@
             <div class="space-small">
             </div>
             <div class="center">
-              <a class="waves-effect waves-light btn modal-trigger" href="#modal{!! $i !!}">Click Here To view full form</a>
+              <a class="waves-effect waves-light btn modal-trigger" href="#modal{!! 0 !!}">Click Here To view full form</a>
             </div>
           </div>
           </div>
 
-          <div id="modal{!! $i !!}" class="modal l8">
+          <div id="modal{!! 0 !!}" class="modal l8">
           <div class="modal-content">
           <h4>Candidate's Form</h4>
           
@@ -110,46 +110,47 @@
           <p><b>Post-graduate Name of Institution:</b> {!! $data['pg'][$i]->institutionName !!}</p>
           <p><b>Post-graduate Name of University:</b> {!! $data['pg'][$i]->universityName !!}</p>
           <p><b>Post-graduate Year of Passing:</b> {!! $data['pg'][$i]->yop !!}</p>
-
+          @if($data['others'][$i]->exam)
           <p><b>Exam Name:</b> {!! $data['others'][$i]->exam !!}</p>
-          <p><b>Discipline:</b> {!! $data['others'][$i]->discipline !!}</p>
-          <p><b>Score:</b> {!! $data['others'][$i]->score !!}</p>
-          <p><b>Rank:</b> {!! $data['others'][$i]->rank !!}</p>
-          <p><b>Title of Project:</b> {!! $data['others'][$i]->pgproject !!}</p>
-          <p><b>Details of Publication 1:</b> {!! $data['others'][$i]->publications1 !!}</p>
-          <p><b>Details of Publication 2:</b> {!! $data['others'][$i]->publications2 !!}</p>
-          <p><b>Details of Publication 3:</b> {!! $data['others'][$i]->publications3 !!}</p>
-          <p><b>Awards1:</b> {!! $data['others'][$i]->awards1 !!}</p>
-          <p><b>Awards2:</b> {!! $data['others'][$i]->awards2 !!}</p>
-          <p><b>Awards3:</b> {!! $data['others'][$i]->awards3 !!}</p>
+          @endif
+          <p><b>Discipline:</b> {!! $data['others'][0]->discipline !!}</p>
+          <p><b>Score:</b> {!! $data['others'][0]->score !!}</p>
+          <p><b>Rank:</b> {!! $data['others'][0]->rank !!}</p>
+          <p><b>Title of Project:</b> {!! $data['others'][0]->pgproject !!}</p>
+          <p><b>Details of Publication 1:</b> {!! $data['others'][0]->publications1 !!}</p>
+          <p><b>Details of Publication 2:</b> {!! $data['others'][0]->publications2 !!}</p>
+          <p><b>Details of Publication 3:</b> {!! $data['others'][0]->publications3 !!}</p>
+          <p><b>Awards1:</b> {!! $data['others'][0]->awards1 !!}</p>
+          <p><b>Awards2:</b> {!! $data['others'][0]->awards2 !!}</p>
+          <p><b>Awards3:</b> {!! $data['others'][0]->awards3 !!}</p>
 
-          <p><b>Employer Details 1:</b> {!! $data['pro'][$i]->proexp1 !!}</p>
-          <p><b>Position at Work 1:</b>{!! $data['pro'][$i]->position1 !!}</p>
-          <p><b>From 1:</b>{!! $data['pro'][$i]->from1 !!}</p>
-          <p><b>To 1:</b>{!! $data['pro'][$i]->to1 !!}</p>
-          <p><b>Employer Details 2:</b> {!! $data['pro'][$i]->proexp2 !!}</p>
-          <p><b>Position at Work 1:</b>{!! $data['pro'][$i]->position2 !!}</p>
-          <p><b>From 1:</b>{!! $data['pro'][$i]->from2 !!}</p>
-          <p><b>To 1:</b>{!! $data['pro'][$i]->to2 !!}</p>
-          <p><b>Employer Details 3:</b> {!! $data['pro'][$i]->proexp3 !!}</p>
-          <p><b>Position at Work 1:</b>{!! $data['pro'][$i]->position3 !!}</p>
-          <p><b>From 1:</b>{!! $data['pro'][$i]->from3 !!}</p>
-          <p><b>To 1:</b>{!! $data['pro'][$i]->to3 !!}</p>
+          <p><b>Employer Details 1:</b> {!! $data['pro'][0]->proexp1 !!}</p>
+          <p><b>Position at Work 1:</b>{!! $data['pro'][0]->position1 !!}</p>
+          <p><b>From 1:</b>{!! $data['pro'][0]->from1 !!}</p>
+          <p><b>To 1:</b>{!! $data['pro'][0]->to1 !!}</p>
+          <p><b>Employer Details 2:</b> {!! $data['pro'][0]->proexp2 !!}</p>
+          <p><b>Position at Work 1:</b>{!! $data['pro'][0]->position2 !!}</p>
+          <p><b>From 1:</b>{!! $data['pro'][0]->from2 !!}</p>
+          <p><b>To 1:</b>{!! $data['pro'][0]->to2 !!}</p>
+          <p><b>Employer Details 3:</b> {!! $data['pro'][0]->proexp3 !!}</p>
+          <p><b>Position at Work 1:</b>{!! $data['pro'][0]->position3 !!}</p>
+          <p><b>From 1:</b>{!! $data['pro'][0]->from3 !!}</p>
+          <p><b>To 1:</b>{!! $data['pro'][0]->to3 !!}</p>
           
-          <p><b>Submission Date:</b> {!! $data['others'][$i]->subdate !!}</p>
+          <p><b>Submission Date:</b> {!! $data['others'][0]->subdate !!}</p>
         </div>
       <div class="modal-footer center">
         @if($data['dept'] == 'all')
         <div class="col s12">
-          <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard1 btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
-        @if(!$data['candidates'][$i]->accepted)
-        <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn-flat">Accept</a>
+          <a href="#!" data-reg={!! $data['candidates'][0]->registrationNumber!!} class="discard1 btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
+        @if(!$data['candidates'][0]->accepted)
+        <a href="#!"  data-reg={!! $data['candidates'][0]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn-flat">Accept</a>
         @endif
         </div>
         @endif
         <div class="col s12">
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn modal-action modal-close waves-effect waves-green btn-flat">Admit</a>
+        <a href="#!" data-reg={!! $data['candidates'][0]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
+        <a href="#!" data-reg={!! $data['candidates'][0]->registrationNumber!!} class="admit btn modal-action modal-close waves-effect waves-green btn-flat">Admit</a>
         </div>
       </div>
       </div>
