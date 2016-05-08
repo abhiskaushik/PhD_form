@@ -163,10 +163,15 @@ class PhdController extends Controller
             $extension = $request->file('image_path')->getClientOriginalExtension();
             if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
             {
-                $size = $file->getSize();
-                if($size <= 10000)
+                list($width, $height) = getimagesize($file);
+                if($width < 413 && $height < 531)
                 {
 
+                }
+                else
+                {
+                    $message = 'Dimensions for the uploaded image are more than 413X531';
+                    return View::make('error')->with('message', $message);  
                 }
             }
             else
@@ -179,10 +184,14 @@ class PhdController extends Controller
             $signExt = $request->file('sign')->getClientOriginalExtension();
             if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
             {
-                $size = $file->getSize();
-                if($size <= 10000)
+                if(filesize($file) < 4000)
                 {
 
+                }
+                else
+                {
+                    $message = 'Size of the uploaded signature is more than 4 kb';
+                    return View::make('error')->with('message', $message);
                 }
             }
             else

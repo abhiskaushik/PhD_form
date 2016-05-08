@@ -152,15 +152,20 @@ class MsController extends Controller
             $extension = $request->file('image_path')->getClientOriginalExtension();
             if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
             {
-                $size = $file->getSize();
-                if($size <= 10000)
+                list($width, $height) = getimagesize($file);
+                if($width < 413 && $height < 531)
                 {
 
+                }
+                else
+                {
+                    $message = 'Dimensions for the uploaded image are more than 413X531';
+                    return View::make('error')->with('message', $message);  
                 }
             }
             else
             {
-                $message = 'Inavlid file format for the uploaded image';
+                $message = 'Invalid file format for the uploaded image or Dimensions are more than 413X531';
                 return View::make('error')->with('message', $message);
             }
 
@@ -168,10 +173,14 @@ class MsController extends Controller
             $signExt = $request->file('sign')->getClientOriginalExtension();
             if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
             {
-                $size = $file->getSize();
-                if($size <= 10000)
+                if(filesize($file) < 4000)
                 {
 
+                }
+                else
+                {
+                    $message = 'Size of the uploaded signature is more than 4 kb';
+                    return View::make('error')->with('message', $message);
                 }
             }
             else
