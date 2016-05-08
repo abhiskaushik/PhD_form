@@ -277,7 +277,9 @@ class AdminController extends Controller
             $candidates = Phd::where('registrationNumber', $regNo)
                                 ->first();
             $applNo = $candidates->applNo;
-
+            $candidates->dept1 = self::department($candidates->dept1);
+            $candidates->dept2 = self::department($candidates->dept2);
+            $candidates->dept3 = self::department($candidates->dept3);
             if(!$candidates)
             {
                 $message = 'Invalid registration number';
@@ -308,8 +310,10 @@ class AdminController extends Controller
         {
             $candidates = Ms::where('registrationNumber', $regNo)
                                 ->first();
-
             $applNo = $candidates->applNo;
+            $candidates->dept1 = self::department($candidates->dept1);
+            $candidates->dept2 = self::department($candidates->dept2);
+            $candidates->dept3 = self::department($candidates->dept3);
 
             if(!$candidates)
             {
@@ -380,6 +384,74 @@ class AdminController extends Controller
             'regNo' => $candidate->registrationNumber
         );
         return view('admin.admit')->with($data);
+    }
+
+    public function department($t)
+    {
+        if($t == 'AR')
+        {
+            return 'Architecture';
+        }
+        if($t == 'CS')
+        {
+            return 'Computer Science and Engineering';
+        }
+        if($t == 'CL')
+        {
+            return 'Chemical Engineering';
+        }
+        if($t == 'CV')
+        {
+            return 'Civil Engineering';
+        }
+        if($t == 'CY')
+        {
+            return 'Chemistry';
+        }
+        if($t == 'CA')
+        {
+            return 'Computer Applications';
+        }
+        if($t == 'CC')
+        {
+            return 'CECASE';
+        }
+        if($t == 'EN')
+        {
+            return 'Department of Energy Engineering';
+        }
+        if($t == 'EE')
+        {
+            return 'Electrical and Electronics Engineering';
+        }
+        if($t == 'EC')
+        {
+            return 'Electronics and Communication Engineering';
+        }
+        if($t == 'ME')
+        {
+            return 'Mechanical Engineering';
+        }
+        if($t == 'PR')
+        {
+            return 'Production Engineering';
+        }
+        if($t == 'MME')
+        {
+            return 'Metalurgy and Material Sciences';
+        }
+        if($t == 'MA')
+        {
+            return 'Mathematics';
+        }
+        if($t == 'IC')
+        {
+            return 'Instrumentation and Control Engineering';
+        }
+        if($t == 'PH')
+        {
+            return 'Physics';
+        }
     }
     
     public function logout()

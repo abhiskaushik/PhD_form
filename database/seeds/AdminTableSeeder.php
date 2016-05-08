@@ -66,6 +66,12 @@ class AdminTableSeeder extends Seeder
         ]);
 
         DB::table('admin')->insert([
+	    	'dept' => 'EC',
+	        'userName' => 'ece',
+	        'password' => sha1('ece'),
+        ]);
+
+        DB::table('admin')->insert([
 	    	'dept' => 'HM',
 	        'userName' => 'hm',
 	        'password' => sha1('hm'),
