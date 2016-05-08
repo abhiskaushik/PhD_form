@@ -329,7 +329,7 @@
 		      	            <input required id="max1" type="number" class="validate" name="max1" value="{!! $details['gpamax1'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="gpa1" type="number" class="validate" name="gpa1" value="{!! $details['gpa1'] !!}">
+		      	            	<input required id="gpa1" type="number" class="validate" name="gpa1" value="{!! $details['gpa1'] !!}"> se
 		      	            </td>
 		      	          </tr>
 		      	          <tr>
@@ -478,14 +478,7 @@
 		      </div>
 		      <div class="space-medium"></div>
 		      <div class="row">
-
-		      	<div class="col s6 l5">
-		      		<p>Date of Submission</p>
-		      		<input required id="date" type="date" name="date" class="validate" value="{!! $details['date'] !!}">
-		      	</div>
-		      	<div class="space-medium"></div>
-
-		      <div class="upload col l6 s6 ">
+		      	<div class="upload col l6 s6 ">
 			    <p>Upload Signature</p>
 			      	<div class="file-field input-field">
 		          		<div class="btn teal darken-1 btn waves-effect waves-light">
@@ -498,6 +491,13 @@
 		          	</div>
 			      	<div class="space-medium"></div>			      	
 			      </div>
+		      	<div class="col s6 l6">
+		      		<p>Date of Submission</p>
+		      		<input required id="date" type="date" name="date" class="validate" value="{!! $details['date'] !!}">
+		      	</div>
+		      	<div class="space-medium"></div>
+
+		      
 
 			  </div>
 

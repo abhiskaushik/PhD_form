@@ -19,7 +19,7 @@
 		
 	</head>
 	<body >
-
+		<div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='{{URL::asset('assets/images/preloader.gif')}}' width="64" height="64" /><br>Loading..</div>
 		<header></header>
 		
 		<nav>
@@ -38,7 +38,7 @@
 	      </ul>
 	    </div>
 	  </nav>
-
+	  
 	  <div class="space-medium"></div>
 	<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME (2016 - 2017)</h4>
 		<div class="container">
@@ -246,7 +246,7 @@
 		 </div>
 
 		 	    <div id="regNo" class="modal">	
-
+		 	    	
 		      	<div class="modal-content">
 		      		<div class="regno"></div>
 		      	</div>
@@ -300,8 +300,14 @@
 		$(document ).ready(function(){
 			$(".button-collapse").sideNav();
 			$('select').material_select();
-
+			$(document).ajaxStart(function(){
+				$('#wait').css('display','block');
+			});
+			$(document).ajaxComplete(function(){
+			        $("#wait").css("display", "none");
+			    });
 		});
+
 		</script>
 
 	</body>

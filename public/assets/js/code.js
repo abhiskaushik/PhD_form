@@ -217,7 +217,10 @@ $(document).ready(function(){
 						applNo = applNo + dept[dept.length - 1];
 
 						var dob = $('#dob').val();
+
 						window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
+	        		
+
 	        	}
 	        },
 	        error: function(jqXHR,testStatus,errorThrown){
@@ -256,6 +259,10 @@ $(document).ready(function(){
 		data.pg_class = $('#pg_class option:selected').text();
 		if($('#announced').prop('checked',true)){
 				data.exam = data.pg_class = $('#exam option:selected').text();
+		}
+		if($('#agree').prop('checked',false)){
+			alert('Please select the agree checkbox');
+			return false;
 		}
 		count++;
 		var a = $('#mobile').val();
