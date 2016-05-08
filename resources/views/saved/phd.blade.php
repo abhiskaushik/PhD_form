@@ -170,10 +170,10 @@
 			      		</select>	 -->
 			      		<input type="text" readonly="true" id="department3" name="department3" data-reg="{!! $details->dept3 !!}" />		     
 			        </div>
-			        <div class="input-field col s6 l6">
+			       <!--  <div class="input-field col s6 l6">
 			        	<input type="text" value="dept" hidden="true" />
-			        </div>
-			      </div>      
+			        </div> -->
+			      </div>     
 			      <div class="space-small"></div>
 			       <div class="row">
 			        <div class="input-field col s6 l6">
@@ -588,15 +588,7 @@
 		$(document ).ready(function(){
 			$(".button-collapse").sideNav();
 			$('select').material_select();
-			$('.uploadImg').click(function(){
-				var abc=$('.file-path[0]').val();
-				console.log($('.file-path'));
-			      		$('.demo').croppie({
-			      		    url: abc,
-			      		});	
-			});
 			
-			console.log('{!! $details->addrforcomm !!}');
 			$("textarea#addr_for_commn").val('{!! $details->addrforcomm !!}');
 			$("textarea#permanent_addr").val('{!! $details->permanentaddr !!}');
 			$("textarea#details_of_pub1").val('{!! $details->publications1 !!}');
@@ -697,7 +689,6 @@
 			}
 
 			t='{!! $details->PH !!}';
-			console.log('hey');
 			if(t=='no'){
 				$('.pdCheck .select-wrapper input').val(t);
 				$('.pdCheck .select-wrapper ul>li:eq(2)').click();

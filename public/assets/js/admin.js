@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$('#search').keyup(function(){
 		var searchVal = $(this).val().toLowerCase();
-		console.log(searchVal);
+		// console.log(searchVal);
 		if(searchVal == ''){
 			$('.candidates > div').show();
 		}
@@ -9,7 +9,7 @@ $(document).ready(function(){
 			$('.candidates > div').each(function(){
 				var text = $(this).attr('data-reg');
 				text = text.toLowerCase();
-				console.log("text is-"+text);
+				// console.log("text is-"+text);
 				(text.indexOf(searchVal) >= 0) ? $(this).show("slow") : $(this).hide("slow");
 			});
 

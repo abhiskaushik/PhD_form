@@ -73,7 +73,7 @@ $(document).ready(function(){
 		data.emp_to_2 = $('#emp_to_2').val();
 		data.emp_to_3 = $('#emp_to_3').val();
 		data.date = $('#date').val();
-		console.log(data);
+		// console.log(data);
 		var baseurl = 'http://admission.nitt.edu';
 		var url = '/save2ms';
 		$.ajax(

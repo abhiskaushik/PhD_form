@@ -64,8 +64,8 @@ $(document).ready(function(){
 		data.emp_to_2 = $('#emp_to_2').val();
 		data.emp_to_3 = $('#emp_to_3').val();
 		data.date = $('#date').val();
-		console.log('hey');
-		console.log(data);
+		// console.log('hey');
+		// console.log(data);
 		
 		
 		var baseurl = 'http://admission.nitt.edu';//admission.nitt.edu
@@ -77,7 +77,7 @@ $(document).ready(function(){
 	        data: data,
 	        dataType: "json",
 	        success: function(data){
-	        	console.log('happy');
+	        	// console.log('happy');
 	        	alert("Saved!");
 	        },
 	        error: function(jqXHR,testStatus,errorThrown){

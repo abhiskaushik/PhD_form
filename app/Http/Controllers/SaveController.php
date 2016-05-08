@@ -49,7 +49,7 @@ class SaveController extends Controller
 
         $candidate->save();
 
-        $applNo = $candidate->applNo;
+        $rowNo = $candidate->applNo;
         $reg_number = 'PHD/';
         for($i = 1; $i <= 3; $i++)
         {
@@ -58,8 +58,9 @@ class SaveController extends Controller
                 $reg_number = $reg_number.$request->input('department'.$i).'/';
             }
         }
+        $applNo = self::randomno('PHD', $reg_number);
         $reg_number = $reg_number.$applNo;
-        SavePhd::where('applNo', $applNo)
+        SavePhd::where('applNo', $rowNo)
                     ->update(['registrationNumber' => $reg_number]);
 
         $email = $request->get('email');
@@ -111,7 +112,7 @@ class SaveController extends Controller
 
         $candidate->save();
 
-        $applNo = $candidate->applNo;
+        $rowNo = $candidate->applNo;
         $reg_number = 'MS/';
         for($i = 1; $i <= 3; $i++)
         {
@@ -120,8 +121,9 @@ class SaveController extends Controller
                 $reg_number = $reg_number.$request->input('department'.$i).'/';
             }
         }
+        $applNo = self::randomno('PHD', $reg_number);
         $reg_number = $reg_number.$applNo;
-        SaveMs::where('applNo', $applNo)
+        SaveMs::where('applNo', $rowNo)
                     ->update(['registrationNumber' => $reg_number]);
 
         $email = $request->input('email');
@@ -139,18 +141,22 @@ class SaveController extends Controller
 
     public function fetch($category, $applNo, $dob)
     {
-        Session::put('applNo', $applNo);
-        
-        
-		if($category == 'PHD')
+        $regNo = '';
+        $dept = explode('-', $applNo);
+
+        for($i = 0; $i < sizeof($dept) - 1; $i++)
+        {
+            $regNo = $regNo.$dept[$i].'/';
+        }
+        $regNo = $regNo.$dept[sizeof($dept) - 1];
+        Session::put('regNo', $regNo);
+        if($category == 'PHD')
 		{
-			$details = SavePhd::where('applNo', $applNo)
+			$details = SavePhd::where('registrationNumber', $regNo)
                                     ->where('dob', $dob)
 									->first();
-            
             if($details != NULL)
             {
-                   
                 return view('saved.phd')->with('details', $details);
             }
             else
@@ -161,7 +167,7 @@ class SaveController extends Controller
 		}
 		else
 		{
-			$details = SaveMs::where('applNo', $applNo)
+			$details = SaveMs::where('registrationNumber', $regNo)
                                     ->where('dob', $dob)
                                     ->first();
             if($details != NULL)
@@ -242,8 +248,7 @@ class SaveController extends Controller
             'to3' => $request->input('emp_to_3')
         );
 
-        Log::info($request);
-        SavePhd::where('applNo', Session::get('applNo'))
+        SavePhd::where('registrationNumber', Session::get('regNo'))
                     ->update($details);
 
         return json_encode(0);
@@ -310,10 +315,42 @@ class SaveController extends Controller
             'gpa7' => $request->get('gpa7')
         );
 
-        Log::info($request);
-        SaveMs::where('applNo', Session::get('applNo'))
+        SaveMs::where('registrationNumber', Session::get('regNo'))
                     ->update($details);
 
         return json_encode(0);
+    }
+
+    public function randomno($phdormsc, $reg_number)
+    {
+        $number = mt_rand(1, 5000); 
+        
+        if (self::ifnoexists($number, $phdormsc, $reg_number)) {
+            return self::randomno($phdormsc, $reg_number);
+        }   
+
+        return $number;
+    }
+
+    public function ifnoexists($number, $phdormsc, $reg_number)
+    {
+        if($phdormsc == 'PHD')
+        {
+            $candidate = SavePhd::where('registrationNumber', $reg_number.$number)->first();
+            if($candidate == NULL)
+            {
+                return false;
+            }
+            return true;
+        }
+        else
+        {
+            $candidate = SaveMs::where('registrationNumber', $reg_number.$number)->first();
+            if($candidate == NULL)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

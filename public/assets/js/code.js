@@ -47,7 +47,7 @@ $(document).ready(function(){
 		data.addr_for_commn = $('#addr_for_commn').val();
 		data.permanent_addr = $('#permanent_addr').val();
 
-		console.log(data);
+		// console.log(data);
 
 		var ch = 1;
 		if(data.email == ''){
@@ -208,11 +208,16 @@ $(document).ready(function(){
 	        		alert('Your Registration Number is ' + data + '. Check your Mail Inbox');
 	        			var dept = data.split('/');
 						var categ = dept[0];
-						var applNo = dept[dept.length-1];
-						var checker = $('.checker').val();
+						var applNo = '';
+
+						for(i = 0; i < dept.length - 1; i++)
+						{
+							applNo = applNo + dept[i] + '-';
+						}
+						applNo = applNo + dept[dept.length - 1];
+
 						var dob = $('#dob').val();
 						window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
-	        		
 	        	}
 	        },
 	        error: function(jqXHR,testStatus,errorThrown){
@@ -226,7 +231,13 @@ $(document).ready(function(){
 		var regNo = $('#regNo').val();
 		var dept = regNo.split('/');
 		var categ = dept[0];
-		var applNo = dept[dept.length-1];
+		var applNo = '';
+
+		for(i = 0; i < dept.length - 1; i++)
+		{
+			applNo = applNo + dept[i] + '-';
+		}
+		applNo = applNo + dept[dept.length - 1];
 
 		var dob = $('#dob').val();
 		window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
@@ -246,12 +257,9 @@ $(document).ready(function(){
 		if($('#announced').prop('checked',true)){
 				data.exam = data.pg_class = $('#exam option:selected').text();
 		}
-		console.log(data);
 		count++;
 		var a = $('#mobile').val();
-		console.log(a);
 		var filter = /^[0-9-+]+$/;
-		console.log(filter.test(a));
 		var len = a.length;
 		if(filter.test(a) && a.length == 10){
 			
@@ -261,10 +269,7 @@ $(document).ready(function(){
 			return false;
 		}
 		var b = $('#landline').val();
-		console.log(b);
 		var filter = /^[0-9-+]+$/;
-		console.log(filter.test(b));
-		var len = b.length;
 		if(filter.test(b) && b.length >= 9){
 			
 		}	
@@ -284,7 +289,6 @@ $(document).ready(function(){
 		}
 		}
 		else{
-			console.log(data);
 		count++;
 		if(data.appl_categ == '' || data.marital_status == '' || data.sex == '' || data.category == '' || data.ph == '' || data.ug_class == ''){
 			var error = "Please select all the dropdowns";
@@ -302,7 +306,6 @@ $(document).ready(function(){
 	$('.applicationCateg').change(function()
 	{
 		var p=$('.applicationCateg option:selected').text();
-		console.log(p);
 		if(p=='On Campus'){
 			if($('.upload_container').has('.ext'))
 				$('.ext').remove();

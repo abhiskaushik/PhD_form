@@ -227,7 +227,6 @@ class AdminController extends Controller
         $reg_number = $request->input('applNo');
         $departments = explode('/', $reg_number);
         $phdormsc = $departments[0];
-        Log::info($phdormsc);
         if($phdormsc == 'PHD')
         {
             Phd::where('registrationNumber', $reg_number)
@@ -252,7 +251,6 @@ class AdminController extends Controller
             $user = Ms::select('name', 'email')
                                 ->where('registrationNumber', $reg_number)
                                 ->first();
-            Log::info($reg_number);
             Mail::send('emails.accept', ['user' => $user->name], function ($m) use($user) {
                 $m->from('phdsection@nitt.edu', 'NITT Admissions');
                 $m->to($user->email, 'Applicant')->subject('Greetings from NITT!');
