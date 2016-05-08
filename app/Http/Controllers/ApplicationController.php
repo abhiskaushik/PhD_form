@@ -17,6 +17,7 @@ use App\MsUg;
 use App\MsScores;
 use App\MsPro;
 use PDF;
+use View;
 
 class ApplicationController extends Controller
 {
