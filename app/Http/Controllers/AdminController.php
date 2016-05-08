@@ -107,8 +107,9 @@ class AdminController extends Controller
         }
     }
 
-	public function adminView($phdormsc)
-	{
+    public function adminView($phdormsc)
+    {
+        // dd(Session::get('dept'));
         if(Session::get('dept') == 'all')
         {
             if($phdormsc == 'phd')
@@ -126,9 +127,10 @@ class AdminController extends Controller
             $rules2 = ['deleted' => false, 'dept2' => Session::get('dept')];
             $rules3 = ['deleted' => false, 'dept3' => Session::get('dept')];
 
-            self::finalView($phdormsc, $rules1, $rules2, $rules3);
+            $data = self::finalView($phdormsc, $rules1, $rules2, $rules3);
+            return View::make('admin.'.$phdormsc)->with('data', $data);
         }
-	}
+    }
 
     public function adminall($phdormsc, $dept)
     {
@@ -136,7 +138,8 @@ class AdminController extends Controller
         $rules2 = ['deleted' => false, 'dept2' => $dept];
         $rules3 = ['deleted' => false, 'dept3' => $dept];
 
-        self::finalView($phdormsc, $rules1, $rules2, $rules3);
+        $data = self::finalView($phdormsc, $rules1, $rules2, $rules3);
+        return View::make('admin.'.$phdormsc)->with('data', $data);
     }
 
     public function finalView($phdormsc, $rules1, $rules2, $rules3)
@@ -147,7 +150,6 @@ class AdminController extends Controller
                                         ->orWhere($rules2)
                                         ->orWhere($rules3)
                                         ->paginate(6);
-
             $candidates_id = $candidates->lists('applNo');
             $ugDetails = PhdUg::whereIn('applNo', $candidates_id)->get();
             $pgDetails = PhdPg::whereIn('applNo', $candidates_id)->get(); 
@@ -160,7 +162,7 @@ class AdminController extends Controller
                             'pro' => $proDetails,
                             'dept' => Session::get('dept')
                             );
-            return View::make('admin.'.$phdormsc)->with('data', $data);
+            return $data;
         }
         else
         {
@@ -168,7 +170,7 @@ class AdminController extends Controller
                                         ->orWhere($rules2)
                                         ->orWhere($rules3)
                                         ->paginate(6);
-
+            
             $candidates_id = $candidates->lists('applNo');
             $ugDetails = MsUg::whereIn('applNo', $candidates_id)->get(); 
             $scores = MsScores::whereIn('applNo', $candidates_id)->get();//changed this from MsScores to MsSemScore 
@@ -179,13 +181,13 @@ class AdminController extends Controller
                             'pro' => $proDetails,
                             'dept' => Session::get('dept')
                             );
-            return View::make('admin.'.$phdormsc)->with('data', $data);
+            return $data;
         }
     }
 
-	public function deleted(Request $request)
-	{	
-		$reg_number = $request->input('applNo');
+    public function deleted(Request $request)
+    {   
+        $reg_number = $request->input('applNo');
         $departments = explode('/', $reg_number);
         $phdormsc = $departments[0];
         if($phdormsc == 'PHD')
@@ -218,7 +220,7 @@ class AdminController extends Controller
 
             return json_encode($reg_number);
         }
-	}
+    }
 
     public function accepted(Request $request)
     {
@@ -261,8 +263,8 @@ class AdminController extends Controller
     }
 
 
-	public function printer($phdormsc, $reg_number)
-	{
+    public function printer($phdormsc, $reg_number)
+    {
         $regNo = '';
         $departments = explode('-', $reg_number);
         for($i = 0; $i < sizeof($departments) - 1; $i++)
@@ -270,7 +272,7 @@ class AdminController extends Controller
             $regNo = $regNo.$departments[$i].'/';
         }
         $regNo = $regNo.$departments[sizeof($departments) - 1];
-	    if($phdormsc == 'PHD')
+        if($phdormsc == 'PHD')
         {
             $candidates = Phd::where('registrationNumber', $regNo)
                                 ->first();
@@ -330,7 +332,7 @@ class AdminController extends Controller
             return response($pdf->output())
                             ->header('Content-Type', 'application/pdf');
         }
-	}
+    }
 
     public function admitCard($phdormsc, $reg_number)
     {
@@ -379,7 +381,7 @@ class AdminController extends Controller
         );
         return view('admin.admit')->with($data);
     }
-	
+    
     public function logout()
     {
         Session::flush();

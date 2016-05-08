@@ -360,61 +360,61 @@ class PhdController extends Controller
         }
     }
 
-    public function department(t)
+    public function department($t)
     {
-        if(t == 'Architecture')
+        if($t == 'Architecture')
         {
             return 'AR';
         }
-        if(t == 'Computer Science and Engineering')
+        if($t == 'Computer Science and Engineering')
         {
             return 'CS';
         }
-        if(t == 'Chemical Engineering')
+        if($t == 'Chemical Engineering')
         {
             return 'CL';
         }
-        if(t == 'Civil Engineering')
+        if($t == 'Civil Engineering')
         {
             return 'CV';
         }
-        if(t == 'Chemistry')
+        if($t == 'Chemistry')
         {
             return 'CY';
         }
-        if(t == 'Computer Applications')
+        if($t == 'Computer Applications')
         {
             return 'CA';
         }
-        if(t == 'CECASE')
+        if($t == 'CECASE')
         {
             return 'CC';
         }
-        if(t == 'Department of Energy Engineering')
+        if($t == 'Department of Energy Engineering')
         {
             return 'EN';
         }
-        if(t == 'Electrical and Electronics Engineering')
+        if($t == 'Electrical and Electronics Engineering')
         {
             return 'EE';
         }
-        if(t == 'Electronics and Communication Engineering')
+        if($t == 'Electronics and Communication Engineering')
         {
             return 'EC';
         }
-        if(t == 'Mechanical Engineering')
+        if($t == 'Mechanical Engineering')
         {
             return 'ME';
         }
-        if(t == 'Production Engineering')
+        if($t == 'Production Engineering')
         {
             return 'PR';
         }
-        if(t == 'Metalurgy and Material Sciences')
+        if($t == 'Metalurgy and Material Sciences')
         {
             return 'MME';
         }
-        if(t == 'Mathematics')
+        if($t == 'Mathematics')
         {
             return 'MA';
         }
