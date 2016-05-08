@@ -21,13 +21,13 @@
     <div class="nav-wrapper "> 
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
-        <li><a href="/#">Home</a></li>
-        <li><a href="/home">PhD/M.S. Applicants</a></li>
+        <li><a href="../home">Home</a></li>
+        <li><a href="../phd/home">PhD Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-       <li><a href="/#">Home</a></li>
-        <li><a href="/home">PhD/M.S. Applicants</a></li>
+       <li><a href="../home">Home</a></li>
+        <li><a href="../phd/home">PhD Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
     </div>
