@@ -97,7 +97,7 @@ class AdminController extends Controller
                             ->update(['password' => sha1($newpassword)]);
                 Session::put('userName', $username);
                 Session::put('dept', $auth->dept);
-                return view('admin.home');
+                return redirect('admin/home');
             }
             else
             {
@@ -109,19 +109,38 @@ class AdminController extends Controller
 
 	public function adminView($phdormsc)
 	{
-        // Session::put('phdormsc', $phdormsc);
         if(Session::get('dept') == 'all')
         {
-            $rules1 = ['deleted' => false];
-            $rules2 = ['deleted' => false];
-            $rules3 = ['deleted' => false];
+            if($phdormsc == 'phd')
+            {
+                return redirect('admin/phd/home');
+            }
+            else
+            {
+                return redirect('admin/ms/home');
+            }
         }
         else
         {
-            $rules1 = ['deleted' => false , 'dept1' => Session::get('dept')];
-            $rules2 = ['deleted' => false , 'dept2' => Session::get('dept')];
-            $rules3 = ['deleted' => false , 'dept3' => Session::get('dept')];
+            $rules1 = ['deleted' => false, 'dept1' => Session::get('dept')];
+            $rules2 = ['deleted' => false, 'dept2' => Session::get('dept')];
+            $rules3 = ['deleted' => false, 'dept3' => Session::get('dept')];
+
+            self::finalView($phdormsc, $rules1, $rules2, $rules3);
         }
+	}
+
+    public function adminall($phdormsc, $dept)
+    {
+        $rules1 = ['deleted' => false, 'dept1' => $dept];
+        $rules2 = ['deleted' => false, 'dept2' => $dept];
+        $rules3 = ['deleted' => false, 'dept3' => $dept];
+
+        self::finalView($phdormsc, $rules1, $rules2, $rules3);
+    }
+
+    public function finalView($phdormsc, $rules1, $rules2, $rules3)
+    {
         if($phdormsc == 'phd')
         {
             $candidates = Phd::where($rules1)
@@ -162,8 +181,7 @@ class AdminController extends Controller
                             );
             return View::make('admin.'.$phdormsc)->with('data', $data);
         }
-
-	}
+    }
 
 	public function deleted(Request $request)
 	{	

@@ -23,7 +23,6 @@ class ApplicationController extends Controller
     public function view(Request $request)
     {
     	$regNo = $request->input('regNo');
-    	// dd($regNo);
 
     	$rules = array(
     		'regNo' => 'required'
@@ -40,12 +39,17 @@ class ApplicationController extends Controller
     	{
     		$dept = explode("/", $regNo);
     		$categ = $dept[0];
-    		$applNo = $dept[sizeof($dept) - 1];
 
     		if($categ == 'PHD')
 	        {
-	            $candidates = Phd::where('applNo', $applNo)
-	                                ->first();                              
+	            $candidates = Phd::where('registrationNumber', $regNo)
+	                                ->first();
+	            if(!$candidates)
+	            {
+	                $message = 'Invalid registration number';
+	                return View::make('error')->with('message', $message);
+	            } 
+	            $applNo = $candidates->applNo;                             
 
 	            $ugDetails = PhdUg::where('applNo', $applNo)
 	                                    ->first();
@@ -70,14 +74,14 @@ class ApplicationController extends Controller
 	        }
 	        else
 	        {
-	            $candidates = Ms::where('applNo', $applNo)
+	            $candidates = Ms::where('registrationNumber', $regNo)
 	                                ->first();
-	                                dd($candidates);
 	            if(!$candidates)
 	            {
 	                $message = 'Invalid registration number';
 	                return View::make('error')->with('message', $message);
-	            }                               
+	            }  
+	            $applNo = $candidates->applNo;                             
 	            $ugDetails = MsUg::where('applNo', $applNo)
 	                                    ->first();
 	            $proDetails = MsPro::where('applNo', $applNo)
