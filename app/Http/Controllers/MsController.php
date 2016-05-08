@@ -173,7 +173,8 @@ class MsController extends Controller
             $signExt = $request->file('sign')->getClientOriginalExtension();
             if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
             {
-                if(filesize($file) < 4000)
+                list($width, $height) = getimagesize($file);
+                if($width < 413 && $height < 531)
                 {
 
                 }
