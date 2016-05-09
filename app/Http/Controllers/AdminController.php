@@ -141,6 +141,7 @@ class AdminController extends Controller
         $rules3 = ['deleted' => false, 'dept3' => $dept];
 
         $data = self::finalView($phdormsc, $rules1, $rules2, $rules3);
+        $data['dept'] = self::department($dept);
         return View::make('admin.'.$phdormsc)->with('data', $data);
     }
 
@@ -161,8 +162,7 @@ class AdminController extends Controller
                             'ug' => $ugDetails,
                             'pg' => $pgDetails,
                             'others' => $otherDetails,
-                            'pro' => $proDetails,
-                            'dept' => self::department(Session::get('dept'))
+                            'pro' => $proDetails
                             );
             return $data;
         }
@@ -180,8 +180,7 @@ class AdminController extends Controller
             $data = array('candidates' => $candidates,
                             'ug' => $ugDetails,
                             'scores' => $scores,
-                            'pro' => $proDetails,
-                            'dept' => self::department(Session::get('dept'))
+                            'pro' => $proDetails
                             );
             return $data;
         }
