@@ -6,6 +6,25 @@
 	font-family: "font";
 	src:url('font.otf');
 }
+.preloader
+{
+	top: 200px;
+	position: relative;
+}
+.activated
+{
+	background-color: white;
+	z-index: : 99999;
+	opacity: : 0.3;
+	position: fixed;
+	width: 100%;
+	min-height: 100vh;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
 body{
 	font-family: "font";
 	

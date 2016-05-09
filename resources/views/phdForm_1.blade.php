@@ -18,7 +18,11 @@
 		
 	</head>
 	<body >
-		
+		<div class="blur">
+			<div class="center preloader" hidden="true">
+				<img src="{{URL::asset('assets/images/preloader.gif')}}">
+			</div>
+		</div>
 		<header></header>
 		
 		<nav>
