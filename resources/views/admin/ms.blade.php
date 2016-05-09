@@ -17,6 +17,7 @@
   
 </head>
 <body>
+
   <header style="height: 25vh;
   padding: 0px;
   margin: 0px;
@@ -25,6 +26,7 @@
   background-position: center;
   background-color: #004d40;
   background-size: contain;"></header>
+
   
   <nav>
     <div class="nav-wrapper ">
@@ -97,6 +99,7 @@
           </div>
           
           </div>
+
           <div id="modal{!! $i !!}" class="modal l8">
           <div class="modal-content">
           <div class="container">
@@ -114,7 +117,7 @@
           <div class="row">
             <h5>Application Details:</h5>
             <div class="col l6">
-              p><b>Application Category:</b> {!! $data['candidates'][$i]->applicationCategory !!}</p>
+              <p><b>Application Category:</b> {!! $data['candidates'][$i]->applicationCategory !!}</p>
             </div>
             <div class="col l6">
               <p><b>Department:</b> {!! $data['candidates'][$i]->dept !!}</p>
@@ -231,7 +234,7 @@
       @endif
       @endfor
     </div>
-  </div class="row">
+  <div class="row">
     <div class="center">
       <ul class="pagination">
     <li class="disabled"><a href={!! $data["candidates"]->previousPageUrl()!!}><i class="material-icons">chevron_left</i></a></li>
@@ -245,8 +248,9 @@
    <a class="waves-effect waves-light btn" href="phd">View PhD applicants</a>
   </div>
    </div>
- </div><div>
-
+ </div>
+ </div>
+</div>
 <div class="space-large"></div>
 
 <footer class="page-footer teal darken-4">
@@ -315,4 +319,3 @@
 
 </body>
 </html>
-
