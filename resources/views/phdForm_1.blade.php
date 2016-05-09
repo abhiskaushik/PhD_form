@@ -19,7 +19,11 @@
 		
 	</head>
 	<body >
-		<div class="blurr">
+		<div class="blur">
+			<div class="center preloader" hidden="true">
+				<img src="{{URL::asset('assets/images/preloader.gif')}}">
+			</div>
+		</div>
 		<header></header>
 		
 		<nav>
@@ -295,7 +299,7 @@
 	          </div>
 	        </footer>
 	            
-	        </div>
+	        
 		<script type="text/javascript">
 		$(document ).ready(function(){
 			$(".button-collapse").sideNav();
