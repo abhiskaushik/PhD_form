@@ -72,7 +72,7 @@ class PhdController extends Controller
         	$bool1 = Phd::where('name' , $request->input('name'))
         						->where('addrforcomm' , $request->input('addr_for_commn'))
         						->first();
-            $bool2 = Ms::where('registrationNumber' , $request->get('regNo'))
+            $bool2 = Phd::where('registrationNumber' , $request->get('regNo'))
                                 ->first();
 
         	if($bool1 == NULL && $bool2 == NULL){
