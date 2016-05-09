@@ -123,12 +123,14 @@ class AdminController extends Controller
         }
         else
         {
-            $rules1 = ['deleted' => false, 'dept1' => Session::get('dept')];
-            $rules2 = ['deleted' => false, 'dept2' => Session::get('dept')];
-            $rules3 = ['deleted' => false, 'dept3' => Session::get('dept')];
-
-            $data = self::finalView($phdormsc, $rules1, $rules2, $rules3);
-            return View::make('admin.'.$phdormsc)->with('data', $data);
+            if($phdormsc == 'phd')
+            {
+                return redirect('admin/phd/'.Session::get('dept'));
+            }
+            else
+            {
+                return redirect('admin/ms/'.Session::get('dept'));
+            }
         }
     }
 
