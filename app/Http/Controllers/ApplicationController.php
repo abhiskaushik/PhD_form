@@ -33,7 +33,7 @@ class ApplicationController extends Controller
 
     	if(count($validator->errors()) > 0)
     	{
-    		$message = 'Please fill in all the required details';
+    		$message = 'Please fill in all the required  tails';
     		return view('error')->with('message', $message);
     	}
     	else

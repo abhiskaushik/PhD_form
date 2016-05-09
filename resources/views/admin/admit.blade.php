@@ -25,7 +25,7 @@
 </div>
  
 
-  <div class="container">
+  <div class="container main">
   <h5 class="center"><u>ADMIT CARD</u></h5>
   <div class="space-medium"></div>
   <hr><hr>

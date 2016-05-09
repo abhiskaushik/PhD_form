@@ -37,7 +37,7 @@
   </nav>
 
   <div class="space-medium"></div>
-  <div class="container center">
+  <div class="container center main">
     <p>
       Welcome to NITT PhD and M.S application portal!
     </p>

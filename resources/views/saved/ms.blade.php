@@ -40,7 +40,7 @@
 
   <div class="space-medium"></div>
   <h4 class="center">APPLICATION FOR ADMISSION TO M.S PROGRAMME (2016 - 2017)</h4>
-	<div class="container">
+	<div class="container main">
 		<div class="row text-center">
 			
 			<div class="space-medium"></div>

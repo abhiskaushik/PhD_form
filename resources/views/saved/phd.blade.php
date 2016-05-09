@@ -40,7 +40,7 @@
 	  </nav>
 
 	 
-		<div class="container">
+		<div class="container main">
 			<div class="row text-center">
 				<h4>APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME (2016 - 2017)</h4>
 				<div class="space-medium"></div>

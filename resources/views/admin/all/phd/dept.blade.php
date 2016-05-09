@@ -33,7 +33,7 @@
     </div>
   </nav>
   <div class="space-medium"></div>
-  <div class="container">
+  <div class="container main">
     <h5 class="center">List of Ph.D Departments</h5>
     <input type="hidden" value="PHD" class="phdormsc" />
     <div class="row buttons ">

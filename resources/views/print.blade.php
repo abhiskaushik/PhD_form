@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<div class="container-fluid">
+<div class="container-fluid main">
   <div class="row">
     <div class="col l4">
       <img width="100px" height="100px" src="{{base_path('public/assets/images/logo.png')}}">
@@ -24,7 +24,7 @@
           <h4>APPLICATION FOR ADMISSION<br> TO Ph.D. PROGRAMME <br>(2016 – 2017)</h4>
     </div>
   </div>
-</div>
+
 
 
 
@@ -275,6 +275,6 @@
           @endif
 
 </div>
-
+</div>
 </body>
 </html>

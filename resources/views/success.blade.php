@@ -39,7 +39,7 @@
   <div class="space-medium"></div>
 
   <div class="space-large"></div>
-  <div class="container">
+  <div class="container main">
     <div class="row">
 
 <!-- if condition goes here -->

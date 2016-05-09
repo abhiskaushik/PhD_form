@@ -57,7 +57,7 @@
 <div class="hide space-large  " hidden="true"></div>
  
   <div class="space-large"></div>
-  <div class="container">
+  <div class="container main">
     <div class="candidates row">
      @for($i = 0; $i < sizeof($data['candidates']); $i++)
         @if(!$data['candidates'][$i]->deleted)

@@ -34,7 +34,7 @@
     </div>
   </nav>
   <div class="space-medium"></div>
-  <div class="container">
+  <div class="container main">
     <div class="row">
       {!! Form::open(array( 'action' => 'AdminController@change', 'method'=>'POST')) !!}
         <div class="secure flow-text center">Login</div>

@@ -54,7 +54,7 @@
 </div>
 <div class="hide space-large  " hidden="true"></div>
   <div class="space-large"></div>
-  <div class="container">
+  <div class="container main">
     <div class="row candidates">
     @for($i = 0; $i < sizeof($data['candidates']); $i++)
         

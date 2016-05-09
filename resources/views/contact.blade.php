@@ -34,7 +34,7 @@
   </nav>
 
   <div class="space-medium"></div>
-  <div class="container">
+  <div class="container main">
   	<div class="row">
       <h5>M.S. and Ph.D. Admissions Committee</h5>
       <ul>

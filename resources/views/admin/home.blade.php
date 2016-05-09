@@ -38,7 +38,7 @@
   <div class="space-medium"></div>
 
   <div class="space-large"></div>
-  <div class="container">
+  <div class="container main">
     <div class="row">
       <div class="col l6 s6 center">
           <a class="waves-effect waves-light btn" href="ms">M.S. Applicants</a>
