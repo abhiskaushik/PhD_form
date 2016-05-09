@@ -46,7 +46,7 @@
   </nav>
 
   <div class="space-medium"></div>
-  <h4 class="center">APPLICATION FOR ADMISSION TO M.S PROGRAMME (2016 - 2017)</h4>
+  <div class="heading"></div>
 	<div class="container main">
 		<div class="row text-center">
 			
@@ -522,7 +522,7 @@
 		      
 		      <p>(*) indicates that it's a required field.</p> 
   		 <div class="center">
-      <a id="preview2" class="teal darken-1 waves-effect waves-light btn modal-trigger">Preview Form</a>
+      <a id="preview2" href="../../../mspreview" class="teal darken-1 waves-effect waves-light btn modal-trigger">Preview Form</a>
       
    {!! Form::submit('Submit', array('class'=>'valid1 teal darken-1 send-btn btn waves-effect waves-light' )) !!}
    <a id="save2" class="teal darken-1 send-btn btn waves-effect waves-light center">Save Form</a>
@@ -570,6 +570,13 @@
 	$(document ).ready(function(){
 		$(".button-collapse").sideNav();
 		$('select').material_select();
+
+		var x = new Date().getFullYear();
+		var y = x+1;
+			console.log(x);
+			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME ('+ x + '-' + y + ')</h4>';
+			$('.heading').append(p);
+
 		$("textarea#addr_for_commn").val('{!! $details->addrforcomm !!}');
 		$("textarea#permanent_addr").val('{!! $details->permanentaddr !!}');
 		$("textarea#employer_details_1").val('{!! $details->proexp1 !!}');

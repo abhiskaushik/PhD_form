@@ -46,8 +46,10 @@
 	  </nav>
 
 	  <div class="space-medium"></div>
-
-	<h4 class="center">APPLICATION FOR ADMISSION TO M.S. PROGRAMME (2016 - 2017)</h4>
+	  <div class="heading">
+	  	
+	  </div>
+	
 		<div class="container main">
 			<div class="row text-center">
 				
@@ -235,7 +237,7 @@
 		     
 		      
 
-		      <div class="modal" id="error">
+		      <div class="modal center" id="error">
 		      	<div class="modal-content">
 		      		<div class="error"></div>
 		      	</div>
@@ -244,7 +246,7 @@
 		      	</div>
 		      </div>
 
-		      <div id="regNo" class="modal">	
+		      <div id="regNo" class="modal center">	
 		      	<div class="modal-content">
 		      		<div class="regno"></div>
 		      		
@@ -293,7 +295,11 @@
 		$(document ).ready(function(){
 			$(".button-collapse").sideNav();
 			$('select').material_select();
-
+			var x = new Date().getFullYear();
+			var y = x+1;
+			console.log(x);
+			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME ('+ x + '-' + y + ')</h4>';
+			$('.heading').append(p);
 		});
 		</script>
 

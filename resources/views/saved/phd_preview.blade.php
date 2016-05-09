@@ -15,7 +15,7 @@
 		<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 		<script src="{{URL::asset('assets/js/common.js')}}"></script>
 		<script src="{{URL::asset('assets/js/savephd.js')}}"></script>
-		<script src="{{URL::asset('assets/js/preview.js')}}"></script>
+		<script src="{{URL::asset('assets/js/preview_form.js')}}"></script>
 		
 	</head>
 	<body>
@@ -54,18 +54,13 @@
 				<div class="divider"></div><div class="divider"></div><br>
 				<b>*Note:</b> Upload all the necessary files including your image and image of the signature right before the final submission.
 			</div>
-			<div class="space-medium"></div>
-			
-
-			{!! Form::open(array('url'=>'phdvalidate','method'=>'POST', 'files'=>true )) !!}	
-
-			
-			<input type="text" id="regNo" name="regNo" value="{!! $details->registrationNumber !!}" hidden="true"/>
+			<div class="space-medium"></div>								
+			<input type="text" id="regNo" name="regNo"  hidden="true"/>
 
 			<div class="row">
 				<div class="col l6 s12">
 					<p class="large">*Bank Reference Number:</p>
-					<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number" value="{!! $details->chalanNo !!}" required />
+					<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number"  required />
 				</div>
 			</div>
 
@@ -130,7 +125,7 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>
 			     		</select> -->
-			     		<input type="text" readonly="true" id="department1" name="department1" data-reg="{!! $details->dept1 !!}" />
+			     		<input type="text" readonly="true" id="department1" name="department1"  />
 			        </div>
 			        <div class="input-field col l6 s6 dep2Check">
 			        	<!-- <select name="department2" id="department2">
@@ -151,7 +146,7 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>		      
 			      		</select> -->
-			   		<input type="text" readonly="true" id="department2" name="department2" data-reg="{!! $details->dept2 !!}" />
+			   		<input type="text" readonly="true" id="department2" name="department2"  />
 			      	
 			        </div>
 			        </div>
@@ -175,7 +170,7 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>		      
 			      		</select>	 -->
-			      		<input type="text" readonly="true" id="department3" name="department3" data-reg="{!! $details->dept3 !!}" />		     
+			      		<input type="text" readonly="true" id="department3" name="department3"  />		     
 			        </div>
 			       <!--  <div class="input-field col s6 l6">
 			        	<input type="text" value="dept" hidden="true" />
@@ -185,30 +180,30 @@
 			       <div class="row">
 			        <div class="input-field col s6 l6">
 			        	<span class="light">*Email Id:</span>
-			        	          <input id="email" name="email" type="email" class="validate" required value="{!! $details->email !!}">
+			        	          <input id="email" name="email" type="email" class="validate" >
 			        	          
 			       	</div>
 			        
 			         <div class="input-field col l6 s6">
 			         <span class="light">*Area of Research:</span>
-			          <input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research" maxlength="50" value="{!! $details->areaOfResearch !!}">
+			          <input required placeholder="Area of Research" id="area_of_research" type="text" class="validate" name="area_of_research" maxlength="50" >
 			        </div>
 			        </div>
 			      <div class="row">
 			        <div class="input-field col l6 s6">
 			        	<span class="light">*Name:</span>
-			      		<input required placeholder="Name of Candidate" id="name" type="text" class="validate" name="name" maxlength="32" value="{!! $details->name !!}">
+			      		<input required placeholder="Name of Candidate" id="name" type="text" class="validate" name="name" maxlength="32" >
 			        </div>
 			         <div class="input-field col l6  s6">
 			         <span class="light">*Father's Name:</span>
-			          <input required placeholder="Father's/Guardian Name" id="father_name" type="text" class="validate" name="father_name" maxlength="32" value="{!! $details->fatherName !!}">
+			          <input required placeholder="Father's/Guardian Name" id="father_name" type="text" class="validate" name="father_name" maxlength="32" >
 			        </div>
 			      </div>
 
 			      <div class="row">
 			        <div class="input-field col l6">
 			        	<span class="light">*Date of Birth:</span>
-			      		<input required id="dob" type="date" class="validate" name="dob" value="{!! $details->dob !!}">
+			      		<input required id="dob" type="date" class="validate" name="dob" >
 			        </div>
 
 			         <div class="input-field col l6 categCheck">
@@ -228,7 +223,7 @@
 			      <div class="row">
 			        <div class="input-field col l6 sexCheck">
 			      		<span class="light">*Sex:</span><br>
-			         	<!-- <input name="sex" id="sex" readonly="true" value="{!! $details->sex !!}" /> -->
+			         	
 			         	<select id="sex" name="sex" required="true">
 			         		<option value="" disabled selected>Choose your Option</option>
 			         		<option value="male">Male</option>
@@ -261,7 +256,7 @@
 			         <div class="input-field col l6 ">
 
 			         <span class="light">*Nationality:</span>
-			          <input required placeholder="Nationality" id="nationality" type="text" class="validate" name="nationality" maxlength="32" value="{!! $details->nationality !!}">
+			          <input required placeholder="Nationality" id="nationality" type="text" class="validate" name="nationality" maxlength="32" >
 			        </div>
 			      </div>           
 
@@ -270,13 +265,13 @@
 			        	<span for="textarea1">*Address for Communication:</span><br>     		  
 						<textarea required id="addr_for_commn" class="materialize-textarea" name="addr_for_commn" maxlength="200"></textarea>			          
 			            <p>*Mobile Number:</p>
-			            <input required id="mobile" type="number" min="7000000000" max="9999999999" class="validate" name="mobile" value="{!! $details->mobile !!}" />
+			            <input required id="mobile" type="number" min="7000000000" max="9999999999" class="validate" name="mobile"  />
 			        </div>
 			         <div class="input-field col l6 ">
 			         <span for="textarea1">*Permanent Address:</span><br>
-			         <textarea required id="permanent_addr" class="materialize-textarea" name="permanent_addr" maxlength="200" value="{!! $details->permanentaddr !!}"></textarea>			            
+			         <textarea required id="permanent_addr" class="materialize-textarea" name="permanent_addr" maxlength="200" ></textarea>			            
 			            <p>Land-Line Number:</p>
-			            <input id="landline" type="text" class="validate" name="landline" value="{!! $details->lanline !!}" />
+			            <input id="landline" type="text" class="validate" name="landline"  />
 			        </div>
 
 
@@ -288,11 +283,11 @@
 	  				 <div class="row">
 			        <div class="input-field col l6">
 			        	<span class="light">*Name of Degree:</span>
-			      		<input required placeholder="Name of Degree" id="ug_deg" type="text" class="validate" name="ug_deg" maxlength="32" value="{!! $details->ugdegreeName !!}">
+			      		<input required placeholder="Name of Degree" id="ug_deg" type="text" class="validate" name="ug_deg" maxlength="32" >
 			        </div>
 			         <div class="input-field col l6 ">
 			         	<span class="light">*Branch Name:</span>
-			         	<input required placeholder="Branch/Specialization" id="ug_branch" type="text" class="validate" name="ug_branch" maxlength="50" value="{!! $details->ugbranch !!}">
+			         	<input required placeholder="Branch/Specialization" id="ug_branch" type="text" class="validate" name="ug_branch" maxlength="50" >
 			        </div>
 			      </div>
 
@@ -300,7 +295,7 @@
 			      	
 			      	<div class="input-field col l6 ">
 			      		<span class="light">*C.G.P.A/Percentage:</span>
-			      		<input required placeholder="C.G.P.A" id="ug_gpa" type="number" class="validate ug_cgpa" name="ug_gpa" min="4" max="100" step="0.01" value="{!! $details->uggpa !!}" >
+			      		<input required placeholder="C.G.P.A" id="ug_gpa" type="number" class="validate ug_cgpa" name="ug_gpa" min="4" max="100" step="0.01"  >
 			      	</div>
 			      	<div class="input-field col l6 ugclassCheck">
 			      		<span class="light">*Class:</span>
@@ -323,17 +318,17 @@
 			      <div class="row">
 			      	<div class="input-field col l12 s12">
 			      		<span class="light">*College Name:</span>
-			      		<input required placeholder="College Name" id="ug_name_of_inst" type="text" class="validate" name="ug_name_of_inst" maxlength="50" value="{!! $details->uginstitutionName !!}">
+			      		<input required placeholder="College Name" id="ug_name_of_inst" type="text" class="validate" name="ug_name_of_inst" maxlength="50" >
 			      	</div>
 
 			      	<div class="input-field col l12 s12">
 			      		<span class="light">*University Name:</span>
-			      		<input required placeholder="University Name" id="ug_name_of_uni" type="text" class="validate" name="ug_name_of_uni" maxlength="50" value="{!! $details->uguniversityName !!}">
+			      		<input required placeholder="University Name" id="ug_name_of_uni" type="text" class="validate" name="ug_name_of_uni" maxlength="50" >
 			      	</div>
 
 			      	<div class="input-field col l4 s4">
 			      		<span class="light">*Year of Passing:</span>
-			      		<input required id="ug_yop" type="number" class="validate" name="ug_yop" min="1900" value="{!! $details->ugyop !!}">
+			      		<input required id="ug_yop" type="number" class="validate" name="ug_yop" min="1900" >
 			      	</div>
 			      </div>
 
@@ -343,11 +338,11 @@
 	  				 <div class="row">
 			        <div class="input-field col l6">
 			        	<span class="light">*Name of Degree:</span>
-			      		<input required placeholder="Name of Degree" id="pg_deg" type="text" class="validate" name="pg_deg" maxlength="50" value="{!! $details->pgdegreeName !!}">
+			      		<input required placeholder="Name of Degree" id="pg_deg" type="text" class="validate" name="pg_deg" maxlength="50" >
 			        </div>
 			         <div class="input-field col l6 ">
 			         	<span class="light">*Branch Name:</span>
-			         	<input required placeholder="Branch/Specialization" id="pg_branch" type="text" class="validate" name="pg_branch" maxlength="50" value="{!! $details->pgbranch !!}">
+			         	<input required placeholder="Branch/Specialization" id="pg_branch" type="text" class="validate" name="pg_branch" maxlength="50" >
 			        </div>
 			      </div>
 
@@ -355,7 +350,7 @@
 			      	
 			      	<div class="input-field col l6">
 			      		<span class="light">*C.G.P.A/Percentage:</span>
-			      		<input required placeholder="C.G.P.A" id="pg_gpa" type="number" class="validate pg_cgpa" name="pg_gpa" min="4" max="100" step="0.01" value="{!! $details->pggpa !!}">
+			      		<input required placeholder="C.G.P.A" id="pg_gpa" type="number" class="validate pg_cgpa" name="pg_gpa" min="4" max="100" step="0.01" >
 			      	</div>
 			      	<div class="input-field col l6 pgclassCheck">
 			      		<span class="light">*Class:</span>
@@ -377,17 +372,17 @@
 			      <div class="row">
 			      	<div class="input-field col l12 s12">
 			      		<span class="light">*College Name:</span>
-			      		<input required placeholder="College Name" id="pg_name_of_inst" type="text" class="validate" name="pg_name_of_inst" maxlength="50" value="{!! $details->pginstitutionName !!}">
+			      		<input required placeholder="College Name" id="pg_name_of_inst" type="text" class="validate" name="pg_name_of_inst" maxlength="50" >
 			      	</div>
 
 			      	<div class="input-field col l12 s12">
 			      	<span class="light">*University Name:</span>
-			      		<input required placeholder="University Name" id="pg_name_of_uni" type="text" class="validate" name="pg_name_of_uni" maxlength="50" value="{!! $details->pguniversityName !!}">
+			      		<input required placeholder="University Name" id="pg_name_of_uni" type="text" class="validate" name="pg_name_of_uni" maxlength="50" >
 			      	</div>
 
 			      	<div class="input-field col l4 s4">
 			      		<span class="light">*Year of Passing</span>
-			      		<input required id="pg_yop" type="number" class="validate" name="pg_yop" min="1900" value="{!! $details->pgyop !!}"> 
+			      		<input required id="pg_yop" type="number" class="validate" name="pg_yop" min="1900" > 
 			      	</div>
 			      </div>
 
@@ -407,31 +402,31 @@
 
 			      	<div class="col l12 s12">
 			      		<span class="light">*Title of P.G Project:</span>
-			      		<input required placeholder="Title of P.G Project" id="title_of_project" type="text" class="validate" name="title_of_project" maxlength="100" value="{!! $details->pgproject !!}" >
+			      		<input required placeholder="Title of P.G Project" id="title_of_project" type="text" class="validate" name="title_of_project" maxlength="100" >
 			      	</div>
 			      	<div class="col l4 s12">
 			      		<p for="textarea1">Publications:</p><br>
-			      		 <textarea id="details_of_pub1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub1" maxlength="200" value="{!! $details->publications1 !!}"></textarea>
+			      		 <textarea id="details_of_pub1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub1" maxlength="200" ></textarea>
 			      	</div>
 			      	<div class="col l4 s12">
 			      		<p for="textarea1">Publications:</p><br>
-			      		 <textarea id="details_of_pub2" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub2" maxlength="200" value="{!! $details->publications2 !!}"></textarea>
+			      		 <textarea id="details_of_pub2" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub2" maxlength="200" ></textarea>
 			      	</div>
 			      	<div class="col l4 s12">
 			      		<p for="textarea1">Publications:</p><br>
-			      		 <textarea id="details_of_pub3" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub3" maxlength="200" value="{!! $details->publications3 !!}"></textarea>
+			      		 <textarea id="details_of_pub3" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub3" maxlength="200"></textarea>
 			      	</div>
 			      	<div class="col l4 s12">
 			      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
-			      		 <textarea id="awards1" placeholder="Enter Details here.." class="materialize-textarea" name="awards1" maxlength="200" value="{!! $details->awards1 !!}"></textarea>
+			      		 <textarea id="awards1" placeholder="Enter Details here.." class="materialize-textarea" name="awards1" maxlength="200" ></textarea>
 			      	</div>
 			      	<div class="col l4 s12">
 			      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
-			      		 <textarea id="awards2" placeholder="Enter Details here.." class="materialize-textarea" name="awards2" maxlength="200" value="{!! $details->awards2 !!}"></textarea>
+			      		 <textarea id="awards2" placeholder="Enter Details here.." class="materialize-textarea" name="awards2" maxlength="200" ></textarea>
 			      	</div>
 			      	<div class="col l4 s12">
 			      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
-			      		 <textarea id="awards3" placeholder="Enter Details here.." class="materialize-textarea" name="awards3" maxlength="200" value="{!! $details->awards3 !!}"></textarea>
+			      		 <textarea id="awards3" placeholder="Enter Details here.." class="materialize-textarea" name="awards3" maxlength="200" ></textarea>
 			      	</div>
 			      </div>
 
@@ -441,50 +436,50 @@
 			      	<div class="space-small"></div>
 			      	<div class="col s12 l12 emp_details">
 			      		<p for="textarea1">Name & Address of Employer 1</p><br>
-			      		 <textarea id="employer_details_1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_1" value="{!! $details->proexp1 !!}"></textarea>
+			      		 <textarea id="employer_details_1" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_1"></textarea>
 
 			      		 <p>Position Held:</p>
-			      		 <input id="emp_pos_1" type="text" class="validate" name="emp_pos_1" maxlength="100" value="{!! $details->position1 !!}">
+			      		 <input id="emp_pos_1" type="text" class="validate" name="emp_pos_1" maxlength="100" >
 
 			      		 <div class="col l6 s6">
 			      		 	<p>From:</p>
-			      		 	<input id="emp_from_1" type="date" class="validate" name="emp_from_1" maxlength="100" value="{!! $details->from1 !!}">
+			      		 	<input id="emp_from_1" type="date" class="validate" name="emp_from_1" maxlength="100" >
 			      		 </div>
 			      		 <div class="col l6 s6">
 			      		 	<p>To:</p>
-			      		 	<input id="emp_to_1" type="date" class="validate" name="emp_to_1" maxlength="100" value="{!! $details->to1 !!}">
+			      		 	<input id="emp_to_1" type="date" class="validate" name="emp_to_1" maxlength="100" >
 			      		 </div>
 			      	</div>
 			      	<div class="col s12 l12 emp_details">
 			      		<p for="textarea1">Name & Address of Employer 2</p><br>
-			      		 <textarea id="employer_details_2" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2" value="{!! $details->proexp2 !!}"></textarea>
+			      		 <textarea id="employer_details_2" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_2" ></textarea>
 
 			      		 <p>Position Held:</p>
-			      		 <input id="emp_pos_2" type="text" class="validate" name="emp_pos_2" maxlength="100" value="{!! $details->position2 !!}">
+			      		 <input id="emp_pos_2" type="text" class="validate" name="emp_pos_2" maxlength="100" >
 
 			      		 <div class="col l6 s6">
 			      		 	<p>From:</p>
-			      		 	<input id="emp_from_2" type="date" class="validate" name="emp_from_2" maxlength="100" value="{!! $details->from2 !!}">
+			      		 	<input id="emp_from_2" type="date" class="validate" name="emp_from_2" maxlength="100" >
 			      		 </div>
 			      		 <div class="col l6 s6">
 			      		 	<p>To:</p>
-			      		 	<input id="emp_to_2" type="date" class="validate" name="emp_to_2" maxlength="100" value="{!! $details->to2 !!}">
+			      		 	<input id="emp_to_2" type="date" class="validate" name="emp_to_2" maxlength="100" >
 			      		 </div>
 			      	</div>
 			      	<div class="col s12 l12 emp_details">
 			      		<p for="textarea1">Name & Address of Employer 3</p><br>
-			      		 <textarea id="employer_details_3" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3" value="{!! $details->proexp3 !!}"></textarea>
+			      		 <textarea id="employer_details_3" placeholder="Enter Details here.." class="materialize-textarea" name="employer_details_3"></textarea>
 
 			      		 <p>Position Held:</p>
-			      		 <input id="emp_pos_3" type="text" class="validate" name="emp_pos_3" maxlength="100" value="{!! $details->position3 !!}">
+			      		 <input id="emp_pos_3" type="text" class="validate" name="emp_pos_3" maxlength="100" >
 
 			      		 <div class="col l6 s6">
 			      		 	<p>From:</p>
-			      		 	<input id="emp_from_3" type="date" class="validate" name="emp_from_3" maxlength="100" value="{!! $details->from3 !!}">
+			      		 	<input id="emp_from_3" type="date" class="validate" name="emp_from_3" maxlength="100">
 			      		 </div>
 			      		 <div class="col l6 s6">
 			      		 	<p>To:</p>
-			      		 	<input id="emp_to_3" type="date" class="validate" name="emp_to_3" maxlength="100" value="{!! $details->to3 !!}">
+			      		 	<input id="emp_to_3" type="date" class="validate" name="emp_to_3" maxlength="100" >
 			      		 </div>
 			      	</div>
 			      </div>
@@ -505,7 +500,7 @@
 			      <div class="row">
 			      	<div class="col s6 l6">
 			      		<p>Date of Submission</p>
-			      		<input required id="date" type="date" name="date" class="validate" value="{!! $details->date !!}">
+			      		<input required id="date" type="date" name="date" class="validate" >
 			      	</div>
 			      	<div class="upload col l6 s6 ">
 			    <p>Upload Signature</p>
@@ -538,19 +533,13 @@
 	  			</div>
 
 	  		<div class="center">
-	      <a id="preview1" href="../../../phdpreview" target="_blank" class="teal darken-1 waves-effect waves-light btn modal-trigger">Preview Form</a>
-
+	
 	      
-	   {!! Form::submit('Submit', array('class'=>'valid1 teal darken-1 send-btn btn waves-effect waves-light' )) !!}
-	   <a id="save2" class="teal darken-1 send-btn btn waves-effect waves-light center">Save Form</a>
-	   </div>
-	   			
-		 	
-		      {!! Form::close() !!}
+	   
 		      
 		      </div>
 		      </div>
-		      
+		      </div>
 
 
 		       <div id="preview" class="modal">
@@ -590,28 +579,68 @@
 
 		<script type="text/javascript">
 		$(document ).ready(function(){
-			$(".button-collapse").sideNav();
-			$('select').material_select();
-			
+			var a = JSON.parse(localStorage.getItem('data'));
+			console.log(a);
+
 			var x = new Date().getFullYear();
-			console.log(x);
 			var y = x+1;
+			console.log(x);
 			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME ('+ x + '-' + y + ')</h4>';
 			$('.heading').append(p);
+			$(".button-collapse").sideNav();
+			$('select').material_select();
+			$('.main').find('input, textarea, button, select').attr('disabled','disabled');
+			$("textarea#addr_for_commn").val(a['addr_for_commn']);
+			$("textarea#permanent_addr").val(a['permanent_addr']);
+			$("textarea#details_of_pub1").val(a['details_of_pub1']);
+			$("textarea#details_of_pub2").val(a['details_of_pub2']);
+			$("textarea#details_of_pub3").val(a['details_of_pub3']);
+			$("textarea#awards3").val(a['awards1']);
+			$("textarea#awards2").val(a['awards2']);
+			$("textarea#awards1").val(a['awards3']);
+			$("textarea#employer_details_1").val(a['proexp1']);
+			$("textarea#employer_details_2").val(a['proexp2']);
+			$("textarea#employer_details_3").val(a['proexp3']);
+			$('#chalanNo').val(a['chalan_no']);
+			$('#applicationCateg').val(a['appl_categ']);
+			$('#department1').val(a['department1']);
+			$('#department2').val(a['department2']);
+			$('#department3').val(a['department3']);
+			$('#name').val(a['name']);
+			$('#area_of_research').val(a['area_of_research']);
+			$('#email').val(a['email']);
+			$('#father_name').val(a['father_name']);
+			$('#dob').val(a['dob']);
+			$('#nationality').val(a['nationality']);
+			$('#mobile').val(a['mobile']);
+			$('#landline').val(a['landline']);
+			$('#ug_deg').val(a['ug_deg']);
+			$('#ug_branch').val(a['ug_branch']);
+			$('#ug_gpa').val(a['ug_gpa']);
+			$('#ug_yop').val(a['ug_yop']);
+			$('#ug_name_of_inst').val(a['ug_name_of_inst']);
+			$('#ug_name_of_uni').val(a['ug_name_of_uni']);
+			$('#ug_class').val(a['ug_class']);
+			$('#pg_deg').val(a['pg_deg']);
+			$('#pg_branch').val(a['pg_branch']);
+			$('#pg_gpa').val(a['pg_gpa']);
+			$('#pg_yop').val(a['pg_yop']);
+			$('#pg_class').val(a['pg_class']);
+			$('#pg_name_of_inst').val(a['pg_name_of_inst']);
+			$('#pg_name_of_uni').val(a['pg_name_of_uni']);
+			$('#title_of_project').val(a['title_of_project']);
+			$('#emp_pos_1').val(a['emp_pos_1']);
+			$('#emp_pos_2').val(a['emp_pos_2']);
+			$('#emp_pos_3').val(a['emp_pos_3']);
+			$('#emp_to_1').val(a['emp_to_1']);
+			$('#emp_to_2').val(a['emp_to_2']);
+			$('#emp_to_3').val(a['emp_to_3']);
+			$('#emp_from_1').val(a['emp_from_1']);
+			$('#emp_from_2').val(a['emp_from_2']);
+			$('#emp_from_3').val(a['emp_from_3']);
 
-			$("textarea#addr_for_commn").val('{!! $details->addrforcomm !!}');
-			$("textarea#permanent_addr").val('{!! $details->permanentaddr !!}');
-			$("textarea#details_of_pub1").val('{!! $details->publications1 !!}');
-			$("textarea#details_of_pub2").val('{!! $details->publications2 !!}');
-			$("textarea#details_of_pub3").val('{!! $details->publications3 !!}');
-			$("textarea#awards3").val('{!! $details->awards3 !!}');
-			$("textarea#awards2").val('{!! $details->awards2 !!}');
-			$("textarea#awards1").val('{!! $details->awards1 !!}');
-			$("textarea#employer_details_1").val('{!! $details->proexp1 !!}');
-			$("textarea#employer_details_2").val('{!! $details->proexp2 !!}');
-			$("textarea#employer_details_3").val('{!! $details->proexp3 !!}');
 
-			var t='{!! $details->sex !!}';
+			var t=a['sex'];
 			if(t=='male'){
 				$('.sexCheck .select-wrapper input').val(t);
 				$('.sexCheck .select-wrapper ul>li:eq(1)').click();
@@ -621,7 +650,7 @@
 				$('.sexCheck .select-wrapper ul>li:eq(2)').click();
 			}
 
-			t='{!! $details->applicationCategory !!}';
+			t=a['applicationCateg'];
 			if(t=='On Campus'){
 				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(2)').click();
@@ -647,7 +676,7 @@
 				$('.applCheck .select-wrapper ul>li:eq(8)').click();
 			}
 
-			t='{!! $details->ugclass !!}';
+			t=a['ug_class'];
 			if(t=='Honours'){
 				$('.ugclassCheck .select-wrapper input').val(t);
 				$('.ugclassCheck .select-wrapper ul>li:eq(1)').click();
@@ -667,7 +696,7 @@
 				$('.ugclassCheck .select-wrapper ul>li:eq(4)').click();
 			}
 
-			t='{!! $details->pgclass !!}';
+			t=a['pg_class'];
 			if(t=='Honours'){
 				$('.pgclassCheck .select-wrapper input').val(t);
 				$('.pgclassCheck .select-wrapper ul>li:eq(1)').click();
@@ -687,7 +716,7 @@
 				$('.pgclassCheck .select-wrapper ul>li:eq(4)').click();
 			}
 
-			t='{!! $details->maritalStatus !!}';
+			t=a['marital_status'];
 			
 			if(t=='single'){
 				$('.statusCheck .select-wrapper input').val(t);
@@ -698,7 +727,7 @@
 				$('.statusCheck .select-wrapper ul>li:eq(1)').click();
 			}
 
-			t='{!! $details->PH !!}';
+			t=a['ph'];
 			if(t=='no'){
 				$('.pdCheck .select-wrapper input').val(t);
 				$('.pdCheck .select-wrapper ul>li:eq(2)').click();
@@ -707,18 +736,14 @@
 				$('.pdCheck .select-wrapper input').val(t);
 				$('.pdCheck .select-wrapper ul>li:eq(1)').click();
 			}
-			t='{!! $details->applicationCateg !!}';
+			t=a['applicationCateg'];
 			if(t!=''){
 				$('.appCheck .select-wrapper input').val(t);	
 			}
 			
 			$('.categCheck .select-wrapper ul>li:eq(1)').click();
 
-			$('#department1').val(department('{!! $details->dept1 !!}'));
-			$('#department2').val(department('{!! $details->dept2 !!}'));
-			$('#department3').val(department('{!! $details->dept3 !!}'));
-
-
+			
 
 
 			function department(t)

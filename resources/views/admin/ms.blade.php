@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta id="token" name="csrf-token" content="{{ csrf_token() }}">
@@ -17,14 +17,16 @@
   
 </head>
 <body>
-	<header style="height: 25vh;
-	padding: 0px;
-	margin: 0px;
-	background-image: url('{{URL::asset('assets/images/header.png')}}');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: #004d40;
-	background-size: contain;"></header>
+
+  <header style="height: 25vh;
+  padding: 0px;
+  margin: 0px;
+  background-image: url('{{URL::asset('assets/images/header.png')}}');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #004d40;
+  background-size: contain;"></header>
+
   
   <nav>
     <div class="nav-wrapper ">
@@ -62,10 +64,9 @@
   <div class="space-large"></div>
   <div class="container main">
     <div class="row candidates">
-    @for($i = 0; $i < sizeof($data['candidates']); $i++)
-        
+    @for($i = 0; $i < sizeof($data['candidates']); $i++)        
         @if(!$data['candidates'][$i]->deleted)
-     <div class="{!! $data['candidates'][$i]->registrationNumber !!} col l5 offset-l1 s5 offset-s1" } data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
+     <div class="{!! $data['candidates'][$i]->registrationNumber !!} col l5 offset-l1" } data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
         @if($data['candidates'][$i]->accepted)
         <div class="card center border">
         @else
@@ -74,7 +75,6 @@
           <div class=" waves-effect waves-block waves-light">  
           </div>
           <div class="card-content">
-
             <span class="card-title activator grey-text text-darken-4">Candidate's Card</span>
             <div class="row">
               <div class="col l12 s12">
@@ -83,8 +83,7 @@
               <div class="col l12 s12">
                 <!-- <p>Date of Submission:</p> -->
               </div>
-            </div>
-           
+            </div>           
             <div class="space-small center">
             </div>
             <div class="center">
@@ -97,6 +96,7 @@
           </div>
           
           </div>
+
           <div id="modal{!! $i !!}" class="modal l8">
           <div class="modal-content">
           <div class="container">
@@ -114,7 +114,7 @@
           <div class="row">
             <h5>Application Details:</h5>
             <div class="col l6">
-              p><b>Application Category:</b> {!! $data['candidates'][$i]->applicationCategory !!}</p>
+              <p><b>Application Category:</b> {!! $data['candidates'][$i]->applicationCategory !!}</p>
             </div>
             <div class="col l6">
               <p><b>Department:</b> {!! $data['candidates'][$i]->dept !!}</p>
@@ -227,10 +227,15 @@
       </div>
       </div>
         </div>
-        
+        </div>
+    
       @endif
       @endfor
     </div>
+ </div>
+ </div>
+
+  <div class="row">
     <div class="center">
       <ul class="pagination">
     <li class="disabled"><a href={!! $data["candidates"]->previousPageUrl()!!}><i class="material-icons">chevron_left</i></a></li>
@@ -238,11 +243,13 @@
     <li class="waves-effect"><a href={!! $data["candidates"]->nextPageUrl()!!}><i class="material-icons">chevron_right</i></a></li>
   </ul>
   </div>
+</div>
    <div class="space-medium"></div>
 <div class="center">
    <a class="waves-effect waves-light btn" href="phd">View PhD applicants</a>
   </div>
-   </div>
+
+
 <div class="space-large"></div>
 
 <footer class="page-footer teal darken-4">

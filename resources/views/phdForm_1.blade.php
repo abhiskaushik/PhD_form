@@ -24,6 +24,7 @@
 			</div>
 		</div>
 
+
 		<header></header>
 
 		
@@ -45,7 +46,10 @@
 	  </nav>
 	  
 	  <div class="space-medium"></div>
-	<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME (2016 - 2017)</h4>
+	  <div class="heading">
+		  	
+	  </div>
+	
 		<div class="container main">
 			<div class="row text-center">
 				
@@ -250,7 +254,7 @@
 	  		<a class="valid teal darken-1 send-btn btn waves-effect waves-light">Submit</a>
 		 </div>
 
-		 	    <div id="regNo" class="modal">	
+		 	    <div id="regNo" class="modal center">	
 		 	    	
 		      	<div class="modal-content">
 		      		<div class="regno"></div>
@@ -259,7 +263,7 @@
 		      </div>
 
 		      
-		      <div class="modal" id="error">
+		      <div class="modal center" id="error">
 		      	<div class="modal-content">
 		      		<div class="error"></div>
 		      	</div>
@@ -268,7 +272,7 @@
 		      	</div>
 		      </div>	  
 
-		      <div id="preview" class="modal">	
+		      <div id="preview center" class="modal">	
 		      </div>
 
 	<div class="space-large"></div>
@@ -306,12 +310,11 @@
 			$(".button-collapse").sideNav();
 			$('select').material_select();
 			
-			$(document).ajaxStart(function(){
-				$('#wait').css('display','block');
-			});
-			$(document).ajaxComplete(function(){
-			        $("#wait").css("display", "none");
-			    });
+			var x = new Date().getFullYear();
+			console.log(x);
+			var y = x+1;
+			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME ('+ x + '-' + y+ ')</h4>';
+			$('.heading').append(p);
 		});
 
 		</script>
