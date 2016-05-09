@@ -192,11 +192,11 @@ $(document).ready(function(){
 	            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 	        }
 	    });
-		
+
 		var baseurl = 'http://admission.nitt.edu';
 		var url = '/save' + data.checker;//route to the controller goes here
 		$('.blur').addClass('activated');
-	        	$('.preloader').show();
+		    $('.preloader').show();
 		$.ajax(
 	    {
 	        type: "POST",
@@ -206,7 +206,6 @@ $(document).ready(function(){
 	        success: function(data){
 	        	$('.blur').removeClass('activated');
 	        	$('.preloader').hide();
-	        	alert('hey');
 	        	if(data==0){
 	        		alert('User already exists!');
 	        	}

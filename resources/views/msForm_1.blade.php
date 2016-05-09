@@ -21,7 +21,11 @@
 	</head>
 	<body>
 
-		<!-- <header style="height:25vh; padding:0px; margin:0px; background-image:{{URL::asset('assets/images/header.png')}}; background-color: #004d40; background-position:center; "></header> -->
+		<div class="blur">
+			<div class="center preloader" hidden="true">
+				<img src="{{URL::asset('assets/images/preloader.gif')}}">
+			</div>
+		</div>
 		<header></header>
 		<nav>
 	    <div class="nav-wrapper ">
