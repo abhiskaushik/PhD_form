@@ -39,7 +39,7 @@ class MsController extends Controller
 	        'nationality' => 'required',
 	        'addr_for_commn' => 'required|max:200',
             'permanent_addr' =>'required|max:200',
-            'email' => 'required|email|unique:ms',
+            'email' => 'required|email',
             'mobile' => 'required',
             // 'landline' => 'required',
 	        'ug_deg' => 'required',
@@ -63,8 +63,8 @@ class MsController extends Controller
 	        'gpa4' => 'required',
 	        'gpa5' => 'required',
 	        'gpa6' => 'required',
-	        'gpa7' => 'required',
-            'g-recaptcha-response' => 'required|captcha'
+	        'gpa7' => 'required'
+            // 'g-recaptcha-response' => 'required|captcha'
 	        // 'gpa8' => 'required',
             // 'title_of_project' => 'required',
             // 'details_of_pub' => 'required|max:30',

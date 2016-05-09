@@ -40,7 +40,7 @@ class PhdController extends Controller
 	        'nationality' => 'required',
 	        'addr_for_commn' => 'required|max:200',
             'permanent_addr' =>'required|max:200',
-            'email' => 'required|email|unique:phd',
+            'email' => 'required|email',
             'mobile' => 'required',
             // 'landline' => 'required',
 	        'ug_deg' => 'required',
@@ -54,8 +54,8 @@ class PhdController extends Controller
             'pg_class' => 'required|in:Honours,Distinction,First,Second',
             'pg_name_of_inst' => 'required',
             'pg_name_of_uni' => 'required',
-            'pg_yop' => 'required',
-            'g-recaptcha-response' => 'required|captcha'              
+            'pg_yop' => 'required'
+            // 'g-recaptcha-response' => 'required|captcha'              
     	);
 
         

@@ -9,11 +9,10 @@
 		<title>Ph.d Registration Form</title>
 		<link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
 		<link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
-		<link rel="shortcut icon" href="{{URL::asset('assets/logo.jpg')}}"> 
 		<!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 		<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 		<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
-		<script src="{{URL::asset('assets/js/code.js')}}"></script>
+		<script src="{{URL::asset('assets/js/common.js')}}"></script>
 		<script src="{{URL::asset('assets/js/savephd.js')}}"></script>
 		<script src="{{URL::asset('assets/js/preview.js')}}"></script>
 		
@@ -24,14 +23,9 @@
 				<img src="{{URL::asset('assets/images/preloader.gif')}}">
 			</div>
 		</div>
-		<header style="height: 25vh;
-	padding: 0px;
-	margin: 0px;
-	background-image: url('{{URL::asset('assets/images/header.png')}}');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: #004d40;
-	background-size: contain;"></header>
+
+		<header></header>
+
 		
 		<nav>
 	    <div class="nav-wrapper ">

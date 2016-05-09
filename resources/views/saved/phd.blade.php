@@ -13,7 +13,7 @@
 		<!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 		<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 		<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
-		<script src="{{URL::asset('assets/js/code.js')}}"></script>
+		<script src="{{URL::asset('assets/js/common.js')}}"></script>
 		<script src="{{URL::asset('assets/js/savephd.js')}}"></script>
 		<script src="{{URL::asset('assets/js/preview.js')}}"></script>
 		
@@ -533,10 +533,7 @@
 			      </div>
 			      
 					<div class="space-medium"></div>
-					<div class="row">
-	   			<div class="captcha center l6 offset-l3">
-						{!! app('captcha')->display(); !!}      	
-			     </div>  
+					<div class="row"> 
 			     <p>(*) indicates that it's a required field.</p>     
 	  			</div>
 
