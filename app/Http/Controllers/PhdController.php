@@ -69,11 +69,13 @@ class PhdController extends Controller
         else
         {
 
-        	$bool = Phd::where('name' , $request->input('name'))
+        	$bool1 = Phd::where('name' , $request->input('name'))
         						->where('addrforcomm' , $request->input('addr_for_commn'))
         						->first();
+            $bool2 = Phd::where('registrationNumber' , $request->get('regNo'))
+                                ->first();
 
-        	if($bool == NULL){
+        	if($bool1 == NULL && $bool2 == NULL){
             $details = array(
                 'date' => $request->input('date'),
                 'date_of_sub' => $request->input('date_of_sub'),

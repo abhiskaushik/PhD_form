@@ -35,12 +35,12 @@
 	      <a href="#" details-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 	      <ul class="hide-on-med-and-down">
 	        <li><a href="/home">Home</a></li>
-	        <li><a href="/ms">M.S Admissions</a></li>
+	        <li><a href="/ms">M.S. Admissions</a></li>
 	        <li><a href="/contact">Contact</a></li>
 	      </ul>
 	      <ul class="side-nav" id="mobile-demo">
 	       <li><a href="/home">Home</a></li>
-	        <li><a href="/ms">M.S Admissions</a></li>
+	        <li><a href="/ms">M.S. Admissions</a></li>
 	        <li><a href="/contact">Contact</a></li>
 	      </ul>
 	    </div>
@@ -49,7 +49,9 @@
 	 
 		<div class="container main">
 			<div class="row text-center">
+
 				<div class="heading"></div>
+
 				<div class="space-medium"></div>
 				<div class="divider"></div><div class="divider"></div><br>
 				<b>*Note:</b> Upload all the necessary files including your image and image of the signature right before the final submission.
@@ -249,7 +251,7 @@
 
 			      <div class="row">
 			        <div class="input-field col l6 pdCheck">
-			      		  <span class="light">*Person With Disability(P.W.D):</span><br>
+			      		  <span class="light">*Person with Disability(P.W.D):</span><br>
 			      
 			         	<select required name="ph" id="ph">
 					      <option value="" disabled selected>Choose your option</option>

@@ -83,11 +83,13 @@ class MsController extends Controller
         else
         {
 
-        	$bool = Ms::where('name' , $request->get('name'))
+        	$bool1 = Ms::where('name' , $request->get('name'))
         						->where('addrforcomm' , $request->get('addr_for_commn'))
         						->first();
+            $bool2 = Ms::where('registrationNumber' , $request->get('regNo'))
+                                ->first();
 
-        	if($bool == NULL){
+        	if($bool1 == NULL && $bool2 == NULL){
             $details = array(
                 'date' => $request->get('date'),
                 'date_of_sub' => $request->get('date_of_sub'),

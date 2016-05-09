@@ -31,12 +31,12 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="home">Home</a></li>
-        <li><a href="ms">M.S. Applicants</a></li>
+        <li><a href="../ms">M.S. Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="home">Home</a></li>
-        <li><a href="ms">M.S. Applicants</a></li>
+        <li><a href="../ms">M.S. Applicants</a></li>
         <li><a href="/logout">Logout</a></li>
       </ul>
     </div>
@@ -59,6 +59,7 @@
   
 </div>
 <div class="hide space-large  " hidden="true"></div>
+    <h5 class="center">{!! $data['dept'] !!}</h5>
  
   <div class="space-large"></div>
   <div class="container main">
@@ -265,7 +266,7 @@
 
    <div class="space-medium"></div>
 <div class="center">
-   <a class="waves-effect waves-light btn" href="ms">View M.S. applicants</a>
+   <a class="waves-effect waves-light btn" href="../ms">View M.S. applicants</a>
   </div>
    </div>
 <div class="space-large"></div>

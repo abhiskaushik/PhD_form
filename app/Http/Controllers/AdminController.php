@@ -123,12 +123,14 @@ class AdminController extends Controller
         }
         else
         {
-            $rules1 = ['deleted' => false, 'dept1' => Session::get('dept')];
-            $rules2 = ['deleted' => false, 'dept2' => Session::get('dept')];
-            $rules3 = ['deleted' => false, 'dept3' => Session::get('dept')];
-
-            $data = self::finalView($phdormsc, $rules1, $rules2, $rules3);
-            return View::make('admin.'.$phdormsc)->with('data', $data);
+            if($phdormsc == 'phd')
+            {
+                return redirect('admin/phd/'.Session::get('dept'));
+            }
+            else
+            {
+                return redirect('admin/ms/'.Session::get('dept'));
+            }
         }
     }
 
@@ -139,6 +141,7 @@ class AdminController extends Controller
         $rules3 = ['deleted' => false, 'dept3' => $dept];
 
         $data = self::finalView($phdormsc, $rules1, $rules2, $rules3);
+        $data['dept'] = self::department($dept);
         return View::make('admin.'.$phdormsc)->with('data', $data);
     }
 
@@ -159,8 +162,7 @@ class AdminController extends Controller
                             'ug' => $ugDetails,
                             'pg' => $pgDetails,
                             'others' => $otherDetails,
-                            'pro' => $proDetails,
-                            'dept' => Session::get('dept')
+                            'pro' => $proDetails
                             );
             return $data;
         }
@@ -178,8 +180,7 @@ class AdminController extends Controller
             $data = array('candidates' => $candidates,
                             'ug' => $ugDetails,
                             'scores' => $scores,
-                            'pro' => $proDetails,
-                            'dept' => Session::get('dept')
+                            'pro' => $proDetails
                             );
             return $data;
         }

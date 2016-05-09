@@ -58,7 +58,7 @@ class SaveController extends Controller
             }
         }
         $applNo = self::randomno('PHD', $reg_number);
-        $reg_number = $reg_number.$applNo;
+        $reg_number = $reg_number.$rowNo.'/'.$applNo;
         SavePhd::where('applNo', $rowNo)
                     ->update(['registrationNumber' => $reg_number]);
 
@@ -120,7 +120,7 @@ class SaveController extends Controller
             }
         }
         $applNo = self::randomno('PHD', $reg_number);
-        $reg_number = $reg_number.$applNo;
+        $reg_number = $reg_number.$rowNo.'/'.$applNo;
         SaveMs::where('applNo', $rowNo)
                     ->update(['registrationNumber' => $reg_number]);
 

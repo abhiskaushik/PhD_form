@@ -62,6 +62,10 @@
       <div class="col l4"> <a href="/admin/phd/MA" class="btn teal waves">Mathematics</a> </div>  
       <div class="col l4"> <a href="/admin/phd/MME" class="btn teal waves">M.M.E.</a> </div>
       <div class="col l4"> <a href="/admin/phd/PR" class="btn teal waves">Production Engg.</a> </div>
+      <div class="space-large"></div>
+      <div class="col l4"> <a href="/admin/phd/IC" class="btn teal waves">I.C.E.</a> </div>  
+      <div class="col l4"> <a href="/admin/phd/PH" class="btn teal waves">Physics.</a> </div>
+      <div class="col l4"> <a href="/admin/phd/MS" class="btn teal waves">Management Studies.</a> </div>
     </div>
   </div>
   

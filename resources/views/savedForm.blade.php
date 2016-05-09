@@ -31,20 +31,22 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/home">PhD/M.S Admissions</a></li>
+        <li><a href="/home">PhD./M.S. Admissions</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/home">PhD/M.S Admissions</a></li>
+        <li><a href="/home">PhD./M.S. Admissions</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <div class="space-medium"></div>
-  <div class="container center main">
-    <p>
+
+  <div class="container center">
+    <p class="large">
+
       Welcome to NITT PhD and M.S application portal!
     </p>
     <div class="space-large"></div>
