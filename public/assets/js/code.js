@@ -17,6 +17,8 @@ $(document).ready(function(){
 	var count = 0;
 	//validating via front end 
 	$('.valid').click(function(){
+		
+		
 		var data={};
 		data.department1 = $('#department1 option:selected').val();
 		data.department2 = $('#department2 option:selected').val();
@@ -182,6 +184,7 @@ $(document).ready(function(){
 			return false;
 		}
 
+			
 		$.ajaxSetup(
 	    {
 	        headers:
@@ -189,8 +192,9 @@ $(document).ready(function(){
 	            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 	        }
 	    });
-		
-		
+		$('.blurr').addClass('blurred');
+		$('.blurr').find('input, textarea, button, select').attr('disabled','disabled');
+		$('.valid').hide();
 		var baseurl = 'http://admission.nitt.edu';
 		var url = '/save' + data.checker;//route to the controller goes here
 		$.ajax(
@@ -200,6 +204,8 @@ $(document).ready(function(){
 	        data: data,
 	        dataType: "json",
 	        success: function(data){
+	        	$('.blurr').removeClass('blurred');
+	        	alert('hey');
 	        	if(data==0){
 	        		alert('User already exists!');
 	        	}

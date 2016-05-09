@@ -19,7 +19,7 @@
 		
 	</head>
 	<body >
-		<div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='{{URL::asset('assets/images/preloader.gif')}}' width="64" height="64" /><br>Loading..</div>
+		<div class="blurr">
 		<header></header>
 		
 		<nav>
@@ -295,11 +295,12 @@
 	          </div>
 	        </footer>
 	            
-
+	        </div>
 		<script type="text/javascript">
 		$(document ).ready(function(){
 			$(".button-collapse").sideNav();
 			$('select').material_select();
+			
 			$(document).ajaxStart(function(){
 				$('#wait').css('display','block');
 			});

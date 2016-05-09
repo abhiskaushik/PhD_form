@@ -12,6 +12,17 @@ body{
 	margin: 0px;
 	padding: 0px;
 }
+.blurred{
+	background-color: black;
+	z-index: 99999;
+	opacity: 0.15;
+	 -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+}
 .space-small{
 	height: 20px;
 }
