@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta id="token" name="csrf-token" content="{{ csrf_token() }}">
@@ -17,8 +17,14 @@
   
 </head>
 <body>
-	<header> 
-  </header>
+  <header style="height: 25vh;
+  padding: 0px;
+  margin: 0px;
+  background-image: url('{{URL::asset('assets/images/header.png')}}');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #004d40;
+  background-size: contain;"></header>
   
   <nav>
     <div class="nav-wrapper ">
@@ -54,7 +60,7 @@
 </div>
 <div class="hide space-large  " hidden="true"></div>
   <div class="space-large"></div>
-  <div class="container">
+  <div class="container main">
     <div class="row candidates">
     @for($i = 0; $i < sizeof($data['candidates']); $i++)
         
@@ -225,6 +231,7 @@
       @endif
       @endfor
     </div>
+  </div class="row">
     <div class="center">
       <ul class="pagination">
     <li class="disabled"><a href={!! $data["candidates"]->previousPageUrl()!!}><i class="material-icons">chevron_left</i></a></li>
@@ -232,11 +239,14 @@
     <li class="waves-effect"><a href={!! $data["candidates"]->nextPageUrl()!!}><i class="material-icons">chevron_right</i></a></li>
   </ul>
   </div>
+</div>
    <div class="space-medium"></div>
 <div class="center">
    <a class="waves-effect waves-light btn" href="phd">View PhD applicants</a>
   </div>
    </div>
+ </div><div>
+
 <div class="space-large"></div>
 
 <footer class="page-footer teal darken-4">
