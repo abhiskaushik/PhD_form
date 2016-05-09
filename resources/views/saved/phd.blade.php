@@ -526,10 +526,7 @@
 			      </div>
 			      
 					<div class="space-medium"></div>
-					<div class="row">
-	   			<div class="captcha center l6 offset-l3">
-						{!! app('captcha')->display(); !!}      	
-			     </div>  
+					<div class="row"> 
 			     <p>(*) indicates that it's a required field.</p>     
 	  			</div>
 

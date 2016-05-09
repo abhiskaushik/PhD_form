@@ -40,7 +40,7 @@ class PhdController extends Controller
 	        'nationality' => 'required',
 	        'addr_for_commn' => 'required|max:200',
             'permanent_addr' =>'required|max:200',
-            'email' => 'required|email|unique:phd',
+            'email' => 'required|email',
             'mobile' => 'required',
             // 'landline' => 'required',
 	        'ug_deg' => 'required',
