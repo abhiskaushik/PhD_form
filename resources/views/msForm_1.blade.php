@@ -32,12 +32,12 @@
 	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 	      <ul class="hide-on-med-and-down">
 	        <li><a href="/home">Home</a></li>
-	        <li><a href="/phdinstructions">PhD Admissions</a></li>
+	        <li><a href="/phdinstructions">PhD. Admissions</a></li>
 	        <li><a href="/contact">Contact</a></li>
 	      </ul>
 	      <ul class="side-nav" id="mobile-demo">
 	       <li><a href="/home">Home</a></li>
-	        <li><a href="/phdinstructions">PhD Admissions</a></li>
+	        <li><a href="/phdinstructions">PhD. Admissions</a></li>
 	        <li><a href="/contact">Contact</a></li>
 	      </ul>
 	    </div>
@@ -185,7 +185,7 @@
 
 			      <div class="row">
 			        <div class="input-field col l6">
-			      		  <span class="light">*Person With Disability(PWD):</span><br>
+			      		  <span class="light">*Person with Disability(PWD):</span><br>
 			         	<select required name="ph" id="ph">
 					      <option value="" disabled selected>Choose your option</option>
 					      <option value="yes">Yes</option>

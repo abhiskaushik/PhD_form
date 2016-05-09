@@ -22,12 +22,12 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/home">PhD/M.S Admissions</a></li>
+        <li><a href="/home">PhD./M.S. Admissions</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/home">PhD/M.S Admissions</a></li>
+        <li><a href="/home">PhD./M.S. Admissions</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
     </div>
@@ -35,19 +35,10 @@
 
   <div class="space-medium"></div>
   <div class="container">
-  	<div class="row">
-      <h5>M.S. and Ph.D. Admissions Committee</h5>
-      <ul>
-        <li> Dr. R. Karvembu - Chairperson</li>
-        <li>Dr. P. Muthuchidambaranathan - Member</li>
-        <li>Dr. V. Arul Mozhi Selvan - Member </li>
-      </ul>
-    </div>
     <div class="space-small"></div>
     <div class="row">
       <h5>Contact Information</h5>
       <p>
-        Dr. R. Karvembu - Chairperson<br>
         Office of Dean Academic<br>
         National Institute of Technology,<br>
         Tiruchirappalli - 620015<br>

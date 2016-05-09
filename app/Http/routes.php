@@ -26,7 +26,7 @@ Route::get('admin/ms/home', function () {
 Route::get('admin/phd/home', function () {
     return view('admin.all.phd.dept');
 });
-Route::get('admin/{phdormsc}/{dept}', 'AdminController@adminall');
+
 Route::group(['middleware' => 'adminauth'], function () {
     Route::get('admin/home', function()
         {
@@ -34,6 +34,7 @@ Route::group(['middleware' => 'adminauth'], function () {
         });
     Route::get('admin/{phdormsc}', 'AdminController@adminView');
     Route::get('admit/{phdormsc}/{regNo}', 'AdminController@admitCard');
+    Route::get('admin/{phdormsc}/{dept}', 'AdminController@adminall');
     Route::post('delete', 'AdminController@deleted' );
     Route::post('accept', 'AdminController@accepted');
     Route::get('logout', 'AdminController@logout');

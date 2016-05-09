@@ -27,19 +27,19 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/phd">PhD Admissions</a></li>
+        <li><a href="/phd">PhD. Admissions</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/phd">PhD Admissions</a></li>
+        <li><a href="/phd">PhD. Admissions</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <div class="space-medium"></div>
-  <h4 class="center">APPLICATION FOR ADMISSION TO M.S PROGRAMME (2016 - 2017)</h4>
+  <h4 class="center">APPLICATION FOR ADMISSION TO M.S. PROGRAMME (2016 - 2017)</h4>
 	<div class="container">
 		<div class="row text-center">
 			
@@ -215,7 +215,7 @@
 
 		      <div class="row">
 		        <div class="input-field col l6 pdCheck">
-		      		  <span class="light">*Person With Disability(PWD):</span><br>
+		      		  <span class="light">*Person with Disability(PWD):</span><br>
 		         	<select required name="ph" id="ph">
 				      <option value="" disabled selected>Choose your option</option>
 				      <option value="yes">Yes</option>

@@ -21,12 +21,12 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/home">PhD/M.S Admissions</a></li>
+        <li><a href="/home">PhD./M.S. Admissions</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/home">PhD/M.S Admissions</a></li>
+        <li><a href="/home">PhD./M.S. Admissions</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
     </div>
@@ -50,7 +50,7 @@
               <li>Stage 3: Other details</li>
             </ul>
           </li>
-          <li>Application fees should be paid through  <a href="https://www.onlinesbi.com/prelogin/icollecthome.htm?corpID=88587">State Bank iCollect</a> before the submission of the application form.</li>
+          <li>Application fees should be paid through  <a href="https://www.onlinesbi.com/prelogin/icollecthome.htm?corpID=88587">State Bank Collect</a> before the submission of the application form.</li>
           <li>If any information given in the application is found incorrect, the application will be rejected.</li>
         </ol>
       </div>

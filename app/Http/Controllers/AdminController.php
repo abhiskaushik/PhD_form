@@ -162,7 +162,7 @@ class AdminController extends Controller
                             'pg' => $pgDetails,
                             'others' => $otherDetails,
                             'pro' => $proDetails,
-                            'dept' => Session::get('dept')
+                            'dept' => self::department(Session::get('dept'))
                             );
             return $data;
         }
@@ -181,7 +181,7 @@ class AdminController extends Controller
                             'ug' => $ugDetails,
                             'scores' => $scores,
                             'pro' => $proDetails,
-                            'dept' => Session::get('dept')
+                            'dept' => self::department(Session::get('dept'))
                             );
             return $data;
         }
