@@ -37,10 +37,25 @@
       </ul>
     </div>
   </nav>
+  
+  <div class="container search" hidden="true">
 
-  <div class="search">
-        <input type="text" id="search" placeholder="search" />
+      <form class="searchbox">
+          <input id="search" type="search" placeholder="Search.." name="search" class="searchbox-input" required>
+          
+
+
+      </form>
+      
   </div>
+  <div class="search-pad">
+  <div class="box">
+       <i class="material-icons">search</i><a class="box-a"> Search </a>
+   </div>
+  
+</div>
+<div class="hide space-large  " hidden="true"></div>
+ 
   <div class="space-large"></div>
   <div class="container">
     <div class="candidates row">
@@ -70,74 +85,149 @@
 
           <div id="modal{!! 0 !!}" class="modal l8">
           <div class="modal-content">
+          <div class="container">
           <h4>Candidate's Form</h4>
-          
-          <p><b>Registration Number:</b> {!! $data['candidates'][$i]->registrationNumber !!}</p>
-          <p><b>Date of Registration:</b> {!! $data['candidates'][$i]->dateOfReg !!}
+          <div class="row">
+            <div class="col l6">
+              <p><b>Registration Number:</b> {!! $data['candidates'][$i]->registrationNumber !!}</p>
+            </div>
+            <div class="col l6">
+              <p><b>Date of Registration:</b> {!! $data['candidates'][$i]->dateOfReg !!}
           </p>
-         
-          <p><b>Application Category:</b> {!! $data['candidates'][$i]->applicationCategory !!}</p>
-          <p><b>Department:</b> {!! $data['candidates'][$i]->dept !!}</p>
-          <p><b>Email Id:</b> {!! $data['candidates'][$i]->email !!}</p>
-          <p><b>Area of Research:</b> {!! $data['candidates'][$i]->areaOfResearch !!}</p>
-          <p><b>Name of Candidate:</b> {!! $data['candidates'][$i]->
-          name !!}</p>
-          <p><b>Email Id:</b> {!! $data['candidates'][$i]->email !!}</p>
-          <p><b>Father's Name:</b> {!! $data['candidates'][$i]->fatherName !!}</p>
-          <p><b>Date of Birth:</b> {!! $data['candidates'][$i]->dob !!}</p>
-          <p><b>Category:</b> {!! $data['candidates'][$i]->category !!}</p>
-          <p><b>Sex :</b> {!! $data['candidates'][$i]->sex !!}</p>
-          <p><b>Marital Status: </b>{!! $data['candidates'][$i]->maritalStatus !!}</p>
-          <p><b>Physically Handicapped:</b> {!! $data['candidates'][$i]->PH !!}</p><!-- wtf -->
-          <p><b>Nationality:</b> {!! $data['candidates'][$i]->nationality !!}</p>
-          <p><b>Address for Communication:</b> {!! $data['candidates'][$i]->addrforcomm !!}</p>
-          <p><b>Permanent Address:</b> {!! $data['candidates'][$i]->permanentaddr !!}</p>
-          <p><b>Mobile Number:</b> {!! $data['candidates'][$i]->mobile !!}</p>
-          <p><b>Landline Number:</b> {!! $data['candidates'][$i]->landline !!}</p>
-
-          <p><b>Undergraduate Degree:</b> {!! $data['ug'][$i]->degreeName !!}</p>
-          <p><b>Undergraduate Branch:</b> {!! $data['ug'][$i]->branch !!}</p>
-          <p><b>Undergraduate G.P.A:</b> {!! $data['ug'][$i]->gpa !!}</p>
-          <p><b>Undergraduate Class:</b> {!! $data['ug'][$i]->class !!}</p>
-          <p><b>Undergraduate Name of Institution:</b> {!! $data['ug'][$i]->institutionName !!}</p>
-          <p><b>Undergraduate Name of University:</b> {!! $data['ug'][$i]->universityName !!}</p>
-          <p><b>Undergraduate Year of Passing:</b> {!! $data['ug'][$i]->yop !!}</p>
-
-          <p><b>Post-graduate Degree:</b> {!! $data['pg'][$i]->degreeName !!}</p>
-          <p><b>Post-graduate Branch:</b> {!! $data['pg'][$i]->branch !!}</p>
-          <p><b>Post-graduate G.P.A:</b> {!! $data['pg'][$i]->gpa !!}</p>
-          <p><b>Post-graduate Class:</b> {!! $data['pg'][$i]->class !!}</p>
-          <p><b>Post-graduate Name of Institution:</b> {!! $data['pg'][$i]->institutionName !!}</p>
-          <p><b>Post-graduate Name of University:</b> {!! $data['pg'][$i]->universityName !!}</p>
-          <p><b>Post-graduate Year of Passing:</b> {!! $data['pg'][$i]->yop !!}</p>
-          @if($data['others'][$i]->exam)
-          <p><b>Exam Name:</b> {!! $data['others'][$i]->exam !!}</p>
-          @endif
-          <p><b>Discipline:</b> {!! $data['others'][0]->discipline !!}</p>
-          <p><b>Score:</b> {!! $data['others'][0]->score !!}</p>
-          <p><b>Rank:</b> {!! $data['others'][0]->rank !!}</p>
-          <p><b>Title of Project:</b> {!! $data['others'][0]->pgproject !!}</p>
-          <p><b>Details of Publication 1:</b> {!! $data['others'][0]->publications1 !!}</p>
-          <p><b>Details of Publication 2:</b> {!! $data['others'][0]->publications2 !!}</p>
-          <p><b>Details of Publication 3:</b> {!! $data['others'][0]->publications3 !!}</p>
-          <p><b>Awards1:</b> {!! $data['others'][0]->awards1 !!}</p>
-          <p><b>Awards2:</b> {!! $data['others'][0]->awards2 !!}</p>
-          <p><b>Awards3:</b> {!! $data['others'][0]->awards3 !!}</p>
-
-          <p><b>Employer Details 1:</b> {!! $data['pro'][0]->proexp1 !!}</p>
-          <p><b>Position at Work 1:</b>{!! $data['pro'][0]->position1 !!}</p>
-          <p><b>From 1:</b>{!! $data['pro'][0]->from1 !!}</p>
-          <p><b>To 1:</b>{!! $data['pro'][0]->to1 !!}</p>
-          <p><b>Employer Details 2:</b> {!! $data['pro'][0]->proexp2 !!}</p>
-          <p><b>Position at Work 1:</b>{!! $data['pro'][0]->position2 !!}</p>
-          <p><b>From 1:</b>{!! $data['pro'][0]->from2 !!}</p>
-          <p><b>To 1:</b>{!! $data['pro'][0]->to2 !!}</p>
-          <p><b>Employer Details 3:</b> {!! $data['pro'][0]->proexp3 !!}</p>
-          <p><b>Position at Work 1:</b>{!! $data['pro'][0]->position3 !!}</p>
-          <p><b>From 1:</b>{!! $data['pro'][0]->from3 !!}</p>
-          <p><b>To 1:</b>{!! $data['pro'][0]->to3 !!}</p>
+            </div>
+          </div>
           
-          <p><b>Submission Date:</b> {!! $data['others'][0]->subdate !!}</p>
+          <div class="row">
+            <h5>Application Details:</h5>
+            <div class="col l6">
+              p><b>Application Category:</b> {!! $data['candidates'][$i]->applicationCategory !!}</p>
+            </div>
+            <div class="col l6">
+              <p><b>Department:</b> {!! $data['candidates'][$i]->dept !!}</p>
+            </div>
+          </div>
+          <div class="row">
+            <h5>Personal Details:</h5>
+            <div class="col l6">
+              <p><b>Email Id:</b> {!! $data['candidates'][$i]->email !!}</p>
+              <p><b>Name of Candidate:</b> {!! $data['candidates'][$i]->name !!}</p>
+              <p><b>Father's Name:</b> {!! $data['candidates'][$i]->fatherName !!}</p>
+              <p><b>Category:</b> {!! $data['candidates'][$i]->category !!}</p>
+              <p><b>Marital Status: </b>{!! $data['candidates'][$i]->maritalStatus !!}</p>
+              <p><b>Nationality:</b> {!! $data['candidates'][$i]->nationality !!}</p>
+              <p><b>Permanent Address:</b> {!! $data['candidates'][$i]->permanentaddr !!}</p>
+              <p><b>Landline Number:</b> {!! $data['candidates'][$i]->landline !!}</p>
+            </div>
+            <div class="col l6">
+              <p><b>Area of Research:</b> {!! $data['candidates'][$i]->areaOfResearch !!}</p>              
+              <p><b>Email Id:</b> {!! $data['candidates'][$i]->email !!}</p>              
+              <p><b>Date of Birth:</b> {!! $data['candidates'][$i]->dob !!}</p>              
+              <p><b>Sex :</b> {!! $data['candidates'][$i]->sex !!}</p>              
+              <p><b>Physically Handicapped:</b> {!! $data['candidates'][$i]->PH !!}</p><!-- wtf -->              
+              <p><b>Address for Communication:</b> {!! $data['candidates'][$i]->addrforcomm !!}</p>              
+              <p><b>Mobile Number:</b> {!! $data['candidates'][$i]->mobile !!}</p>
+            </div>
+          </div>
+          <div class="row">
+              <h5>Undergraduate Details:</h5>
+            <div class="col l6">
+              <p><b>Undergraduate Degree:</b> {!! $data['ug'][$i]->degreeName !!}</p>
+              <p><b>Undergraduate G.P.A:</b> {!! $data['ug'][$i]->gpa !!}</p>
+              <p><b>Undergraduate Name of Institution:</b> {!! $data['ug'][$i]->institutionName !!}</p>
+              <p><b>Undergraduate Year of Passing:</b> {!! $data['ug'][$i]->yop !!}</p>
+            </div>
+            <div class="col l6">
+              
+          <p><b>Undergraduate Branch:</b> {!! $data['ug'][$i]->branch !!}</p>
+          
+          <p><b>Undergraduate Class:</b> {!! $data['ug'][$i]->class !!}</p>
+          
+          <p><b>Undergraduate Name of University:</b> {!! $data['ug'][$i]->universityName !!}</p>
+          
+            </div>
+          </div>
+          <div class="row">
+            <h5>Post-Graduate Details:</h5>
+            <div class="col l6">
+              <p><b>Post-graduate Degree:</b> {!! $data['pg'][$i]->degreeName !!}</p>
+              <p><b>Post-graduate G.P.A:</b> {!! $data['pg'][$i]->gpa !!}</p>
+              <p><b>Post-graduate Name of Institution:</b> {!! $data['pg'][$i]->institutionName !!}</p>
+              <p><b>Post-graduate Year of Passing:</b> {!! $data['pg'][$i]->yop !!}</p>
+            </div>
+            <div class="col l6">
+               <p><b>Post-graduate Branch:</b> {!! $data['pg'][$i]->branch !!}</p>
+          
+          <p><b>Post-graduate Class:</b> {!! $data['pg'][$i]->class !!}</p>
+          
+          <p><b>Post-graduate Name of University:</b> {!! $data['pg'][$i]->universityName !!}</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col l12">
+              @if($data['others'][$i]->exam)
+              <p><b>Exam Name:</b> {!! $data['others'][$i]->exam !!}</p>
+              @endif
+              <p><b>Discipline:</b> {!! $data['others'][0]->discipline !!}</p>
+              <p><b>Score:</b> {!! $data['others'][0]->score !!}</p>
+              <p><b>Rank:</b> {!! $data['others'][0]->rank !!}</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <h5>Project/Publication Details:</h5>
+            <div class="col l6">
+              <p><b>Title of Project:</b> {!! $data['others'][0]->pgproject !!}</p>
+              <p><b>Details of Publication 2:</b> {!! $data['others'][0]->publications2 !!}</p>
+              <p><b>Awards1:</b> {!! $data['others'][0]->awards1 !!}</p>
+              <p><b>Awards3:</b> {!! $data['others'][0]->awards3 !!}</p>
+            </div>
+            <div class="col l6">
+              <p><b>Details of Publication 1:</b> {!! $data['others'][0]->publications1 !!}</p>
+          
+          <p><b>Details of Publication 3:</b> {!! $data['others'][0]->publications3 !!}</p>
+          
+          <p><b>Awards2:</b> {!! $data['others'][0]->awards2 !!}</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <h5>Employer Details:</h5>
+            <div class="col l12">
+              <p><b>Employer Details 1:</b> {!! $data['pro'][0]->proexp1 !!}</p>
+              <p><b>Position at Work 1:</b>{!! $data['pro'][0]->position1 !!}</p>
+              <div class="col l6">
+                <p><b>From 1:</b>{!! $data['pro'][0]->from1 !!}</p>
+              </div>
+              <div class="col l6">
+                <p><b>To 1:</b>{!! $data['pro'][0]->to1 !!}</p>
+              </div>
+            </div>
+            <div class="col l12">
+              <p><b>Employer Details 2:</b> {!! $data['pro'][0]->proexp2 !!}</p>
+              <p><b>Position at Work 2:</b>{!! $data['pro'][0]->position2 !!}</p>
+              <div class="col l6">
+                <p><b>From 2:</b>{!! $data['pro'][0]->from2 !!}</p>
+              </div>
+              <div class="col l6">
+                <p><b>To 2:</b>{!! $data['pro'][0]->to2 !!}</p>
+              </div>
+            </div>
+            <div class="col l12">
+              <p><b>Employer Details 3:</b> {!! $data['pro'][0]->proexp3 !!}</p>
+              <p><b>Position at Work 3:</b>{!! $data['pro'][0]->position3 !!}</p>
+              <div class="col l6">
+                <p><b>From 3:</b>{!! $data['pro'][0]->from3 !!}</p>
+              </div>
+              <div class="col l6">
+                <p><b>To 3:</b>{!! $data['pro'][0]->to3 !!}</p>
+              </div>
+            </div>
+          </div>
+         
+          <div class="row">
+            <p><b>Submission Date:</b> {!! $data['others'][0]->subdate !!}</p>  
+          </div>           
         </div>
       <div class="modal-footer center">
         @if($data['dept'] == 'all')
@@ -151,6 +241,7 @@
         <div class="col s12">
         <a href="#!" data-reg={!! $data['candidates'][0]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
         <a href="#!" data-reg={!! $data['candidates'][0]->registrationNumber!!} class="admit btn modal-action modal-close waves-effect waves-green btn-flat">Admit</a>
+        </div>
         </div>
       </div>
       </div>
@@ -214,6 +305,28 @@
       $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal-trigger').leanModal();
+     var a = $('.box');
+        var inputBox = $('.searchbox-input');
+        var isOpen = false;
+
+        a.click(function(){
+          $('.box').hide();
+          $('.search').show();
+          if(isOpen == false){
+          $('.searchbox').addClass('searchbox-open');
+          inputBox.focus();
+          isOpen = true;
+        }
+        else{
+          $('.box').show('slow');
+          $('.search').css('display','none');
+          $('.hide').show();
+          $('.search-pad').append('<div class="space-large"></div>');
+         $('.searchbox').removeClass('searchbox-open');
+          inputBox.focusout();
+          isOpen = false; 
+        }
+        });
   });
   </script>
 
