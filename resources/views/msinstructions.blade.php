@@ -13,8 +13,14 @@
   <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
   <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 <body>
-  <header> 
-  </header>
+  <header style="height: 25vh;
+	padding: 0px;
+	margin: 0px;
+	background-image: url('{{URL::asset('assets/images/header.png')}}');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #004d40;
+	background-size: contain;"></header>
   
   <nav>
     <div class="nav-wrapper ">

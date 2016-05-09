@@ -26,7 +26,14 @@
 				<img src="{{URL::asset('assets/images/preloader.gif')}}">
 			</div>
 		</div>
-		<header></header>
+		<header style="height: 25vh;
+	padding: 0px;
+	margin: 0px;
+	background-image: url('{{URL::asset('assets/images/header.png')}}');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #004d40;
+	background-size: contain;"></header>
 		<nav>
 	    <div class="nav-wrapper ">
 	      
