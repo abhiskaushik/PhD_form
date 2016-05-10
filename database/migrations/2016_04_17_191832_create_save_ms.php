@@ -34,8 +34,8 @@ class CreateSaveMs extends Migration
             $table->string('addrforcomm', 200)->default('');
             $table->string('permanentaddr', 200)->default('');
             $table->string('email', 100)->default('');
-            $table->bigInteger('mobile')->default(7000000000);
-            $table->bigInteger('lanline')->default(7000000000);
+            $table->string('mobile')->default('');
+            $table->string('lanline')->default('');
             $table->string('age', 3)->default('');
             $table->string('ugdegreeName', 50)->default('');
             $table->string('ugbranch', 50)->default('');
@@ -60,6 +60,11 @@ class CreateSaveMs extends Migration
             $table->string('gpa7', 6)->default('');
             $table->string('gpamax8', 6)->default('');
             $table->string('gpa8', 6)->default('');
+            $table->string('score', 5)->default('');
+            $table->string('rank', 6)->default('');
+            $table->string('discipline', 10)->default('');
+            $table->string('exam', 10)->default('');
+            $table->string('validity', 20)->default('');
             $table->string('proexp1', 150)->default('');
             $table->string('proexp2', 150)->default('');
             $table->string('proexp3', 150)->default('');
