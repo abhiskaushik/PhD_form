@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Admissions NITT | Print Page</title>
-  <link rel="stylesheet" href="{{base_path('public/assets/css/style.css')}}">
-  <link rel="stylesheet" href="{{base_path('public/assets/css/materialize.min.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
   <!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 
-  <script src="{{base_path('public/assets/js/jquery-2.1.1.min.js')}}"></script>
-  <script src="{{base_path('public/assets/js/materialize.min.js')}}"></script> 
+  <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
+  <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script> 
 </head>
 <body>
 
@@ -26,7 +26,7 @@
 <div class="heading"></div>
 </div>
 
-
+<img src="{{ URL::asset('uploads/PHD/'.$applNo.'/'.$applNo.'.'.$imgtype) }}" width="200" height="300">
 
 
 @if($phdorms  == 'PHD')

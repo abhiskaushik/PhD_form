@@ -15,7 +15,6 @@
 		<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 		<script src="{{URL::asset('assets/js/common.js')}}"></script>
 		<script src="{{URL::asset('assets/js/savephd.js')}}"></script>
-		<script src="{{URL::asset('assets/js/preview_form.js')}}"></script>
 		
 	</head>
 	<body>
@@ -61,7 +60,7 @@
 			      		
 					    <div class="input-field col l6 s12 applCheck">
 					        <select class="applicationCateg" name="appl_categ" required id="applicationCateg"> 
-					        <option value="" disabled selected>Select</option>
+					        <option value="" disabled selected></option>
 					          <optgroup label="Part Time">
 					            <option value="onCampus">On Campus</option>
 					            <option value="External">External</option>
@@ -73,7 +72,6 @@
 					      		<option value="Others">Other Fellowships</option>
 					          </optgroup>
 					        </select>
-					        <label>Choose Category</label>
 					      </div>
 
 					      <div class="upload col l6 s12 ">
@@ -568,7 +566,7 @@
 			$("textarea#employer_details_2").val(a['employer_details_2']);
 			$("textarea#employer_details_3").val(a['employer_details_3']);
 			$('#chalanNo').val(a['chalan_no']);
-			$('#applicationCateg').val(a['appl_categ']);
+			// $('#applicationCateg').val(a['appl_categ']);
 			$('#department1').val(a['department1']);
 			$('#department2').val(a['department2']);
 			$('#department3').val(a['department3']);
@@ -621,7 +619,7 @@
 				$('.sexCheck .select-wrapper ul>li:eq(2)').click();
 			}
 
-			t=a['applicationCateg'];
+			t=a['appl_categ'];
 			if(t=='On Campus'){
 				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(2)').click();

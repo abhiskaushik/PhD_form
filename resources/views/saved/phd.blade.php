@@ -77,7 +77,7 @@
 			      		
 					    <div class="input-field col l6 s12 applCheck">
 					        <select class="applicationCateg" name="appl_categ" required id="applicationCateg"> 
-					        <option value="" disabled selected>Select</option>
+					        <option value="" disabled selected>Choose category</option>
 					          <optgroup label="Part Time">
 					            <option value="onCampus">On Campus</option>
 					            <option value="External">External</option>
@@ -89,7 +89,6 @@
 					      		<option value="Others">Other Fellowships</option>
 					          </optgroup>
 					        </select>
-					        <label>Choose Category</label>
 					      </div>
 
 					      <div class="upload col l6 s12 ">

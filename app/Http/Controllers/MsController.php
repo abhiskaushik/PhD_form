@@ -343,9 +343,11 @@ class MsController extends Controller
             $details['reg_number'] = $reg_number;
             $details['phdorms'] = 'ms';
 
+            $image_path = '';
             if($file)
             {
                 $file = $file->move(public_path().'/uploads/MS/'.$reg_appl_no , $reg_appl_no.'.'.$extension);
+                $image_path = $image_path.$extension.',';
             }
             if($cert)
             {
@@ -354,6 +356,9 @@ class MsController extends Controller
             if($sign)
             {
                 $sign = $sign->move(public_path().'/uploads/MS/'.$reg_appl_no, $reg_appl_no.'sign.'.$signExt);
+                $image_path = $image_path.$signExt;
+                Ms::where('registrationNumber', $request->input('regNo'))
+                                ->update(['imagePath' => $image_path]);
             }
             return View::make('success')->with('details', $details);
             }

@@ -40,6 +40,7 @@ class ApplicationController extends Controller
     	{
     		$dept = explode("/", $regNo);
     		$categ = $dept[0];
+            $reg_appl_no = $dept[sizeof($dept) - 1];
 
     		if($categ == 'PHD')
 	        {
@@ -53,7 +54,11 @@ class ApplicationController extends Controller
 	            $applNo = $candidates->applNo;  
 	            $candidates->dept1 = self::department($candidates->dept1);
 	            $candidates->dept2 = self::department($candidates->dept2);
-	            $candidates->dept3 = self::department($candidates->dept3);                           
+	            $candidates->dept3 = self::department($candidates->dept3); 
+
+                $type = explode(',', $candidates->imagePath);
+                $imgtype = $type[0];
+                $signtype = $type[1];                          
 
 	            $ugDetails = PhdUg::where('applNo', $applNo)
 	                                    ->first();
@@ -68,7 +73,10 @@ class ApplicationController extends Controller
 	                            'pg' => $pgDetails,
 	                            'others' => $otherDetails,
 	                            'pro' => $proDetails,
-	                            'phdorms' => $categ
+	                            'phdorms' => $categ,
+                                'applNo' => $reg_appl_no,
+                                'imgtype' => $imgtype,
+                                'signtype' => $signtype
 	                            );
 
 	            return View::make('print')->with($data);
@@ -89,18 +97,28 @@ class ApplicationController extends Controller
 	            $candidates->dept1 = self::department($candidates->dept1);
 	            $candidates->dept2 = self::department($candidates->dept2);
 	            $candidates->dept3 = self::department($candidates->dept3); 
+
+                $type = explode(',', $candidates->imagePath);
+                $imgtype = $type[0];
+                $signtype = $type[1];
 	                                         
 	            $ugDetails = MsUg::where('applNo', $applNo)
 	                                    ->first();
 	            $proDetails = MsPro::where('applNo', $applNo)
 	                                    ->first();
+                $otherDetails = MsOther::where('applNo', $applNo)
+                                        ->first();
 	            $scores = MsScores::where('applNo', $applNo)
 	                                    ->first();
 	            $data = array('candidates' => $candidates,
 	                            'ug' => $ugDetails,
 	                            'scores' => $scores,
 	                            'pro' => $proDetails,
-	                            'phdorms' => $categ
+                                'others' => $otherDetails,
+	                            'phdorms' => $categ,
+                                'applNo' => $reg_appl_no,
+                                'imgtype' => $imgtype,
+                                'signtype' => $signtype
 	                            );
 
                 return View::make('print')->with($data);

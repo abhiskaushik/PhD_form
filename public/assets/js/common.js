@@ -147,9 +147,9 @@ $(document).ready(function(){
 
 		// console.log($('#dob').val());
 		var a = $('#mobile').val();
-		console.log(a);
+		// console.log(a);
 		var filter = /^[0-9-+]+$/;
-		console.log(filter.test(a));
+		// console.log(filter.test(a));
 		var len = a.length;
 		if(filter.test(a) && a.length == 10){
 			
@@ -159,9 +159,9 @@ $(document).ready(function(){
 			return false;
 		}
 		var b = $('#landline').val();
-		console.log(b);
+		// console.log(b);
 		var filter = /^[0-9-+]+$/;
-		console.log(filter.test(b));
+		// console.log(filter.test(b));
 		var len = b.length;
 		if(filter.test(b) && b.length >= 9){
 			
@@ -193,7 +193,7 @@ $(document).ready(function(){
 	        }
 	    });
 
-		var baseurl = 'http://localhost:8000';
+		var baseurl = 'http://admission.nitt.edu';
 		var url = '/save' + data.checker;//route to the controller goes here
 
 		$('.valid').hide();
@@ -229,7 +229,7 @@ $(document).ready(function(){
 
 						var dob = $('#dob').val();
 
-						window.location = 'http://localhost:8000/fetch/'+ categ + '/' + applNo + '/' + dob;
+						window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
 	        		
 
 	        	}
@@ -254,7 +254,7 @@ $(document).ready(function(){
 		applNo = applNo + dept[dept.length - 1];
 
 		var dob = $('#dob').val();
-		window.location = 'http://localhost:8000/fetch/'+ categ + '/' + applNo + '/' + dob;
+		window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
 	});
 	//validating front-end in form 3
 	$('.valid1').click(function(){

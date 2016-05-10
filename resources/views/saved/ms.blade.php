@@ -73,7 +73,7 @@
 		        <div class="input-field col l6 s12 applCheck">
 		        <span class="light">*Application Category:</span>		    
 		      		<select required name="appl_categ" class="applicationCateg" id="applicationCateg">
-				      <option value="" disabled selected>Choose your option</option>
+				      <option value="" disabled selected>Choose Category</option>
 				      <option value="Part Time">Part Time</option>
 				      <option value="Full Time">Full Time</option>
 				    </select>

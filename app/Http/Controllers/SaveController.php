@@ -231,7 +231,7 @@ class SaveController extends Controller
             'publications3' => $request->input('details_of_pub3'),
             'awards1' => $request->input('awards1'),
             'awards2' => $request->input('awards2'),
-            'awards3' => $request->input('awards3'),            
+            'awards3' => $request->input('awards3'),
             'proexp1' => $request->input('employer_details_1'),
             'proexp2' => $request->input('employer_details_2'),
             'proexp3' => $request->input('employer_details_3'),
@@ -257,7 +257,6 @@ class SaveController extends Controller
          $details = array(
             'applicationCategory' => $request->get('appl_categ'),
             'chalanNo' => $request->input('chalanNo'),
-            'dateOfReg' => $request->get('date'),
             'dept1' => $request->get('department1'),
             'dept2' => $request->get('department2'),
             'dept3' => $request->get('department3'),

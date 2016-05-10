@@ -81,7 +81,7 @@ $(document).ready(function(){
 			data.discipline = $('#discipline').val();	
 		}
 		
-		var baseurl = 'http://localhost:8000';//localhost:8000
+		var baseurl = 'http://admission.nitt.edu';//admission.nitt.edu
 		var url = '/save2phd';
 		$.ajax(
 	    {

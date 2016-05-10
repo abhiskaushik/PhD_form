@@ -125,7 +125,7 @@
               <input class="discipline{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->discipline !!}' />
               <input class="score{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->score !!}' />
               <input class="rank{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->rank !!}' />
-{!! die() !!}
+
               <input class="maxgpa1{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->maxgpa1 !!}' />
               <input class="gpa1{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpa1 !!}' />
               <input class="maxgpa2{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->maxgpa2 !!}' />

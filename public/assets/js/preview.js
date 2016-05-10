@@ -90,6 +90,7 @@ $(document).ready(function(){
 		data.email = $('#email').val();
 		data.chalan_no = $('#chalanNo').val();
 		data.appl_categ = $('.applicationCateg option:selected').text();
+		// console.log(data.appl_categ);
 		data.department1 = $('#department1').val();
 		data.department2 = $('#department2').val();
 		data.department3 = $('#department3').val();

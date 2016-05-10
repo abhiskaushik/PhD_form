@@ -275,6 +275,7 @@ class AdminController extends Controller
             $regNo = $regNo.$departments[$i].'/';
         }
         $regNo = $regNo.$departments[sizeof($departments) - 1];
+        $reg_appl_no = $departments[sizeof($departments) - 1];
         if($phdormsc == 'PHD')
         {
             $candidates = Phd::where('registrationNumber', $regNo)
@@ -283,6 +284,11 @@ class AdminController extends Controller
             $candidates->dept1 = self::department($candidates->dept1);
             $candidates->dept2 = self::department($candidates->dept2);
             $candidates->dept3 = self::department($candidates->dept3);
+
+            $type = explode(',', $candidates->imagePath);
+            $imgtype = $type[0];
+            $signtype = $type[1];
+
             if(!$candidates)
             {
                 $message = 'Invalid registration number';
@@ -302,9 +308,11 @@ class AdminController extends Controller
                             'pg' => $pgDetails,
                             'others' => $otherDetails,
                             'pro' => $proDetails,
-                            'phdorms' => $phdormsc
+                            'phdorms' => $phdormsc,
+                            'applNo' => $reg_appl_no,
+                            'imgtype' => $imgtype,
+                            'signtype' => $signtype
                             );
-            $data['candidates']->phdormsc = $phdormsc;
             return View::make('print')->with($data);
             // $pdf = PDF::loadView('print', $data);
             // return response($pdf->output())
@@ -319,6 +327,10 @@ class AdminController extends Controller
             $candidates->dept2 = self::department($candidates->dept2);
             $candidates->dept3 = self::department($candidates->dept3);
 
+            $type = explode(',', $candidates->imagePath);
+            $imgtype = $type[0];
+            $signtype = $type[1];
+
             if(!$candidates)
             {
                 $message = 'Invalid registration number';
@@ -328,17 +340,24 @@ class AdminController extends Controller
                                     ->first();
             $proDetails = MsPro::where('applNo', $applNo)
                                     ->first();
+            $otherDetails = MsOther::where('applNo', $applNo)
+                                    ->first();
             $scores = MsScores::where('applNo', $applNo)
                                     ->first();
             $data = array('candidates' => $candidates,
                             'ug' => $ugDetails,
                             'scores' => $scores,
                             'pro' => $proDetails,
-                            'phdorms' => $phdormsc
+                            'others' => $otherDetails,
+                            'phdorms' => $phdormsc,
+                            'applNo' => $reg_appl_no,
+                            'imgtype' => $imgtype,
+                            'signtype' => $signtype
                             );
-            $pdf = PDF::loadView('print', $data);
-            return response($pdf->output())
-                            ->header('Content-Type', 'application/pdf');
+            return View::make('print')->with($data);
+            // $pdf = PDF::loadView('print', $data);
+            // return response($pdf->output())
+            //                 ->header('Content-Type', 'application/pdf');
         }
     }
 

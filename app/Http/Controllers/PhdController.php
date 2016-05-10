@@ -317,7 +317,6 @@ class PhdController extends Controller
             $others->awards1 = $request->input('awards1');
             $others->awards2 = $request->input('awards2');
             $others->awards3 = $request->input('awards3');
-            
 
             $others->save();
 
@@ -352,14 +351,19 @@ class PhdController extends Controller
                 $form3 = $form3->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'form3'.'.'.$extension3);
             }
         }
+            $image_path = '';
             if($file)
             {
                 $file = $file->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'.'.$extension);
+                $image_path = $image_path.$extension.',';
             }
 
             if($sign)
             {
                 $sign = $sign->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'sign.'.$signExt);
+                $image_path = $image_path.$signExt;
+                Phd::where('registrationNumber', $request->input('regNo'))
+                                ->update(['imagePath' => $image_path]);
             }
 
             return View::make('success')->with('details', $details);
