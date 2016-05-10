@@ -54,7 +54,7 @@ $(document).ready(function(){
 		data.gpa6 = $('#gpa6').val();
 		data.max7 = $('#max7').val();
 		data.gpa7 = $('#gpa7').val();
-		data.max8 = $('#max7').val();
+		data.max8 = $('#max8').val();
 		data.gpa8 = $('#gpa8').val();
 		data.title_of_project = $('#title_of_project').val();
 		data.details_of_pub1 = $('#details_of_pub1').val();
