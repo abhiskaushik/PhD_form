@@ -88,6 +88,7 @@
             </div>           
             <div class="space-small center">
             </div>
+
             <div class="center">
               <a data-reg="{!! $i !!}" target="_blank" href="../../mspreview1" class="form waves-effect waves-light btn" >Click Here To view full form</a>
               <input class="regNo{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->registrationNumber !!}' />
@@ -110,6 +111,7 @@
               <input class="sex{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->sex !!}' />
               <input class="addrforcomm{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->addrforcomm !!}' />
               <input class="mobile{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->mobile !!}' />
+              
               <input class="PH{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->PH !!}' />
               <input class="ug_degreeName{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->degreeName !!}' />
               <input class="ug_gpa{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->gpa !!}' />
@@ -119,6 +121,11 @@
               <input class="ug_class{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->class !!}' />
               <input class="ug_universityName{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->universityName !!}' />
 
+              <input class="exam{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->exam !!}' />
+              <input class="discipline{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->discipline !!}' />
+              <input class="score{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->score !!}' />
+              <input class="rank{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->rank !!}' />
+{!! die() !!}
               <input class="maxgpa1{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->maxgpa1 !!}' />
               <input class="gpa1{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpa1 !!}' />
               <input class="maxgpa2{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->maxgpa2 !!}' />
@@ -293,6 +300,11 @@
           data.ug_yop = $('.ug_yop'+index).val();
           data.ug_branch = $('.ug_branch'+index).val();
           data.ug_class = $('.ug_class'+index).val();
+
+           data.exam = $('.exam'+index).val();
+          data.discipline = $('.discipline'+index).val();
+          data.score = $('.score'+index).val();
+          data.rank = $('.rank'+index).val();
 
           data.maxgpa1 = $('.maxgpa1'+index).val();
           data.gpa1 = $('.gpa1'+index).val();

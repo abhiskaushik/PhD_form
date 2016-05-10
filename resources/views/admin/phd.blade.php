@@ -125,6 +125,7 @@
               <input class="discipline{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->discipline !!}' />
               <input class="score{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->score !!}' />
               <input class="rank{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->rank !!}' />
+              
               <input class="pgproject{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->pgproject !!}' />
               <input class="publications1{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->publications1 !!}' />
               <input class="publications2{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->publications2 !!}' />

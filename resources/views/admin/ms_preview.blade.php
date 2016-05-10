@@ -77,7 +77,7 @@
 					      </div>
 
 					      <div class="upload col l6 s12 ">
-			    <p>*Upload Image:</p>
+			   <!--  <p>*Upload Image:</p>
 			      	<div class="file-field input-field">
 			      		<div class="demo"></div>
 			      		
@@ -88,7 +88,7 @@
 		          		<div class="file-path-wrapper">
 	        				<input class="file-path validate" type="text">
 	      				</div>
-		          	</div>
+		          	</div> -->
 			      </div>
 			      
 
@@ -322,6 +322,29 @@
 			      		<input required id="ug_yop" type="number" class="validate" name="ug_yop" min="1900" >
 			      	</div>
 			      </div>
+			      <div class="exams">
+						<div class="col l4">
+							<p>Examination:</p>
+							<input type="text" id="exam" name="exam" />
+						</div>
+						<div class="col l4">
+						<p>Score:</p>
+							<input type="text" id="score" name="score" min="-100" max="1000" />
+						</div>
+						<div class="col l4">
+							<p>Rank:</p>
+							<input type="text" id="rank" name="rank" min="1" max="99999" />
+						</div>
+						<div class="col l6">
+							<p>Validity:</p>
+							<input type="text" id="validity" name="validity" />
+						</div>
+						<div class="col l6">
+							
+							<p>Discipline:</p>
+							<input type="text" id="discipline" name="discipline" />
+						</div>
+					</div>		      
 
 			      <div class="row">
 	  			<div class="row">
@@ -494,12 +517,9 @@
 			      </div>
 			      <div class="space-medium"></div>
 			      <div class="row">
-			      	<div class="col s6 l6">
-			      		<p>Date of Submission</p>
-			      		<input required id="date" type="date" name="date" class="validate" >
-			      	</div>
+			      	
 			      	<div class="upload col l6 s6 ">
-			    <p>Upload Signature</p>
+			   <!--  <p>Upload Signature</p>
 			      	<div class="file-field input-field">
 		          		<div class="btn teal darken-1 btn waves-effect waves-light">
 		          			<span class="light">File</span>
@@ -509,7 +529,7 @@
 	        				<input class="file-path validate" type="text">
 	      				</div>
 		          	</div>
-			      	<div class="space-medium"></div>			      	
+			      	<div class="space-medium"></div>	 -->		      	
 			      </div>
 
 			      
@@ -587,6 +607,12 @@
 			$('#ug_name_of_uni').val(a['ug_name_of_uni']);
 			$('#ug_class').val(a['ug_class']);
 			
+			$('#exam').val(a['exam']);
+			$('#score').val(a['score']);
+			$('#rank').val(a['rank']);
+			// $('#validity').val(a['validity']);
+			$('#discipline').val(a['discipline']);
+
 			$('#max1').val(a['maxgpa1']);
 			$('#max2').val(a['maxgpa2']);
 			$('#max3').val(a['maxgpa3']);

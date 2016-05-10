@@ -323,6 +323,18 @@
         
             </div>
           </div>
+
+          <div class="row">
+            <div class="col l12">
+              <p><b>Exam:</b> {!! $details['exam'] !!}</p>
+              <p><b>Score:</b> {!! $details['score'] !!}</p>
+              <p><b>Rank:</b> {!! $details['rank'] !!}</p>
+              <p><b>Validity:</b> {!! $details['validity'] !!}</p>
+              <p><b>Discipline:</b> {!! $details['discipline'] !!}</p>              
+            </div>
+
+          </div>
+          
           <div class="row">
             <div class="col l4"><p><b>Semester 1:</b></p></div>
             <div class="col l4"><p><b>C.G.P.A Scored:</b> {!! $details['gpa1'] !!}  </p></div>

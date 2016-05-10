@@ -18,6 +18,7 @@ use App\Ms;
 use App\MsUg;
 use App\MsScores;
 use App\MsPro;
+use App\MsOther;
 use App\Admin;
 use paginate;
 use Session;
@@ -178,10 +179,12 @@ class AdminController extends Controller
             $ugDetails = MsUg::whereIn('applNo', $candidates_id)->get(); 
             $scores = MsScores::whereIn('applNo', $candidates_id)->get();//changed this from MsScores to MsSemScore 
             $proDetails = MsPro::whereIn('applNo', $candidates_id)->get();
+            $otherDetails = MsOther::whereIn('applNo', $candidates_id)->get();
             $data = array('candidates' => $candidates,
                             'ug' => $ugDetails,
                             'scores' => $scores,
-                            'pro' => $proDetails
+                            'pro' => $proDetails,
+                            'others' => $otherDetails
                             );
             return $data;
         }
@@ -302,9 +305,10 @@ class AdminController extends Controller
                             'phdorms' => $phdormsc
                             );
             $data['candidates']->phdormsc = $phdormsc;
-            $pdf = PDF::loadView('print', $data);
-            return response($pdf->output())
-                            ->header('Content-Type', 'application/pdf');
+            return View::make('print')->with($data);
+            // $pdf = PDF::loadView('print', $data);
+            // return response($pdf->output())
+            //                 ->header('Content-Type', 'application/pdf');
         }
         else
         {

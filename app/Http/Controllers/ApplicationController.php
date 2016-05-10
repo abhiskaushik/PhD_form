@@ -71,7 +71,7 @@ class ApplicationController extends Controller
 	                            'phdorms' => $categ
 	                            );
 
-	            return view('print');
+	            return View::make('print')->with($data);
 	            // $pdf = PDF::loadView('print', $data);
 	            // return response($pdf->output())
 	            //                 ->header('Content-Type', 'application/pdf');
@@ -103,7 +103,7 @@ class ApplicationController extends Controller
 	                            'phdorms' => $categ
 	                            );
 
-                return view('print');
+                return View::make('print')->with($data);
 	            // $pdf = PDF::loadView('print', $data);
 	            // return response($pdf->output())
 	            //                 ->header('Content-Type', 'application/pdf');

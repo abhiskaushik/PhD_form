@@ -505,10 +505,7 @@
 			      </div>
 			      <div class="space-medium"></div>
 			      <div class="row">
-			      	<div class="col s6 l6">
-			      		<p>Date of Submission</p>
-			      		<input required id="date" type="date" name="date" class="validate" value="{!! $details->date !!}">
-			      	</div>
+			      	
 			      	<div class="upload col l6 s6 ">
 			    <p>Upload Signature</p>
 			      	<div class="file-field input-field">

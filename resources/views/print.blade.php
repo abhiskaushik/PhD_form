@@ -15,15 +15,16 @@
 <body>
 
 <div class="container-fluid main">
+  
   <div class="row">
-    <div class="col l4">
-      <img width="100px" height="100px" src="{{base_path('public/assets/images/logo.png')}}">
-    </div>
-    <div class="col l8">
-       <div class="space-small"></div>
-          <h4>APPLICATION FOR ADMISSION<br> TO Ph.D. PROGRAMME <br>(2016 – 2017)</h4>
-    </div>
+    
+      <img src="{{ URL::asset('assets/images/admit.png')}}">
+    
+    
   </div>
+
+<div class="heading"></div>
+
 
 
 
@@ -276,5 +277,14 @@
 
 </div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    var x = new Date().getFullYear();
+      var y = x+1;
+      console.log(x);
+      var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME ('+ x + '-' + y + ')</h4>';
+      $('.heading').append(p);
+    });
+</script>
 </body>
 </html>

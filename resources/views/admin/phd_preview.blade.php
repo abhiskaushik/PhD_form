@@ -76,7 +76,7 @@
 					      </div>
 
 					      <div class="upload col l6 s12 ">
-			    <p>*Upload Image:</p>
+			   <!--  <p>*Upload Image:</p>
 			      	<div class="file-field input-field">
 			      		<div class="demo"></div>
 			      		
@@ -86,7 +86,7 @@
 		          		</div>
 		          		<div class="file-path-wrapper">
 	        				<input class="file-path validate" type="text">
-	      				</div>
+	      				</div> -->
 		          	</div>
 			      </div>
 			      
@@ -390,11 +390,11 @@
 						</div>
 						<div class="col l4">
 						<p>Score:</p>
-							<input type="text" id="score" name="score" />
+							<input type="text" id="score" name="score" min="-100" max="1000" />
 						</div>
 						<div class="col l4">
 							<p>Rank:</p>
-							<input type="text" id="rank" name="rank" />
+							<input type="text" id="rank" name="rank"  min="1" max="99999" />
 						</div>
 						<div class="col l6">
 							<p>Validity:</p>
@@ -505,12 +505,9 @@
 			      </div>
 			      <div class="space-medium"></div>
 			      <div class="row">
-			      	<div class="col s6 l6">
-			      		<p>Date of Submission</p>
-			      		<input required id="date" type="date" name="date" class="validate" >
-			      	</div>
+			      	
 			      	<div class="upload col l6 s6 ">
-			    <p>Upload Signature</p>
+			    <!-- <p>Upload Signature</p>
 			      	<div class="file-field input-field">
 		          		<div class="btn teal darken-1 btn waves-effect waves-light">
 		          			<span class="light">File</span>
@@ -520,7 +517,7 @@
 	        				<input class="file-path validate" type="text">
 	      				</div>
 		          	</div>
-			      	<div class="space-medium"></div>			      	
+			      	<div class="space-medium"></div>	 -->		      	
 			      </div>
 
 			      
@@ -616,7 +613,7 @@
 			$('#exam').val(a['exam']);
 			$('#score').val(a['score']);
 			$('#rank').val(a['rank']);
-			$('#validity').val(a['validity']);
+			// $('#validity').val(a['validity']);
 			$('#discipline').val(a['discipline']);
 
 			
