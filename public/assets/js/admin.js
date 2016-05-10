@@ -37,7 +37,7 @@ function ajaxCall(x,y){
 	    });
 		var data = {};
 		data.applNo = x;
-		var baseurl = 'http://localhost:8000';
+		var baseurl = 'http://admission.nitt.edu';
 		var url = '/'+y;
 		$.ajax(
 	    {
