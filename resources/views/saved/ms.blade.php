@@ -15,6 +15,7 @@
 	<script src="{{URL::asset('assets/js/code_ms.js')}}"></script>
 	<script src="{{URL::asset('assets/js/preview.js')}}"></script>
 	<script src="{{URL::asset('assets/js/savems.js')}}"></script>
+	<script src="{{URL::asset('assets/js/common.js')}}"></script>
 	
 </head>
 <body>
@@ -316,8 +317,17 @@
 		      		<input required id="ug_yop" type="number" class="validate" name="ug_yop" min="1900" value="{!! $details->ugyop !!}">
 		      	</div>
 		      </div>
-
-		      <div class="space-medium"></div>
+		      <div class="results_announced center">
+			      		<p class="center">Qualified in GATE/NET/SLET/CSIR/CAT/UGC/NBHM</p>
+			      		<span>
+			      			<input type="checkbox" id="announced" name="ann" />
+			      			<label for="announced">Yes</label>
+			      		</span>
+			      		
+			      	</div>
+			      	<div class="space-medium"></div>
+			      	<div class="exams"></div>
+		      <div class="space-large"></div>
 		      <div class="row">
 		      <p class="vlarge">*Academic Details:</p>
 		      	<table class="highlight centered responsive-table">

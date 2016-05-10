@@ -149,18 +149,28 @@
             <div class="space-small"></div>
                <div class="center">
         @if($data['session'] == 'all')
-        <div class="col s12">
+        <div class="col l12 center buttons">
+        <div class="col l6">
           <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard1 btn modal-action modal-close waves-effect waves-green btn">Discard</a>
+          </div>
         @if(!$data['candidates'][$i]->accepted)
+        <div class="col l6">
         <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn">Accept</a>
+        </div>
         @endif
         </div>
         @endif
-        <div class="col s12">
+
+        <div class="col l12 center buttons">
+        <div class="space-small"></div>
+        <div class="col l6">
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn">Print</a>
+        </div>
+        <div class="col l6">
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn modal-action modal-close waves-effect waves-green btn">Admit</a>
         </div>
-        <div class="space-medium"></div>
+        </div>
+        <div class="space-large"></div>
         </div>
           <div class="space-medium"></div>
           </div>
