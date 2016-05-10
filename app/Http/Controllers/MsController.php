@@ -329,7 +329,7 @@ class MsController extends Controller
 
             $msScores->save();
 
-            $others = new PhdOther();
+            $others = new MsOther();
 
             $others->applNo = $applNo;
             $others->score = $details['score'];

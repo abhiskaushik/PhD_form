@@ -60,9 +60,6 @@
               <div class="col l6 s6">
                 <p>Registration Number:{!! $details['reg_number'] !!}</p>
               </div>
-              <div class="col l6 s6">
-                <p>Date of Submission:{!! $details['date'] !!}</p>
-              </div>
             </div>
             <div class="row">
               <div class="col l6 s6">Name:{!! $details['name']!!}</div>
@@ -90,9 +87,6 @@
           <div class="row">
             <div class="col l6">
               <p><b>Registration Number:</b> {!! $details['reg_number'] !!}</p>      
-            </div>
-            <div class="col l6">
-              <p><b>Date of Registration:</b> {!! $details['date'] !!}</p>      
             </div>
           </div>
           <div class="row">
@@ -241,9 +235,6 @@
               <div class="col l6 s6">
                 <p>Registration Number:{!! $details['reg_number'] !!}</p>
               </div>
-              <div class="col l6 s6">
-                <p>Date of Submission:{!! $details['date'] !!}</p>
-              </div>
             </div>
             <div class="row">
               <div class="col l6 s6">Name:{!! $details['name']!!}</div>
@@ -272,9 +263,6 @@
           <div class="row">
             <div class="col l6">
               <p><b>Registration Number:</b> {!! $details['reg_number'] !!}</p>      
-            </div>
-            <div class="col l6">
-              <p><b>Date of Registration:</b> {!! $details['date'] !!}</p>      
             </div>
           </div>
           <div class="row">

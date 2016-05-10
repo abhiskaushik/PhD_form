@@ -75,7 +75,7 @@ $(document).ready(function(){
 		data.date = $('#date').val();
 
 		console.log(data);
-		var baseurl = 'http://localhost:8000';
+		var baseurl = 'http://admission.nitt.edu';
 
 		var url = '/save2ms';
 		$.ajax(

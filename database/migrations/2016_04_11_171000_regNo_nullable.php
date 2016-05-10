@@ -33,6 +33,7 @@ class RegNoNullable extends Migration
             $table->string('discipline', 10)->nullable();
             $table->string('exam', 10)->nullable();
             $table->string('validity', 20)->nullable();
+            $table->timestamps();
         });
 
         Schema::table('msother', function (Blueprint $table) {
