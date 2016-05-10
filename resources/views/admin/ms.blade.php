@@ -186,33 +186,33 @@
           <div class="row">
             <h5>Employer Details:</h5>
             <div class="col l12">
-              <p><b>Employer Details 1:</b> {!! $data['pro'][0]->proexp1 !!}</p>
-              <p><b>Position at Work 1:</b>{!! $data['pro'][0]->position1 !!}</p>
+              <p><b>Employer Details 1:</b> {!! $data['pro'][$i]->proexp1 !!}</p>
+              <p><b>Position at Work 1:</b>{!! $data['pro'][$i]->position1 !!}</p>
               <div class="col l6">
-                <p><b>From 1:</b>{!! $data['pro'][0]->from1 !!}</p>
+                <p><b>From 1:</b>{!! $data['pro'][$i]->from1 !!}</p>
               </div>
               <div class="col l6">
-                <p><b>To 1:</b>{!! $data['pro'][0]->to1 !!}</p>
-              </div>
-            </div>
-            <div class="col l12">
-              <p><b>Employer Details 2:</b> {!! $data['pro'][0]->proexp2 !!}</p>
-              <p><b>Position at Work 2:</b>{!! $data['pro'][0]->position2 !!}</p>
-              <div class="col l6">
-                <p><b>From 2:</b>{!! $data['pro'][0]->from2 !!}</p>
-              </div>
-              <div class="col l6">
-                <p><b>To 2:</b>{!! $data['pro'][0]->to2 !!}</p>
+                <p><b>To 1:</b>{!! $data['pro'][$i]->to1 !!}</p>
               </div>
             </div>
             <div class="col l12">
-              <p><b>Employer Details 3:</b> {!! $data['pro'][0]->proexp3 !!}</p>
-              <p><b>Position at Work 3:</b>{!! $data['pro'][0]->position3 !!}</p>
+              <p><b>Employer Details 2:</b> {!! $data['pro'][$i]->proexp2 !!}</p>
+              <p><b>Position at Work 2:</b>{!! $data['pro'][$i]->position2 !!}</p>
               <div class="col l6">
-                <p><b>From 3:</b>{!! $data['pro'][0]->from3 !!}</p>
+                <p><b>From 2:</b>{!! $data['pro'][$i]->from2 !!}</p>
               </div>
               <div class="col l6">
-                <p><b>To 3:</b>{!! $data['pro'][0]->to3 !!}</p>
+                <p><b>To 2:</b>{!! $data['pro'][$i]->to2 !!}</p>
+              </div>
+            </div>
+            <div class="col l12">
+              <p><b>Employer Details 3:</b> {!! $data['pro'][$i]->proexp3 !!}</p>
+              <p><b>Position at Work 3:</b>{!! $data['pro'][$i]->position3 !!}</p>
+              <div class="col l6">
+                <p><b>From 3:</b>{!! $data['pro'][$i]->from3 !!}</p>
+              </div>
+              <div class="col l6">
+                <p><b>To 3:</b>{!! $data['pro'][$i]->to3 !!}</p>
               </div>
             </div>
           </div>          
