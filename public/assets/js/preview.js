@@ -63,6 +63,7 @@ $(document).ready(function(){
 			data.rank = $('#rank').val();
 			data.validity = $('#validity').val();
 			data.discipline = $('#discipline').val();
+      console.log($('#validity').val());
 		}
 		else{
 			data.exam ='';
@@ -73,9 +74,9 @@ $(document).ready(function(){
 		}
 
 		console.log(data);
-		
+		localStorage.clear();
     localStorage.setItem('data' , JSON.stringify(data));
-    console.log(JSON.parse(localStorage.getItem('data')));
+    
     console.log(JSON.parse(localStorage.getItem('data')));
 
 		
@@ -145,6 +146,7 @@ $(document).ready(function(){
 		
 
 		console.log(data);
+    localStorage.clear();
 		localStorage.setItem('data' , JSON.stringify(data));
     console.log(JSON.parse(localStorage.getItem('data')));
 		
