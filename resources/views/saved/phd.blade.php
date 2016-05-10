@@ -361,7 +361,7 @@
 			      	</div>
 			      	<div class="input-field col l6 pgclassCheck">
 			      		<span class="light">*Class:</span>
-			      		<select required name = "pg_class" id="pgclass">
+			      		<select required name = "pg_class" id="pg_class">
 					      <option value="" disabled selected>Choose your option</option>
 					      <option  value="Honours">Honours</option>
 					      <option  value="Distinction">Distinction</option>

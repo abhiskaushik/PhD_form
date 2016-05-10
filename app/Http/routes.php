@@ -94,6 +94,10 @@ Route::get('phdpreview', function()
     {
         return view('saved.phd_preview');
     });
+Route::get('mspreview', function()
+    {
+        return view('saved.ms_preview');
+    });
 Route::get('mspreview1', function()
     {
         return view('saved.ms_preview');
