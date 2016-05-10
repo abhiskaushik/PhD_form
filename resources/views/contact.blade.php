@@ -42,14 +42,6 @@
   <div class="space-medium"></div>
 
   <div class="container main">
-  	<div class="row">
-      <h5>M.S. and Ph.D. Admissions Committee</h5>
-      <ul>
-        <li> Dr. R. Karvembu - Chairperson</li>
-        <li>Dr. P. Muthuchidambaranathan - Member</li>
-        <li>Dr. V. Arul Mozhi Selvan - Member </li>
-      </ul>
-    </div>
 
     <div class="space-small"></div>
     <div class="row">
