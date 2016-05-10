@@ -100,9 +100,8 @@ Route::get('mspreview', function()
     });
 Route::get('mspreview1', function()
     {
-        return view('saved.ms_preview');
+        return view('admin.ms_preview');
     });
-
 Route::get('phdpreview1', function()
     {
         return view('admin.phd_preview');

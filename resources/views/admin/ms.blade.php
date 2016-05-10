@@ -127,21 +127,21 @@
               <input class="rank{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->rank !!}' />
               <input class="valid{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->validity !!}' />
 
-              <input class="maxgpa1{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->maxgpa1 !!}' />
+              <input class="maxgpa1{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpamax1 !!}' />
               <input class="gpa1{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpa1 !!}' />
-              <input class="maxgpa2{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->maxgpa2 !!}' />
+              <input class="maxgpa2{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpamax2 !!}' />
               <input class="gpa2{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpa2 !!}' />
-              <input class="maxgpa3{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->maxgpa3 !!}' />
+              <input class="maxgpa3{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpamax3 !!}' />
               <input class="gpa3{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpa3 !!}' />
-              <input class="maxgpa4{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->maxgpa4 !!}' />
+              <input class="maxgpa4{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpamax4 !!}' />
               <input class="gpa4{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpa4 !!}' />
-              <input class="maxgpa5{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->maxgpa5 !!}' />
+              <input class="maxgpa5{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpamax5 !!}' />
               <input class="gpa5{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpa5 !!}' />
-              <input class="maxgpa6{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->maxgpa6 !!}' />
+              <input class="maxgpa6{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpamax6 !!}' />
               <input class="gpa6{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpa6 !!}' />
-              <input class="maxgpa7{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->maxgpa7 !!}' />
+              <input class="maxgpa7{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpamax7 !!}' />
               <input class="gpa7{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpa7 !!}' />
-              <input class="maxgpa8{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->maxgpa8 !!}' />
+              <input class="maxgpa8{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpamax8 !!}' />
               <input class="gpa8{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpa8 !!}' />
 
               <input class="proexp1{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->proexp1 !!}' />
@@ -276,7 +276,6 @@
           data.chalanNo = $('.chalanNo'+index).val();//to be added
           data.regNo = $('.regNo'+index).val();
           data.applCateg = $('.applCateg'+index).val();
-          data.dateOfReg = $('.dateOfReg'+index).val();
           data.dept1 = $('.dept1'+index).val();
           data.dept2 = $('.dept2'+index).val();
           data.dept3 = $('.dept3'+index).val();
@@ -309,6 +308,7 @@
           data.valid = $('.valid'+index).val();
 
           data.maxgpa1 = $('.maxgpa1'+index).val();
+          console.log("hey{!! $data['scores'][0]->gpamax1 !!}");
           data.gpa1 = $('.gpa1'+index).val();
           data.maxgpa2 = $('.maxgpa2'+index).val();
           data.gpa2 = $('.gpa2'+index).val();

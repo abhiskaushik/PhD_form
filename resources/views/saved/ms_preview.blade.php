@@ -15,7 +15,6 @@
 		<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 		<script src="{{URL::asset('assets/js/common.js')}}"></script>
 		<script src="{{URL::asset('assets/js/savephd.js')}}"></script>
-		<script src="{{URL::asset('assets/js/preview_form.js')}}"></script>
 		
 	</head>
 	<body>
@@ -640,32 +639,6 @@
 			else{
 				$('.sexCheck .select-wrapper input').val(t);
 				$('.sexCheck .select-wrapper ul>li:eq(2)').click();
-			}
-
-			t=a['applicationCateg'];
-			if(t=='On Campus'){
-				$('.applCheck .select-wrapper input').val(t);
-				$('.applCheck .select-wrapper ul>li:eq(2)').click();
-			}
-			else if(t == 'External'){
-				$('.applCheck .select-wrapper input').val(t);
-				$('.applCheck .select-wrapper ul>li:eq(3)').click();
-			}
-			else if(t == 'Stipendiary'){
-				$('.applCheck .select-wrapper input').val(t);
-				$('.applCheck .select-wrapper ul>li:eq(4)').click();
-			}
-			else if(t == 'Non-Stipendiary'){
-				$('.applCheck .select-wrapper input').val(t);
-				$('.applCheck .select-wrapper ul>li:eq(6)').click();
-			}
-			else if(t == 'Project'){
-				$('.applCheck .select-wrapper input').val(t);
-				$('.applCheck .select-wrapper ul>li:eq(7)').click();
-			}
-			else if(t == 'Other Fellowships'){
-				$('.applCheck .select-wrapper input').val(t);
-				$('.applCheck .select-wrapper ul>li:eq(8)').click();
 			}
 
 			t=a['ug_class'];

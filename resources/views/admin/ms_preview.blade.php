@@ -15,7 +15,6 @@
 		<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 		<script src="{{URL::asset('assets/js/common.js')}}"></script>
 		<script src="{{URL::asset('assets/js/savephd.js')}}"></script>
-		<script src="{{URL::asset('assets/js/preview_form.js')}}"></script>
 		
 	</head>
 	<body>
@@ -61,7 +60,7 @@
 			      		
 					    <div class="input-field col l6 s12 applCheck">
 					        <select class="applicationCateg" name="appl_categ" required id="applicationCateg"> 
-					        <option value="" disabled selected>Select</option>
+					        <option value="" disabled selected>Choose Category</option>
 					          <optgroup label="Part Time">
 					            <option value="onCampus">On Campus</option>
 					            <option value="External">External</option>
@@ -73,7 +72,6 @@
 					      		<option value="Others">Other Fellowships</option>
 					          </optgroup>
 					        </select>
-					        <label>Choose Category</label>
 					      </div>
 
 					      <div class="upload col l6 s12 ">
@@ -580,31 +578,31 @@
 			$(".button-collapse").sideNav();
 			$('select').material_select();
 			$('.main').find('input, textarea, button, select').attr('disabled','disabled');
-			$("textarea#addr_for_commn").val(a['addr_for_commn']);
-			$("textarea#permanent_addr").val(a['permanent_addr']);
+			$("textarea#addr_for_commn").val(a['addrforcomm']);
+			$("textarea#permanent_addr").val(a['permanentaddr']);
 			
 			$("textarea#employer_details_1").val(a['proexp1']);
 			$("textarea#employer_details_2").val(a['proexp2']);
 			$("textarea#employer_details_3").val(a['proexp3']);
-			$('#chalanNo').val(a['chalan_no']);
-			$('#applicationCateg').val(a['appl_categ']);
-			$('#department1').val(a['department1']);
-			$('#department2').val(a['department2']);
-			$('#department3').val(a['department3']);
+			$('#chalanNo').val(a['chalanNo']);
+			$('#applicationCateg').val(a['applCateg']);
+			$('#department1').val(a['dept1']);
+			$('#department2').val(a['dept2']);
+			$('#department3').val(a['dept3']);
 			$('#name').val(a['name']);
-			$('#area_of_research').val(a['area_of_research']);
+			$('#area_of_research').val(a['areaOfResearch']);
 			$('#email').val(a['email']);
-			$('#father_name').val(a['father_name']);
+			$('#father_name').val(a['fatherName']);
 			$('#dob').val(a['dob']);
 			$('#nationality').val(a['nationality']);
 			$('#mobile').val(a['mobile']);
 			$('#landline').val(a['landline']);
-			$('#ug_deg').val(a['ug_deg']);
+			$('#ug_deg').val(a['ug_degreeName']);
 			$('#ug_branch').val(a['ug_branch']);
 			$('#ug_gpa').val(a['ug_gpa']);
 			$('#ug_yop').val(a['ug_yop']);
-			$('#ug_name_of_inst').val(a['ug_name_of_inst']);
-			$('#ug_name_of_uni').val(a['ug_name_of_uni']);
+			$('#ug_name_of_inst').val(a['ug_institutionName']);
+			$('#ug_name_of_uni').val(a['ug_universityName']);
 			$('#ug_class').val(a['ug_class']);
 			
 			$('#exam').val(a['exam']);
@@ -652,29 +650,13 @@
 			}
 
 			t=a['applCateg'];
-			if(t=='On Campus'){
+			if(t=='Part Time'){
+				$('.applCheck .select-wrapper input').val(t);
+				$('.applCheck .select-wrapper ul>li:eq(1)').click();
+			}
+			else if(t == 'Full Time'){
 				$('.applCheck .select-wrapper input').val(t);
 				$('.applCheck .select-wrapper ul>li:eq(2)').click();
-			}
-			else if(t == 'External'){
-				$('.applCheck .select-wrapper input').val(t);
-				$('.applCheck .select-wrapper ul>li:eq(3)').click();
-			}
-			else if(t == 'Stipendiary'){
-				$('.applCheck .select-wrapper input').val(t);
-				$('.applCheck .select-wrapper ul>li:eq(4)').click();
-			}
-			else if(t == 'Non-Stipendiary'){
-				$('.applCheck .select-wrapper input').val(t);
-				$('.applCheck .select-wrapper ul>li:eq(6)').click();
-			}
-			else if(t == 'Project'){
-				$('.applCheck .select-wrapper input').val(t);
-				$('.applCheck .select-wrapper ul>li:eq(7)').click();
-			}
-			else if(t == 'Other Fellowships'){
-				$('.applCheck .select-wrapper input').val(t);
-				$('.applCheck .select-wrapper ul>li:eq(8)').click();
 			}
 
 			t=a['ug_class'];
