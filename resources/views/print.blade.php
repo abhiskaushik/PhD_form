@@ -24,86 +24,203 @@
   </div>
 
 <div class="heading"></div>
-
+</div>
 
 
 
 
 @if($phdorms  == 'PHD')
-    <div class="">
+    <div class="container center">
     <h4>Form Details: </h4>
-    <div class="row">
-      <h5>Application Details</h5>
-      <div class="col l6">
-        <p><b>Registration Number:</b> {!! $candidates['registrationNumber'] !!}</p>
+    
+      <table class="bordered">
+        <thead>
+          <tr>
+            <td><h5>Application Details</h5></td>
+            <td></td>
 
-      </div>
-      <div class="col l6">
-        <p><b>Date of Registration:</b> {!! $candidates['dateOfReg'] !!}
-          </p>
-      </div>
-      </div>
-      <div class="row">
-        <h5>General Details:</h5>
-        <div class="col l6">
-          <p><b>Department 1:</b> {!! $candidates['dept1'] !!}</p>
-          <p><b>Department 3:</b> {!! $candidates['dept3'] !!}</p>
-        </div>
-        <div class="col l6">
-          <p><b>Department 2:</b> {!! $candidates['dept2'] !!}</p>
-          <p><b>Area of Research:</b> {!! $candidates['areaOfResearch'] !!}</p>
-        </div>
-      </div>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Registration Number:</b></td>
+            <td>{!! $candidates['registrationNumber'] !!}</td>
+         
+            <td><b>Date of Registration:</b></td>
+            <td>{!! $candidates['dateOfReg'] !!}</td>
+          </tr>
+        </tbody>
+      </table>
+   
+      <table class="bordered">
+        <thead>
+          <tr>
+            <td> <h5>General Details:</h5></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Department 1:</b></td>
+            <td>{!! $candidates['dept1'] !!}</td>
+            <td><b>Department 2:</b></td>
+            <td>{!! $candidates['dept2'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Department 3:</b></td>
+            <td>{!! $candidates['dept3'] !!}</td>
+            <td><b>Area of Research:</b></td>
+            <td>{!! $candidates['areaOfResearch'] !!}</td>
+          </tr>
+        </tbody>
+      </table>
+  
 
-      <div class="row">
-        <h5>Personal Details:</h5>
-        <div class="col l6">
-          <p><b>Name of Candidate:</b> {!! $candidates['name'] !!}</p>
-          <p><b>Email Id:</b> {!! $candidates['email'] !!}</p>
-          <p><b>Category:</b> {!! $candidates['category'] !!}</p>
-          <p><b>Marital Status: </b>{!! $candidates['maritalStatus'] !!}</p>
-          <p><b>Nationality:</b> {!! $candidates['nationality'] !!}</p>
-          <p><b>Permanent Address:</b> {!! $candidates['permanentaddr'] !!}</p>
-          <p><b>Landline Number:</b> {!! $candidates['landline'] !!}</p>
-        </div>
-        <div class="col l6">
-          <p><b>Father's Name:</b> {!! $candidates['fatherName'] !!}</p>
-          <p><b>Date of Birth:</b> {!! $candidates['dob'] !!}</p>
-          <p><b>Sex :</b> {!! $candidates['sex'] !!}</p>
-          <p><b>Physically Handicapped:</b> {!! $candidates['PH'] !!}</p>
-          <p><b>Address for Communication:</b> {!! $candidates['addrforcomm'] !!}</p>
-          <p><b>Mobile Number:</b> {!! $candidates['mobile'] !!}</p>
-        </div>
-      </div>
+      <table class="bordered">
+        <thead>
+          <tr>
+            <td><h5>Personal Details:</h5></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Name of Candidate:</b></td>
+            <td>{!! $candidates['name'] !!}</td>
+            <td><b>Email Id:</b></td>
+            <td>{!! $candidates['email'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Father's Name:</b></td>
+            <td>{!! $candidates['fatherName'] !!}</td>
+            <td><b>Date of Birth:</b></td>
+            <td>{!! $candidates['dob'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Category:</b></td>
+            <td>{!! $candidates['category'] !!}</td>
+            <td><b>Marital Status:</b></td>
+            <td>{!! $candidates['maritalStatus'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Sex:</b></td>
+            <td>{!! $candidates['sex'] !!}</td>
+            <td><b>Physically Handicapped:</b></td>
+            <td>{!! $candidates['PH'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Nationality:</b></td>
+            <td>{!! $candidates['nationality'] !!}</td>
+            <td><b>Permanent Address:</b></td>
+            <td>{!! $candidates['permanentaddr'] !!}</td>
+          </tr>                  
+          <tr>
+            <td><b>Address for Communication:</b></td>
+            <td>{!! $candidates['addrforcomm'] !!}</td>
+            <td><b>Mobile Number:</b></td>
+            <td>{!! $candidates['mobile'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Landline Number:</b></td>
+            <td>{!! $candidates['landline'] !!}</td>
+            
+          </tr>
+        </tbody>
+      </table>
 
-      <div class="row">
-        <h5>Undergraduate Details</h5>
-        <div class="col l6">
-          <p><b>Degree:</b> {!! $ug['degreeName'] !!}</p>
-          <p><b>G.P.A:</b> {!! $ug['gpa'] !!}</p>
-          <p><b>Name of Institution:</b> {!! $ug['institutionName'] !!}</p>
-          <p><b>Year of Passing:</b> {!! $ug['yop'] !!}</p>
-        </div>
-        <div class="col l6">
-          <p><b>Branch:</b> {!! $ug['branch'] !!}</p>
-          <p><b>Class:</b> {!! $ug['class'] !!}</p>
-          <p><b>Name of University:</b> {!! $ug['universityName'] !!}</p>
-        </div>
-      </div>
-      <div class="row">
-        <h5>Post-Graduate Details:</h5>
-        <div class="col l6">
-          <p><b>Degree:</b> {!! $pg['degreeName'] !!}</p>
-          <p><b>G.P.A:</b> {!! $pg['gpa'] !!}</p>
-          <p><b>Name of Institution:</b> {!! $pg['institutionName'] !!}</p>
-          <p><b>Year of Passing:</b> {!! $pg['yop'] !!}</p> 
-        </div>
-        <div class="col l6">
-          <p><b>Branch:</b> {!! $pg['branch'] !!}</p>
-          <p><b>Class:</b> {!! $pg['class'] !!}</p>
-          <p><b>Name of University:</b> {!! $pg['universityName'] !!}</p>
-        </div>
-      </div>
+
+      <table class="bordered">
+        <thead>
+          <tr>
+            <td><h5>Undergraduate Details</h5></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Degree:</b></td>
+            <td>{!! $ug['degreeName'] !!}</td>
+            <td><b>G.P.A:</b></td>
+            <td>{!! $ug['gpa'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Branch:</b></td>
+            <td>{!! $ug['branch'] !!}</td>
+            <td><b>Class:</b></td>
+            <td>{!! $ug['class'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Name of Institution:</b></td>
+            <td>{!! $ug['institutionName'] !!}</td>
+            <td><b>University Name:</b></td>
+            <td>{!! $ug['universityName'] !!}</td>
+          </tr>
+           <tr>
+            <td><b>Year of passing:</b></td>
+            <td>{!! $ug['yop'] !!}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+
+  
+
+      <table class="bordered">
+        <thead>
+          <tr>
+            <td><h5>Post-Graduate Details</h5></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Degree:</b></td>
+            <td>{!! $pg['degreeName'] !!}</td>
+            <td><b>G.P.A:</b></td>
+            <td>{!! $pg['gpa'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Branch:</b></td>
+            <td>{!! $pg['branch'] !!}</td>
+            <td><b>Class:</b></td>
+            <td>{!! $pg['class'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Name of Institution:</b></td>
+            <td>{!! $pg['institutionName'] !!}</td>
+            <td><b>University Name:</b></td>
+            <td>{!! $pg['universityName'] !!}</td>
+          </tr>
+           <tr>
+            <td><b>Year of passing:</b></td>
+            <td>{!! $pg['yop'] !!}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+
+
+      <table class="bordered">
+        <thead>
+          <tr>
+            <td>GATE/NET/SLET/CSIR/CAT/UGC/NBHM details:</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Examination:</b></td>
+            <td>{!! $others['exam'] !!}</td>
+            <td><b>Score:</b></td>
+            <td>{!! $others['score'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Rank:</b></td>
+            <td>{!! $others['rank'] !!}</td>
+            <td><b>Valid Till:</b></td>
+            <td>{!! $others['valid'] !!}</td>
+          </tr>
+          <tr>
+            <td>Discipline</td>
+            <td>{!! $others['discipline'] !!}</td>
+          </tr>
+        </tbody>
+      </table>
 
       <div class="row">
         <h5>Publication/Project Details:</h5>
@@ -156,93 +273,220 @@
 
           @else
 
-           <div class="">
+    <div class="container center">
     <h4>Form Details: </h4>
-    <div class="row">
-      <h5>Application Details</h5>
-      <div class="col l6">
-        <p><b>Registration Number:</b> {!! $candidates['registrationNumber'] !!}</p>
+    
+      <table class="bordered">
+        <thead>
+          <tr>
+            <td><h5>Application Details</h5></td>
+            <td></td>
 
-      </div>
-      <div class="col l6">
-        <p><b>Date of Registration:</b> {!! $candidates['dateOfReg'] !!}
-          </p>
-      </div>
-      </div>
-      <div class="row">
-        <h5>General Details:</h5>
-        <div class="col l6">
-          <p><b>Department 1:</b> {!! $candidates['dept1'] !!}</p>
-          <p><b>Department 3:</b> {!! $candidates['dept3'] !!}</p>
-        </div>
-        <div class="col l6">
-          <p><b>Department 2:</b> {!! $candidates['dept2'] !!}</p>
-          <p><b>Area of Research:</b> {!! $candidates['areaOfResearch'] !!}</p>
-        </div>
-      </div>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Registration Number:</b></td>
+            <td>{!! $candidates['registrationNumber'] !!}</td>
+         
+            <td><b>Date of Registration:</b></td>
+            <td>{!! $candidates['dateOfReg'] !!}</td>
+          </tr>
+        </tbody>
+      </table>
+   
+      <table class="bordered">
+        <thead>
+          <tr>
+            <td> <h5>General Details:</h5></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Department 1:</b></td>
+            <td>{!! $candidates['dept1'] !!}</td>
+            <td><b>Department 2:</b></td>
+            <td>{!! $candidates['dept2'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Department 3:</b></td>
+            <td>{!! $candidates['dept3'] !!}</td>
+            <td><b>Area of Research:</b></td>
+            <td>{!! $candidates['areaOfResearch'] !!}</td>
+          </tr>
+        </tbody>
+      </table>
+  
 
-      <div class="row">
-        <h5>Personal Details:</h5>
-        <div class="col l6">
-          <p><b>Name of Candidate:</b> {!! $candidates['name'] !!}</p>
-          <p><b>Email Id:</b> {!! $candidates['email'] !!}</p>
-          <p><b>Category:</b> {!! $candidates['category'] !!}</p>
-          <p><b>Marital Status: </b>{!! $candidates['maritalStatus'] !!}</p>
-          <p><b>Nationality:</b> {!! $candidates['nationality'] !!}</p>
-          <p><b>Permanent Address:</b> {!! $candidates['permanentaddr'] !!}</p>
-          <p><b>Landline Number:</b> {!! $candidates['landline'] !!}</p>
-        </div>
-        <div class="col l6">
-          <p><b>Father's Name:</b> {!! $candidates['fatherName'] !!}</p>
-          <p><b>Date of Birth:</b> {!! $candidates['dob'] !!}</p>
-          <p><b>Sex :</b> {!! $candidates['sex'] !!}</p>
-          <p><b>Physically Handicapped:</b> {!! $candidates['PH'] !!}</p>
-          <p><b>Address for Communication:</b> {!! $candidates['addrforcomm'] !!}</p>
-          <p><b>Mobile Number:</b> {!! $candidates['mobile'] !!}</p>
-        </div>
-      </div>
+      <table class="bordered">
+        <thead>
+          <tr>
+            <td><h5>Personal Details:</h5></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Name of Candidate:</b></td>
+            <td>{!! $candidates['name'] !!}</td>
+            <td><b>Email Id:</b></td>
+            <td>{!! $candidates['email'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Father's Name:</b></td>
+            <td>{!! $candidates['fatherName'] !!}</td>
+            <td><b>Date of Birth:</b></td>
+            <td>{!! $candidates['dob'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Category:</b></td>
+            <td>{!! $candidates['category'] !!}</td>
+            <td><b>Marital Status:</b></td>
+            <td>{!! $candidates['maritalStatus'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Sex:</b></td>
+            <td>{!! $candidates['sex'] !!}</td>
+            <td><b>Physically Handicapped:</b></td>
+            <td>{!! $candidates['PH'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Nationality:</b></td>
+            <td>{!! $candidates['nationality'] !!}</td>
+            <td><b>Permanent Address:</b></td>
+            <td>{!! $candidates['permanentaddr'] !!}</td>
+          </tr>                  
+          <tr>
+            <td><b>Address for Communication:</b></td>
+            <td>{!! $candidates['addrforcomm'] !!}</td>
+            <td><b>Mobile Number:</b></td>
+            <td>{!! $candidates['mobile'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Landline Number:</b></td>
+            <td>{!! $candidates['landline'] !!}</td>
+            
+          </tr>
+        </tbody>
+      </table>
 
-      <div class="row">
-        <h5>Undergraduate Details</h5>
-        <div class="col l6">
-          <p><b>Degree:</b> {!! $ug['degreeName'] !!}</p>
-          <p><b>G.P.A:</b> {!! $ug['gpa'] !!}</p>
-          <p><b>Name of Institution:</b> {!! $ug['institutionName'] !!}</p>
-          <p><b>Year of Passing:</b> {!! $ug['yop'] !!}</p>
-        </div>
-        <div class="col l6">
-          <p><b>Branch:</b> {!! $ug['branch'] !!}</p>
-          <p><b>Class:</b> {!! $ug['class'] !!}</p>
-          <p><b>Name of University:</b> {!! $ug['universityName'] !!}</p>
-        </div>
-      </div>
-      <div class="row">
-        <h5>Educational Details:</h5>
-        <div class="col l4"><p><b>Semester 1:</b></p></div>
-        <div class="col l4"><p><b>G.P.A obtained:</b> {!! $scores['gpa1'] !!}</p></div>
-        <div class="col l4"><p><b>Max G.P.A:</b> {!! $scores['gpamax1'] !!}</p></div>
-        <div class="col l4"><p><b>Semester 2:</b></p></div>
-        <div class="col l4"><p><b>G.P.A obtained:</b> {!! $scores['gpa2'] !!}</p></div>
-        <div class="col l4"><p><b>Max G.P.A:</b> {!! $scores['gpamax2'] !!}</p></div>
-        <div class="col l4"><p><b>Semester 3:</b></p></div>
-        <div class="col l4"><p><b>G.P.A obtained:</b> {!! $scores['gpa3'] !!}</p></div>
-        <div class="col l4"><p><b>Max G.P.A:</b> {!! $scores['gpamax3'] !!}</p></div>
-        <div class="col l4"><p><b>Semester 4:</b></p></div>
-        <div class="col l4"><p><b>G.P.A obtained:</b> {!! $scores['gpa4'] !!}</p></div>
-        <div class="col l4"><p><b>Max G.P.A:</b> {!! $scores['gpamax4'] !!}</p></div>
-        <div class="col l4"><p><b>Semester 5:</b></p></div>
-        <div class="col l4"><p><b>G.P.A obtained:</b> {!! $scores['gpa5'] !!}</p></div>
-        <div class="col l4"><p><b>Max G.P.A:</b> {!! $scores['gpamax5'] !!}</p></div>
-        <div class="col l4"><p><b>Semester 6:</b></p></div>
-        <div class="col l4"><p><b>G.P.A obtained:</b> {!! $scores['gpa6'] !!}</p></div>
-        <div class="col l4"><p><b>Max G.P.A:</b> {!! $scores['gpamax6'] !!}</p></div>
-        <div class="col l4"><p><b>Semester 7:</b></p></div>
-        <div class="col l4"><p><b>G.P.A obtained:</b> {!! $scores['gpa7'] !!}</p></div>
-        <div class="col l4"><p><b>Max G.P.A:</b> {!! $scores['gpamax7'] !!}</p></div>
-        <div class="col l4"><p><b>Semester 8:</b></p></div>
-        <div class="col l4"><p><b>G.P.A obtained:</b> {!! $scores['gpa8'] !!}</p></div>
-        <div class="col l4"><p><b>Max G.P.A:</b> {!! $scores['gpamax8'] !!}</p></div>
-      </div>
+
+      <table class="bordered">
+        <thead>
+          <tr>
+            <td><h5>Undergraduate Details</h5></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Degree:</b></td>
+            <td>{!! $ug['degreeName'] !!}</td>
+            <td><b>G.P.A:</b></td>
+            <td>{!! $ug['gpa'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Branch:</b></td>
+            <td>{!! $ug['branch'] !!}</td>
+            <td><b>Class:</b></td>
+            <td>{!! $ug['class'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Name of Institution:</b></td>
+            <td>{!! $ug['institutionName'] !!}</td>
+            <td><b>University Name:</b></td>
+            <td>{!! $ug['universityName'] !!}</td>
+          </tr>
+           <tr>
+            <td><b>Year of passing:</b></td>
+            <td>{!! $ug['yop'] !!}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="bordered">
+        <thead>
+          <tr>
+            <td>GATE/NET/SLET/CSIR/CAT/UGC/NBHM details:</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Examination:</b></td>
+            <td>{!! $others['exam'] !!}</td>
+            <td><b>Score:</b></td>
+            <td>{!! $others['score'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Rank:</b></td>
+            <td>{!! $others['rank'] !!}</td>
+            <td><b>Valid Till:</b></td>
+            <td>{!! $others['valid'] !!}</td>
+          </tr>
+          <tr>
+            <td>Discipline</td>
+            <td>{!! $others['discipline'] !!}</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <table class="bordered">
+        <thead>
+          <tr>
+            <td><h5>Educational Details:</h5></td>
+          </tr>
+          <tr>
+            <td>Semester</td>
+            <td>G.P.A. Obtained</td>
+            <td>Max G.P.A.</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Semester 1</td>
+            <td>{!! $scores['gpa1'] !!}</td>
+            <td>{!! $scores['gpamax1'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Semester 2</td>
+            <td>{!! $scores['gpa2'] !!}</td>
+            <td>{!! $scores['gpamax2'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Semester 3</td>
+            <td>{!! $scores['gpa3'] !!}</td>
+            <td>{!! $scores['gpamax3'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Semester 4</td>
+            <td>{!! $scores['gpa4'] !!}</td>
+            <td>{!! $scores['gpamax4'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Semester 5</td>
+            <td>{!! $scores['gpa5'] !!}</td>
+            <td>{!! $scores['gpamax5'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Semester 6</td>
+            <td>{!! $scores['gpa6'] !!}</td>
+            <td>{!! $scores['gpamax6'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Semester 7</td>
+            <td>{!! $scores['gpa7'] !!}</td>
+            <td>{!! $scores['gpamax7'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Semester 8</td>
+            <td>{!! $scores['gpa'] !!}</td>
+            <td>{!! $scores['gpamax'] !!}</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      
       <div class="row">
         <h5>Employer Details:</h5>
         <div class="col l12">
@@ -276,7 +520,7 @@
           @endif
 
 </div>
-</div>
+
 <script type="text/javascript">
   $(document).ready(function(){
     var x = new Date().getFullYear();

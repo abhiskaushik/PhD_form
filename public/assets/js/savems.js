@@ -74,8 +74,23 @@ $(document).ready(function(){
 		data.emp_to_3 = $('#emp_to_3').val();
 		data.date = $('#date').val();
 
+		if($('#announced').prop('checked',false)){
+			data.exam = '';
+			data.rank = '';
+			data.score = '';
+			data.valid = '';
+			data.discipline = '';
+		}
+		else{
+			data.exam = $('#exam').val();
+			data.rank = $('#rank').val();
+			data.score = $('#score').val();
+			data.valid = $('#valid').val();
+			data.discipline = $('#discipline').val();	
+		}
+
 		console.log(data);
-		var baseurl = 'http://admission.nitt.edu';
+		var baseurl = 'http://localhost:8000';
 
 		var url = '/save2ms';
 		$.ajax(

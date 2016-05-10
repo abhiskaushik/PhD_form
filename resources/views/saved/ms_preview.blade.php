@@ -315,27 +315,28 @@
 			      <div class="space-medium"></div>
 					<div class="exams">
 						<div class="col l4">
-							<p>Examination:</p>
+							<span class="light">*Examination:</span>
 							<input type="text" id="exam" name="exam" />
 						</div>
 						<div class="col l4">
-						<p>Score:</p>
-							<input type="text" id="score" name="score"  min="-100" max="1000" />
+						<span class="light">*Score:</span>
+							<input type="text" id="score" name="score" min="-100" max="1000" />
 						</div>
 						<div class="col l4">
-							<p>Rank:</p>
-							<input type="text" id="rank" name="rank"  min="1" max="99999" />
+							<span class="light">*Rank:</span>
+							<input type="text" id="rank" name="rank" min="1" max="99999" />
 						</div>
 						<div class="col l6">
-							<p>Validity:</p>
-							<input type="text" id="validity" name="validity" />
+							<span class="light">*Validity:</span>
+							<input type="text" id="valid" name="validity" />
 						</div>
 						<div class="col l6">
-							<p>Discipline:</p>
 							
+							<span class="light">*Discipline:</span>
 							<input type="text" id="discipline" name="discipline" />
 						</div>
 					</div>		      
+
 			      	<div class="space-medium"></div>
 			      <div class="row">
 	  			<div class="row">
@@ -614,6 +615,11 @@
 			$('#gpa7').val(a['gpa7']);
 			$('#gpa8').val(a['gpa8']);
 
+				$('#exam').val(a['exam']);
+			$('#score').val(a['score']);
+			$('#rank').val(a['rank']);
+			$('#valid').val(a['valid']);
+			$('#discipline').val(a['discipline']);
 
 			$('#emp_pos_1').val(a['emp_pos_1']);
 			$('#emp_pos_2').val(a['emp_pos_2']);

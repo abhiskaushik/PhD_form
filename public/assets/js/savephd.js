@@ -66,9 +66,22 @@ $(document).ready(function(){
 		data.date = $('#date').val();
 		// console.log('hey');
 		// console.log(data);
+		if($('#announced').prop('checked',false)){
+			data.exam = '';
+			data.rank = '';
+			data.score = '';
+			data.valid = '';
+			data.discipline = '';
+		}
+		else{
+			data.exam = $('#exam').val();
+			data.rank = $('#rank').val();
+			data.score = $('#score').val();
+			data.valid = $('#valid').val();
+			data.discipline = $('#discipline').val();	
+		}
 		
-		
-		var baseurl = 'http://admission.nitt.edu';//admission.nitt.edu
+		var baseurl = 'http://localhost:8000';//localhost:8000
 		var url = '/save2phd';
 		$.ajax(
 	    {

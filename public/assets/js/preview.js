@@ -143,7 +143,21 @@ $(document).ready(function(){
 		data.emp_to_3 = $('#emp_to_3').val();
 		data.date = $('#date').val();
 
-		
+		if($('#announced').is(':checked')){
+			data.exam = $('#exam option:selected').text();
+			data.score = $('#score').val();
+			data.rank = $('#rank').val();
+			data.validity = $('#validity').val();
+			data.discipline = $('#discipline').val();
+      console.log($('#validity').val());
+		}
+		else{
+			data.exam ='';
+			data.score ='';
+			data.rank ='';
+			data.validity ='';
+			data.discipline ='';
+		}		
 
 		console.log(data);
     localStorage.clear();

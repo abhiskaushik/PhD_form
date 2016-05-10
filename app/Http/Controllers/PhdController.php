@@ -317,7 +317,7 @@ class PhdController extends Controller
             $others->awards1 = $request->input('awards1');
             $others->awards2 = $request->input('awards2');
             $others->awards3 = $request->input('awards3');
-            $others->subdate = $request->input('date');
+            
 
             $others->save();
 

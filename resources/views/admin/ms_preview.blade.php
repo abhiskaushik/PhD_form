@@ -324,24 +324,24 @@
 			      </div>
 			      <div class="exams">
 						<div class="col l4">
-							<p>Examination:</p>
+							<span class="light">*Examination:</span>
 							<input type="text" id="exam" name="exam" />
 						</div>
 						<div class="col l4">
-						<p>Score:</p>
+						<span class="light">*Score:</span>
 							<input type="text" id="score" name="score" min="-100" max="1000" />
 						</div>
 						<div class="col l4">
-							<p>Rank:</p>
+							<span class="light">*Rank:</span>
 							<input type="text" id="rank" name="rank" min="1" max="99999" />
 						</div>
 						<div class="col l6">
-							<p>Validity:</p>
-							<input type="text" id="validity" name="validity" />
+							<span class="light">*Validity:</span>
+							<input type="text" id="valid" name="validity" />
 						</div>
 						<div class="col l6">
 							
-							<p>Discipline:</p>
+							<span class="light">*Discipline:</span>
 							<input type="text" id="discipline" name="discipline" />
 						</div>
 					</div>		      
@@ -610,7 +610,7 @@
 			$('#exam').val(a['exam']);
 			$('#score').val(a['score']);
 			$('#rank').val(a['rank']);
-			// $('#validity').val(a['validity']);
+			$('#valid').val(a['valid']);
 			$('#discipline').val(a['discipline']);
 
 			$('#max1').val(a['maxgpa1']);
