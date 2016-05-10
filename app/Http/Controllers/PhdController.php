@@ -23,7 +23,7 @@ class PhdController extends Controller
     {
 
     	$rules = array(                        
-	        'date' => 'required', 
+	        // 'date' => 'required', 
             'chalanNo' => 'required',    
 	        'appl_categ' => 'required',
 	        'department1' => 'required',
@@ -78,7 +78,7 @@ class PhdController extends Controller
         	if($bool1 == NULL && $bool2 == NULL){
             $details = array(
                 'date' => $request->input('date'),
-                'date_of_sub' => $request->input('date_of_sub'),
+                // 'date_of_sub' => $request->input('date_of_sub'),
                 'appl_categ' => $request->input('appl_categ'),//dont know how to add $name attribute here
                 'image_path' => $request->input('image_path'),
                 'department1' => $request->input('department1'),
@@ -250,7 +250,6 @@ class PhdController extends Controller
             $candidate->chalanNo = $request->input('chalanNo');
             $candidate->registrationNumber = $request->input('regNo');
             $candidate->applicationCategory = $request->input('appl_categ');
-            $candidate->dateOfReg = $request->input('date');
             $candidate->dept1 = self::department($request->input('department1'));
             $candidate->dept2 = self::department($request->input('department2'));
             $candidate->dept3 = self::department($request->input('department3'));

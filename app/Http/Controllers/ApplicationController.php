@@ -71,10 +71,10 @@ class ApplicationController extends Controller
 	                            'phdorms' => $categ
 	                            );
 
-	            
-	            $pdf = PDF::loadView('print', $data);
-	            return response($pdf->output())
-	                            ->header('Content-Type', 'application/pdf');
+	            return view('print');
+	            // $pdf = PDF::loadView('print', $data);
+	            // return response($pdf->output())
+	            //                 ->header('Content-Type', 'application/pdf');
 	        }
 	        else
 	        {
@@ -102,9 +102,11 @@ class ApplicationController extends Controller
 	                            'pro' => $proDetails,
 	                            'phdorms' => $categ
 	                            );
-	            $pdf = PDF::loadView('print', $data);
-	            return response($pdf->output())
-	                            ->header('Content-Type', 'application/pdf');
+
+                return view('print');
+	            // $pdf = PDF::loadView('print', $data);
+	            // return response($pdf->output())
+	            //                 ->header('Content-Type', 'application/pdf');
 	        }
 	    }
     }

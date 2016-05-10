@@ -15,6 +15,7 @@ use App\Ms;
 use App\MsUg;
 use App\MsScores;
 use App\MsPro;
+use App\MsOther;
 
 class MsController extends Controller
 {
@@ -23,7 +24,7 @@ class MsController extends Controller
 
     	$rules = array(   
             'chalanNo' => 'required',                     
-	        'date' => 'required',     
+	        // 'date' => 'required',     
 	        'appl_categ' => 'required',
 	        'department1' => 'required',
             // 'department2' => 'required',
@@ -91,8 +92,8 @@ class MsController extends Controller
 
         	if($bool1 == NULL && $bool2 == NULL){
             $details = array(
-                'date' => $request->get('date'),
-                'date_of_sub' => $request->get('date_of_sub'),
+                // 'date' => $request->get('date'),
+                // 'date_of_sub' => $request->get('date_of_sub'),
                 'appl_categ' => $request->get('appl_categ'),//dont know how to add $name attribute here
                 'image_path' => $request->get('image_path'),
                 'department1' => $request->get('department1'),
@@ -149,6 +150,23 @@ class MsController extends Controller
                 'gpa6' => $request->get('gpa6'),
                 'gpa7' => $request->get('gpa7')
             );
+
+            if($request->input('ann') == 'on')
+            {
+                $details['score'] = $request->input('score');
+                $details['rank'] = $request->input('rank');
+                $details['validity'] = $request->input('validity');
+                $details['discipline'] = $request->input('discipline');
+                $details['exam'] = $request->input('exam');
+            }
+            else
+            {
+                $details['score'] = 'RA';
+                $details['rank'] = 'RA';
+                $details['validity'] = 'RA';
+                $details['discipline'] = 'RA';
+                $details['exam'] = 'RA';
+            }
 
             $file = $request->file('image_path');   
             $extension = $request->file('image_path')->getClientOriginalExtension();
@@ -217,7 +235,6 @@ class MsController extends Controller
             $candidate->chalanNo = $request->input('chalanNo');
             $candidate->registrationNumber = $request->input('regNo');
             $candidate->applicationCategory = $request->get('appl_categ');
-            $candidate->dateOfReg = $request->get('date');
             $candidate->dept1 = self::department($request->input('department1'));
             $candidate->dept2 = self::department($request->input('department2'));
             $candidate->dept3 = self::department($request->input('department3'));
@@ -311,6 +328,17 @@ class MsController extends Controller
             $msScores->gpa8 = $details['gpa8'];
 
             $msScores->save();
+
+            $others = new PhdOther();
+
+            $others->applNo = $applNo;
+            $others->score = $details['score'];
+            $others->rank = $details['rank'];
+            $others->validity = $details['validity'];
+            $others->discipline = $details['discipline'];
+            $others->exam = $details['exam'];
+
+            $others->save();
 
             $details['reg_number'] = $reg_number;
             $details['phdorms'] = 'ms';
