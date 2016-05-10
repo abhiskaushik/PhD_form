@@ -82,8 +82,72 @@
            
             <div class="space-small">
             </div>
-            <div class="center">
-              <a class="waves-effect waves-light btn modal-trigger" href="#modal{!! $i !!}">Click Here To view full form</a>
+            <div class="center ">
+              <a data-reg="{!! $i !!}" href="phdpreview1" class="form waves-effect waves-light btn modal-trigger" href="#modal{!! $i !!}">Click Here To view full form</a>
+              <input class="regNo{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->registrationNumber !!}' />
+              <input class="applCateg{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->applicationCategory !!}' />
+              <input class="dateOfReg{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->dateOfReg !!}' />
+              <input class="dept1{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->dept1 !!}' />
+              <input class="dept2{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->dept2 !!}' />
+              <input class="dept3{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->dept3 !!}' />
+              <input class="email{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->email !!}' />
+              <input class="name{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->name !!}' />
+              <input class="fatherName{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->fatherName !!}' />
+              <input class="category{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->category !!}' />
+              <input class="maritalStatus{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->maritalStatus !!}' />
+              <input class="nationality{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->nationality !!}' />
+              <input class="permanentaddr{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->permanentaddr !!}' />
+              <input class="landline{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->landline !!}' />
+              <input class="areaOfResearch{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->areaOfResearch !!}' />
+              <input class="dob{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->dob !!}' />
+              <input class="sex{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->sex !!}' />
+              <input class="addrforcomm{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->addrforcomm !!}' />
+              <input class="mobile{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->mobile !!}' />
+              <input class="PH{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->PH !!}' />
+              <input class="ug_degreeName{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->degreeName !!}' />
+              <input class="ug_gpa{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->gpa !!}' />
+              <input class="ug_institutionName{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->institutionName !!}' />
+              <input class="ug_yop{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->yop !!}' />
+              <input class="ug_branch{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->branch !!}' />
+              <input class="ug_class{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->class !!}' />
+              <input class="ug_universityName{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->universityName !!}' />
+
+              <input class="pg_degreeName{!! $i !!}" hidden="true" value='{!! $data['pg'][$i]->degreeName !!}' />
+              <input class="pg_gpa{!! $i !!}" hidden="true" value='{!! $data['pg'][$i]->gpa !!}' />
+              <input class="pg__institutionName{!! $i !!}" hidden="true" value='{!! $data['pg'][$i]->institutionName !!}' />
+              <input class="pg_yop{!! $i !!}" hidden="true" value='{!! $data['pg'][$i]->yop !!}' />
+              <input class="pg_branch{!! $i !!}" hidden="true" value='{!! $data['pg'][$i]->branch !!}' />
+              <input class="pg_class{!! $i !!}" hidden="true" value='{!! $data['pg'][$i]->class !!}' />
+              <input class="pg_universityName{!! $i !!}" hidden="true" value='{!! $data['pg'][$i]->universityName !!}' />
+
+              <input class="exam{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->exam !!}' />
+              <input class="discipline{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->discipline !!}' />
+              <input class="score{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->score !!}' />
+              <input class="rank{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->rank !!}' />
+              <input class="pgproject{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->pgproject !!}' />
+              <input class="publications1{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->publications1 !!}' />
+              <input class="publications2{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->publications2 !!}' />
+              <input class="publications3{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->publications3 !!}' />
+              <input class="awards1{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->awards1 !!}' />
+              <input class="awards2{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->awards2 !!}' />
+              <input class="awards3{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->awards3 !!}' />
+
+              <input class="proexp1{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->proexp1 !!}' />
+              <input class="position1{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->position1 !!}' /> 
+              <input class="from1{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->from1 !!}' />  
+              <input class="to1{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->to1 !!}' />           
+              <input class="proexp2{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->proexp2 !!}' />
+              <input class="position2{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->position2 !!}' /> 
+              <input class="from2{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->from2 !!}' />  
+              <input class="to2{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->to2 !!}' />  
+              <input class="proexp3{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->proexp3 !!}' />
+              <input class="position3{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->position3 !!}' /> 
+              <input class="from3{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->from3 !!}' />  
+              <input class="to3{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->to3 !!}' />    
+
+
+
+
             </div>
           </div>
           </div>
@@ -91,112 +155,7 @@
           <div id="modal{!! $i !!}" class="modal l8">
           <div class="modal-content">
           <div class="container">
-          <h4>Candidate's Form</h4>
-          <div class="row">
-            <div class="col l6">
-              <p><b>Registration Number:</b> {!! $data['candidates'][$i]->registrationNumber !!}</p>
-            </div>
-            <div class="col l6">
-              <p><b>Date of Registration:</b> {!! $data['candidates'][$i]->dateOfReg !!}
-          </p>
-            </div>
-          </div>
-          
-          <div class="row">
-            <h5>Application Details:</h5>
-            <div class="col l6">
-              p><b>Application Category:</b> {!! $data['candidates'][$i]->applicationCategory !!}</p>
-            </div>
-            <div class="col l6">
-              <p><b>Department:</b> {!! $data['candidates'][$i]->dept !!}</p>
-            </div>
-          </div>
-          <div class="row">
-            <h5>Personal Details:</h5>
-            <div class="col l6">
-              <p><b>Email Id:</b> {!! $data['candidates'][$i]->email !!}</p>
-              <p><b>Name of Candidate:</b> {!! $data['candidates'][$i]->name !!}</p>
-              <p><b>Father's Name:</b> {!! $data['candidates'][$i]->fatherName !!}</p>
-              <p><b>Category:</b> {!! $data['candidates'][$i]->category !!}</p>
-              <p><b>Marital Status: </b>{!! $data['candidates'][$i]->maritalStatus !!}</p>
-              <p><b>Nationality:</b> {!! $data['candidates'][$i]->nationality !!}</p>
-              <p><b>Permanent Address:</b> {!! $data['candidates'][$i]->permanentaddr !!}</p>
-              <p><b>Landline Number:</b> {!! $data['candidates'][$i]->landline !!}</p>
-            </div>
-            <div class="col l6">
-              <p><b>Area of Research:</b> {!! $data['candidates'][$i]->areaOfResearch !!}</p>              
-              <p><b>Email Id:</b> {!! $data['candidates'][$i]->email !!}</p>              
-              <p><b>Date of Birth:</b> {!! $data['candidates'][$i]->dob !!}</p>              
-              <p><b>Sex :</b> {!! $data['candidates'][$i]->sex !!}</p>              
-              <p><b>Physically Handicapped:</b> {!! $data['candidates'][$i]->PH !!}</p><!-- wtf -->              
-              <p><b>Address for Communication:</b> {!! $data['candidates'][$i]->addrforcomm !!}</p>              
-              <p><b>Mobile Number:</b> {!! $data['candidates'][$i]->mobile !!}</p>
-            </div>
-          </div>
-          <div class="row">
-              <h5>Undergraduate Details:</h5>
-            <div class="col l6">
-              <p><b>Undergraduate Degree:</b> {!! $data['ug'][$i]->degreeName !!}</p>
-              <p><b>Undergraduate G.P.A:</b> {!! $data['ug'][$i]->gpa !!}</p>
-              <p><b>Undergraduate Name of Institution:</b> {!! $data['ug'][$i]->institutionName !!}</p>
-              <p><b>Undergraduate Year of Passing:</b> {!! $data['ug'][$i]->yop !!}</p>
-            </div>
-            <div class="col l6">
-              
-          <p><b>Undergraduate Branch:</b> {!! $data['ug'][$i]->branch !!}</p>
-          
-          <p><b>Undergraduate Class:</b> {!! $data['ug'][$i]->class !!}</p>
-          
-          <p><b>Undergraduate Name of University:</b> {!! $data['ug'][$i]->universityName !!}</p>
-          
-            </div>
-          </div>
-          <div class="row">
-            <h5>Post-Graduate Details:</h5>
-            <div class="col l6">
-              <p><b>Post-graduate Degree:</b> {!! $data['pg'][$i]->degreeName !!}</p>
-              <p><b>Post-graduate G.P.A:</b> {!! $data['pg'][$i]->gpa !!}</p>
-              <p><b>Post-graduate Name of Institution:</b> {!! $data['pg'][$i]->institutionName !!}</p>
-              <p><b>Post-graduate Year of Passing:</b> {!! $data['pg'][$i]->yop !!}</p>
-            </div>
-            <div class="col l6">
-               <p><b>Post-graduate Branch:</b> {!! $data['pg'][$i]->branch !!}</p>
-          
-          <p><b>Post-graduate Class:</b> {!! $data['pg'][$i]->class !!}</p>
-          
-          <p><b>Post-graduate Name of University:</b> {!! $data['pg'][$i]->universityName !!}</p>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col l12">
-              @if($data['others'][$i]->exam)
-              <p><b>Exam Name:</b> {!! $data['others'][$i]->exam !!}</p>
-              @endif
-              <p><b>Discipline:</b> {!! $data['others'][$i]->discipline !!}</p>
-              <p><b>Score:</b> {!! $data['others'][$i]->score !!}</p>
-              <p><b>Rank:</b> {!! $data['others'][$i]->rank !!}</p>
-            </div>
-          </div>
-
-          <div class="row">
-            <h5>Project/Publication Details:</h5>
-            <div class="col l6">
-              <p><b>Title of Project:</b> {!! $data['others'][$i]->pgproject !!}</p>
-              <p><b>Details of Publication 2:</b> {!! $data['others'][$i]->publications2 !!}</p>
-              <p><b>Awards1:</b> {!! $data['others'][$i]->awards1 !!}</p>
-              <p><b>Awards3:</b> {!! $data['others'][$i]->awards3 !!}</p>
-            </div>
-            <div class="col l6">
-              <p><b>Details of Publication 1:</b> {!! $data['others'][$i]->publications1 !!}</p>
-          
-          <p><b>Details of Publication 3:</b> {!! $data['others'][$i]->publications3 !!}</p>
-          
-          <p><b>Awards2:</b> {!! $data['others'][$i]->awards2 !!}</p>
-            </div>
-          </div>
-
-          <div class="row">
+         <div class="row">
             <h5>Employer Details:</h5>
             <div class="col l12">
               <p><b>Employer Details 1:</b> {!! $data['pro'][$i]->proexp1 !!}</p>
@@ -303,6 +262,7 @@
   <script type="text/javascript">
   $(document ).ready(function(){
     $(".button-collapse").sideNav();
+    console.log('{!! $data['candidates'] !!}');
   })
   </script>    
 
@@ -331,6 +291,83 @@
           inputBox.focusout();
           isOpen = false; 
         }
+
+        });
+        $('.form').click(function(){
+          console.log('hey');
+          var index = $(this).data("reg");
+          var data = {};
+
+          data.regNo = $('.regNo'+index).val();
+          data.chalanNo = $('.chalanNo'+index).val();//to be added
+          data.applCateg = $('.applCateg'+index).val();
+          data.dateOfReg = $('.dateOfReg'+index).val();
+          data.dept1 = $('.dept1'+index).val();
+          data.dept2 = $('.dept2'+index).val();
+          data.dept3 = $('.dept3'+index).val();
+          data.email = $('.email'+index).val();
+          data.name = $('.name'+index).val();
+          data.fatherName = $('.fatherName'+index).val();
+          data.category = $('.category'+index).val();
+          data.maritalStatus = $('.maritalStatus'+index).val();
+          data.nationality = $('.nationality'+index).val();
+          data.permanentaddr = $('.permanentaddr'+index).val();
+          data.landline = $('.landline'+index).val();
+          data.areaOfResearch = $('.areaOfResearch'+index).val();
+          data.dob = $('.dob'+index).val();
+          data.sex = $('.sex'+index).val();
+          data.addrforcomm = $('.addrforcomm'+index).val();
+          data.mobile = $('.mobile'+index).val();
+          data.PH = $('.PH'+index).val();
+          data.ug_degreeName = $('.ug_degreeName'+index).val();
+          data.ug_gpa = $('.ug_gpa'+index).val();
+          data.ug_institutionName = $('.ug_institutionName'+index).val();
+          data.ug_universityName = $('.ug_universityName'+index).val();
+          data.ug_yop = $('.ug_yop'+index).val();
+          data.ug_branch = $('.ug_branch'+index).val();
+          data.ug_class = $('.ug_class'+index).val();
+
+          data.pg_degreeName = $('.pg_degreeName'+index).val();
+          data.pg_gpa = $('.pg_gpa'+index).val();
+          data.pg_institutionName = $('.pg_institutionName'+index).val();
+          data.pg_universityName = $('.pg_universityName'+index).val();
+          data.pg_yop = $('.pg_yop'+index).val();
+          data.pg_branch = $('.pg_branch'+index).val();
+          data.pg_class = $('.pg_class'+index).val();
+          data.exam = $('.exam'+index).val();
+          data.discipline = $('.discipline'+index).val();
+          data.score = $('.score'+index).val();
+          data.rank = $('.rank'+index).val();
+          data.pgproject = $('.pgproject'+index).val();
+          data.publications1 = $('.publications1'+index).val();
+          data.publications2 = $('.publications2'+index).val();
+          data.publications3 = $('.publications3'+index).val();
+
+          data.awards1 = $('.awards1'+index).val();
+          data.awards2 = $('.awards2'+index).val();
+          data.awards3 = $('.awards3'+index).val();
+
+          data.proexp1 = $('.proexp1'+index).val();
+          data.proexp2 = $('.proexp2'+index).val();
+          data.proexp3 = $('.proexp3'+index).val();
+
+          data.position1 = $('.position1'+index).val();
+          data.position2 = $('.position2'+index).val();
+          data.position3 = $('.position3'+index).val();
+
+          data.from1 = $('.from1'+index).val();
+          data.from2 = $('.from2'+index).val();
+          data.from3 = $('.from3'+index).val();
+
+          data.to1 = $('.to1'+index).val();
+          data.to2 = $('.to2'+index).val();
+          data.to3 = $('.to3'+index).val();
+          
+          console.log(data);
+          localStorage.clear();
+          localStorage.setItem('data' , JSON.stringify(data));    
+          console.log(JSON.parse(localStorage.getItem('data')));
+
         });
   });
   </script>

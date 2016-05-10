@@ -98,3 +98,8 @@ Route::get('mspreview', function()
     {
         return view('saved.ms_preview');
     });
+
+Route::get('phdpreview1', function()
+    {
+        return view('admin.phd_preview');
+    });
