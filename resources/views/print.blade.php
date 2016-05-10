@@ -199,7 +199,7 @@
       <table class="bordered">
         <thead>
           <tr>
-            <td>GATE/NET/SLET/CSIR/CAT/UGC/NBHM details:</td>
+            <td><b>GATE/NET/SLET/CSIR/CAT/UGC/NBHM details:</b></td>
           </tr>
         </thead>
         <tbody>
@@ -222,6 +222,38 @@
         </tbody>
       </table>
 
+      <table>
+        <thead>
+          <tr>
+            <td><h5>Publication/Project Details:</h5></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Title of Project:</b></td>
+            <td>{!! $others['pgproject'] !!}</td>
+            <td><b>Details of Publication 1:</b></td>
+            <td>{!! $others['publications1'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Details of Publication 2:</b></td>
+            <td>{!! $others['publications2'] !!}</td>
+            <td><b>Details of Publication 3:</b></td>
+            <td>{!! $others['publications3'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Awards1:</b></td>
+            <td>{!! $others['awards1'] !!}</td>
+            <td><b>Awards2:</b></td>
+            <td>{!! $others['awards2'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Awards3:</b></td>
+            <td>{!! $others['awards3'] !!}</td>
+          </tr>
+        </tbody>
+      </table>
+
       <div class="row">
         <h5>Publication/Project Details:</h5>
         <div class="col l6">
@@ -236,37 +268,59 @@
           <p><b>Awards2:</b> {!! $others['awards2'] !!}</p>
         </div>
       </div>
-      <div class="row">
-        <h5>Employer Details:</h5>
-        <div class="col l12">
-          <p><b>Employer Details 1:</b> {!! $pro['proexp1'] !!}</p>
-          <p><b>Position :</b> {!! $pro['position1'] !!}</p>
-          <div class="col l6"><p><b>From :</b> {!! $pro['from1'] !!}</p></div>  
-          <div class="col l6"><p><b>To :</b> {!! $pro['to1'] !!}</p></div>  
-        </div>
-        
-      </div>
-      <div class="row">
-        <h5>Employer Details:</h5>
-        <div class="col l12">
-          <p><b>Employer Details 2:</b> {!! $pro['proexp2'] !!}</p>
-          <p><b>Position :</b> {!! $pro['position2'] !!}</p>
-          <div class="col l6"><p><b>From :</b> {!! $pro['from2'] !!}</p></div>  
-          <div class="col l6"><p><b>To :</b> {!! $pro['to2'] !!}</p></div>  
-        </div>
-        
-      </div>
-      <div class="row">
-        <h5>Employer Details:</h5>
-        <div class="col l12">
-          <p><b>Employer Details 3:</b> {!! $pro['proexp3'] !!}</p>
-          <p><b>Position :</b> {!! $pro['position3'] !!}</p>
-          <div class="col l6"><p><b>From :</b> {!! $pro['from3'] !!}</p></div>  
-          <div class="col l6"><p><b>To :</b> {!! $pro['to3'] !!}</p></div>  
-        </div>
-        
-      </div>
-
+       <table>
+        <thead>
+          <tr>
+            <td><h5>Employer Details:</h5></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Employer Details 1:</b></td>
+            <td>{!! $pro['proexp1'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position 1:</b></td>
+            <td>{!! $pro['position1'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>From</b></td>
+            <td>{!! $pro['from1'] !!}</td>
+            <td><b>To</b></td>
+            <td>{!! $pro['to1'] !!}</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td><b>Employer Details 2:</b></td>
+            <td>{!! $pro['proexp2'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position 2:</b></td>
+            <td>{!! $pro['position2'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>From</b></td>
+            <td>{!! $pro['from2'] !!}</td>
+            <td><b>To</b></td>
+            <td>{!! $pro['to2'] !!}</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td><b>Employer Details 3:</b></td>
+            <td>{!! $pro['proexp3'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position 3:</b></td>
+            <td>{!! $pro['position3'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>From</b></td>
+            <td>{!! $pro['from3'] !!}</td>
+            <td><b>To</b></td>
+            <td>{!! $pro['to3'] !!}</td>
+          </tr>
+        </tbody>
+      </table>
   
   </div>
 
@@ -486,37 +540,60 @@
         </tbody>
       </table>
 
-      
-      <div class="row">
-        <h5>Employer Details:</h5>
-        <div class="col l12">
-          <p><b>Employer Details 1:</b> {!! $pro['proexp1'] !!}</p>
-          <p><b>Position :</b> {!! $pro['position1'] !!}</p>
-          <div class="col l6"><p><b>From :</b> {!! $pro['from1'] !!}</p></div>  
-          <div class="col l6"><p><b>To :</b> {!! $pro['to1'] !!}</p></div>  
-        </div>
-        
-      </div>
-      <div class="row">
-        <h5>Employer Details:</h5>
-        <div class="col l12">
-          <p><b>Employer Details 2:</b> {!! $pro['proexp2'] !!}</p>
-          <p><b>Position :</b> {!! $pro['position2'] !!}</p>
-          <div class="col l6"><p><b>From :</b> {!! $pro['from2'] !!}</p></div>  
-          <div class="col l6"><p><b>To :</b> {!! $pro['to2'] !!}</p></div>  
-        </div>
-        
-      </div>
-      <div class="row">
-        <h5>Employer Details:</h5>
-        <div class="col l12">
-          <p><b>Employer Details 3:</b> {!! $pro['proexp3'] !!}</p>
-          <p><b>Position :</b> {!! $pro['position3'] !!}</p>
-          <div class="col l6"><p><b>From :</b> {!! $pro['from3'] !!}</p></div>  
-          <div class="col l6"><p><b>To :</b> {!! $pro['to3'] !!}</p></div>  
-        </div>
-        
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <td><h5>Employer Details:</h5></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Employer Details 1:</b></td>
+            <td>{!! $pro['proexp1'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position 1:</b></td>
+            <td>{!! $pro['position1'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>From</b></td>
+            <td>{!! $pro['from1'] !!}</td>
+            <td><b>To</b></td>
+            <td>{!! $pro['to1'] !!}</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td><b>Employer Details 2:</b></td>
+            <td>{!! $pro['proexp2'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position 2:</b></td>
+            <td>{!! $pro['position2'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>From</b></td>
+            <td>{!! $pro['from2'] !!}</td>
+            <td><b>To</b></td>
+            <td>{!! $pro['to2'] !!}</td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td><b>Employer Details 3:</b></td>
+            <td>{!! $pro['proexp3'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>Position 3:</b></td>
+            <td>{!! $pro['position3'] !!}</td>
+          </tr>
+          <tr>
+            <td><b>From</b></td>
+            <td>{!! $pro['from3'] !!}</td>
+            <td><b>To</b></td>
+            <td>{!! $pro['to3'] !!}</td>
+          </tr>
+        </tbody>
+      </table>
+
           @endif
 
 </div>

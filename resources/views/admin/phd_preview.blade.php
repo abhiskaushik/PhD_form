@@ -613,7 +613,7 @@
 			$('#exam').val(a['exam']);
 			$('#score').val(a['score']);
 			$('#rank').val(a['rank']);
-			// $('#validity').val(a['validity']);
+			$('#validity').val(a['valid']);
 			$('#discipline').val(a['discipline']);
 
 			
