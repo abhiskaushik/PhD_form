@@ -49,6 +49,7 @@
 
         <p><b>Registration Number: </b> {!! $regNo !!} </p>
         <p><b>Department:</b>  {!! $dept !!}</p>
+        <p><b>Venue:</b>   </p>
         <p><b>Examination Date:</b>  </p>
         <p><b>Examination Time:</b>  </p>
         <div class="space-medium"></div>

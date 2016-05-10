@@ -11,6 +11,9 @@
 	top: 200px;
 	position: relative;
 }
+.buttons a{
+	width:100%;
+}
 .activated
 {
 	background-color: white;

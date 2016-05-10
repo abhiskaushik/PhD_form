@@ -312,6 +312,31 @@
 			      	</div>
 			      </div>
 
+			      <div class="space-medium"></div>
+					<div class="exams">
+						<div class="col l4">
+							<p>Examination:</p>
+							<input type="text" id="exam" name="exam" />
+						</div>
+						<div class="col l4">
+						<p>Score:</p>
+							<input type="text" id="score" name="score" />
+						</div>
+						<div class="col l4">
+							<p>Rank:</p>
+							<input type="text" id="rank" name="rank" />
+						</div>
+						<div class="col l6">
+							<p>Validity:</p>
+							<input type="text" id="validity" name="validity" />
+						</div>
+						<div class="col l6">
+							<p>Discipline:</p>
+							
+							<input type="text" id="discipline" name="discipline" />
+						</div>
+					</div>		      
+			      	<div class="space-medium"></div>
 			      <div class="row">
 	  			<div class="row">
 		      <p class="vlarge">*Academic Details:</p>
