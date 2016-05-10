@@ -125,6 +125,7 @@
               <input class="discipline{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->discipline !!}' />
               <input class="score{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->score !!}' />
               <input class="rank{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->rank !!}' />
+              <input class="valid{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->validity !!}' />
 
               <input class="maxgpa1{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->maxgpa1 !!}' />
               <input class="gpa1{!! $i !!}" hidden="true" value='{!! $data['scores'][$i]->gpa1 !!}' />
@@ -305,6 +306,7 @@
           data.discipline = $('.discipline'+index).val();
           data.score = $('.score'+index).val();
           data.rank = $('.rank'+index).val();
+          data.valid = $('.valid'+index).val();
 
           data.maxgpa1 = $('.maxgpa1'+index).val();
           data.gpa1 = $('.gpa1'+index).val();

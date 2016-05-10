@@ -271,7 +271,7 @@ $(document).ready(function(){
 		if($('#announced').prop('checked',true)){
 				data.exam = data.pg_class = $('#exam option:selected').text();
 		}
-		if($('#agree').prop('checked',false)){
+		if($('#agree').propertyIsEnumerable(prop)('checked',false)){
 			alert('Please select the agree checkbox');
 			return false;
 		}
