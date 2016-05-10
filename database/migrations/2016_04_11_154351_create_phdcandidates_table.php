@@ -15,9 +15,8 @@ class CreatePhdcandidatesTable extends Migration
         Schema::create('phd', function (Blueprint $table) {
             $table->increments('applNo');
             $table->string('applicationCategory', 20);
-            $table->string('registrationNumber', 25);
+            $table->string('registrationNumber', 30);
             $table->string('chalanNo', 30);
-            $table->string('dateOfReg', 15);
             $table->string('imagePath', 50);
             $table->string('dept1', 50);
             $table->string('dept2', 50)->nullable();
@@ -35,8 +34,8 @@ class CreatePhdcandidatesTable extends Migration
             $table->string('addrforcomm', 200);
             $table->string('permanentaddr', 200);
             $table->string('email', 100);
-            $table->bigInteger('mobile');
-            $table->bigInteger('lanline');
+            $table->string('mobile', 15);
+            $table->string('lanline', 15)->default('');
             $table->boolean('deleted')->default(false);
             $table->boolean('accepted')->default(false);
             $table->timestamps();

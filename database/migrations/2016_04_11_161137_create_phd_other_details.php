@@ -17,13 +17,12 @@ class CreatePhdOtherDetails extends Migration
             $table->string('score', 5)->nullable();
             $table->string('rank', 6)->nullable();
             $table->string('pgproject', 50)->nullable();
-            $table->string('publications1', 50)->nullable();
-            $table->string('publications2', 50)->nullable();
-            $table->string('publications3', 50)->nullable();
+            $table->string('publications1', 150)->nullable();
+            $table->string('publications2', 150)->nullable();
+            $table->string('publications3', 150)->nullable();
             $table->string('awards1', 100)->nullable();
             $table->string('awards2', 100)->nullable();
-            $table->string('awards3', 100)->nullable(); 
-            $table->string('subdate', 10);           
+            $table->string('awards3', 100)->nullable();           
             $table->timestamps();
         });
 
