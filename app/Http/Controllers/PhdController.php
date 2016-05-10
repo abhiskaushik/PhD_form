@@ -305,7 +305,7 @@ class PhdController extends Controller
 
             $others = new PhdOther();
 
-            $others->applNo = $applNo;;
+            $others->applNo = $applNo;
             $others->score = $details['score'];
             $others->rank = $details['rank'];
             $others->validity = $details['validity'];

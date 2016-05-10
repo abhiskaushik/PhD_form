@@ -206,7 +206,7 @@ class MsController extends Controller
                     $extension3 = $request->file('form1')->getClientOriginalExtension();
                     if($extension3 != 'pdf')
                     {
-                        $message = 'Invalid file format for the uploaded files';
+                        $message = 'Invalid file format for the uploaded file';
                         return View::make('error')->with('message', $message);
                     }
                 }

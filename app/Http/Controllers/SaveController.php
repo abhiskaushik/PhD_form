@@ -19,6 +19,7 @@ class SaveController extends Controller
     {
 
         $bool = SavePhd::where('name' , $request->input('name'))
+                                ->where('email', $request->input('email'))
                                 ->where('addrforcomm' , $request->input('addr_for_commn'))
                                 ->where('dob', $request->input('dob'))
                                 ->first();
@@ -80,7 +81,8 @@ class SaveController extends Controller
     public function savems(Request $request)
     {
 
-        $bool = SavePhd::where('name' , $request->input('name'))
+        $bool = SaveMs::where('name' , $request->input('name'))
+                                ->where('email', $request->input('email'))
                                 ->where('addrforcomm' , $request->input('addr_for_commn'))
                                 ->where('dob', $request->input('dob'))
                                 ->first();
@@ -219,11 +221,11 @@ class SaveController extends Controller
             'pginstitutionName' => $request->input('pg_name_of_inst'),
             'pguniversityName'=> $request->input('pg_name_of_uni'),
             'pgyop' => $request->input('pg_yop'),
-            // 'score' => $details['score'],
-            // 'rank' => $details['rank'],
-            // 'validity' => $details['validity'],
-            // 'discipline' => $details['discipline'],
-            // 'exam' => $details['exam'],
+            'score' => $request->input('score'),
+            'rank' => $request->input('rank'),
+            'validity' => $request->input('validity'),
+            'discipline' => $request->input('discipline'),
+            'exam' => $request->input('exam'),
             'pgproject' => $request->input('title_of_project'),
             'publications1' => $request->input('details_of_pub1'),
             'publications2' => $request->input('details_of_pub2'),
@@ -303,14 +305,15 @@ class SaveController extends Controller
             'gpamax5' => $request->get('max5'),
             'gpamax6' => $request->get('max6'),
             'gpamax7' => $request->get('max7'),
-            // 'gpamax8' => $details['max8'],
+            'gpamax8' => $request->get('max8'),
             'gpa1' => $request->get('gpa1'),
             'gpa2' => $request->get('gpa2'),
             'gpa3' => $request->get('gpa3'),
             'gpa4' => $request->get('gpa4'),
             'gpa5' => $request->get('gpa5'),
             'gpa6' => $request->get('gpa6'),
-            'gpa7' => $request->get('gpa7')
+            'gpa7' => $request->get('gpa7'),
+            'gpa8' => $request->get('gpa8')
         );
 
         SaveMs::where('registrationNumber', Session::get('regNo'))
