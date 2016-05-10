@@ -7,7 +7,7 @@ $(document).ready(function(){
 			$('.add').remove();
 		
 		if($('#announced').is(':checked'))
-			$('.exams').append('<div class="add"><div class="col l3 s6"> <span class="light">Examination:</span> <select class="exam_select" required name="exam"> <option value="" selected>Choose your Exam</option> <option value="GATE">GATE</option> <option value="NET">NET</option> <option value="SLET">SLET</option> <option value="CSIR">CSIR</option> <option value="CAT">CAT</option> <option value="UGC">UGC</option> </select> </div> <div class="col l3 s6"> <span class="light">Enter Score:</span> <input placeholder="Enter Score" id="reg_number" type="number" class="validate" name="score" max="10000"> </div> <div class="col l3 s6"> <span class="light">Enter Rank:</span> <input placeholder="Enter Rank" id="reg_number" type="number" class="validate" name="rank" max="10000"> </div> <div class="col l3 s6"> <span class="light">Valid Till:</span> <input id="valid" type="date" class="validate" name="validity" max="2018" min="2010"> </div> <!-- disipline needs to be added--> <div class="col l12 s12"> <span class="light">Discipline:</span> <input type="text" class="validate" name="discipline" required /> </div> <div class="space-small"></div></div><script>$("select").material_select();</script>');
+			$('.exams').append('<div class="add"><div class="col l3 s6"> <span class="light">Examination:</span> <select id="exam" class="exam_select" required name="exam"> <option value="" selected>Choose your Exam</option> <option value="GATE">GATE</option> <option value="NET">NET</option> <option value="SLET">SLET</option> <option value="CSIR">CSIR</option> <option value="CAT">CAT</option> <option value="UGC">UGC</option> </select> </div> <div class="col l3 s6"> <span class="light">Enter Score:</span> <input placeholder="Enter Score" id="score" type="number" class="validate" name="score" max="10000"> </div> <div class="col l3 s6"> <span class="light">Enter Rank:</span> <input placeholder="Enter Rank" id="rank" type="number" class="validate" name="rank" max="10000"> </div> <div class="col l3 s6"> <span class="light">Valid Till:</span> <input id="validity" type="date" class="validate" name="validity" max="2018" min="2010"> </div> <!-- disipline needs to be added--> <div class="col l12 s12"> <span class="light">Discipline:</span> <input type="text" id="discipline" class="validate" name="discipline" required /> </div> <div class="space-small"></div></div><script>$("select").material_select();</script>');
 	});
 
 	$('.discard1').click(function(){
@@ -193,7 +193,7 @@ $(document).ready(function(){
 	        }
 	    });
 
-		var baseurl = 'http://localhost:8000';
+		var baseurl = 'http://admission.nitt.edu';
 		var url = '/save' + data.checker;//route to the controller goes here
 
 		$('.valid').hide();
@@ -229,7 +229,7 @@ $(document).ready(function(){
 
 						var dob = $('#dob').val();
 
-						window.location = 'http://localhost:8000/fetch/'+ categ + '/' + applNo + '/' + dob;
+						window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
 	        		
 
 	        	}
@@ -254,7 +254,7 @@ $(document).ready(function(){
 		applNo = applNo + dept[dept.length - 1];
 
 		var dob = $('#dob').val();
-		window.location = 'http://localhost:8000/fetch/'+ categ + '/' + applNo + '/' + dob;
+		window.location = 'http://admission.nitt.edu/fetch/'+ categ + '/' + applNo + '/' + dob;
 	});
 	//validating front-end in form 3
 	$('.valid1').click(function(){

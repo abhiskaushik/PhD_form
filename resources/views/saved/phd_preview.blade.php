@@ -389,16 +389,33 @@
 			      <div class="row">
 			      	<p class="vlarge">*Other Details:</p>
 			      	<div class="space-small"></div>
-			      	<div class="results_announced center">
-			      		<p class="center">Qualified in GATE/NET/SLET/CSIR/CAT/UGC/NBHM</p>
-			      		<span>
-			      			<input type="checkbox" id="announced" name="ann" />
-			      			<label for="announced">Yes</label>
-			      		</span>
-			      		
-			      	</div>
+			      	
+
+
 			      	<div class="space-medium"></div>
-					<div class="exams"></div>		      
+					<div class="exams">
+						<div class="col l4">
+							<p>Examination:</p>
+							<input type="text" id="exam" name="exam" />
+						</div>
+						<div class="col l4">
+						<p>Score:</p>
+							<input type="text" id="score" name="score" />
+						</div>
+						<div class="col l4">
+							<p>Rank:</p>
+							<input type="text" id="rank" name="rank" />
+						</div>
+						<div class="col l6">
+							<p>Validity:</p>
+							<input type="text" id="validity" name="validity" />
+						</div>
+						<div class="col l6">
+							<p>Discipline:</p>
+							<p>Discipline:</p>
+							<input type="text" id="discipline" name="discipline" />
+						</div>
+					</div>		      
 
 			      	<div class="col l12 s12">
 			      		<span class="light">*Title of P.G Project:</span>
@@ -639,6 +656,11 @@
 			$('#emp_from_2').val(a['emp_from_2']);
 			$('#emp_from_3').val(a['emp_from_3']);
 
+			$('#exam').val(a['exam']);
+			$('#score').val(a['score']);
+			$('#rank').val(a['rank']);
+			$('#validity').val(a['validity']);
+			$('#discipline').val(a['discipline']);
 
 			var t=a['sex'];
 			if(t=='male'){
