@@ -338,7 +338,7 @@
 		      	            <input required id="max1" type="number" class="validate" min="0" max="100" name="max1" value="{!! $details['gpamax1'] !!}">
 		      	            </td>
 		      	            <td>
-		      	            	<input required id="gpa1" type="number" class="validate" min="0" max="100" name="gpa1" value="{!! $details['gpa1'] !!}"> se
+		      	            	<input required id="gpa1" type="number" class="validate" min="0" max="100" name="gpa1" value="{!! $details['gpa1'] !!}">
 		      	            </td>
 		      	          </tr>
 		      	          <tr>

@@ -33,7 +33,7 @@ Route::group(['middleware' => 'adminauth'], function () {
             return view('admin.home');
         });
     Route::get('admin/{phdormsc}', 'AdminController@adminView');
-    Route::get('admit/{phdormsc}/{regNo}', 'AdminController@admitCard');
+    Route::get('admit/{phdormsc}/{regNo}/{dept}', 'AdminController@admitCard');
     Route::get('admin/{phdormsc}/{dept}', 'AdminController@adminall');
     Route::post('delete', 'AdminController@deleted' );
     Route::post('accept', 'AdminController@accepted');

@@ -142,6 +142,7 @@ class AdminController extends Controller
 
         $data = self::finalView($phdormsc, $rules1, $rules2, $rules3);
         $data['dept'] = self::department($dept);
+        $data['session'] = Session::get('dept');
         return View::make('admin.'.$phdormsc)->with('data', $data);
     }
 
@@ -337,7 +338,7 @@ class AdminController extends Controller
         }
     }
 
-    public function admitCard($phdormsc, $reg_number)
+    public function admitCard($phdormsc, $reg_number, $dept)
     {
         $regNo = '';
         $departments = explode('-', $reg_number);
@@ -379,7 +380,7 @@ class AdminController extends Controller
         $data = array(
             'image' => $phdormsc.'/'.$applNo.'/'.$applNo.'.'.$type,
             'name' => $candidate->name,
-            'dept' => Session::get('dept'),
+            'dept' => $dept,
             'regNo' => $candidate->registrationNumber
         );
         return view('admin.admit')->with($data);

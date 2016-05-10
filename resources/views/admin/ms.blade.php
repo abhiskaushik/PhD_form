@@ -61,7 +61,7 @@
   
 </div>
 <div class="hide space-large  " hidden="true"></div>
-  <h5 class="center">{!! $data['dept'] !!}</h5>
+  <h5 class="center" id="heading" data-reg="{!! $data['dept'] !!}">{!! $data['dept'] !!}</h5>
   <div class="space-large"></div>
   <div class="container main">
 
@@ -151,7 +151,7 @@
             </div>
             <div class="space-small"></div>
                <div class="center">
-        @if($data['dept'] == 'all')
+        @if($data['session'] == 'all')
         <div class="col s12">
           <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard1 btn  waves-effect waves-green btn">Discard</a>
         @if(!$data['candidates'][$i]->accepted)
@@ -163,6 +163,7 @@
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn  waves-effect waves-green btn">Print</a>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn  waves-effect waves-green btn">Admit</a>
         </div>
+        <div class="space-medium"></div>
         </div>
           <div class="space-medium"></div>
           </div>
@@ -234,6 +235,7 @@
 
   <script type="text/javascript">
       $(document).ready(function(){
+        console.log($('#heading').attr("data-reg"));
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal-trigger').leanModal();
      var a = $('.box');
@@ -260,7 +262,7 @@
         });
 
         $('.form').click(function(){
-          // console.log('hey');
+          
           var index = $(this).data("reg");
           var data = {};
           data.chalanNo = $('.chalanNo'+index).val();//to be added

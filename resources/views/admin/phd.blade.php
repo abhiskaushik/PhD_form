@@ -148,7 +148,7 @@
             </div>
             <div class="space-small"></div>
                <div class="center">
-        @if($data['dept'] == 'all')
+        @if($data['session'] == 'all')
         <div class="col s12">
           <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard1 btn modal-action modal-close waves-effect waves-green btn">Discard</a>
         @if(!$data['candidates'][$i]->accepted)
@@ -160,6 +160,7 @@
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn">Print</a>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn modal-action modal-close waves-effect waves-green btn">Admit</a>
         </div>
+        <div class="space-medium"></div>
         </div>
           <div class="space-medium"></div>
           </div>
