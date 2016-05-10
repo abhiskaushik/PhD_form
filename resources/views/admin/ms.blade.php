@@ -89,8 +89,9 @@
             <div class="space-small center">
             </div>
             <div class="center">
-              <a class="waves-effect waves-light btn modal-trigger blah" data-reg="{!! $i !!}" href="#modal{!! $i !!}">Click Here To view full form</a>
+              <a data-reg="{!! $i !!}" target="_blank" href="../../mspreview1" class="form waves-effect waves-light btn" >Click Here To view full form</a>
               <input class="regNo{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->registrationNumber !!}' />
+              <input class="chalanNo{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->chalanNo !!}' />
               <input class="applCateg{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->applicationCategory !!}' />
               <input class="dateOfReg{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->dateOfReg !!}' />
               <input class="dept1{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->dept1 !!}' />
@@ -148,6 +149,22 @@
               <input class="from3{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->from3 !!}' />  
               <input class="to3{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->to3 !!}' />
             </div>
+            <div class="space-small"></div>
+               <div class="center">
+        @if($data['dept'] == 'all')
+        <div class="col s12">
+          <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard1 btn  waves-effect waves-green btn">Discard</a>
+        @if(!$data['candidates'][$i]->accepted)
+        <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action  waves-green btn">Accept</a>
+        @endif
+        </div>
+        @endif
+        <div class="col s12">
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn  waves-effect waves-green btn">Print</a>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn  waves-effect waves-green btn">Admit</a>
+        </div>
+        </div>
+          <div class="space-medium"></div>
           </div>
           
           </div>
@@ -246,7 +263,7 @@
           // console.log('hey');
           var index = $(this).data("reg");
           var data = {};
-
+          data.chalanNo = $('.chalanNo'+index).val();//to be added
           data.regNo = $('.regNo'+index).val();
           data.applCateg = $('.applCateg'+index).val();
           data.dateOfReg = $('.dateOfReg'+index).val();

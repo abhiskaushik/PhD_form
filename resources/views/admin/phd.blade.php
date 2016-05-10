@@ -83,8 +83,9 @@
             <div class="space-small">
             </div>
             <div class="center ">
-              <a data-reg="{!! $i !!}" href="phdpreview1" class="form waves-effect waves-light btn modal-trigger" href="#modal{!! $i !!}">Click Here To view full form</a>
+              <a data-reg="{!! $i !!}" target="_blank" href="../../phdpreview1" class="form waves-effect waves-light btn" >Click Here To view full form</a>
               <input class="regNo{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->registrationNumber !!}' />
+              <input class="chalanNo{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->chalanNo !!}' />
               <input class="applCateg{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->applicationCategory !!}' />
               <input class="dateOfReg{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->dateOfReg !!}' />
               <input class="dept1{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->dept1 !!}' />
@@ -144,71 +145,29 @@
               <input class="position3{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->position3 !!}' /> 
               <input class="from3{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->from3 !!}' />  
               <input class="to3{!! $i !!}" hidden="true" value='{!! $data['pro'][$i]->to3 !!}' />    
-
-
-
-
             </div>
-          </div>
-          </div>
-
-          <div id="modal{!! $i !!}" class="modal l8">
-          <div class="modal-content">
-          <div class="container">
-         <div class="row">
-            <h5>Employer Details:</h5>
-            <div class="col l12">
-              <p><b>Employer Details 1:</b> {!! $data['pro'][$i]->proexp1 !!}</p>
-              <p><b>Position at Work 1:</b>{!! $data['pro'][$i]->position1 !!}</p>
-              <div class="col l6">
-                <p><b>From 1:</b>{!! $data['pro'][$i]->from1 !!}</p>
-              </div>
-              <div class="col l6">
-                <p><b>To 1:</b>{!! $data['pro'][$i]->to1 !!}</p>
-              </div>
-            </div>
-            <div class="col l12">
-              <p><b>Employer Details 2:</b> {!! $data['pro'][$i]->proexp2 !!}</p>
-              <p><b>Position at Work 2:</b>{!! $data['pro'][$i]->position2 !!}</p>
-              <div class="col l6">
-                <p><b>From 2:</b>{!! $data['pro'][$i]->from2 !!}</p>
-              </div>
-              <div class="col l6">
-                <p><b>To 2:</b>{!! $data['pro'][$i]->to2 !!}</p>
-              </div>
-            </div>
-            <div class="col l12">
-              <p><b>Employer Details 3:</b> {!! $data['pro'][$i]->proexp3 !!}</p>
-              <p><b>Position at Work 3:</b>{!! $data['pro'][$i]->position3 !!}</p>
-              <div class="col l6">
-                <p><b>From 3:</b>{!! $data['pro'][$i]->from3 !!}</p>
-              </div>
-              <div class="col l6">
-                <p><b>To 3:</b>{!! $data['pro'][$i]->to3 !!}</p>
-              </div>
-            </div>
-          </div>
-         
-          <div class="row">
-            <p><b>Submission Date:</b> {!! $data['others'][$i]->subdate !!}</p>  
-          </div>           
-        </div>
-      <div class="modal-footer center">
+            <div class="space-small"></div>
+               <div class="center">
         @if($data['dept'] == 'all')
         <div class="col s12">
-          <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard1 btn modal-action modal-close waves-effect waves-green btn-flat">Discard</a>
+          <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard1 btn modal-action modal-close waves-effect waves-green btn">Discard</a>
         @if(!$data['candidates'][$i]->accepted)
-        <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn-flat">Accept</a>
+        <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action modal-close waves-effect waves-green btn">Accept</a>
         @endif
         </div>
         @endif
         <div class="col s12">
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn modal-action modal-close waves-effect waves-green btn-flat">Admit</a>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn">Print</a>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn modal-action modal-close waves-effect waves-green btn">Admit</a>
         </div>
         </div>
-      </div>
-      </div>
+          <div class="space-medium"></div>
+          </div>
+          </div>
+
+      
+   
+      
         
     </div>
           @endif

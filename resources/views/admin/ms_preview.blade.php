@@ -14,7 +14,9 @@
 		<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 		<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 		<script src="{{URL::asset('assets/js/common.js')}}"></script>
-		<script src="{{URL::asset('assets/js/savephd.js')}}"></script>				
+		<script src="{{URL::asset('assets/js/savephd.js')}}"></script>
+		<script src="{{URL::asset('assets/js/preview_form.js')}}"></script>
+		
 	</head>
 	<body>
 
@@ -322,119 +324,107 @@
 			      </div>
 
 			      <div class="row">
-	  			<div class="col s12">
-	  			<p class="vlarge">Postgraduate</p>
-	  				 <div class="row">
-			        <div class="input-field col l6">
-			        	<span class="light">*Name of Degree:</span>
-			      		<input required placeholder="Name of Degree" id="pg_deg" type="text" class="validate" name="pg_deg" maxlength="50" >
-			        </div>
-			         <div class="input-field col l6 ">
-			         	<span class="light">*Branch Name:</span>
-			         	<input required placeholder="Branch/Specialization" id="pg_branch" type="text" class="validate" name="pg_branch" maxlength="50" >
-			        </div>
-			      </div>
+	  			<div class="row">
+		      <p class="vlarge">*Academic Details:</p>
+		      	<table class="highlight centered responsive-table">
+		      	        <thead>
+		      	          <tr>
+		      	              <th details-field="id">Year</th>
+		      	              <th details-field="name">Semester</th>
+		      	              <th details-field="price">Maximum G.P.A</th>
+		      	              <th details-field="price">G.P.A obtained</th>
+		      	          </tr>
+		      	        </thead>
 
-			      <div class="row">
-			      	
-			      	<div class="input-field col l6">
-			      		<span class="light">*C.G.P.A/Percentage:</span>
-			      		<input required placeholder="C.G.P.A" id="pg_gpa" type="number" class="validate pg_cgpa" name="pg_gpa" min="4" max="100" step="0.01" >
-			      	</div>
-			      	<div class="input-field col l6 pgclassCheck">
-			      		<span class="light">*Class:</span>
-			      		<select required name = "pg_class" id="pgclass">
-					      <option value="" disabled selected>Choose your option</option>
-					      <option  value="Honours">Honours</option>
-					      <option  value="Distinction">Distinction</option>
-					      <option  value="First">First</option>
-					      <option  value="Second">Second</option>
-					    </select>
-			      	</div>
-			      </div> 
-			      <p>
-				      <input type="checkbox" id="ra2" name="ra2" />
-				      <label for="ra2">Click here if final semester results are not announced.</label>
-				  </p>
-			      </div>
-			      </div>
-			      <div class="row">
-			      	<div class="input-field col l12 s12">
-			      		<span class="light">*College Name:</span>
-			      		<input required placeholder="College Name" id="pg_name_of_inst" type="text" class="validate" name="pg_name_of_inst" maxlength="50" >
-			      	</div>
-
-			      	<div class="input-field col l12 s12">
-			      	<span class="light">*University Name:</span>
-			      		<input required placeholder="University Name" id="pg_name_of_uni" type="text" class="validate" name="pg_name_of_uni" maxlength="50" >
-			      	</div>
-
-			      	<div class="input-field col l4 s4">
-			      		<span class="light">*Year of Passing</span>
-			      		<input required id="pg_yop" type="number" class="validate" name="pg_yop" min="1900" > 
-			      	</div>
-			      </div>
-
-			      <div class="row">
-			      	<p class="vlarge">*Other Details:</p>
-			      	<div class="space-small"></div>
-			      	
-
-
-			      	<div class="space-medium"></div>
-					<div class="exams">
-						<div class="col l4">
-							<p>Examination:</p>
-							<input type="text" id="exam" name="exam" />
-						</div>
-						<div class="col l4">
-						<p>Score:</p>
-							<input type="text" id="score" name="score" />
-						</div>
-						<div class="col l4">
-							<p>Rank:</p>
-							<input type="text" id="rank" name="rank" />
-						</div>
-						<div class="col l6">
-							<p>Validity:</p>
-							<input type="text" id="validity" name="validity" />
-						</div>
-						<div class="col l6">
-							
-							<p>Discipline:</p>
-							<input type="text" id="discipline" name="discipline" />
-						</div>
-					</div>		      
-
-			      	<div class="col l12 s12">
-			      		<span class="light">*Title of P.G Project:</span>
-			      		<input required placeholder="Title of P.G Project" id="title_of_project" type="text" class="validate" name="title_of_project" maxlength="100" >
-			      	</div>
-			      	<div class="col l4 s12">
-			      		<p for="textarea1">Publications:</p><br>
-			      		 <textarea id="details_of_pub1" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub1" maxlength="200" ></textarea>
-			      	</div>
-			      	<div class="col l4 s12">
-			      		<p for="textarea1">Publications:</p><br>
-			      		 <textarea id="details_of_pub2" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub2" maxlength="200" ></textarea>
-			      	</div>
-			      	<div class="col l4 s12">
-			      		<p for="textarea1">Publications:</p><br>
-			      		 <textarea id="details_of_pub3" placeholder="Enter Details here.." class="materialize-textarea" name="details_of_pub3" maxlength="200"></textarea>
-			      	</div>
-			      	<div class="col l4 s12">
-			      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
-			      		 <textarea id="awards1" placeholder="Enter Details here.." class="materialize-textarea" name="awards1" maxlength="200" ></textarea>
-			      	</div>
-			      	<div class="col l4 s12">
-			      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
-			      		 <textarea id="awards2" placeholder="Enter Details here.." class="materialize-textarea" name="awards2" maxlength="200" ></textarea>
-			      	</div>
-			      	<div class="col l4 s12">
-			      		<p for="textarea1">Awards/ Prizes/Sports/NCC etc</p><br>
-			      		 <textarea id="awards3" placeholder="Enter Details here.." class="materialize-textarea" name="awards3" maxlength="200" ></textarea>
-			      	</div>
-			      </div>
+		      	        <tbody>
+		      	          <tr>
+		      	            <td>1</td>
+		      	            <td>First</td>
+		      	            <td>
+		      	            <input required id="max1" type="number" class="validate" min="0" max="100" name="max1" >
+		      	            </td>
+		      	            <td>
+		      	            	<input required id="gpa1" type="number" class="validate" min="0" max="100" name="gpa1" > 
+		      	            </td>
+		      	          </tr>
+		      	          <tr>
+		      	            <td>1</td>
+		      	            <td>Second</td>
+		      	            <td>
+		      	            <input required id="max2" type="number" class="validate" name="max2" min="0" max="100" >
+		      	            </td>
+		      	            <td>
+		      	            	<input required id="gpa2" type="number" class="validate" name="gpa2" min="0" max="100" >
+		      	            </td>
+		      	          </tr>
+		      	          <tr>
+		      	            <td>2</td>
+		      	            <td>Third</td>
+		      	            <td>
+		      	            <input required id="max3" type="number" class="validate" name="max3" min="0" max="100" >
+		      	            </td>
+		      	            <td>
+		      	            	<input required id="gpa3" type="number" class="validate" name="gpa3" min="0" max="100" >
+		      	            </td>
+		      	          </tr>
+		      	          <tr>
+		      	            <td>2</td>
+		      	            <td>Fourth</td>
+		      	            <td>
+		      	            <input required id="max4" type="number" class="validate" name="max4" min="0" max="100" >
+		      	            </td>
+		      	            <td>
+		      	            	<input required id="gpa4" type="number" class="validate" name="gpa4" min="0" max="100" >
+		      	            </td>
+		      	          </tr>
+		      	          <tr>
+		      	            <td>3</td>
+		      	            <td>Fifth</td>
+		      	            <td>
+		      	            <input required id="max5" type="number" class="validate" name="max5" min="0" max="100" >
+		      	            </td>
+		      	            <td>
+		      	            	<input required id="gpa5" type="number" class="validate" name="gpa5" min="0" max="100" >
+		      	            </td>
+		      	          </tr>
+		      	          <tr>
+		      	            <td>3</td>
+		      	            <td>Sixth</td>
+		      	            <td>
+		      	            <input required id="max6" type="number" class="validate" name="max6" min="0" max="100" >
+		      	            </td>
+		      	            <td>
+		      	            	<input required id="gpa6" type="number" class="validate" name="gpa6" min="0" max="100" >
+		      	            </td>
+		      	          </tr>
+		      	          <tr>
+		      	            <td>4</td>
+		      	            <td>Seventh</td>
+		      	            <td>
+		      	            <input required id="max7" type="number" class="validate" name="max7" min="0" max="100" >
+		      	            </td>
+		      	            <td>
+		      	            	<input required id="gpa7" type="number" class="validate" name="gpa7" min="0" max="100" >
+		      	            </td>
+		      	          </tr>
+		      	          <tr>
+		      	            <td>4</td>
+		      	            <td>Eighth</td>
+		      	            <td>
+		      	            <input required id="max8" type="number" class="validate eight" name="max8" min="0" max="100" >
+		      	            </td>
+		      	            <td>
+		      	            	<input required id="gpa8" type="number" class="validate eight" name="gpa8" min="0" max="100" >
+		      	            </td>
+		      	          </tr>
+		      	          
+		      	        </tbody>
+		      	      </table>
+		      </div>
+		      <p>
+		      	<input type="checkbox" id="ra3" name="ra3" />
+			      <label for="ra3">Click here if final semester results are not announced.</label>
+		      </p>
 
 			      <div class="row">
 			      	<p class="vlarge">Details of Professional Experience</p>
@@ -538,12 +528,20 @@
 			     <p>(*) indicates that it's a required field.</p>     
 	  			</div>
 
-	  		
+	  		<div class="center">
+	
+	      
+	   
+		      
+		      </div>
 		      </div>
 		      </div>
 
-		      
-		       
+
+		       <div id="preview" class="modal">
+	          
+
+	        	</div>
 
 	<div class="space-large"></div>
 	<footer class="page-footer teal darken-4">
@@ -581,52 +579,57 @@
 			console.log(a);
 
 			var x = new Date().getFullYear();
-			var y = x+1;
 			console.log(x);
-			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME ('+ x + '-' + y + ')</h4>';
+			var y = x+1;
+			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME ('+ x + '-' + y+ ')</h4>';
 			$('.heading').append(p);
 			$(".button-collapse").sideNav();
 			$('select').material_select();
 			$('.main').find('input, textarea, button, select').attr('disabled','disabled');
-			$("textarea#addr_for_commn").val(a['addrforcomm']);
-			$("textarea#permanent_addr").val(a['permanentaddr']);
-			$("textarea#details_of_pub1").val(a['publications1']);
-			$("textarea#details_of_pub2").val(a['publications2']);
-			$("textarea#details_of_pub3").val(a['publications3']);
-			$("textarea#awards3").val(a['awards1']);
-			$("textarea#awards2").val(a['awards2']);
-			$("textarea#awards1").val(a['awards3']);
+			$("textarea#addr_for_commn").val(a['addr_for_commn']);
+			$("textarea#permanent_addr").val(a['permanent_addr']);
+			
 			$("textarea#employer_details_1").val(a['proexp1']);
 			$("textarea#employer_details_2").val(a['proexp2']);
 			$("textarea#employer_details_3").val(a['proexp3']);
-			$('#chalanNo').val(a['chalanNo']);
-			$('#applicationCateg').val(a['applCateg']);
-			$('#department1').val(a['dept1']);
-			$('#department2').val(a['dept2']);
-			$('#department3').val(a['dept3']);
+			$('#chalanNo').val(a['chalan_no']);
+			$('#applicationCateg').val(a['appl_categ']);
+			$('#department1').val(a['department1']);
+			$('#department2').val(a['department2']);
+			$('#department3').val(a['department3']);
 			$('#name').val(a['name']);
-			$('#area_of_research').val(a['areaOfResearch']);
+			$('#area_of_research').val(a['area_of_research']);
 			$('#email').val(a['email']);
-			$('#father_name').val(a['fatherName']);
+			$('#father_name').val(a['father_name']);
 			$('#dob').val(a['dob']);
 			$('#nationality').val(a['nationality']);
 			$('#mobile').val(a['mobile']);
 			$('#landline').val(a['landline']);
-			$('#ug_deg').val(a['ug_degreeName']);
+			$('#ug_deg').val(a['ug_deg']);
 			$('#ug_branch').val(a['ug_branch']);
 			$('#ug_gpa').val(a['ug_gpa']);
 			$('#ug_yop').val(a['ug_yop']);
-			$('#ug_name_of_inst').val(a['ug_institutionName']);
-			$('#ug_name_of_uni').val(a['ug_universityName']);
+			$('#ug_name_of_inst').val(a['ug_name_of_inst']);
+			$('#ug_name_of_uni').val(a['ug_name_of_uni']);
 			$('#ug_class').val(a['ug_class']);
-			$('#pg_deg').val(a['pg_degreeName']);
-			$('#pg_branch').val(a['pg_branch']);
-			$('#pg_gpa').val(a['pg_gpa']);
-			$('#pg_yop').val(a['pg_yop']);
-			$('#pg_class').val(a['pg_class']);
-			$('#pg_name_of_inst').val(a['pg_institutionName']);
-			$('#pg_name_of_uni').val(a['pg_universityName']);
-			$('#title_of_project').val(a['pgproject']);
+			
+			$('#max1').val(a['maxgpa1']);
+			$('#max2').val(a['maxgpa2']);
+			$('#max3').val(a['maxgpa3']);
+			$('#max4').val(a['maxgpa4']);
+			$('#max5').val(a['maxgpa5']);
+			$('#max6').val(a['maxgpa6']);
+			$('#max7').val(a['maxgpa7']);
+			$('#max8').val(a['maxgpa8']);
+			$('#gpa1').val(a['gpa1']);
+			$('#gpa2').val(a['gpa2']);
+			$('#gpa3').val(a['gpa3']);
+			$('#gpa4').val(a['gpa4']);
+			$('#gpa5').val(a['gpa5']);
+			$('#gpa6').val(a['gpa6']);
+			$('#gpa7').val(a['gpa7']);
+			$('#gpa8').val(a['gpa8']);
+
 
 			$('#emp_pos_1').val(a['position1']);
 			$('#emp_pos_2').val(a['position2']);
@@ -637,14 +640,6 @@
 			$('#emp_from_1').val(a['from1']);
 			$('#emp_from_2').val(a['from2']);
 			$('#emp_from_3').val(a['from3']);
-
-			$('#exam').val(a['exam']);
-			$('#score').val(a['score']);
-			$('#rank').val(a['rank']);
-			$('#validity').val(a['validity']);
-			$('#discipline').val(a['discipline']);
-
-			
 
 			var t=a['sex'];
 			if(t=='male'){
@@ -722,7 +717,7 @@
 				$('.pgclassCheck .select-wrapper ul>li:eq(4)').click();
 			}
 
-			t=a['maritalStatus'];
+			t=a['marital_status'];
 			
 			if(t=='single'){
 				$('.statusCheck .select-wrapper input').val(t);
