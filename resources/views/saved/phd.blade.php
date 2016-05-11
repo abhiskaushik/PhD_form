@@ -515,7 +515,7 @@
 			      	<div class="file-field input-field">
 		          		<div class="btn teal darken-1 btn waves-effect waves-light">
 		          			<span class="light">File</span>
-		          			<input type="file" id="signImg" name="sign" onchange="signURL(this);" required />		
+		          			<input type="file" id="signImg" name="sign" onchange="signURL(this);" required />
 		          		</div>
 		          		<div class="file-path-wrapper">
 	        				<input class="file-path validate" type="text">
@@ -691,6 +691,8 @@
 			    
 			  //   }
 
+
+			    
 			var x = new Date().getFullYear();
 			console.log(x);
 			var y = x+1;
