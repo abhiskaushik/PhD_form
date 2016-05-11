@@ -79,6 +79,7 @@
                 <p>Registration Number:  {!! $data['candidates'][$i]->registrationNumber !!}</p>
               
             </div>
+            
            
             <div class="space-small">
             </div>
@@ -120,7 +121,7 @@
               <input class="pg_branch{!! $i !!}" hidden="true" value='{!! $data['pg'][$i]->branch !!}' />
               <input class="pg_class{!! $i !!}" hidden="true" value='{!! $data['pg'][$i]->class !!}' />
               <input class="pg_universityName{!! $i !!}" hidden="true" value='{!! $data['pg'][$i]->universityName !!}' />
-
+              
               <input class="exam{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->exam !!}' />
               <input class="discipline{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->discipline !!}' />
               <input class="score{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->score !!}' />
@@ -164,7 +165,7 @@
         @endif
 
         <div class="col l12 center buttons">
-        <div class="space-small"></div>
+        <div class="space-medium"></div>
         <div class="col l6">
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn">Print</a>
         </div>

@@ -120,7 +120,7 @@
               <input class="ug_branch{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->branch !!}' />
               <input class="ug_class{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->class !!}' />
               <input class="ug_universityName{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->universityName !!}' />
-
+              {!!  die() !!}
               <input class="exam{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->exam !!}' />
               <input class="discipline{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->discipline !!}' />
               <input class="score{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->score !!}' />
@@ -168,6 +168,7 @@
         </div>
         @endif
         <div class="col s12">
+        <div class="space-medium"></div>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn  waves-effect waves-green btn">Print</a>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn  waves-effect waves-green btn">Admit</a>
         </div>

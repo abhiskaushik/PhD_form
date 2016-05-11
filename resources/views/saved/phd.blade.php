@@ -69,6 +69,7 @@
 					<p class="large">*Bank Reference Number:</p>
 					<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number" value="{!! $details->chalanNo !!}" required />
 				</div>
+				<output id="list"></output>	
 			</div>
 
 	  		<div class="row">  					   
@@ -92,18 +93,21 @@
 					      </div>
 
 					      <div class="upload col l6 s12 ">
+
 			    <p>*Upload Image:</p>
+
 			      	<div class="file-field input-field">
 			      		<div class="demo"></div>
 			      		
 		          		<div class="uploadImg btn teal darken-1 btn waves-effect waves-light">
 		          			<span class="light">File</span>
-		          			{!! Form::file('image_path' , array('class'=>'', 'required')) !!}			
+		          			{!! Form::file('image_path' , array('id'=>'imaged' ,'required')) !!}		
 		          		</div>
 		          		<div class="file-path-wrapper">
 	        				<input class="file-path validate" type="text">
 	      				</div>
 		          	</div>
+
 			      </div>
 			      
 
@@ -591,6 +595,51 @@
 			$(".button-collapse").sideNav();
 			$('select').material_select();
 			
+			function handleFileSelect(evt) {
+			    var files = evt.target.files; // FileList object
+			    console.log(files);
+			    // Loop through the FileList and render image files as thumbnails.
+			    for (var i = 0, f; f = files[i]; i++) {
+
+			      // Only process image files.
+			      if (!f.type.match('image.*')) {
+			        continue;
+			      }
+
+			      var reader = new FileReader();
+
+			      // Closure to capture the file information.
+			      reader.onload = (function(theFile) {
+			        return function(e) {
+			          // Render thumbnail.
+			          var span = document.createElement('span');
+			          span.innerHTML = ['<img class="thumb" src="', e.target.result,
+			                            '" title="', escape(theFile.name), '"/>'].join('');
+			          $('#list').empty();
+			          document.getElementById('list').insertBefore(span, null);
+			          localStorage.setItem('img', e.target.result);
+
+			        };
+			      })(f);
+
+			      // Read in the image file as a data URL.
+			      reader.readAsDataURL(f);
+			    }
+			  }
+
+			  document.getElementById('imaged').addEventListener('change', handleFileSelect, false);
+
+
+			  if(localStorage.img) { 
+
+			         var span = document.createElement('span');
+			          span.innerHTML = ['<img class="thumb" src="', localStorage.img,
+			                            '" title="test"/>'].join('');
+
+			          document.getElementById('list').insertBefore(span, null);
+			    
+			    }
+
 			var x = new Date().getFullYear();
 			console.log(x);
 			var y = x+1;

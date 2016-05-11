@@ -75,6 +75,8 @@
 					      </div>
 
 					      <div class="upload col l6 s12 ">
+
+					      
 			    <!-- <p>*Upload Image:</p>
 			      	<div class="file-field input-field">
 			      		<div class="demo"></div>
