@@ -75,7 +75,7 @@
 
 					      <div class="upload col l6 s12 ">
 
-					      
+					      <output id="list"></output>	
 			    <!-- <p>*Upload Image:</p>
 			      	<div class="file-field input-field">
 			      		<div class="demo"></div>
@@ -506,8 +506,20 @@
 
 		<script type="text/javascript">
 		$(document ).ready(function(){
+			console.log(localStorage.getItem('img'));
+			if(localStorage.img) { 
+					console.log('hey');
+			       var span = document.createElement('span');
+			        span.innerHTML = ['<img class="thumb" src="', localStorage.img,
+			                          '" title="test"/>'].join('');
+
+			        document.getElementById('list').insertBefore(span, null);
+			  
+			  }
 			var a = JSON.parse(localStorage.getItem('data'));
 			console.log(a);
+
+
 
 			var x = new Date().getFullYear();
 			var y = x+1;

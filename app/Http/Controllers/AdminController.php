@@ -137,6 +137,7 @@ class AdminController extends Controller
 
     public function adminall($phdormsc, $dept)
     {
+        Log::info($dept);
         $rules1 = ['deleted' => false, 'dept1' => $dept];
         $rules2 = ['deleted' => false, 'dept2' => $dept];
         $rules3 = ['deleted' => false, 'dept3' => $dept];

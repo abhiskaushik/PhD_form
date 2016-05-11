@@ -629,7 +629,7 @@
 		var x = new Date().getFullYear();
 		var y = x+1;
 			console.log(x);
-			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME ('+ x + '-' + y + ')</h4>';
+			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO M.S. PROGRAMME ('+ x + '-' + y + ')</h4>';
 			$('.heading').append(p);
 
 		$("textarea#addr_for_commn").val('{!! $details->addrforcomm !!}');

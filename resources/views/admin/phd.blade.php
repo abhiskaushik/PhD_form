@@ -250,7 +250,7 @@
          var ind = $(this).data("reg");
          console.log($('.applCateg'+index).val());
         if($('.applCateg'+ind).val()=='External'){
-      var f = "<a href=\"{{ URL::assest('uploads/PHD/'.) }}\" class='btn waves teal'>Form 3</a>";
+      var f = '<a href=\"{{ URL::assest('uploads/PHD/'.) }}\" class='btn waves teal'>Form 3</a>";
       $('.formButtons').append(f);
       $('.formed').hide('slow');
     }
