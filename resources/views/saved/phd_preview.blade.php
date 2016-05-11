@@ -14,7 +14,6 @@
 		<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 		<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 		<script src="{{URL::asset('assets/js/common.js')}}"></script>
-		<script src="{{URL::asset('assets/js/savephd.js')}}"></script>
 		
 	</head>
 	<body>
@@ -486,44 +485,6 @@
 			      	</div>
 			      </div>
 
-			      <div class="row">
-			      	<div class="col l12 s12 ">
-			      		<p>I do hereby declare that the information furnished in this application are true and correct to the best of my knowledge. If, any of the particulars furnished above is found to be incorrect at the time of admission, the admission may be cancelled.</p>
-			      		
-			      	</div>
-			      </div>
-			      <div class="space-medium"></div>
-			      <div class="row">
-			      	
-			      	<div class="upload col l6 s6 ">
-			    <!-- <p>Upload Signature</p>
-			      	<div class="file-field input-field">
-		          		<div class="btn teal darken-1 btn waves-effect waves-light">
-		          			<span class="light">File</span>
-		          			{!! Form::file('sign' , array('class'=>'', 'required')) !!}			
-		          		</div>
-		          		<div class="file-path-wrapper">
-	        				<input class="file-path validate" type="text">
-	      				</div>
-		          	</div>
-			      	<div class="space-medium"></div>		 -->	      	
-			      </div>
-
-			      
-			      	<div class="col l12 s12">
-			      	<p><b>Note:</b> The part time external Ph.D. applicant should attach the duly filled in Form-1 & Form-2, and Part-Time on campus applicant should attach the duly filled in Form-3. Otherwise, the application will be summarily rejected.</p>
-			      	</div>
-			      </div>
-			      
-					<div class="upload_container " >
-			      
-			      
-			      </div>
-			      
-					<div class="space-medium"></div>
-					<div class="row"> 
-			     <p>(*) indicates that it's a required field.</p>     
-	  			</div>
 
 	  		<div class="center">
 	

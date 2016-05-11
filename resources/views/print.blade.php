@@ -259,21 +259,7 @@
           </tr>
         </tbody>
       </table>
-
-      <div class="row">
-        <h5>Publication/Project Details:</h5>
-        <div class="col l6">
-          <p><b>Title of Project:</b> {!! $others['pgproject'] !!}</p>
-          <p><b>Details of Publication 2:</b> {!! $others['publications2'] !!}</p>
-          <p><b>Awards1:</b> {!! $others['awards1'] !!}</p>
-          <p><b>Awards3:</b> {!! $others['awards3'] !!}</p>
-        </div>
-        <div class="col l6">
-          <p><b>Details of Publication 1:</b> {!! $others['publications1'] !!}</p>
-          <p><b>Details of Publication 3:</b> {!! $others['publications3'] !!}</p>
-          <p><b>Awards2:</b> {!! $others['awards2'] !!}</p>
-        </div>
-      </div>
+      
        <table class="bordered">
         <thead>
           <tr>

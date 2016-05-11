@@ -129,7 +129,7 @@
               <input class="ug_branch{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->branch !!}' />
               <input class="ug_class{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->class !!}' />
               <input class="ug_universityName{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->universityName !!}' />
-              {!!  die() !!}
+    
               <input class="exam{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->exam !!}' />
               <input class="discipline{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->discipline !!}' />
               <input class="score{!! $i !!}" hidden="true" value='{!! $data['others'][$i]->score !!}' />
@@ -170,7 +170,7 @@
                <div class="center">
         @if($data['session'] == 'all')
         <div class="col s12">
-          <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard1 btn  waves-effect waves-green btn">Discard</a>
+          <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard btn  waves-effect waves-green btn">Discard</a>
         @if(!$data['candidates'][$i]->accepted)
         <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action  waves-green btn">Accept</a>
         @endif
@@ -296,7 +296,6 @@
     //    }); 
 
         $('.form').click(function(){
-          
           var index = $(this).data("reg");
           var data = {};
           data.chalanNo = $('.chalanNo'+index).val();//to be added

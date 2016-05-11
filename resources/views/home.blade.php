@@ -99,13 +99,7 @@
   <script type="text/javascript">
   $(document ).ready(function(){
     $(".button-collapse").sideNav();
-    console.log(localStorage.getItem('img'));
-     var span = document.createElement('span');
-          span.innerHTML = ['<img class="thumb" src="', localStorage.img,
-                            '" title="test"/>'].join('');
-
-          document.getElementById('hel').insertBefore(span, null);
-  })
+  });
   </script>
   
 </body>
