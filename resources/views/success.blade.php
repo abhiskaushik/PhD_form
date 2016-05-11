@@ -62,10 +62,18 @@
               </div>
             </div>
             <div class="row">
-              <div class="col l6 s6">Name:{!! $details['name']!!}</div>
-              <div class="col l6 s6">Department 1:{!! $details['department1'] !!}</div>
-              <div class="col l6 s6">Department 2:{!! $details['department2'] !!}</div>
-              <div class="col l6 s6">Department 3:{!! $details['department3'] !!}</div>
+              <div class="col l6 s6">
+                
+                  Name:    &nbsp;&nbsp;&nbsp;&nbsp;
+                
+                
+                  {!! $details['name']!!}
+                
+              </div>
+              
+              <div class="col l6 s6">Department 1:&nbsp;&nbsp;&nbsp;&nbsp;{!! $details['department1'] !!}</div>
+              <div class="col l6 s6">Department 2:&nbsp;&nbsp;&nbsp;&nbsp;{!! $details['department2'] !!}</div>
+              <div class="col l6 s6">Department 3:&nbsp;&nbsp;&nbsp;&nbsp;{!! $details['department3'] !!}</div>
             </div>
             <div class="space-small center">
             </div>

@@ -510,11 +510,13 @@
 			      <div class="row">
 			      	
 			      	<div class="upload col l6 s6 ">
+
+
 			    <p>Upload Signature</p>
 			      	<div class="file-field input-field">
 		          		<div class="btn teal darken-1 btn waves-effect waves-light">
 		          			<span class="light">File</span>
-		          			{!! Form::file('sign' , array('class'=>'', 'required')) !!}			
+							{!! Form::file('sign' , array('class'=>'', 'required')) !!}					
 		          		</div>
 		          		<div class="file-path-wrapper">
 	        				<input class="file-path validate" type="text">
@@ -642,6 +644,8 @@
 			    
 			    }
 
+
+			    
 			var x = new Date().getFullYear();
 			console.log(x);
 			var y = x+1;

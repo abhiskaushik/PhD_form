@@ -219,7 +219,7 @@
             <td><b>Rank:</b></td>
             <td>{!! $others['rank'] !!}</td>
             <td><b>Valid Till:</b></td>
-            <td>{!! $others['valid'] !!}</td>
+            <td>{!! $others['validity'] !!}</td>
           </tr>
           <tr>
             <td>Discipline</td>
