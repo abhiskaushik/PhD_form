@@ -70,7 +70,7 @@
 					<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number" value="{!! $details->chalanNo !!}" required />
 				</div>
 				<output id="list"></output>	
-				<img src="" id="bannerImg" width="150" height="200"/>	
+				<img src="" id="bannerImg"  />	
 			</div>
 
 	  		<div class="row">  					   
@@ -511,17 +511,17 @@
 			      <div class="row">
 			      	
 			      	<div class="upload col l6 s6 ">
-			      		<img src="" width="200" height="100" id="signImg"/>
-			    <p>Upload Signature</p>
-			      	<div class="file-field input-field">
-		          		<div class="btn teal darken-1 btn waves-effect waves-light">
-		          			<span class="light">File</span>
-		          			<input type="file" id="signImg" name="sign" onchange="signURL(this);" required />
-		          		</div>
-		          		<div class="file-path-wrapper">
-	        				<input class="file-path validate" type="text">
-	      				</div>
-		          	</div>
+			      		<img src="" id="signImg" />
+			    		<p>Upload Signature</p>
+				      	<div class="file-field input-field">
+			          		<div class="btn teal darken-1 btn waves-effect waves-light">
+			          			<span class="light">File</span>
+			          			<input type="file" id="signImg" name="sign" onchange="signURL(this);" required />
+			          		</div>
+			          		<div class="file-path-wrapper">
+		        				<input class="file-path validate" type="text">
+		      				</div>
+			          	</div>
 			      	<div class="space-medium"></div>			      	
 			      </div>
 
@@ -603,8 +603,15 @@
 			        reader.onload = function (e) {
 			            document.getElementById('bannerImg').src =  e.target.result;
 			            bannerImage = document.getElementById('bannerImg');
+			            console.log(bannerImg.width);	
+			            if(bannerImg.height>300 || bannerImg.width>200){
+			            	alert('Enter Image of size < 200*300');
+			            	return ;
+			            }
+			            else{
 						imgData = getBase64Image(bannerImage);
 						localStorage.setItem("imgData", imgData);
+						}
 			        }
 
 			        reader.readAsDataURL(input.files[0]);
@@ -621,8 +628,14 @@
 			        reader.onload = function (e) {
 			            document.getElementById('signImg').src =  e.target.result;
 			            signImage = document.getElementById('signImg');
+			            if(signImg.width>200 || signImg.height>150){
+			            	alert('Enter Image of size < 200*300');
+			            	return ;
+			            }
+			            else{
 						signData = getBase64Image(signImage);
 						localStorage.setItem("signData", signData);
+						}
 			        }
 
 			        reader.readAsDataURL(input.files[0]);
@@ -633,7 +646,7 @@
 			    var canvas = document.createElement("canvas");
 			    canvas.width = img.width;
 			    canvas.height = img.height;
-
+			    console.log(canvas.width);
 			    var ctx = canvas.getContext("2d");
 			    ctx.drawImage(img, 0, 0);
 

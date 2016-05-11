@@ -593,8 +593,13 @@
 			        reader.onload = function (e) {
 			            document.getElementById('bannerImg').src =  e.target.result;
 			            bannerImage = document.getElementById('bannerImg');
+			            if(bannerImg.height>300 || bannerImg.width>200){
+			            	alert('Enter Image of size < 200*300');
+			            	return ;
+			            }
+			            else{
 						imgData = getBase64Image(bannerImage);
-						localStorage.setItem("imgData", imgData);
+						localStorage.setItem("imgData", imgData);}
 			        }
 
 			        reader.readAsDataURL(input.files[0]);
@@ -611,8 +616,14 @@
 			        reader.onload = function (e) {
 			            document.getElementById('signImg').src =  e.target.result;
 			            signImage = document.getElementById('signImg');
+			            if(signImg.width>200 || signImg.height>150){
+			            	alert('Enter Image of size < 200*300');
+			            	return ;
+			            }
+			            else{
 						signData = getBase64Image(signImage);
 						localStorage.setItem("signData", signData);
+					}
 			        }
 
 			        reader.readAsDataURL(input.files[0]);

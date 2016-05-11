@@ -52,7 +52,7 @@
 					<input type="text" id="chalanNo" name="chalanNo"   required />
 				</div>
 				<div class="col l6">
-					<img src="" id="tableBanner" width="150" height="200"/>
+					<img src="" id="tableBanner" />
 				</div>
 			</div>
 
