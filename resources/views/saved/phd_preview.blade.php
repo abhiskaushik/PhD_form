@@ -493,7 +493,7 @@
 
 
 	  		<div class="right">
-			<img src="" id="signBanner" width="150" height="200"/>
+			<img src="" id="signBanner" width="200" height="100"/>
 	   		<p class="center">Signature</p>
 	   
 		      

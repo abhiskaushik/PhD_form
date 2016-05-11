@@ -508,7 +508,7 @@
 
 	        	</div>
 	        	<div class="right">
-	        		<img src="" id="signBanner" width="150" height="200"/>
+	        		<img src="" id="signBanner" width="200" height="150"/>
 	        		<p class="center">Signature</p>
 	        	</div>
 	        	
