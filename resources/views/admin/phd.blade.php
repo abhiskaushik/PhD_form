@@ -44,10 +44,10 @@
   
   <div class="container search" hidden="true">
 
+    
+
       <form class="searchbox">
           <input id="search" type="search" placeholder="Search.." name="search" class="searchbox-input" required>
-          
-
 
       </form>
       
@@ -236,7 +236,6 @@
   <script type="text/javascript">
   $(document ).ready(function(){
     $(".button-collapse").sideNav();
-    console.log('{!! $data['candidates'] !!}');
   })
   </script>    
 
@@ -247,12 +246,10 @@
       var f = '<a href="#" class="btn waves teal">Form 3</a>';
       $('.formButtons').append(f);
     }
-    else if($('.applCateg'+index).val()=='On Campus'){
+    else if($('.applCateg'+index).val()=='OnCampus'){
        var f = '<a href="#" class="btn waves teal">Form 1</a><a href="#" class="btn waves teal">Form 2</a>';
       $('.formButtons').append(f);
     }
-
-    $('.formButtons').
 
     $('.modal-trigger').leanModal();
      var a = $('.box');
