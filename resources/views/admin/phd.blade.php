@@ -176,6 +176,7 @@
         <div class="space-large"></div>
         </div>
           <div class="space-medium"></div>
+          <div class="formButtons center"></div>
           </div>
           </div>
 
@@ -242,6 +243,17 @@
   <script type="text/javascript">
       $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    if($('.applCateg'+index).val()=='External'){
+      var f = '<a href="#" class="btn waves teal">Form 3</a>';
+      $('.formButtons').append(f);
+    }
+    else if($('.applCateg'+index).val()=='On Campus'){
+       var f = '<a href="#" class="btn waves teal">Form 1</a><a href="#" class="btn waves teal">Form 2</a>';
+      $('.formButtons').append(f);
+    }
+
+    $('.formButtons').
+
     $('.modal-trigger').leanModal();
      var a = $('.box');
         var inputBox = $('.searchbox-input');
