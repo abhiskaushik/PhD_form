@@ -69,7 +69,7 @@
 				<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number" value="{!! $details->chalanNo !!}" required />
 			</div>
 			<output id="list"></output>	
-			<img src="" id="bannerImg" width="150" height="200"/>	
+			<img src="" id="bannerImg" />	
 		</div>
   		<div class="row">  					   
   			
@@ -504,7 +504,7 @@
 		      <div class="space-medium"></div>
 		      <div class="row">
 		      	<div class="upload col l6 s6 ">
-			      		<img src="" width="200" height="100" id="signImg"/>
+			      		<img src="" id="signImg"/>
 			    <p>Upload Signature</p>
 			      	<div class="file-field input-field">
 		          		<div class="btn teal darken-1 btn waves-effect waves-light">
