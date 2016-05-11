@@ -69,6 +69,7 @@
 				<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number" value="{!! $details->chalanNo !!}" required />
 			</div>
 			<output id="list"></output>	
+			<img src="" id="bannerImg" width="150" height="200"/>	
 		</div>
   		<div class="row">  					   
   			
@@ -81,10 +82,11 @@
 				    </select>
 		        </div>		        		    		    
 		    <div class="col l6 s12">
+
 		    <p>*Upload Image</p>
 		      	<div class="file-field input-field">
 			      		<div class="demo"></div>
-			      		<img src="" id="bannerImg" width="150" height="200"/>
+			      		
 		          		<div class="uploadImg btn teal darken-1 btn waves-effect waves-light">
 		          			<span class="light">File</span>
 		          			<input type="file" name="image_path" id="imaged", onchange="readURL(this);" required>		

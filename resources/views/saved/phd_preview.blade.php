@@ -51,13 +51,14 @@
 					<p class="large">*Bank Reference Number:</p>
 					<input type="text" id="chalanNo" name="chalanNo"   required />
 				</div>
+				<div class="col l6">
+					<img src="" id="tableBanner" width="150" height="200"/>
+				</div>
 			</div>
 
 	  		<div class="row">  					   
 	  			<p class="large">*Application Category:</p>		    
-			        
-			      		
-					    <div class="input-field col l6 s12 applCheck">
+				    <div class="input-field col l6 s12 applCheck">
 					        <!-- <select class="applicationCateg" name="appl_categ" required id="applicationCateg"> 
 					        <option value="" disabled selected></option>
 					          <optgroup label="Part Time">
@@ -72,14 +73,15 @@
 					          </optgroup>
 					        </select> -->
 					        <input type="text" name="appl_categ" id="applicationCateg"  />
+
 					      </div>
 
 
 					      <div class="upload col l6 s12 ">
 
-					      <output id="list"></output>	
+					      
 
-					      <img src="" id="tableBanner" width="150" height="200"/>
+					      
 			    <!-- <p>*Upload Image:</p>
 			      	<div class="file-field input-field">
 			      		<div class="demo"></div>
@@ -490,16 +492,16 @@
 			      </div>
 
 
-	  		<div class="center">
-	
-	      
+	  		<div class="right">
+			<img src="" id="signBanner" width="150" height="200"/>
+	   		<p class="center">Signature</p>
 	   
 		      
 		      </div>
 		      </div>
 		      </div>
 
-		      <img src="" id="signBanner" width="150" height="200"/>
+		      
 
 	<div class="space-large"></div>
 	

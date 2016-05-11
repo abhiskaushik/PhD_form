@@ -51,6 +51,9 @@
 					<p class="large">*Bank Reference Number:</p>
 					<input type="text" id="chalanNo" name="chalanNo"  required />
 				</div>
+				<div class="col l6">
+					<img src="" id="bannerImg" width="150" height="200"/>	
+				</div>
 			</div>
 
 	  		<div class="row">  					   
@@ -61,9 +64,11 @@
 					        
 
 					        <input class="applicationCateg" name="appl_categ" id="applicationCateg" />
+
 					      </div>
 
 					      <div class="upload col l6 s12 ">
+
 			    <!-- <p>*Upload Image:</p>
 			      	<div class="file-field input-field">
 			      		<div class="demo"></div>
@@ -502,7 +507,11 @@
 	          
 
 	        	</div>
-	        	<img src="" id="signBanner" width="150" height="200"/>
+	        	<div class="right">
+	        		<img src="" id="signBanner" width="150" height="200"/>
+	        		<p class="center">Signature</p>
+	        	</div>
+	        	
 
 	<div class="space-large"></div>
 	
