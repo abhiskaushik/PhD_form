@@ -523,9 +523,9 @@
 			$("textarea#addr_for_commn").val(a['addr_for_commn']);
 			$("textarea#permanent_addr").val(a['permanent_addr']);
 			
-			$("textarea#employer_details_1").val(a['proexp1']);
-			$("textarea#employer_details_2").val(a['proexp2']);
-			$("textarea#employer_details_3").val(a['proexp3']);
+			$("textarea#employer_details_1").val(a['employer_details_1']);
+			$("textarea#employer_details_2").val(a['employer_details_2']);
+			$("textarea#employer_details_3").val(a['employer_details_3']);
 			$('#chalanNo').val(a['chalan_no']);
 			$('#applicationCateg').val(a['appl_categ']);
 			$('#department1').val(a['department1']);
@@ -567,7 +567,7 @@
 				$('#exam').val(a['exam']);
 			$('#score').val(a['score']);
 			$('#rank').val(a['rank']);
-			$('#valid').val(a['valid']);
+			$('#valid').val(a['validity']);
 			$('#discipline').val(a['discipline']);
 
 			$('#emp_pos_1').val(a['emp_pos_1']);

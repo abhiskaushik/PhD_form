@@ -177,18 +177,12 @@
         </div>
         @endif
         <div class="col s12">
-        <div class="space-medium"></div>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn  waves-effect waves-green btn">Print</a>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn  waves-effect waves-green btn">Admit</a>
         </div>
-        <div class="space-medium"></div>
         </div>
           <div class="space-medium"></div>
           </div>
-          <div class="col s12">
-            <a href="#" data-reg='{!! $i !!}' class="formed btn teal waves-effect">Click to View forms</a>
-          </div>
-          <div class="formButtons center"></div>
           </div>
         </div>
     
@@ -283,17 +277,6 @@
         }
         });
 
-    //    $('.formed').click(function(){
-    //     console.log('hey');
-    //      var index = $(this).data("reg");
-    //      console.log($('.applCateg'+index).val());
-    //      if($('.applCateg'+index).val() == 'Part Time'){
-          
-    //   var f = '<a href="#" class="btn waves teal">Form 1</a>';
-    //   $('.formButtons').append(f);
-    //   $('.formed').hide('slow');
-    // }
-    //    }); 
 
         $('.form').click(function(){
           var index = $(this).data("reg");

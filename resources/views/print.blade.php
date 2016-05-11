@@ -600,7 +600,7 @@
 
       <div class="space-medium"></div>
       <div class="row right">
-         <img src="{{ URL::asset('uploads/PHD/'.$applNo.'/'.$applNo.'sign.'.$signtype) }}" width="250" height="100">
+         <img src="{{ URL::asset('uploads/MS/'.$applNo.'/'.$applNo.'sign.'.$signtype) }}" width="250" height="100">
          <p><u>Signature</u></p>
       </div>
 </div>

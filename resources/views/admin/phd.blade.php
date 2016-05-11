@@ -163,9 +163,7 @@
         @endif
         </div>
         @endif
-
         <div class="col l12 center buttons">
-        <div class="space-medium"></div>
         <div class="col l6">
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn">Print</a>
         </div>
@@ -175,11 +173,6 @@
         </div>
         <div class="space-large"></div>
         </div>
-          <div class="space-medium"></div>
-          <div class="col s12">
-            <a href="#" data-reg='{!! $i !!}' class="formed btn teal waves-effect">Click to View forms</a>
-          </div>
-          <div class="formButtons center"></div>
           
           </div>
           </div>
@@ -244,24 +237,6 @@
 
   <script type="text/javascript">
       $(document).ready(function(){
-
-    $('.formed').click(function(){
-        
-         var ind = $(this).data("reg");
-         console.log($('.applCateg'+index).val());
-        if($('.applCateg'+ind).val()=='External'){
-      var f = '<a href=\"{{ URL::assest('uploads/PHD/'.) }}\" class='btn waves teal'>Form 3</a>";
-      $('.formButtons').append(f);
-      $('.formed').hide('slow');
-    }
-    else if($('.applCateg'+ind).val()=='On Campus'){
-       var f = '<a href="#" class="btn waves teal">Form 1</a><a href="#" class="btn waves teal">Form 2</a>';
-      $('.formButtons').append(f);
-      $('.formed').hide('slow');
-    }
-      
-    
-       });
 
     $('.modal-trigger').leanModal();
      var a = $('.box');
