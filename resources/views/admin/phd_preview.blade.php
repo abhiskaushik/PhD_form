@@ -58,7 +58,7 @@
 			        
 			      		
 					    <div class="input-field col l6 s12 applCheck">
-					        <select class="applicationCateg" name="appl_categ" required id="applicationCateg"> 
+					        <!-- <select class="applicationCateg" name="appl_categ" required id="applicationCateg"> 
 					        <option value="" disabled selected></option>
 					          <optgroup label="Part Time">
 					            <option value="onCampus">On Campus</option>
@@ -70,7 +70,8 @@
 					            <option value="Project">Project</option>
 					      		<option value="Others">Other Fellowships</option>
 					          </optgroup>
-					        </select>
+					        </select> -->
+					        <input type="text" name="appl_categ" id="applicationCateg" />
 					        
 					      </div>
 
