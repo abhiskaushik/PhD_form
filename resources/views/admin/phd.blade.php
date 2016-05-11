@@ -266,7 +266,6 @@
 
         });
         $('.form').click(function(){
-          console.log('hey');
           var index = $(this).data("reg");
           var data = {};
 
@@ -274,9 +273,9 @@
           data.chalanNo = $('.chalanNo'+index).val();//to be added
           data.applCateg = $('.applCateg'+index).val();
           data.dateOfReg = $('.dateOfReg'+index).val();
-          data.dept1 = $('.dept1'+index).val();
-          data.dept2 = $('.dept2'+index).val();
-          data.dept3 = $('.dept3'+index).val();
+          data.dept1 = department($('.dept1'+index).val());
+          data.dept2 = department($('.dept2'+index).val());
+          data.dept3 = department($('.dept3'+index).val());
           data.email = $('.email'+index).val();
           data.name = $('.name'+index).val();
           data.fatherName = $('.fatherName'+index).val();
@@ -342,6 +341,74 @@
           console.log(JSON.parse(localStorage.getItem('data')));
 
         });
+
+        function department(t)
+        {
+          if(t == 'AR')
+          {
+              return 'Architecture';
+          }
+          if(t == 'CS')
+          {
+              return 'Computer Science and Engineering';
+          }
+          if(t == 'CL')
+          {
+              return 'Chemical Engineering';
+          }
+          if(t == 'CV')
+          {
+              return 'Civil Engineering';
+          }
+          if(t == 'CY')
+          {
+              return 'Chemistry';
+          }
+          if(t == 'CA')
+          {
+              return 'Computer Applications';
+          }
+          if(t == 'CC')
+          {
+              return 'CECASE';
+          }
+          if(t == 'EN')
+          {
+              return 'Department of Energy Engineering';
+          }
+          if(t == 'EE')
+          {
+              return 'Electrical and Electronics Engineering';
+          }
+          if(t == 'EC')
+          {
+              return 'Electronics and Communication Engineering';
+          }
+          if(t == 'ME')
+          {
+              return 'Mechanical Engineering';
+          }
+          if(t == 'PR')
+          {
+              return 'Production Engineering';
+          }
+          if(t == 'MME')
+          {
+              return 'Metalurgy and Material Sciences';
+          }
+          if(t == 'MA')
+          {
+              return 'Mathematics';
+          }
+          if(t == 'IC')
+          {
+              return 'Instrumentation and Control Engineering';
+          }
+          if(t == 'PH')
+          {
+              return 'Physics';
+          }
+        }
   });
   </script>
 
