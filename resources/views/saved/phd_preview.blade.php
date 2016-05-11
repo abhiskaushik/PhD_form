@@ -493,7 +493,7 @@
 
 
 	  		<div class="right">
-			<img src="" id="signBanner" width="150" height="200"/>
+			<img src="" id="signBanner" width="200" height="100"/>
 	   		<p class="center">Signature</p>
 	   
 		      
@@ -516,18 +516,7 @@
 		bannerSign.setAttribute('src', "data:image/jpeg;base64," + dataSign);
 
 		$(document ).ready(function(){
-			// console.log(localStorage.getItem('img'));
-			// if(localStorage.img) { 
-			// 		console.log('hey');
-			//        var span = document.createElement('span');
-			//         span.innerHTML = ['<img class="thumb" src="', localStorage.img,
-			//                           '" title="test"/>'].join('');
-
-			//         document.getElementById('list').insertBefore(span, null);
-			  
-			//   }
 			var a = JSON.parse(localStorage.getItem('data'));
-			// console.log(a);
 
 
 
@@ -551,7 +540,7 @@
 			$("textarea#employer_details_2").val(a['employer_details_2']);
 			$("textarea#employer_details_3").val(a['employer_details_3']);
 			$('#chalanNo').val(a['chalan_no']);
-			// $('#applicationCateg').val(a['appl_categ']);
+			$('#applicationCateg').val(a['appl_categ']);
 			$('#department1').val(a['department1']);
 			$('#department2').val(a['department2']);
 			$('#department3').val(a['department3']);
