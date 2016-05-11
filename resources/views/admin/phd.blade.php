@@ -176,7 +176,11 @@
         <div class="space-large"></div>
         </div>
           <div class="space-medium"></div>
+          <div class="col s12">
+            <a href="#" data-reg='{!! $i !!}' class="formed btn teal waves-effect">Click to View forms</a>
+          </div>
           <div class="formButtons center"></div>
+          
           </div>
           </div>
 
@@ -230,8 +234,7 @@
             <a class="grey-text text-lighten-4" href="#!">Made with &hearts; by Delta Force</a>
             </div>
           </div>
-        </footer>
-            
+        </footer> 
 
   <script type="text/javascript">
   $(document ).ready(function(){
@@ -241,15 +244,24 @@
 
   <script type="text/javascript">
       $(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    if($('.applCateg'+index).val()=='External'){
-      var f = '<a href="#" class="btn waves teal">Form 3</a>';
-      $('.formButtons').append(f);
-    }
-    else if($('.applCateg'+index).val()=='OnCampus'){
-       var f = '<a href="#" class="btn waves teal">Form 1</a><a href="#" class="btn waves teal">Form 2</a>';
-      $('.formButtons').append(f);
-    }
+
+    // $('.formed').click(function(){
+        
+    //      var index = $(this).data("reg");
+    //      console.log($('.applCateg'+index).val());
+    //     if($('.applCateg'+index).val()=='External'){
+    //   var f = "<a href=\"{{ URL::assest('uploads/PHD/'.) }}\" class='btn waves teal'>Form 3</a>";
+    //   $('.formButtons').append(f);
+    //   $('.formed').hide('slow');
+    // }
+    // else if($('.applCateg'+index).val()=='On Campus'){
+    //    var f = '<a href="#" class="btn waves teal">Form 1</a><a href="#" class="btn waves teal">Form 2</a>';
+    //   $('.formButtons').append(f);
+    //   $('.formed').hide('slow');
+    // }
+      
+    
+    //    });
 
     $('.modal-trigger').leanModal();
      var a = $('.box');

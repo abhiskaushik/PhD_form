@@ -17,7 +17,13 @@
   
 </head>
 <body>
+<script type="text/javascript">
+  $(document ).ready(function(){
+    $(".button-collapse").sideNav();
+  })
+  </script>    
 
+  
   <header style="height: 25vh;
   padding: 0px;
   margin: 0px;
@@ -91,6 +97,7 @@
 
             <div class="center">
               <a data-reg="{!! $i !!}" target="_blank" href="../../mspreview1" class="form waves-effect waves-light btn" >Click Here To view full form</a>
+              
               <input class="regNo{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->registrationNumber !!}' />
               <input class="chalanNo{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->chalanNo !!}' />
               <input class="applCateg{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->applicationCategory !!}' />
@@ -112,6 +119,8 @@
               <input class="addrforcomm{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->addrforcomm !!}' />
               <input class="mobile{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->mobile !!}' />
               
+
+    
               <input class="PH{!! $i !!}" hidden="true" value='{!! $data['candidates'][$i]->PH !!}' />
               <input class="ug_degreeName{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->degreeName !!}' />
               <input class="ug_gpa{!! $i !!}" hidden="true" value='{!! $data['ug'][$i]->gpa !!}' />
@@ -176,6 +185,9 @@
         </div>
           <div class="space-medium"></div>
           </div>
+          <div class="col s12">
+            <a href="#" data-reg='{!! $i !!}' class="formed btn teal waves-effect">Click to View forms</a>
+          </div>
           <div class="formButtons center"></div>
           </div>
         </div>
@@ -235,23 +247,17 @@
           </div>
         </footer>
             
-
-  <script type="text/javascript">
-  $(document ).ready(function(){
-    $(".button-collapse").sideNav();
-  })
-  </script>    
-
-  <script type="text/javascript">
+<script type="text/javascript">
       $(document).ready(function(){
         console.log($('#heading').attr("data-reg"));
+        console.log('hey');
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
 
     //adding buttons
-    if($('.applCateg'+index).val() == 'Part Time'){
-      var f = '<a href="#" class="btn waves teal">Form 1</a>';
-      $('.formButtons').append(f);
-    }
+    // if($('.applCateg'+index).val() == 'Part Time'){
+    //   var f = '<a href="#" class="btn waves teal">Form 1</a>';
+    //   $('.formButtons').append(f);
+    // }
 
     $('.modal-trigger').leanModal();
      var a = $('.box');
@@ -276,6 +282,18 @@
           isOpen = false; 
         }
         });
+
+    //    $('.formed').click(function(){
+    //     console.log('hey');
+    //      var index = $(this).data("reg");
+    //      console.log($('.applCateg'+index).val());
+    //      if($('.applCateg'+index).val() == 'Part Time'){
+          
+    //   var f = '<a href="#" class="btn waves teal">Form 1</a>';
+    //   $('.formButtons').append(f);
+    //   $('.formed').hide('slow');
+    // }
+    //    }); 
 
         $('.form').click(function(){
           
@@ -424,6 +442,7 @@
         }
   });
   </script>
+
 
 </body>
 </html>

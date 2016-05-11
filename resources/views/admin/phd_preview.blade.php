@@ -63,17 +63,6 @@
 					      </div>
 
 					      <div class="upload col l6 s12 ">
-			   <!--  <p>*Upload Image:</p>
-			      	<div class="file-field input-field">
-			      		<div class="demo"></div>
-			      		
-		          		<div class="uploadImg btn teal darken-1 btn waves-effect waves-light">
-		          			<span class="light">File</span>
-		          			{!! Form::file('image_path' , array('class'=>'', 'required')) !!}			
-		          		</div>
-		          		<div class="file-path-wrapper">
-	        				<input class="file-path validate" type="text">
-	      				</div> -->
 		          	</div>
 			      </div>
 			      
