@@ -83,14 +83,16 @@
 		    <div class="col l6 s12">
 		    <p>*Upload Image</p>
 		      	<div class="file-field input-field">
-	          		<div class="btn teal darken-1 btn waves-effect waves-light">
-	          			<span class="light">File</span>
-	          			{!! Form::file('image_path' , array('id'=>'imaged', 'required')) !!}			
-	          		</div>
-	          		<div class="file-path-wrapper">
-        				<input class="file-path validate" type="text">
-      				</div>
-	          	</div>
+			      		<div class="demo"></div>
+			      		<img src="" id="bannerImg" width="150" height="200"/>
+		          		<div class="uploadImg btn teal darken-1 btn waves-effect waves-light">
+		          			<span class="light">File</span>
+		          			<input type="file" name="image_path" id="imaged", onchange="readURL(this);" required>		
+		          		</div>
+		          		<div class="file-path-wrapper">
+	        				<input class="file-path validate" type="text">
+	      				</div>
+		          	</div>
 		      </div>	
   		</div>
 		<p class="vlarge">Applicant Details</p>
@@ -500,11 +502,12 @@
 		      <div class="space-medium"></div>
 		      <div class="row">
 		      	<div class="upload col l6 s6 ">
+			      		<img src="" width="200" height="100" id="signImg"/>
 			    <p>Upload Signature</p>
 			      	<div class="file-field input-field">
 		          		<div class="btn teal darken-1 btn waves-effect waves-light">
 		          			<span class="light">File</span>
-		          			{!! Form::file('sign' , array('class'=>'', 'required')) !!}			
+		          			<input type="file" id="signImg" name="sign" onchange="signURL(this);" required />		
 		          		</div>
 		          		<div class="file-path-wrapper">
 	        				<input class="file-path validate" type="text">
@@ -578,6 +581,55 @@
             
 
 	<script type="text/javascript">
+	function readURL(input) 
+			{
+			    document.getElementById("bannerImg").style.display = "block";
+
+			    if (input.files && input.files[0]) {
+			        var reader = new FileReader();
+
+			        reader.onload = function (e) {
+			            document.getElementById('bannerImg').src =  e.target.result;
+			            bannerImage = document.getElementById('bannerImg');
+						imgData = getBase64Image(bannerImage);
+						localStorage.setItem("imgData", imgData);
+			        }
+
+			        reader.readAsDataURL(input.files[0]);
+			    }
+			}
+
+		function signURL(input) 
+			{
+			    document.getElementById("signImg").style.display = "block";
+
+			    if (input.files && input.files[0]) {
+			        var reader = new FileReader();
+
+			        reader.onload = function (e) {
+			            document.getElementById('signImg').src =  e.target.result;
+			            signImage = document.getElementById('signImg');
+						signData = getBase64Image(signImage);
+						localStorage.setItem("signData", signData);
+			        }
+
+			        reader.readAsDataURL(input.files[0]);
+			    }
+			}
+
+			function getBase64Image(img) {
+			    var canvas = document.createElement("canvas");
+			    canvas.width = img.width;
+			    canvas.height = img.height;
+
+			    var ctx = canvas.getContext("2d");
+			    ctx.drawImage(img, 0, 0);
+
+			    var dataURL = canvas.toDataURL("image/png");
+
+			    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+			}
+	
 	$(document ).ready(function(){
 		$(".button-collapse").sideNav();
 		$('select').material_select();

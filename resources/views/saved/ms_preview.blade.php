@@ -502,11 +502,20 @@
 	          
 
 	        	</div>
+	        	<img src="" id="signBanner" width="150" height="200"/>
 
 	<div class="space-large"></div>
 	
 
 		<script type="text/javascript">
+		var dataImage = localStorage.getItem('imgData');
+		bannerImg = document.getElementById('tableBanner');
+		bannerImg.setAttribute('src', "data:image/jpeg;base64," + dataImage);
+
+		var dataSign = localStorage.getItem('signData');
+		bannerSign = document.getElementById('signBanner');
+		bannerSign.setAttribute('src', "data:image/jpeg;base64," + dataSign);
+
 		$(document ).ready(function(){
 			console.log(localStorage.getItem('img'));
 			var a = JSON.parse(localStorage.getItem('data'));

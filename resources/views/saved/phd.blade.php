@@ -98,10 +98,10 @@
 
 			      	<div class="file-field input-field">
 			      		<div class="demo"></div>
-			      		
+			      		<img src="" id="bannerImg" width="150" height="200"/>
 		          		<div class="uploadImg btn teal darken-1 btn waves-effect waves-light">
 		          			<span class="light">File</span>
-		          			{!! Form::file('image_path' , array('id'=>'imaged' ,'required')) !!}		
+		          			<input type="file" name="image_path" id="imaged", onchange="readURL(this);" required>		
 		          		</div>
 		          		<div class="file-path-wrapper">
 	        				<input class="file-path validate" type="text">
@@ -510,11 +510,12 @@
 			      <div class="row">
 			      	
 			      	<div class="upload col l6 s6 ">
+			      		<img src="" width="200" height="100" id="signImg"/>
 			    <p>Upload Signature</p>
 			      	<div class="file-field input-field">
 		          		<div class="btn teal darken-1 btn waves-effect waves-light">
 		          			<span class="light">File</span>
-		          			{!! Form::file('sign' , array('class'=>'', 'required')) !!}			
+		          			<input type="file" id="signImg" name="sign" onchange="signURL(this);" required />		
 		          		</div>
 		          		<div class="file-path-wrapper">
 	        				<input class="file-path validate" type="text">
@@ -591,56 +592,104 @@
 	            
 
 		<script type="text/javascript">
+		function readURL(input) 
+			{
+			    document.getElementById("bannerImg").style.display = "block";
+
+			    if (input.files && input.files[0]) {
+			        var reader = new FileReader();
+
+			        reader.onload = function (e) {
+			            document.getElementById('bannerImg').src =  e.target.result;
+			            bannerImage = document.getElementById('bannerImg');
+						imgData = getBase64Image(bannerImage);
+						localStorage.setItem("imgData", imgData);
+			        }
+
+			        reader.readAsDataURL(input.files[0]);
+			    }
+			}
+
+		function signURL(input) 
+			{
+			    document.getElementById("signImg").style.display = "block";
+
+			    if (input.files && input.files[0]) {
+			        var reader = new FileReader();
+
+			        reader.onload = function (e) {
+			            document.getElementById('signImg').src =  e.target.result;
+			            signImage = document.getElementById('signImg');
+						signData = getBase64Image(signImage);
+						localStorage.setItem("signData", signData);
+			        }
+
+			        reader.readAsDataURL(input.files[0]);
+			    }
+			}
+
+			function getBase64Image(img) {
+			    var canvas = document.createElement("canvas");
+			    canvas.width = img.width;
+			    canvas.height = img.height;
+
+			    var ctx = canvas.getContext("2d");
+			    ctx.drawImage(img, 0, 0);
+
+			    var dataURL = canvas.toDataURL("image/png");
+
+			    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+			}
 		$(document ).ready(function(){
 			$(".button-collapse").sideNav();
 			$('select').material_select();
 			
-			function handleFileSelect(evt) {
-			    var files = evt.target.files; // FileList object
-			    console.log(files);
-			    // Loop through the FileList and render image files as thumbnails.
-			    for (var i = 0, f; f = files[i]; i++) {
+			// function handleFileSelect(evt) {
+			//     var files = evt.target.files; // FileList object
+			//     console.log(files);
+			//     // Loop through the FileList and render image files as thumbnails.
+			//     for (var i = 0, f; f = files[i]; i++) {
 
-			      // Only process image files.
-			      if (!f.type.match('image.*')) {
-			        continue;
-			      }
+			//       // Only process image files.
+			//       if (!f.type.match('image.*')) {
+			//         continue;
+			//       }
 
-			      var reader = new FileReader();
+			//       var reader = new FileReader();
 
-			      // Closure to capture the file information.
-			      reader.onload = (function(theFile) {
-			        return function(e) {
-			          // Render thumbnail.
-			          var span = document.createElement('span');
-			          span.innerHTML = ['<img class="thumb" src="', e.target.result,
-			                            '" title="', escape(theFile.name), '"/>'].join('');
-			          $('#list').empty();
-			          document.getElementById('list').insertBefore(span, null);
-			          localStorage.setItem('img', e.target.result);
-
-
-			        };
-			      })(f);
-
-			      // Read in the image file as a data URL.
-			      reader.readAsDataURL(f);
-			    }
-			  }
-
-			  document.getElementById('imaged').addEventListener('change', handleFileSelect, false);
+			//       // Closure to capture the file information.
+			//       reader.onload = (function(theFile) {
+			//         return function(e) {
+			//           // Render thumbnail.
+			//           var span = document.createElement('span');
+			//           span.innerHTML = ['<img class="thumb" src="', e.target.result,
+			//                             '" title="', escape(theFile.name), '"/>'].join('');
+			//           $('#list').empty();
+			//           document.getElementById('list').insertBefore(span, null);
+			//           localStorage.setItem('img', e.target.result);
 
 
-			  if(localStorage.img) { 
-			  		console.log(localStorage.getItem('img'));
-			         var span = document.createElement('span');
-			          span.innerHTML = ['<img class="thumb" src="', localStorage.img,
-			                            '" title="test"/>'].join('');
+			//         };
+			//       })(f);
 
-			          document.getElementById('list').insertBefore(span, null);
-			          console.log('success');
+			//       // Read in the image file as a data URL.
+			//       reader.readAsDataURL(f);
+			//     }
+			//   }
+
+			  // document.getElementById('imaged').addEventListener('change', handleFileSelect, false);
+
+
+			  // if(localStorage.img) { 
+			  // 		console.log(localStorage.getItem('img'));
+			  //        var span = document.createElement('span');
+			  //         span.innerHTML = ['<img class="thumb" src="', localStorage.img,
+			  //                           '" title="test"/>'].join('');
+
+			  //         document.getElementById('list').insertBefore(span, null);
+			  //         console.log('success');
 			    
-			    }
+			  //   }
 
 			var x = new Date().getFullYear();
 			console.log(x);

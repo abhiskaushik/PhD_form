@@ -76,6 +76,8 @@
 					      <div class="upload col l6 s12 ">
 
 					      <output id="list"></output>	
+
+					      <img src="" id="tableBanner" width="150" height="200"/>
 			    <!-- <p>*Upload Image:</p>
 			      	<div class="file-field input-field">
 			      		<div class="demo"></div>
@@ -495,29 +497,33 @@
 		      </div>
 		      </div>
 
-
-		       <div id="preview" class="modal">
-	          
-
-	        	</div>
+		      <img src="" id="signBanner" width="150" height="200"/>
 
 	<div class="space-large"></div>
 	
 
 		<script type="text/javascript">
-		$(document ).ready(function(){
-			console.log(localStorage.getItem('img'));
-			if(localStorage.img) { 
-					console.log('hey');
-			       var span = document.createElement('span');
-			        span.innerHTML = ['<img class="thumb" src="', localStorage.img,
-			                          '" title="test"/>'].join('');
+		var dataImage = localStorage.getItem('imgData');
+		bannerImg = document.getElementById('tableBanner');
+		bannerImg.setAttribute('src', "data:image/jpeg;base64," + dataImage);
 
-			        document.getElementById('list').insertBefore(span, null);
+		var dataSign = localStorage.getItem('signData');
+		bannerSign = document.getElementById('signBanner');
+		bannerSign.setAttribute('src', "data:image/jpeg;base64," + dataSign);
+
+		$(document ).ready(function(){
+			// console.log(localStorage.getItem('img'));
+			// if(localStorage.img) { 
+			// 		console.log('hey');
+			//        var span = document.createElement('span');
+			//         span.innerHTML = ['<img class="thumb" src="', localStorage.img,
+			//                           '" title="test"/>'].join('');
+
+			//         document.getElementById('list').insertBefore(span, null);
 			  
-			  }
+			//   }
 			var a = JSON.parse(localStorage.getItem('data'));
-			console.log(a);
+			// console.log(a);
 
 
 

@@ -62,8 +62,7 @@ $(document).ready(function(){
 			data.score = $('#score').val();
 			data.rank = $('#rank').val();
 			data.validity = $('#validity').val();
-			data.discipline = $('#discipline').val();
-      console.log($('#validity').val());
+			data.discipline = $('#discipline').val();;
 		}
 		else{
 			data.exam ='';
@@ -73,12 +72,8 @@ $(document).ready(function(){
 			data.discipline ='';
 		}
 
-		console.log(data);
-		localStorage.clear();
+		// localStorage.clear();
     localStorage.setItem('data' , JSON.stringify(data));
-    
-    console.log(JSON.parse(localStorage.getItem('data')));
-
 		
 	}); 
 
