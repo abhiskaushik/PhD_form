@@ -137,7 +137,6 @@ class AdminController extends Controller
 
     public function adminall($phdormsc, $dept)
     {
-        Log::info($dept);
         $rules1 = ['deleted' => false, 'dept1' => $dept];
         $rules2 = ['deleted' => false, 'dept2' => $dept];
         $rules3 = ['deleted' => false, 'dept3' => $dept];
@@ -145,6 +144,12 @@ class AdminController extends Controller
         $data = self::finalView($phdormsc, $rules1, $rules2, $rules3);
         $data['dept'] = self::department($dept);
         $data['session'] = Session::get('dept');
+        for($i = 0; $i < sizeof($data['candidates']); $i++)
+        {
+            $departments = explode('/', $data['candidates'][$i]->registrationNumber);
+            $reg_appl_no = $departments[sizeof($departments) - 1];
+            $data['candidates'][$i]->applNo = $reg_appl_no;
+        }
         return View::make('admin.'.$phdormsc)->with('data', $data);
     }
 

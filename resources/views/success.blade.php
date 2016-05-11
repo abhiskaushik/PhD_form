@@ -78,7 +78,7 @@
             <div class="space-small center">
             </div>
             <div class="center">
-              <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Click Here To view full form</a>
+              <a class="waves-effect waves-light btn modal-trigger print" data-reg={!! $details['reg_number'] !!} href="#!">Click Here To view full form</a>
             </div>
           </div>
           
@@ -87,147 +87,6 @@
       
 
       <!-- modal goes here -->
-
-      <div id="modal1" class="modal">
-      <div class="modal-content">
-        <div class="">
-          <h4>Candidate's Form</h4>
-          <div class="row">
-            <div class="col l6">
-              <p><b>Registration Number:</b> {!! $details['reg_number'] !!}</p>      
-            </div>
-          </div>
-          <div class="row">
-            <h5>Application Details:</h5>
-            <div class="col l6">
-              <p><b>Application Category:</b> {!! $details['appl_categ'] !!}</p>
-              <p><b>Department 2:</b> {!! $details['department2'] !!}</p>
-            </div>
-            <div class="col l6">
-              <p><b>Department 1:</b> {!! $details['department1'] !!}</p>
-        
-        <p><b>Department 3:</b> {!! $details['department3'] !!}</p>
-            </div>
-          </div>
-          <div class="row">
-            <h5>Personal Details:</h5>
-            <div class="col l6">
-              <p><b>Email:</b> {!! $details['email'] !!}</p>
-              <p><b>Name of Candidate:</b> {!! $details['name'] !!}</p>
-              <p><b>Father's Name:</b> {!! $details['father_name'] !!}</p>
-              <p><b>Category:</b> {!! $details['category'] !!}</p>
-              <p><b>Marital Status: {!! $details['marital_status'] !!}</b></p>
-              <p><b>Nationality:</b> {!! $details['nationality'] !!}</p>
-              <p><b>Permanent Address:</b> {!! $details['permanent_addr'] !!}</p>
-              <p><b>Landline Number:</b> {!! $details['landline'] !!}</p>
-            </div>
-            <div class="col l6">
-               <p><b>Area of Research:</b> {!! $details['area_of_research'] !!}</p>
-        
-        <p><b>Email Id:</b> {!! $details['email'] !!}</p>
-        
-        <p><b>Date of Birth:</b> {!! $details['dob'] !!}</p>
-        
-        <p><b>Sex:</b> {!! $details['sex'] !!}</p>
-        
-        <p><b>Physically Handicapped:</b> {!! $details['ph'] !!}</p>
-        
-        <p><b>Address for Communication:</b> {!! $details['addr_for_commn'] !!}</p>
-        
-        <p><b>Mobile Number:</b> {!! $details['mobile'] !!}</p>
-        
-            </div>
-          </div>
-          <div class="row">
-            <h5>Undergraduate Details:</h5>
-            <div class="col l6">
-              <p><b> Degree:</b> {!! $details['ug_deg'] !!}</p>
-              <p><b> G.P.A:</b> {!! $details['ug_gpa'] !!}</p>
-              <p><b> Name of Institution:</b> {!! $details['ug_name_of_inst'] !!}</p>
-              <p><b> Year of Passing:</b> {!! $details['ug_yop'] !!}</p>
-            </div>
-            <div class="col l6">
-              <p><b> Branch:</b> {!! $details['ug_branch'] !!}</p>
-        
-        <p><b> Class:</b> {!! $details['ug_class'] !!}</p>
-        
-        <p><b> Name of University:</b> {!! $details['ug_name_of_uni'] !!}</p>
-        
-            </div>
-          </div>
-          <div class="row">
-            <h5>Post Graduate Details:</h5>
-            <div class="col l6">
-              <p><b> Degree:</b> {!! $details['pg_deg'] !!}</p>
-              <p><b> G.P.A:</b> {!! $details['pg_gpa'] !!}</p>
-              <p><b> Name of Institution:</b> {!! $details['pg_name_of_inst'] !!}</p>
-              <p><b> Year of Passing:</b> {!! $details['pg_yop'] !!}</p>
-            </div>
-            <div class="col l6">
-              <p><b> Branch:</b> {!! $details['pg_branch'] !!}</p>
-              
-              <p><b> Class:</b> {!! $details['pg_class'] !!}</p>
-              
-              <p><b> Name of University:</b> {!! $details['pg_name_of_uni'] !!}</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col l12">
-              <p><b>Exam:</b> {!! $details['exam'] !!}</p>
-              <p><b>Score:</b> {!! $details['score'] !!}</p>
-              <p><b>Rank:</b> {!! $details['rank'] !!}</p>
-              <p><b>Validity:</b> {!! $details['validity'] !!}</p>
-              <p><b>Discipline:</b> {!! $details['discipline'] !!}</p>              
-            </div>
-
-          </div>
-          <div class="row">
-            <h5>Project/Publication Details:</h5>
-            <div class="col l6">
-              <p><b>Title of Project:</b> {!! $details['title_of_project'] !!}</p>
-              <p><b>Details of Publication 2:</b> {!! $details['details_of_pub2'] !!}</p>
-              <p><b>Awards 1:</b> {!! $details['awards1'] !!}</p>
-              <p><b>Awards 3:</b> {!! $details['awards3'] !!}</p>
-            </div>
-            <div class="col l6">
-              <p><b>Details of Publication 1:</b> {!! $details['details_of_pub1'] !!}</p>
-              
-              <p><b>Details of Publication 3:</b> {!! $details['details_of_pub3'] !!}</p>
-              
-              <p><b>Awards 2:</b> {!! $details['awards2'] !!}</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col l12">
-            <p><b>Employer Details 1:</b> {!! $details['employer_details_1'] !!}</p>
-            <p><b>Postition 1:</b> {!! $details['position1'] !!}</p>
-              <div class="col l6"><p><b>From 1:</b> {!! $details['from1'] !!}</p></div>
-              <div class="col l6"><p><b>To 1:</b> {!! $details['to1'] !!}</p></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col l12">
-            <p><b>Employer Details 2:</b> {!! $details['employer_details_2'] !!}</p>
-            <p><b>Postition 2:</b> {!! $details['position2'] !!}</p>
-              <div class="col l6"><p><b>From 2:</b> {!! $details['from2'] !!}</p></div>
-              <div class="col l6"><p><b>To 2:</b> {!! $details['to2'] !!}</p></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col l12">
-            <p><b>Employer Details 3:</b> {!! $details['employer_details_3'] !!}</p>
-            <p><b>Postition 3:</b> {!! $details['position3'] !!}</p>
-              <div class="col l6"><p><b>From 3:</b> {!! $details['from3'] !!}</p></div>
-              <div class="col l6"><p><b>To 3:</b> {!! $details['to3'] !!}</p></div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-      <div class="modal-footer">
-        <a href="#!"  data-reg={!! $details['reg_number']!!} class="print btn modal-action modal-close waves-effect waves-green btn-flat">Print</a>
-      </div>
-      </div>
     </div>
 
     @else
@@ -253,7 +112,7 @@
             <div class="space-small center">
             </div>
             <div class="center">
-              <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Click Here To view full form</a>
+              <a class="waves-effect waves-light btn modal-trigger print" data-reg={!! $details['reg_number'] !!} href="#!">Click Here To view full form</a>
             </div>
           </div>
           
