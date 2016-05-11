@@ -619,6 +619,7 @@
 			          document.getElementById('list').insertBefore(span, null);
 			          localStorage.setItem('img', e.target.result);
 
+
 			        };
 			      })(f);
 
@@ -631,12 +632,13 @@
 
 
 			  if(localStorage.img) { 
-
+			  		console.log(localStorage.getItem('img'));
 			         var span = document.createElement('span');
 			          span.innerHTML = ['<img class="thumb" src="', localStorage.img,
 			                            '" title="test"/>'].join('');
 
 			          document.getElementById('list').insertBefore(span, null);
+			          console.log('success');
 			    
 			    }
 

@@ -312,6 +312,7 @@
 
 			      <div class="space-medium"></div>
 					<div class="exams">
+						<p class="vlarge">*Gate Details:</p>
 						<div class="col l4">
 							<span class="light">*Examination:</span>
 							<input type="text" id="exam" name="exam" />
@@ -507,6 +508,7 @@
 
 		<script type="text/javascript">
 		$(document ).ready(function(){
+			console.log(localStorage.getItem('img'));
 			var a = JSON.parse(localStorage.getItem('data'));
 			console.log(a);
 

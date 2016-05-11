@@ -12,10 +12,11 @@
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 	<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 	<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
-	<script src="{{URL::asset('assets/js/code_ms.js')}}"></script>
+	
 	<script src="{{URL::asset('assets/js/preview.js')}}"></script>
 	<script src="{{URL::asset('assets/js/savems.js')}}"></script>
 	<script src="{{URL::asset('assets/js/common.js')}}"></script>
+	<script src="{{URL::asset('assets/js/code_ms.js')}}"></script>
 	
 </head>
 <body>
@@ -319,9 +320,9 @@
 		      	</div>
 		      </div>
 		      <div class="results_announced center">
-			      		<p class="center">Qualified in GATE/NET/SLET/CSIR/CAT/UGC/NBHM</p>
+			      		<p class="center">Qualified in GATE?</p>
 			      		<span>
-			      			<input type="checkbox" id="announced" name="ann" />
+			      			<input type="checkbox" id="announced" class="annn" name="ann" />
 			      			<label for="announced">Yes</label>
 			      		</span>
 			      		
@@ -583,7 +584,7 @@
 
 		function handleFileSelect(evt) {
 			    var files = evt.target.files; // FileList object
-			    console.log(files);
+			    
 			    // Loop through the FileList and render image files as thumbnails.
 			    for (var i = 0, f; f = files[i]; i++) {
 
@@ -623,7 +624,7 @@
 			                            '" title="test"/>'].join('');
 
 			          document.getElementById('list').insertBefore(span, null);
-			    
+			    	console.log(localStorage.getItem('img'));
 			    }
 
 		var x = new Date().getFullYear();
