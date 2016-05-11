@@ -26,13 +26,14 @@
 <div class="heading"></div>
 </div>
 
-<img src="{{ URL::asset('uploads/PHD/'.$applNo.'/'.$applNo.'.'.$imgtype) }}" width="200" height="300">
+
 
 
 @if($phdorms  == 'PHD')
     <div class="container center">
     <h4>Form Details: </h4>
-    
+    <div class="row">
+    <div class="col l10">
       <table class="bordered">
         <thead>
           <tr>
@@ -74,7 +75,12 @@
         </tbody>
       </table>
   
+      </div>
+      <div class="col l2">
+        <img src="{{ URL::asset('uploads/PHD/'.$applNo.'/'.$applNo.'.'.$imgtype) }}" width="100" height="150">
 
+      </div>
+      </div>
       <table class="bordered">
         <thead>
           <tr>
@@ -222,7 +228,7 @@
         </tbody>
       </table>
 
-      <table>
+      <table class="bordered">
         <thead>
           <tr>
             <td><h5>Publication/Project Details:</h5></td>
@@ -268,7 +274,7 @@
           <p><b>Awards2:</b> {!! $others['awards2'] !!}</p>
         </div>
       </div>
-       <table>
+       <table class="bordered">
         <thead>
           <tr>
             <td><h5>Employer Details:</h5></td>
@@ -321,6 +327,11 @@
           </tr>
         </tbody>
       </table>
+      <div class="space-medium"></div>
+      <div class="row right">
+         <img src="{{ URL::asset('uploads/PHD/'.$applNo.'/'.$applNo.'.'.$signtype) }}" width="250" height="100">
+         <p><u>Signature</u></p>
+      </div>
   
   </div>
 
@@ -329,7 +340,8 @@
 
     <div class="container center">
     <h4>Form Details: </h4>
-    
+    <div class="row">
+      <div class="col l9">
       <table class="bordered">
         <thead>
           <tr>
@@ -370,6 +382,12 @@
           </tr>
         </tbody>
       </table>
+      </div>
+      <div class="col l3">
+        <img src="{{ URL::asset('uploads/MS/'.$applNo.'/'.$applNo.'.'.$imgtype) }}" width="100" height="150">
+      </div>
+      </div>
+
   
 
       <table class="bordered">
@@ -540,7 +558,7 @@
         </tbody>
       </table>
 
-      <table>
+      <table class="bordered">
         <thead>
           <tr>
             <td><h5>Employer Details:</h5></td>
@@ -594,9 +612,15 @@
         </tbody>
       </table>
 
+      <div class="space-medium"></div>
+      <div class="row right">
+         <img src="{{ URL::asset('uploads/PHD/'.$applNo.'/'.$applNo.'.'.$signtype) }}" width="250" height="100">
+         <p><u>Signature</u></p>
+      </div>
+</div>
           @endif
 
-</div>
+
 
 <script type="text/javascript">
   $(document).ready(function(){

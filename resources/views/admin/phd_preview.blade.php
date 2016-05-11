@@ -71,7 +71,7 @@
 					      		<option value="Others">Other Fellowships</option>
 					          </optgroup>
 					        </select>
-					        <input class="applicationCateg" name="appl_categ" required id="applicationCateg" />
+					        
 					      </div>
 
 					      <div class="upload col l6 s12 ">
@@ -90,7 +90,7 @@
 			      </div>
 			      
 
-			        </div>		        		    		    
+			        		        		    		    
 	  		
 	  			<p class="vlarge">Applicant Details</p>
 			    <div class="col s12">
@@ -297,10 +297,7 @@
 					    </select>
 			      	</div>
 			      </div> 
-			      <p>
-			      	<input type="checkbox" id="ra1" name="ra1" />
-				      <label for="ra1">Click here if final semester results are not announced.</label>
-			      </p>
+			      
 			      </div>
 			      </div>
 
@@ -352,10 +349,7 @@
 					    </select>
 			      	</div>
 			      </div> 
-			      <p>
-				      <input type="checkbox" id="ra2" name="ra2" />
-				      <label for="ra2">Click here if final semester results are not announced.</label>
-				  </p>
+			      
 			      </div>
 			      </div>
 			      <div class="row">
@@ -493,13 +487,7 @@
 			      <div class="row">
 			      	<div class="col l12 s12 ">
 			      		<p>I do hereby declare that the information furnished in this application are true and correct to the best of my knowledge. If, any of the particulars furnished above is found to be incorrect at the time of admission, the admission may be cancelled.</p>
-			      		<p class="center agreement">
-			      			<span>
-			      		      <input type="checkbox" id="agree" class="check" required="true"/>
-			      		      <label for="agree">Agree</label>
-			      		    </span>
-			      		    
-			      		</p>
+			      		
 			      	</div>
 			      </div>
 			      <div class="space-medium"></div>

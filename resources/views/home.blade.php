@@ -66,7 +66,7 @@
       <p>Click <a href="continue">here</a> to continue with saved application form </p>
     </div>
   </div>
-  <div class="space-large"></div>
+  <div id="hel"></div>
   <footer class="page-footer teal darken-4">
           <div class="container">
             <div class="row">
@@ -99,6 +99,12 @@
   <script type="text/javascript">
   $(document ).ready(function(){
     $(".button-collapse").sideNav();
+    console.log(localStorage.getItem('img'));
+     var span = document.createElement('span');
+          span.innerHTML = ['<img class="thumb" src="', localStorage.img,
+                            '" title="test"/>'].join('');
+
+          document.getElementById('hel').insertBefore(span, null);
   })
   </script>
   
