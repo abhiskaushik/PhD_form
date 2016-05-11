@@ -176,7 +176,7 @@
         </div>
           <div class="space-medium"></div>
           </div>
-          
+          <div class="formButtons center"></div>
           </div>
         </div>
     
@@ -246,6 +246,13 @@
       $(document).ready(function(){
         console.log($('#heading').attr("data-reg"));
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+
+    //adding buttons
+    if($('.applCateg'+index).val() == 'Part Time'){
+      var f = '<a href="#" class="btn waves teal">Form 1</a>';
+      $('.formButtons').append(f);
+    }
+
     $('.modal-trigger').leanModal();
      var a = $('.box');
         var inputBox = $('.searchbox-input');
