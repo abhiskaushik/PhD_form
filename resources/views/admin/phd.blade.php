@@ -245,23 +245,23 @@
   <script type="text/javascript">
       $(document).ready(function(){
 
-    // $('.formed').click(function(){
+    $('.formed').click(function(){
         
-    //      var index = $(this).data("reg");
-    //      console.log($('.applCateg'+index).val());
-    //     if($('.applCateg'+index).val()=='External'){
-    //   var f = "<a href=\"{{ URL::assest('uploads/PHD/'.) }}\" class='btn waves teal'>Form 3</a>";
-    //   $('.formButtons').append(f);
-    //   $('.formed').hide('slow');
-    // }
-    // else if($('.applCateg'+index).val()=='On Campus'){
-    //    var f = '<a href="#" class="btn waves teal">Form 1</a><a href="#" class="btn waves teal">Form 2</a>';
-    //   $('.formButtons').append(f);
-    //   $('.formed').hide('slow');
-    // }
+         var ind = $(this).data("reg");
+         console.log($('.applCateg'+index).val());
+        if($('.applCateg'+ind).val()=='External'){
+      var f = "<a href=\"{{ URL::assest('uploads/PHD/'.) }}\" class='btn waves teal'>Form 3</a>";
+      $('.formButtons').append(f);
+      $('.formed').hide('slow');
+    }
+    else if($('.applCateg'+ind).val()=='On Campus'){
+       var f = '<a href="#" class="btn waves teal">Form 1</a><a href="#" class="btn waves teal">Form 2</a>';
+      $('.formButtons').append(f);
+      $('.formed').hide('slow');
+    }
       
     
-    //    });
+       });
 
     $('.modal-trigger').leanModal();
      var a = $('.box');

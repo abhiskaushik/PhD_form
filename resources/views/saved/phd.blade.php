@@ -826,6 +826,9 @@
 				{
 					return 'Mathematics';
 				}		
+				if(t == 'HM'){
+					return 'Humanities & Social Science';
+				}
 			}
 		});
 		</script>
