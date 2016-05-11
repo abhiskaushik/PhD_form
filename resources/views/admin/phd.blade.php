@@ -82,20 +82,21 @@
                <div class="center">
                 @if($data['candidates'][$i]->applicationCategory == 'External')
                 <div class="col l6">
-                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->applNo.'/'.$data['candidates'][$i]->applNo.'form3.pdf') }}" class="btn waves-effect waves-green btn">Form 3</a>
+                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->applNo.'/'.$data['candidates'][$i]->applNo.'form3.pdf') }}" target="_blank" class="btn waves-effect waves-green btn">Form 3</a>
                 </div>
                 <div class="space-medium"></div>
                 @endif
                 @if($data['candidates'][$i]->applicationCategory == 'onCampus')
                 <div class="col l6">
-                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->applNo.'/'.$data['candidates'][$i]->applNo.'form1.pdf') }}" class="btn waves-effect waves-green btn">Form 1</a>
+                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->applNo.'/'.$data['candidates'][$i]->applNo.'form1.pdf') }}" target="_blank" class="btn waves-effect waves-green btn">Form 1</a>
                 </div>
                 <div class="col l6">
-                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->applNo.'/'.$data['candidates'][$i]->applNo.'form2.pdf') }}" class="btn waves-effect waves-green btn">Form 2</a>
+                <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->applNo.'/'.$data['candidates'][$i]->applNo.'form2.pdf') }}" target="_blank" class="btn waves-effect waves-green btn">Form 2</a>
                 </div>
                 <div class="space-medium"></div>
                 @endif
         @if($data['session'] == 'all')
+        <div class="space-small"></div>
         <div class="col l12 center buttons">
         <div class="col l6">
           <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard btn modal-action modal-close waves-effect waves-green btn">Discard</a>
@@ -107,9 +108,10 @@
         @endif
         </div>
         @endif
+        <div class="space-medium"></div>
         <div class="col l12 center buttons">
         <div class="col l6">
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn">Print</a>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn modal-action modal-close waves-effect waves-green btn" target="_blank">Print</a>
         </div>
         <div class="col l6">
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn modal-action modal-close waves-effect waves-green btn">Admit</a>

@@ -96,21 +96,23 @@
             </div>
             @if($data['candidates'][$i]->applicationCategory == 'Part Time')
                 <div class="col l6 center">
-                <a href="{{ URL::asset('uploads/MS/'.$data['candidates'][$i]->applNo.'/'.$data['candidates'][$i]->applNo.'cert.pdf') }}"  class="btn waves-effect waves-green btn">Form</a>
+                <a href="{{ URL::asset('uploads/MS/'.$data['candidates'][$i]->applNo.'/'.$data['candidates'][$i]->applNo.'cert.pdf') }}"  class="btn waves-effect waves-green btn" target="_blank">Form</a>
                 </div>
                 <div class="space-medium"></div>
                 @endif
                <div class="center">
         @if($data['session'] == 'all')
+        <div class="space-small"></div>
         <div class="col s12">
           <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="discard btn  waves-effect waves-green btn">Discard</a>
         @if(!$data['candidates'][$i]->accepted)
-        <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action  waves-green btn">Accept</a>
+        <a href="#!"  data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="accept btn modal-action  waves-green btn" >Accept</a>
         @endif
         </div>
         @endif
+        <div class="space-medium"></div>
         <div class="col s12">
-        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn  waves-effect waves-green btn">Print</a>
+        <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="print btn  waves-effect waves-green btn" target="_blank">Print</a>
         <a href="#!" data-reg={!! $data['candidates'][$i]->registrationNumber!!} class="admit btn  waves-effect waves-green btn">Admit</a>
         </div>
         </div>

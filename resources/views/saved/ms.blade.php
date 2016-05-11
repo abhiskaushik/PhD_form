@@ -56,7 +56,8 @@
 			
 			<div class="space-medium"></div>
 			<div class="divider"></div><div class="divider"></div><br>
-			<b>*Note:</b> Upload all the necessary files including your image and image of the signature right before the final submission.
+			<b>*Note:</b>1. Upload all the necessary files including your image and image of the signature right before the final submission.<br>
+				2.Upload images size less than 300X200, signature less than 200X150 px.
 		</div>
 		<div class="space-medium"></div>
 		<div class="row">
@@ -83,7 +84,7 @@
 		        </div>		        		    		    
 		    <div class="col l6 s12">
 
-		    <p>*Upload Image</p>
+		    <p>*Upload Passport size photo</p>
 		      	<div class="file-field input-field">
 			      		<div class="demo"></div>
 			      		
