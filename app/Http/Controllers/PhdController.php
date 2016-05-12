@@ -34,9 +34,9 @@ class PhdController extends Controller
 	        'father_name' => 'required',
 	        'dob' => 'required',
 	        'category' => 'required|in:OBC,OC,SC,ST',
-	        'sex' => 'required|in:male,female',
+	        'sex' => 'required|in:Male,Female',
             'marital_status' => 'required',
-	        'ph' => 'required|in:yes,no',
+	        'ph' => 'required|in:Yes,No',
 	        'nationality' => 'required',
 	        'addr_for_commn' => 'required|max:200',
             'permanent_addr' =>'required|max:200',
@@ -69,13 +69,19 @@ class PhdController extends Controller
         else
         {
 
-        	$bool1 = Phd::where('name' , $request->input('name'))
+        	$checkcandidate = Phd::where('name' , $request->input('name'))
+                                ->where('dob', $request->input('dob'))
         						->where('addrforcomm' , $request->input('addr_for_commn'))
         						->first();
+            $bool1 = false;
+            if($checkcandidate != NULL)
+            {
+                $bool1 = $checkcandidate->flag;
+            }
             $bool2 = Phd::where('registrationNumber' , $request->get('regNo'))
                                 ->first();
 
-        	if($bool1 == NULL && $bool2 == NULL){
+        	if($bool1 == false && $bool2 == NULL){
             $details = array(
                 'date' => $request->input('date'),
                 // 'date_of_sub' => $request->input('date_of_sub'),
@@ -433,8 +439,8 @@ class PhdController extends Controller
         {
             return 'MA';
         }
-        if($t == 'HM'){
-                    return 'Humanities & Social Science';
-                }
+        if($t == 'Humanities & Social Science'){
+            return 'HM';
+        }
     }
 }

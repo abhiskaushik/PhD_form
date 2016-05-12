@@ -72,8 +72,7 @@
   <div class="container main">
 
     <div class="row candidates">
-    @for($i = 0; $i < sizeof($data['candidates']); $i++)        
-        @if(!$data['candidates'][$i]->deleted)
+    @for($i = 0; $i < sizeof($data['candidates']); $i++) 
      <div class="{!! $data['candidates'][$i]->registrationNumber !!} col l5 offset-l1" } data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
        @if($data['candidates'][$i]->accepted)
         <div class="card center border">
@@ -122,8 +121,6 @@
           </div>
           </div>
         </div>
-    
-      @endif
       @endfor
     </div>
 

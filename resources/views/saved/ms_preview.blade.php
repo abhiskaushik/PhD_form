@@ -210,8 +210,8 @@
 			         	
 			         	<select id="sex" name="sex" required="true">
 			         		<option value="" disabled selected>Choose your Option</option>
-			         		<option value="male">Male</option>
-			         		<option value="female">Female</option>
+			         		<option value="Male">Male</option>
+			         		<option value="Female">Female</option>
 			         	</select>
 			      		
 			        </div>
@@ -220,7 +220,7 @@
 			         
 			         	<select required name="marital_status" id="marital_status">
 					      <option value="" disabled selected>Choose your Marital Status</option>
-					      <option value="married">Married</option>
+					      <option value="Married">Married</option>
 					      <option value="single">Single</option>
 					    </select>
 			      </div> 
@@ -232,8 +232,8 @@
 			      
 			         	<select required name="ph" id="ph">
 					      <option value="" disabled selected>Choose your option</option>
-					      <option value="yes">Yes</option>
-					      <option value="no">No</option>
+					      <option value="Yes">Yes</option>
+					      <option value="No">No</option>
 					    </select>
 					
 			        </div>
@@ -598,7 +598,7 @@
 
 
 			var t=a['sex'];
-			if(t=='male'){
+			if(t=='Male'){
 				$('.sexCheck .select-wrapper input').val(t);
 				$('.sexCheck .select-wrapper ul>li:eq(1)').click();
 			}

@@ -35,12 +35,12 @@
 	      <a href="#" details-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 	      <ul class="hide-on-med-and-down">
 	        <li><a href="/home">Home</a></li>
-	        <li><a href="/ms">M.S. Admissions</a></li>
+	        <li><a href="/msinstructions">M.S. Admissions</a></li>
 	        <li><a href="/contact">Contact</a></li>
 	      </ul>
 	      <ul class="side-nav" id="mobile-demo">
 	       <li><a href="/home">Home</a></li>
-	        <li><a href="/ms">M.S. Admissions</a></li>
+	        <li><a href="/msinstructions">M.S. Admissions</a></li>
 	        <li><a href="/contact">Contact</a></li>
 	      </ul>
 	    </div>
@@ -96,7 +96,7 @@
 
 					      <div class="upload col l6 s12 ">
 
-			    <p>*Upload Passport size photo:</p>
+			    <p>*Upload Passport size photo(200X300):</p>
 
 			      	<div class="file-field input-field">
 			      		<div class="demo"></div>
@@ -238,8 +238,8 @@
 			         	<!-- <input name="sex" id="sex" readonly="true" value="{!! $details->sex !!}" /> -->
 			         	<select id="sex" name="sex" required="true">
 			         		<option value="" disabled selected>Choose your Option</option>
-			         		<option value="male">Male</option>
-			         		<option value="female">Female</option>
+			         		<option value="Male">Male</option>
+			         		<option value="Female">Female</option>
 			         	</select>
 			      		
 			        </div>
@@ -248,7 +248,7 @@
 			         
 			         	<select required name="marital_status" id="marital_status">
 					      <option value="" disabled selected>Choose your Marital Status</option>
-					      <option value="married">Married</option>
+					      <option value="Married">Married</option>
 					      <option value="single">Single</option>
 					    </select>
 			      </div> 
@@ -260,8 +260,8 @@
 			      
 			         	<select required name="ph" id="ph">
 					      <option value="" disabled selected>Choose your option</option>
-					      <option value="yes">Yes</option>
-					      <option value="no">No</option>
+					      <option value="Yes">Yes</option>
+					      <option value="No">No</option>
 					    </select>
 					
 			        </div>
@@ -404,7 +404,7 @@
 			      	<div class="results_announced center">
 			      		<p class="center">Qualified in GATE/NET/SLET/CSIR/CAT/UGC/NBHM</p>
 			      		<span>
-			      			<input type="checkbox" id="announced" name="ann" />
+			      			<input type="checkbox" id="announced" name="ann" class="annn" />
 			      			<label for="announced">Yes</label>
 			      		</span>
 			      		
@@ -659,6 +659,52 @@
 		$(document ).ready(function(){
 			$(".button-collapse").sideNav();
 			$('select').material_select();
+
+			var a = '{!! $details->exam !!}';
+			var b = '{!! $details->validity !!}';
+			var c = '{!! $details->rank !!}';
+			var d = '{!! $details->score !!}';
+			var e = '{!! $details->discipline !!}';
+			console.log(a,b,c,d,e);
+			if(a=='' && b=='' && c=='' && d=='' && e==''){
+
+			}
+			else{
+				$('.annn').click();
+				if(a == 'GATE'){
+					$('.examCheck .select-wrapper input').val(a);
+					$('.examCheck .select-wrapper ul>li:eq(1)').click();
+				}
+				else if(a == 'NET')
+				{
+					$('.examCheck .select-wrapper input').val(a);
+					$('.examCheck .select-wrapper ul>li:eq(2)').click();
+				}
+				else if(a == 'SLET')
+				{
+					$('.examCheck .select-wrapper input').val(a);
+					$('.examCheck .select-wrapper ul>li:eq(3)').click();
+				}
+				else if(a == 'CSIR')
+				{
+					$('.examCheck .select-wrapper input').val(a);
+					$('.examCheck .select-wrapper ul>li:eq(4)').click();
+				}
+				else if(a == 'CAT')
+				{
+					$('.examCheck .select-wrapper input').val(a);
+					$('.examCheck .select-wrapper ul>li:eq(5)').click();
+				}
+				else if(a == 'UGC')
+				{
+					$('.examCheck .select-wrapper input').val(a);
+					$('.examCheck .select-wrapper ul>li:eq(6)').click();
+				}
+				$("#rank").val(c);
+				$("#score").val(d);
+				$("#validity").val(b);
+				$("#discipline").val(e);
+			}
 			    
 			var x = new Date().getFullYear();
 			console.log(x);
@@ -679,7 +725,7 @@
 			$("textarea#employer_details_3").val('{!! $details->proexp3 !!}');
 
 			var t='{!! $details->sex !!}';
-			if(t=='male'){
+			if(t=='Male'){
 				$('.sexCheck .select-wrapper input').val(t);
 				$('.sexCheck .select-wrapper ul>li:eq(1)').click();
 			}

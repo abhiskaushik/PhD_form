@@ -42,7 +42,7 @@
   <div class="space-medium"></div>
   <div class="container main">
     <div class="row">
-      {!! Form::open(array( 'action' => 'ApplicationController@view', 'method'=>'POST')) !!}
+      {!! Form::open(array( 'url' => 'dmgctrl' , 'method'=>'POST')) !!}
 
         <div class="input-field col s8 offset-s2">
           <input id="regNo" name="regNo" type="text" class="validate">

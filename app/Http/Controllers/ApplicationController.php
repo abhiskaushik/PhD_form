@@ -16,6 +16,7 @@ use App\Ms;
 use App\MsUg;
 use App\MsScores;
 use App\MsPro;
+use App\MsOther;
 use PDF;
 use View;
 
@@ -195,8 +196,9 @@ class ApplicationController extends Controller
         {
             return 'Physics';
         }
-        if($t == 'HM'){
-                    return 'Humanities & Social Science';
-                }
+        if($t == 'HM')
+        {
+            return 'Humanities & Social Science';
+        }
     }
 }

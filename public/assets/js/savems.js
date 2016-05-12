@@ -73,20 +73,22 @@ $(document).ready(function(){
 		data.emp_to_2 = $('#emp_to_2').val();
 		data.emp_to_3 = $('#emp_to_3').val();
 		data.date = $('#date').val();
-		console.log($('.annn').prop('checked',false));
-		if($('.annn').prop('checked',false)){
-			data.exam = '';
-			data.rank = '';
-			data.score = '';
-			data.valid = '';
-			data.discipline = '';
-		}
-		else{
+
+
+		if($('#announced').is(":checked")){
 			data.exam = $('#exam').val();
 			data.rank = $('#rank').val();
 			data.score = $('#score').val();
-			data.valid = $('#validity').val();
-			data.discipline = $('#discipline').val();	
+			data.validity = $('#validity').val();
+			data.discipline = $('#discipline').val();
+		}
+		else{
+
+			data.exam = '';
+			data.rank = '';
+			data.score = '';
+			data.validity = '';
+			data.discipline = '';
 		}
 
 		console.log(data);

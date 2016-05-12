@@ -171,8 +171,8 @@
 			      		<span class="light">*Sex:</span><br>
 			         	<select required name="sex" id="sex">
 					      <option value="" disabled selected>Choose your Gender</option>
-					      <option value="male">Male</option>
-					      <option value="female">Female</option>
+					      <option value="Male">Male</option>
+					      <option value="Female">Female</option>
 					    </select>
 			      		
 			        </div>
@@ -181,7 +181,7 @@
 			         <span class="light">*Marital Status:</span><br>
 			         	<select required name="marital_status" id="marital_status">
 					      <option value="" disabled selected>Choose your Marital Status</option>
-					      <option value="married">Married</option>
+					      <option value="Married">Married</option>
 					      <option value="single">Single</option>
 					    </select>
 			        </div>
@@ -192,8 +192,8 @@
 			      		  <span class="light">*Person with Disability(PWD):</span><br>
 			         	<select required name="ph" id="ph">
 					      <option value="" disabled selected>Choose your option</option>
-					      <option value="yes">Yes</option>
-					      <option value="no">No</option>
+					      <option value="Yes">Yes</option>
+					      <option value="No">No</option>
 					    </select>
 			        </div>
 			         <div class="input-field col l6 ">

@@ -66,19 +66,19 @@ $(document).ready(function(){
 		data.date = $('#date').val();
 		// console.log('hey');
 		// console.log(data);
-		if($('#announced').prop('checked',false)){
-			data.exam = '';
-			data.rank = '';
-			data.score = '';
-			data.valid = '';
-			data.discipline = '';
-		}
-		else{
+		if($('#announced').is(":checked")){
 			data.exam = $('#exam').val();
 			data.rank = $('#rank').val();
 			data.score = $('#score').val();
-			data.valid = $('#valid').val();
-			data.discipline = $('#discipline').val();	
+			data.validity = $('#validity').val();
+			data.discipline = $('#discipline').val();
+		}
+		else{
+			data.exam = '';
+			data.rank = '';
+			data.score = '';
+			data.validity = '';
+			data.discipline = '';
 		}
 		
 		var baseurl = 'http://admission.nitt.edu';//admission.nitt.edu

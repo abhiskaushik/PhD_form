@@ -17,6 +17,7 @@ Route::post('savephd', 'SaveController@savephd');
 Route::post('savems', 'SaveController@savems');
 Route::post('save2phd', 'SaveController@save2phd');
 Route::post('save2ms', 'SaveController@save2ms');
+Route::post('dmgctrl', 'DamageController@dmgctrl');
 Route::get('fetch/{phdorms}/{applNo}/{dob}', 'SaveController@fetch');
 Route::post('admin/auth', 'AdminController@login');
 Route::post('admin/change', 'AdminController@change');
@@ -106,11 +107,11 @@ Route::get('phdpreview1', function()
     {
         return view('admin.phd_preview');
     });
-Route::get('phdpreview1', function()
+Route::get('dmgctrl', function()
     {
         return view('admin.phd_preview');
     });
-Route::get('phdpreview1', function()
+Route::get('damage', function()
     {
-        return view('admin.phd_preview');
+        return view('admin.dmgctrl');
     });
