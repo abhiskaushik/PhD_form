@@ -84,7 +84,7 @@
 		        </div>		        		    		    
 		    <div class="col l6 s12">
 
-		    <p>*Upload Passport size photo</p>
+		    <p>*Upload Passport size photo(200X300):</p>
 		      	<div class="file-field input-field">
 			      		<div class="demo"></div>
 			      		
