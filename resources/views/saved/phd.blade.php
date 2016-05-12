@@ -709,7 +709,7 @@
 			var x = new Date().getFullYear();
 			console.log(x);
 			var y = x+1;
-			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME ('+ x + '-' + y + ')</h4>';
+			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D.<br> PROGRAMME ('+ x + '-' + y + ')</h4>';
 			$('.heading').append(p);
 
 			$("textarea#addr_for_commn").val('{!! $details->addrforcomm !!}');

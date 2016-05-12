@@ -66,10 +66,9 @@
 
 			      <div class="row dept">
 			        <div class="input-field col l6 s6 ">
-			        
 			      		<select name="department1" required id="department1">
 
-			      			 <option value="" disabled selected>Department 1</option>
+			      			<option value="" disabled selected>Choose department</option>
 			      			<option value="AR">Architecture</option>
 			      			<option value="CS">Computer Science and Engineering</option>
 			      			<option value="CL">Chemical Engineering</option>
@@ -90,16 +89,14 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>		
 			      			<option value="PH">Physics</option>		      					 
-			      			
-			      			
 			      		</select>
-			      		
+			        	<label>Department 1</label>
 			        </div>
+			        
 			        <div class="input-field col l6 s6 ">
-
 			      		<select name="department2" id="department2">
 
-			      			  <option value="" disabled selected>Department 2</option>
+			      			<option value="" disabled selected>Choose department</option>
 			      			<option value="AR">Architecture</option>
 			      			<option value="CS">Computer Science and Engineering</option>
 			      			<option value="CL">Chemical Engineering</option>
@@ -121,13 +118,12 @@
 			      			<option value="PR">Production Engineering</option>
 			      			<option value="PH">Physics</option>		      					      
 			      		</select>
-			      		
+			        	<label>Department 2</label>
 			        </div>
+
 			        <div class="input-field col l6 s6 ">
-
 			      		<select name="department3" id="department3">
-
-			      		  <option value="" disabled selected>Department 3</option>
+			      		    <option value="" disabled selected>Choose department</option>
 			      			<option value="AR">Architecture</option>
 			      			<option value="CS">Computer Science and Engineering</option>
 			      			<option value="CL">Chemical Engineering</option>
@@ -149,7 +145,7 @@
 			      			<option value="PR">Production Engineering</option>	
 			      			<option value="PH">Physics</option>		      				      
 			      		</select>
-			      		
+				        <label>Department 3</label>
 			        </div>
 			        
 			        
@@ -319,7 +315,7 @@
 			var x = new Date().getFullYear();
 			console.log(x);
 			var y = x+1;
-			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D. PROGRAMME ('+ x + '-' + y+ ')</h4>';
+			var p = '<h4 class="center">APPLICATION FOR ADMISSION TO Ph.D.<br> PROGRAMME ('+ x + '-' + y+ ')</h4>';
 			$('.heading').append(p);
 		});
 
