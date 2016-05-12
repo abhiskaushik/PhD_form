@@ -58,9 +58,12 @@ Route::get('contact', function()
         return view('contact');
     });
 
-Route::get('adminlogin', function()
+Route::group(['middleware' => 'redirect_admin_if_authenticated'], function()
     {
-        return view('admin.login');
+        Route::get('adminlogin', function()
+            {
+                return view('admin.login');
+            });
     });
 
 Route::get('home', function()
