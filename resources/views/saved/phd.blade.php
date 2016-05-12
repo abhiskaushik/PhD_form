@@ -70,7 +70,7 @@
 					<p class="large">*Bank Reference Number:</p>
 					<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number" value="{!! $details->chalanNo !!}" required />
 				</div>
-				<output id="list"></output>	
+				
 				<img src="" id="bannerImg"  />	
 			</div>
 

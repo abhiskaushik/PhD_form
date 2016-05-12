@@ -81,7 +81,7 @@
             </div>
                <div class="center">
                 @if($data['candidates'][$i]->applicationCategory == 'External')
-                <div class="col l6">
+                <div class="col l12">
                 <a href="{{ URL::asset('uploads/PHD/'.$data['candidates'][$i]->applNo.'/'.$data['candidates'][$i]->applNo.'form3.pdf') }}" target="_blank" class="btn waves-effect waves-green btn">Form 3</a>
                 </div>
                 <div class="space-medium"></div>

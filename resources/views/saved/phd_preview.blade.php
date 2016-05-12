@@ -41,7 +41,8 @@
 				<div class="heading"></div>
 				<div class="space-medium"></div>
 				<div class="divider"></div><div class="divider"></div><br>
-				<b>*Note:</b> Upload all the necessary files including your image and image of the signature right before the final submission.
+				<b>*Note:</b>1. Upload all the necessary files including your image and image of the signature right before the final submission.<br>
+				2.Upload images size less than 300X200, signature less than 200X150 px.
 			</div>
 			<div class="space-medium"></div>								
 			<input type="text" id="regNo" name="regNo"  hidden="true"/>

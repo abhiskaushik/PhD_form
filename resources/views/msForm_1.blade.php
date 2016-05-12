@@ -63,7 +63,7 @@
 			      <div class="row dept">
 			        <div class="input-field col l6 s6 ">
 			      	<select name="department1"  id="department1">
-			      	<option value="" disabled selected>Department Preference 1</option>
+			      	<option value="" disabled selected>Department 1</option>
 	                <option value="CS">Computer Science and Engineering</option>
 	                <option value="CL">Chemical Engineering</option>
 	                <option value="CV">Civil Engineering </option>
@@ -82,7 +82,7 @@
 			        <div class="input-field col l6 s6 ">
 
 			      				      		<select name="department2" required id="department2">
-			      			  <option value="" disabled selected>Department Preference 2</option>
+			      			  <option value="" disabled selected>Department 2</option>
 	                <option value="CS">Computer Science and Engineering</option>
 	                <option value="CL">Chemical Engineering</option>
 	                <option value="CV">Civil Engineering </option>
@@ -102,7 +102,7 @@
 			        <div class="input-field col l6 s6 ">
 			      		<select name="department3" required id="department3">
 
-			      			  <option value="" disabled selected>Department Preference 3</option>
+			      			  <option value="" disabled selected>Department 3</option>
 	                <option value="CS">Computer Science and Engineering</option>
 	                <option value="CL">Chemical Engineering</option>
 	                <option value="CV">Civil Engineering </option>

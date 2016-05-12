@@ -464,7 +464,7 @@
       <table class="bordered">
         <thead>
           <tr>
-            <td>GATE/NET/SLET/CSIR/CAT/UGC/NBHM details:</td>
+            <td>GATE details:</td>
           </tr>
         </thead>
         <tbody>
@@ -478,7 +478,7 @@
             <td><b>Rank:</b></td>
             <td>{!! $others['rank'] !!}</td>
             <td><b>Valid Till:</b></td>
-            <td>{!! $others['valid'] !!}</td>
+            <td>{!! $others['validity'] !!}</td>
           </tr>
           <tr>
             <td>Discipline</td>

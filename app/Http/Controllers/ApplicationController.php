@@ -195,7 +195,7 @@ class ApplicationController extends Controller
         {
             return 'Physics';
         }
-        if(t == 'HM'){
+        if($t == 'HM'){
                     return 'Humanities & Social Science';
                 }
     }

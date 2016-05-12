@@ -95,7 +95,7 @@
             <div class="space-small center">
             </div>
             @if($data['candidates'][$i]->applicationCategory == 'Part Time')
-                <div class="col l6 center">
+                <div class="col l12 center">
                 <a href="{{ URL::asset('uploads/MS/'.$data['candidates'][$i]->applNo.'/'.$data['candidates'][$i]->applNo.'cert.pdf') }}"  class="btn waves-effect waves-green btn" target="_blank">Form</a>
                 </div>
                 <div class="space-medium"></div>
