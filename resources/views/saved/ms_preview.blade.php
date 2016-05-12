@@ -734,6 +734,10 @@
 				if(t == 'MA')
 				{
 					return 'Mathematics';
+				}
+				if(t == 'IC')
+				{
+					return 'Instrumentation & Control';
 				}		
 			}
 		});

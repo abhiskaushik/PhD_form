@@ -81,13 +81,15 @@
 			      			<option value="EC">Electronics & Communication Engineering</option>
 			      			<option value="EE">Electrical & Electronics Engineering</option>		      			
 			      			<option value="HM">Humanities & Social Science</option>
+			      			<option value="IC">Instrumentation & Control Engineering</option>
 			      			<option value="ME">Mechanical 
 			      			Engineering</option>
 			      			<option value="MA">Mathematics</option>
 			      			<option value="MS">Management Studies
 			      			Engineering</option>
 			      			<option value="MME">Metalurgy and Material Engineering</option>
-			      			<option value="PR">Production Engineering</option>		      					 
+			      			<option value="PR">Production Engineering</option>		
+			      			<option value="PH">Physics</option>		      					 
 			      			
 			      			
 			      		</select>
@@ -109,13 +111,15 @@
 			      			<option value="EC">Electronics & Communication Engineering</option>
 			      			<option value="EE">Electrical & Electronics Engineering</option>		      			
 			      			<option value="HM">Humanities & Social Science</option>
+			      			<option value="IC">Instrumentation & Control Engineering</option>
 			      			<option value="ME">Mechanical 
 			      			Engineering</option>
 			      			<option value="MA">Mathematics</option>
 			      			<option value="MS">Management Studies
 			      			Engineering</option>
 			      			<option value="MME">Metalurgy and Material Engineering</option>
-			      			<option value="PR">Production Engineering</option>		      
+			      			<option value="PR">Production Engineering</option>
+			      			<option value="PH">Physics</option>		      					      
 			      		</select>
 			      		
 			        </div>
@@ -135,13 +139,15 @@
 			      			<option value="EC">Electronics & Communication Engineering</option>
 			      			<option value="EE">Electrical & Electronics Engineering</option>		      			
 			      			<option value="HM">Humanities & Social Science</option>
+			      			<option value="IC">Instrumentation & Control Engineering</option>
 			      			<option value="ME">Mechanical 
 			      			Engineering</option>
 			      			<option value="MA">Mathematics</option>
 			      			<option value="MS">Management Studies
 			      			Engineering</option>
 			      			<option value="MME">Metalurgy and Material Engineering</option>
-			      			<option value="PR">Production Engineering</option>		      
+			      			<option value="PR">Production Engineering</option>	
+			      			<option value="PH">Physics</option>		      				      
 			      		</select>
 			      		
 			        </div>

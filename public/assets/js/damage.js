@@ -15,7 +15,7 @@ $(document).ready(function(){
 	    });
 		
 		
-		var baseurl = 'http://localhost:8000';
+		var baseurl = 'http://admission.nitt.edu';
 		var url = '/'+'dmgctrl';
 		$.ajax(
 	    {

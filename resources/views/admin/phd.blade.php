@@ -263,14 +263,15 @@
           {
               return 'Mathematics';
           }
-          if(t == 'IC')
-          {
-              return 'Instrumentation and Control Engineering';
-          }
-          if(t == 'PH')
-          {
-              return 'Physics';
-          }
+          if(t == 'HM'){
+          return 'Humanities & Social Science';
+        }
+        if(t == 'IC'){
+          return 'Instrumentation & Control';
+        }
+        if(t == 'PH'){
+          return 'Physics';
+        }
         }
   });
   </script>

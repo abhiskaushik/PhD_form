@@ -747,7 +747,16 @@
 				if(t == 'MA')
 				{
 					return 'Mathematics';
-				}		
+				}	
+				if(t == 'HM'){
+					return 'Humanities & Social Science';
+				}
+				if(t == 'IC'){
+					return 'Instrumentation & Control';
+				}
+				if(t == 'PH'){
+					return 'Physics';
+				}	
 			}
 		});
 		</script>

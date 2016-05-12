@@ -319,6 +319,7 @@ class AdminController extends Controller
                             'imgtype' => $imgtype,
                             'signtype' => $signtype
                             );
+            
             return View::make('print')->with($data);
             // $pdf = PDF::loadView('print', $data);
             // return response($pdf->output())
@@ -393,6 +394,7 @@ class AdminController extends Controller
             $type = 'png';
         }
 
+
         if($phdormsc == 'PHD')
         {
             $candidate = Phd::select('name', 'registrationNumber')
@@ -412,6 +414,7 @@ class AdminController extends Controller
             'dept' => $dept,
             'regNo' => $candidate->registrationNumber
         );
+
         return view('admin.admit')->with($data);
     }
 

@@ -79,7 +79,7 @@ class ApplicationController extends Controller
                                 'imgtype' => $imgtype,
                                 'signtype' => $signtype
 	                            );
-
+                
 	            return View::make('print')->with($data);
 	            // $pdf = PDF::loadView('print', $data);
 	            // return response($pdf->output())

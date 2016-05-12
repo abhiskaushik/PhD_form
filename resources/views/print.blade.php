@@ -50,6 +50,10 @@
             <td><b>Date of Registration:</b></td>
             <td>{!! $candidates['created_at'] !!}</td>
           </tr>
+          <tr>
+            <td><b>Application Category:</b></td>
+            <td>{!! $candidates['applicationCategory'] !!}</td>
+          </tr>
         </tbody>
       </table>
    
@@ -72,6 +76,7 @@
             <td><b>Area of Research:</b></td>
             <td>{!! $candidates['areaOfResearch'] !!}</td>
           </tr>
+
         </tbody>
       </table>
   
