@@ -81,12 +81,10 @@ $(document).ready(function(){
 			data.discipline = '';
 		}
 		
-		var baseurl = 'http://admission.nitt.edu';//admission.nitt.edu
-		var url = '/save2phd';
 		$.ajax(
 	    {
 	        type: "POST",
-	        url: baseurl + url,
+	        url: '/save2phd',
 	        data: data,
 	        dataType: "json",
 	        success: function(data){
