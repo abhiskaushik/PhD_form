@@ -23,6 +23,6 @@ $(document).ready(function(){
 		}
 		department += dept[dept.length-1];
 		var categ = dept[0];
-		window.location = 'http://admission.nitt.edu/admit/' + categ + '/' + department + '/' + $('#heading').attr("data-reg");
+		window.location = 'http://admission.nitt.edu/admit/' + categ + '/' + department + '/' + $('.heading').attr("data-reg");
 	}); 
  });

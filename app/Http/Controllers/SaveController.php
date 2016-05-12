@@ -113,7 +113,7 @@ class SaveController extends Controller
             $bool2 = $checkcandidate->flag;
         }
 
-        if($bool1 == NULL && $bool2 == false){
+        if($bool == NULL && $bool2 == false){
 
     	$candidate = new SaveMs();
 

@@ -84,7 +84,7 @@
           <div class=" waves-effect waves-block waves-light">  
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">{!! $data['candidates'][$i] !!}</span>
+            <span class="card-title activator grey-text text-darken-4">{!! $data['candidates'][$i]->name !!}</span>
             <div class="row">
               <div class="col l12 s12">
                 <p>Registration Number:{!! $data['candidates'][$i]->registrationNumber !!}</p>

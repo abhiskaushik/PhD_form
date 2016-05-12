@@ -59,7 +59,7 @@
   
 </div>
 <div class="hide space-large  " hidden="true"></div>
-    <h5 class="center">{!! $data['dept'] !!}</h5>
+    <h5 class="center heading" data-reg="{!! $data['dept'] !!}">{!! $data['dept'] !!}</h5>
  
   <div class="space-large"></div>
   <div class="container main">
