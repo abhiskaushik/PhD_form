@@ -317,7 +317,7 @@ class SaveController extends Controller
             'gpa7' => $request->get('gpa7'),
             'gpa8' => $request->get('gpa8')
         );
-
+         Log::info($request->input('score'));
         SaveMs::where('registrationNumber', Session::get('regNo'))
                     ->update($details);
 

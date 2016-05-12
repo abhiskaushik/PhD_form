@@ -55,7 +55,7 @@
           <div class=" waves-effect waves-block waves-light">  
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Candidate's Card</span>
+            <span class="card-title activator grey-text text-darken-4">{!! $details['name'] !!}</span>
             <div class="row">
               <div class="col l6 s6">
                 <p>Registration Number:{!! $details['reg_number'] !!}</p>
@@ -97,7 +97,7 @@
           <div class=" waves-effect waves-block waves-light">  
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Candidate's Card</span>
+            <span class="card-title activator grey-text text-darken-4">{!! $details['name'] !!}</span>
             <div class="row">
               <div class="col l6 s6">
                 <p>Registration Number:{!! $details['reg_number'] !!}</p>

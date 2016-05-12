@@ -106,3 +106,11 @@ Route::get('phdpreview1', function()
     {
         return view('admin.phd_preview');
     });
+Route::get('phdpreview1', function()
+    {
+        return view('admin.phd_preview');
+    });
+Route::get('phdpreview1', function()
+    {
+        return view('admin.phd_preview');
+    });

@@ -73,8 +73,8 @@ $(document).ready(function(){
 		data.emp_to_2 = $('#emp_to_2').val();
 		data.emp_to_3 = $('#emp_to_3').val();
 		data.date = $('#date').val();
-
-		if($('#announced').prop('checked',false)){
+		console.log($('.annn').prop('checked',false));
+		if($('.annn').prop('checked',false)){
 			data.exam = '';
 			data.rank = '';
 			data.score = '';
@@ -85,7 +85,7 @@ $(document).ready(function(){
 			data.exam = $('#exam').val();
 			data.rank = $('#rank').val();
 			data.score = $('#score').val();
-			data.valid = $('#valid').val();
+			data.valid = $('#validity').val();
 			data.discipline = $('#discipline').val();	
 		}
 

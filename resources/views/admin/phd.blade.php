@@ -69,11 +69,13 @@
         <div class="{!! $data['candidates'][$i]->applNo !!} col l5 offset-l1" data-reg = "{!! $data['candidates'][$i]->registrationNumber !!}">
         @if($data['candidates'][$i]->accepted)
         <div class="card center border">
+        @elseif($data['candidates'][$i]->deleted)
+        <div class="card center border-del">
         @else
         <div class="card center">
         @endif
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Candidate's Card</span>
+            <span class="card-title activator grey-text text-darken-4">{!! $data['candidates'][$i]->name !!}</span>
             <div class="row">
               
                 <p>Registration Number:  {!! $data['candidates'][$i]->registrationNumber !!}</p>

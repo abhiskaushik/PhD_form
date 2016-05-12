@@ -335,6 +335,8 @@
 			      	<div class="space-medium"></div>
 			      	<div class="exams"></div>
 		      <div class="space-large"></div>
+
+
 		      <div class="row">
 		      <p class="vlarge">*Academic Details:</p>
 		      	<table class="highlight centered responsive-table">
@@ -648,6 +650,18 @@
 		$(".button-collapse").sideNav();
 		$('select').material_select();
 		
+		var a = '{!! $details->exam !!}';
+		var b = '{!! $details->validity !!}';
+		var c = '{!! $details->rank !!}';
+		var d = '{!! $details->score !!}';
+		var e = '{!! $details->discipline !!}';
+		if(a=='' || b=='' || c=='' || d=='' || e==''){
+
+		}
+		else{
+			$('.annn').click();
+		}
+
 		var x = new Date().getFullYear();
 		var y = x+1;
 			console.log(x);
@@ -659,6 +673,39 @@
 		$("textarea#employer_details_1").val('{!! $details->proexp1 !!}');
 		$("textarea#employer_details_2").val('{!! $details->proexp2 !!}');
 		$("textarea#employer_details_3").val('{!! $details->proexp3 !!}');
+
+			$('.annn').click(function()
+			{
+				if($('.exams').has('.add'))
+					$('.add').remove();
+				
+				if($('.annn').is(':checked'))
+					$('.exams').append('<div class="add">\
+						<div class="col l3 s6"> \
+							<span class="light">Examination:</span>\
+								 <select id="exam" class="exam_select" required name="exam"> \
+								 <option value="" selected>Choose your Exam</option> \
+								 <option value="GATE">GATE</option> \
+								 	 </select> \
+								 	 </div> \
+								 	 <div class="col l3 s6">\
+								 	  <span class="light">Enter Score:</span> \
+								 	  <input placeholder="Enter Score" id="score" type="number" class="validate" name="score" value="{!! $details->score !!}">\
+								 	   </div> \
+								 	   <div class="col l3 s6"> \
+								 	   <span class="light">Enter Rank:</span> \
+								 	   <input placeholder="Enter Rank" id="rank" type="number" class="validate" name="rank" max="1000000" min="0" value="{!! $details->rank !!}"> \
+								 	   </div> \
+								 	   <div class="col l3 s6"> \
+								 	   <span class="light">Valid Till:</span> <input id="validity" type="date" class="validate" name="validity" max="2018" min="2010" value="{!! $details->validity !!}"> \
+								 	   </div> \
+								 	    <div class="col l12 s12"> \
+								 	    <span class="light">Discipline:</span>\
+								 	     <input type="text" id="discipline" class="validate" name="discipline" required  value="{!! $details->discipline !!}" />\
+								 	      </div>\
+								 	      <div class="space-small"></div>\
+								 	      </div>');
+			});
 
 			var t='{!! $details->sex !!}';
 			if(t=='male'){

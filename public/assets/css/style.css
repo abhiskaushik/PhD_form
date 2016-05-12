@@ -241,6 +241,10 @@ span{
 .border{
 	border: 2px solid #80cbc4;
 }
+.border-del{
+	border: 2px solid rgb(230,150,100);
+}
+
 input.select-dropdown{
 	color: #bdbdbd !important;
 }
