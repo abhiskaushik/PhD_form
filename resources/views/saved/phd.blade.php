@@ -35,12 +35,12 @@
 	      <a href="#" details-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 	      <ul class="hide-on-med-and-down">
 	        <li><a href="/home">Home</a></li>
-	        <li><a href="/ms">M.S. Admissions</a></li>
+	        <li><a href="/msinstructions">M.S. Admissions</a></li>
 	        <li><a href="/contact">Contact</a></li>
 	      </ul>
 	      <ul class="side-nav" id="mobile-demo">
 	       <li><a href="/home">Home</a></li>
-	        <li><a href="/ms">M.S. Admissions</a></li>
+	        <li><a href="/msinstructions">M.S. Admissions</a></li>
 	        <li><a href="/contact">Contact</a></li>
 	      </ul>
 	    </div>
@@ -404,7 +404,7 @@
 			      	<div class="results_announced center">
 			      		<p class="center">Qualified in GATE/NET/SLET/CSIR/CAT/UGC/NBHM</p>
 			      		<span>
-			      			<input type="checkbox" id="announced" name="ann" />
+			      			<input type="checkbox" id="announced" name="ann" class="annn" />
 			      			<label for="announced">Yes</label>
 			      		</span>
 			      		
@@ -659,6 +659,52 @@
 		$(document ).ready(function(){
 			$(".button-collapse").sideNav();
 			$('select').material_select();
+
+			var a = '{!! $details->exam !!}';
+			var b = '{!! $details->validity !!}';
+			var c = '{!! $details->rank !!}';
+			var d = '{!! $details->score !!}';
+			var e = '{!! $details->discipline !!}';
+			console.log(a,b,c,d,e);
+			if(a=='' && b=='' && c=='' && d=='' && e==''){
+
+			}
+			else{
+				$('.annn').click();
+				if(a == 'GATE'){
+					$('.examCheck .select-wrapper input').val(a);
+					$('.examCheck .select-wrapper ul>li:eq(1)').click();
+				}
+				else if(a == 'NET')
+				{
+					$('.examCheck .select-wrapper input').val(a);
+					$('.examCheck .select-wrapper ul>li:eq(2)').click();
+				}
+				else if(a == 'SLET')
+				{
+					$('.examCheck .select-wrapper input').val(a);
+					$('.examCheck .select-wrapper ul>li:eq(3)').click();
+				}
+				else if(a == 'CSIR')
+				{
+					$('.examCheck .select-wrapper input').val(a);
+					$('.examCheck .select-wrapper ul>li:eq(4)').click();
+				}
+				else if(a == 'CAT')
+				{
+					$('.examCheck .select-wrapper input').val(a);
+					$('.examCheck .select-wrapper ul>li:eq(5)').click();
+				}
+				else if(a == 'UGC')
+				{
+					$('.examCheck .select-wrapper input').val(a);
+					$('.examCheck .select-wrapper ul>li:eq(6)').click();
+				}
+				$("#rank").val(c);
+				$("#score").val(d);
+				$("#validity").val(b);
+				$("#discipline").val(e);
+			}
 			    
 			var x = new Date().getFullYear();
 			console.log(x);

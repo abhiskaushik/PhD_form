@@ -36,12 +36,12 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
-        <li><a href="/phd">PhD. Admissions</a></li>
+        <li><a href="/phdinstructions">PhD. Admissions</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
        <li><a href="/home">Home</a></li>
-        <li><a href="/phd">PhD. Admissions</a></li>
+        <li><a href="/phdinstructions">PhD. Admissions</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
     </div>
@@ -647,7 +647,27 @@
 	$(document ).ready(function(){
 		$(".button-collapse").sideNav();
 		$('select').material_select();
-		
+
+		var a = '{!! $details->exam !!}';
+		var b = '{!! $details->validity !!}';
+		var c = '{!! $details->rank !!}';
+		var d = '{!! $details->score !!}';
+		var e = '{!! $details->discipline !!}';
+		if(a=='' && b=='' && c=='' && d=='' && e==''){
+
+		}
+		else{
+			$('.annn').click();
+			if(a == 'GATE'){
+				$('.examCheck .select-wrapper input').val(a);
+				$('.examCheck .select-wrapper ul>li:eq(1)').click();
+			}
+			$("#rank").val(c);
+			$("#score").val(d);
+			$("#validity").val(b);
+			$("#discipline").val(e);
+		}
+
 		var x = new Date().getFullYear();
 		var y = x+1;
 			console.log(x);

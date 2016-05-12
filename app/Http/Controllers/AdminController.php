@@ -481,9 +481,10 @@ class AdminController extends Controller
         {
             return 'Physics';
         }
-        if($t == 'HM'){
-                    return 'Humanities & Social Science';
-                }
+        if($t == 'HM')
+        {
+            return 'Humanities & Social Science';
+        }
     }
     
     public function logout()

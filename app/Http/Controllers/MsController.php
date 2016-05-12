@@ -419,8 +419,8 @@ class MsController extends Controller
         {
             return 'PH';
         }
-        if($t == 'HM'){
-                    return 'Humanities & Social Science';
-                }
+        if($t == 'Humanities & Social Science'){
+            return 'HM';
+        }
     }
 }
