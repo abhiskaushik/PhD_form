@@ -233,7 +233,7 @@
 			         
 			         	<select required name="marital_status" id="marital_status">
 					      <option value="" disabled selected>Choose your Marital Status</option>
-					      <option value="married">Married</option>
+					      <option value="Married">Married</option>
 					      <option value="single">Single</option>
 					    </select>
 			      </div> 
@@ -245,8 +245,8 @@
 			      
 			         	<select required name="ph" id="ph">
 					      <option value="" disabled selected>Choose your option</option>
-					      <option value="yes">Yes</option>
-					      <option value="no">No</option>
+					      <option value="Yes">Yes</option>
+					      <option value="No">No</option>
 					    </select>
 					
 			        </div>

@@ -34,9 +34,9 @@ class MsController extends Controller
 	        'father_name' => 'required',
 	        'dob' => 'required',
 	        'category' => 'required|in:OBC,OC,SC,ST',
-	        'sex' => 'required|in:male,female',
+	        'sex' => 'required|in:Male,Female',
             'marital_status' => 'required',
-	        'ph' => 'required|in:yes,no',
+	        'ph' => 'required|in:Yes,No',
 	        'nationality' => 'required',
 	        'addr_for_commn' => 'required|max:200',
             'permanent_addr' =>'required|max:200',
@@ -84,13 +84,19 @@ class MsController extends Controller
         else
         {
 
-        	$bool1 = Ms::where('name' , $request->get('name'))
-        						->where('addrforcomm' , $request->get('addr_for_commn'))
-        						->first();
+        	$checkcandidate = Ms::where('name' , $request->input('name'))
+                                ->where('dob', $request->input('dob'))
+                                ->where('addrforcomm' , $request->input('addr_for_commn'))
+                                ->first();
+            $bool1 = false;
+            if($checkcandidate != NULL)
+            {
+                $bool1 = $checkcandidate->flag;
+            }
             $bool2 = Ms::where('registrationNumber' , $request->get('regNo'))
                                 ->first();
 
-        	if($bool1 == NULL && $bool2 == NULL){
+            if($bool1 == false && $bool2 == NULL){
             $details = array(
                 // 'date' => $request->get('date'),
                 // 'date_of_sub' => $request->get('date_of_sub'),

@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\SavePhd;
 use App\SaveMs;
+use App\Ms;
+use App\Phd;
 use Validator;
 use Session;
 use Log;
@@ -18,13 +20,25 @@ class SaveController extends Controller
     public function savephd(Request $request)
     {
 
-        $bool = SavePhd::where('name' , $request->input('name'))
+        $bool1 = SavePhd::where('name' , $request->input('name'))
                                 ->where('email', $request->input('email'))
                                 ->where('addrforcomm' , $request->input('addr_for_commn'))
                                 ->where('dob', $request->input('dob'))
                                 ->first();
 
-        if($bool == NULL){
+        $checkcandidate = Phd::where('name' , $request->input('name'))
+                                ->where('email', $request->input('email'))
+                                ->where('addrforcomm' , $request->input('addr_for_commn'))
+                                ->where('dob', $request->input('dob'))
+                                ->first();
+
+        $bool2 = false;
+        if($checkcandidate != NULL)
+        {
+            $bool2 = $checkcandidate->flag;
+        }
+
+        if($bool1 == NULL && $bool2 == false){
 
     	$candidate = new SavePhd();
 
@@ -87,7 +101,19 @@ class SaveController extends Controller
                                 ->where('dob', $request->input('dob'))
                                 ->first();
 
-        if($bool == NULL){
+        $checkcandidate = Ms::where('name' , $request->input('name'))
+                                ->where('email', $request->input('email'))
+                                ->where('addrforcomm' , $request->input('addr_for_commn'))
+                                ->where('dob', $request->input('dob'))
+                                ->first();
+
+        $bool2 = false;
+        if($checkcandidate != NULL)
+        {
+            $bool2 = $checkcandidate->flag;
+        }
+
+        if($bool1 == NULL && $bool2 == false){
 
     	$candidate = new SaveMs();
 

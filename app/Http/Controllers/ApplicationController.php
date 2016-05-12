@@ -16,6 +16,7 @@ use App\Ms;
 use App\MsUg;
 use App\MsScores;
 use App\MsPro;
+use App\MsOther;
 use PDF;
 use View;
 

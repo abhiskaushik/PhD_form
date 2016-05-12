@@ -58,7 +58,7 @@
             <span class="card-title activator grey-text text-darken-4">Candidate's Card</span>
             <div class="row">
               <div class="col l6 s6">
-                <p>Registration Number:{!! $details['reg_number'] !!}</p>
+                <p>Registration Number: {!! $details['reg_number'] !!}</p>
               </div>
             </div>
             <div class="row">
