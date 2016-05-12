@@ -22,11 +22,13 @@ class DamageController extends Controller
     	{
     		Phd::where('registrationNumber', $regNo)
     				->update(['flag' => false]);
+                    return json_encode(0);
     	}
         else
         {
             Ms::where('registrationNumber', $regNo)
                     ->update(['flag' => false]);
+                    return json_encode(0);
         }
     }
 }

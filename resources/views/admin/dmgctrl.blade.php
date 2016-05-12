@@ -5,6 +5,7 @@
    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta id="token" name="csrf-token" content="{{ csrf_token() }}">
   <title>Admissions NITT | View my Application</title>
   <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{URL::asset('assets/css/materialize.min.css')}}">
@@ -12,6 +13,7 @@
 
   <script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
   <script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
+  <script src="{{URL::asset('assets/js/damage.js')}}"></script>
 </head>
 <body>
   <header style="height: 25vh;
@@ -42,18 +44,18 @@
   <div class="space-medium"></div>
   <div class="container main">
     <div class="row">
-      {!! Form::open(array( 'url' => 'dmgctrl' , 'method'=>'POST')) !!}
+      
 
         <div class="input-field col s8 offset-s2">
           <input id="regNo" name="regNo" type="text" class="validate">
           <label for="first_name">Registration Number</label>
         </div>
         <div class="center col s8 offset-s2">
-          {!! Form::submit('Submit', array('class'=>'teal darken-1 send-btn btn waves-effect waves-light' )) !!}
+          <a href="#" class="button btn teal waves">Submit</a>
         </div>
 
         
-        {!! Form::close() !!}
+        
     </div>
   </div>
   
