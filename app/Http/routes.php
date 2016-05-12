@@ -99,18 +99,6 @@ Route::get('mspreview', function()
     {
         return view('saved.ms_preview');
     });
-Route::get('mspreview1', function()
-    {
-        return view('admin.ms_preview');
-    });
-Route::get('phdpreview1', function()
-    {
-        return view('admin.phd_preview');
-    });
-Route::get('dmgctrl', function()
-    {
-        return view('admin.phd_preview');
-    });
 Route::get('damage', function()
     {
         return view('admin.dmgctrl');

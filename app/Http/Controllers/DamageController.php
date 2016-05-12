@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Phd;
+use App\Ms;
 
 class DamageController extends Controller
 {
@@ -22,5 +23,10 @@ class DamageController extends Controller
     		Phd::where('registrationNumber', $regNo)
     				->update(['flag' => false]);
     	}
+        else
+        {
+            Ms::where('registrationNumber', $regNo)
+                    ->update(['flag' => false]);
+        }
     }
 }
