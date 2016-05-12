@@ -342,7 +342,7 @@
             <td>{!! $candidates['registrationNumber'] !!}</td>
          
             <td><b>Date of Registration:</b></td>
-            <td>{!! $candidates['dateOfReg'] !!}</td>
+            <td>{!! $candidates['created_at'] !!}</td>
           </tr>
         </tbody>
       </table>

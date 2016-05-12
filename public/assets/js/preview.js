@@ -145,7 +145,7 @@ $(document).ready(function(){
 			data.rank = $('#rank').val();
 			data.validity = $('#validity').val();
 			data.discipline = $('#discipline').val();
-      console.log($('#validity').val());
+      // console.log($('#validity').val());
 		}
 		else{
 			data.exam ='';
@@ -155,10 +155,10 @@ $(document).ready(function(){
 			data.discipline ='';
 		}		
 
-		console.log(data);
-    localStorage.clear();
+		// console.log(data);
+    // localStorage.clear();
 		localStorage.setItem('data' , JSON.stringify(data));
-    console.log(JSON.parse(localStorage.getItem('data')));
+    // console.log(JSON.parse(localStorage.getItem('data')));
 		
 	}); 
  });

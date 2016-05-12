@@ -53,7 +53,7 @@
 					<input type="text" id="chalanNo" name="chalanNo"  required />
 				</div>
 				<div class="col l6">
-					<img src="" id="bannerImg" />	
+					<img src="" id="tableBanner" />	
 				</div>
 			</div>
 
@@ -500,20 +500,15 @@
 			      	</div>
 			      </div>
 
-		      </div>
-		      </div>
-
-
-		       <div id="preview" class="modal">
-	          
-
-	        	</div>
-	        	<div class="right">
+			      <div class="right">
 
 	        		<img src="" id="signBanner" />
 
 	        		<p class="center">Signature</p>
 	        	</div>
+		      </div>
+		      </div>
+	        	
 	        	
 
 	<div class="space-large"></div>
