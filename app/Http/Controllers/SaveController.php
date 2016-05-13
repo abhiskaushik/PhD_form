@@ -319,8 +319,9 @@ class SaveController extends Controller
         $image_extension = '';
         $sign_extension = '';
         $stored_image_path = SavePhd::where('registrationNumber', Session::get('regNo'))->select('imagePath')->first()['imagePath'];
-        $stored_image_extension = explode(',', $stored_image_path)[0];
-        $stored_sign_extension = explode(',', $stored_image_path)[1];
+        $stored_image_arr = explode(',', $stored_image_path);
+        $stored_image_extension = $stored_image_arr[0];
+        $stored_sign_extension = count($stored_image_arr) == 2 ? $stored_image_arr[1] : '';
         
         if($file)
         {
@@ -468,8 +469,9 @@ class SaveController extends Controller
         $image_extension = '';
         $sign_extension = '';
         $stored_image_path = SaveMs::where('registrationNumber', Session::get('regNo'))->select('imagePath')->first()['imagePath'];
-        $stored_image_extension = explode(',', $stored_image_path)[0];
-        $stored_sign_extension = explode(',', $stored_image_path)[1];
+        $stored_image_arr = explode(',', $stored_image_path);
+        $stored_image_extension = $stored_image_arr[0];
+        $stored_sign_extension = count($stored_image_arr) == 2 ? $stored_image_arr[1] : '';
         
         if($file)
         {
