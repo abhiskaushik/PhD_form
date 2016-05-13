@@ -167,14 +167,8 @@ class SaveController extends Controller
 
     public function fetch($category, $applNo, $dob)
     {
-        $regNo = '';
-        $dept = explode('-', $applNo);
+        $regNo = str_replace("-", "/", $applNo);
 
-        for($i = 0; $i < sizeof($dept) - 1; $i++)
-        {
-            $regNo = $regNo.$dept[$i].'/';
-        }
-        $regNo = $regNo.$dept[sizeof($dept) - 1];
         Session::put('regNo', $regNo);
         if($category == 'PHD')
 		{
