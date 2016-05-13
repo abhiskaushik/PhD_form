@@ -14,7 +14,6 @@
 		<script src="{{URL::asset('assets/js/jquery-2.1.1.min.js')}}"></script>
 		<script src="{{URL::asset('assets/js/materialize.min.js')}}"></script>
 		<script src="{{URL::asset('assets/js/common.js')}}"></script>
-		<script src="{{URL::asset('assets/js/savephd.js')}}"></script>
 		<script src="{{URL::asset('assets/js/preview.js')}}"></script>
 		
 	</head>
@@ -617,6 +616,13 @@
 	            
 
 		<script type="text/javascript">
+		$(document).ready(function() {
+			$('#save2').click(function(e) {
+	        	$("form").attr("action", "/save2phd").submit();
+	        	return;
+	    	});
+	    });
+
 		function readURL(input) 
 			{
 			    document.getElementById("bannerImg").style.display = "block";
