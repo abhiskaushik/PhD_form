@@ -2,6 +2,11 @@
 
 @section('title', 'Ph.D Registration Form')
 
+@section('headerIncludes')
+    <script src="{{URL::asset('assets/js/common.js')}}"></script>
+    <script src="{{URL::asset('assets/js/savephd.js')}}"></script>
+@endsection
+
 @section('departmentsList')
 <option value="" disabled selected>Choose Department</option>
 <option value="AR">Architecture</option>
@@ -193,8 +198,6 @@
 		</div>
 	</div>	  
 
-	<div id="preview center" class="modal">	
-	</div>
 @endsection
 
 @section('script')        
