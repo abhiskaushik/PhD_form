@@ -270,8 +270,10 @@ class SaveController extends Controller
             'to3' => $request->input('emp_to_3')
         );
 
-        $file = $request->file('image_path');   
-        $extension = $request->file('image_path')->getClientOriginalExtension();
+        $file = $request->file('image_path');
+        $extension = '';
+        if($file)
+            $extension = $request->file('image_path')->getClientOriginalExtension();
         if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
         {
             list($width, $height) = getimagesize($file);
@@ -285,7 +287,7 @@ class SaveController extends Controller
                 return View::make('error')->with('message', $message);  
             }
         }
-        else
+        else if($file)
         {
             $message = 'Invalid file format for the uploaded image or Dimensions are more than 413X531';
             return View::make('error')->with('message', $message);
@@ -293,7 +295,8 @@ class SaveController extends Controller
 
         $sign = $request->file('sign'); 
         $signExt = "";
-        if($sign) $signExt = $request->file('sign')->getClientOriginalExtension();
+        if($sign) 
+            $signExt = $request->file('sign')->getClientOriginalExtension();
         if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
         {
             list($width, $height) = getimagesize($file);
@@ -313,18 +316,31 @@ class SaveController extends Controller
             return View::make('error')->with('message', $message);
         }
 
-        $image_path = '';
+        $image_extension = '';
+        $sign_extension = '';
+        $stored_image_path = SavePhd::where('registrationNumber', Session::get('regNo'))->select('imagePath')->first()['imagePath'];
+        $stored_image_extension = explode(',', $stored_image_path)[0];
+        $stored_sign_extension = explode(',', $stored_image_path)[1];
+        
         if($file)
         {
             $file = $file->move(public_path().'/uploads/PHD/'.$reg_number_modified , 'photo.'.$extension);
-            $image_path = $image_path.$extension;
+            $image_extension = $extension;
         }
-        $image_path .= ",";
+        else
+        {
+            $image_extension = $stored_image_extension;
+        }
         if($sign)
         {
             $sign = $sign->move(public_path().'/uploads/PHD/'. $reg_number_modified, 'sign.'.$signExt);
-            $image_path = $image_path.$signExt;
+            $sign_extension = $signExt;
         }
+        else 
+        {
+            $sign_extension = $stored_sign_extension;
+        }
+        $image_path = $image_extension . "," . $sign_extension;
         $details['imagePath'] = $image_path;
         Log::info($request->input('score'));
         SavePhd::where('registrationNumber', Session::get('regNo'))
@@ -403,7 +419,10 @@ class SaveController extends Controller
         );
 
         $file = $request->file('image_path');   
-        $extension = $request->file('image_path')->getClientOriginalExtension();
+        $extension = '';
+        if($file)
+            $extension = $request->file('image_path')->getClientOriginalExtension();
+
         if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
         {
             list($width, $height) = getimagesize($file);
@@ -417,14 +436,16 @@ class SaveController extends Controller
                 return View::make('error')->with('message', $message);  
             }
         }
-        else
+        else if($file)
         {
             $message = 'Invalid file format for the uploaded image or Dimensions are more than 413X531';
             return View::make('error')->with('message', $message);
         }
 
         $sign = $request->file('sign');  
-        $signExt = $request->file('sign')->getClientOriginalExtension();
+        $signExt = '';
+        if($sign)
+            $signExt = $request->file('sign')->getClientOriginalExtension();
         if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
         {
             list($width, $height) = getimagesize($file);
@@ -438,26 +459,39 @@ class SaveController extends Controller
                 return View::make('error')->with('message', $message);
             }
         }
-        else
+        else if($sign)
         {
             $message = 'Invalid file format for the uploaded Signature';
             return View::make('error')->with('message', $message);
         }
 
-        $image_path = '';
+        $image_extension = '';
+        $sign_extension = '';
+        $stored_image_path = SaveMs::where('registrationNumber', Session::get('regNo'))->select('imagePath')->first()['imagePath'];
+        $stored_image_extension = explode(',', $stored_image_path)[0];
+        $stored_sign_extension = explode(',', $stored_image_path)[1];
+        
         if($file)
         {
-            $file = $file->move(public_path().'/uploads/MS/'. $reg_number_modified, 'photo.'.$extension);
-            $image_path = $image_path.$extension;
+            $file = $file->move(public_path().'/uploads/MS/'.$reg_number_modified , 'photo.'.$extension);
+            $image_extension = $extension;
         }
-        $image_path .= ",";
+        else
+        {
+            $image_extension = $stored_image_extension;
+        }
         if($sign)
         {
             $sign = $sign->move(public_path().'/uploads/MS/'. $reg_number_modified, 'sign.'.$signExt);
-            $image_path = $image_path.$signExt;
+            $sign_extension = $signExt;
         }
-        Log::info($request->input('score'));
+        else 
+        {
+            $sign_extension = $stored_sign_extension;
+        }
+        $image_path = $image_extension . "," . $sign_extension;
         $details['imagePath'] = $image_path;
+        Log::info($request->input('score'));
         SaveMs::where('registrationNumber', Session::get('regNo'))
                     ->update($details);
 
