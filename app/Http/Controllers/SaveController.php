@@ -13,6 +13,7 @@ use App\Phd;
 use Validator;
 use Session;
 use Log;
+use View;
 use Illuminate\Support\Facades\Mail;
 
 class SaveController extends Controller
@@ -205,6 +206,10 @@ class SaveController extends Controller
 
     public function save2phd(Request $request)
     {
+        $reg_number = Session::get('regNo');
+        $departments = explode('/', $reg_number);
+        $reg_appl_no = $departments[sizeof($departments) - 1];
+
         $details = array(
             'chalanNo' => $request->input('chalanNo'),
             'applicationCategory' => $request->input('appl_categ'),
@@ -266,15 +271,76 @@ class SaveController extends Controller
             'to3' => $request->input('emp_to_3')
         );
 
+        $file = $request->file('image_path');   
+        $extension = $request->file('image_path')->getClientOriginalExtension();
+        if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
+        {
+            list($width, $height) = getimagesize($file);
+            if($width < 413 && $height < 531)
+            {
+
+            }
+            else
+            {
+                $message = 'Dimensions for the uploaded image are more than 413X531';
+                return View::make('error')->with('message', $message);  
+            }
+        }
+        else
+        {
+            $message = 'Invalid file format for the uploaded image or Dimensions are more than 413X531';
+            return View::make('error')->with('message', $message);
+        }
+
+        $sign = $request->file('sign'); 
+        $signExt = "";
+        if($sign) $signExt = $request->file('sign')->getClientOriginalExtension();
+        if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
+        {
+            list($width, $height) = getimagesize($file);
+            if($width < 413 && $height < 531)
+            {
+
+            }
+            else
+            {
+                $message = 'Size of the uploaded signature is more than 4 kb';
+                return View::make('error')->with('message', $message);
+            }
+        }
+        else if($sign)
+        {
+            $message = 'Invalid file format for the uploaded Signature';
+            return View::make('error')->with('message', $message);
+        }
+
+        $image_path = '';
+        if($file)
+        {
+            $file = $file->move(public_path().'/uploads/PHD/'.$reg_appl_no , $reg_appl_no.'.'.$extension);
+            $image_path = $image_path.$extension.',';
+        }
+        if($sign)
+        {
+            $sign = $sign->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'sign.'.$signExt);
+            $image_path = $image_path.$signExt;
+            Ms::where('registrationNumber', $request->input('regNo'))
+                            ->update(['imagePath' => $image_path]);
+        }
+        Log::info($request->input('score'));
         SavePhd::where('registrationNumber', Session::get('regNo'))
                     ->update($details);
 
-        return json_encode(0);
+        return self::fetch('PHD', $reg_number, $details["dob"]);
     }
 
     public function save2ms(Request $request)
     {
-         $details = array(
+        $reg_number = Session::get('regNo');
+        $departments = explode('/', $reg_number);
+        $reg_appl_no = $departments[sizeof($departments) - 1];
+
+        $details = array(
             'applicationCategory' => $request->get('appl_categ'),
             'chalanNo' => $request->input('chalanNo'),
             'dept1' => $request->get('department1'),
@@ -337,11 +403,67 @@ class SaveController extends Controller
             'gpa7' => $request->get('gpa7'),
             'gpa8' => $request->get('gpa8')
         );
-         Log::info($request->input('score'));
+
+        $file = $request->file('image_path');   
+        $extension = $request->file('image_path')->getClientOriginalExtension();
+        if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
+        {
+            list($width, $height) = getimagesize($file);
+            if($width < 413 && $height < 531)
+            {
+
+            }
+            else
+            {
+                $message = 'Dimensions for the uploaded image are more than 413X531';
+                return View::make('error')->with('message', $message);  
+            }
+        }
+        else
+        {
+            $message = 'Invalid file format for the uploaded image or Dimensions are more than 413X531';
+            return View::make('error')->with('message', $message);
+        }
+
+        $sign = $request->file('sign');  
+        $signExt = $request->file('sign')->getClientOriginalExtension();
+        if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
+        {
+            list($width, $height) = getimagesize($file);
+            if($width < 413 && $height < 531)
+            {
+
+            }
+            else
+            {
+                $message = 'Size of the uploaded signature is more than 4 kb';
+                return View::make('error')->with('message', $message);
+            }
+        }
+        else
+        {
+            $message = 'Invalid file format for the uploaded Signature';
+            return View::make('error')->with('message', $message);
+        }
+
+        $image_path = '';
+        if($file)
+        {
+            $file = $file->move(public_path().'/uploads/MS/'.$reg_appl_no , $reg_appl_no.'.'.$extension);
+            $image_path = $image_path.$extension.',';
+        }
+        if($sign)
+        {
+            $sign = $sign->move(public_path().'/uploads/MS/'.$reg_appl_no, $reg_appl_no.'sign.'.$signExt);
+            $image_path = $image_path.$signExt;
+            Ms::where('registrationNumber', $request->input('regNo'))
+                            ->update(['imagePath' => $image_path]);
+        }
+        Log::info($request->input('score'));
         SaveMs::where('registrationNumber', Session::get('regNo'))
                     ->update($details);
 
-        return json_encode(0);
+        return self::fetch('MS', $reg_number, $details["dob"]);
     }
 
     public function randomno($phdormsc, $reg_number)
