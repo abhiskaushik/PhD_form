@@ -168,7 +168,14 @@ class PhdController extends Controller
             }
 
             $file = $request->file('image_path');  
-            $extension = $request->file('image_path')->getClientOriginalExtension();
+            
+            $stored_image_path = Phd::where('registrationNumber', Session::get('regNo'))->select('imagePath')->first()['imagePath'];
+            $stored_image_extension = explode(',', $stored_image_path)[0];
+            $stored_sign_extension = explode(',', $stored_image_path)[1];
+
+            $extension = '';
+            if($file)
+                $extension = $request->file('image_path')->getClientOriginalExtension();
             if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
             {
                 list($width, $height) = getimagesize($file);
@@ -182,14 +189,20 @@ class PhdController extends Controller
                     return View::make('error')->with('message', $message);  
                 }
             }
-            else
+            else if($file)
             {
                 $message = 'Invalid file format for the uploaded image';
                 return View::make('error')->with('message', $message);
             }
+            else if($stored_image_extension == "") {
+                $message = "Passport size photo is required.";
+                return View::make('error')->with('message', $message);
+            }
 
-            $sign = $request->file('sign');  
-            $signExt = $request->file('sign')->getClientOriginalExtension();
+            $sign = $request->file('sign');
+            $signExt = '';
+            if($sign)
+                $signExt = $request->file('sign')->getClientOriginalExtension();
             if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
             {
                 list($width, $height) = getimagesize($file);
@@ -203,9 +216,14 @@ class PhdController extends Controller
                     return View::make('error')->with('message', $message);
                 }
             }
-            else
+            else if($sign)
             {
                 $message = 'Invalid file format for the uploaded Signature';
+                return View::make('error')->with('message', $message);
+            }
+            else if($stored_sign_extension == "")
+            {
+                $message = "Signature is required.";
                 return View::make('error')->with('message', $message);
             }
 
@@ -356,20 +374,22 @@ class PhdController extends Controller
                 $form3 = $form3->move(public_path().'/uploads/PHD/'.$reg_number_modified, 'form3.' . $extension3);
             }
         }
-            $image_path = '';
+            
+            $image_extension = $stored_image_extension;
+            $sign_extension = $stored_sign_extension;
             if($file)
             {
                 $file = $file->move(public_path().'/uploads/PHD/'.$reg_number_modified, 'photo.' . $extension);
-                $image_path = $image_path.$extension;
+                $image_extension = $extension;
             }
-            $image_path .= ",";
             if($sign)
             {
                 $sign = $sign->move(public_path().'/uploads/PHD/'.$reg_number_modified, 'sign.' . $signExt);
-                $image_path = $image_path.$signExt;
+                $sign_extension = $signExt;
                 Phd::where('registrationNumber', $request->input('regNo'))
                                 ->update(['imagePath' => $image_path]);
             }
+            $details['imagePath'] = $image_extension . "," . $sign_extension;
 
             return View::make('success')->with('details', $details);
             }
