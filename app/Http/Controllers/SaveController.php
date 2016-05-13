@@ -169,7 +169,6 @@ class SaveController extends Controller
     {
         $regNo = str_replace("-", "/", $applNo);
 
-        Session::put('regNo', $regNo);
         if($category == 'PHD')
 		{
 			$details = SavePhd::where('registrationNumber', $regNo)
@@ -177,6 +176,7 @@ class SaveController extends Controller
 									->first();
             if($details != NULL)
             {
+                Session::put('regNo', $regNo);
                 return view('saved.phd')->with('details', $details);
             }
             else
@@ -192,7 +192,7 @@ class SaveController extends Controller
                                     ->first();
             if($details != NULL)
             {
-                
+                Session::put('regNo', $regNo);
                 return view('saved.ms')->with('details', $details);
             }
             else
