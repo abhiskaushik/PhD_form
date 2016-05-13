@@ -11,7 +11,8 @@
 |
 */
 Route::get('/', function() {
-    return redirect('home');
+    return view('landing');
+//    return redirect('home');
 });
 Route::post('savephd', 'SaveController@savephd');
 Route::post('savems', 'SaveController@savems');
