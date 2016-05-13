@@ -359,9 +359,9 @@ class PhdController extends Controller
             if($file)
             {
                 $file = $file->move(public_path().'/uploads/PHD/'.$reg_number, 'photo.' . $extension);
-                $image_path = $image_path.$extension.',';
+                $image_path = $image_path.$extension;
             }
-
+            $image_path .= ",";
             if($sign)
             {
                 $sign = $sign->move(public_path().'/uploads/PHD/'.$reg_number, 'sign.' . $signExt);

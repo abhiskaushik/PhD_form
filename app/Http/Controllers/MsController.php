@@ -351,8 +351,9 @@ class MsController extends Controller
             if($file)
             {
                 $file = $file->move(public_path().'/uploads/MS/'.$reg_number , 'photo.' . $extension);
-                $image_path = $image_path . $extension.',';
+                $image_path = $image_path . $extension;
             }
+            $image_path .= ",";
             if($cert)
             {
                 $cert = $cert->move(public_path().'/uploads/MS/'.$reg_number, 'cert.' . $extension3);
