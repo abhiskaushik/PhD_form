@@ -121,7 +121,7 @@
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
 		      		</select> -->
-		      		<input type="text" readonly="true" id="department1" name="department1" data-reg="{!! $details->dept1 !!}" />
+		      		<input type="text" readonly="true" id="department1" name="department1" value="{!! $details->dept1 !!}" />
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 dep2Check">
@@ -142,7 +142,7 @@
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
 		      		</select> -->
-		      		<input type="text" readonly="true" id="department2" name="department2" data-reg="{!! $details->dept2 !!}" />
+		      		<input type="text" readonly="true" id="department2" name="department2" value="{!! $details->dept2 !!}" />
 		      		
 		        </div>
 		        <div class="input-field col l6 s6 dep3Check">
@@ -163,7 +163,7 @@
                 <option value="MME">Metalurgy and Material Sciences</option>
                 <option value="PH">Physics</option>
 		      		</select> -->
-		      		<input type="text" readonly="true" id="department3" name="department3" data-reg="{!! $details->dept3 !!}" />
+		      		<input type="text" readonly="true" id="department3" name="department3" value="{!! $details->dept3 !!}" />
 		      		
 		        </div>
 		        

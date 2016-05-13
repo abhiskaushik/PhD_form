@@ -147,7 +147,7 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>
 			     		</select> -->
-			     		<input type="text" readonly="true" id="department1" name="department1" data-reg="{!! $details->dept1 !!}" />
+			     		<input type="text" readonly="true" id="department1" name="department1" value="{!! $details->dept1 !!}" />
 			        </div>
 			        <div class="input-field col l6 s6 dep2Check">
 			        	<!-- <select name="department2" id="department2">
@@ -168,7 +168,7 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>		      
 			      		</select> -->
-			   		<input type="text" readonly="true" id="department2" name="department2" data-reg="{!! $details->dept2 !!}" />
+			   		<input type="text" readonly="true" id="department2" name="department2" value="{!! $details->dept2 !!}" />
 			      	
 			        </div>
 			        </div>
@@ -192,7 +192,7 @@
 			      			<option value="MME">Metalurgy and Material Engineering</option>
 			      			<option value="PR">Production Engineering</option>		      
 			      		</select>	 -->
-			      		<input type="text" readonly="true" id="department3" name="department3" data-reg="{!! $details->dept3 !!}" />		     
+			      		<input type="text" readonly="true" id="department3" name="department3" value="{!! $details->dept3 !!}" />		     
 			        </div>
 			       <!--  <div class="input-field col s6 l6">
 			        	<input type="text" value="dept" hidden="true" />
@@ -840,8 +840,9 @@
 				$('.statusCheck .select-wrapper ul>li:eq(1)').click();
 			}
 
-			t='{!! $details->ph !!}';
-			if(t=='no'){
+			t='{!! $details->PH !!}';
+			'{!! json_encode($details) !!}';
+			if(t=='No'){
 				$('.pdCheck .select-wrapper input').val(t);
 				$('.pdCheck .select-wrapper ul>li:eq(2)').click();
 			}
@@ -853,8 +854,17 @@
 			if(t!=''){
 				$('.appCheck .select-wrapper input').val(t);	
 			}
-			
-			$('.categCheck .select-wrapper ul>li:eq(1)').click();
+
+			t = '{!! $details->category !!}';
+			$(".categCheck input").val(t);
+			if(t == "OBC")
+				$(".categCheck ul>li:eq(1)").click();
+			else if(t == "OC")
+				$(".categCheck ul>li:eq(2)").click();
+			else if(t == "SC")
+				$(".categCheck ul>li:eq(3)").click();
+			else if(t == "ST")
+				$(".categCheck ul>li:eq(4)").click();
 
 			$('#department1').val(department('{!! $details->dept1 !!}'));
 			$('#department2').val(department('{!! $details->dept2 !!}'));
