@@ -71,7 +71,18 @@
 					<input type="text" id="chalanNo" name="chalanNo" placeholder="Enter Chalan Number" value="{!! $details->chalanNo !!}" required />
 				</div>
 				
-				<img src="" id="bannerImg"  />	
+				{{ 
+	      			// ugly hack to declare variables and not put it in html :P
+
+	      			($modifiedRegistrationNumber = str_replace('/', '-', $details->registrationNumber)) && 
+	      			($photoExtension = explode(',', $details->imagePath)[0]) && 
+	      			""
+	      		}}
+	      		@if ($photoExtension)
+		      		<img src="/uploads/PHD/{!! $modifiedRegistrationNumber . '/photo.' . $photoExtension !!}" id="bannerImg" />
+		      	@else
+		      		<img src="" id="bannerImg" />
+		      	@endif
 			</div>
 
 	  		<div class="row">  					   
@@ -512,7 +523,19 @@
 			      <div class="row">
 			      	
 			      	<div class="upload col l6 s6 ">
-			      		<img src="" id="signImg" />
+			      		{{ 
+			      			// ugly hack to declare variables and not put it in html :P
+
+			      			($modifiedRegistrationNumber = str_replace('/', '-', $details->registrationNumber)) && 
+			      			($signExtension = explode(',', $details->imagePath)[1]) && 
+			      			""
+			      		}}
+			      		@if ($signExtension)
+				      		<img src="/uploads/PHD/{!! $modifiedRegistrationNumber . '/sign.' . $signExtension !!}" id="signImg" />
+				      	@else
+				      		<img src="" id="signImg" />
+				      	@endif
+
 			    		<p>Upload Signature</p>
 				      	<div class="file-field input-field">
 			          		<div class="btn teal darken-1 btn waves-effect waves-light">
