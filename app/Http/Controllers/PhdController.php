@@ -278,6 +278,7 @@ class PhdController extends Controller
 
             $applNo = $candidate->applNo;
             $reg_number = $request->input('regNo');
+            $reg_number_modified = str_replace("/", "-", $reg_number);
 
             $ugDetails = new PhdUg();
 
@@ -347,24 +348,24 @@ class PhdController extends Controller
             if($request->input('appl_categ') == 'External' || $request->input('appl_categ') == 'onCampus'){
             if($form1 && $form2)
             {
-                $form1 = $form1->move(public_path().'/uploads/PHD/'.$reg_number, 'form1.' . $extension1);
-                $form2 = $form2->move(public_path().'/uploads/PHD/'.$reg_number, 'form2.' . $extension2);
+                $form1 = $form1->move(public_path().'/uploads/PHD/'.$reg_number_modified, 'form1.' . $extension1);
+                $form2 = $form2->move(public_path().'/uploads/PHD/'.$reg_number_modified, 'form2.' . $extension2);
             }
             else if($form3)
             {
-                $form3 = $form3->move(public_path().'/uploads/PHD/'.$reg_number, 'form3.' . $extension3);
+                $form3 = $form3->move(public_path().'/uploads/PHD/'.$reg_number_modified, 'form3.' . $extension3);
             }
         }
             $image_path = '';
             if($file)
             {
-                $file = $file->move(public_path().'/uploads/PHD/'.$reg_number, 'photo.' . $extension);
+                $file = $file->move(public_path().'/uploads/PHD/'.$reg_number_modified, 'photo.' . $extension);
                 $image_path = $image_path.$extension;
             }
             $image_path .= ",";
             if($sign)
             {
-                $sign = $sign->move(public_path().'/uploads/PHD/'.$reg_number, 'sign.' . $signExt);
+                $sign = $sign->move(public_path().'/uploads/PHD/'.$reg_number_modified, 'sign.' . $signExt);
                 $image_path = $image_path.$signExt;
                 Phd::where('registrationNumber', $request->input('regNo'))
                                 ->update(['imagePath' => $image_path]);

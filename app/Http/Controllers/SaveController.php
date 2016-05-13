@@ -207,8 +207,7 @@ class SaveController extends Controller
     public function save2phd(Request $request)
     {
         $reg_number = Session::get('regNo');
-        $departments = explode('/', $reg_number);
-        $reg_appl_no = $departments[sizeof($departments) - 1];
+        $reg_number_modified = str_replace("/", "-", $reg_number);
 
         $details = array(
             'chalanNo' => $request->input('chalanNo'),
@@ -317,12 +316,12 @@ class SaveController extends Controller
         $image_path = '';
         if($file)
         {
-            $file = $file->move(public_path().'/uploads/PHD/'.$reg_appl_no , $reg_appl_no.'.'.$extension);
+            $file = $file->move(public_path().'/uploads/PHD/'.$reg_number_modified , 'photo.'.$extension);
             $image_path = $image_path.$extension.',';
         }
         if($sign)
         {
-            $sign = $sign->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'sign.'.$signExt);
+            $sign = $sign->move(public_path().'/uploads/PHD/'. $reg_number_modified, 'sign.'.$signExt);
             $image_path = $image_path.$signExt;
             Ms::where('registrationNumber', $request->input('regNo'))
                             ->update(['imagePath' => $image_path]);
@@ -337,8 +336,7 @@ class SaveController extends Controller
     public function save2ms(Request $request)
     {
         $reg_number = Session::get('regNo');
-        $departments = explode('/', $reg_number);
-        $reg_appl_no = $departments[sizeof($departments) - 1];
+        $reg_number_modified = str_replace("/", "-", $reg_number);
 
         $details = array(
             'applicationCategory' => $request->get('appl_categ'),
@@ -449,12 +447,12 @@ class SaveController extends Controller
         $image_path = '';
         if($file)
         {
-            $file = $file->move(public_path().'/uploads/MS/'.$reg_appl_no , $reg_appl_no.'.'.$extension);
+            $file = $file->move(public_path().'/uploads/MS/'. $reg_number_modified, 'photo.'.$extension);
             $image_path = $image_path.$extension.',';
         }
         if($sign)
         {
-            $sign = $sign->move(public_path().'/uploads/MS/'.$reg_appl_no, $reg_appl_no.'sign.'.$signExt);
+            $sign = $sign->move(public_path().'/uploads/MS/'. $reg_number_modified, 'sign.'.$signExt);
             $image_path = $image_path.$signExt;
             Ms::where('registrationNumber', $request->input('regNo'))
                             ->update(['imagePath' => $image_path]);
