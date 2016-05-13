@@ -386,10 +386,10 @@ class PhdController extends Controller
             {
                 $sign = $sign->move(public_path().'/uploads/PHD/'.$reg_number_modified, 'sign.' . $signExt);
                 $sign_extension = $signExt;
-                Phd::where('registrationNumber', $request->input('regNo'))
-                                ->update(['imagePath' => $image_path]);
             }
             $details['imagePath'] = $image_extension . "," . $sign_extension;
+            Phd::where('registrationNumber', $request->input('regNo'))
+                                ->update($details);
 
             return View::make('success')->with('details', $details);
             }
