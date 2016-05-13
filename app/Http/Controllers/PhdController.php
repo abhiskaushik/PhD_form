@@ -16,6 +16,7 @@ use App\PhdUg;
 use App\PhdPg;
 use App\PhdOther;
 use App\PhdPro;
+use Session;
 
 class PhdController extends Controller
 {
