@@ -175,7 +175,14 @@ class MsController extends Controller
             }
 
             $file = $request->file('image_path');   
-            $extension = $request->file('image_path')->getClientOriginalExtension();
+
+            $stored_image_path = Ms::where('registrationNumber', Session::get('regNo'))->select('imagePath')->first()['imagePath'];
+            $stored_image_extension = explode(',', $stored_image_path)[0];
+            $stored_sign_extension = explode(',', $stored_image_path)[1];
+
+            $extension = '';
+            if($file)
+                $extension = $request->file('image_path')->getClientOriginalExtension();
             if($extension == 'jpg' || $extension == 'png' || $extension == 'jpeg')
             {
                 list($width, $height) = getimagesize($file);
@@ -189,14 +196,20 @@ class MsController extends Controller
                     return View::make('error')->with('message', $message);  
                 }
             }
-            else
+            else if($file)
             {
-                $message = 'Invalid file format for the uploaded image or Dimensions are more than 413X531';
+                $message = 'Invalid file format for the uploaded image';
+                return View::make('error')->with('message', $message);
+            }
+            else if($stored_image_extension == "") {
+                $message = "Passport size photo is required.";
                 return View::make('error')->with('message', $message);
             }
 
-            $sign = $request->file('sign');  
-            $signExt = $request->file('sign')->getClientOriginalExtension();
+            $sign = $request->file('sign');
+            $signExt = '';
+            if($sign)
+                $signExt = $request->file('sign')->getClientOriginalExtension();
             if($signExt == 'jpg' || $signExt == 'png' || $signExt == 'jpeg')
             {
                 list($width, $height) = getimagesize($file);
@@ -210,9 +223,14 @@ class MsController extends Controller
                     return View::make('error')->with('message', $message);
                 }
             }
-            else
+            else if($sign)
             {
                 $message = 'Invalid file format for the uploaded Signature';
+                return View::make('error')->with('message', $message);
+            }
+            else if($stored_sign_extension == "")
+            {
+                $message = "Signature is required.";
                 return View::make('error')->with('message', $message);
             }
 
@@ -348,29 +366,26 @@ class MsController extends Controller
             $details['reg_number'] = $reg_number;
             $details['phdorms'] = 'ms';
 
-            $image_path = '';
+            $image_extension = $stored_image_extension;
+            $sign_extension = $stored_sign_extension;
             if($file)
             {
-                $file = $file->move(public_path().'/uploads/MS/'.$reg_number_modified , 'photo.' . $extension);
-                $image_path = $image_path . $extension;
-            }
-            $image_path .= ",";
-            if($cert)
-            {
-                $cert = $cert->move(public_path().'/uploads/MS/'.$reg_number_modified, 'cert.' . $extension3);
+                $file = $file->move(public_path().'/uploads/MS/'.$reg_number_modified, 'photo.' . $extension);
+                $image_extension = $extension;
             }
             if($sign)
             {
                 $sign = $sign->move(public_path().'/uploads/MS/'.$reg_number_modified, 'sign.' . $signExt);
-                $image_path = $image_path . $signExt;
-                Ms::where('registrationNumber', $request->input('regNo'))
-                                ->update(['imagePath' => $image_path]);
+                $sign_extension = $signExt;
             }
+            $details['imagePath'] = $image_extension . "," . $sign_extension;
+            Ms::where('registrationNumber', $request->input('regNo'))
+                                ->update($details);
             return View::make('success')->with('details', $details);
             }
             else{
-            	$message = "User already exists ";
-            	return View::make('error')->with('message' , $message);
+                $message = "User already exists ";
+                return View::make('error')->with('message' , $message);
             }
         }
     }
