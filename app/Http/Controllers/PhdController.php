@@ -278,8 +278,6 @@ class PhdController extends Controller
 
             $applNo = $candidate->applNo;
             $reg_number = $request->input('regNo');
-            $departments = explode('/', $reg_number);
-            $reg_appl_no = $departments[sizeof($departments) - 1];
 
             $ugDetails = new PhdUg();
 
@@ -349,24 +347,24 @@ class PhdController extends Controller
             if($request->input('appl_categ') == 'External' || $request->input('appl_categ') == 'onCampus'){
             if($form1 && $form2)
             {
-                $form1 = $form1->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'form1'.'.'.$extension1);
-                $form2 = $form2->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'form2'.'.'.$extension2);
+                $form1 = $form1->move(public_path().'/uploads/PHD/'.$reg_number, 'form1.' . $extension1);
+                $form2 = $form2->move(public_path().'/uploads/PHD/'.$reg_number, 'form2.' . $extension2);
             }
             else if($form3)
             {
-                $form3 = $form3->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'form3'.'.'.$extension3);
+                $form3 = $form3->move(public_path().'/uploads/PHD/'.$reg_number, 'form3.' . $extension3);
             }
         }
             $image_path = '';
             if($file)
             {
-                $file = $file->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'.'.$extension);
+                $file = $file->move(public_path().'/uploads/PHD/'.$reg_number, 'photo.' . $extension);
                 $image_path = $image_path.$extension.',';
             }
 
             if($sign)
             {
-                $sign = $sign->move(public_path().'/uploads/PHD/'.$reg_appl_no, $reg_appl_no.'sign.'.$signExt);
+                $sign = $sign->move(public_path().'/uploads/PHD/'.$reg_number, 'sign.' . $signExt);
                 $image_path = $image_path.$signExt;
                 Phd::where('registrationNumber', $request->input('regNo'))
                                 ->update(['imagePath' => $image_path]);

@@ -263,8 +263,6 @@ class MsController extends Controller
 
             $applNo = $candidate->applNo;
             $reg_number = $request->input('regNo');
-            $departments = explode('/', $reg_number);
-            $reg_appl_no = $departments[sizeof($departments) - 1];
 
             if($request->get('ra1') == 'on')
             {
@@ -352,17 +350,17 @@ class MsController extends Controller
             $image_path = '';
             if($file)
             {
-                $file = $file->move(public_path().'/uploads/MS/'.$reg_appl_no , $reg_appl_no.'.'.$extension);
-                $image_path = $image_path.$extension.',';
+                $file = $file->move(public_path().'/uploads/MS/'.$reg_number , 'photo.' . $extension);
+                $image_path = $image_path . $extension.',';
             }
             if($cert)
             {
-                $cert = $cert->move(public_path().'/uploads/MS/'.$reg_appl_no, $reg_appl_no.'cert'.'.'.$extension3);
+                $cert = $cert->move(public_path().'/uploads/MS/'.$reg_number, 'cert.' . $extension3);
             }
             if($sign)
             {
-                $sign = $sign->move(public_path().'/uploads/MS/'.$reg_appl_no, $reg_appl_no.'sign.'.$signExt);
-                $image_path = $image_path.$signExt;
+                $sign = $sign->move(public_path().'/uploads/MS/'.$reg_number, 'sign.' . $signExt);
+                $image_path = $image_path . $signExt;
                 Ms::where('registrationNumber', $request->input('regNo'))
                                 ->update(['imagePath' => $image_path]);
             }
