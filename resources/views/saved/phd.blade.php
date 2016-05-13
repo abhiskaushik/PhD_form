@@ -594,7 +594,6 @@
 	            
 
 		<script type="text/javascript">
-		localStorage.clear();
 		function readURL(input) 
 			{
 			    document.getElementById("bannerImg").style.display = "block";
