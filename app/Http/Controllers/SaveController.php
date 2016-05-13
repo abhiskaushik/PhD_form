@@ -317,15 +317,15 @@ class SaveController extends Controller
         if($file)
         {
             $file = $file->move(public_path().'/uploads/PHD/'.$reg_number_modified , 'photo.'.$extension);
-            $image_path = $image_path.$extension.',';
+            $image_path = $image_path.$extension;
         }
+        $image_path .= ",";
         if($sign)
         {
             $sign = $sign->move(public_path().'/uploads/PHD/'. $reg_number_modified, 'sign.'.$signExt);
             $image_path = $image_path.$signExt;
-            Ms::where('registrationNumber', $request->input('regNo'))
-                            ->update(['imagePath' => $image_path]);
         }
+        $details['imagePath'] = $image_path;
         Log::info($request->input('score'));
         SavePhd::where('registrationNumber', Session::get('regNo'))
                     ->update($details);
@@ -448,16 +448,16 @@ class SaveController extends Controller
         if($file)
         {
             $file = $file->move(public_path().'/uploads/MS/'. $reg_number_modified, 'photo.'.$extension);
-            $image_path = $image_path.$extension.',';
+            $image_path = $image_path.$extension;
         }
+        $image_path .= ",";
         if($sign)
         {
             $sign = $sign->move(public_path().'/uploads/MS/'. $reg_number_modified, 'sign.'.$signExt);
             $image_path = $image_path.$signExt;
-            Ms::where('registrationNumber', $request->input('regNo'))
-                            ->update(['imagePath' => $image_path]);
         }
         Log::info($request->input('score'));
+        $details['imagePath'] = $image_path;
         SaveMs::where('registrationNumber', Session::get('regNo'))
                     ->update($details);
 
