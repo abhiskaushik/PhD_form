@@ -526,7 +526,8 @@
 			      			// ugly hack to declare variables and not put it in html :P
 
 			      			($modifiedRegistrationNumber = str_replace('/', '-', $details->registrationNumber)) && 
-			      			($signExtension = explode(',', $details->imagePath)[1]) && 
+			      			($tmp = explode(',', $details->imagePath)) && 
+			      			($signExtension = count($tmp) == 2 ? $tmp[1] : '') &&
 			      			""
 			      		}}
 			      		@if ($signExtension)
@@ -839,7 +840,7 @@
 				$('.statusCheck .select-wrapper ul>li:eq(1)').click();
 			}
 
-			t='{!! $details->PH !!}';
+			t='{!! $details->ph !!}';
 			if(t=='no'){
 				$('.pdCheck .select-wrapper input').val(t);
 				$('.pdCheck .select-wrapper ul>li:eq(2)').click();
